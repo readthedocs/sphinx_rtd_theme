@@ -7,7 +7,7 @@
 Read the Docs Sphinx Theme
 **************************
 
-This is a prototype mobile-friendly sphinx theme I made for _readthedocs.org. It's 
+This is a prototype mobile-friendly sphinx_ theme I made for readthedocs.org_. It's 
 currently in development and includes some rtd variable checks that can be ignored 
 if you're just tyring to use it on your project outside of that site.
 
@@ -26,9 +26,9 @@ conf.py file:
 Contributing or modifying the theme
 ===================================
 
-To work on this theme you'll need to install _bower. Then simply run a ``bower install`` in the
+To work on this theme you'll need to install bower_. Then simply run a ``bower install`` in the
 root directory to install the dependencies. Once installed, make your sass changes to the 
-``sphix_rtd_theme/sass`` directory, making sure to use _compass to compile down to css.
+``sphix_rtd_theme/sass`` directory, making sure to use compass_ to compile down to css.
 
 If you'd like to see your changes made to master, send me a pull request.
 
