@@ -11,6 +11,12 @@ This is a prototype mobile-friendly sphinx_ theme I made for readthedocs.org_. I
 currently in development and includes some rtd variable checks that can be ignored 
 if you're just tyring to use it on your project outside of that site.
 
+.. image:: screen_desktop.png
+    :width: 100%
+
+.. image:: screen_mobile.png
+    :width: 100%
+
 Installation
 ============
 
