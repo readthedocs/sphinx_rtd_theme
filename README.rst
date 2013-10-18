@@ -39,7 +39,3 @@ root directory to install the dependencies. Once installed, make your sass chang
 If you'd like to see your changes made to master, send me a pull request.
 
 
-
-
-
-
