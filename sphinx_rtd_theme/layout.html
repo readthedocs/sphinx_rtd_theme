@@ -40,7 +40,7 @@
         HAS_SOURCE:  {{ has_source|lower }}
       };
     </script>
-    {%- for scriptfile in script_files + ["_static/sphinx_rtd_theme.js"] %}
+    {%- for scriptfile in script_files + ["_static/theme.js"] %}
       <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
     {%- endfor %}
     
@@ -94,13 +94,14 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ docstitle }}</a>
+        <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}</a>
         {% include "searchbox.html" %}
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix">
         {{ toctree(maxdepth=2, collapse=False) }}
       </div>
+      {% include "versions.html" %}
       &nbsp;
     </nav>
 
@@ -109,9 +110,10 @@
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top">
         <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="/">{{ docstitle }}</a>        
+        <a href="/">{{ project }}</a>        
       </nav>
       
+
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
         <div class="rst-content">
