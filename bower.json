@@ -25,7 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "wyrm": "~0.0.3"
+    "wyrm": "~0.0.4"
   }
 }
 

@@ -4268,6 +4268,7 @@ body .redactor_toolbar li a.redactor_btn_pre {
   width: 300px;
   color: #fcfcfc;
   background: #1f1d1d;
+  border-top: solid 10px #343131;
 }
 .rst-versions .rst-current-version {
   padding: 12px;
@@ -4277,6 +4278,7 @@ body .redactor_toolbar li a.redactor_btn_pre {
   font-size: 90%;
   cursor: pointer;
   color: #27ae60;
+  z-index: 400;
   *zoom: 1;
 }
 .rst-versions .rst-current-version:before, .rst-versions .rst-current-version:after {
@@ -5016,6 +5018,8 @@ pre.literal-block:after, .literal-block.redactor_format_pre:after {
 .wy-nav-content {
   padding: 1.618em 3.236em;
   height: 100%;
+  max-width: 800px;
+  margin: auto;
 }
 
 .wy-body-mask, #redactor_modal_overlay {
