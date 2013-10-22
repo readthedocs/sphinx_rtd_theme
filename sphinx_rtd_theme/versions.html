@@ -15,12 +15,13 @@
       </dl>
       <dl>
         <dt>Downloads</dt>
-        <dd><a href="{{ url }}">PDF</a></dd>
-        <dd><a href="{{ url }}">Epub</a></dd>
-        <dd><a href="{{ url }}">Zip</a></dd>
+        {% for type, url in downloads %}
+          <dd><a href="{{ url }}">{{ type }}</a></dd>
+        {% endfor %}
       </dl>
       <hr/>
       Free document hosting and versioning provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
     </div>
   </div>
 {% endif %}
+
