@@ -3303,7 +3303,7 @@ code, .rst-content .method dt, .rst-content dl.class dt, .rst-content tt.literal
   font-size: 80%;
   padding: 0 5px;
   font-family: "source-code-pro-1", "source-code-pro-2", Incosolata, Consolata, Monaco, monospace;
-  color: gray;
+  color: #e74c3c;
 }
 code.code-large, .rst-content .method dt.code-large, .rst-content dl.class dt.code-large, .rst-content tt.code-large.literal {
   font-size: 90%;
@@ -3576,7 +3576,6 @@ a.wy-text-neutral:hover {
   border: none;
 }
 .rst-content table.docutils.field-list .field-name {
-  padding-left: 24px;
   padding-right: 5px;
   text-align: left;
 }
@@ -3592,8 +3591,11 @@ a.wy-text-neutral:hover {
 .rst-content .method dt .headerlink, .rst-content dl.class dt .headerlink {
   color: #404040;
 }
+.rst-content .method dd, .rst-content dl.class dd {
+  margin-left: 24px;
+}
 .rst-content .class blockquote, .rst-content .method blockquote {
-  margin-left: 48px;
+  margin-left: 24px;
 }
 .rst-content tt {
   font-family: "source-code-pro-1", "source-code-pro-2", Incosolata, Consolata, Monaco, monospace;
