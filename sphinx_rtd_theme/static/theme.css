@@ -289,9 +289,11 @@ big, small {
 }
 
 @media print {
+  html, body, section {
+    background: none !important;
+  }
+
   * {
-    background: transparent !important;
-    color: black !important;
     box-shadow: none !important;
     text-shadow: none !important;
     filter: none !important;
@@ -300,14 +302,6 @@ big, small {
 
   a, a:visited {
     text-decoration: underline;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
   }
 
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
