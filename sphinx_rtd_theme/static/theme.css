@@ -3478,6 +3478,9 @@ a.wy-text-neutral:hover {
   background: #1f1d1d;
   border-top: solid 10px #343131;
 }
+.rst-versions .rst-badge-small {
+  display: none;
+}
 .rst-versions .rst-current-version {
   padding: 12px;
   background-color: #272525;
@@ -3522,6 +3525,28 @@ a.wy-text-neutral:hover {
   display: inline-block;
   padding: 6px;
   color: #fcfcfc;
+}
+.rst-versions.rst-badge {
+  width: auto;
+  bottom: 20px;
+  right: 20px;
+  left: auto;
+  border: none;
+  max-width: 300px;
+}
+.rst-versions.rst-badge .rst-badge-small {
+  background-color: #272525;
+  width: auto;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 6px;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+.rst-versions.rst-badge .rst-current-version {
+  display: none;
 }
 
 .rst-content .note p.last, .rst-content .note p.first, .rst-content .attention p.last, .rst-content .attention p.first, .rst-content .caution p.last, .rst-content .caution p.first, .rst-content .danger p.last, .rst-content .danger p.first, .rst-content .error p.last, .rst-content .error p.first, .rst-content .hint p.last, .rst-content .hint p.first, .rst-content .important p.last, .rst-content .important p.first, .rst-content .tip p.last, .rst-content .tip p.first, .rst-content .warning p.last, .rst-content .warning p.first {
