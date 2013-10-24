@@ -3534,6 +3534,9 @@ a.wy-text-neutral:hover {
   border: none;
   max-width: 300px;
 }
+.rst-versions.rst-badge.shift-up .rst-current-version {
+  text-align: left;
+}
 .rst-versions.rst-badge .rst-current-version {
   width: auto;
   height: 30px;
@@ -3541,9 +3544,6 @@ a.wy-text-neutral:hover {
   padding: 0 6px;
   display: block;
   text-align: center;
-}
-.rst-versions.rst-badge .rst-current-version .icon, .rst-versions.rst-badge .rst-current-version .wy-inline-validate.wy-inline-validate-success .wy-input-context, .wy-inline-validate.wy-inline-validate-success .rst-versions.rst-badge .rst-current-version .wy-input-context, .rst-versions.rst-badge .rst-current-version .wy-inline-validate.wy-inline-validate-danger .wy-input-context, .wy-inline-validate.wy-inline-validate-danger .rst-versions.rst-badge .rst-current-version .wy-input-context, .rst-versions.rst-badge .rst-current-version .wy-inline-validate.wy-inline-validate-warning .wy-input-context, .wy-inline-validate.wy-inline-validate-warning .rst-versions.rst-badge .rst-current-version .wy-input-context, .rst-versions.rst-badge .rst-current-version .wy-inline-validate.wy-inline-validate-info .wy-input-context, .wy-inline-validate.wy-inline-validate-info .rst-versions.rst-badge .rst-current-version .wy-input-context, .rst-versions.rst-badge .rst-current-version .wy-tag-input-group .wy-tag .wy-tag-remove, .wy-tag-input-group .wy-tag .rst-versions.rst-badge .rst-current-version .wy-tag-remove, .rst-versions.rst-badge .rst-current-version .rst-content .admonition-title, .rst-content .rst-versions.rst-badge .rst-current-version .admonition-title, .rst-versions.rst-badge .rst-current-version .rst-content h1 .headerlink, .rst-content h1 .rst-versions.rst-badge .rst-current-version .headerlink, .rst-versions.rst-badge .rst-current-version .rst-content h2 .headerlink, .rst-content h2 .rst-versions.rst-badge .rst-current-version .headerlink, .rst-versions.rst-badge .rst-current-version .rst-content h3 .headerlink, .rst-content h3 .rst-versions.rst-badge .rst-current-version .headerlink, .rst-versions.rst-badge .rst-current-version .rst-content h4 .headerlink, .rst-content h4 .rst-versions.rst-badge .rst-current-version .headerlink, .rst-versions.rst-badge .rst-current-version .rst-content h5 .headerlink, .rst-content h5 .rst-versions.rst-badge .rst-current-version .headerlink, .rst-versions.rst-badge .rst-current-version .rst-content h6 .headerlink, .rst-content h6 .rst-versions.rst-badge .rst-current-version .headerlink, .rst-versions.rst-badge .rst-current-version .rst-content dl dt .headerlink, .rst-content dl dt .rst-versions.rst-badge .rst-current-version .headerlink {
-  float: none;
 }
 
 .rst-content .note p.last, .rst-content .note p.first, .rst-content .attention p.last, .rst-content .attention p.first, .rst-content .caution p.last, .rst-content .caution p.first, .rst-content .danger p.last, .rst-content .danger p.first, .rst-content .error p.last, .rst-content .error p.first, .rst-content .hint p.last, .rst-content .hint p.first, .rst-content .important p.last, .rst-content .important p.first, .rst-content .tip p.last, .rst-content .tip p.first, .rst-content .warning p.last, .rst-content .warning p.first {
