@@ -10,6 +10,7 @@ module.exports = function(grunt) {
         options: {
           config: 'sphinx_rtd_theme/sass/config.rb',
           basePath: 'sphinx_rtd_theme/sass',
+          outputStyle: 'compressed',
           force: true
         }
       }
