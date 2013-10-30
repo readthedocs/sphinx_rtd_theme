@@ -4,6 +4,7 @@
 .. _compass: http://www.compass-style.org
 .. _wyrm: http://www.github.com/snide/wyrm/
 .. _grunt: http://www.gruntjs.com
+.. _node: http://www.nodejs.com
 
 **************************
 Read the Docs Sphinx Theme
@@ -11,7 +12,7 @@ Read the Docs Sphinx Theme
 
 This is a prototype mobile-friendly sphinx_ theme I made for readthedocs.org_. It's
 currently in development and includes some rtd variable checks that can be ignored
-if you're just tyring to use it on your project outside of that site.
+if you're just trying to use it on your project outside of that site.
 
 .. image:: screen_desktop.png
     :width: 100%
@@ -34,7 +35,7 @@ conf.py file:
 How the Table of Contents builds
 ================================
 
-Currently the left menu will build based upon any `toctree(s)` defined in your index.rst file.
+Currently the left menu will build based upon any ``toctree(s)`` defined in your index.rst file.
 It outputs 2 levels of depth, which should give your visitors a high level of access to your
 docs. If no toctrees are set the theme reverts to sphinx's usual local toctree.
 
@@ -46,10 +47,12 @@ Contributing or modifying the theme
 ===================================
 
 This theme relies pretty heavily on a couple other sass libraries, but most notably wyrm_,
-a frotend library I'm currently building. I've tried to keep most of the layout specific
-code in this repo, but a lot of the rST text formatting is done over there.
+a frontend library I'm currently building. I've tried to keep most of the layout specific
+code in this repo, but a lot of the rST text formatting is done over there. Wyrm is pretty
+spartan and undocumented at the moment, so if you simply want to create some bug issues
+for me rather than setting up a pull request, that's totally OK with me!
 
-To load the depencies you'll need to install bower_, which itself requires node to run.
+To load the dependencies you'll need to install bower_, which itself requires node_ to run.
 Then simply run a ``bower install`` in the root directory to install the dependencies.
 Once installed, make your sass changes to the ``sphix_rtd_theme/sass`` directory.
 
