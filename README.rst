@@ -5,10 +5,13 @@
 .. _wyrm: http://www.github.com/snide/wyrm/
 .. _grunt: http://www.gruntjs.com
 .. _node: http://www.nodejs.com
+.. _demo: http://docs.readthedocs.org
 
 **************************
 Read the Docs Sphinx Theme
 **************************
+
+View a working demo_ over on readthedocs.org_.
 
 This is a prototype mobile-friendly sphinx_ theme I made for readthedocs.org_. It's
 currently in development and includes some rtd variable checks that can be ignored
@@ -58,5 +61,4 @@ I've also set up a basic grunt_ command to update any dependencies and compile t
 TODO
 ====
 * Separate some sass variables at the theme level so you can overwrite some basic colors.
-* Get large tables working better in responsive environments.
 * Add the ability to set a logo.
