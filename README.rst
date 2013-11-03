@@ -28,8 +28,7 @@ Symlink or subtree the ``dist/sphinx_rtd_theme`` repository into your documentat
 ``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
 conf.py file:
 
-.. code-block::
-
+::
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
 
@@ -59,10 +58,12 @@ Set up your environment
 
 1. Install sphinx_ into a virtual environment. You'll need a working python environment.
 
+::
     pip install sphinx
 
 2. Install node, bower and grunt.
 
+::
     // Install node
     brew install node
 
@@ -75,6 +76,7 @@ Set up your environment
 Now that our environment is set up, make sure you're in your virtual environment, go to
 this repository in your terminal and run grunt:
 
+::
     grunt
 
 This default task will do the following **very cool things that make it worth the trouble**.
