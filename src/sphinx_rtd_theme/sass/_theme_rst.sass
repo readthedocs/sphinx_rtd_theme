@@ -1,0 +1,132 @@
+.rst-content
+  // sometimes people provide sizing in their rst, while will break the responsive layout
+  img
+    max-width: 100%
+    height: auto !important
+  .section > img
+    margin-bottom: $base-line-height
+  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning
+    @extend .wy-alert
+    p.last, p.first
+      margin-bottom: 0
+  .admonition-title
+    font-weight: bold
+    @extend .icon
+    @extend .icon-exclamation-sign
+    &:before
+      margin-right: 4px
+  .note
+    @extend .wy-alert.wy-alert-info
+  .hint, .tip, .important
+    @extend .wy-alert.wy-alert-info
+  .error, .danger
+    @extend .wy-alert.wy-alert-danger
+  .warning, .caution, .attention
+    @extend .wy-alert.wy-alert-warning
+  .section ul, ul.simple, ul.stimple ul, .toctree-wrapper ul
+    @extend .wy-plain-list-disc
+  .section ol, ol.simple, ol.arabic
+    @extend .wy-plain-list-decimal
+  .topic-title
+    font-weight: bold
+    margin-bottom: $base-line-height / 2
+  .toc-backref
+    color: $text-color
+  .align-right
+    float: right
+    margin: 0px 0px $base-line-height $base-line-height
+  .align-left
+    float: left
+    margin: 0px $base-line-height $base-line-height 0px
+  h1, h2, h3, h4, h5, h6, dl dt
+    .headerlink
+      display: none
+      visibility: hidden
+      font-size: 14px
+      @extend .icon
+      &:after
+        visibility: visible
+        content: "\f0c1"
+        font-family: fontawesome-webfont
+        display: inline-block
+    &:hover .headerlink
+      display: inline-block
+
+  table.docutils
+    @extend .wy-table
+    @extend .wy-table-bordered-all
+    &:not(.field-list)
+      @extend .wy-table-striped
+  table.docutils.field-list
+    @extend .wy-table
+    border: none
+    td
+      border: none
+    .field-name
+      padding-right: 5px
+      text-align: left
+    .field-body
+      text-align: left
+      padding-left: 0
+  dl
+    dt
+      @extend code
+      display: inline-block
+      margin: $base-line-height / 4 0
+      font-size: 80%
+      line-height: normal
+      background: $gray-lighter
+      color: $gray-dark
+      border: none
+      border-left: solid 3px $gray-light
+      padding: $base-line-height / 4
+      .headerlink
+        color: $text-color
+        font-size: 100% !important
+      .descname, .descclassname, big, em
+        font-size: 100% !important
+        line-height: normal
+    dt:first-child
+      margin-top: 0
+    dd
+      margin-left: $base-line-height
+
+  dl dl
+    dt
+      @extend code
+      display: inline-block
+      margin-bottom: $base-line-height / 4
+      font-size: 80%
+      line-height: normal
+      .headerlink
+        color: $text-color
+        font-size: 100% !important
+  tt
+    font-family: $code-font-family
+    &.literal
+      @extend code
+  blockquote
+    margin-left: $base-line-height
+    line-height: $base-line-height
+    margin-bottom: $base-line-height
+
+
+  #search-results
+    .search li
+      margin-bottom: $base-line-height
+      border-bottom: solid 1px $table_border_color
+      padding-bottom: $base-line-height
+    .search li:first-child
+      border-top: solid 1px $table_border_color
+      padding-top: $base-line-height
+    .search li a
+      font-size: 120%
+      margin-bottom: $base-line-height / 2
+      display: inline-block
+    .context
+      color: $text-medium
+      font-size: 90%
+
+
+
+
