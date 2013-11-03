@@ -57,14 +57,11 @@ of a front-end developer (vs. that of a python developer). That means installing
 Set up your environment
 -----------------------
 
-1. Install sphinx_ into a virtual environment.
+1. Install sphinx_ into a virtual environment. You'll need a working python environment.
 
-..code-block::
-  pip install sphinx
+    pip install sphinx
 
 2. Install node, bower and grunt.
-
-..code-block
 
     // Install node
     brew install node
@@ -77,8 +74,6 @@ Set up your environment
 
 Now that our environment is set up, make sure you're in your virtual environment, go to
 this repository in your terminal and run grunt:
-
-..code-block
 
     grunt
 
