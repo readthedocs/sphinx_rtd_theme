@@ -4,11 +4,16 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
+    open : {
+      dev: {
+        path: 'http://localhost:1919'
+      }
+    },
 
     connect: {
       server: {
         options: {
-          port: 9000,
+          port: 1919,
           base: 'demo_docs/build/html'
         }
       }
@@ -86,8 +91,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask('default', ['bower_update','connect','watch']);
+  grunt.registerTask('default', ['exec:bower_update','clean:src','exec:build_sphinx','connect','open','watch']);
   grunt.registerTask('build', ['clean:dist','compass:dist','copy:dist']);
 
 }
