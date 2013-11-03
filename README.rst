@@ -61,7 +61,13 @@ Set up your environment
 
 .. code-block::
 
-  pip install sphinx
+    pip install sphinx
+
+2. Install sass and compass
+
+.. code-block::
+
+    gem install sass compass
 
 2. Install node, bower and grunt.
 
@@ -95,7 +101,7 @@ When you're done with your edits, you can run ``grunt dist`` to clean out the ol
 files and rebuild a new distribution, compressing the css and cleaning out
 extraneous files.
 
-Dude, come on, just for a theme file?
+Dude, come on, just for a theme?
 -------------------------------------
 
 Frontend development is quickly evolving to a package managed system with sane build tools
