@@ -120,6 +120,7 @@ Edit files in the ``src`` directory only. Primarily you'll want to edit the .htm
 
 TODO
 ====
+* Build real demo docs with lots of rst examples
 * Update to font-awesome 4.0 and have it build from bower, not the copy/paste hack I have now.
 * Separate some sass variables at the theme level so you can overwrite some basic colors.
 * Add the ability to set a logo.
