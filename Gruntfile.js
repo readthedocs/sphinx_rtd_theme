@@ -71,7 +71,7 @@ module.exports = function(grunt) {
       },
       /* watch and see if our javascript files change, or new packages are installed */
       sphinx_update: {
-        files: ['src/sphinx_rtd_theme/static/*.css', 'src/sphinx_rtd_theme/*.js', 'demo_docs/source/*.rst', 'src/sphinx_theme/*.html'],
+        files: ['src/sphinx_rtd_theme/static/*.css', 'src/sphinx_rtd_theme/*.js', 'demo_docs/source/*.rst', 'src/sphinx_rtd_theme/*.html'],
         tasks: ['clean:src','exec:build_sphinx']
       },
       /* watch our files for change, reload */
