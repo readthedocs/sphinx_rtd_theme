@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'src/sphinx_rtd_theme',
-            src: ['**', '!sass/'],
+            src: ['**', '!**/sass/**'],
             dest: 'dist/sphinx_rtd_theme'
           }
         ]
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('default', ['exec:bower_update','clean:src','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['clean:dist','compass:dist','copy:dist']);
+  grunt.registerTask('dist', ['clean:dist','compass:dist','copy:dist']);
 
 }
 
