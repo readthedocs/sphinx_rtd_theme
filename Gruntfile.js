@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     compass: {
       rtd: {
         options: {
-          config: 'config.rb',
+          config: 'compass.rb',
           force: true
         }
       }
