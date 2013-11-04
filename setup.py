@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
-"""`sphinxcontrib-rtd_theme` lives on `Github`_.
+"""`sphinx_rtd_theme` lives on `Github`_.
 
 .. _github: https://www.github.com/snide/sphinx_rtd_theme
 
 """
 from setuptools import setup, find_packages
-from sphinx_rtd_theme import __version__
+
+version = {}
+with open("dist/sphinx_rtd_theme/__init__.py") as fp:
+    exec(fp.read(), version)
 
 try:
     from pip.req import parse_requirements
@@ -22,8 +25,8 @@ else:
 
 
 setup(
-    name='sphinxcontrib_rtd_theme',
-    version=__version__,
+    name='sphinx_rtd_theme',
+    version=version['__version__'],
     url='https://github.com/snide/sphinx_rtd_theme/',
     license='MIT',
     author='Dave Snider',
@@ -32,7 +35,7 @@ setup(
     long_description=open('README.rst').read(),
     zip_safe=False,
     packages=find_packages(),
-    package_data = { "sphinx_rtd_theme": ['*.*', 'static/*.*', 'static/*/*.*'] },
+    package_data = { "dist/sphinx_rtd_theme": ['*.*', 'static/*.*', 'static/*/*.*'] },
     install_requires=['sphinx>=1.1'],
     classifiers=[
         'Development Status :: 3 - Alpha',

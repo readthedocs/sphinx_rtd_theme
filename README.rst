@@ -31,7 +31,7 @@ Download the package or add it to your ``requirements.txt`` file:
 
 .. code-block:: bash
 
-    $ pip install -e git+git://github.com/tony/sphinx_rtd_theme@pypi#egg=sphinx_rtd_theme
+    $ pip install sphinx_rtd_theme
 
 In your ``conf.py`` file:
 
