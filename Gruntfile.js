@@ -56,7 +56,7 @@ module.exports = function(grunt) {
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['sphinx_rtd_theme/**/*'],
+        files: ['sphinx_rtd_theme/**/*', 'demo_docs/**/*'],
         tasks: ['clean:build','exec:build_sphinx']
       },
       /* live-reload the demo_docs if sphinx re-builds */

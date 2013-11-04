@@ -32,18 +32,18 @@ Code test
         "panes": [
             {
             "shell_command": [
-                "echo 'did you know'", 
+                "echo 'did you know'",
                 "echo 'you can inline'"
             ]
-            }, 
+            },
             {
             "shell_command": "echo 'single commands'"
-            }, 
+            },
             "echo 'for panes'"
-        ], 
+        ],
         "window_name": "long form"
         }
-    ], 
+    ],
     "session_name": "shorthands"
     }
 
@@ -62,10 +62,9 @@ The first hexagram is made up of six unbroken lines. These unbroken lines stand 
 
 The power represented by the hexagram is to be interpreted in a dual sense in terms of its action on the universe and of its action on the world of men. In relation to the universe, the hexagram expresses the strong, creative action of the Deity. In relation to the human world, it denotes the creative action of the holy man or sage, of the ruler or leader of men, who through his power awakens and develops their higher nature.
 
-Indices and tables
-==================
+Citation
+========
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Here I am making a citation [1]_
 
+.. [1] This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal repsonsive table stuff.

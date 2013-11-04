@@ -79,6 +79,24 @@
     @extend .wy-table-bordered-all
     &:not(.field-list)
       @extend .wy-table-striped
+
+  table.docutils.citation, table.docutils.footnote
+    background: none
+    border: none
+    color: $gray-light
+    td, tr
+      border: none
+      background-color: transparent !important
+      white-space: normal
+    td.label
+      padding-left: 0
+      padding-right: 0
+      vertical-align: top
+
+  .footnote-reference, .citation-reference
+    vertical-align: super
+    font-size: 90%
+
   table.docutils.field-list
     @extend .wy-table
     border: none
