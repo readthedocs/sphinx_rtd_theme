@@ -60,8 +60,8 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      src: ["demo_docs/build"],
-      dist: ["sphinx_rtd_theme"]
+      src: ['demo_docs/build'],
+      dist: ['sphinx_rtd_theme/*.html', 'sphinx_rtd_theme/static/**','sphinx_rtd_theme/sass/**']
     },
 
     watch: {
