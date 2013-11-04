@@ -14,13 +14,14 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 1919,
-          base: 'demo_docs/build/html'
+          base: 'demo_docs/build/html',
+          livereload: true
         }
       }
     },
 
     compass: {
-      src: {
+      rtd: {
         options: {
           config: 'config.rb',
           force: true
@@ -37,32 +38,28 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      src: ["demo_docs/build"],
-      dist: ["dist/sphinx_rtd_theme"]
+      src: ["demo_docs/build"]
     },
 
     watch: {
       sass: {
-        files: ['src/sphinx_rtd_theme/*.sass', 'bower_components/**/*.sass'],
-        tasks: ['compass:src']
+        files: ['sass/*.sass', 'bower_components/**/*.sass'],
+        tasks: ['compass:rtd']
       },
       /* watch and see if our javascript files change, or new packages are installed */
-      sphinx_update: {
-        files: ['src/sphinx_rtd_theme/static/*.css', 'src/sphinx_rtd_theme/*.js', 'demo_docs/source/*.rst', 'src/sphinx_rtd_theme/*.html'],
-        tasks: ['clean:src','exec:build_sphinx']
+      sphinx: {
+        files: ['sphinx_rtd_theme/**/*'],
+        tasks: ['exec:build_sphinx']
       },
       /* watch our files for change, reload */
       livereload: {
-        files: ['demo_docs/build/html/**/*.html', 'demo_docs/build/html/_static/*.css', 'demo_docs/build/html/_static/*.js'],
-        options: {
-          livereload: true
-        }
-      },
+        files: ['demo_docs/**/*'],
+        options: { livereload: true }
+      }
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -70,8 +67,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask('default', ['exec:bower_update','clean:src','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('dist', ['clean:dist','compass:dist','copy:dist']);
-
+  grunt.registerTask('default', ['exec:bower_update','clean:src','compass:rtd','exec:build_sphinx','connect','open','watch']);
 }
 
