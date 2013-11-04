@@ -6,6 +6,7 @@
 .coverage
 *.DS_Store
 *.sass-cache
+.ruby-version
 bower_components/
 node_modules/
 npm-debug.log

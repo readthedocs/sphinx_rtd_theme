@@ -14,40 +14,25 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 1919,
-          base: 'demo_docs/build/html'
+          base: 'demo_docs/build',
+          livereload: true
         }
       }
     },
 
     compass: {
-      src: {
+      prod: {
         options: {
-          config: 'src/sphinx_rtd_theme/sass/config.rb',
-          basePath: 'src/sphinx_rtd_theme/sass',
+          config: 'compass.rb',
+          environment: 'production',
           force: true
         }
       },
-      dist: {
+      debug: {
         options: {
-          config: 'src/sphinx_rtd_theme/sass/config.rb',
-          basePath: 'src/sphinx_rtd_theme/sass',
-          outputStyle: 'compressed',
+          config: 'compass.rb',
           force: true
         }
-      }
-    },
-
-    // I use this to build the sphinx_rtd_theme available at https://github.com/snide/sphinx_rtd_theme
-    copy: {
-      dist : {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/sphinx_rtd_theme',
-            src: ['**', '!**/sass/**'],
-            dest: 'sphinx_rtd_theme'
-          }
-        ]
       }
     },
 
@@ -56,37 +41,33 @@ module.exports = function(grunt) {
         cmd: 'bower update'
       },
       build_sphinx: {
-        cmd: 'cd demo_docs && make html'
+        cmd: 'sphinx-build demo_docs/source demo_docs/build'
       }
     },
     clean: {
-      src: ['demo_docs/build'],
-      // Delete everything but __init__.py
-      dist: ['sphinx_rtd_theme/*', 'sphinx_rtd_theme/static/**','sphinx_rtd_theme/sass/**', '!sphinx_rtd_theme/__init__.py']
+      build: ["demo_docs/build"]
     },
 
     watch: {
+      /* Compile sass changes into theme directory */
       sass: {
-        files: ['src/sphinx_rtd_theme/*.sass', 'bower_components/**/*.sass'],
-        tasks: ['compass:src']
+        files: ['sass/*.sass', 'bower_components/**/*.sass'],
+        tasks: ['compass:debug']
       },
-      /* watch and see if our javascript files change, or new packages are installed */
-      sphinx_update: {
-        files: ['src/sphinx_rtd_theme/static/*.css', 'src/sphinx_rtd_theme/*.js', 'demo_docs/source/*.rst', 'src/sphinx_rtd_theme/*.html'],
-        tasks: ['clean:src','exec:build_sphinx']
+      /* Changes in theme dir rebuild sphinx */
+      sphinx: {
+        files: ['sphinx_rtd_theme/**/*'],
+        tasks: ['exec:build_sphinx']
       },
-      /* watch our files for change, reload */
+      /* live-reload the demo_docs if sphinx re-builds */
       livereload: {
-        files: ['demo_docs/build/html/**/*.html', 'demo_docs/build/html/_static/*.css', 'demo_docs/build/html/_static/*.js'],
-        options: {
-          livereload: true
-        }
-      },
+        files: ['demo_docs/build/**/*'],
+        options: { livereload: true }
+      }
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -94,8 +75,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask('default', ['exec:bower_update','clean:src','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('dist', ['clean:dist','compass:dist','copy:dist']);
-
+  grunt.registerTask('default', ['exec:bower_update','clean:build','compass:debug','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean:build','compass:prod','exec:build_sphinx']);
 }
 
