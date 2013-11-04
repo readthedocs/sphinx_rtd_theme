@@ -61,7 +61,8 @@ module.exports = function(grunt) {
     },
     clean: {
       src: ['demo_docs/build'],
-      dist: ['sphinx_rtd_theme/*.html', 'sphinx_rtd_theme/static/**','sphinx_rtd_theme/sass/**']
+      // Delete everything but __init__.py
+      dist: ['sphinx_rtd_theme/*', 'sphinx_rtd_theme/static/**','sphinx_rtd_theme/sass/**', '!sphinx_rtd_theme/__init__.py']
     },
 
     watch: {
