@@ -1,8 +1,12 @@
 .rst-content
   // sometimes people provide sizing in their rst, while will break the responsive layout
+  // - the role/directive does. there is no workaround for that. it's true the output of
+  //   rst is not aiding to designers, however it can be depended on that ::image, ::figure
+  //   and ::aafig is going to output dimensions (either via style="" or width/height in html)
   img
-    max-width: 100%
-    height: auto !important
+    max-width: none
+    // max-width: 100% // causes img in ::sidebar to take up space
+    // height: auto !important // makes ::aafig directives stretch
   .section > img
     margin-bottom: $base-line-height
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning
@@ -68,9 +72,72 @@
     .field-body
       text-align: left
       padding-left: 0
+  /* -- code displays ---------------------------------------------------------
+
+  div[class^='highlight']
+    // override width: 100% from another sass file
+    // 100% makes code-block:: that up .sidebar space
+    width: auto
+
+  pre
+    overflow: auto
+    overflow-y: hidden
+    /* fixes display issues on Chrome browsers
+
+  td.linenos pre
+    padding: 5px 0px
+    border: 0
+    background-color: transparent
+    color: #aaa
+
+  table.highlighttable
+    margin-left: 0.5em
+    td
+      padding: 0 0.5em 0 0.5em
+
+  tt
+    &.descname
+      background-color: transparent
+      font-weight: bold
+      font-size: 1.2em
+    &.descclassname
+      background-color: transparent
+    &.xref
+      background-color: transparent
+      font-weight: bold
+
+  a tt
+    background-color: transparent
+    font-weight: bold
+
+  h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt
+    background-color: transparent
+
+  .viewcode-link
+    float: right
+
+  .viewcode-back
+    float: right
+    font-family: sans-serif
+
+  div.viewcode-block:target
+    margin: -1px -10px
+    padding: 0 10px
+
+  /* -- sidebars --------------------------------------------------------------
+
+  div.sidebar
+    margin: 0 0 0.5em 1em
+    padding: 7px 7px 0 7px
+    width: 40%
+    float: right
+
+  p.sidebar-title
+    font-weight: bold
+
+  /* -- until we find best place to apply -------------------------------------
   dl
     dt
-      @extend code
       display: inline-block
       margin: $base-line-height / 4 0
       font-size: 80%
@@ -93,7 +160,6 @@
 
   dl dl
     dt
-      @extend code
       display: inline-block
       margin-bottom: $base-line-height / 4
       font-size: 80%
