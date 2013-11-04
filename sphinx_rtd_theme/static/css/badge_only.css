@@ -1,61 +1,54 @@
-/*
-Syntax error: File to import not found or unreadable: wyrm_core/wy_variables.
-              Load paths:
-                /home/ivo/code/rtd_theme/sass
-                /home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/blueprint/stylesheets
-                /home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets
-                /home/ivo/code/rtd_theme/sphinx_rtd_theme/static/bower_components/bourbon/app/assets/stylesheets
-                /home/ivo/code/rtd_theme/sphinx_rtd_theme/static/bower_components/neat/app/assets/stylesheets
-                /home/ivo/code/rtd_theme/sphinx_rtd_theme/static/bower_components/wyrm/sass
-                Compass::SpriteImporter
-        on line 8 of /home/ivo/code/rtd_theme/sass/badge_only.sass
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-Backtrace:
-/home/ivo/code/rtd_theme/sass/badge_only.sass:8
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/import_node.rb:45:in `import'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/import_node.rb:28:in `imported_file'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/import_node.rb:37:in `css_import?'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/root_node.rb:20:in `render'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:315:in `_render'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:262:in `render'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/update_project.rb:45:in `perform'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:44:in `call'
-/home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
-/home/ivo/.rbenv/versions/1.9.3-p448/bin/compass:23:in `load'
-/home/ivo/.rbenv/versions/1.9.3-p448/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: wyrm_core/wy_variables.\A               Load paths:\A                 /home/ivo/code/rtd_theme/sass\A                 /home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /home/ivo/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 /home/ivo/code/rtd_theme/sphinx_rtd_theme/static/bower_components/bourbon/app/assets/stylesheets\A                 /home/ivo/code/rtd_theme/sphinx_rtd_theme/static/bower_components/neat/app/assets/stylesheets\A                 /home/ivo/code/rtd_theme/sphinx_rtd_theme/static/bower_components/wyrm/sass\A                 Compass::SpriteImporter\A         on line 8 of /home/ivo/code/rtd_theme/sass/badge_only.sass"; }
+.font-smooth, .icon:before { -webkit-font-smoothing: antialiased; }
+
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after { display: table; content: ""; }
+.clearfix:after { clear: both; }
+
+@font-face { font-family: fontawesome-webfont; font-weight: normal; font-style: normal; src: url("font/fontawesome_webfont.eot"); src: url("font/fontawesome_webfont.eot?#iefix") format("embedded-opentype"), url("font/fontawesome_webfont.woff") format("woff"), url("font/fontawesome_webfont.ttf") format("truetype"), url("font/fontawesome_webfont.svg#fontawesome-webfont") format("svg"); }
+
+.icon:before { display: inline-block; font-family: fontawesome-webfont; font-style: normal; font-weight: normal; line-height: 1; text-decoration: inherit; }
+
+a .icon { display: inline-block; text-decoration: inherit; }
+
+li .icon { display: inline-block; }
+li .icon-large:before, li .icon-large:before { /* 1.5 increased font size for icon-large * 1.25 width */ width: 1.875em; }
+
+ul.icons { list-style-type: none; margin-left: 2em; text-indent: -0.8em; }
+ul.icons li .icon { width: 0.8em; }
+ul.icons li .icon-large:before, ul.icons li .icon-large:before { /* 1.5 increased font size for icon-large * 1.25 width */ vertical-align: baseline; }
+
+.icon-book:before { content: "\f02d"; }
+
+.icon-caret-down:before { content: "\f0d7"; }
+
+.icon-caret-up:before { content: "\f0d8"; }
+
+.icon-caret-left:before { content: "\f0d9"; }
+
+.icon-caret-right:before { content: "\f0da"; }
+
+.rst-versions { position: fixed; bottom: 0; left: 0; width: 300px; color: #fcfcfc; background: #1f1d1d; border-top: solid 10px #343131; font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif; z-index: 400; }
+.rst-versions a { color: #2980b9; text-decoration: none; }
+.rst-versions .rst-badge-small { display: none; }
+.rst-versions .rst-current-version { padding: 12px; background-color: #272525; display: block; text-align: right; font-size: 90%; cursor: pointer; color: #27ae60; *zoom: 1; }
+.rst-versions .rst-current-version:before, .rst-versions .rst-current-version:after { display: table; content: ""; }
+.rst-versions .rst-current-version:after { clear: both; }
+.rst-versions .rst-current-version .icon { color: #fcfcfc; }
+.rst-versions .rst-current-version .icon-book { float: left; }
+.rst-versions .rst-current-version.rst-out-of-date { background-color: #e74c3c; color: white; }
+.rst-versions.shift-up .rst-other-versions { display: block; }
+.rst-versions .rst-other-versions { font-size: 90%; padding: 12px; color: gray; display: none; }
+.rst-versions .rst-other-versions hr { display: block; height: 1px; border: 0; margin: 20px 0; padding: 0; border-top: solid 1px #413d3d; }
+.rst-versions .rst-other-versions dd { display: inline-block; margin: 0; }
+.rst-versions .rst-other-versions dd a { display: inline-block; padding: 6px; color: #fcfcfc; }
+.rst-versions.rst-badge { width: auto; bottom: 20px; right: 20px; left: auto; border: none; max-width: 300px; }
+.rst-versions.rst-badge .icon-book { float: none; }
+.rst-versions.rst-badge.shift-up .rst-current-version { text-align: right; }
+.rst-versions.rst-badge.shift-up .rst-current-version .icon-book { float: left; }
+.rst-versions.rst-badge .rst-current-version { width: auto; height: 30px; line-height: 30px; padding: 0 6px; display: block; text-align: center; }
+
+@media screen and (max-width: 768px) { .rst-versions { width: 85%; display: none; }
+  .rst-versions.shift { display: block; }
+  img { width: 100%; height: auto; } }
