@@ -119,26 +119,12 @@ This default task will do the following **very cool things that make it worth th
 4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
    or .css files.
 
-When you're done with your edits, you can run ``grunt dist`` to clean out the old
+Before you send a Pull Request
+------------------------------
+
+When you're done with your edits, you can run ``grunt build`` to clean out the old
 files and rebuild a new distribution, compressing the css and cleaning out
-extraneous files.
-
-Dude, come on, just for a theme?
--------------------------------------
-
-Frontend development is quickly evolving to a package managed system with sane build tools
-that are separate from the backend.
-
-Working with a staticly generated system like sphinx is a pain in the ass for a designer because you
-need to do so much rebuilding. Tools like grunt_ and sass_ really, really help make my life easier.
-While I know you might be used to the simplicity of other sphinx themes that are just built
-in CSS, the majority of the sphinx_rtd_theme comes from other libraries and I want to avoid
-copy / pasting code in here just to build it.
-
-OK fine, what files should I be editing then?
----------------------------------------------
-
-Edit files in the ``src`` directory only. Primarily you'll want to edit the .html and .sass files.
+extraneous files. Please do this before you send in a PR.
 
 TODO
 ====

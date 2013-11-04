@@ -21,14 +21,14 @@ module.exports = function(grunt) {
     },
 
     compass: {
-      prod: {
+      build: {
         options: {
           config: 'compass.rb',
           environment: 'production',
           force: true
         }
       },
-      debug: {
+      dev: {
         options: {
           config: 'compass.rb',
           force: true
@@ -52,12 +52,12 @@ module.exports = function(grunt) {
       /* Compile sass changes into theme directory */
       sass: {
         files: ['sass/*.sass', 'bower_components/**/*.sass'],
-        tasks: ['compass:debug']
+        tasks: ['compass:dev']
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
         files: ['sphinx_rtd_theme/**/*'],
-        tasks: ['exec:build_sphinx']
+        tasks: ['clean:build','exec:build_sphinx']
       },
       /* live-reload the demo_docs if sphinx re-builds */
       livereload: {
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask('default', ['exec:bower_update','clean:build','compass:debug','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['exec:bower_update','clean:build','compass:prod','exec:build_sphinx']);
+  grunt.registerTask('default', ['exec:bower_update','clean:build','compass:dev','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean:build','compass:build','exec:build_sphinx']);
 }
 
