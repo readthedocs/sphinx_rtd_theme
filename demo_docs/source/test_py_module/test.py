@@ -18,3 +18,27 @@ class Foo:
 
         self.spam = 4
         """Docstring for instance attribute spam."""
+
+    def add(self, val1, val2):
+        """Return the added values.
+
+        :param val1: First number to add.
+        :type val1: int
+        :param val2: Second number to add.
+        :type val2: int
+        :rtype: int
+
+        """
+
+        return val1 + val2
+
+    def capitalize(self, myvalue):
+        """Return a string as uppercase.
+
+        :param myvalue: String to change
+        :type myvalue: string
+        :rtype: string
+
+        """
+
+        return myvalue.upper()
