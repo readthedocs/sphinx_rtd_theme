@@ -22,32 +22,9 @@ module.exports = function(grunt) {
     compass: {
       src: {
         options: {
-          config: 'src/sphinx_rtd_theme/sass/config.rb',
-          basePath: 'src/sphinx_rtd_theme/sass',
+          config: 'config.rb',
           force: true
         }
-      },
-      dist: {
-        options: {
-          config: 'src/sphinx_rtd_theme/sass/config.rb',
-          basePath: 'src/sphinx_rtd_theme/sass',
-          outputStyle: 'compressed',
-          force: true
-        }
-      }
-    },
-
-    // I use this to build the sphinx_rtd_theme available at https://github.com/snide/sphinx_rtd_theme
-    copy: {
-      dist : {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/sphinx_rtd_theme',
-            src: ['**', '!**/sass/**'],
-            dest: 'dist/sphinx_rtd_theme'
-          }
-        ]
       }
     },
 
