@@ -45,7 +45,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/sphinx_rtd_theme',
             src: ['**', '!**/sass/**'],
-            dest: 'dist/sphinx_rtd_theme'
+            dest: 'sphinx_rtd_theme'
           }
         ]
       }
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
     },
     clean: {
       src: ["demo_docs/build"],
-      dist: ["dist/sphinx_rtd_theme"]
+      dist: ["sphinx_rtd_theme"]
     },
 
     watch: {
