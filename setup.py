@@ -4,22 +4,8 @@
 .. _github: https://www.github.com/snide/sphinx_rtd_theme
 
 """
-from setuptools import setup, find_packages
+from setuptools import setup
 from sphinx_rtd_theme import __version__
-
-
-try:
-    from pip.req import parse_requirements
-except ImportError:
-    def requirements(f):
-        reqs = open(f, 'r').read().splitlines()
-        reqs = [r for r in reqs if not r.strip().startswith('#')]
-        return reqs
-else:
-    def requirements(f):
-        install_reqs = parse_requirements(f)
-        reqs = [str(r.req) for r in install_reqs]
-        return reqs
 
 
 setup(
@@ -32,9 +18,16 @@ setup(
     description='ReadTheDocs.org theme for Sphinx, 2013 version.',
     long_description=open('README.rst').read(),
     zip_safe=False,
-    packages=find_packages(),
-    package_data={"dist/sphinx_rtd_theme": ['*.*', 'static/*.*', 'static/*/*.*']},
-    install_requires=['sphinx>=1.1'],
+    packages=['sphinx_rtd_theme'],
+    package_data={'sphinx_rtd_theme': [
+        'theme.conf',
+        '*.html',
+        'static/css/*.css',
+        'static/js/*.js',
+        'static/font/*.*'
+    ]},
+    include_package_data=True,
+    install_requires=open('requirements.txt').read().splitlines(),
     classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',
