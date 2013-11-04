@@ -21,7 +21,14 @@ module.exports = function(grunt) {
     },
 
     compass: {
-      rtd: {
+      prod: {
+        options: {
+          config: 'compass.rb',
+          environment: 'production',
+          force: true
+        }
+      },
+      debug: {
         options: {
           config: 'compass.rb',
           force: true
@@ -67,6 +74,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask('default', ['exec:bower_update','clean:src','compass:rtd','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('default', ['exec:bower_update','clean:src','compass:debug','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean:src','compass:prod','exec:build_sphinx']);
 }
 
