@@ -24,11 +24,33 @@ if you're just trying to use it on your project outside of that site.
 Installation
 ============
 
-Symlink or subtree the ``dist/sphinx_rtd_theme`` repository into your documentation at
+Via package
+-----------
+
+Download the package or add it to your ``requirements.txt`` file:
+
+.. code-block:: bash
+
+    $ pip install -e git+git://github.com/tony/sphinx_rtd_theme@pypi#egg=sphinx_rtd_theme
+
+In your ``conf.py`` file:
+
+.. code-block:: python
+
+    import sphinx_rtd_theme
+
+    html_theme = "sphinx_rtd_theme"
+
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+Via git or download
+-------------------
+
+Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
 ``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
 conf.py file:
 
-.. code-block::
+.. code-block:: python
 
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
