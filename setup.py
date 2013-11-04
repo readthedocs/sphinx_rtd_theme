@@ -7,7 +7,7 @@
 from setuptools import setup, find_packages
 
 version = {}
-with open("dist/sphinx_rtd_theme/__init__.py") as fp:
+with open("sphinx_rtd_theme/__init__.py") as fp:
     exec(fp.read(), version)
 
 try:
@@ -35,7 +35,7 @@ setup(
     long_description=open('README.rst').read(),
     zip_safe=False,
     packages=find_packages(),
-    package_data = { "dist/sphinx_rtd_theme": ['*.*', 'static/*.*', 'static/*/*.*'] },
+    package_data = { "sphinx_rtd_theme": ['*.*', 'static/*.*', 'static/*/*.*'] },
     install_requires=['sphinx>=1.1'],
     classifiers=[
         'Development Status :: 3 - Alpha',
