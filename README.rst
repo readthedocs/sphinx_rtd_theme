@@ -29,13 +29,13 @@ Via package
 
 Download the package or add it to your ``requirements.txt`` file:
 
-.. code-block:: bash
+.. code:: bash
 
     $ pip install sphinx_rtd_theme
 
 In your ``conf.py`` file:
 
-.. code-block:: python
+.. code:: python
 
     import sphinx_rtd_theme
 
@@ -50,7 +50,7 @@ Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into you
 ``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
 conf.py file:
 
-.. code-block:: python
+.. code:: python
 
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
@@ -81,19 +81,19 @@ Set up your environment
 
 1. Install sphinx_ into a virtual environment.
 
-.. code-block::
+.. code::
 
     pip install sphinx
 
 2. Install sass and compass
 
-.. code-block::
+.. code::
 
     gem install sass compass
 
 2. Install node, bower and grunt.
 
-.. code-block::
+.. code::
 
     // Install node
     brew install node
@@ -107,7 +107,7 @@ Set up your environment
 Now that our environment is set up, make sure you're in your virtual environment, go to
 this repository in your terminal and run grunt:
 
-.. code-block::
+.. code::
 
     grunt
 
