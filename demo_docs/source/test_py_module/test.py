@@ -12,7 +12,15 @@ class Foo:
     baz = 2
     """Docstring for class attribute Foo.baz."""
 
-    def __init__(self):
+    def __init__(self, qux, spam=False):
+        """Start the Foo.
+
+        :param qux: The first argument to initialize class.
+        :type qux: string
+        :param spam: Spam me yes or no...
+        :type spam: bool
+
+        """
         #: Doc comment for instance attribute qux.
         self.qux = 3
 
