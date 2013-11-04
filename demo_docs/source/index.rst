@@ -9,9 +9,7 @@ Welcome to Sphinx RTD theme demo's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
-
-test
+    :maxdepth: 2
 
 API Test
 ========
