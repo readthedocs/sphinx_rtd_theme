@@ -6,5 +6,6 @@
 .coverage
 *.DS_Store
 *.sass-cache
+.ruby_version
 bower_components/
 node_modules/
