@@ -98,11 +98,11 @@ Set up your environment
     // Install node
     brew install node
 
-    // Install node package manager
-    curl https://npmjs.org/install.sh | sh
-
     // Install bower and grunt
     npm install -g bower grunt-cli
+
+    // Now that everything is installed, let's install the theme dependecies.
+    npm install
 
 Now that our environment is set up, make sure you're in your virtual environment, go to
 this repository in your terminal and run grunt:
