@@ -5169,13 +5169,14 @@ footer p {
 /* line 134, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content dl tt.descname, .rst-content dl tt.descclassname {
   background-color: transparent;
+  font-size: 100% !important;
 }
-/* line 136, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 137, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content dl tt.descname {
   font-weight: bold;
   padding-right: 0.08em;
 }
-/* line 141, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 142, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content dl dl dt {
   display: inline-block;
   margin-bottom: 6px;
@@ -5183,58 +5184,58 @@ footer p {
   background: none;
   border: none;
 }
-/* line 148, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 149, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content dl dl dt .headerlink {
   color: #404040;
   font-size: 100% !important;
 }
-/* line 156, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 157, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content tt {
   background-color: #f3f6f6;
   font-family: "Incosolata", "Consolata", "Monaco", monospace;
   font-size: 90%;
   padding: 1px, 2px;
 }
-/* line 162, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 163, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content tt big, .rst-content tt em {
   font-size: 100% !important;
   line-height: normal;
 }
-/* line 166, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 167, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content tt .xref, a .rst-content tt {
   font-weight: bold;
 }
-/* line 169, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 170, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content blockquote {
   margin-left: 24px;
   line-height: 24px;
   margin-bottom: 24px;
 }
-/* line 175, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 176, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content #search-results .search li {
   margin-bottom: 24px;
   border-bottom: solid 1px #e1e4e5;
   padding-bottom: 24px;
 }
-/* line 179, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 180, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content #search-results .search li:first-child {
   border-top: solid 1px #e1e4e5;
   padding-top: 24px;
 }
-/* line 182, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 183, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content #search-results .search li a {
   font-size: 120%;
   margin-bottom: 12px;
   display: inline-block;
 }
-/* line 186, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+/* line 187, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
 .rst-content #search-results .context {
   color: gray;
   font-size: 90%;
 }
 
 @media screen and (max-width: 480px) {
-  /* line 192, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
+  /* line 193, /home/tony/workspace/sphinx_rtd_theme/sass/_theme_rst.sass */
   .rst-content .sidebar {
     width: 100%;
   }
