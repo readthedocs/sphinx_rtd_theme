@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Test Module for sphinx_rtd_theme."""
 
+
 class Foo:
 
     r"""Docstring for class Foo.
