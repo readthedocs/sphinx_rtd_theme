@@ -75,3 +75,29 @@ class Foo:
         """
 
         return myvalue.upper()
+
+    def another_function(self, a, b, **kwargs):
+        """
+        Here is another function.
+
+        :param a: The number of green hats you own.
+        :type a: int
+
+        :param b: The number of non-green hats you own.
+        :type b: int
+
+        :param kwargs: Additional keyword arguments. Each keyword parameter
+                       should specify the name of your favorite cuisine.
+                       The values should be floats, specifying the mean price
+                       of your favorite dish in that cooking style.
+        :type kwargs: float
+
+        :returns: A 2-tuple.  The first element is the mean price of all dishes
+                  across cuisines.  The second element is the total number of
+                  hats you own: :math:`a + b`.
+        :rtype: tuple
+
+        :raises ValueError: When ``a`` is not an integer.
+
+        """
+        return sum(kwargs.values()) / len(kwargs), a + b
