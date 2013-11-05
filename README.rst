@@ -72,8 +72,8 @@ Contributing or modifying the theme
 The sphinx_rtd_theme is primarily a sass_ project that requires a few other sass libraries. I'm
 using bower_ to manage these dependencies and compass_ to build the css. The good news is
 I have a very nice set of grunt_ operations that will not only load these dependecies, but watch
-for changes, rebuild the sphinx demo docs and build a distributable version of the theme in the ``dist``
-directory. The bad news is this means you'll need to set up your environment similar to that
+for changes, rebuild the sphinx demo docs and build a distributable version of the theme.
+The bad news is this means you'll need to set up your environment similar to that
 of a front-end developer (vs. that of a python developer). That means installing node and ruby.
 
 Set up your environment
