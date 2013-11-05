@@ -108,12 +108,12 @@
     .field-body
       text-align: left
       padding-left: 0
+  // This is seen in sphinx.ext.autodoc output
   dl
     dt
-      @extend code
       display: inline-block
       margin: $base-line-height / 4 0
-      font-size: 80%
+      font-size: 90%
       line-height: normal
       background: $gray-lighter
       color: $gray-dark
@@ -123,33 +123,60 @@
       .headerlink
         color: $text-color
         font-size: 100% !important
-      .descname, .descclassname, big, em
-        font-size: 100% !important
-        line-height: normal
+
+
     dt:first-child
       margin-top: 0
     dd
       margin-left: $base-line-height
 
+    tt // for sphinx.ext.autodoc generated content
+      &.descname, &.descclassname
+        background-color: transparent
+        border: none
+        padding: 0
+        font-size: 100% !important
+      &.descname
+        font-weight: bold
+
   dl dl
     dt
-      @extend code
       display: inline-block
       margin-bottom: $base-line-height / 4
-      font-size: 80%
-      line-height: normal
+      font-size: 90%
+      background: none
+      border: none
+
       .headerlink
         color: $text-color
         font-size: 100% !important
+
+  // reST for ``inline code`` statements
+  // This does a few things to make inline code easier to read
+  // Even though the font size of $code-font-family is same as normal font
+  // it looks huge compared to it, so lets trial with it @ 90%.
   tt
+    white-space: nowrap
+    max-width: 100%
+    background: $white
+    border: solid 1px $table-border-color
+    color: $text-color
+    font-size: 80%
+    padding: 0 5px
     font-family: $code-font-family
-    &.literal
-      @extend code
+    overflow-x: auto
+
+    big, em
+      font-size: 100% !important
+      line-height: normal
+
+    .xref, a &
+      font-weight: bold
+
   blockquote
     margin-left: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
-
 
   #search-results
     .search li
