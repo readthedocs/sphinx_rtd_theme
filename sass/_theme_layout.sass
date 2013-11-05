@@ -221,8 +221,27 @@ footer
   color: $gray-light
   p
     margin-bottom: $base-line-height / 2
+
 .rst-footer-buttons
   +clearfix
+
+#search-results
+  .search li
+    margin-bottom: $base-line-height
+    border-bottom: solid 1px $table_border_color
+    padding-bottom: $base-line-height
+  .search li:first-child
+    border-top: solid 1px $table_border_color
+    padding-top: $base-line-height
+  .search li a
+    font-size: 120%
+    margin-bottom: $base-line-height / 2
+    display: inline-block
+  .context
+    color: $text-medium
+    font-size: 90%
+
+
 +media($tablet)
   .wy-body-for-nav
     background: $section-background-color

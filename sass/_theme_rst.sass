@@ -1,10 +1,36 @@
+// -------------------------------------------------------------------------------------------------------------------
+// CONTRIBUTORS, PLEASE READ THIS!
+// -------------------------------------------------------------------------------------------------------------------
+// Couple things...
+//    1. Lots of this @extends from wyrm_core/_type.sass (http://www.github.com/snide/wyrm/.
+//        * Try not to replace any @extends code. It's pretty generic stuff meant to work together.
+//        * That said, know that I'm very unlikely to accept PRs from wyrm just to change style here.
+//    2. I plan to remove the !importants in here. Part of it is due to lazyness, part to sphinx's fondness for nesting.
+//    3. Try to use variables from wyrm_core/wy_variables.sass. Notable are...
+//        * $base-line-height // All margins, padding and line-height should use this in .25 increments.
+//        * $text-color, $text-light, #text-dark...etc
+//        * $base-font-family, $custom-font-family, $code-font-family
+//    4. If you have changes for mobile/tablet, put them at the bottom of the sass file.
+// --------------------------------------------------------------------------------------------------------------------
+
 .rst-content
-  // sometimes people provide sizing in their rst, while will break the responsive layout
+  // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
   img
     max-width: 100%
     height: auto !important
+
+  // Usually it's a good idea to give images some space.
   .section > img
     margin-bottom: $base-line-height
+
+  // For the most part, its safe to assume that sphinx wants you to use a blockquote as an indent. It gets
+  // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
+  blockquote
+    margin-left: $base-line-height
+    line-height: $base-line-height
+    margin-bottom: $base-line-height
+
+  // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning
     @extend .wy-alert
     p.last, p.first
@@ -27,6 +53,8 @@
     @extend .wy-plain-list-disc
   .section ol, ol.simple, ol.arabic
     @extend .wy-plain-list-decimal
+
+  // Generics handling of headings and toc stuff.
   .topic-title
     font-weight: bold
     margin-bottom: $base-line-height / 2
@@ -38,6 +66,8 @@
   .align-left
     float: left
     margin: 0px $base-line-height $base-line-height 0px
+
+  // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
   h1, h2, h3, h4, h5, h6, dl dt
     .headerlink
       display: none
@@ -52,6 +82,7 @@
     &:hover .headerlink
       display: inline-block
 
+  // Sidebar content. You'll see at the bottom of this file I change it in mobile.
   .sidebar
     float: right
     width: 40%
@@ -60,6 +91,7 @@
     padding: $base-line-height
     background: $table-stripe-color
     border: solid 1px $table-border-color
+    // Sidebar content is usually less relevant, so adjust the margins and sizes.
     p, ul, dl
       font-size: 90%
     .last
@@ -74,12 +106,13 @@
       margin-bottom: $base-line-height
       font-size: 100%
 
-  table.docutils
-    @extend .wy-table
-    @extend .wy-table-bordered-all
-    &:not(.field-list)
-      @extend .wy-table-striped
+  // These are the little citation links [1] that show up within paragraphs.
+  .footnote-reference, .citation-reference
+    vertical-align: super
+    font-size: 90%
 
+  // Tables! Sphinx LOVES TABLES. Most of wyrm assumes you're only going to use a table as a table
+  // so I have to write a bunch of unique stuff for Sphinx to style them up differently like it's 2003.
   table.docutils.citation, table.docutils.footnote
     background: none
     border: none
@@ -92,11 +125,12 @@
       padding-left: 0
       padding-right: 0
       vertical-align: top
-
-  .footnote-reference, .citation-reference
-    vertical-align: super
-    font-size: 90%
-
+  table.docutils
+    @extend .wy-table
+    @extend .wy-table-bordered-all
+    &:not(.field-list)
+      @extend .wy-table-striped
+  // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.docutils.field-list
     @extend .wy-table
     border: none
@@ -108,65 +142,69 @@
     .field-body
       text-align: left
       padding-left: 0
+
+  // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
+  tt
+    @extend code
+    color: $black
+    big, em
+      font-size: 100% !important
+      line-height: normal
+
+    .xref, a &
+      font-weight: bold
+
+  // This is what Sphinx spits out for it's autodocs. Depending upon what language the person is referencing
+  // these things usually have a class of "method" or "class" or something similar, but really who knows.
+  // Sphinx doesn't give me a generic class on these, so unfortunately I have to apply it to the root dl.
+  // This makes me terribly unhappy and makes this code very nesty. Unfortunately I've seen hand-written docs
+  // that output similar, but not quite the same nesting so this is really the best we can do.
   dl
+    // This would be the equivilant of a .. class::
     dt
-      @extend code
       display: inline-block
       margin: $base-line-height / 4 0
-      font-size: 80%
+      font-size: 90%
       line-height: normal
-      background: $gray-lighter
-      color: $gray-dark
-      border: none
-      border-left: solid 3px $gray-light
+      background: lighten($blue, 50%)
+      color: $blue
+      border-top: solid 3px lighten($blue, 20%)
       padding: $base-line-height / 4
+      &:before
+        color: lighten($blue, 20%)
       .headerlink
         color: $text-color
         font-size: 100% !important
-      .descname, .descclassname, big, em
+    // And this would be the .. method::
+    dl dt
+      margin-bottom: $base-line-height / 4
+      border: none
+      border-left: solid 3px hsl(0,0%,80%)
+      background: hsl(0,0%,94%)
+      color: $text-medium
+      .headerlink
+        color: $text-color
         font-size: 100% !important
-        line-height: normal
-    dt:first-child
-      margin-top: 0
+    // This is the description for the class/method.
     dd
       margin-left: $base-line-height
-
-  dl dl
-    dt
-      @extend code
-      display: inline-block
-      margin-bottom: $base-line-height / 4
-      font-size: 80%
-      line-height: normal
-      .headerlink
-        color: $text-color
+    // Most of the content within these dls are one liners, so I halve the normal margins.
+    p, table, ul, ol
+      margin-bottom: $base-line-height / 2 !important
+    dt:first-child
+      margin-top: 0
+    // Since dts get the callout style, we treat this less as callouts.
+    tt
+      font-weight: bold
+      &.descname, &.descclassname
+        background-color: transparent
+        border: none
+        padding: 0
         font-size: 100% !important
-  tt
-    font-family: $code-font-family
-    &.literal
-      @extend code
-  blockquote
-    margin-left: $base-line-height
-    line-height: $base-line-height
-    margin-bottom: $base-line-height
+      &.descname
+        font-weight: bold
 
-
-  #search-results
-    .search li
-      margin-bottom: $base-line-height
-      border-bottom: solid 1px $table_border_color
-      padding-bottom: $base-line-height
-    .search li:first-child
-      border-top: solid 1px $table_border_color
-      padding-top: $base-line-height
-    .search li a
-      font-size: 120%
-      margin-bottom: $base-line-height / 2
-      display: inline-block
-    .context
-      color: $text-medium
-      font-size: 90%
-
+// Mobile specific
 +media($mobile)
   .rst-content
     .sidebar
