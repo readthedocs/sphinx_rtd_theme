@@ -32,6 +32,30 @@ API Test
     :private-members:
     :special-members:
 
+Optional parameter args
+-----------------------
+
+At this point optional parameters `cannot be generated from code`_.
+However, some projects will manually do it, like so:
+
+This example comes from `django-payments module docs`_.
+
+.. class:: payments.dotpay.DotpayProvider(seller_id, pin[, channel=0[, lock=False], lang='pl'])
+
+   This backend implements payments using a popular Polish gateway, `Dotpay.pl <http://www.dotpay.pl>`_.
+
+   Due to API limitations there is no support for transferring purchased items.
+
+
+   :param seller_id: Seller ID assigned by Dotpay
+   :param pin: PIN assigned by Dotpay
+   :param channel: Default payment channel (consult reference guide)
+   :param lang: UI language
+   :param lock: Whether to disable channels other than the default selected above
+
+.. _cannot be generated from code: https://groups.google.com/forum/#!topic/sphinx-users/_qfsVT5Vxpw
+.. _django-payments module docs: http://django-payments.readthedocs.org/en/latest/modules.html#payments.authorizenet.AuthorizeNetProvider
+
 Code test
 =========
 
@@ -72,6 +96,18 @@ Sidebar
 The first hexagram is made up of six unbroken lines. These unbroken lines stand for the primal power, which is light-giving, active, strong, and of the spirit. The hexagram is consistently strong in character, and since it is without weakness, its essence is power or energy. Its image is heaven. Its energy is represented as unrestricted by any fixed conditions in space and is therefore conceived of as motion. Time is regarded as the basis of this motion. Thus the hexagram includes also the power of time and the power of persisting in time, that is, duration.
 
 The power represented by the hexagram is to be interpreted in a dual sense in terms of its action on the universe and of its action on the world of men. In relation to the universe, the hexagram expresses the strong, creative action of the Deity. In relation to the human world, it denotes the creative action of the holy man or sage, of the ruler or leader of men, who through his power awakens and develops their higher nature.
+
+Code with Sidebar
+=================
+
+.. sidebar:: A code example
+
+    With a sidebar on the right.
+
+.. literalinclude:: test_py_module/test.py
+    :language: python
+    :linenos:
+    :lines: 1-40
 
 Boxes
 =====
