@@ -73,6 +73,18 @@ The first hexagram is made up of six unbroken lines. These unbroken lines stand 
 
 The power represented by the hexagram is to be interpreted in a dual sense in terms of its action on the universe and of its action on the world of men. In relation to the universe, the hexagram expresses the strong, creative action of the Deity. In relation to the human world, it denotes the creative action of the holy man or sage, of the ruler or leader of men, who through his power awakens and develops their higher nature.
 
+Boxes
+==============
+
+.. note::
+    Equations within a note
+    :math:`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`.
+
+.. warning::
+    Equations within a note
+    :math:`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`.
+
+
 Citation
 ========
 
