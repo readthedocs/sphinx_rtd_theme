@@ -133,10 +133,11 @@
     tt // for sphinx.ext.autodoc generated content
       &.descname, &.descclassname
         background-color: transparent
+        border: none
+        padding: 0
         font-size: 100% !important
       &.descname
         font-weight: bold
-        padding-right: 0.08em
 
   dl dl
     dt
@@ -155,10 +156,15 @@
   // Even though the font size of $code-font-family is same as normal font
   // it looks huge compared to it, so lets trial with it @ 90%.
   tt
-    background-color: $table-stripe-color
+    white-space: nowrap
+    max-width: 100%
+    background: $white
+    border: solid 1px $table-border-color
+    color: $text-color
+    font-size: 80%
+    padding: 0 5px
     font-family: $code-font-family
-    font-size: 90%
-    padding: 1px, 2px
+    overflow-x: auto
 
     big, em
       font-size: 100% !important
