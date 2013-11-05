@@ -73,6 +73,27 @@ The first hexagram is made up of six unbroken lines. These unbroken lines stand 
 
 The power represented by the hexagram is to be interpreted in a dual sense in terms of its action on the universe and of its action on the world of men. In relation to the universe, the hexagram expresses the strong, creative action of the Deity. In relation to the human world, it denotes the creative action of the holy man or sage, of the ruler or leader of men, who through his power awakens and develops their higher nature.
 
+Inline code and references
+==========================
+
+`reStructuredText`_ is a markup language. It can use roles and
+declarations to turn reST into HTML.
+
+In reST, ``*hello world*`` becomes ``<em>hello world</em>``. This is
+because a library called `Docutils`_ was able to parse the reST and use a
+``Writer`` to output it that way.
+
+If I type ````an inline literal```` it will wrap it in ``<tt>``. You can
+see more details on the `Inline Markup`_ on the Docutils homepage.
+
+Also with ``sphinx.ext.autodoc``, which I use in the demo, I can link to
+:class:`test_py_module.test.Foo`. It will link you right my code
+documentation for it.
+
+.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+.. _Docutils: http://docutils.sourceforge.net/
+.. _Inline Markup: http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#inline-markup
+
 Citation
 ========
 
