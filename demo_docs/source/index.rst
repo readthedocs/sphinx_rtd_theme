@@ -3,13 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Sphinx RTD theme demo's documentation!
+=================================================
+Demo Docs
 =================================================
 
 Contents:
 
 .. toctree::
     :maxdepth: 2
+
+Maaaaath!
+=========
 
 This is a test.  Here is an equation:
 :math:`X_{0:5} = (X_0, X_1, X_2, X_3, X_4)`.
