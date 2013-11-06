@@ -54,6 +54,12 @@
     @extend .wy-alert.wy-alert-danger
   .warning, .caution, .attention
     @extend .wy-alert.wy-alert-warning
+  // Some people put tables in notes. Let's give them very basic support.
+  .admonition table
+    border-color: rgba(0,0,0,.1)
+    td, th
+      background: transparent !important
+      border-color: rgba(0,0,0,.1) !important
   .section ul, ul.simple, ul.stimple ul, .toctree-wrapper ul
     @extend .wy-plain-list-disc
   .section ol, ol.simple, ol.arabic
