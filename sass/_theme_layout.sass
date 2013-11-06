@@ -53,6 +53,8 @@
           background: darken($section-background-color, 15%)
         .current
           background: darken($section-background-color, 20%)
+  li.tocktree-l2.current > a
+    background: darken($section-background-color, 20%)
   li.on a, li.current > a
     color: $text-color
     padding: $gutter / 4 $gutter
@@ -61,6 +63,7 @@
     background: $section-background-color
     border: none
     border-bottom: solid 1px darken($section-background-color, 20%)
+    border-top: solid 1px darken($section-background-color, 20%)
     padding-left: $gutter -4px
     +font-smooth
     &:hover
