@@ -51,10 +51,7 @@
         padding: $gutter / 4 $gutter * 1.5
         &:hover
           background: darken($section-background-color, 15%)
-        .current
-          background: darken($section-background-color, 20%)
-  li.tocktree-l2.current > a
-    background: darken($section-background-color, 20%)
+  // On state for the first level
   li.on a, li.current > a
     color: $text-color
     padding: $gutter / 4 $gutter
@@ -68,6 +65,9 @@
     +font-smooth
     &:hover
       background: $section-background-color
+  // This is the on state for pages beyond second level
+  li.tocktree-l2.current > a
+    background: darken($section-background-color, 20%)
   li.current ul
     display: block
   li ul

@@ -28,6 +28,22 @@ Here is another:
     \left( \sin \theta \, \frac{\partial f}{\partial \theta} \right) +
     \frac{1}{r^2 \sin^2\theta} \frac{\partial^2 f}{\partial \phi^2}
 
+
+Giant tables
+============
+
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  |
++============+============+===========+============+============+===========+============+============+===========+============+============+===========+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+
 API Test
 ========
 
@@ -145,6 +161,19 @@ documentation for it.
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 .. _Docutils: http://docutils.sourceforge.net/
 .. _Inline Markup: http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#inline-markup
+
+.. note:: Every other line in this table will have white text on a white background.
+            This is bad.
+
+    +---------+
+    | Example |
+    +=========+
+    | Thing1  |
+    +---------+
+    | Thing2  |
+    +---------+
+    | Thing3  |
+    +---------+
 
 Citation
 ========
