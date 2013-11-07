@@ -60,10 +60,18 @@
     td, th
       background: transparent !important
       border-color: rgba(0,0,0,.1) !important
-  .section ul, ul.simple, ul.stimple ul, .toctree-wrapper ul
+  .section ul, .toctree-wrapper ul
     @extend .wy-plain-list-disc
-  .section ol, ol.simple, ol.arabic
+  .section ol.loweralpha, .section ol.loweralpha li
+    list-style: lower-alpha
+  .section ol.upperalpha, .section ol.upperalpha li
+    list-style: upper-alpha
+  .section ol, ol.arabic
     @extend .wy-plain-list-decimal
+  .section ol p, .section ul p
+    margin-bottom: $base-line-height / 2
+  .line-block
+    margin-left: $base-line-height
 
   // Generics handling of headings and toc stuff.
   .topic-title
@@ -170,13 +178,22 @@
 
     .xref, a &
       font-weight: bold
-
+  dl
+    margin-bottom: $base-line-height
+    dt
+      font-weight: bold
+    // Most of the content within these dls are one liners, so I halve the normal margins.
+    p, table, ul, ol
+      margin-bottom: $base-line-height / 2 !important
+    // rST seems to want dds to be treated as the browser would, indented.
+    dd
+      margin: 0  0 $base-line-height / 2 $base-line-height
   // This is what Sphinx spits out for it's autodocs. Depending upon what language the person is referencing
   // these things usually have a class of "method" or "class" or something similar, but really who knows.
   // Sphinx doesn't give me a generic class on these, so unfortunately I have to apply it to the root dl.
   // This makes me terribly unhappy and makes this code very nesty. Unfortunately I've seen hand-written docs
   // that output similar, but not quite the same nesting so this is really the best we can do.
-  dl
+  dl:not(.docutils)
     margin-bottom: $base-line-height
     // This would be the equivilant of a .. class::
     dt
@@ -204,12 +221,6 @@
       .headerlink
         color: $text-color
         font-size: 100% !important
-    // This is the description for the class/method.
-    dd
-      margin-left: $base-line-height
-    // Most of the content within these dls are one liners, so I halve the normal margins.
-    p, table, ul, ol
-      margin-bottom: $base-line-height / 2 !important
     dt:first-child
       margin-top: 0
     // Since dts get the callout style, we treat this less as callouts.
