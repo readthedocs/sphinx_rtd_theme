@@ -13,6 +13,7 @@ Contents:
     :maxdepth: 2
 
     demo
+    list
 
 Maaaaath!
 =========
