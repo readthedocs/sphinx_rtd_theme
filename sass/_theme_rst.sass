@@ -8,7 +8,7 @@
 //    2. I plan to remove the !importants in here. Part of it is due to lazyness, part to sphinx's fondness for nesting.
 //    3. Try to use variables from wyrm_core/wy_variables.sass. Notable are...
 //        * $base-line-height // All margins, padding and line-height should use this in .25 increments.
-//        * $text-color, $text-light, #text-dark...etc
+//        * $text-color, $text-light, $text-dark...etc
 //        * $base-font-family, $custom-font-family, $code-font-family
 //    4. If you have changes for mobile/tablet, put them at the bottom of the sass file.
 // --------------------------------------------------------------------------------------------------------------------
@@ -85,6 +85,9 @@
   .align-left
     float: left
     margin: 0px $base-line-height $base-line-height 0px
+  .align-center
+    margin: auto
+    display: block
 
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
   h1, h2, h3, h4, h5, h6, dl dt
@@ -164,6 +167,7 @@
     .field-name
       padding-right: 10px
       text-align: left
+      white-space: nowrap
     .field-body
       text-align: left
       padding-left: 0
