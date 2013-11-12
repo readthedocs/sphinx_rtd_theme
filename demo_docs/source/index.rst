@@ -138,7 +138,15 @@ Code with Sidebar
 Boxes
 =====
 
+.. tip::
+    Equations within a note
+    :math:`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`.
+
 .. note::
+    Equations within a note
+    :math:`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`.
+
+.. danger::
     Equations within a note
     :math:`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`.
 

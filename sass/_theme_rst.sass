@@ -38,10 +38,10 @@
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning
     @extend .wy-alert
-    .last, p.first
+    .last
       margin-bottom: 0
   .admonition-title
-    font-weight: bold
+    @extend .wy-alert-title
     @extend .icon
     @extend .icon-exclamation-sign
     &:before
@@ -49,7 +49,7 @@
   .note
     @extend .wy-alert.wy-alert-info
   .hint, .tip, .important
-    @extend .wy-alert.wy-alert-info
+    @extend .wy-alert.wy-alert-success
   .error, .danger
     @extend .wy-alert.wy-alert-danger
   .warning, .caution, .attention
