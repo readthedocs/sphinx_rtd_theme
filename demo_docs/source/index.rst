@@ -178,6 +178,20 @@ documentation for it.
     | Thing3  |
     +---------+
 
+Emphasized lines with line numbers
+==================================
+
+.. code-block:: python
+   :linenos:
+   :emphasize-lines: 3,5
+
+   def some_function():
+       interesting = False
+       print 'This line is highlighted.'
+       print 'This one is not...'
+       print '...but this one is.'
+
+
 Citation
 ========
 
