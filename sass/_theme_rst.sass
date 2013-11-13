@@ -38,7 +38,7 @@
     margin-bottom: $base-line-height
 
   // These are the various note pullouts that sphinx applies
-  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning
+  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso
     @extend .wy-alert
     .last
       margin-bottom: 0
@@ -48,7 +48,7 @@
     @extend .icon-exclamation-sign
     &:before
       margin-right: 4px
-  .note
+  .note, .seealso
     @extend .wy-alert.wy-alert-info
   .hint, .tip, .important
     @extend .wy-alert.wy-alert-success
