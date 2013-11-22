@@ -7,6 +7,7 @@
 .. _grunt: http://www.gruntjs.com
 .. _node: http://www.nodejs.com
 .. _demo: http://docs.readthedocs.org
+.. _hidden: http://sphinx-doc.org/markup/toctree.html
 
 **************************
 Read the Docs Sphinx Theme
@@ -23,7 +24,6 @@ the SASS files here, rather than the .css files on RTD.
 
 .. image:: screen_mobile.png
     :width: 100%
-
 Installation
 ============
 
@@ -68,6 +68,10 @@ docs. If no toctrees are set the theme reverts to sphinx's usual local toctree.
 It's important to note that if you don't follow the same styling for your rST headers across
 your documents, the toctree will misbuild, and the resulting menu might not show the correct
 depth when it renders.
+
+Also note that the table of contents is set with ``includehidden=true``. This allows you
+to set a hidden toc in your index file with the hidden_ property that will allow you
+to build a toc without it rendering in your index.
 
 Contributing or modifying the theme
 ===================================
