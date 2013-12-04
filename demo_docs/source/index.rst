@@ -85,6 +85,12 @@ This example comes from `django-payments module docs`_.
 Code test
 =========
 
+.. parsed-literal::
+
+    # parsed-literal test
+    curl -O http://someurl/release-|version|.tar-gz
+
+
 .. code-block:: json
 
     {

@@ -36,7 +36,8 @@
     margin-left: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
-
+  .literal-block
+    @extend .codeblock
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso
     @extend .wy-alert
@@ -239,11 +240,6 @@
         font-size: 100% !important
       &.descname
         font-weight: bold
-    .viewcode-link
-      display: inline-block
-      color: $green
-      font-size: 80%
-      padding-left: $base-line-height
     // This is for more advanced parameter control
     .optional
       display: inline-block
@@ -253,6 +249,15 @@
     .property
       display: inline-block
       padding-right: 8px
+  // Doc links to sourcecode
+  .viewcode-link, .viewcode-back
+    display: inline-block
+    color: $green
+    font-size: 80%
+    padding-left: $base-line-height
+  .viewcode-back
+    display: block
+    float: right
 
 // Mobile specific
 +media($mobile)
