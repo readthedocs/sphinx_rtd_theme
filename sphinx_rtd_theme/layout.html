@@ -67,7 +67,6 @@
         <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
     {%- endif %}
   {%- endblock %}
-  {%- block extrahead %} {% endblock %}
 
   {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -141,6 +140,8 @@
   {% if not READTHEDOCS %}
     <script type="text/javascript" src="_static/js/theme.js"></script>
   {% endif %}
+
+  {%- block inlinejs %} {% endblock %}
 
 </body>
 </html>
