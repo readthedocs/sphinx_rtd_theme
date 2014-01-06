@@ -1,5 +1,8 @@
 <ul class="wy-breadcrumbs">
   <li><a href="{{ pathto(master_doc) }}">Docs</a> &raquo;</li>
+    {% for doc in parents %}
+        <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
+    {% endfor %}
   <li><a href="">{{ title }}</a></li>
     <li class="wy-breadcrumbs-aside">
       {% if display_github %}
