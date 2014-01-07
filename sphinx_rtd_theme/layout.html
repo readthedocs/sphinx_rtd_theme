@@ -53,6 +53,15 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
   {% endif %}
 
+  {# STICKY NAVIGATION #}
+  {% if theme_sticky_navigation %}
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  {% endif %}
+
   {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {% endfor %}
@@ -94,7 +103,7 @@
   <div class="wy-grid-for-nav">
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side{% if theme_sticky_navigation %} stickynav{% endif %}">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}</a>
         {% include "searchbox.html" %}
