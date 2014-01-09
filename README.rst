@@ -73,6 +73,10 @@ Also note that the table of contents is set with ``includehidden=true``. This al
 to set a hidden toc in your index file with the hidden_ property that will allow you
 to build a toc without it rendering in your index.
 
+By default, the navigation will "stick" to the screen as you scroll. However if your toc
+is vertically too large, it revert to static positioning. To disable the sticky nav
+alltogether change the setting in ``conf.py``.
+
 Contributing or modifying the theme
 ===================================
 
