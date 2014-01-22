@@ -30,6 +30,7 @@
     {% if use_opensearch %}
       <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
     {% endif %}
+
   {% endif %}
 
   {# RTD hosts this file, so just load on non RTD builds #}
@@ -81,16 +82,7 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        {% if logo and theme_logo_only %}
-          <a href="{{ pathto(master_doc) }}">
-        {% else %}
-          <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
-        {% endif %}
-        {% if logo %}
-          {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
-          <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" />
-        {% endif %}
-        </a>
+        <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}</a>
         {% include "searchbox.html" %}
       </div>
 
