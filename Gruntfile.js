@@ -19,6 +19,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    copy: {
+      fonts: {
+        files: [
+          // includes files within path
+          {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'}
+        ]
+      }
+    },
 
     compass: {
       build: {
@@ -45,7 +53,8 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      build: ["demo_docs/build"]
+      build: ["demo_docs/build"],
+      fonts: ["sphinx_rtd_theme/static/fonts"]
     },
 
     watch: {
@@ -73,8 +82,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-open');
 
+  grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
   grunt.registerTask('default', ['exec:bower_update','clean:build','compass:dev','exec:build_sphinx','connect','open','watch']);
   grunt.registerTask('build', ['exec:bower_update','clean:build','compass:build','exec:build_sphinx']);
 }
