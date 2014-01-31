@@ -159,6 +159,5 @@ you can add something like this to your config. Thanks to Daniel Oaks for this.
 
 TODO
 ====
-* Update to font-awesome 4.0 and have it build from bower, not the copy/paste hack I have now.
 * Separate some sass variables at the theme level so you can overwrite some basic colors.
 
