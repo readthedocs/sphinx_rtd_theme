@@ -26,6 +26,8 @@
       color: $section-background-color
     .fa-book
       float: left
+    .icon-book
+      float: left
     &.rst-out-of-date
       background-color: $red
       color: $white
@@ -60,11 +62,15 @@
     left: auto
     border: none
     max-width: $nav-desktop-width
+    .icon-book
+      float: none
     .fa-book
       float: none
     &.shift-up .rst-current-version
       text-align: right
       .fa-book
+        float: left
+      .icon-book
         float: left
     .rst-current-version
       width: auto
