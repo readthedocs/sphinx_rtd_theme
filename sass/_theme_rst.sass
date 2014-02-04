@@ -19,6 +19,12 @@
     max-width: 100%
     height: auto !important
 
+  div.figure
+    margin-bottom: $base-line-height
+
+  div.figure.align-center
+    text-align: center
+
   // Usually it's a good idea to give images some space.
   .section > img
     margin-bottom: $base-line-height
@@ -45,8 +51,8 @@
       margin-bottom: 0
   .admonition-title
     @extend .wy-alert-title
-    @extend .icon
-    @extend .icon-exclamation-sign
+    @extend .fa
+    @extend .fa-exclamation-circle
     &:before
       margin-right: 4px
   .note, .seealso
@@ -98,7 +104,7 @@
       display: none
       visibility: hidden
       font-size: 14px
-      @extend .icon
+      @extend .fa
       &:after
         visibility: visible
         content: "\f0c1"
@@ -186,6 +192,9 @@
 
     .xref, a &
       font-weight: bold
+  // If the literal is inside an a tag, let's color it like a link
+  a tt
+    color: $link-color
   dl
     margin-bottom: $base-line-height
     dt

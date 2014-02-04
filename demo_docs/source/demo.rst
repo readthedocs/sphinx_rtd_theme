@@ -435,6 +435,12 @@ A figure directive:
 
    This paragraph is also part of the legend.
 
+A figure directive with center alignment
+
+.. figure:: images/title.png
+   :align: center
+   :width: 300
+
 Admonitions
 ```````````
 

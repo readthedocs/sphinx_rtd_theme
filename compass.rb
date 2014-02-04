@@ -18,6 +18,7 @@ fonts_dir = "font"
 add_import_path "../../bower_components/bourbon/app/assets/stylesheets"
 add_import_path "../../bower_components/neat/app/assets/stylesheets"
 add_import_path "../../bower_components/wyrm/sass"
+add_import_path "../../bower_components/font-awesome/scss"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
