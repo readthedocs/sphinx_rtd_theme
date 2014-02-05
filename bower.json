@@ -27,7 +27,7 @@
     "src"
   ],
   "dependencies": {
-    "wyrm": "~0.0.x"
+    "wyrm": "~0.0.99"
   }
 }
 
