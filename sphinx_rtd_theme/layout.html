@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
+<head>{% block head %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
@@ -96,18 +96,18 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
-</head>
+{% endblock %}</head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav" role="document">{% block document_body %}
 
   <div class="wy-grid-for-nav">
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="{{ pathto(master_doc) }}" class="fa fa-home"> {{ project }}</a>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">{% block sidenav %}
+      <div class="wy-side-nav-search">{% block search %}
+        {% block index_link %}<a href="{{ pathto(master_doc) }}" class="fa fa-home"> {{ project }}</a>{% endblock %}
         {% include "searchbox.html" %}
-      </div>
+      {% endblock %}</div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         {% set toctree = toctree(maxdepth=2, collapse=False, includehidden=True) %}
@@ -118,32 +118,35 @@
             <div class="local-toc">{{ toc }}</div>
         {% endif %}
       </div>
-      &nbsp;
+      {% endblock %}&nbsp;
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">{% block content_wrap %}
 
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">{% block topnav %}
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
         <a href="{{ pathto(master_doc) }}">{{ project }}</a>
-      </nav>
+      {% endblock %}</nav>
 
 
       {# PAGE CONTENT #}
-      <div class="wy-nav-content">
+      <div class="wy-nav-content">{% block content %}
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
           <div role="main">
-            {% block body %}{% endblock %}
+            {% block body_wrapper -%}
+              {% block body %}{% endblock %}
+            {%- endblock %}
           </div>
           {% include "footer.html" %}
         </div>
-      </div>
+      {% endblock %}</div>
 
-    </section>
+    {% endblock %}</section>
 
   </div>
   {% include "versions.html" %}
-</body>
+
+{% endblock %}</body>
 </html>
