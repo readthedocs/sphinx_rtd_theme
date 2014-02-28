@@ -28,19 +28,32 @@ module.exports = function(grunt) {
       }
     },
 
-    compass: {
-      build: {
-        options: {
-          config: 'compass.rb',
-          environment: 'production',
-          force: true
-        }
-      },
+    sass: {
       dev: {
         options: {
-          config: 'compass.rb',
-          force: true
-        }
+          style: 'expanded',
+          loadPath: ['bower_components/bourbon/app/assets/stylesheets', 'bower_components/neat/app/assets/stylesheets', 'bower_components/font-awesome/scss', 'bower_components/wyrm/sass']
+        },
+        files: [{
+          expand: true,
+          cwd: 'sass',
+          src: ['*.sass'],
+          dest: 'sphinx_rtd_theme/static/css',
+          ext: '.css'
+        }]
+      },
+      build: {
+        options: {
+          style: 'compressed',
+          loadPath: ['bower_components/bourbon/app/assets/stylesheets', 'bower_components/neat/app/assets/stylesheets', 'bower_components/font-awesome/scss', 'bower_components/wyrm/sass']
+        },
+        files: [{
+          expand: true,
+          cwd: 'sass',
+          src: ['*.sass'],
+          dest: 'sphinx_rtd_theme/static/css',
+          ext: '.css'
+        }]
       }
     },
 
@@ -61,7 +74,7 @@ module.exports = function(grunt) {
       /* Compile sass changes into theme directory */
       sass: {
         files: ['sass/*.sass', 'bower_components/**/*.sass'],
-        tasks: ['compass:dev']
+        tasks: ['sass:dev']
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
@@ -80,13 +93,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
-  grunt.registerTask('default', ['exec:bower_update','clean:build','compass:dev','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['exec:bower_update','clean:build','compass:build','exec:build_sphinx']);
+  grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','exec:build_sphinx']);
 }
 
