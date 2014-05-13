@@ -45,7 +45,7 @@
   .literal-block, pre.literal-block
     @extend .codeblock
   // These are the various note pullouts that sphinx applies
-  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso
+  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
     @extend .wy-alert
     .last
       margin-bottom: 0
@@ -61,7 +61,7 @@
     @extend .wy-alert.wy-alert-success
   .error, .danger
     @extend .wy-alert.wy-alert-danger
-  .warning, .caution, .attention
+  .warning, .caution, .attention, .admonition-todo
     @extend .wy-alert.wy-alert-warning
   // Some people put tables in notes. Let's give them very basic support.
   .admonition table
