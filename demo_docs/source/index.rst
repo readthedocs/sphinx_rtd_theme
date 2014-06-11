@@ -17,6 +17,7 @@ Contents:
 
     demo
     list
+    long
 
 Maaaaath!
 =========
