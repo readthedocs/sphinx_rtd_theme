@@ -15,8 +15,8 @@ Read the Docs Sphinx Theme
 
 View a working demo_ over on readthedocs.org_.
 
-This is a prototype mobile-friendly sphinx_ theme I made for readthedocs.org_. It's
-currently in development and includes some rtd variable checks that can be ignored
+This is a mobile-friendly sphinx_ theme I made for readthedocs.org_. It's
+currently in development there and includes some rtd variable checks that can be ignored
 if you're just trying to use it on your project outside of that site.
 
 **This repo also exists as a submodule within the readthedocs itself**, so please make your edits to
@@ -129,6 +129,19 @@ This default task will do the following **very cool things that make it worth th
 3. It'll watch for changes to the sass files and build css from the changes.
 4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
    or .css files.
+
+
+Before you create an issue
+--------------------------
+
+I don't have a lot of time to maintain this project due to other responsibilities.
+I know there are a lot of Python engineers out there that can't code sass / css and
+are unable to submit pull requests. That said, submitting random style bugs without
+at least providing sample documentation that replicates your problem is a good
+way for me to ignore your request. RST unfortunately can spit out a lot of things
+in a lot of ways. I don't have time to research your problem for you, but I do
+have time to fix the actual styling issue if you can replicate the problem for me.
+
 
 Before you send a Pull Request
 ------------------------------
