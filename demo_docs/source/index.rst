@@ -215,3 +215,8 @@ Citation
 Here I am making a citation [1]_
 
 .. [1] This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.
+
+Download links
+==============
+
+:download:`This long long long long long long long long long long long long long long long download link should be blue with icon, and should wrap white-spaces <static/yi_jing_01_chien.jpg>`
