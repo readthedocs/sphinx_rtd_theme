@@ -274,6 +274,20 @@
   p.rubric
     margin-bottom: 12px
     font-weight: bold
+  //Download link
+  code.download
+    background: inherit
+    padding: inherit
+    font-family: inherit
+    font-size: inherit
+    color: inherit
+    border: inherit
+    white-space: inherit
+    span:first-child
+      @extend .fa
+      @extend .fa-download
+      &:before
+        margin-right: 4px
 
 // Mobile specific
 +media($mobile)
