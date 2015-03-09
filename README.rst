@@ -173,4 +173,3 @@ you can add something like this to your config. Thanks to Daniel Oaks for this.
 TODO
 ====
 * Separate some sass variables at the theme level so you can overwrite some basic colors.
-

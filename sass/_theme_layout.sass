@@ -128,6 +128,17 @@
     +font-smooth
     &:hover
       background: rgba(255,255,255,.1)
+    img.logo
+      display: block  // display on its own line all the time
+      margin: 0 auto
+      height: auto  // undo badge styling above
+      width: auto
+      border-radius: 0
+      max-width: 100%  // shrink on mobile, if appropriate
+      background: rgba(0,0,0,0)  // make hover background of parent show up properly
+    &.icon
+      img.logo
+        margin-top: 0.85em  // space it away from the title text
 
 .wy-nav .wy-menu-vertical
   header

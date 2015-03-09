@@ -86,9 +86,23 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         {% block sidebartitle %}
-          <a href="{{ pathto(master_doc) }}" class="fa fa-home"> {{ project }}</a>
+
+        {% if logo and theme_logo_only %}
+          <a href="{{ pathto(master_doc) }}">
+        {% else %}
+          <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
+        {% endif %}
+
+        {% if logo %}
+          {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
+          <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" />
+        {% endif %}
+        </a>
         {% endblock %}
+
         {% include "searchbox.html" %}
+
+        {% endblock %}
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
