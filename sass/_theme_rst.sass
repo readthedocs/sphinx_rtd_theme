@@ -186,7 +186,7 @@
       padding-left: 0
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
-  tt
+  tt, code
     @extend code
     color: $black
     display: inline-block
@@ -245,7 +245,7 @@
     dt:first-child
       margin-top: 0
     // Since dts get the callout style, we treat this less as callouts.
-    tt
+    tt, code
       font-weight: bold
       &.descname, &.descclassname
         background-color: transparent
