@@ -1,6 +1,6 @@
 {
   "name": "sphinx-rtd-theme",
-  "version": "1.0",
+  "version": "0.1.7",
   "homepage": "https://github.com/snide/wyrm",
   "authors": [
     "Dave Snider <dave.snider@gmail.com>"
@@ -26,7 +26,7 @@
     "tests",
     "src"
   ],
-  "dependencies": {
+  "devDependencies": {
     "wyrm": "~0.0.x"
   }
 }
