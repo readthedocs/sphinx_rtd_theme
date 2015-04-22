@@ -24,6 +24,7 @@ Contents:
     :caption: This is an incredibly long caption for a long menu
 
     long
+    api
 
 Maaaaath!
 =========
@@ -56,14 +57,6 @@ Giant tables
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
-
-API Test
-========
-
-.. automodule:: test_py_module.test
-    :members:
-    :private-members:
-    :special-members:
 
 Optional parameter args
 -----------------------

@@ -26,6 +26,10 @@ class Foo:
 
         print(myclass)
 
+
+    Here is a link to :py:meth:`capitalize`.
+    Here is a link to :py:meth:`__init__`.
+
     """
 
     #: Doc comment for class attribute Foo.bar.
