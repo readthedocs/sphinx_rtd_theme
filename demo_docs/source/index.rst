@@ -18,6 +18,11 @@ Contents:
 
     demo
     list
+
+.. toctree::
+    :maxdepth: 2
+    :caption: This is an incredibly long caption for a long menu
+
     long
 
 Maaaaath!
