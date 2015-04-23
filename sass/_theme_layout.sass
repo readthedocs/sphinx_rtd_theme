@@ -58,6 +58,17 @@
       color: inherit
       padding-left: 0
       padding-right: 0
+    // Expand links
+    span.toctree-expand
+      display: block
+      float: left
+      margin-left: -1.2em
+      @extend .fa
+      @extend .fa-plus-square-o
+      font-size: .8em
+      line-height: 1.6em
+      color: darken($text-medium, 20%)
+
   // On state for the first level
   li.on a, li.current > a
     color: $text-color
@@ -72,16 +83,54 @@
     +font-smooth
     &:hover
       background: $section-background-color
+      span.toctree-expand
+        color: $text-medium
+    span.toctree-expand
+      @extend .fa
+      @extend .fa-minus-square-o
+      display: block
+      font-size: .8em
+      line-height: 1.6em
+      color: darken($text-medium, 30%)
+
   // This is the on state for pages beyond second level
-  li.toctree-l2.current > a
-    background: darken($section-background-color, 20%)
-    padding: $gutter / 4 $gutter * 1.5
-  li.toctree-l2 li.toctree-l3 > a
-    display: none
-  li.toctree-l2.current li.toctree-l3 > a
-    display: block
-    background: darken($section-background-color, 20%)
-    padding: $gutter / 4 $gutter * 2.5
+  li.toctree-l1.current li.toctree-l2, li.toctree-l2.current li.toctree-l3
+    > ul
+      display: none
+    &.current > ul
+      display: block
+  li.toctree-l2
+    &.current
+      > a
+        background: darken($section-background-color, 20%)
+        padding: $gutter / 4 $gutter * 1.5
+      li.toctree-l3 > a
+        display: block
+        background: darken($section-background-color, 20%)
+        padding: $gutter / 4 $gutter * 2.5
+    a:hover span.toctree-expand
+      color: $text-medium
+    span.toctree-expand
+      color: darken($section-background-color, 35%)
+  li.toctree-l3
+    font-size: .9em
+    &.current
+      > a
+        background: darken($section-background-color, 25%)
+        padding: $gutter / 4 $gutter * 2.5
+      li.toctree-l4 > a
+        display: block
+        background: darken($section-background-color, 25%)
+        padding: $gutter / 4 $gutter * 3.5
+        border-top: none
+        border-bottom: none
+    a:hover span.toctree-expand
+      color: $text-medium
+    span.toctree-expand
+      color: darken($section-background-color, 40%)
+  li.toctree-l4
+    font-size: .9em
+
   li.current ul
     display: block
   li ul
@@ -105,10 +154,14 @@
     &:hover
       background-color: lighten($menu-background-color, 10%)
       cursor: pointer
+      span.toctree-expand
+        color: $text-light
     &:active
       background-color: $menu-logo-color
       cursor: pointer
       color: $white
+      span.toctree-expand
+        color: $white
 
 .wy-side-nav-search
   z-index: $z-index-popover
@@ -193,11 +246,14 @@
   height: 100%
 
 .wy-nav-side
-  position: absolute
+  position: fixed
   top: 0
+  bottom: 0
   left: 0
+  padding-bottom: 2em
   width: $nav-desktop-width
-  overflow: hidden
+  overflow-x: hidden
+  overflow-y: scroll
   min-height: 100%
   background: $menu-background-color
   z-index: $z-index-popover
@@ -310,10 +366,3 @@ footer
     display: none
   .wy-nav-content-wrap
     margin-left: 0
-
-nav.stickynav
-  position: fixed
-  top: 0
-  bottom: 0
-  overflow-x: hidden
-  overflow-y: hidden
