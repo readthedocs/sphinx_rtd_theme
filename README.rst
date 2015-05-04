@@ -68,10 +68,10 @@ Changelog
 v0.1.8
 ------
 
+* Start keeping changelog :)
 * Add support for Sphinx 1.3
 * Add sidebar headers for :caption: in Sphinx toctree
 * Clean up sidebar scrolling behavior so it never scrolls out of view
-
 
 How the Table of Contents builds
 ================================
