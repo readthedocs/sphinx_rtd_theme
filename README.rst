@@ -13,6 +13,8 @@
 Read the Docs Sphinx Theme
 **************************
 
+.. contents:: 
+
 View a working demo_ over on readthedocs.org_.
 
 This is a mobile-friendly sphinx_ theme I made for readthedocs.org_. It's
