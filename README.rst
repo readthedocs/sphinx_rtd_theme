@@ -69,6 +69,7 @@ v0.1.8
 ------
 
 * Start keeping changelog :)
+* Support for third and fourth level headers in the sidebar
 * Add support for Sphinx 1.3
 * Add sidebar headers for :caption: in Sphinx toctree
 * Clean up sidebar scrolling behavior so it never scrolls out of view
