@@ -24,6 +24,7 @@ the SASS files here, rather than the .css files on RTD.
 
 .. image:: screen_mobile.png
     :width: 100%
+
 Installation
 ============
 
@@ -57,6 +58,18 @@ conf.py file:
 
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
+
+Changelog
+=========
+
+
+v0.1.8
+------
+
+* Add support for Sphinx 1.3
+* Add sidebar headers for :caption: in Sphinx toctree
+* Clean up sidebar scrolling behavior so it never scrolls out of view
+
 
 How the Table of Contents builds
 ================================
