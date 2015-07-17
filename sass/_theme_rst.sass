@@ -195,8 +195,11 @@
       font-size: 100% !important
       line-height: normal
 
-    .xref, a &
+    &.literal
+      color: $text-code-color
+    &.xref, a &
       font-weight: bold
+      color: $text-color
   // If the literal is inside an a tag, let's color it like a link
   a tt, a code
     color: $link-color
