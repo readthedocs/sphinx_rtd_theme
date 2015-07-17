@@ -212,9 +212,14 @@ Emphasized lines with line numbers
 Citation
 ========
 
-Here I am making a citation [1]_
+Here I am making a citation [1]_, another [2]_ and another [3]_
 
 .. [1] This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.
+
+.. [2] This citation has some ``code blocks`` in it, maybe some **bold** and
+       *italics* too. Heck, lets put a link to a meta citation [3]_ too.
+
+.. [3] This citation will have two backlinks.
 
 Download links
 ==============
