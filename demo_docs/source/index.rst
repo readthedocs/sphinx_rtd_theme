@@ -20,6 +20,11 @@ Contents:
     list
 
 .. toctree::
+    :titlesonly:
+
+    toc
+
+.. toctree::
     :maxdepth: 2
     :caption: This is an incredibly long caption for a long menu
 
