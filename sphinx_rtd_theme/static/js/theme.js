@@ -31,7 +31,7 @@ $(document).ready(function() {
     $("table.docutils:not(.field-list)").wrap("<div class='wy-table-responsive'></div>");
 
     // Add expand links to all parents of nested ul
-    $('.wy-menu-vertical ul').siblings('a').each(function () {
+    $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {
         var link = $(this);
             expand = $('<span class="toctree-expand"></span>');
         expand.on('click', function (ev) {
