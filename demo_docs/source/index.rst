@@ -226,6 +226,14 @@ Here I am making a citation [1]_, another [2]_ and another [3]_
 
 .. [3] This citation will have two backlinks.
 
+======
+Images
+======
+
+.. figure:: static/yi_jing_01_chien.jpg
+
+    This is a caption for a figure.
+
 Download links
 ==============
 
