@@ -124,8 +124,8 @@
     display: block
     margin: 0 0 $base-line-height $base-line-height
     padding: $base-line-height
-    background: $table-stripe-color
-    border: solid 1px $table-border-color
+    background: $sidebar-background-color
+    border: solid 1px $sidebar-border-color
     // Sidebar content is usually less relevant, so adjust the margins and sizes.
     p, ul, dl
       font-size: 90%
@@ -142,7 +142,7 @@
       font-size: 100%
   // Sphinx can highlight searched text with ?highlighted=searchterm
   .highlighted
-    background: $yellow
+    background: $highlight-color
     display: inline-block
     font-weight: bold
     padding: 0 $base-line-height / 4
@@ -203,7 +203,7 @@
       color: $text-code-color
     &.xref, a &
       font-weight: bold
-      color: $text-color
+      color: $text-codexref-color
   // If the literal is inside an a tag, let's color it like a link
   a tt, a code
     color: $link-color
@@ -230,13 +230,13 @@
       margin: $base-line-height / 4 0
       font-size: 90%
       line-height: normal
-      background: lighten($blue, 50%)
-      color: $blue
-      border-top: solid 3px lighten($blue, 20%)
+      background: lighten($class-color, 50%)
+      color: $class-color
+      border-top: solid 3px lighten($class-color, 20%)
       padding: $base-line-height / 4
       position: relative
       &:before
-        color: lighten($blue, 20%)
+        color: lighten($class-color, 20%)
       .headerlink
         color: $text-color
         font-size: 100% !important
@@ -246,9 +246,9 @@
       border: none
       border-left: solid 3px hsl(0,0%,80%)
       background: hsl(0,0%,94%)
-      color: $text-medium
+      color: $method-color
       .headerlink
-        color: $text-color
+        color: $headerlink-color
         font-size: 100% !important
     dt:first-child
       margin-top: 0
@@ -274,7 +274,7 @@
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
-    color: $green
+    color: $text-viewcode-color
     font-size: 80%
     padding-left: $base-line-height
   .viewcode-back
