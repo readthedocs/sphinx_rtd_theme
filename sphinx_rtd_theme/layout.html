@@ -85,7 +85,7 @@
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
+      <div class="wy-side-nav-search"{% if theme_nav_header_color %} style="background-color:{{ theme_nav_header_color }};"{% endif %}>
         {% block sidebartitle %}
 
         {% if logo and theme_logo_only %}
