@@ -24,6 +24,7 @@
     padding: 0 $base-font-size
 
 .wy-menu-vertical
+  width: $nav-desktop-width
   header, p.caption
     height: $base-font-size * 2
     display: inline-block
@@ -164,6 +165,10 @@
         color: $menu-link-active
 
 .wy-side-nav-search
+  display: block
+  width: $nav-desktop-width
+  padding: $gutter / 2
+  margin-bottom: $gutter / 2
   z-index: $z-index-popover
   background-color: $nav-search-background-color
   text-align: center
@@ -259,10 +264,17 @@
   padding-bottom: 2em
   width: $nav-desktop-width
   overflow-x: hidden
-  overflow-y: scroll
+  overflow-y: hidden
   min-height: 100%
   background: $nav-background-color
   z-index: $z-index-popover
+
+.wy-side-scroll
+  width: $nav-desktop-width + 20px
+  position: relative
+  overflow-x: hidden
+  overflow-y: scroll
+  height: 100%
 
 .wy-nav-top
   display: none
@@ -355,6 +367,12 @@ footer
     &.shift
       width: 85%
       left: 0
+  .wy-side-scroll
+    width: auto
+  .wy-side-nav-search
+    width: auto
+  .wy-menu.wy-menu-vertical
+    width: auto
   .wy-nav-content-wrap
     margin-left: 0
     .wy-nav-content
