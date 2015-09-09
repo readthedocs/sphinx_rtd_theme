@@ -90,15 +90,15 @@ to set a hidden toc in your index file with the hidden_ property that will allow
 to build a toc without it rendering in your index.
 
 By default, the navigation will "stick" to the screen as you scroll. However if your toc
-is vertically too large, it revert to static positioning. To disable the sticky nav
-alltogether change the setting in ``conf.py``.
+is vertically too large, it will revert to static positioning. To disable the sticky nav
+altogether change the setting in ``conf.py``.
 
 Contributing or modifying the theme
 ===================================
 
 The sphinx_rtd_theme is primarily a sass_ project that requires a few other sass libraries. I'm
 using bower_ to manage these dependencies and sass_ to build the css. The good news is
-I have a very nice set of grunt_ operations that will not only load these dependecies, but watch
+I have a very nice set of grunt_ operations that will not only load these dependencies, but watch
 for changes, rebuild the sphinx demo docs and build a distributable version of the theme.
 The bad news is this means you'll need to set up your environment similar to that
 of a front-end developer (vs. that of a python developer). That means installing node and ruby.
