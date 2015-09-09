@@ -75,7 +75,7 @@ window.SphinxRtdTheme = (function (jquery) {
                 resize();
             },
             init = function () {
-                navBar = jquery('nav.wy-nav-side:first');
+                navBar = jquery('div.wy-side-scroll:first');
                 win = jquery(window);
             },
             reset = function () {
