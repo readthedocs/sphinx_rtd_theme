@@ -8,7 +8,7 @@
   "description": "Sphinx theme for readthedocs.org.",
   "license": "MIT",
   "main": [
-    "dist/**"
+    "js/theme.js"
   ],
   "ignore": [
     "docs",
