@@ -32,6 +32,7 @@
   "dependencies": {
     "lato-googlefont": "*",
     "robotoslab-googlefont": "*",
-    "inconsolata-googlefont": "*"
+    "inconsolata-googlefont": "*",
+    "font-awesome": "4.2.0"
   }
 }
