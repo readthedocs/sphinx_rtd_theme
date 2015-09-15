@@ -64,6 +64,22 @@ conf.py file:
 Changelog
 =========
 
+v0.1.9
+------
+
+* Intermittent scrollbar visibility bug fixed. This change introduces a
+  backwards incompatible change to the theme's layout HTML. This should only be
+  a problem for derivative themes that have overridden styling of nav elements
+  using direct decendant selectors. See `#215`_ for more information.
+* Safari overscroll bug fixed
+* Version added to the nav header
+* Revision id was added to the documentation footer if you are using RTD
+* An extra block, ``extrafooter`` was added to allow extra content in the
+  document footer block
+* Fixed modernizr URL
+* Small display style changes on code blocks, figure captions, and nav elements
+
+.. _#215: https://github.com/snide/sphinx_rtd_theme/pull/215
 
 v0.1.8
 ------
