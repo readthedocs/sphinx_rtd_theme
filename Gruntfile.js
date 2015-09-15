@@ -22,8 +22,37 @@ module.exports = function(grunt) {
     copy: {
       fonts: {
         files: [
-          // includes files within path
-          {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'}
+          {
+              expand: true,
+              flatten: true,
+              src: ['bower_components/font-awesome/fonts/*'],
+              dest: 'sphinx_rtd_theme/static/fonts/',
+              filter: 'isFile'
+          },
+          {
+              expand: true,
+              flatten: true,
+              src: ['bower_components/lato-googlefont/Lato-Bold.ttf',
+                    'bower_components/lato-googlefont/Lato-Regular.ttf'],
+              dest: 'sphinx_rtd_theme/static/fonts/',
+              filter: 'isFile'
+          },
+          {
+              expand: true,
+              flatten: true,
+              src: ['bower_components/robotoslab-googlefont/RobotoSlab-Bold.ttf',
+                    'bower_components/robotoslab-googlefont/RobotoSlab-Regular.ttf'],
+              dest: 'sphinx_rtd_theme/static/fonts/',
+              filter: 'isFile'
+          },
+          {
+              expand: true,
+              flatten: true,
+              src: ['bower_components/inconsolata-googlefont/Inconsolata-Bold.ttf',
+                    'bower_components/inconsolata-googlefont/Inconsolata-Regular.ttf'],
+              dest: 'sphinx_rtd_theme/static/fonts/',
+              filter: 'isFile'
+          }
         ]
       }
     },
@@ -57,6 +86,29 @@ module.exports = function(grunt) {
       }
     },
 
+    browserify: {
+      dev: {
+        options: {
+          external: ['jquery'],
+          alias: {
+            'sphinx-rtd-theme': './js/theme.js'
+          }
+        },
+        src: ['js/*.js'],
+        dest: 'sphinx_rtd_theme/static/js/theme.js'
+      },
+      build: {
+        options: {
+          external: ['jquery'],
+          alias: {
+            'sphinx-rtd-theme': './js/theme.js'
+          }
+        },
+        src: ['js/*.js'],
+        dest: 'sphinx_rtd_theme/static/js/theme.js'
+      }
+    },
+
     exec: {
       bower_update: {
         cmd: 'bower update'
@@ -81,6 +133,11 @@ module.exports = function(grunt) {
         files: ['sphinx_rtd_theme/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
         tasks: ['clean:build','exec:build_sphinx']
       },
+      /* JavaScript */
+      browserify: {
+        files: ['js/*.js'],
+        tasks: ['browserify:dev']
+      },
       /* live-reload the demo_docs if sphinx re-builds */
       livereload: {
         files: ['demo_docs/build/**/*'],
@@ -97,9 +154,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-browserify');
 
   grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
-  grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','exec:build_sphinx']);
+  grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','browserify:dev','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','browserify:build','exec:build_sphinx']);
 }
 

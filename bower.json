@@ -8,7 +8,7 @@
   "description": "Sphinx theme for readthedocs.org.",
   "license": "MIT",
   "main": [
-    "dist/**"
+    "js/theme.js"
   ],
   "ignore": [
     "docs",
@@ -28,6 +28,11 @@
   ],
   "devDependencies": {
     "wyrm": "~0.0.x"
+  },
+  "dependencies": {
+    "lato-googlefont": "*",
+    "robotoslab-googlefont": "*",
+    "inconsolata-googlefont": "*",
+    "font-awesome": "4.2.0"
   }
 }
-
