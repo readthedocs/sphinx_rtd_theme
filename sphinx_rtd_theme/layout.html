@@ -19,7 +19,29 @@
   {% endblock %}
 
   {# FAVICON #}
-  {% if favicon %}
+  {% if favicon == 'realfavicongenerator.ico' %}
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ pathto('_static/favicons/apple-touch-icon-57x57.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ pathto('_static/favicons/apple-touch-icon-60x60.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ pathto('_static/favicons/apple-touch-icon-72x72.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ pathto('_static/favicons/apple-touch-icon-76x76.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ pathto('_static/favicons/apple-touch-icon-114x114.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ pathto('_static/favicons/apple-touch-icon-120x120.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ pathto('_static/favicons/apple-touch-icon-144x144.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ pathto('_static/favicons/apple-touch-icon-152x152.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ pathto('_static/favicons/apple-touch-icon-180x180.png', 1) }}">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/favicons/favicon-32x32.png', 1) }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/favicons/favicon-194x194.png', 1) }}" sizes="194x194">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/favicons/favicon-96x96.png', 1) }}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/favicons/android-chrome-192x192.png', 1) }}" sizes="192x192">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/favicons/favicon-16x16.png', 1) }}" sizes="16x16">
+    <link rel="manifest" href="{{ pathto('_static/favicons/manifest.json', 1) }}">
+    <link rel="mask-icon" href="{{ pathto('_static/favicons/safari-pinned-tab.svg', 1) }}" color="#2c7f96">
+    <link rel="shortcut icon" href="{{ pathto('_static/favicons/favicon.ico', 1) }}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="{{ pathto('_static/favicons/mstile-144x144.png', 1) }}">
+    <meta name="msapplication-config" content="{{ pathto('_static/favicons/browserconfig.xml', 1) }}">
+    <meta name="theme-color" content="#ffffff">
+  {% elif favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
   {% endif %}
 
