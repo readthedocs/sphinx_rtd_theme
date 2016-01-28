@@ -298,9 +298,25 @@
       @extend .fa-download
       &:before
         margin-right: 4px
+  .wy-table-responsive
+    table
+      td
+        white-space: normal
+
+
+// Tablet specific
++media($tablet)
+  .wy-table-responsive
+    table
+      td
+        white-space: nowrap !important
 
 // Mobile specific
 +media($mobile)
   .rst-content
     .sidebar
       width: 100%
+  .wy-table-responsive
+    table
+      td
+        white-space: nowrap !important
