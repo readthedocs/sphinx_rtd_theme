@@ -31,9 +31,9 @@
             <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-github"> Edit on GitHub</a>
           {% endif %}
         {% elif display_bitbucket %}
-          {% if meta is defined and 'github_url' in meta %}
+          {% if meta is defined and 'bitbucket_url' in meta %}
             <!-- User defined Bitbucket URL -->
-            <a href="{{ meta['bitbucket_url'] }}" class="fa fa-github"> Edit on Bitbucket</a>
+            <a href="{{ meta['bitbucket_url'] }}" class="fa fa-bitbucket"> Edit on Bitbucket</a>
           {% else %}
             <a href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-bitbucket"> Edit on Bitbucket</a>
           {% endif %}
