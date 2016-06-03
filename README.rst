@@ -61,6 +61,20 @@ conf.py file:
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
 
+Configuration
+=============
+
+You can configure different parts of the theme.
+
+Page-level configuration
+------------------------
+
+Pages support metadata that changes how the theme renders.
+You can currently add the following:
+
+* ``:github_url:`` This will force the "Edit on GitHub" to the configured URL
+* ``:bitbucket_url:`` This will force the "Edit on Bitbucket" to the configured URL
+
 Changelog
 =========
 
