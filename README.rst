@@ -78,6 +78,16 @@ You can currently add the following:
 Changelog
 =========
 
+v0.1.10-alpha
+-------------
+
+.. note::
+    This is a pre-release version
+
+* Removes Sphinx dependency
+* Fixes hamburger on mobile display
+* Adds a ``body_begin`` block to the template
+
 v0.1.9
 ------
 
