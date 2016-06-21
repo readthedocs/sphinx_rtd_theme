@@ -6,11 +6,17 @@
 {% set suffix = source_suffix %}
 {% endif %}
 
-{% if meta is defined and 'github_url' in meta %}
+{% if meta is defined and meta is not none %}
+{% set check_meta = True %}
+{% else %}
+{% set check_meta = False %}
+{% endif %}
+
+{% if check_meta and 'github_url' in meta %}
 {% set display_github = True %}
 {% endif %}
 
-{% if meta is defined and 'bitbucket_url' in meta %}
+{% if check_meta and 'bitbucket_url' in meta %}
 {% set display_bitbucket = True %}
 {% endif %}
 
@@ -24,14 +30,14 @@
     <li class="wy-breadcrumbs-aside">
       {% if pagename != "search" %}
           {% if display_github %}
-          {% if meta is defined and 'github_url' in meta %}
+          {% if check_meta and 'github_url' in meta %}
             <!-- User defined GitHub URL -->
             <a href="{{ meta['github_url'] }}" class="fa fa-github"> Edit on GitHub</a>
           {% else %}
             <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-github"> Edit on GitHub</a>
           {% endif %}
         {% elif display_bitbucket %}
-          {% if meta is defined and 'bitbucket_url' in meta %}
+          {% if check_meta and 'bitbucket_url' in meta %}
             <!-- User defined Bitbucket URL -->
             <a href="{{ meta['bitbucket_url'] }}" class="fa fa-bitbucket"> Edit on Bitbucket</a>
           {% else %}
