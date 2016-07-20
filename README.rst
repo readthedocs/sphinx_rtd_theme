@@ -66,6 +66,21 @@ Configuration
 
 You can configure different parts of the theme.
 
+Project-wide configuration
+--------------------------
+
+The theme's project-wide options are defined in the ``sphinx_rtd_theme/theme.conf``
+file of this repository, and can be defined in your project's ``conf.py`` via
+``html_theme_options``. For example:
+
+.. code:: python
+
+    html_theme_options = {
+        'collapse_navigation': False,
+        'display_version': False,
+        'navigation_depth': 3,
+    }
+
 Page-level configuration
 ------------------------
 
