@@ -234,6 +234,16 @@ Images
 
     This is a caption for a figure.
 
+Setting width:
+
+.. image:: static/yi_jing_01_chien.jpg
+   :width: 2em
+
+Setting height:
+
+.. image:: static/yi_jing_01_chien.jpg
+   :height: 2em
+
 Download links
 ==============
 
