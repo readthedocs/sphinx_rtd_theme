@@ -57,6 +57,7 @@
     {% endblock %}
   </ul>
 
+  {% if (theme_prev_next_buttons_location == 'top' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       {% if next %}
         <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
@@ -65,5 +66,6 @@
         <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       {% endif %}
   </div>
+  {% endif %}
   <hr/>
 </div>
