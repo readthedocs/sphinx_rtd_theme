@@ -102,6 +102,9 @@ v0.1.10-alpha
 * Removes Sphinx dependency
 * Fixes hamburger on mobile display
 * Adds a ``body_begin`` block to the template
+* Add ``prev_next_buttons_location`` which can take the value ``bottom``,
+  ``top``, ``both`` , ``None`` and will display the "Next" and "Previous"
+  buttons accordingly
 
 v0.1.9
 ------
