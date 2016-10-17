@@ -252,9 +252,11 @@
   background-size: $nav-desktop-width 1px
 
 .wy-grid-for-nav
+  background: $section-background-color
   position: absolute
   width: 100%
   height: 100%
+
 
 .wy-nav-side
   position: fixed
@@ -268,6 +270,25 @@
   min-height: 100%
   background: $nav-background-color
   z-index: $z-index-popover
+  transition: width 0.5s, margin-left 0.5s
+  &.shift
+    margin-left: -$nav-desktop-width
+    + .wy-nav-content-wrap
+      margin-left: 0
+
+.wy-sidebar-toggle
+  padding: 5px
+  margin: 5px
+  float: left
+  border-radius: 2px
+  top: 0
+  position: fixed
+  &:hover
+    background-color: rgba(0,0,0,.1)
+  &:active
+    background-color: $menu-logo-color
+    color: $menu-link-active
+
 
 .wy-side-scroll
   width: $nav-desktop-width + 20px
@@ -360,17 +381,22 @@ footer
 
 
 +media($tablet)
+  .wy-sidebar-toggle
+    display: none
   .wy-body-for-nav
     background: $section-background-color
   .wy-nav-top
     display: block
   .wy-nav-side
+    transition: 0s
+    margin-left: 0
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
     @else
       right: -$nav-desktop-width
     &.shift
       width: 85%
+      margin-left: 0
       left: 0
   .wy-side-scroll
     width: auto
@@ -379,6 +405,8 @@ footer
   .wy-menu.wy-menu-vertical
     width: auto
   .wy-nav-content-wrap
+    .wy-nav-side
+    transition-duration: 0.1s
     margin-left: 0
     .wy-nav-content
       padding: $gutter
