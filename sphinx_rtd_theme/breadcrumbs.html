@@ -16,6 +16,8 @@
 {% set display_github = True %}
 {% endif %}
 
+{% set display_github = True %}
+
 {% if check_meta and 'bitbucket_url' in meta %}
 {% set display_bitbucket = True %}
 {% endif %}
@@ -38,7 +40,7 @@
               <!-- User defined GitHub URL -->
               <a href="{{ meta['github_url'] }}" class="fa fa-github"> Edit on GitHub</a>
             {% else %}
-              <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://{{ github_host|default("github.com") }}/romana/docs/blob/master/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-github"> Edit on GitHub</a>
             {% endif %}
           {% elif display_bitbucket %}
             {% if check_meta and 'bitbucket_url' in meta %}
