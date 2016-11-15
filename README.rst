@@ -61,8 +61,50 @@ conf.py file:
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
 
+Configuration
+=============
+
+You can configure different parts of the theme.
+
+Project-wide configuration
+--------------------------
+
+The theme's project-wide options are defined in the ``sphinx_rtd_theme/theme.conf``
+file of this repository, and can be defined in your project's ``conf.py`` via
+``html_theme_options``. For example:
+
+.. code:: python
+
+    html_theme_options = {
+        'collapse_navigation': False,
+        'display_version': False,
+        'navigation_depth': 3,
+    }
+
+Page-level configuration
+------------------------
+
+Pages support metadata that changes how the theme renders.
+You can currently add the following:
+
+* ``:github_url:`` This will force the "Edit on GitHub" to the configured URL
+* ``:bitbucket_url:`` This will force the "Edit on Bitbucket" to the configured URL
+
 Changelog
 =========
+
+v0.1.10-alpha
+-------------
+
+.. note::
+    This is a pre-release version
+
+* Removes Sphinx dependency
+* Fixes hamburger on mobile display
+* Adds a ``body_begin`` block to the template
+* Add ``prev_next_buttons_location`` which can take the value ``bottom``,
+  ``top``, ``both`` , ``None`` and will display the "Next" and "Previous"
+  buttons accordingly
 
 v0.1.9
 ------
