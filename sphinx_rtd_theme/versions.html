@@ -9,8 +9,8 @@
     <div class="rst-other-versions">
       <dl>
         <dt>Versions</dt>
-        {% for slug, url in versions %}
-          <dd><a href="{{ url }}">{{ slug }}</a></dd>
+        {% for version in versions %}
+          <dd><a href="{{ version.get_absolute_url }}">{{ version.slug }}</a></dd>
         {% endfor %}
       </dl>
       <dl>
