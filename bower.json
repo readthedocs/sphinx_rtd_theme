@@ -33,6 +33,9 @@
     "lato-googlefont": "*",
     "robotoslab-googlefont": "*",
     "inconsolata-googlefont": "*",
-    "font-awesome": "4.2.0"
+    "font-awesome": "~4.6"
+  },
+  "resolutions": {
+    "font-awesome": "~4.6"
   }
 }
