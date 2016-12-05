@@ -89,6 +89,7 @@ You can currently add the following:
 
 * ``:github_url:`` This will force the "Edit on GitHub" to the configured URL
 * ``:bitbucket_url:`` This will force the "Edit on Bitbucket" to the configured URL
+* ``:gitlab_url:`` This will force the "Edit on GitLab" to the configured URL
 
 Changelog
 =========
