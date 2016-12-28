@@ -94,6 +94,11 @@ You can currently add the following:
 Changelog
 =========
 
+master
+------
+
+* Adds the ``comments`` block after the ``body`` block in the template
+
 v0.1.10-alpha
 -------------
 
