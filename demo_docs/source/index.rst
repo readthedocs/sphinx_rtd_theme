@@ -20,7 +20,7 @@ Contents:
     list
 
 .. toctree::
-    :titlesonly:
+    :maxdepth: 2
 
     toc
 
