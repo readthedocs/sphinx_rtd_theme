@@ -97,8 +97,8 @@ Changelog
 master
 ------
 
-* Adds ``rel`` and ``rel`` HTML attributes to the footer links which point
-  to the previous and next pages.
+* Add the ``rel`` HTML attribute to the footer links which point to
+  the previous and next pages.
 * Adds the ``comments`` block after the ``body`` block in the template
 
 v0.1.10-alpha
