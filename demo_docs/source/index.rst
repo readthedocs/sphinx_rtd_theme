@@ -20,7 +20,7 @@ Contents:
     list
 
 .. toctree::
-    :titlesonly:
+    :maxdepth: 2
 
     toc
 
@@ -237,4 +237,4 @@ Images
 Download links
 ==============
 
-:download:`This long long long long long long long long long long long long long long long download link should be blue with icon, and should wrap white-spaces <static/yi_jing_01_chien.jpg>`
+:download:`This long long long long long long long long long long long long long long long download link should be blue, normal weight text with a leading icon, and should wrap white-spaces <static/yi_jing_01_chien.jpg>`
