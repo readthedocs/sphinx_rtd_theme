@@ -99,7 +99,13 @@ master
 
 * Add the ``rel`` HTML attribute to the footer links which point to
   the previous and next pages.
+
+v0.2.0
+------
+
 * Adds the ``comments`` block after the ``body`` block in the template
+* Added "Edit on GitLab" support
+* Many bug fixes
 
 v0.1.10-alpha
 -------------
