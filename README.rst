@@ -97,8 +97,13 @@ Changelog
 master
 ------
 
+
+v0.2.1
+------
+
 * Add the ``rel`` HTML attribute to the footer links which point to
   the previous and next pages.
+* Fix toctree issue caused by Sphinx singlehtml builder (#367)
 
 v0.2.0
 ------
