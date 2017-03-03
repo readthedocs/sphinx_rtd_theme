@@ -121,12 +121,14 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           {% block menu %}
-            {% set toctree = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
-            {% if toctree %}
-                {{ toctree }}
-            {% else %}
-                <!-- Local TOC -->
-                <div class="local-toc">{{ toc }}</div>
+            {% if display_toc %}
+              {% set toctree = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
+              {% if toctree %}
+                  {{ toctree }}
+              {% else %}
+                  <!-- Local TOC -->
+                  <div class="local-toc">{{ toc }}</div>
+              {% endif %}
             {% endif %}
           {% endblock %}
         </div>
