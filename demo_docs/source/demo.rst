@@ -106,6 +106,10 @@ RFC reference (:RFC:`2822`); a :sub:`subscript`; a :sup:`superscript`;
 and explicit roles for :emphasis:`standard` :strong:`inline`
 :literal:`markup`.
 
+GUI labels are a useful way to indicate that :guilabel:`Some action` is
+to be taken by the user. The GUI label should not run over
+``line-height`` so as not to :guilabel:`interfere` with text from adjacent lines.
+
 .. DO NOT RE-WRAP THE FOLLOWING PARAGRAPH!
 
 Let's test wrapping and whitespace significance in inline literals:
