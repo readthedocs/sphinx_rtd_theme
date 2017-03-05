@@ -126,6 +126,9 @@
     {%- if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
     {%- endif %}
+    {%- if theme_canonical_url %}
+    <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
+    {%- endif %}
     {%- endif %}
 {%- block linktags %}
     {%- if hasdoc('about') %}
