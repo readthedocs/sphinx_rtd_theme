@@ -17,12 +17,11 @@ Read the Docs Sphinx Theme
 
 View a working demo_ over on readthedocs.org_.
 
-This is a mobile-friendly sphinx_ theme I made for readthedocs.org_. It's
-currently in development there and includes some rtd variable checks that can be ignored
-if you're just trying to use it on your project outside of that site.
+This is a mobile-friendly sphinx_ theme I made for readthedocs.org_.
 
-**This repo also exists as a submodule within the readthedocs itself**, so please make your edits to
-the SASS files here, rather than the .css files on RTD.
+If you'd like to update the theme,
+please make your edits to the SASS files here,
+rather than the .css files on checked into the repo.
 
 .. image:: screen_mobile.png
     :width: 100%
