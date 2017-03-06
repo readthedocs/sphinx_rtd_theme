@@ -106,6 +106,17 @@ Changelog
 master
 ------
 
+v0.2.3
+------
+
+* Temporarily patch Sphinx issue with ``singlehtml`` builder by inspecting the
+  builder in template.
+
+v0.2.2
+------
+
+* Roll back toctree fix in 0.2.1 (#367). This didn't fix the issue and
+  introduced another bug with toctrees display.
 
 v0.2.1
 ------
