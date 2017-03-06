@@ -11,11 +11,11 @@ from sphinx_rtd_theme import __version__
 setup(
     name='sphinx_rtd_theme',
     version=__version__,
-    url='https://github.com/snide/sphinx_rtd_theme/',
+    url='https://github.com/rtfd/sphinx_rtd_theme/',
     license='MIT',
     author='Dave Snider',
     author_email='dave.snider@gmail.com',
-    description='ReadTheDocs.org theme for Sphinx, 2013 version.',
+    description='Read the Docs theme for Sphinx',
     long_description=open('README.rst').read(),
     zip_safe=False,
     packages=['sphinx_rtd_theme'],
@@ -28,7 +28,6 @@ setup(
     ]},
     include_package_data=True,
     classifiers=[
-        'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',
         'Environment :: Console',
         'Environment :: Web Environment',
