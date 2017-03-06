@@ -108,7 +108,7 @@ master
 v0.2.4
 ------
 
-* Yet another path to deal with extra builders outside Spinx, such as the
+* Yet another patch to deal with extra builders outside Spinx, such as the
   singlehtml builders from the Read the Docs Sphinx extension
 
 v0.2.3
