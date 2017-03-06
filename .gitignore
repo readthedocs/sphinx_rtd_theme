@@ -6,6 +6,7 @@
 .coverage
 *.DS_Store
 *.sass-cache
+.ropeproject/
 .ruby-version
 dist/
 bower_components/
