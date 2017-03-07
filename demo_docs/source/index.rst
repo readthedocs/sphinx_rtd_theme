@@ -143,6 +143,7 @@ Code with Sidebar
 
 .. literalinclude:: test_py_module/test.py
     :language: python
+    :caption: Literal includes can also have captions.
     :linenos:
     :lines: 1-40
 
