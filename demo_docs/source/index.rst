@@ -36,7 +36,7 @@ You can also read the :ref:`genindex`
 Maaaaath!
 =========
 
-This is a test.  Here is an equation:
+This is a test. Here is an equation:
 :math:`X_{0:5} = (X_0, X_1, X_2, X_3, X_4)`.
 Here is another:
 
@@ -56,60 +56,60 @@ List tables
 -----------
 
 .. list-table:: List tables can have captions like this one.
-   :widths: 10 5 10
-   :header-rows: 1
-   :stub-columns: 1
+    :widths: 10 5 10
+    :header-rows: 1
+    :stub-columns: 1
 
-   * - List table
-     - Header 1
-     - Header 2
-   * - Stub Column 1
-     - Row 1
-     - Column 3
-   * - Stub Column 2
-     - Row 2
-     - Column 3
-   * - Stub Column 3
-     - Row 3
-     - Column 3
+    * - List table
+      - Header 1
+      - Header 2
+    * - Stub Column 1
+      - Row 1
+      - Column 3
+    * - Stub Column 2
+      - Row 2
+      - Column 3
+    * - Stub Column 3
+      - Row 3
+      - Column 3
 
 .. list-table:: This is a list table with images in it.
-  
-   * - .. figure:: static/yi_jing_01_chien.jpg
 
-          This is a short caption for a figure.
+    * - .. figure:: static/yi_jing_01_chien.jpg
 
-     - .. figure:: static/yi_jing_01_chien.jpg
+           This is a short caption for a figure.
 
-          This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+      - .. figure:: static/yi_jing_01_chien.jpg
+
+           This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+           Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
 
 Hlists
 ------
 
 .. hlist::
-   :columns: 2
+    :columns: 2
 
-   - First item
-   - Second item
-   - Third item
-   - Forth item
-   - Fifth item
-   - Sixths item
-   
+    - First item
+    - Second item
+    - Third item
+    - Forth item
+    - Fifth item
+    - Sixths item
+
 .. rubric:: Hlist with images
 
 .. hlist::
-   :columns: 2
+    :columns: 2
 
-   - .. figure:: static/yi_jing_01_chien.jpg
+    - .. figure:: static/yi_jing_01_chien.jpg
 
-        This is a short caption for a figure.
+         This is a short caption for a figure.
 
-   - .. figure:: static/yi_jing_01_chien.jpg
+    - .. figure:: static/yi_jing_01_chien.jpg
 
-        This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+         This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
 
 Giant tables
 ------------
@@ -298,7 +298,7 @@ Images
     :align: right
 
     This is a caption for a figure. It can be very long and span several lines.
-    
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed facilisis metus.
 Ut non dui tellus. Fusce at posuere urna, id posuere elit. Donec pretium sit amet arcu ut eleifend.
 Nullam venenatis quis ex sit amet ultricies. Cras euismod ex sed hendrerit vestibulum.
