@@ -184,17 +184,12 @@
     caption
       padding: 0.5em
       .headerlink
-        display: none
         visibility: hidden
-        font-size: 14px
-        @extend .fa
-        &:after
-          visibility: visible
-          content: "\f0c1"
-          font-family: FontAwesome
-          display: inline-block
-        &:hover .headerlink
-          display: inline-block
+      &:after
+        visibility: visible
+        display: inline-block
+      &:hover .headerlink
+        visibility: visible
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
     @extend .wy-table
