@@ -372,8 +372,10 @@ This is a glossary with definition terms for thing like :term:`Writing`:
   
   Documentation
      Provides users with the knowledge they need to use something.
+
   Reading
      The process of taking information into ones mind through the use of eyes.
+
   Writing
      The process of putting thoughts into a medium for other people to :term:`read <Reading>`.
 
