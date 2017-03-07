@@ -1,19 +1,7 @@
-.. important::
 
-    wanna play a game?
-
-    - inside
-    - this
-
-      - list
-      - ``in the world``
-
-        - hi
-        - his
-
-          hi
-
-
+=================================================
+Lists
+=================================================
 
 A list
 ======
@@ -66,4 +54,30 @@ But deeper down the rabbit hole
 
     - `yahoo <http://www.yahoo.com>`_ ``hi``
     - ``destiny``
+    
+.. important::
 
+    wanna play a game?
+
+    - inside
+    - this
+
+      - list
+      - ``in the world``
+
+        - hi
+        - his
+
+          hi
+
+Numbered List
+=============
+
+#. One,
+#. Two.
+#. Three with long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   Sed feugiat sagittis neque quis eleifend. Duis rutrum lectus sit amet mattis suscipit.
+
+- A) Using bullets and letters. (A)
+- B) Using bullets and letters. (B)
+- C) Using bullets and letters. (C)
