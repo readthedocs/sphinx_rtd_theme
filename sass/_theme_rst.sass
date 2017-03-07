@@ -181,6 +181,8 @@
     @extend .wy-table-bordered-all
     &:not(.field-list)
       @extend .wy-table-striped
+    &:not(.valign) td
+      vertical-align: baseline
     caption
       font: italic 90%/18px Lato, proxima-nova, 'Helvetica Neue', Arial, sans-serif
       color: $caption-color
