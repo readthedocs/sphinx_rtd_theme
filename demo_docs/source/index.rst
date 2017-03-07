@@ -31,6 +31,8 @@ Contents:
     long
     api
 
+You can also read the :ref:`genindex`
+
 Maaaaath!
 =========
 
