@@ -47,9 +47,70 @@ Here is another:
     \left( \sin \theta \, \frac{\partial f}{\partial \theta} \right) +
     \frac{1}{r^2 \sin^2\theta} \frac{\partial^2 f}{\partial \phi^2}
 
+Tables
+======
+
+List tables
+-----------
+
+.. list-table:: List tables can have captions like this one.
+   :widths: 10 5 10
+   :header-rows: 1
+   :stub-columns: 1
+
+   * - List table
+     - Header 1
+     - Header 2
+   * - Stub Column 1
+     - Row 1
+     - Column 3
+   * - Stub Column 2
+     - Row 2
+     - Column 3
+   * - Stub Column 3
+     - Row 3
+     - Column 3
+
+.. list-table:: This is a list table with images in it.
+  
+   * - .. figure:: static/yi_jing_01_chien.jpg
+
+          This is a short caption for a figure.
+
+     - .. figure:: static/yi_jing_01_chien.jpg
+
+          This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+
+Hlists
+------
+
+.. hlist::
+   :columns: 2
+
+   - First item
+   - Second item
+   - Third item
+   - Forth item
+   - Fifth item
+   - Sixths item
+   
+.. rubric:: Hlist with images
+
+.. hlist::
+   :columns: 2
+
+   - .. figure:: static/yi_jing_01_chien.jpg
+
+        This is a short caption for a figure.
+
+   - .. figure:: static/yi_jing_01_chien.jpg
+
+        This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
 
 Giant tables
-============
+------------
 
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  |
