@@ -1,7 +1,7 @@
 {
   "name": "sphinx-rtd-theme",
-  "version": "0.1.9",
-  "homepage": "https://github.com/snide/wyrm",
+  "version": "0.2.4",
+  "homepage": "https://github.com/rtfd/sphinx_rtd_theme",
   "authors": [
     "Dave Snider <dave.snider@gmail.com>"
   ],
@@ -27,15 +27,15 @@
     "src"
   ],
   "devDependencies": {
-    "wyrm": "~0.0.x"
+    "wyrm": "~1.0.x"
   },
   "dependencies": {
     "lato-googlefont": "*",
     "robotoslab-googlefont": "*",
     "inconsolata-googlefont": "*",
-    "font-awesome": "~4.6"
+    "font-awesome": "~4.7"
   },
   "resolutions": {
-    "font-awesome": "~4.6"
+    "font-awesome": "~4.7"
   }
 }
