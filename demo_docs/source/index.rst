@@ -327,7 +327,7 @@ Data
           Data_item_2
           Data_item_3
 
-Some data link:data:`Data_item_1`.
+Some data link :data:`Data_item_1`.
 
 Download links
 ==============
