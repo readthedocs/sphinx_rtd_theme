@@ -6,3 +6,11 @@ span[id*='MathJax-Span']
 
 .eqno
   float: right
+
+  .headerlink
+    visibility: hidden
+  &:after
+    visibility: visible
+    display: inline-block
+  &:hover .headerlink
+    visibility: visible
