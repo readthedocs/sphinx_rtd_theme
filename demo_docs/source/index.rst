@@ -327,6 +327,8 @@ Data
           Data_item_2
           Data_item_3
 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue elit eu hendrerit mattis.
+
 Some data link :data:`Data_item_1`.
 
 Download links
