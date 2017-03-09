@@ -1,0 +1,92 @@
+// Slimmer version of FA for use on the badge_only.sass file.
+
+@include font-face(FontAwesome, "#{$font-awesome-dir}fontawesome-webfont");
+
+.fa:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: inherit;
+
+  @include font-smooth;
+}
+
+a .fa {
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+li {
+  .fa {
+    display: inline-block;
+  }
+
+  .fa-large:before,
+  .fa-large:before {
+    /* 1.5 increased font size for fa-large * 1.25 width */
+    width: 1.5 * 1.25em;
+  }
+}
+
+ul.fas {
+  list-style-type: none;
+  margin-left: 2em;
+  text-indent: -0.8em;
+
+  li {
+    .fa {
+      width: 0.8em;
+    }
+
+    .fa-large:before,
+    .fa-large:before {
+      /* 1.5 increased font size for fa-large * 1.25 width */
+      vertical-align: baseline;
+
+      //      width: 1.5*1.25em
+   
+    }
+  }
+}
+
+.fa-book:before {
+  content: "";
+}
+
+.icon-book:before {
+  content: "";
+}
+
+.fa-caret-down:before {
+  content: "";
+}
+
+.icon-caret-down:before {
+  content: "";
+}
+
+.fa-caret-up:before {
+  content: "";
+}
+
+.icon-caret-up:before {
+  content: "";
+}
+
+.fa-caret-left:before {
+  content: "";
+}
+
+.icon-caret-left:before {
+  content: "";
+}
+
+.fa-caret-right:before {
+  content: "";
+}
+
+.icon-caret-right:before {
+  content: "";
+}
