@@ -6,6 +6,8 @@ $font-awesome-dir: "../fonts/";
 $static-img: "../img/";
 $mathjax-color: $text-color;
 
+$content-width: {{ theme_content_width }}
+
 $headerlink-color: $text-color;
 
 // Code colors
