@@ -457,7 +457,7 @@ An image directive (also clickable -- a hyperlink reference):
 
 A figure directive:
 
-.. figure:: images/title.png
+.. figure:: static/yi_jing_01_chien.jpg
    :alt: reStructuredText, the markup syntax
 
    A figure is an image with a caption and/or a legend:
@@ -474,7 +474,7 @@ A figure directive:
 
 A figure directive with center alignment
 
-.. figure:: images/title.png
+.. figure:: static/yi_jing_01_chien.jpg
    :align: center
    :width: 300
 
