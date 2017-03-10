@@ -123,6 +123,12 @@ to see how the text is wrapped.  -- ---- --------  Now note    the
 spacing    between the    words of    this sentence    (words
 should    be grouped    in pairs).``
 
+`This is an example of --inline-literal --text, --including some--
+strangely--hyphenated-words.  Adjust-the-width-of-your-browser-window
+to see how the text is wrapped.  -- ---- --------  Now note    the
+spacing    between the    words of    this sentence    (words
+should    be grouped    in pairs).`
+
 If the ``--pep-references`` option was supplied, there should be a
 live link to PEP 258 here.
 
