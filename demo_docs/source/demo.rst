@@ -434,6 +434,13 @@ An example of the "contents" directive can be seen above this section
 (a local, untitled table of contents_) and at the beginning of the
 document (a document-wide `table of contents`_).
 
+Centered text
+`````````````
+
+You can create a statement with centered text with ``.. centered::``
+
+.. centered:: This is centered text!
+
 Images
 ``````
 
