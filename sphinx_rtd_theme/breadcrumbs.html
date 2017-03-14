@@ -36,7 +36,7 @@
     {% endblock %}
     {% block breadcrumbs_aside %}
       <li class="wy-breadcrumbs-aside">
-        {% if pagename != "search" %}
+        {% if hasdoc(pagename) %}
             {% if display_github %}
             {% if check_meta and 'github_url' in meta %}
               <!-- User defined GitHub URL -->
