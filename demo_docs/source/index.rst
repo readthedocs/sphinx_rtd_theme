@@ -271,7 +271,6 @@ Here I am making a citation [1]_, another [2]_ and another [3]_
 
 .. [3] This citation will have two backlinks.
 
-======
 Images
 ======
 
