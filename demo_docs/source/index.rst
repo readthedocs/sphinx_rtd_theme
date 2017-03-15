@@ -17,18 +17,13 @@ Contents
     structure
     demo
     lists_tables
-
-.. toctree::
-    :maxdepth: 2
-
-    toc
+    api
 
 .. toctree::
     :maxdepth: 2
     :caption: This is an incredibly long caption for a long menu
 
     long
-    api
 
 You can also read the :ref:`genindex`
 
