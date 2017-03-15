@@ -487,6 +487,16 @@ Admonitions
 
 .. Tip:: 15% if the service is good.
 
+    +---------+
+    | Example |
+    +=========+
+    | Thing1  |
+    +---------+
+    | Thing2  |
+    +---------+
+    | Thing3  |
+    +---------+
+
 .. WARNING:: Strong prose may provoke extreme mental exertion.
    Reader discretion is strongly advised.
 

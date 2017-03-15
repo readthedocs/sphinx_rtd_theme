@@ -246,19 +246,6 @@ documentation for it.
 .. _Docutils: http://docutils.sourceforge.net/
 .. _Inline Markup: http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#inline-markup
 
-.. note:: Every other line in this table will have white text on a white background.
-            This is bad.
-
-    +---------+
-    | Example |
-    +=========+
-    | Thing1  |
-    +---------+
-    | Thing2  |
-    +---------+
-    | Thing3  |
-    +---------+
-
 Emphasized lines with line numbers
 ==================================
 
@@ -271,7 +258,6 @@ Emphasized lines with line numbers
        print 'This line is highlighted.'
        print 'This one is not...'
        print '...but this one is.'
-
 
 Citation
 ========
