@@ -12,6 +12,7 @@ Contents:
     :maxdepth: 2
     :caption: Sweet Docs
 
+    structure
     demo
     list
 
