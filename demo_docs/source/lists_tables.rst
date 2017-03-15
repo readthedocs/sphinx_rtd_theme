@@ -3,28 +3,8 @@
 Lists & Tables
 **************
 
-A list
-======
-
-Bullet Lists
-------------
-
-- A bullet list
-
-  + Nested bullet list.
-  + Nested item 2.
-
-- Item 2.
-
-  Paragraph 2 of item 2.
-
-  * Nested bullet list.
-  * Nested item 2.
-
-    - Third level.
-    - Item 2.
-
-  * Nested item 3.
+Lists
+=====
 
 Enumerated Lists
 ----------------
@@ -133,24 +113,32 @@ Field list
     language, containing examples of all basic reStructuredText
     constructs and many advanced constructs.
 
-list
-----
+Bullet Lists
+------------
 
-- here
-  - is
-  - some
+- A bullet list
 
-    - list
-    - items
-    - `yahoo <http://www.yahoo.com>`_
-    - ``huh``
-- how
+  + Nested bullet list.
+  + Nested item 2.
+
+- Item 2.
+
+  Paragraph 2 of item 2.
+
+  * Nested bullet list.
+  * Nested item 2.
+
+    - Third level.
+    - Item 2.
+
+  * Nested item 3.
+
 - ``inline literall``
 - ``inline literall``
 - ``inline literall``
 
 Second list level
------------------
+^^^^^^^^^^^^^^^^^
 
 - here is a list in a second-level section.
 - `yahoo <http://www.yahoo.com>`_
@@ -214,7 +202,7 @@ Hlists
          Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
 
 Numbered List
-=============
+-------------
 
 #. One,
 #. Two.
@@ -228,8 +216,8 @@ Numbered List
 Tables
 ======
 
-Tables
-------
+Grid Tables
+-----------
 
 Here's a grid table followed by a simple table:
 
@@ -260,7 +248,22 @@ False  True   True
 True   True   True
 =====  =====  ======
 
-List tables
+Giant Tables
+^^^^^^^^^^^^
+
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  |
++============+============+===========+============+============+===========+============+============+===========+============+============+===========+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+
+List Tables
 -----------
 
 .. list-table:: List tables can have captions like this one.
@@ -295,18 +298,3 @@ List tables
 
            This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
            Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
-
-Giant Tables
-------------
-
-+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
-| Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  |
-+============+============+===========+============+============+===========+============+============+===========+============+============+===========+
-| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
-+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
-| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
-+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
-| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
-+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
-| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
-+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
