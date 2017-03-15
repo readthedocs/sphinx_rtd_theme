@@ -454,7 +454,7 @@ Images
 
 An image directive (also clickable -- a hyperlink reference):
 
-.. image:: images/title.png
+.. image:: static/yi_jing_01_chien.jpg
    :target: directives_
 
 A figure directive:
@@ -567,7 +567,7 @@ Substitution Definitions
 
 An inline image (|example|) example:
 
-.. |EXAMPLE| image:: images/biohazard.png
+.. |EXAMPLE| image:: static/yi_jing_01_chien.jpg
 
 (Substitution definitions are not visible in the HTML source.)
 
