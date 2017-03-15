@@ -11,7 +11,7 @@ Contents
 ========
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Syntax Constructs
 
     structure
@@ -20,7 +20,7 @@ Contents
     api
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: This is an incredibly long caption for a long menu
 
     long
