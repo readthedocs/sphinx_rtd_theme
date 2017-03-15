@@ -188,7 +188,7 @@ Code Blocks
     }
 
 Emphasized lines with line numbers
-""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
    :linenos:
@@ -300,15 +300,14 @@ Targets
 
 .. _example:
 
-This paragraph is pointed to by the explicit "example" target. A
-reference can be found under `Inline Markup`_, above. `Inline
+This paragraph is pointed to by the explicit "example" target.
+A reference can be found under `Inline Markup`_, above. `Inline
 hyperlink targets`_ are also possible.
 
 Section headers are implicit targets, referred to by name. See
 Targets_, which is a subsection of `Body Elements`_.
 
-Explicit external targets are interpolated into references such as
-"Python_".
+Explicit external targets are interpolated into references such as "Python_".
 
 .. _Python: http://www.python.org/
 
@@ -317,8 +316,7 @@ refer to the Targets_ section.
 
 __ Targets_
 
-Here's a `hyperlink reference without a target`_, which generates an
-error.
+Here's a `hyperlink reference without a target`_, which generates an error.
 
 
 Directives
