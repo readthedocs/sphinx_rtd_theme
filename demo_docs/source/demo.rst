@@ -21,7 +21,7 @@ cross-references (example_), external hyperlinks with embedded URIs
 (`Python web site <http://www.python.org>`__), footnote references
 (manually numbered [1]_, anonymous auto-numbered [#]_, labeled
 auto-numbered [#label]_, or symbolic [*]_), citation references
-([CIT2002]_), substitution references (|example|), and _`inline hyperlink targets`
+([2]_), substitution references (|example|), and _`inline hyperlink targets`
 (see Targets_ below for a reference back to here).
 Character-level inline markup is also possible (although exceedingly ugly!)
 in *re*\ ``Structured``\ *Text*.  Problems are indicated by |problematic| text

@@ -16,7 +16,7 @@ Contents
 
     structure
     demo
-    list
+    lists_tables
 
 .. toctree::
     :maxdepth: 2
