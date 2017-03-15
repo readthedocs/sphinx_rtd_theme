@@ -3,29 +3,16 @@
 
 .. demo.rst from: http://docutils.sourceforge.net/docs/user/rst/demo.txt
 
-================================
- reStructuredText Demonstration
-================================
-
-.. Above is the document title, and below is the subtitle.
-   They are transformed from section titles after parsing.
-
---------------------------------
- Examples of Syntax Constructs
---------------------------------
-
-.. meta::
-   :keywords: reStructuredText, demonstration, demo, parser
-   :description lang=en: A demonstration of the reStructuredText
-       markup language, containing examples of all basic
-       constructs and many advanced constructs.
+**********************
+Paragraph Level Markup
+**********************
 
 .. contents:: Table of Contents
 .. section-numbering::
 
 
 Inline Markup
-`````````````
+=============
 
 Paragraphs contain text and may contain inline markup: *emphasis*,
 **strong emphasis**, ``inline literals``, standalone hyperlinks
@@ -65,6 +52,18 @@ spacing    between the    words of    this sentence    (words
 should    be grouped    in pairs).``
 
 If the ``--pep-references`` option was supplied, there should be a live link to PEP 258 here.
+
+Meta
+====
+
+.. meta::
+   :keywords: reStructuredText, demonstration, demo, parser
+   :description lang=en: A demonstration of the reStructuredText
+       markup language, containing examples of all basic
+       constructs and many advanced constructs.
+       
+Blocks
+======
 
 Literal Blocks
 --------------
@@ -134,6 +133,9 @@ Doctest Blocks
 Python-specific usage examples; begun with ">>>"
 >>> print '(cut and pasted from interactive Python sessions)'
 (cut and pasted from interactive Python sessions)
+
+References
+==========
 
 Footnotes
 ---------
@@ -216,52 +218,39 @@ __ Targets_
 Here's a `hyperlink reference without a target`_, which generates an
 error.
 
-Duplicate Target Names
-``````````````````````
-
-Duplicate names in section headers or other implicit targets will
-generate "info" (level-1) system messages.  Duplicate names in
-explicit targets will generate "warning" (level-2) system messages.
-
-Duplicate Target Names
-``````````````````````
-
-Since there are two "Duplicate Target Names" section headers, we
-cannot uniquely refer to either of them by name.  If we try to (like
-this: `Duplicate Target Names`_), an error is generated.
 
 Directives
-----------
+==========
+
+Contents
+--------
 
 .. contents:: :local:
 
-These are just a sample of the many reStructuredText Directives.  For
-others, please see
+These are just a sample of the many reStructuredText Directives. For others, please see:
 http://docutils.sourceforge.net/docs/ref/rst/directives.html.
 
-Document Parts
-``````````````
-
-An example of the "contents" directive can be seen above this section
-(a local, untitled table of contents_) and at the beginning of the
-document (a document-wide `table of contents`_).
 
 Centered text
-`````````````
+-------------
 
 You can create a statement with centered text with ``.. centered::``
 
 .. centered:: This is centered text!
 
+Images & Figures
+----------------
+
 Images
-``````
+^^^^^^
 
 An image directive (also clickable -- a hyperlink reference):
 
 .. image:: static/yi_jing_01_chien.jpg
    :target: directives_
 
-A figure directive:
+Figures
+^^^^^^^
 
 .. figure:: static/yi_jing_01_chien.jpg
    :alt: reStructuredText, the markup syntax
@@ -286,7 +275,7 @@ A figure directive with center alignment
    This caption should be centered.
 
 Admonitions
-```````````
+-----------
 
 .. Attention:: Directives at large.
 
@@ -334,7 +323,7 @@ Admonitions
    You can make up your own admonition too.
 
 Topics, Sidebars, and Rubrics
-`````````````````````````````
+-----------------------------
 
 .. sidebar:: Sidebar Title
    :subtitle: Optional Subtitle
@@ -354,19 +343,19 @@ Topics, Sidebars, and Rubrics
 .. rubric:: This is a rubric
 
 Target Footnotes
-````````````````
+----------------
 
 .. target-notes::
 
 Replacement Text
-````````````````
+----------------
 
 I recommend you try |Python|_.
 
 .. |Python| replace:: Python, *the* best language around
 
 Compound Paragraph
-``````````````````
+------------------
 
 .. compound::
 
@@ -391,16 +380,3 @@ An inline image (|example|) example:
 .. |EXAMPLE| image:: static/yi_jing_01_chien.jpg
 
 (Substitution definitions are not visible in the HTML source.)
-
-Comments
---------
-
-Here's one:
-
-.. Comments begin with two dots and a space. Anything may
-   follow, except for the syntax of footnotes, hyperlink
-   targets, directives, or substitution definitions.
-
-   Double-dashes -- "--" -- must be escaped somehow in HTML output.
-
-(View the HTML source to see the comment.)
