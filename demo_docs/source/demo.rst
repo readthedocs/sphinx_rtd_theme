@@ -14,42 +14,6 @@
  Examples of Syntax Constructs
 --------------------------------
 
-.. bibliographic fields (which also require a transform):
-
-:Author: David Goodger
-:Address: 123 Example Street
-          Example, EX  Canada
-          A1B 2C3
-:Contact: docutils-develop@lists.sourceforge.net
-:Authors: Me; Myself; I
-:organization: humankind
-:date: $Date: 2012-01-03 19:23:53 +0000 (Tue, 03 Jan 2012) $
-:status: This is a "work in progress"
-:revision: $Revision: 7302 $
-:version: 1
-:copyright: This document has been placed in the public domain. You
-            may do with it as you wish. You may copy, modify,
-            redistribute, reattribute, sell, buy, rent, lease,
-            destroy, or improve it, quote it at length, excerpt,
-            incorporate, collate, fold, staple, or mutilate it, or do
-            anything else to it that your or anyone else's heart
-            desires.
-:field name: This is a generic bibliographic field.
-:field name 2:
-    Generic bibliographic fields may contain multiple body elements.
-
-    Like this.
-
-:Dedication:
-
-    For Docutils users & co-developers.
-
-:abstract:
-
-    This document is a demonstration of the reStructuredText markup
-    language, containing examples of all basic reStructuredText
-    constructs and many advanced constructs.
-
 .. meta::
    :keywords: reStructuredText, demonstration, demo, parser
    :description lang=en: A demonstration of the reStructuredText
@@ -101,95 +65,6 @@ spacing    between the    words of    this sentence    (words
 should    be grouped    in pairs).``
 
 If the ``--pep-references`` option was supplied, there should be a live link to PEP 258 here.
-
-Bullet Lists
-------------
-
-- A bullet list
-
-  + Nested bullet list.
-  + Nested item 2.
-
-- Item 2.
-
-  Paragraph 2 of item 2.
-
-  * Nested bullet list.
-  * Nested item 2.
-
-    - Third level.
-    - Item 2.
-
-  * Nested item 3.
-
-Enumerated Lists
-----------------
-
-1. Arabic numerals.
-
-   a) lower alpha)
-
-      (i) (lower roman)
-
-          A. upper alpha.
-
-             I) upper roman)
-
-2. Lists that don't start at 1:
-
-   3. Three
-
-   4. Four
-
-   C. C
-
-   D. D
-
-   iii. iii
-
-   iv. iv
-
-#. List items may also be auto-enumerated.
-
-Definition Lists
-----------------
-
-Term
-    Definition
-Term : classifier
-    Definition paragraph 1.
-
-    Definition paragraph 2.
-Term
-    Definition
-
-
-Option Lists
-------------
-
-For listing command-line options:
-
--a            command-line option "a"
--b file       options can have arguments
-              and long descriptions
---long        options can be long also
---input=file  long options can also have
-              arguments
-
---very-long-option
-              The description can also start on the next line.
-
-              The description may contain multiple body elements,
-              regardless of where it starts.
-
--x, -y, -z    Multiple options are an "option group".
--v, --verbose  Commonly-seen: short & long options.
--1 file, --one=file, --two file
-              Multiple options with arguments.
-/V            DOS/VMS-style options too
-
-There must be at least two spaces between the option and the
-description.
 
 Literal Blocks
 --------------
@@ -259,38 +134,6 @@ Doctest Blocks
 Python-specific usage examples; begun with ">>>"
 >>> print '(cut and pasted from interactive Python sessions)'
 (cut and pasted from interactive Python sessions)
-
-Tables
-------
-
-Here's a grid table followed by a simple table:
-
-+------------------------+------------+----------+----------+
-| Header row, column 1   | Header 2   | Header 3 | Header 4 |
-| (header rows optional) |            |          |          |
-+========================+============+==========+==========+
-| body row 1, column 1   | column 2   | column 3 | column 4 |
-+------------------------+------------+----------+----------+
-| body row 2             | Cells may span columns.          |
-+------------------------+------------+---------------------+
-| body row 3             | Cells may  | - Table cells       |
-+------------------------+ span rows. | - contain           |
-| body row 4             |            | - body elements.    |
-+------------------------+------------+----------+----------+
-| body row 5             | Cells may also be     |          |
-|                        | empty: ``-->``        |          |
-+------------------------+-----------------------+----------+
-
-=====  =====  ======
-   Inputs     Output
-------------  ------
-  A      B    A or B
-=====  =====  ======
-False  False  False
-True   False  True
-False  True   True
-True   True   True
-=====  =====  ======
 
 Footnotes
 ---------
