@@ -478,6 +478,12 @@ Admonitions
 .. Important::
    - Wash behind your ears.
    - Clean up your room.
+
+     - Including the closet.
+     - The bathroom too.
+
+       - Take the trash out of the bathroom.
+       - Clean the sink.
    - Call your mother.
    - Back up your data.
 

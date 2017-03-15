@@ -55,21 +55,6 @@ But deeper down the rabbit hole
 
     - `yahoo <http://www.yahoo.com>`_ ``hi``
     - ``destiny``
-    
-.. important::
-
-    wanna play a game?
-
-    - inside
-    - this
-
-      - list
-      - ``in the world``
-
-        - hi
-        - his
-
-          hi
 
 Numbered List
 =============
