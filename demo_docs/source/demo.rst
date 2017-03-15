@@ -55,8 +55,8 @@ should    be grouped    in pairs).``
 
 If the ``--pep-references`` option was supplied, there should be a live link to PEP 258 here.
 
-Maaaaath!
-=========
+Math
+====
 
 This is a test. Here is an equation:
 :math:`X_{0:5} = (X_0, X_1, X_2, X_3, X_4)`.
