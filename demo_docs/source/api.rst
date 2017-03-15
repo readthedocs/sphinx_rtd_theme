@@ -3,6 +3,8 @@
 :mod:`test_py_module`
 *********************
 
+.. contents:: Table of Contents
+
 .. automodule:: test_py_module.test
     :members:
     :private-members:

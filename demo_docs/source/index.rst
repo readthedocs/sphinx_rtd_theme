@@ -12,6 +12,7 @@ Contents
 
 .. toctree::
     :maxdepth: 3
+    :numbered:
     :caption: Syntax Constructs
 
     structure
@@ -21,6 +22,7 @@ Contents
 
 .. toctree::
     :maxdepth: 3
+    :numbered:
     :caption: This is an incredibly long caption for a long menu
 
     long

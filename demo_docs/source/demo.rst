@@ -8,8 +8,6 @@ Paragraph Level Markup
 **********************
 
 .. contents:: Table of Contents
-.. section-numbering::
-
 
 Inline Markup
 =============
