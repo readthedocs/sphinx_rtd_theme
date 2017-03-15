@@ -331,13 +331,6 @@ Data
 
 Some data link :data:`Data_item_1`.
 
-.. versionadded:: 1.0
-    This was added in 1.0
-.. versionchanged:: 2.0
-    This was changed in 2.0
-.. deprecated:: 3.0
-    This is deprecated since 3.0
-
 Download links
 ==============
 
