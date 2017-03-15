@@ -3,6 +3,9 @@
 Lists & Tables
 **************
 
+.. contents:: Table of Contents
+.. section-numbering::
+
 Lists
 =====
 
