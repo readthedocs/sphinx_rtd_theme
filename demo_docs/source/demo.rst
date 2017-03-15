@@ -478,16 +478,15 @@ A figure directive with center alignment
 
 .. figure:: static/yi_jing_01_chien.jpg
    :align: center
-   :width: 300
+
+   This caption should be centered.
 
 Admonitions
 ```````````
 
 .. Attention:: Directives at large.
 
-.. Caution::
-
-   Don't take any wooden nickels.
+.. Caution:: Don't take any wooden nickels.
 
 .. DANGER:: Mad scientist at work!
 
