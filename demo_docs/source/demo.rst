@@ -501,6 +501,8 @@ Admonitions
    - Back up your data.
 
 .. Note:: This is a note.
+   Equations within a note:
+   :math:`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`.
 
 .. Tip:: 15% if the service is good.
 
