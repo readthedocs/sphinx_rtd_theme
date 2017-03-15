@@ -320,10 +320,15 @@ Footnotes
 Citations
 ---------
 
-.. [CIT2002] Citations are text-labeled footnotes. They may be
-   rendered separately and differently from footnotes.
+.. [1] This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.
 
-Here's a reference to the above, [CIT2002]_, and a [nonexistent]_ citation.
+.. [2] This citation has some ``code blocks`` in it, maybe some **bold** and
+       *italics* too. Heck, lets put a link to a meta citation [3]_ too.
+
+.. [3] This citation will have two backlinks.
+
+
+Here's a reference to the above, [2]_, and a [nonexistent]_ citation.
 
 Here is another type of citation: `citation`
 
