@@ -125,14 +125,7 @@ to see how the text is wrapped.  -- ---- --------  Now note    the
 spacing    between the    words of    this sentence    (words
 should    be grouped    in pairs).``
 
-`This is an example of --inline-literal --text, --including some--
-strangely--hyphenated-words.  Adjust-the-width-of-your-browser-window
-to see how the text is wrapped.  -- ---- --------  Now note    the
-spacing    between the    words of    this sentence    (words
-should    be grouped    in pairs).`
-
-If the ``--pep-references`` option was supplied, there should be a
-live link to PEP 258 here.
+If the ``--pep-references`` option was supplied, there should be a live link to PEP 258 here.
 
 Bullet Lists
 ------------
@@ -355,8 +348,9 @@ Citations
 .. [CIT2002] Citations are text-labeled footnotes. They may be
    rendered separately and differently from footnotes.
 
-Here's a reference to the above, [CIT2002]_, and a [nonexistent]_
-citation.
+Here's a reference to the above, [CIT2002]_, and a [nonexistent]_ citation.
+
+Here is another type of citation: `citation`
 
 Glossary
 --------
