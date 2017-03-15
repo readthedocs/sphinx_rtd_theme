@@ -56,6 +56,33 @@ But deeper down the rabbit hole
     - `yahoo <http://www.yahoo.com>`_ ``hi``
     - ``destiny``
 
+Hlists
+------
+
+.. hlist::
+    :columns: 2
+
+    - First item
+    - Second item
+    - Third item
+    - Forth item
+    - Fifth item
+    - Sixths item
+
+.. rubric:: Hlist with images
+
+.. hlist::
+    :columns: 2
+
+    - .. figure:: static/yi_jing_01_chien.jpg
+
+         This is a short caption for a figure.
+
+    - .. figure:: static/yi_jing_01_chien.jpg
+
+         This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+
 Numbered List
 =============
 
@@ -67,3 +94,57 @@ Numbered List
 - A) Using bullets and letters. (A)
 - B) Using bullets and letters. (B)
 - C) Using bullets and letters. (C)
+
+Tables
+======
+
+List tables
+-----------
+
+.. list-table:: List tables can have captions like this one.
+    :widths: 10 5 10 50
+    :header-rows: 1
+    :stub-columns: 1
+
+    * - List table
+      - Header 1
+      - Header 2
+      - Header 3 long. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet mauris arcu.
+    * - Stub Row 1
+      - Row 1
+      - Column 2
+      - Column 3 long. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet mauris arcu.
+    * - Stub Row 2
+      - Row 2
+      - Column 2
+      - Column 3 long. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet mauris arcu.
+    * - Stub Row 3
+      - Row 3
+      - Column 2
+      - Column 3 long. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet mauris arcu.
+
+.. list-table:: This is a list table with images in it.
+
+    * - .. figure:: static/yi_jing_01_chien.jpg
+
+           This is a short caption for a figure.
+
+      - .. figure:: static/yi_jing_01_chien.jpg
+
+           This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+           Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+
+Giant Tables
+------------
+
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  |
++============+============+===========+============+============+===========+============+============+===========+============+============+===========+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+| body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
++------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
