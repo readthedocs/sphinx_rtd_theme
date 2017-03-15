@@ -1,6 +1,8 @@
 .. This is a comment. Note how any initial comments are moved by
    transforms to after the document title, subtitle, and docinfo.
 
+.. demo.rst from: http://docutils.sourceforge.net/docs/user/rst/demo.txt
+
 ================================
  reStructuredText Demonstration
 ================================
@@ -598,17 +600,3 @@ Field Lists
 some text
 
 :Field List 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-
-Error Handling
-==============
-
-Any errors caught during processing will generate system messages.
-
-|*** Expect 6 errors (including this one). ***|
-
-There should be six messages in the following, auto-generated
-section, "Docutils System Messages":
-
-.. section should be added by Docutils automatically
-
-demo.rst from: http://docutils.sourceforge.net/docs/user/rst/demo.txt
