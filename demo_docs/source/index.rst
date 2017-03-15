@@ -277,6 +277,7 @@ Images
 
 .. figure:: static/yi_jing_01_chien.jpg
     :align: right
+    :figwidth: 200px
 
     This is a caption for a figure. It can be very long and span several lines.
 
