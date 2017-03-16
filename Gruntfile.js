@@ -68,7 +68,7 @@ module.exports = function(grunt) {
           cwd: 'sass',
           src: ['*.sass'],
           dest: 'sphinx_rtd_theme/static/css',
-          ext: '.css'
+          ext: '.css_t'
         }]
       },
       build: {
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
           cwd: 'sass',
           src: ['*.sass'],
           dest: 'sphinx_rtd_theme/static/css',
-          ext: '.css'
+          ext: '.css_t'
         }]
       }
     },
@@ -160,4 +160,3 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','browserify:dev','exec:build_sphinx','connect','open','watch']);
   grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','browserify:build','exec:build_sphinx']);
 }
-
