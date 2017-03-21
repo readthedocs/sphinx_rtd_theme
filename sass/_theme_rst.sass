@@ -26,15 +26,21 @@
     margin-bottom: $base-line-height
     p.caption
       font-style: italic
-      color: $caption-color
-      margin-top: 4px
+      font-family: inherit !important
+      font-size: inherit !important
+      color: $caption-color !important
+    
 
   div.figure.align-center
     text-align: center
 
   caption
     font-style: italic
+    // workarond a wyrm overide
+    font-family: inherit !important
+    font-size: inherit !important
     color: $caption-color !important
+    margin-top: -$base-line-height / 2
     padding: $base-line-height / 10 0px
     .headerlink
       visibility: hidden
