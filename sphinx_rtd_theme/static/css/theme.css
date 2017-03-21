@@ -5703,15 +5703,19 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
 }
 .rst-content div.figure p.caption {
   font-style: italic;
-  color: #808080;
-  margin-top: 4px;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  color: gray !important;
 }
 .rst-content div.figure.align-center {
   text-align: center;
 }
 .rst-content caption, .rst-content .code-block-caption {
   font-style: italic;
-  color: #808080 !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  color: gray !important;
+  margin-top: -12px;
   padding: 2.4px 0px;
 }
 .rst-content caption .headerlink, .rst-content .code-block-caption .headerlink {
