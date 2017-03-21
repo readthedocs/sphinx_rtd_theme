@@ -32,6 +32,18 @@
   div.figure.align-center
     text-align: center
 
+  caption
+    font: italic 90%/18px Lato, proxima-nova, 'Helvetica Neue', Arial, sans-serif
+    color: $caption-color
+    padding: 0.5em
+    .headerlink
+      visibility: hidden
+    &:after
+      visibility: visible
+      display: inline-block
+    &:hover .headerlink
+      visibility: visible
+
   // Usually it's a good idea to give images some space.
   .section > img,   .section > a > img
     margin-bottom: $base-line-height
@@ -186,17 +198,7 @@
       @extend .wy-table-striped
     &:not(.valign) td
       vertical-align: baseline
-    caption
-      font: italic 90%/18px Lato, proxima-nova, 'Helvetica Neue', Arial, sans-serif
-      color: $caption-color
-      padding: 0.5em
-      .headerlink
-        visibility: hidden
-      &:after
-        visibility: visible
-        display: inline-block
-      &:hover .headerlink
-        visibility: visible
+
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
     @extend .wy-table
