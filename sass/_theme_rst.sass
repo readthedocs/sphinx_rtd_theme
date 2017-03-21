@@ -207,7 +207,12 @@
       line-height: normal
 
     &.literal
-      color: $text-code-color
+      color: inherit
+      background-color: lighten($text-light, 20%)
+      border: 1px solid darken($text-light, 5%)
+      border-radius: $base-line-height / 6
+      margin: auto $base-line-height / 12
+      padding: $base-line-height / 10 $base-line-height / 4
     &.xref, a &
       font-weight: bold
       color: $text-codexref-color
