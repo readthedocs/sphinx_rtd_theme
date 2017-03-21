@@ -161,6 +161,7 @@ Code Blocks
 
 
 .. code-block:: json
+    :caption: Code Blocks can have captions.
 
     {
     "windows": [
