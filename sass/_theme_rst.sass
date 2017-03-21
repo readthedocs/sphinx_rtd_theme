@@ -26,9 +26,29 @@
     margin-bottom: $base-line-height
     p.caption
       font-style: italic
+      font-family: inherit !important
+      font-size: inherit !important
+      color: $caption-color !important
+    
 
   div.figure.align-center
     text-align: center
+
+  caption
+    font-style: italic
+    // workarond a wyrm overide
+    font-family: inherit !important
+    font-size: inherit !important
+    color: $caption-color !important
+    margin-top: -$base-line-height / 2
+    padding: $base-line-height / 10 0px
+    .headerlink
+      visibility: hidden
+    &:after
+      visibility: visible
+      display: inline-block
+    &:hover .headerlink
+      visibility: visible
 
   // Usually it's a good idea to give images some space.
   .section > img,   .section > a > img
@@ -49,6 +69,10 @@
     margin-bottom: $base-line-height
   .literal-block, pre.literal-block
     @extend .codeblock
+  .code-block-caption
+    @extend caption
+    text-align: center
+
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
     @extend .wy-alert
@@ -157,6 +181,9 @@
   .footnote-reference, .citation-reference
     vertical-align: super
     font-size: 90%
+  
+  table
+    caption-side: bottom
 
   // Tables! Sphinx LOVES TABLES. Most of wyrm assumes you're only going to use a table as a table
   // so I have to write a bunch of unique stuff for Sphinx to style them up differently like it's 2003.
@@ -179,6 +206,9 @@
     @extend .wy-table-bordered-all
     &:not(.field-list)
       @extend .wy-table-striped
+    &:not(.valign) td
+      vertical-align: baseline
+
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
     @extend .wy-table
