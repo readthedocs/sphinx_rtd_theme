@@ -19,7 +19,7 @@
     max-width: 100%
     height: auto !important
 
-  .highlight > pre
+  .highlight > pre, .linenodiv > pre
     line-height: normal
 
   div.figure
@@ -121,6 +121,9 @@
         display: inline-block
     &:hover .headerlink
       display: inline-block
+  
+  .centered
+    text-align: center
 
   // Sidebar content. You'll see at the bottom of this file I change it in mobile.
   .sidebar
@@ -165,7 +168,7 @@
   table.docutils.citation, table.docutils.footnote
     background: none
     border: none
-    color: $gray-light
+    color: $text-medium
     td, tr
       border: none
       background-color: transparent !important
@@ -248,7 +251,7 @@
     margin-bottom: $base-line-height
     // This would be the equivilant of a .. class::
     dt
-      display: inline-block
+      display: table
       margin: $base-line-height / 4 0
       font-size: 90%
       line-height: normal
@@ -329,6 +332,8 @@
     border-radius: $base-line-height / 6
     padding: $base-line-height / 10 $base-line-height / 4
     margin: auto $base-line-height / 12
+  .versionmodified
+    font-style: italic
 
 
 // Mobile specific
