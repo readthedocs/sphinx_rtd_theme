@@ -1,13 +1,5 @@
 var jQuery = (typeof(window) != 'undefined') ? window.jQuery : require('jquery');
 
-// Get the width of the sidebar and content
-function ThemeWidth () {
-  var SidebarWidth = document.querySelector('.wy-nav-side').clientWidth
-  var ContentWidth = document.querySelector('.wy-nav-content').clientWidth
-  
-  var MediaQuery = SidebarWidth + ContentWidth + "px"
-}
-
 // Sphinx theme nav state
 function ThemeNav () {
 
