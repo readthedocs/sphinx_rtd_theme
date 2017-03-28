@@ -114,6 +114,8 @@ master
 * Align ``.. centered::`` text to the center
 * Increase contrast for footnotes
 * Add language to the JS output variable 
+* Include the lato italics font with the theme
+* Fix padding on field lists
 
 v0.2.4
 ------
