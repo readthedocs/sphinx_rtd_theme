@@ -105,6 +105,16 @@ Changelog
 master
 ------
 
+* Include fontawesome-webfont.woff2 in pip package
+* Updated wyrm_ and Font Awesome
+* Split multiple data types on different lines
+* Italicize ``.versionmodified``
+* Fix line number spacing to align with the code lines
+* Hide Edit links on auto created pages
+* Align ``.. centered::`` text to the center
+* Increase contrast for footnotes
+* Add language to the JS output variable 
+
 v0.2.4
 ------
 
@@ -290,4 +300,5 @@ you can add something like this to your config. Thanks to Daniel Oaks for this.
 
 TODO
 ====
+
 * Separate some sass variables at the theme level so you can overwrite some basic colors.

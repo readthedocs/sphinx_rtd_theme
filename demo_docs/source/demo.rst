@@ -3,6 +3,9 @@
 
 .. demo.rst from: http://docutils.sourceforge.net/docs/user/rst/demo.txt
 
+.. |EXAMPLE| image:: static/yi_jing_01_chien.jpg
+   :width: 1em
+
 **********************
 Paragraph Level Markup
 **********************
@@ -158,6 +161,7 @@ Code Blocks
 
 
 .. code-block:: json
+    :caption: Code Blocks can have captions.
 
     {
     "windows": [
@@ -464,15 +468,6 @@ Compound Paragraph
 
 This construct is called a *compound paragraph* and can be produced
 with the "compound" directive.
-
-Substitution Definitions
-------------------------
-
-An inline image (|example|) example:
-
-.. |EXAMPLE| image:: static/yi_jing_01_chien.jpg
-
-(Substitution definitions are not visible in the HTML source.)
 
 Download Links
 ==============
