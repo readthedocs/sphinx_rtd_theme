@@ -70,7 +70,7 @@ module.exports = function(grunt) {
           cwd: 'sass',
           src: ['*.sass'],
           dest: 'sphinx_rtd_theme/static/css',
-          ext: '.css'
+          ext: '.css_t'
         }]
       },
       build: {
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
           cwd: 'sass',
           src: ['*.sass'],
           dest: 'sphinx_rtd_theme/static/css',
-          ext: '.css'
+          ext: '.css_t'
         }]
       }
     },
