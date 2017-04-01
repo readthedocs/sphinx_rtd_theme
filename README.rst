@@ -105,6 +105,8 @@ Changelog
 master
 ------
 
+* Added Spanish translation
+* Added i18n support using Babel
 * Include fontawesome-webfont.woff2 in pip package
 * Updated wyrm_ and Font Awesome
 * Split multiple data types on different lines
