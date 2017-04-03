@@ -99,6 +99,12 @@ You can currently add the following:
 * ``:bitbucket_url:`` This will force the "Edit on Bitbucket" to the configured URL
 * ``:gitlab_url:`` This will force the "Edit on GitLab" to the configured URL
 
+Translations
+============
+
+You can help to translate the Read the Docs Sphinx Theme,
+please check out the ``TRANSLATE.rst`` file for more details.
+
 Changelog
 =========
 
