@@ -4,7 +4,11 @@
 .. _github: https://www.github.com/snide/sphinx_rtd_theme
 
 """
-from babel.messages import frontend as babel
+
+try:
+    from babel.messages import frontend as babel
+except ImportError:
+    pass
 from setuptools import setup
 from sphinx_rtd_theme import __version__
 
