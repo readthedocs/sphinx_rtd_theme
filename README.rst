@@ -48,15 +48,6 @@ In your ``conf.py`` file:
 
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-You may also specify a canonical url in conf.py to let search engines know
-they should give higher ranking to latest version of the docs:
-
-.. code:: python
-
-    html_theme_options['canonical_url'] = 'http://domain.tld/latest/docs/'
-
-The url points to the root of the documentation. It requires a trailing slash.
-
 Via git or download
 -------------------
 
@@ -88,6 +79,12 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'display_version': False,
         'navigation_depth': 3,
     }
+
+The following options are available:
+
+* ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
+  to let search engines know they should give higher ranking to latest version of the docs.
+  The url points to the root of the documentation and requires a trailing slash.
 
 Page-level configuration
 ------------------------
