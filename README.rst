@@ -23,7 +23,7 @@ If you'd like to update the theme,
 please make your edits to the SASS files here,
 rather than the .css files on checked into the repo.
 
-.. image:: screen_mobile.png
+.. image:: demo_docs/source/static/screen_mobile.png
     :width: 100%
 
 Installation
