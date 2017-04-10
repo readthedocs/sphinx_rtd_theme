@@ -84,9 +84,10 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 .. code:: python
 
     html_theme_options = {
-        'collapse_navigation': False,
-        'display_version': False,
-        'navigation_depth': 3,
+        'display_version': False,  #  Whether to display the version in the sidebar
+        'collapse_navigation': False,  # Don't show subtrees on sidebar navigation
+        'navigation_depth': 3, #  Depth of subtrees on sidebar nav
+        'analytics_id': 'UA-3463466-1', #  Provided by Google in your dashboard
     }
 
 Page-level configuration
