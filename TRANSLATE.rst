@@ -14,7 +14,7 @@ Languages availables:
 Installation
 ============
 
-For translate the Read the Docs Sphinx Theme you need install the following packages:
+For translating the Read the Docs Sphinx Theme you will need to install the following packages:
 
 .. code:: bash
 
