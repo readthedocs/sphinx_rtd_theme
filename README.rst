@@ -36,7 +36,7 @@ Download the package or add it to your ``requirements.txt`` file:
 
 .. code:: bash
 
-    $ pip install sphinx_rtd_theme
+   pip install sphinx_rtd_theme
 
 In your ``conf.py`` file:
 
@@ -267,6 +267,21 @@ at least providing sample documentation that replicates your problem is a good
 way for me to ignore your request. RST unfortunately can spit out a lot of things
 in a lot of ways. I don't have time to research your problem for you, but I do
 have time to fix the actual styling issue if you can replicate the problem for me.
+
+Releasing the Theme
+===================
+
+When you release a new version,
+you should do the following:
+
+* Bump the version in ``sphinx_rtd_theme/__init__.py`` - we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
+* Run a ``grunt build`` to rebuild all the theme assets.
+* Commit that change
+* Tag the release in git: ``git tag $NEW_VERSION``.
+* Push the tag to GitHub: ``git push --tags origin``
+* Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``
+* In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``)
+* In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files 
 
 TODO
 ====
