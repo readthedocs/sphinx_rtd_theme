@@ -23,7 +23,7 @@ If you'd like to update the theme,
 please make your edits to the SASS files here,
 rather than the .css files on checked into the repo.
 
-.. image:: screen_mobile.png
+.. image:: demo_docs/source/static/screen_mobile.png
     :width: 100%
 
 Installation
@@ -36,7 +36,7 @@ Download the package or add it to your ``requirements.txt`` file:
 
 .. code:: bash
 
-    $ pip install sphinx_rtd_theme
+   pip install sphinx_rtd_theme
 
 In your ``conf.py`` file:
 
@@ -47,15 +47,6 @@ In your ``conf.py`` file:
     html_theme = "sphinx_rtd_theme"
 
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-You may also specify a canonical url in conf.py to let search engines know
-they should give higher ranking to latest version of the docs:
-
-.. code:: python
-
-    html_theme_options['canonical_url'] = 'http://domain.tld/latest/docs/'
-
-The url points to the root of the documentation. It requires a trailing slash.
 
 Via git or download
 -------------------
@@ -88,6 +79,12 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'display_version': False,
         'navigation_depth': 3,
     }
+
+The following options are available:
+
+* ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
+  to let search engines know they should give higher ranking to latest version of the docs.
+  The url points to the root of the documentation and requires a trailing slash.
 
 Page-level configuration
 ------------------------
@@ -122,6 +119,8 @@ master
 * Align ``.. centered::`` text to the center
 * Increase contrast for footnotes
 * Add language to the JS output variable 
+* Include the lato italics font with the theme
+* Fix padding on field lists
 
 v0.2.4
 ------
@@ -266,7 +265,6 @@ This default task will do the following **very cool things that make it worth th
 4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
    or .css files.
 
-
 Before you create an issue
 --------------------------
 
@@ -278,33 +276,20 @@ way for me to ignore your request. RST unfortunately can spit out a lot of thing
 in a lot of ways. I don't have time to research your problem for you, but I do
 have time to fix the actual styling issue if you can replicate the problem for me.
 
+Releasing the Theme
+===================
 
-Before you send a Pull Request
-------------------------------
+When you release a new version,
+you should do the following:
 
-When you're done with your edits, you can run ``grunt build`` to clean out the old
-files and rebuild a new distribution, compressing the css and cleaning out
-extraneous files. Please do this before you send in a PR.
-
-Using this theme locally, then building on Read the Docs?
-==========================================================
-
-Currently if you import sphinx_rtd_theme in your local sphinx build, then pass
-that same config to Read the Docs, it will fail, since RTD gets confused. If
-you want to run this theme locally and then also have it build on RTD, then
-you can add something like this to your config. Thanks to Daniel Oaks for this.
-
-.. code:: python
-
-    # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-    on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-    if not on_rtd:  # only import and set the theme if we're building docs locally
-        import sphinx_rtd_theme
-        html_theme = 'sphinx_rtd_theme'
-        html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-    # otherwise, readthedocs.org uses their theme by default, so no need to specify it
+* Bump the version in ``sphinx_rtd_theme/__init__.py`` - we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
+* Run a ``grunt build`` to rebuild all the theme assets.
+* Commit that change
+* Tag the release in git: ``git tag $NEW_VERSION``.
+* Push the tag to GitHub: ``git push --tags origin``
+* Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``
+* In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``)
+* In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files 
 
 TODO
 ====
