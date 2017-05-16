@@ -22,6 +22,10 @@
   {% if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
   {% endif %}
+  {# CANONICAL URL #}
+  {% if theme_canonical_url %}
+    <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
+  {% endif %}
 
   {# CSS #}
 
@@ -121,12 +125,18 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           {% block menu %}
-            {% set toctree = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
-            {% if toctree %}
-                {{ toctree }}
+            {#
+              The singlehtml builder doesn't handle this toctree call when the
+              toctree is empty. Skip building this for now.
+            #}
+            {% if 'singlehtml' not in builder %}
+              {% set global_toc = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
+            {% endif %}
+            {% if global_toc %}
+              {{ global_toc }}
             {% else %}
-                <!-- Local TOC -->
-                <div class="local-toc">{{ toc }}</div>
+              <!-- Local TOC -->
+              <div class="local-toc">{{ toc }}</div>
             {% endif %}
           {% endblock %}
         </div>
@@ -171,6 +181,7 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'{{ url_root }}',
             VERSION:'{{ release|e }}',
+            LANGUAGE:'{{ language }}',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'{{ '' if no_search_suffix else file_suffix }}',
             HAS_SOURCE:  {{ has_source|lower }},

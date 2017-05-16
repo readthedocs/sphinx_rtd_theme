@@ -17,14 +17,13 @@ Read the Docs Sphinx Theme
 
 View a working demo_ over on readthedocs.org_.
 
-This is a mobile-friendly sphinx_ theme I made for readthedocs.org_. It's
-currently in development there and includes some rtd variable checks that can be ignored
-if you're just trying to use it on your project outside of that site.
+This is a mobile-friendly sphinx_ theme I made for readthedocs.org_.
 
-**This repo also exists as a submodule within the readthedocs itself**, so please make your edits to
-the SASS files here, rather than the .css files on RTD.
+If you'd like to update the theme,
+please make your edits to the SASS files here,
+rather than the .css files on checked into the repo.
 
-.. image:: screen_mobile.png
+.. image:: demo_docs/source/static/screen_mobile.png
     :width: 100%
 
 Installation
@@ -37,7 +36,7 @@ Download the package or add it to your ``requirements.txt`` file:
 
 .. code:: bash
 
-    $ pip install sphinx_rtd_theme
+   pip install sphinx_rtd_theme
 
 In your ``conf.py`` file:
 
@@ -81,6 +80,12 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'navigation_depth': 3,
     }
 
+The following options are available:
+
+* ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
+  to let search engines know they should give higher ranking to latest version of the docs.
+  The url points to the root of the documentation and requires a trailing slash.
+
 Page-level configuration
 ------------------------
 
@@ -97,7 +102,49 @@ Changelog
 master
 ------
 
+* Include fontawesome-webfont.woff2 in pip package
+* Updated wyrm_ and Font Awesome
+* Split multiple data types on different lines
+* Italicize ``.versionmodified``
+* Fix line number spacing to align with the code lines
+* Hide Edit links on auto created pages
+* Align ``.. centered::`` text to the center
+* Increase contrast for footnotes
+* Add language to the JS output variable 
+* Include the lato italics font with the theme
+* Fix padding on field lists
+
+v0.2.4
+------
+
+* Yet another patch to deal with extra builders outside Spinx, such as the
+  singlehtml builders from the Read the Docs Sphinx extension
+
+v0.2.3
+------
+
+* Temporarily patch Sphinx issue with ``singlehtml`` builder by inspecting the
+  builder in template.
+
+v0.2.2
+------
+
+* Roll back toctree fix in 0.2.1 (#367). This didn't fix the issue and
+  introduced another bug with toctrees display.
+
+v0.2.1
+------
+
+* Add the ``rel`` HTML attribute to the footer links which point to
+  the previous and next pages.
+* Fix toctree issue caused by Sphinx singlehtml builder (#367)
+
+v0.2.0
+------
+
 * Adds the ``comments`` block after the ``body`` block in the template
+* Added "Edit on GitLab" support
+* Many bug fixes
 
 v0.1.10-alpha
 -------------
@@ -210,7 +257,6 @@ This default task will do the following **very cool things that make it worth th
 4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
    or .css files.
 
-
 Before you create an issue
 --------------------------
 
@@ -222,34 +268,22 @@ way for me to ignore your request. RST unfortunately can spit out a lot of thing
 in a lot of ways. I don't have time to research your problem for you, but I do
 have time to fix the actual styling issue if you can replicate the problem for me.
 
+Releasing the Theme
+===================
 
-Before you send a Pull Request
-------------------------------
+When you release a new version,
+you should do the following:
 
-When you're done with your edits, you can run ``grunt build`` to clean out the old
-files and rebuild a new distribution, compressing the css and cleaning out
-extraneous files. Please do this before you send in a PR.
-
-Using this theme locally, then building on Read the Docs?
-==========================================================
-
-Currently if you import sphinx_rtd_theme in your local sphinx build, then pass
-that same config to Read the Docs, it will fail, since RTD gets confused. If
-you want to run this theme locally and then also have it build on RTD, then
-you can add something like this to your config. Thanks to Daniel Oaks for this.
-
-.. code:: python
-
-    # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-    on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-    if not on_rtd:  # only import and set the theme if we're building docs locally
-        import sphinx_rtd_theme
-        html_theme = 'sphinx_rtd_theme'
-        html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-    # otherwise, readthedocs.org uses their theme by default, so no need to specify it
+* Bump the version in ``sphinx_rtd_theme/__init__.py`` - we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
+* Run a ``grunt build`` to rebuild all the theme assets.
+* Commit that change
+* Tag the release in git: ``git tag $NEW_VERSION``.
+* Push the tag to GitHub: ``git push --tags origin``
+* Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``
+* In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``)
+* In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files 
 
 TODO
 ====
+
 * Separate some sass variables at the theme level so you can overwrite some basic colors.
