@@ -8,8 +8,7 @@
 {%- endif %}
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html lang="en" >
 <head>
   <meta charset="utf-8">
   {{ metatags }}
@@ -77,10 +76,6 @@
     {%- endif %}
   {%- endblock %}
   {%- block extrahead %} {% endblock %}
-
-  {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
-  <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
-
 </head>
 
 <body class="wy-body-for-nav" role="document">
