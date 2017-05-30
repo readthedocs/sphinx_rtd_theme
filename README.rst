@@ -48,6 +48,12 @@ In your ``conf.py`` file:
 
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
+or (since master):
+
+.. code:: python
+
+    html_theme = "sphinx_rtd_theme"
+
 Via git or download
 -------------------
 
@@ -113,6 +119,8 @@ master
 * Add language to the JS output variable 
 * Include the lato italics font with the theme
 * Fix padding on field lists
+* Add setuptools entry point allowing to use ``sphinx_rtd_theme`` as
+  Sphinx ``html_theme`` directly.
 
 v0.2.4
 ------

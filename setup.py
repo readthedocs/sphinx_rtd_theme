@@ -27,6 +27,11 @@ setup(
         'static/font/*.*'
     ]},
     include_package_data=True,
+    entry_points = {
+        'sphinx.html_themes': [
+            'sphinx_rtd_theme = sphinx_rtd_theme',
+        ]
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
