@@ -34,6 +34,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
+    'sphinx_rtd_theme.swagger',
 ]
 
 # Math
@@ -181,6 +182,9 @@ html_show_sourcelink = True
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'SphinxRTDthemedemodoc'
 
+if os.path.exists('swagger.json'):
+    with open('swagger.json') as f:
+        swagger_json = f.read().strip()
 
 # -- Options for LaTeX output --------------------------------------------------
 

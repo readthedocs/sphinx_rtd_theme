@@ -36,6 +36,10 @@
     {% endif %}
 
   {% endif %}
+  <link rel="stylesheet" href="{{ pathto('_static/css/swagger-ui.css', 1) }}" type="text/css" />
+  <script src="{{ pathto('_static/js/swagger-ui.js', 1) }}"></script>
+  <script src="{{ pathto('_static/js/swagger-ui-bundle.js', 1) }}"></script>
+  <script src="{{ pathto('_static/js/swagger-ui-standalone-preset.js', 1) }}"></script>
 
   {# RTD hosts this file, so just load on non RTD builds #}
   {% if not READTHEDOCS %}
