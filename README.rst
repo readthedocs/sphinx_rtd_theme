@@ -48,15 +48,6 @@ In your ``conf.py`` file:
 
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-You may also specify a canonical url in conf.py to let search engines know
-they should give higher ranking to latest version of the docs:
-
-.. code:: python
-
-    html_theme_options['canonical_url'] = 'http://domain.tld/latest/docs/'
-
-The url points to the root of the documentation. It requires a trailing slash.
-
 Via git or download
 -------------------
 
@@ -90,6 +81,12 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'analytics_id': 'UA-3463466-1', #  Provided by Google in your dashboard
     }
 
+The following options are available:
+
+* ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
+  to let search engines know they should give higher ranking to latest version of the docs.
+  The url points to the root of the documentation and requires a trailing slash.
+
 Page-level configuration
 ------------------------
 
@@ -105,6 +102,18 @@ Changelog
 
 master
 ------
+
+* Include fontawesome-webfont.woff2 in pip package
+* Updated wyrm_ and Font Awesome
+* Split multiple data types on different lines
+* Italicize ``.versionmodified``
+* Fix line number spacing to align with the code lines
+* Hide Edit links on auto created pages
+* Align ``.. centered::`` text to the center
+* Increase contrast for footnotes
+* Add language to the JS output variable 
+* Include the lato italics font with the theme
+* Fix padding on field lists
 
 v0.2.4
 ------
@@ -195,100 +204,3 @@ to build a toc without it rendering in your index.
 By default, the navigation will "stick" to the screen as you scroll. However if your toc
 is vertically too large, it will revert to static positioning. To disable the sticky nav
 altogether change the setting in ``conf.py``.
-
-Contributing or modifying the theme
-===================================
-
-The sphinx_rtd_theme is primarily a sass_ project that requires a few other sass libraries. I'm
-using bower_ to manage these dependencies and sass_ to build the css. The good news is
-I have a very nice set of grunt_ operations that will not only load these dependencies, but watch
-for changes, rebuild the sphinx demo docs and build a distributable version of the theme.
-The bad news is this means you'll need to set up your environment similar to that
-of a front-end developer (vs. that of a python developer). That means installing node and ruby.
-
-Set up your environment
------------------------
-
-1. Install sphinx_ into a virtual environment.
-
-.. code::
-
-    pip install sphinx
-
-2. Install sass
-
-.. code::
-
-    gem install sass
-
-2. Install node, bower and grunt.
-
-.. code::
-
-    // Install node
-    brew install node
-
-    // Install bower and grunt
-    npm install -g bower grunt-cli
-
-    // Now that everything is installed, let's install the theme dependecies.
-    npm install
-
-Now that our environment is set up, make sure you're in your virtual environment, go to
-this repository in your terminal and run grunt:
-
-.. code::
-
-    grunt
-
-This default task will do the following **very cool things that make it worth the trouble**.
-
-1. It'll install and update any bower dependencies.
-2. It'll run sphinx and build new docs.
-3. It'll watch for changes to the sass files and build css from the changes.
-4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
-   or .css files.
-
-
-Before you create an issue
---------------------------
-
-I don't have a lot of time to maintain this project due to other responsibilities.
-I know there are a lot of Python engineers out there that can't code sass / css and
-are unable to submit pull requests. That said, submitting random style bugs without
-at least providing sample documentation that replicates your problem is a good
-way for me to ignore your request. RST unfortunately can spit out a lot of things
-in a lot of ways. I don't have time to research your problem for you, but I do
-have time to fix the actual styling issue if you can replicate the problem for me.
-
-
-Before you send a Pull Request
-------------------------------
-
-When you're done with your edits, you can run ``grunt build`` to clean out the old
-files and rebuild a new distribution, compressing the css and cleaning out
-extraneous files. Please do this before you send in a PR.
-
-Using this theme locally, then building on Read the Docs?
-==========================================================
-
-Currently if you import sphinx_rtd_theme in your local sphinx build, then pass
-that same config to Read the Docs, it will fail, since RTD gets confused. If
-you want to run this theme locally and then also have it build on RTD, then
-you can add something like this to your config. Thanks to Daniel Oaks for this.
-
-.. code:: python
-
-    # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-    on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-    if not on_rtd:  # only import and set the theme if we're building docs locally
-        import sphinx_rtd_theme
-        html_theme = 'sphinx_rtd_theme'
-        html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-    # otherwise, readthedocs.org uses their theme by default, so no need to specify it
-
-TODO
-====
-* Separate some sass variables at the theme level so you can overwrite some basic colors.
