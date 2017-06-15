@@ -221,7 +221,7 @@ Set up your environment
 
 .. code::
 
-    pip install sphinx
+    pip install sphinx sphinxcontrib-httpdomain
 
 2. Install sass
 
