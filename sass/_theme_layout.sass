@@ -325,6 +325,8 @@ html
   z-index: $z-index-modal - 1
   &.on
     display: block
+
+
 footer
   color: $footer-color
   p
@@ -394,7 +396,11 @@ footer
       height: 100%
       overflow: hidden
 
-@media screen and (min-width: $nav-media-query)
++media($desktop)
+  .wy-table-responsive table td
+    white-space: normal
+
++media($desktop-wider)
   .wy-nav-content-wrap
     background: rgba(0,0,0,.05)
   .wy-nav-content
@@ -406,3 +412,10 @@ footer
     display: none
   .wy-nav-content-wrap
     margin-left: 0
+
+  .wy-table-responsive
+    overflow: visible
+  .wy-table-responsive table td,
+  .wy-table-responsive table th
+    white-space: normal
+
