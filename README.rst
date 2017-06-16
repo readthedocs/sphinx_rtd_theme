@@ -36,15 +36,15 @@ Download the package or add it to your ``requirements.txt`` file:
 
 .. code:: bash
 
-   pip install sphinx_rtd_theme
+    pip install sphinx_rtd_theme
 
 In your ``conf.py`` file:
 
 .. code:: python
 
-   import sphinx_rtd_theme
-   html_theme = "sphinx_rtd_theme"
-   html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+    import sphinx_rtd_theme
+    html_theme = "sphinx_rtd_theme"
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 Via git or download
 -------------------
@@ -55,8 +55,8 @@ Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into you
 
 .. code:: python
 
-   html_theme = "sphinx_rtd_theme"
-   html_theme_path = ["_themes", ]
+    html_theme = "sphinx_rtd_theme"
+    html_theme_path = ["_themes", ]
 
 Configuration
 =============
@@ -72,11 +72,11 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 
 .. code:: python
 
-   html_theme_options = {
-       'collapse_navigation': False,
-       'display_version': False,
-       'navigation_depth': 3,
-   }
+    html_theme_options = {
+        'collapse_navigation': False,
+        'display_version': False,
+        'navigation_depth': 3,
+    }
 
 The following options are available:
 
@@ -218,33 +218,33 @@ Set up your environment
 
    .. code:: bash
 
-      pip install sphinx
+       pip install sphinx
 
 #. Install sass.
 
    .. code:: bash
 
-      gem install sass
+       gem install sass
 
 #. Install node, bower, grunt, and theme dependencies.
 
    .. code:: bash
 
-      # Install node
-      brew install node
+       # Install node
+       brew install node
 
-      # Install bower and grunt
-      npm install -g bower grunt-cli
+       # Install bower and grunt
+       npm install -g bower grunt-cli
 
-      # Now that everything is installed, let's install the theme dependencies.
-      npm install
+       # Now that everything is installed, let's install the theme dependencies.
+       npm install
 
 Now that our environment is set up, make sure you're in your virtual environment, go to
 this repository in your terminal and run grunt:
 
 .. code::
 
-   grunt
+    grunt
 
 This default task will do the following **very cool things that make it worth the trouble**:
 
