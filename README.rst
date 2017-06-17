@@ -217,8 +217,8 @@ Set up your environment
 #. Install sphinx_ into a virtual environment.
 
    .. code:: bash
-
-       pip install sphinx
+   
+       pip install sphinx sphinxcontrib-httpdomain
 
 #. Install sass.
 
