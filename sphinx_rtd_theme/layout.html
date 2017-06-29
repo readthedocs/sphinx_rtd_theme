@@ -113,7 +113,20 @@
             {% endif %}
             {% if nav_version %}
               <div class="version">
-                {{ nav_version }}
+                {% if not READTHEDOCS and theme_versions|length > 1 %}
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>{{ nav_version }}</option>
+                      {% for key, val in theme_versions.items() %}
+                        {% if key != nav_version %}
+                          <option value="{{ val }}">{{ key }}</option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
+                  </div>
+                {% else %}
+                  {{ nav_version }}
+                {% endif %}
               </div>
             {% endif %}
           {% endif %}

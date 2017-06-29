@@ -13,7 +13,7 @@
 Read the Docs Sphinx Theme
 **************************
 
-.. contents:: 
+.. contents::
 
 View a working demo_ over on readthedocs.org_.
 
@@ -82,13 +82,28 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'collapse_navigation': False,
         'display_version': False,
         'navigation_depth': 3,
+        'versions': {
+            '1.0': 'https://example.com/1.0/',
+            '2.0': 'https://example.com/2.0/',
+        }
     }
 
 The following options are available:
 
-* ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
-  to let search engines know they should give higher ranking to latest version of the docs.
-  The url points to the root of the documentation and requires a trailing slash.
+``canonical_url``
+    This will specify a `canonical url
+    <https://en.wikipedia.org/wiki/Canonical_link_element>`__ to let search
+    engines know they should give higher ranking to latest version of the
+    docs. The url points to the root of the documentation and requires a
+    trailing slash.
+
+``versions``
+    This option should be defined as a dictionary of versions, where the key
+    is the version slug and the value is the URL. This will enable a version
+    dropdown at the top of the menu.
+
+    .. note::
+        This is disabled on Read the Docs currently
 
 Page-level configuration
 ------------------------
@@ -96,9 +111,14 @@ Page-level configuration
 Pages support metadata that changes how the theme renders.
 You can currently add the following:
 
-* ``:github_url:`` This will force the "Edit on GitHub" to the configured URL
-* ``:bitbucket_url:`` This will force the "Edit on Bitbucket" to the configured URL
-* ``:gitlab_url:`` This will force the "Edit on GitLab" to the configured URL
+``:github_url:``
+    This will force the "Edit on GitHub" to the configured URL
+
+``:bitbucket_url:``
+    This will force the "Edit on Bitbucket" to the configured URL
+
+``:gitlab_url:``
+    This will force the "Edit on GitLab" to the configured URL
 
 Changelog
 =========
@@ -119,6 +139,7 @@ master
 * Fix padding on field lists
 * Add setuptools entry point allowing to use ``sphinx_rtd_theme`` as
   Sphinx ``html_theme`` directly.
+* Add version dropdown select
 
 v0.2.4
 ------

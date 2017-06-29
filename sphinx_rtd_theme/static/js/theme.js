@@ -89,6 +89,11 @@ function ThemeNav () {
             });
             link.prepend(expand);
         });
+
+        // Add version selection URL change
+        $('#version-list').on('change', function () {
+            self.onVersionChange(this.value);
+        });
     };
 
     nav.reset = function () {
@@ -140,6 +145,10 @@ function ThemeNav () {
         this.winResize = false;
         this.winHeight = this.win.height();
         this.docHeight = $(document).height();
+    };
+
+    nav.onVersionChange = function (url) {
+        this.win[0].location = url;
     };
 
     nav.hashChange = function () {

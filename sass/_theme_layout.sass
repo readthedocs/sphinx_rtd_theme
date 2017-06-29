@@ -197,7 +197,7 @@
     padding: $base-line-height / 6 $base-line-height / 4
     margin-bottom: $gutter / 2
     +font-smooth
-    &:hover
+    &:hover, &:active, &:focus
       background: rgba(255,255,255,.1)
     img.logo
       display: block  // display on its own line all the time
@@ -214,8 +214,44 @@
     margin-top: -1 * ($gutter / 4)
     margin-bottom: $gutter / 2
     font-weight: normal
-    color: rgba(255,255,255,.3)
-
+    color: rgba(255, 255, 255, .3)
+    > div.version-dropdown
+      position: relative
+      display: inline-block
+      > select
+        max-width: 8em
+        padding: .1em 1.5em .1em .5em
+        text-align-last: center
+        background: none
+        border: none
+        border-radius: 0em
+        box-shadow: none
+        font-family: $base-font-family
+        font-size: 1em
+        font-weight: normal
+        color: rgba(255, 255, 255, .3)
+        // Allow for padding
+        appearance: none
+        -webkit-appearance: none
+        -moz-appearance: none
+        &:hover, &:active, &:focus
+          background: rgba(255, 255, 255, .1)
+          color: rgba(255, 255, 255, .5)
+      &:after
+        content: "\f0d7"
+        font-size: 1em
+        line-height: 1.2em
+        font-family: FontAwesome
+        padding: .1em .5em
+        position: absolute
+        right: 0
+        top: 0
+        z-index: 1
+        text-align: center
+        width: 1.5em
+        height: 100%
+        pointer-events: none
+        box-sizing: border-box
 
 .wy-nav .wy-menu-vertical
   header
