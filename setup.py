@@ -27,6 +27,12 @@ setup(
         'static/font/*.*'
     ]},
     include_package_data=True,
+    # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
+    entry_points = {
+        'sphinx.html_themes': [
+            'sphinx_rtd_theme = sphinx_rtd_theme',
+        ]
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
