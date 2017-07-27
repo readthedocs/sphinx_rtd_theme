@@ -19,6 +19,7 @@ Contents
     demo
     lists_tables
     api
+    code_examples
 
 .. toctree::
     :maxdepth: 3
