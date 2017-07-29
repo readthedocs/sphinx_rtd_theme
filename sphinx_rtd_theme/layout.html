@@ -8,9 +8,11 @@
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
+{%- if html_tag %}
+{{ html_tag }}
+{%- else %}
+<html lang="{{ lang_attr }}">
+{%- endif %}
 <head>
   <meta charset="utf-8">
   {{ metatags }}
