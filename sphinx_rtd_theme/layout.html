@@ -12,7 +12,7 @@
 <!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
 <head>
-  {%- if use_meta_charset %}
+  {%- if use_meta_charset or html5_doctype %}
   <meta charset="{{ encoding }}" />
   {%- else %}
   <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
