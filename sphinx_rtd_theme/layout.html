@@ -12,7 +12,11 @@
 <!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+  {%- if use_meta_charset or html5_doctype %}
+  <meta charset="{{ encoding }}" />
+  {%- else %}
+  <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
+  {%- endif %}
   {{ metatags }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
