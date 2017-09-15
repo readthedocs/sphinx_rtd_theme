@@ -8,9 +8,17 @@
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
+{%- block doctype -%}{%- if html5_doctype %}
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
+{%- else %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{%- endif %}{%- endblock %}
+{%- if html_tag %}
+{{ html_tag }}
+{%- else %}
+<html lang="{{ lang_attr }}">
+{%- endif %}
 <head>
   <meta charset="utf-8">
   {{ metatags }}
