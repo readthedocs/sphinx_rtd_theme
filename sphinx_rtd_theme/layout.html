@@ -1,24 +1,24 @@
 {%- extends "basic/layout.html" %}
 
 {%- block extrahead %}
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ super() }}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{# RTD hosts this file, so just load on non RTD builds #}
-{% if not READTHEDOCS %}
+  {# RTD hosts this file, so just load on non RTD builds #}
+  {% if not READTHEDOCS %}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-{% endif %}
+  {% endif %}
 
-{% for cssfile in css_files %}
-   <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-{% endfor %}
+  {% for cssfile in css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+  {% endfor %}
 
-{% for cssfile in extra_css_files %}
-   <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-{% endfor %}
+  {% for cssfile in extra_css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+  {% endfor %}
 
-{# Keep modernizr in head - http://modernizr.com/docs/#installing #}
-<script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
-
+  {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
+  <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 {% endblock %}
 
 <body class="wy-body-for-nav" role="document">
