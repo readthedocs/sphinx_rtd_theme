@@ -1,88 +1,25 @@
-{# TEMPLATE VAR SETTINGS #}
-{%- set url_root = pathto('', 1) %}
-{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
-{%- if not embedded and docstitle %}
-  {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
-{%- else %}
-  {%- set titlesuffix = "" %}
-{%- endif %}
-{%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
+{%- extends "basic/layout.html" %}
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  {{ metatags }}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% block htmltitle %}
-  <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-  {% endblock %}
+{%- block extrahead %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  {# FAVICON #}
-  {% if favicon %}
-    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
-  {% endif %}
-  {# CANONICAL URL #}
-  {% if theme_canonical_url %}
-    <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
-  {% endif %}
-
-  {# CSS #}
-
-  {# OPENSEARCH #}
-  {% if not embedded %}
-    {% if use_opensearch %}
-      <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
-    {% endif %}
-
-  {% endif %}
-
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
+{# RTD hosts this file, so just load on non RTD builds #}
+{% if not READTHEDOCS %}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  {% endif %}
+{% endif %}
 
-  {% for cssfile in css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {% endfor %}
+{% for cssfile in css_files %}
+   <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+{% endfor %}
 
-  {% for cssfile in extra_css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {% endfor %}
+{% for cssfile in extra_css_files %}
+   <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+{% endfor %}
 
-  {%- block linktags %}
-    {%- if hasdoc('about') %}
-        <link rel="author" title="{{ _('About these documents') }}"
-              href="{{ pathto('about') }}"/>
-    {%- endif %}
-    {%- if hasdoc('genindex') %}
-        <link rel="index" title="{{ _('Index') }}"
-              href="{{ pathto('genindex') }}"/>
-    {%- endif %}
-    {%- if hasdoc('search') %}
-        <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}"/>
-    {%- endif %}
-    {%- if hasdoc('copyright') %}
-        <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}"/>
-    {%- endif %}
-    <link rel="top" title="{{ docstitle|e }}" href="{{ pathto('index') }}"/>
-    {%- if parents %}
-        <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}"/>
-    {%- endif %}
-    {%- if next %}
-        <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}"/>
-    {%- endif %}
-    {%- if prev %}
-        <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
-    {%- endif %}
-  {%- endblock %}
-  {%- block extrahead %} {% endblock %}
+{# Keep modernizr in head - http://modernizr.com/docs/#installing #}
+<script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 
-  {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
-  <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
-
-</head>
+{% endblock %}
 
 <body class="wy-body-for-nav" role="document">
 
