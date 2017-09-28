@@ -61,7 +61,8 @@
             {% endif %}
           {% endif %}
 
-          {% include "searchbox.html" %}{% endblock %}
+          {% include "searchbox.html" %}
+          {% endblock %}
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -104,7 +105,7 @@
             {% block body %}{% endblock %}
            </div>
            <div class="articleComments">
-            {% block comments %} {% endblock %}
+            {% block comments %}{% endblock %}
            </div>
           </div>
           {% include "footer.html" %}
