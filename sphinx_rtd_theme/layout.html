@@ -25,8 +25,9 @@
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 {% endblock %}
 
-<body class="wy-body-for-nav" role="document">
-
+{%- block content %}
+<div class="wy-body-for-nav" role="document">
+  {%- block document %}
   {% block extrabody %} {% endblock %}
   <div class="wy-grid-for-nav">
 
@@ -60,9 +61,7 @@
             {% endif %}
           {% endif %}
 
-          {% include "searchbox.html" %}
-
-          {% endblock %}
+          {% include "searchbox.html" %}{% endblock %}
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -105,7 +104,7 @@
             {% block body %}{% endblock %}
            </div>
            <div class="articleComments">
-            {% block comments %}{% endblock %}
+            {% block comments %} {% endblock %}
            </div>
           </div>
           {% include "footer.html" %}
@@ -150,7 +149,6 @@
   </script>
   {% endif %}
 
+  {%- endblock %}
+  {%- endblock %}
   {%- block footer %} {% endblock %}
-
-</body>
-</html>
