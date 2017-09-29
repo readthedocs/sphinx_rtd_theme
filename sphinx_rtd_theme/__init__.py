@@ -11,7 +11,7 @@ __version_full__ = __version__
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
-    cur_dir = path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    cur_dir = path.abspath(path.dirname(path.dirname(__file__)))
     return cur_dir
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
