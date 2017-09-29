@@ -5,6 +5,7 @@
 
 """
 
+from io import open
 from setuptools import setup
 from sphinx_rtd_theme import __version__
 
@@ -17,7 +18,7 @@ setup(
     author='Dave Snider',
     author_email='dave.snider@gmail.com',
     description='Read the Docs theme for Sphinx',
-    long_description=open('README.rst').read(),
+    long_description=open('README.rst', encoding='utf-8').read(),
     zip_safe=False,
     packages=['sphinx_rtd_theme'],
     package_data={'sphinx_rtd_theme': [
@@ -28,6 +29,12 @@ setup(
         'static/font/*.*'
     ]},
     include_package_data=True,
+    # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
+    entry_points = {
+        'sphinx.html_themes': [
+            'sphinx_rtd_theme = sphinx_rtd_theme',
+        ]
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
