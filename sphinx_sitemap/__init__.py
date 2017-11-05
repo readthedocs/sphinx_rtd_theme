@@ -13,6 +13,7 @@
 
 import xml.etree.ElementTree as ET
 from sphinx.writers.html import HTMLTranslator
+import re
 
 
 def setup(app):
@@ -20,16 +21,16 @@ def setup(app):
     app.connect('html-page-context', add_html_link)
     app.connect('build-finished', create_sitemap)
     app.set_translator('html', HTMLTranslator)
+    app.add_config_value('sitemap_base_url', '', 'html')
     app.sitemap_links = []
 
 
 def add_html_link(app, pagename, templatename, context, doctree):
     """As each page is built, collect page names for the sitemap"""
-    base_url = 'http://www.landoop.com/docs/lenses/'
-    if base_url:
+    if app.config.sitemap_base_url:
         """Antwnis: Make sure we bring in only the latest and not 1.0 and 1.1 etc and we skip non accessible pages"""
         if (pagename != 'empty') and (pagename != 'search') and (pagename != 'readme') and (pagename != 'genindex') and ('1.' not in pagename) and ('_themes' not in pagename):
-            app.sitemap_links.append(base_url + pagename + ".html")
+            app.sitemap_links.append(app.config.sitemap_base_url + re.sub('index$', '', pagename))
 
 
 def create_sitemap(app, exception):
