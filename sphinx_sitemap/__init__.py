@@ -28,7 +28,7 @@ def add_html_link(app, pagename, templatename, context, doctree):
     base_url = 'http://www.landoop.com/docs/lenses/'
     if base_url:
         """Antwnis: Make sure we bring in only the latest and not 1.0 and 1.1 etc and we skip non accessible pages"""
-        if (pagename != 'empty') and (pagename != 'search') and (pagename != 'genindex') and ('1.' not in pagename) and ('_themes' not in pagename):
+        if (pagename != 'empty') and (pagename != 'search') and (pagename != 'readme') and (pagename != 'genindex') and ('1.' not in pagename) and ('_themes' not in pagename):
             app.sitemap_links.append(base_url + pagename + ".html")
 
 
