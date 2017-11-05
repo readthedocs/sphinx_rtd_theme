@@ -19,7 +19,7 @@
     max-width: 100%
     height: auto !important
 
-  .highlight > pre
+  .highlight > pre, .linenodiv > pre
     line-height: normal
 
   div.figure
@@ -50,7 +50,7 @@
   .literal-block, pre.literal-block
     @extend .codeblock
   // These are the various note pullouts that sphinx applies
-  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
+  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
     @extend .wy-alert
     .last
       margin-bottom: 0
@@ -120,6 +120,9 @@
     &:hover .headerlink
       display: inline-block
 
+  .centered
+    text-align: center
+
   // Sidebar content. You'll see at the bottom of this file I change it in mobile.
   .sidebar
     float: right
@@ -160,7 +163,7 @@
   table.docutils.citation, table.docutils.footnote
     background: none
     border: none
-    color: $gray-light
+    color: $text-medium
     td, tr
       border: none
       background-color: transparent !important
@@ -182,17 +185,14 @@
     border: none
     td
       border: none
-      padding-top: 5px
     td > strong
       display: inline-block
-      margin-top: 3px
     .field-name
       padding-right: 10px
       text-align: left
       white-space: nowrap
     .field-body
       text-align: left
-      padding-left: 0
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
   tt, code
@@ -230,7 +230,7 @@
     margin-bottom: $base-line-height
     // This would be the equivilant of a .. class::
     dt
-      display: inline-block
+      display: table
       margin: $base-line-height / 4 0
       font-size: 90%
       line-height: normal
@@ -311,6 +311,8 @@
     border-radius: $base-line-height / 6
     padding: $base-line-height / 10 $base-line-height / 4
     margin: auto $base-line-height / 12
+  .versionmodified
+    font-style: italic
 
 
 // Mobile specific
