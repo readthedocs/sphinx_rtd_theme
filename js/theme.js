@@ -77,6 +77,12 @@ function ThemeNav () {
         $("table.docutils:not(.field-list,.footnote,.citation)")
             .wrap("<div class='wy-table-responsive'></div>");
 
+        $("table.docutils.footnote")
+            .wrap("<div class='wy-table-responsive footnote'></div>");
+
+        $("table.docutils.citation")
+            .wrap("<div class='wy-table-responsive citation'></div>");
+
         // Add expand links to all parents of nested ul
         $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {
             var link = $(this);
