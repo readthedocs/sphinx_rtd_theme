@@ -164,7 +164,6 @@
     background: none
     border: none
     color: $text-medium
-    margin-bottom: 0
     td, tr
       border: none
       background-color: transparent !important
@@ -175,8 +174,10 @@
       vertical-align: top
     code
       color: $gray
-  table.docutils.footnote + :not(.footnote),
-  table.docutils.citation + :not(.citation)
+  .wy-table-responsive.citation, .wy-table-responsive.footnote
+    margin-bottom: 0
+  .wy-table-responsive.citation + :not(.citation),
+  .wy-table-responsive.footnote + :not(.footnote)
     margin-top: $base-line-height
   table.docutils
     @extend .wy-table
