@@ -25,8 +25,9 @@
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 {% endblock %}
 
+{%- block body_tag %}<body class="wy-body-for-nav" role="document">{% endblock %}
+
 {%- block content %}
-<div class="wy-body-for-nav" role="document">
   {%- block document %}
   {% block extrabody %} {% endblock %}
   <div class="wy-grid-for-nav">
