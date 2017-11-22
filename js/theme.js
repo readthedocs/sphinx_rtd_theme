@@ -74,7 +74,7 @@ function ThemeNav () {
             })
 
         // Make tables responsive
-        $("table.docutils:not(.field-list)")
+        $("table.docutils:not(.field-list,.footnote,.citation)")
             .wrap("<div class='wy-table-responsive'></div>");
 
         // Add expand links to all parents of nested ul
