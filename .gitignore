@@ -3,6 +3,7 @@
 *.egg
 *build/
 .tox
+.idea
 .coverage
 *.DS_Store
 *.sass-cache
