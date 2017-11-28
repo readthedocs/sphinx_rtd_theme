@@ -87,9 +87,16 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 .. code:: python
 
     html_theme_options = {
-        'collapse_navigation': False,
-        'display_version': False,
-        'navigation_depth': 3,
+        'typekit_id': hiw1hhg,
+        'canonical_url':
+        'analytics_id':
+        'collapse_navigation': False
+        'sticky_navigation': False
+        'navigation_depth': 4
+        'includehidden': True
+        'logo_only':
+        'display_version': True
+        'prev_next_buttons_location': bottom
     }
 
 The following options are available:
@@ -97,6 +104,9 @@ The following options are available:
 * ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
   to let search engines know they should give higher ranking to latest version of the docs.
   The url points to the root of the documentation and requires a trailing slash.
+* ``includehidden`` Specifies if the global toctree includes toctrees marked with the `:hidden:` option
+* ``prev_next_buttons_location`` can take the value ``bottom``, ``top``, ``both`` , or ``None``
+  and will display the "Next" and "Previous" buttons accordingly
 
 Page-level configuration
 ------------------------
@@ -168,9 +178,7 @@ v0.1.10-alpha
 * Removes Sphinx dependency
 * Fixes hamburger on mobile display
 * Adds a ``body_begin`` block to the template
-* Add ``prev_next_buttons_location`` which can take the value ``bottom``,
-  ``top``, ``both`` , ``None`` and will display the "Next" and "Previous"
-  buttons accordingly
+* Added ``prev_next_buttons_location``
 
 v0.1.9
 ------
@@ -209,7 +217,7 @@ It's important to note that if you don't follow the same styling for your rST he
 your documents, the toctree will misbuild, and the resulting menu might not show the correct
 depth when it renders.
 
-Also note that the table of contents is set with ``includehidden=true``. This allows you
+Also note that by default the table of contents is set with ``includehidden=True``. This allows you
 to set a hidden toc in your index file with the hidden_ property that will allow you
 to build a toc without it rendering in your index.
 
