@@ -29,16 +29,21 @@ function ThemeNav () {
                 // Set scroll monitor
                 self.win.on('scroll', function () {
                     if (!self.linkScroll) {
-                        self.winScroll = true;
+                        if (!self.winScroll) {
+                            self.winScroll = true;
+                            requestAnimationFrame(self.onScroll.bind(self));
+                        }
                     }
                 });
-                setInterval(function () { if (self.winScroll) self.onScroll(); }, 25);
 
                 // Set resize monitor
                 self.win.on('resize', function () {
-                    self.winResize = true;
+                    if (!self.winResize) {
+                        self.winResize = true;
+                        requestAnimationFrame(self.onResize.bind(self));
+                    }
                 });
-                setInterval(function () { if (self.winResize) self.onResize(); }, 25);
+
                 self.onResize();
             });
         };
