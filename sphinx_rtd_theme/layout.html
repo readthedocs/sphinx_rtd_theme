@@ -159,7 +159,11 @@
 
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
+        {% if (theme_style_external_links == 'True') %}
+        <div class="rst-content style-external-links">
+        {% else %}
         <div class="rst-content">
+        {% endif %}
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
