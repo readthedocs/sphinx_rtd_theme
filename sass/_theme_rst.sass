@@ -182,6 +182,9 @@
   .wy-table-responsive.citation + :not(.citation),
   .wy-table-responsive.footnote + :not(.footnote)
     margin-top: $base-line-height
+  // Re-add vertical space after citation and footnotes if it is the last child of a parent
+  .wy-table-responsive.citation:last-child, .wy-table-responsive.footnote:last-child
+    margin-bottom: $base-line-height
   table.docutils
     @extend .wy-table
     @extend .wy-table-bordered-all
