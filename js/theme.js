@@ -31,7 +31,7 @@ function ThemeNav () {
                     if (!self.linkScroll) {
                         if (!self.winScroll) {
                             self.winScroll = true;
-                            requestAnimationFrame(self.onScroll.bind(self));
+                            requestAnimationFrame(function() { self.onScroll(); });
                         }
                     }
                 });
@@ -40,7 +40,7 @@ function ThemeNav () {
                 self.win.on('resize', function () {
                     if (!self.winResize) {
                         self.winResize = true;
-                        requestAnimationFrame(self.onResize.bind(self));
+                        requestAnimationFrame(function() { self.onResize(); });
                     }
                 });
 
