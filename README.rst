@@ -96,7 +96,8 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'includehidden': True
         'logo_only':
         'display_version': True
-        'prev_next_buttons_location': bottom
+        'prev_next_buttons_location': bottom,
+        'style_external_links': False
     }
 
 The following options are available:
@@ -107,6 +108,7 @@ The following options are available:
 * ``includehidden`` Specifies if the global toctree includes toctrees marked with the `:hidden:` option
 * ``prev_next_buttons_location`` can take the value ``bottom``, ``top``, ``both`` , or ``None``
   and will display the "Next" and "Previous" buttons accordingly
+* ``style_external_links`` Add an icon next to external links. Defaults to ``False``.
 
 Page-level configuration
 ------------------------
