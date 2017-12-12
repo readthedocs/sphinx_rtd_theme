@@ -87,17 +87,17 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 .. code:: python
 
     html_theme_options = {
-        'typekit_id': hiw1hhg,
-        'canonical_url':
-        'analytics_id':
-        'collapse_navigation': False
-        'sticky_navigation': False
-        'navigation_depth': 4
-        'includehidden': True
-        'logo_only':
-        'display_version': True
+        'typekit_id': '',
+        'canonical_url': '',
+        'analytics_id': '',
+        'collapse_navigation': False,
+        'sticky_navigation': True,
+        'navigation_depth': 4,
+        'includehidden': True,
+        'logo_only': False,
+        'display_version': True,
         'prev_next_buttons_location': bottom,
-        'style_external_links': False
+        'style_external_links': False,
     }
 
 The following options are available:
