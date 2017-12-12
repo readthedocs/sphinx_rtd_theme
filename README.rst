@@ -90,25 +90,40 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'typekit_id': '',
         'canonical_url': '',
         'analytics_id': '',
-        'collapse_navigation': False,
-        'sticky_navigation': True,
-        'navigation_depth': 4,
-        'includehidden': True,
         'logo_only': False,
         'display_version': True,
         'prev_next_buttons_location': bottom,
         'style_external_links': False,
+        # Toc options
+        'collapse_navigation': False,
+        'sticky_navigation': True,
+        'navigation_depth': 4,
+        'includehidden': True,
     }
 
 The following options are available:
 
+Base options
+~~~~~~~~~~~~
+
+* ``typekit_id`` This will let users specify a typekit id to use for displaying nicer fonts.
 * ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
   to let search engines know they should give higher ranking to latest version of the docs.
   The url points to the root of the documentation and requires a trailing slash.
-* ``includehidden`` Specifies if the global toctree includes toctrees marked with the `:hidden:` option
+* ``analytics_id`` Change the Google Analytics ID that is included on pages.
+* ``display_version`` With this disabled, the version number isn't shown at the top of the sidebar.
 * ``prev_next_buttons_location`` can take the value ``bottom``, ``top``, ``both`` , or ``None``
   and will display the "Next" and "Previous" buttons accordingly
 * ``style_external_links`` Add an icon next to external links. Defaults to ``False``.
+
+TOC Options
+~~~~~~~~~~~
+
+These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
+
+* ``collapse_navigation`` With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar. This is useful for _very large_ documents.
+* ``sticky_navigation`` This causes the sidebar to scroll with the main page content as you scroll the page.
+* ``includehidden`` Specifies if the sidebar includes toctrees marked with the `:hidden:` option
 
 Page-level configuration
 ------------------------
