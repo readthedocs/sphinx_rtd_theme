@@ -99,6 +99,7 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'sticky_navigation': True,
         'navigation_depth': 4,
         'includehidden': True,
+        'titles_only': False
     }
 
 The following options are available:
@@ -124,6 +125,7 @@ These effect how we display the Table of Contents in the side bar. You can read 
 * ``collapse_navigation`` With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar. This is useful for _very large_ documents.
 * ``sticky_navigation`` This causes the sidebar to scroll with the main page content as you scroll the page.
 * ``includehidden`` Specifies if the sidebar includes toctrees marked with the `:hidden:` option
+* ``titles_only`` If True, removes headers within a page from the sidebar.
 
 Page-level configuration
 ------------------------
