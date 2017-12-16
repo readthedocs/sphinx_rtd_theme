@@ -6,10 +6,11 @@
 {%- else %}
   {%- set titlesuffix = "" %}
 {%- endif %}
+{%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   {{ metatags }}
@@ -41,7 +42,9 @@
   {% if not READTHEDOCS %}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
   {% endif %}
-
+  
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+  
   {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {% endfor %}
@@ -130,7 +133,7 @@
               toctree is empty. Skip building this for now.
             #}
             {% if 'singlehtml' not in builder %}
-              {% set global_toc = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
+              {% set global_toc = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=theme_includehidden) %}
             {% endif %}
             {% if global_toc %}
               {{ global_toc }}
@@ -156,7 +159,11 @@
 
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
+        {% if theme_style_external_links|tobool %}
+        <div class="rst-content style-external-links">
+        {% else %}
         <div class="rst-content">
+        {% endif %}
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
@@ -200,7 +207,7 @@
   {% endif %}
 
   {# STICKY NAVIGATION #}
-  {% if theme_sticky_navigation %}
+  {% if theme_sticky_navigation|tobool %}
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.StickyNav.enable();
