@@ -321,6 +321,23 @@ you should do the following:
 #. In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``).
 #. In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files.
 
+Updating swaggerUI
+==================
+
+Because we inject directly the json object to be used in the UI, and we disable
+some defaults, to update swagger UI to the latest version requires you to comment
+in the file ``src/standalone/index.js`` from swagger ui the two plugins there are,
+TopbarPlugin and ConfigsPlugin.
+
+The idea is that by default swagger generates a topbar to load random URLs into
+the UI (and we don't want that for our docs), and it also lets you download the
+configuration, which shouldn't be done through the swagger UI.
+
+If desired, the user can always create a link to an static file.
+
+After that, just build and replace the css/js from ``dist/`` folder into the statics
+here
+
 TODO
 ====
 

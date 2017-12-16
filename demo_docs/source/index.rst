@@ -28,3 +28,6 @@ Contents
     long
 
 You can also read the :ref:`genindex`
+
+
+.. swaggerview::
