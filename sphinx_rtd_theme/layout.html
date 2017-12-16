@@ -159,7 +159,7 @@
 
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
-        {% if (theme_style_external_links == 'True') %}
+        {% if theme_style_external_links|tobool %}
         <div class="rst-content style-external-links">
         {% else %}
         <div class="rst-content">
@@ -207,7 +207,7 @@
   {% endif %}
 
   {# STICKY NAVIGATION #}
-  {% if theme_sticky_navigation %}
+  {% if theme_sticky_navigation|tobool %}
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.StickyNav.enable();
