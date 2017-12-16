@@ -176,6 +176,17 @@
       vertical-align: top
     code
       color: $gray
+  // Remove the large vertical space between citations and footnotes
+  .wy-table-responsive.citation, .wy-table-responsive.footnote
+    margin-bottom: 0
+  // Re-add vertical space to element directly following citation and footnotes,
+  // if the following element is of a different type
+  .wy-table-responsive.citation + :not(.citation),
+  .wy-table-responsive.footnote + :not(.footnote)
+    margin-top: $base-line-height
+  // Re-add vertical space after citation and footnotes if it is the last child of a parent
+  .wy-table-responsive.citation:last-child, .wy-table-responsive.footnote:last-child
+    margin-bottom: $base-line-height
   table.docutils
     @extend .wy-table
     @extend .wy-table-bordered-all
