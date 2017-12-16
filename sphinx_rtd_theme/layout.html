@@ -6,10 +6,11 @@
 {%- else %}
   {%- set titlesuffix = "" %}
 {%- endif %}
+{%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   {{ metatags }}
@@ -21,6 +22,10 @@
   {# FAVICON #}
   {% if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+  {% endif %}
+  {# CANONICAL URL #}
+  {% if theme_canonical_url %}
+    <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
   {% endif %}
 
   {# CSS #}
@@ -37,7 +42,9 @@
   {% if not READTHEDOCS %}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
   {% endif %}
-
+  
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+  
   {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {% endfor %}
@@ -121,12 +128,21 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           {% block menu %}
-            {% set toctree = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
-            {% if toctree %}
-                {{ toctree }}
+            {#
+              The singlehtml builder doesn't handle this toctree call when the
+              toctree is empty. Skip building this for now.
+            #}
+            {% if 'singlehtml' not in builder %}
+              {% set global_toc = toctree(maxdepth=theme_navigation_depth|int,
+                                          collapse=theme_collapse_navigation|tobool,
+                                          includehidden=theme_includehidden|tobool,
+                                          titles_only=theme_titles_only|tobool) %}
+            {% endif %}
+            {% if global_toc %}
+              {{ global_toc }}
             {% else %}
-                <!-- Local TOC -->
-                <div class="local-toc">{{ toc }}</div>
+              <!-- Local TOC -->
+              <div class="local-toc">{{ toc }}</div>
             {% endif %}
           {% endblock %}
         </div>
@@ -147,11 +163,18 @@
       {# PAGE CONTENT #}
       <i data-toggle="wy-nav-top" class="fa fa-bars wy-sidebar-toggle"></i>
       <div class="wy-nav-content">
+        {% if theme_style_external_links|tobool %}
+        <div class="rst-content style-external-links">
+        {% else %}
         <div class="rst-content">
+        {% endif %}
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             {% block body %}{% endblock %}
+           </div>
+           <div class="articleComments">
+            {% block comments %}{% endblock %}
            </div>
           </div>
           {% include "footer.html" %}
@@ -169,9 +192,11 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'{{ url_root }}',
             VERSION:'{{ release|e }}',
+            LANGUAGE:'{{ language }}',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'{{ '' if no_search_suffix else file_suffix }}',
-            HAS_SOURCE:  {{ has_source|lower }}
+            HAS_SOURCE:  {{ has_source|lower }},
+            SOURCELINK_SUFFIX: '{{ sourcelink_suffix }}'
         };
     </script>
     {%- for scriptfile in script_files %}
@@ -186,7 +211,7 @@
   {% endif %}
 
   {# STICKY NAVIGATION #}
-  {% if theme_sticky_navigation %}
+  {% if theme_sticky_navigation|tobool %}
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.StickyNav.enable();

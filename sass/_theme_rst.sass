@@ -19,6 +19,9 @@
     max-width: 100%
     height: auto !important
 
+  .highlight > pre, .linenodiv > pre
+    line-height: normal
+
   div.figure
     margin-bottom: $base-line-height
     p.caption
@@ -30,13 +33,15 @@
   // Usually it's a good idea to give images some space.
   .section > img,   .section > a > img
     margin-bottom: $base-line-height
-  // Questionable whether this is nice or not. It styles eternal links, but comes with some baggage.
-  // a.reference.external:after
-  //   font-family: FontAwesome
-  //   content: " \f08e "
-  //   color: $text-light
-  //   vertical-align: super
-  //   font-size: 60%
+
+  // Style external links
+  &.style-external-links a.reference.external:after
+    font-family: FontAwesome
+    content: "\f08e"
+    color: $text-light
+    vertical-align: super
+    font-size: 60%
+    margin: 0 0.2em
 
   // For the most part, its safe to assume that sphinx wants you to use a blockquote as an indent. It gets
   // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
@@ -47,7 +52,7 @@
   .literal-block, pre.literal-block
     @extend .codeblock
   // These are the various note pullouts that sphinx applies
-  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
+  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
     @extend .wy-alert
     .last
       margin-bottom: 0
@@ -103,19 +108,22 @@
     @extend h2
 
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
-  h1, h2, h3, h4, h5, h6, dl dt, p.caption
+  h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption
     .headerlink
-      display: none
       visibility: hidden
       font-size: 14px
       @extend .fa
       &:after
-        visibility: visible
         content: "\f0c1"
         font-family: FontAwesome
-        display: inline-block
-    &:hover .headerlink
-      display: inline-block
+    &:hover .headerlink:after
+      visibility: visible
+
+  table > caption .headerlink:after
+    font-size: 12px
+
+  .centered
+    text-align: center
 
   // Sidebar content. You'll see at the bottom of this file I change it in mobile.
   .sidebar
@@ -157,7 +165,7 @@
   table.docutils.citation, table.docutils.footnote
     background: none
     border: none
-    color: $gray-light
+    color: $text-medium
     td, tr
       border: none
       background-color: transparent !important
@@ -168,6 +176,17 @@
       vertical-align: top
     code
       color: $gray
+  // Remove the large vertical space between citations and footnotes
+  .wy-table-responsive.citation, .wy-table-responsive.footnote
+    margin-bottom: 0
+  // Re-add vertical space to element directly following citation and footnotes,
+  // if the following element is of a different type
+  .wy-table-responsive.citation + :not(.citation),
+  .wy-table-responsive.footnote + :not(.footnote)
+    margin-top: $base-line-height
+  // Re-add vertical space after citation and footnotes if it is the last child of a parent
+  .wy-table-responsive.citation:last-child, .wy-table-responsive.footnote:last-child
+    margin-bottom: $base-line-height
   table.docutils
     @extend .wy-table
     @extend .wy-table-bordered-all
@@ -179,17 +198,14 @@
     border: none
     td
       border: none
-      padding-top: 5px
     td > strong
       display: inline-block
-      margin-top: 3px
     .field-name
       padding-right: 10px
       text-align: left
       white-space: nowrap
     .field-body
       text-align: left
-      padding-left: 0
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
   tt, code
@@ -227,7 +243,7 @@
     margin-bottom: $base-line-height
     // This would be the equivilant of a .. class::
     dt
-      display: inline-block
+      display: table
       margin: $base-line-height / 4 0
       font-size: 90%
       line-height: normal
@@ -288,16 +304,29 @@
   code.download
     background: inherit
     padding: inherit
+    font-weight: normal
     font-family: inherit
     font-size: inherit
     color: inherit
     border: inherit
     white-space: inherit
     span:first-child
+      -webkit-font-smoothing: subpixel-antialiased
       @extend .fa
       @extend .fa-download
       &:before
         margin-right: 4px
+  .guilabel
+    border: 1px solid lighten($guilabel-color, 25%)
+    background: lighten($guilabel-color, 50%)
+    font-size: 80%
+    font-weight: 700
+    border-radius: $base-line-height / 6
+    padding: $base-line-height / 10 $base-line-height / 4
+    margin: auto $base-line-height / 12
+  .versionmodified
+    font-style: italic
+
 
 // Mobile specific
 +media($mobile)
