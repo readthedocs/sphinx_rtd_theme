@@ -1,7 +1,7 @@
 include *.txt
 include LICENSE
 recursive-include sphinx_rtd_theme *.conf
-recursive-include sphinx_rtd_theme *.css
+recursive-include sphinx_rtd_theme *.css_t
 recursive-include sphinx_rtd_theme *.eot
 recursive-include sphinx_rtd_theme *.html
 recursive-include sphinx_rtd_theme *.js
