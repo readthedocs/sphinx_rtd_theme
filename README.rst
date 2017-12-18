@@ -9,6 +9,14 @@
 .. _demo: http://docs.readthedocs.org
 .. _hidden: http://sphinx-doc.org/markup/toctree.html
 
+.. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
+   :target: https://pypi.python.org/pypi/sphinx_rtd_theme
+.. image:: https://travis-ci.org/rtfd/sphinx_rtd_theme.svg?branch=master
+   :target: https://travis-ci.org/rtfd/sphinx_rtd_theme
+.. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
+   :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
+   :alt: license
+
 **************************
 Read the Docs Sphinx Theme
 **************************
@@ -36,24 +44,28 @@ Download the package or add it to your ``requirements.txt`` file:
 
 .. code:: bash
 
-   pip install sphinx_rtd_theme
+    pip install sphinx_rtd_theme
 
 In your ``conf.py`` file:
 
 .. code:: python
 
     import sphinx_rtd_theme
+    html_theme = "sphinx_rtd_theme"
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+or (since v0.2.5):
+
+.. code:: python
 
     html_theme = "sphinx_rtd_theme"
-
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 Via git or download
 -------------------
 
 Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
 ``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
-conf.py file:
+``conf.py`` file:
 
 .. code:: python
 
@@ -75,16 +87,45 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 .. code:: python
 
     html_theme_options = {
+        'typekit_id': '',
+        'canonical_url': '',
+        'analytics_id': '',
+        'logo_only': False,
+        'display_version': True,
+        'prev_next_buttons_location': bottom,
+        'style_external_links': False,
+        # Toc options
         'collapse_navigation': False,
-        'display_version': False,
-        'navigation_depth': 3,
+        'sticky_navigation': True,
+        'navigation_depth': 4,
+        'includehidden': True,
+        'titles_only': False
     }
 
 The following options are available:
 
+Base options
+~~~~~~~~~~~~
+
+* ``typekit_id`` This will let users specify a typekit id to use for displaying nicer fonts.
 * ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
   to let search engines know they should give higher ranking to latest version of the docs.
   The url points to the root of the documentation and requires a trailing slash.
+* ``analytics_id`` Change the Google Analytics ID that is included on pages.
+* ``display_version`` With this disabled, the version number isn't shown at the top of the sidebar.
+* ``prev_next_buttons_location`` can take the value ``bottom``, ``top``, ``both`` , or ``None``
+  and will display the "Next" and "Previous" buttons accordingly
+* ``style_external_links`` Add an icon next to external links. Defaults to ``False``.
+
+TOC Options
+~~~~~~~~~~~
+
+These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
+
+* ``collapse_navigation`` With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar. This is useful for _very large_ documents.
+* ``sticky_navigation`` This causes the sidebar to scroll with the main page content as you scroll the page.
+* ``includehidden`` Specifies if the sidebar includes toctrees marked with the `:hidden:` option
+* ``titles_only`` If True, removes headers within a page from the sidebar.
 
 Page-level configuration
 ------------------------
@@ -110,9 +151,11 @@ master
 * Hide Edit links on auto created pages
 * Align ``.. centered::`` text to the center
 * Increase contrast for footnotes
-* Add language to the JS output variable 
+* Add language to the JS output variable
 * Include the lato italics font with the theme
 * Fix padding on field lists
+* Add setuptools entry point allowing to use ``sphinx_rtd_theme`` as
+  Sphinx ``html_theme`` directly.
 
 v0.2.4
 ------
@@ -149,15 +192,12 @@ v0.2.0
 v0.1.10-alpha
 -------------
 
-.. note::
-    This is a pre-release version
+.. note:: This is a pre-release version
 
 * Removes Sphinx dependency
 * Fixes hamburger on mobile display
 * Adds a ``body_begin`` block to the template
-* Add ``prev_next_buttons_location`` which can take the value ``bottom``,
-  ``top``, ``both`` , ``None`` and will display the "Next" and "Previous"
-  buttons accordingly
+* Added ``prev_next_buttons_location``
 
 v0.1.9
 ------
@@ -174,7 +214,7 @@ v0.1.9
 * Fixed modernizr URL
 * Small display style changes on code blocks, figure captions, and nav elements
 
-.. _#215: https://github.com/snide/sphinx_rtd_theme/pull/215
+.. _#215: https://github.com/rtfd/sphinx_rtd_theme/pull/215
 
 v0.1.8
 ------
@@ -188,7 +228,7 @@ v0.1.8
 How the Table of Contents builds
 ================================
 
-Currently the left menu will build based upon any ``toctree(s)`` defined in your index.rst file.
+Currently the left menu will build based upon any ``toctree(s)`` defined in your ``index.rst`` file.
 It outputs 2 levels of depth, which should give your visitors a high level of access to your
 docs. If no toctrees are set the theme reverts to sphinx's usual local toctree.
 
@@ -196,7 +236,7 @@ It's important to note that if you don't follow the same styling for your rST he
 your documents, the toctree will misbuild, and the resulting menu might not show the correct
 depth when it renders.
 
-Also note that the table of contents is set with ``includehidden=true``. This allows you
+Also note that by default the table of contents is set with ``includehidden=True``. This allows you
 to set a hidden toc in your index file with the hidden_ property that will allow you
 to build a toc without it rendering in your index.
 
@@ -217,30 +257,30 @@ of a front-end developer (vs. that of a python developer). That means installing
 Set up your environment
 -----------------------
 
-1. Install sphinx_ into a virtual environment.
+#. Install sphinx_ into a virtual environment.
 
-.. code::
+   .. code:: bash
+   
+       pip install sphinx sphinxcontrib-httpdomain
 
-    pip install sphinx
+#. Install sass.
 
-2. Install sass
+   .. code:: bash
 
-.. code::
+       gem install sass
 
-    gem install sass
+#. Install node, bower, grunt, and theme dependencies.
 
-2. Install node, bower and grunt.
+   .. code:: bash
 
-.. code::
+       # Install node
+       brew install node
 
-    // Install node
-    brew install node
+       # Install bower and grunt
+       npm install -g bower grunt-cli
 
-    // Install bower and grunt
-    npm install -g bower grunt-cli
-
-    // Now that everything is installed, let's install the theme dependecies.
-    npm install
+       # Now that everything is installed, let's install the theme dependencies.
+       npm install
 
 Now that our environment is set up, make sure you're in your virtual environment, go to
 this repository in your terminal and run grunt:
@@ -249,13 +289,13 @@ this repository in your terminal and run grunt:
 
     grunt
 
-This default task will do the following **very cool things that make it worth the trouble**.
+This default task will do the following **very cool things that make it worth the trouble**:
 
-1. It'll install and update any bower dependencies.
-2. It'll run sphinx and build new docs.
-3. It'll watch for changes to the sass files and build css from the changes.
-4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
-   or .css files.
+#. Install and update any bower dependencies.
+#. Run sphinx and build new docs.
+#. Watch for changes to the sass files and build css from the changes.
+#. Rebuild the sphinx docs anytime it notices a change to ``.rst``, ``.html``, ``.js``
+   or ``.css`` files.
 
 Before you create an issue
 --------------------------
@@ -274,14 +314,14 @@ Releasing the Theme
 When you release a new version,
 you should do the following:
 
-* Bump the version in ``sphinx_rtd_theme/__init__.py`` - we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
-* Run a ``grunt build`` to rebuild all the theme assets.
-* Commit that change
-* Tag the release in git: ``git tag $NEW_VERSION``.
-* Push the tag to GitHub: ``git push --tags origin``
-* Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``
-* In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``)
-* In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files 
+#. Bump the version in ``sphinx_rtd_theme/__init__.py`` – we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
+#. Run a ``grunt build`` to rebuild all the theme assets.
+#. Commit that change.
+#. Tag the release in git: ``git tag $NEW_VERSION``.
+#. Push the tag to GitHub: ``git push --tags origin``.
+#. Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``.
+#. In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``).
+#. In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files.
 
 TODO
 ====

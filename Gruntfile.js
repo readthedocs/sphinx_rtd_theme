@@ -76,6 +76,7 @@ module.exports = function(grunt) {
       build: {
         options: {
           style: 'compressed',
+          sourcemap: 'none',
           loadPath: ['bower_components/bourbon/dist', 'bower_components/neat/app/assets/stylesheets', 'bower_components/font-awesome/scss', 'bower_components/wyrm/sass']
         },
         files: [{
