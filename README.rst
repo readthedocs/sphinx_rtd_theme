@@ -87,6 +87,7 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 .. code:: python
 
     html_theme_options = {
+        # Base Options
         'typekit_id': '',
         'canonical_url': '',
         'analytics_id': '',
@@ -94,6 +95,8 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'display_version': True,
         'prev_next_buttons_location': bottom,
         'style_external_links': False,
+         # CSS Options
+        'nav_search_background_color': #2980B9,
         # Toc options
         'collapse_navigation': False,
         'sticky_navigation': True,
@@ -116,6 +119,11 @@ Base options
 * ``prev_next_buttons_location`` can take the value ``bottom``, ``top``, ``both`` , or ``None``
   and will display the "Next" and "Previous" buttons accordingly
 * ``style_external_links`` Add an icon next to external links. Defaults to ``False``.
+
+CSS Options
+~~~~~~~~~~~
+
+* ``nav_search_background_color`` Color. Defines the color for the navigation search area.
 
 TOC Options
 ~~~~~~~~~~~
