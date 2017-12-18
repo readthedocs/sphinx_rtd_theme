@@ -78,8 +78,6 @@
     position: relative
     background: $menu-vertical-background-color
     border: none
-    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
-    border-top: solid 1px darken($menu-vertical-background-color, 20%)
     padding-left: $gutter -4px
     +font-smooth
     &:hover
@@ -93,6 +91,10 @@
       font-size: .8em
       line-height: 1.6em
       color: darken($menu-link-medium, 30%)
+
+  li.toctree-l1.current > a
+    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
+    border-top: solid 1px darken($menu-vertical-background-color, 20%)
 
   // This is the on state for pages beyond second level
   li.toctree-l1.current li.toctree-l2, li.toctree-l2.current li.toctree-l3
@@ -123,8 +125,6 @@
         display: block
         background: darken($menu-vertical-background-color, 25%)
         padding: $gutter / 4 $gutter * 3.5
-        border-top: none
-        border-bottom: none
     a:hover span.toctree-expand
       color: $menu-link-medium
     span.toctree-expand
