@@ -32,8 +32,10 @@ module.exports = function(grunt) {
           {
               expand: true,
               flatten: true,
-              src: ['bower_components/lato-googlefont/Lato-Bold.ttf',
-                    'bower_components/lato-googlefont/Lato-Regular.ttf'],
+              src: ['bower_components/lato-googlefont/Lato-Regular.ttf',
+                    'bower_components/lato-googlefont/Lato-Italic.ttf',
+                    'bower_components/lato-googlefont/Lato-Bold.ttf',
+                    'bower_components/lato-googlefont/Lato-BoldItalic.ttf'],
               dest: 'sphinx_rtd_theme/static/fonts/',
               filter: 'isFile'
           },
@@ -74,6 +76,7 @@ module.exports = function(grunt) {
       build: {
         options: {
           style: 'compressed',
+          sourcemap: 'none',
           loadPath: ['bower_components/bourbon/dist', 'bower_components/neat/app/assets/stylesheets', 'bower_components/font-awesome/scss', 'bower_components/wyrm/sass']
         },
         files: [{
@@ -160,4 +163,3 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','browserify:dev','exec:build_sphinx','connect','open','watch']);
   grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','browserify:build','exec:build_sphinx']);
 }
-
