@@ -17,7 +17,7 @@
   // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
   img
     max-width: 100%
-    height: auto !important
+    height: auto
 
   div.figure
     margin-bottom: $base-line-height
@@ -30,6 +30,10 @@
   // Usually it's a good idea to give images some space.
   .section > img,   .section > a > img
     margin-bottom: $base-line-height
+
+  // normalize browser styling
+  abbr[title]
+    text-decoration: none
 
   // Style external links
   &.style-external-links a.reference.external:after
