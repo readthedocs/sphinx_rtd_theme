@@ -108,24 +108,26 @@ Base options
 ~~~~~~~~~~~~
 
 * ``typekit_id`` This will let users specify a typekit id to use for displaying nicer fonts.
-* ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
+* ``canonical_url`` String. This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
   to let search engines know they should give higher ranking to latest version of the docs.
   The url points to the root of the documentation and requires a trailing slash.
-* ``analytics_id`` Change the Google Analytics ID that is included on pages.
-* ``display_version`` With this disabled, the version number isn't shown at the top of the sidebar.
-* ``prev_next_buttons_location`` can take the value ``bottom``, ``top``, ``both`` , or ``None``
-  and will display the "Next" and "Previous" buttons accordingly
-* ``style_external_links`` Add an icon next to external links. Defaults to ``False``.
+* ``analytics_id`` String. Change the Google Analytics ID that is included on pages.
+* ``display_version`` Bool. With this disabled, the version number isn't shown at the top of the sidebar.
+* ``prev_next_buttons_location`` String. can take the value ``bottom``, ``top``, ``both`` , or ``None``
+   and will display the "Next" and "Previous" buttons accordingly.
+* ``style_external_links`` Bool. Add an icon next to external links. Defaults to ``False``.
 
 TOC Options
 ~~~~~~~~~~~
 
 These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
 
-* ``collapse_navigation`` With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar. This is useful for _very large_ documents.
-* ``sticky_navigation`` This causes the sidebar to scroll with the main page content as you scroll the page.
-* ``includehidden`` Specifies if the sidebar includes toctrees marked with the `:hidden:` option
-* ``titles_only`` If True, removes headers within a page from the sidebar.
+* ``collapse_navigation`` Bool. With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar.
+   This is useful for _very large_ documents.
+* ``sticky_navigation`` Bool. This causes the sidebar to scroll with the main page content as you scroll the page.
+* ``navigation_depth`` Int. Indicate the max depth of the tree; by default, all levels are included.
+* ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the `:hidden:` option
+* ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
 
 Page-level configuration
 ------------------------
