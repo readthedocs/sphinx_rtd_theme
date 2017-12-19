@@ -9,6 +9,14 @@
 .. _demo: http://docs.readthedocs.org
 .. _hidden: http://sphinx-doc.org/markup/toctree.html
 
+.. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
+   :target: https://pypi.python.org/pypi/sphinx_rtd_theme
+.. image:: https://travis-ci.org/rtfd/sphinx_rtd_theme.svg?branch=master
+   :target: https://travis-ci.org/rtfd/sphinx_rtd_theme
+.. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
+   :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
+   :alt: license
+
 **************************
 Read the Docs Sphinx Theme
 **************************
@@ -79,16 +87,47 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 .. code:: python
 
     html_theme_options = {
+        'typekit_id': '',
+        'canonical_url': '',
+        'analytics_id': '',
+        'logo_only': False,
+        'display_version': True,
+        'prev_next_buttons_location': bottom,
+        'style_external_links': False,
+        # Toc options
         'collapse_navigation': False,
-        'display_version': False,
-        'navigation_depth': 3,
+        'sticky_navigation': True,
+        'navigation_depth': 4,
+        'includehidden': True,
+        'titles_only': False
     }
 
 The following options are available:
 
-* ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
+Base options
+~~~~~~~~~~~~
+
+* ``typekit_id`` This will let users specify a typekit id to use for displaying nicer fonts.
+* ``canonical_url`` String. This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
   to let search engines know they should give higher ranking to latest version of the docs.
   The url points to the root of the documentation and requires a trailing slash.
+* ``analytics_id`` String. Change the Google Analytics ID that is included on pages.
+* ``display_version`` Bool. With this disabled, the version number isn't shown at the top of the sidebar.
+* ``prev_next_buttons_location`` String. can take the value ``bottom``, ``top``, ``both`` , or ``None``
+   and will display the "Next" and "Previous" buttons accordingly.
+* ``style_external_links`` Bool. Add an icon next to external links. Defaults to ``False``.
+
+TOC Options
+~~~~~~~~~~~
+
+These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
+
+* ``collapse_navigation`` Bool. With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar.
+   This is useful for _very large_ documents.
+* ``sticky_navigation`` Bool. This causes the sidebar to scroll with the main page content as you scroll the page.
+* ``navigation_depth`` Int. Indicate the max depth of the tree; by default, all levels are included.
+* ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the `:hidden:` option
+* ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
 
 Page-level configuration
 ------------------------
@@ -168,9 +207,7 @@ v0.1.10-alpha
 * Removes Sphinx dependency
 * Fixes hamburger on mobile display
 * Adds a ``body_begin`` block to the template
-* Add ``prev_next_buttons_location`` which can take the value ``bottom``,
-  ``top``, ``both`` , ``None`` and will display the "Next" and "Previous"
-  buttons accordingly
+* Added ``prev_next_buttons_location``
 
 v0.1.9
 ------
@@ -209,7 +246,7 @@ It's important to note that if you don't follow the same styling for your rST he
 your documents, the toctree will misbuild, and the resulting menu might not show the correct
 depth when it renders.
 
-Also note that the table of contents is set with ``includehidden=true``. This allows you
+Also note that by default the table of contents is set with ``includehidden=True``. This allows you
 to set a hidden toc in your index file with the hidden_ property that will allow you
 to build a toc without it rendering in your index.
 

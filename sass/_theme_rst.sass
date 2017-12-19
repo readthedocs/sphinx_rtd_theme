@@ -17,7 +17,7 @@
   // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
   img
     max-width: 100%
-    height: auto !important
+    height: auto
 
   .highlight > pre, .linenodiv > pre
     line-height: normal
@@ -33,13 +33,19 @@
   // Usually it's a good idea to give images some space.
   .section > img,   .section > a > img
     margin-bottom: $base-line-height
-  // Questionable whether this is nice or not. It styles eternal links, but comes with some baggage.
-  // a.reference.external:after
-  //   font-family: FontAwesome
-  //   content: " \f08e "
-  //   color: $text-light
-  //   vertical-align: super
-  //   font-size: 60%
+
+  // normalize browser styling
+  abbr[title]
+    text-decoration: none
+
+  // Style external links
+  &.style-external-links a.reference.external:after
+    font-family: FontAwesome
+    content: "\f08e"
+    color: $text-light
+    vertical-align: super
+    font-size: 60%
+    margin: 0 0.2em
 
   // For the most part, its safe to assume that sphinx wants you to use a blockquote as an indent. It gets
   // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
@@ -106,19 +112,19 @@
     @extend h2
 
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
-  h1, h2, h3, h4, h5, h6, dl dt, p.caption
+  h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption
     .headerlink
-      display: none
       visibility: hidden
       font-size: 14px
       @extend .fa
       &:after
-        visibility: visible
         content: "\f0c1"
         font-family: FontAwesome
-        display: inline-block
-    &:hover .headerlink
-      display: inline-block
+    &:hover .headerlink:after
+      visibility: visible
+
+  table > caption .headerlink:after
+    font-size: 12px
 
   .centered
     text-align: center
@@ -174,6 +180,17 @@
       vertical-align: top
     code
       color: $gray
+  // Remove the large vertical space between citations and footnotes
+  .wy-table-responsive.citation, .wy-table-responsive.footnote
+    margin-bottom: 0
+  // Re-add vertical space to element directly following citation and footnotes,
+  // if the following element is of a different type
+  .wy-table-responsive.citation + :not(.citation),
+  .wy-table-responsive.footnote + :not(.footnote)
+    margin-top: $base-line-height
+  // Re-add vertical space after citation and footnotes if it is the last child of a parent
+  .wy-table-responsive.citation:last-child, .wy-table-responsive.footnote:last-child
+    margin-bottom: $base-line-height
   table.docutils
     @extend .wy-table
     @extend .wy-table-bordered-all
