@@ -1,35 +1,35 @@
-{# Support for Sphinx 1.3+ page_source_suffix, but don't break old builds. #}
+{# Support for Sphinx 1.3+ page_source_suffix, but don't break old builds. -#}
 
-{% if page_source_suffix %}
+{%- if page_source_suffix %}
 {% set suffix = page_source_suffix %}
 {% else %}
 {% set suffix = source_suffix %}
-{% endif %}
+{% endif -%}
 
-{% if meta is defined and meta is not none %}
+{%- if meta is defined and meta is not none %}
 {% set check_meta = True %}
 {% else %}
 {% set check_meta = False %}
-{% endif %}
+{% endif -%}
 
-{% if check_meta and 'github_url' in meta %}
+{%- if check_meta and 'github_url' in meta %}
 {% set display_github = True %}
-{% endif %}
+{% endif -%}
 
-{% if check_meta and 'bitbucket_url' in meta %}
+{%- if check_meta and 'bitbucket_url' in meta %}
 {% set display_bitbucket = True %}
-{% endif %}
+{% endif -%}
 
-{% if check_meta and 'gitlab_url' in meta %}
+{%- if check_meta and 'gitlab_url' in meta %}
 {% set display_gitlab = True %}
-{% endif %}
+{% endif -%}
 
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     {% block breadcrumbs %}
       <li><a href="{{ pathto(master_doc) }}">{{ _('Docs') }}</a> &raquo;</li>
-        {% for doc in parents %}
+        {%- for doc in parents %}
           <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
         {% endfor %}
       <li>{{ title }}</li>
