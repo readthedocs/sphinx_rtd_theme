@@ -122,7 +122,9 @@ module.exports = function(grunt) {
     },
     clean: {
       build: ["demo_docs/build"],
-      fonts: ["sphinx_rtd_theme/static/fonts"]
+      fonts: ["sphinx_rtd_theme/static/fonts"],
+      css: ["sphinx_rtd_theme/static/css"],
+      js: ["sphinx_rtd_theme/static/js"]
     },
 
     watch: {
