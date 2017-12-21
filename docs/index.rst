@@ -3,6 +3,6 @@
 Read the Docs Theme Docs
 ************************
 
-.. tocree::
+.. toctree::
 
    demo/index.rst
