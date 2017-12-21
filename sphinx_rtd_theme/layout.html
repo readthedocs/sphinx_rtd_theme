@@ -209,14 +209,15 @@
     <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
   {% endif %}
 
-  {# STICKY NAVIGATION #}
-  {% if theme_sticky_navigation|tobool %}
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          {% if theme_sticky_navigation|tobool %}
+          SphinxRtdTheme.Navigation.enableSticky();
+          {% else %}
+          SphinxRtdTheme.Navigation.enable();
+          {% endif %}
       });
   </script>
-  {% endif %}
 
   {%- block footer %} {% endblock %}
 
