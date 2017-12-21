@@ -1,8 +1,13 @@
 
-************************
-Read the Docs Theme Docs
-************************
+.. include:: ../README.rst
+
+Content
+=======
 
 .. toctree::
+   :caption: Theme
 
-   demo/index.rst
+.. toctree::
+   :caption: Demo
+
+   demo/index
