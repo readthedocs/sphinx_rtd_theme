@@ -16,12 +16,16 @@
 .. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
    :alt: license
+.. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
+  :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
+  :alt: Documentation Status
 
 **************************
 Read the Docs Sphinx Theme
 **************************
 
 .. contents:: 
+   :backlinks: none
 
 View a working demo_ over on readthedocs.org_.
 
