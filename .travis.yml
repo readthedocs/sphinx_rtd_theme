@@ -4,6 +4,10 @@ python:
   - 3.4
   - 3.5
   - 3.6
+matrix:
+  include:
+    - python: 2.7
+      env: TOXENV=docs
 sudo: false
 install:
   - pip install tox-travis
