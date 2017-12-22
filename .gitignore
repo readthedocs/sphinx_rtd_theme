@@ -9,7 +9,6 @@
 .ropeproject/
 .ruby-version
 dist/
-docs/build
 bower_components/
 node_modules/
 npm-debug.log
