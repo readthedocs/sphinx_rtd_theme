@@ -135,7 +135,7 @@ module.exports = function(grunt) {
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['sphinx_rtd_theme/**/*', 'docs/**/*.rst', 'docs/**/*.py'],
+        files: ['sphinx_rtd_theme/**/*', 'README.rst', 'docs/**/*.rst', 'docs/**/*.py'],
         tasks: ['clean:build','exec:build_sphinx']
       },
       /* JavaScript */
