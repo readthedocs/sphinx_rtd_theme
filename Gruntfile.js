@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 1919,
-          base: 'demo_docs/build',
+          base: 'docs/build',
           livereload: true
         }
       }
@@ -117,11 +117,11 @@ module.exports = function(grunt) {
         cmd: 'bower update'
       },
       build_sphinx: {
-        cmd: 'sphinx-build demo_docs/source demo_docs/build'
+        cmd: 'sphinx-build docs/ docs/build'
       }
     },
     clean: {
-      build: ["demo_docs/build"],
+      build: ["docs/build"],
       fonts: ["sphinx_rtd_theme/static/fonts"],
       css: ["sphinx_rtd_theme/static/css"],
       js: ["sphinx_rtd_theme/static/js/*", "!sphinx_rtd_theme/static/js/modernizr.min.js"]
@@ -135,7 +135,7 @@ module.exports = function(grunt) {
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['sphinx_rtd_theme/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
+        files: ['sphinx_rtd_theme/**/*', 'README.rst', 'docs/**/*.rst', 'docs/**/*.py'],
         tasks: ['clean:build','exec:build_sphinx']
       },
       /* JavaScript */
@@ -143,9 +143,9 @@ module.exports = function(grunt) {
         files: ['js/*.js'],
         tasks: ['browserify:dev']
       },
-      /* live-reload the demo_docs if sphinx re-builds */
+      /* live-reload the docs if sphinx re-builds */
       livereload: {
-        files: ['demo_docs/build/**/*'],
+        files: ['docs/build/**/*'],
         options: { livereload: true }
       }
     }
