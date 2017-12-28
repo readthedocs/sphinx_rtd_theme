@@ -39,6 +39,9 @@ extensions = [
     'sphinxcontrib.httpdomain',
 ]
 
+# Do not warn about external images (status badges in README.rst)
+suppress_warnings = ['image.nonlocal_uri']
+
 # Math
 mathjax_path = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
