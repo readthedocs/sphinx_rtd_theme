@@ -1,5 +1,6 @@
-Content
-=======
+##########################
+Read the Docs Sphinx Theme
+##########################
 
 .. toctree::
    :caption: Theme
