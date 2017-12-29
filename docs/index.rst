@@ -7,4 +7,8 @@ Read the Docs Sphinx Theme
    README
    demo/index
 
+.. raw:: html
 
+    <script>
+    window.location = 'README.html';
+    </script>
