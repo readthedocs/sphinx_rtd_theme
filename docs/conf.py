@@ -42,9 +42,6 @@ extensions = [
 # Do not warn about external images (status badges in README.rst)
 suppress_warnings = ['image.nonlocal_uri']
 
-# Math
-mathjax_path = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
