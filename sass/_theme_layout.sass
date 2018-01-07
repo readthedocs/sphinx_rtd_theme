@@ -13,9 +13,9 @@
   li:hover
     background: rgba(255,255,255,.1)
   li
-    &.divide-left
+    &.divide-left, &:dir(rtl) .divide-right
       border-left: solid 1px hsl(0, 0%, 25%)
-    &.divide-right
+    &.divide-right, &:dir(rtl) .divide-left 
       border-right: solid 1px hsl(0, 0%, 25%)
   a
     height: $base-font-size * 2
@@ -50,6 +50,9 @@
       a
         color: $menu-link-medium
         border-right: solid 1px darken($menu-vertical-background-color, 20%)
+        :dir(rtl) &
+          border-right: inherit
+          border-left: solid 1px darken($menu-vertical-background-color, 20%)
         padding: $gutter / 4 $gutter * 1.5
         &:hover
           background: darken($menu-vertical-background-color, 15%)
@@ -64,6 +67,10 @@
       display: block
       float: left
       margin-left: -1.2em
+      :dir(rtl) &
+        float: right
+        margin-left: inherit
+        margin-right: -1.2em
       @extend .fa
       @extend .fa-plus-square-o
       font-size: .8em
@@ -81,6 +88,9 @@
     border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
     border-top: solid 1px darken($menu-vertical-background-color, 20%)
     padding-left: $gutter -4px
+    :dir(rtl) &
+      padding-left: inherit
+      padding-right: $gutter -4px
     +font-smooth
     &:hover
       background: $menu-vertical-background-color
@@ -248,6 +258,8 @@
 
 .wy-body-for-nav
   background: left repeat-y $section-background-color
+  :dir(rtl) &
+    background: right repeat-y $section-background-color
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOERBMTRGRDBFMUUxMUUzODUwMkJCOThDMEVFNURFMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOERBMTRGRTBFMUUxMUUzODUwMkJCOThDMEVFNURFMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE4REExNEZCMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE4REExNEZDMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EwrlwAAAAA5JREFUeNpiMDU0BAgwAAE2AJgB9BnaAAAAAElFTkSuQmCC)
   background-size: $nav-desktop-width 1px
 
@@ -261,6 +273,9 @@
   top: 0
   bottom: 0
   left: 0
+  :dir(rtl) &
+    left: inherit
+    right: 0
   padding-bottom: 2em
   width: $nav-desktop-width
   overflow-x: hidden
@@ -292,6 +307,8 @@
     +font-smooth
   img
     margin-right: $base-line-height / 2
+    :dir(rtl) &
+      margin-left: $base-line-height / 2
     height: 45px
     width: 45px
     background-color: $menu-logo-color
@@ -300,11 +317,16 @@
   i
     font-size: 30px
     float: left
+    :dir(rtl) &
+      floar: right
     cursor: pointer
     padding-top: inherit
 
 .wy-nav-content-wrap
   margin-left: $nav-desktop-width
+  :dir(rlt) &
+    margin-left: 0
+    margin-right: $nav-desktop-width
   background: $section-background-color
   min-height: 100%
 
@@ -369,11 +391,20 @@ footer
   .wy-nav-side
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
+      :dir(rtl) &
+        left: inherit
+        right: -$nav-desktop-width
     @else
       right: -$nav-desktop-width
+      :dir(rtl) &
+        left: -$nav-desktop-width
+        right: inherit
     &.shift
       width: 85%
       left: 0
+      :dir(rtl) &
+        left:inherit
+		    right:0
   .wy-side-scroll
     width: auto
   .wy-side-nav-search
@@ -382,12 +413,18 @@ footer
     width: auto
   .wy-nav-content-wrap
     margin-left: 0
+    :dir(rtl) &
+      margin-left: inherit
+      margin-right: 0
     .wy-nav-content
       padding: $gutter
     &.shift
       position: fixed
       min-width: 100%
       left: 85%
+      :dir(rtl) &
+        left: inherit
+        right: 85%
       top: 0
       height: 100%
       overflow: hidden
@@ -404,3 +441,6 @@ footer
     display: none
   .wy-nav-content-wrap
     margin-left: 0
+    :dir(rtl) &
+      margin-left: inherit
+      margin-right: 0
