@@ -16,17 +16,22 @@ function ThemeNav () {
         isRunning: false
     };
 
-    nav.enable = function () {
+    nav.enable = function (withStickyNav) {
         var self = this;
 
-        if (!self.isRunning) {
-            self.isRunning = true;
-            jQuery(function ($) {
-                self.init($);
+        if (self.isRunning) {
+            // Only allow enabling nav logic once
+            return;
+        }
 
-                self.reset();
-                self.win.on('hashchange', self.reset);
+        self.isRunning = true;
+        jQuery(function ($) {
+            self.init($);
 
+            self.reset();
+            self.win.on('hashchange', self.reset);
+
+            if (withStickyNav) {
                 // Set scroll monitor
                 self.win.on('scroll', function () {
                     if (!self.linkScroll) {
@@ -36,18 +41,23 @@ function ThemeNav () {
                         }
                     }
                 });
+            }
 
-                // Set resize monitor
-                self.win.on('resize', function () {
-                    if (!self.winResize) {
-                        self.winResize = true;
-                        requestAnimationFrame(function() { self.onResize(); });
-                    }
-                });
-
-                self.onResize();
+            // Set resize monitor
+            self.win.on('resize', function () {
+                if (!self.winResize) {
+                    self.winResize = true;
+                    requestAnimationFrame(function() { self.onResize(); });
+                }
             });
-        };
+
+            self.onResize();
+        });
+
+    };
+
+    nav.enableSticky = function() {
+        this.enable(true);
     };
 
     nav.init = function ($) {
@@ -80,8 +90,15 @@ function ThemeNav () {
             })
 
         // Make tables responsive
-        $("table.docutils:not(.field-list)")
+        $("table.docutils:not(.field-list,.footnote,.citation)")
             .wrap("<div class='wy-table-responsive'></div>");
+
+        // Add extra class to responsive tables that contain
+        // footnotes or citations so that we can target them for styling
+        $("table.docutils.footnote")
+            .wrap("<div class='wy-table-responsive footnote'></div>");
+        $("table.docutils.citation")
+            .wrap("<div class='wy-table-responsive citation'></div>");
 
         // Add expand links to all parents of nested ul
         $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {
@@ -170,7 +187,7 @@ function ThemeNav () {
 module.exports.ThemeNav = ThemeNav();
 
 if (typeof(window) != 'undefined') {
-    window.SphinxRtdTheme = { StickyNav: module.exports.ThemeNav };
+    window.SphinxRtdTheme = { Navigation: module.exports.ThemeNav };
 }
 
 

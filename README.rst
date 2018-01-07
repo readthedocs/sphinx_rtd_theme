@@ -6,7 +6,7 @@
 .. _wyrm: http://www.github.com/snide/wyrm/
 .. _grunt: http://www.gruntjs.com
 .. _node: http://www.nodejs.com
-.. _demo: http://docs.readthedocs.org
+.. _demo: https://sphinx-rtd-theme.readthedocs.io/en/latest/
 .. _hidden: http://sphinx-doc.org/markup/toctree.html
 
 .. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
@@ -16,12 +16,16 @@
 .. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
    :alt: license
+.. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
+  :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
+  :alt: Documentation Status
 
 **************************
 Read the Docs Sphinx Theme
 **************************
 
 .. contents:: 
+   :backlinks: none
 
 View a working demo_ over on readthedocs.org_.
 
@@ -30,9 +34,6 @@ This is a mobile-friendly sphinx_ theme I made for readthedocs.org_.
 If you'd like to update the theme,
 please make your edits to the SASS files here,
 rather than the .css files on checked into the repo.
-
-.. image:: demo_docs/source/static/screen_mobile.png
-    :width: 100%
 
 Installation
 ============
