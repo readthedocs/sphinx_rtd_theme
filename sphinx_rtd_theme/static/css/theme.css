@@ -4491,11 +4491,11 @@ div[class^='highlight'] pre {
 }
 :-moz-dir(rtl) .wy-nav-top img {
 	margin-left:12px;
-	margin-left:inherit
+	margin-right:inherit
 }
 :dir(rtl) .wy-nav-top img {
 	margin-left:12px;
-	margin-left:inherit
+	margin-right:inherit
 }
 .wy-nav-top i {
 	font-size:30px;
