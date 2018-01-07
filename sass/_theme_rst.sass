@@ -17,7 +17,7 @@
   // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
   img
     max-width: 100%
-    height: auto
+    height: auto !important
 
   .highlight > pre, .linenodiv > pre
     line-height: normal
@@ -34,10 +34,6 @@
   .section > img,   .section > a > img
     margin-bottom: $base-line-height
 
-  // normalize browser styling
-  abbr[title]
-    text-decoration: none
-
   // Style external links
   &.style-external-links a.reference.external:after
     font-family: FontAwesome
@@ -51,6 +47,9 @@
   // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
   blockquote
     margin-left: $base-line-height
+    :dir(rtl) &
+      margin-left: inherit
+      margin-right: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
   .literal-block, pre.literal-block
@@ -66,6 +65,9 @@
     @extend .fa-exclamation-circle
     &:before
       margin-right: 4px
+      :dir(rtl) &
+        margin-right: inherit
+        margin-left: 4px
   .note, .seealso
     @extend .wy-alert.wy-alert-info
   .hint, .tip, .important
@@ -92,6 +94,9 @@
     margin-bottom: $base-line-height / 2
   .line-block
     margin-left: $base-line-height
+    :dir(rtl) &
+      margin-left: inherit
+      margin-right: $base-line-height
 
   // Generics handling of headings and toc stuff.
   .topic-title
@@ -102,9 +107,15 @@
   .align-right
     float: right
     margin: 0px 0px $base-line-height $base-line-height
+    :dir(rtl) &
+      float: left
+      margin: 0px $base-line-height 0px $base-line-height
   .align-left
     float: left
     margin: 0px $base-line-height $base-line-height 0px
+    :dir(rtl) &
+      float: right
+      margin: 0px 0px $base-line-height $base-line-height
   .align-center
     margin: auto
     display: block
@@ -135,6 +146,9 @@
     width: 40%
     display: block
     margin: 0 0 $base-line-height $base-line-height
+    :dir(rtl) &
+      float: left
+      margin: 0 $base-line-height 0 $base-line-height
     padding: $base-line-height
     background: $sidebar-background-color
     border: solid 1px $sidebar-border-color
@@ -161,10 +175,7 @@
 
   // These are the little citation links [1] that show up within paragraphs.
   .footnote-reference, .citation-reference
-    vertical-align: baseline
-    position: relative
-    top: -0.4em
-    line-height: 0
+    vertical-align: super
     font-size: 90%
 
   // Tables! Sphinx LOVES TABLES. Most of wyrm assumes you're only going to use a table as a table
@@ -210,9 +221,15 @@
     .field-name
       padding-right: 10px
       text-align: left
+      :dir(rtl) &
+        padding-right: inherit
+        padding-left: 10px
+        text-align: right
       white-space: nowrap
     .field-body
       text-align: left
+      :dir(rtl) &
+        text-align: right
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
   tt, code
@@ -241,6 +258,8 @@
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
+      :dir(rtl) &
+        margin: 0  $base-line-height $base-line-height / 2 0
   // This is what Sphinx spits out for it's autodocs. Depending upon what language the person is referencing
   // these things usually have a class of "method" or "class" or something similar, but really who knows.
   // Sphinx doesn't give me a generic class on these, so unfortunately I have to apply it to the root dl.
@@ -269,6 +288,9 @@
       margin-bottom: $base-line-height / 4
       border: none
       border-left: solid 3px hsl(0,0%,80%)
+      :dir(rtl) &
+        border-left: inherit
+        border-right: solid 3px hsl(0,0%,80%)
       background: hsl(0,0%,94%)
       color: $method-color
       .headerlink
@@ -295,15 +317,23 @@
     .property
       display: inline-block
       padding-right: 8px
+      :dir(rtl) &
+        padding-right: inherit
+        padding-left: 8px
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
     color: $text-viewcode-color
     font-size: 80%
     padding-left: $base-line-height
+    :dir(rtl) &
+      padding-left: inherit
+      padding-right: $base-line-height
   .viewcode-back
     display: block
     float: right
+    :dir(rtl) &
+      float: left
   p.rubric
     margin-bottom: 12px
     font-weight: bold
@@ -323,6 +353,9 @@
       @extend .fa-download
       &:before
         margin-right: 4px
+        :dir(rtl) &
+          margin-right: inherit
+          margin-left: 4px
   .guilabel
     border: 1px solid lighten($guilabel-color, 25%)
     background: lighten($guilabel-color, 50%)
