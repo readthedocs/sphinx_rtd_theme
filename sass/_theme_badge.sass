@@ -2,6 +2,9 @@
   position: fixed
   bottom: 0
   left: 0
+  :dir(rtl) &
+    right: 0
+    left: inherit
   width: $nav-desktop-width
   color: $section-background-color
   background: darken($menu-background-color, 8%)
@@ -18,6 +21,8 @@
     background-color: darken($menu-background-color, 5%)
     display: block
     text-align: right
+    :dir(rtl) &
+      text-align: left
     font-size: 90%
     cursor: pointer
     color: $green
@@ -26,8 +31,12 @@
       color: $section-background-color
     .fa-book
       float: left
+      :dir(rtl) &
+        float: right
     .icon-book
       float: left
+      :dir(rtl) &
+        float: right
     &.rst-out-of-date
       background-color: $red
       color: $white
@@ -68,6 +77,8 @@
       float: none
     &.shift-up .rst-current-version
       text-align: right
+      :dir(rtl) &
+        text-align: left
       .fa-book
         float: left
       .icon-book
