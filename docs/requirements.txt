@@ -1,2 +1,3 @@
+git+https://github.com/rtfd/sphinx_rtd_theme@master
 sphinxcontrib.httpdomain
 sphinx
