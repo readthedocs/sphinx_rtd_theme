@@ -19,9 +19,6 @@
     max-width: 100%
     height: auto
 
-  .highlight > pre, .linenodiv > pre
-    line-height: normal
-
   div.figure
     margin-bottom: $base-line-height
     p.caption
@@ -53,8 +50,39 @@
     margin-left: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
-  .literal-block, pre.literal-block
-    @extend .codeblock
+
+  pre.literal-block, div[class^='highlight']
+    border: 1px solid $table-border-color
+    padding: 0px
+    overflow-x: auto
+    // 1px hack otherwise border won't show. lame
+    margin: 1px 0 $base-line-height 0
+    div[class^='highlight']
+      border: none
+      margin: 0
+  // Needs 100% width for line highlighting to work properly
+  div[class^='highlight'] td.code
+    width: 100%
+  .linenodiv pre
+    border-right: solid 1px lighten($table-border-color, 2%)
+    margin: 0
+    padding: $base-line-height / 2 $base-line-height / 2
+    font-family: $code-font-family
+  div[class^='highlight'] pre
+    white-space: pre
+    margin: 0
+    padding: $base-line-height / 2 $base-line-height / 2
+    font-family: $code-font-family
+    display: block
+    overflow: auto
+  pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
+    font-size: 12px
+    line-height: normal
+
+  @media print
+    .codeblock, div[class^='highlight'], div[class^='highlight'] pre
+      white-space: pre-wrap
+
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
     @extend .wy-alert
