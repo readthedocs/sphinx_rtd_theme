@@ -16,33 +16,48 @@ function ThemeNav () {
         isRunning: false
     };
 
-    nav.enable = function () {
+    nav.enable = function (withStickyNav) {
         var self = this;
 
-        if (!self.isRunning) {
-            self.isRunning = true;
-            jQuery(function ($) {
-                self.init($);
+        if (self.isRunning) {
+            // Only allow enabling nav logic once
+            return;
+        }
 
-                self.reset();
-                self.win.on('hashchange', self.reset);
+        self.isRunning = true;
+        jQuery(function ($) {
+            self.init($);
 
+            self.reset();
+            self.win.on('hashchange', self.reset);
+
+            if (withStickyNav) {
                 // Set scroll monitor
                 self.win.on('scroll', function () {
                     if (!self.linkScroll) {
-                        self.winScroll = true;
+                        if (!self.winScroll) {
+                            self.winScroll = true;
+                            requestAnimationFrame(function() { self.onScroll(); });
+                        }
                     }
                 });
-                setInterval(function () { if (self.winScroll) self.onScroll(); }, 25);
+            }
 
-                // Set resize monitor
-                self.win.on('resize', function () {
+            // Set resize monitor
+            self.win.on('resize', function () {
+                if (!self.winResize) {
                     self.winResize = true;
-                });
-                setInterval(function () { if (self.winResize) self.onResize(); }, 25);
-                self.onResize();
+                    requestAnimationFrame(function() { self.onResize(); });
+                }
             });
-        };
+
+            self.onResize();
+        });
+
+    };
+
+    nav.enableSticky = function() {
+        this.enable(true);
     };
 
     nav.init = function ($) {
@@ -75,8 +90,15 @@ function ThemeNav () {
             })
 
         // Make tables responsive
-        $("table.docutils:not(.field-list)")
+        $("table.docutils:not(.field-list,.footnote,.citation)")
             .wrap("<div class='wy-table-responsive'></div>");
+
+        // Add extra class to responsive tables that contain
+        // footnotes or citations so that we can target them for styling
+        $("table.docutils.footnote")
+            .wrap("<div class='wy-table-responsive footnote'></div>");
+        $("table.docutils.citation")
+            .wrap("<div class='wy-table-responsive citation'></div>");
 
         // Add expand links to all parents of nested ul
         $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {
@@ -109,13 +131,15 @@ function ThemeNav () {
                   // Try again with the closest section entry.
                   link = $('.wy-menu-vertical')
                     .find('[href="#' + closest_section.attr("id") + '"]');
-
                 }
-                $('.wy-menu-vertical li.toctree-l1 li.current')
-                    .removeClass('current');
-                link.closest('li.toctree-l2').addClass('current');
-                link.closest('li.toctree-l3').addClass('current');
-                link.closest('li.toctree-l4').addClass('current');
+                // If we found a matching link then reset current and re-apply
+                // otherwise retain the existing match
+                if (link.length > 0) {
+                    $('.wy-menu-vertical li.toctree-l1 li.current').removeClass('current');
+                    link.closest('li.toctree-l2').addClass('current');
+                    link.closest('li.toctree-l3').addClass('current');
+                    link.closest('li.toctree-l4').addClass('current');
+                }
             }
             catch (err) {
                 console.log("Error expanding nav for anchor", err);
@@ -163,7 +187,37 @@ function ThemeNav () {
 module.exports.ThemeNav = ThemeNav();
 
 if (typeof(window) != 'undefined') {
-    window.SphinxRtdTheme = { StickyNav: module.exports.ThemeNav };
+    window.SphinxRtdTheme = { Navigation: module.exports.ThemeNav };
 }
+
+
+// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+// https://gist.github.com/paulirish/1579671
+// MIT license
+
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
 
 },{"jquery":"jquery"}]},{},["sphinx-rtd-theme"]);
