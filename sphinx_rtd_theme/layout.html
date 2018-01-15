@@ -33,7 +33,7 @@
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 {% endblock %}
 
-{%- block body_tag %}<body class="wy-body-for-nav" role="document">{% endblock %}
+{%- block body_tag %}<body class="wy-body-for-nav">{% endblock %}
 
 {%- block content %}
   {%- block document %}
@@ -100,7 +100,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         {% block mobile_nav %}
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="{{ pathto(master_doc) }}">{{ project }}</a>
@@ -138,14 +138,15 @@
     <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
   {% endif %}
 
-  {# STICKY NAVIGATION #}
-  {% if theme_sticky_navigation|tobool %}
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          {% if theme_sticky_navigation|tobool %}
+          SphinxRtdTheme.Navigation.enableSticky();
+          {% else %}
+          SphinxRtdTheme.Navigation.enable();
+          {% endif %}
       });
   </script>
-  {% endif %}
 
   {%- endblock %}
   {%- endblock %}
