@@ -11,6 +11,10 @@ matrix:
 sudo: false
 install:
   - pip install tox-travis
+  - gem install sass
+  - npm install -g grunt-cli bower
+  - npm install
+  - grunt build
 script:
   - tox
   
