@@ -1,41 +1,17 @@
-{# TEMPLATE VAR SETTINGS #}
-{%- set url_root = pathto('', 1) %}
-{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
-{%- if not embedded and docstitle %}
-  {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
-{%- else %}
-  {%- set titlesuffix = "" %}
-{%- endif %}
-{%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
+{%- extends "basic/layout.html" %}
 
+{%- block doctype -%}
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  {{ metatags }}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% block htmltitle %}
-  <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-  {% endblock %}
+{%- endblock %}
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
 
-  {# FAVICON #}
-  {% if favicon %}
-    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
-  {% endif %}
-  {# CANONICAL URL #}
+{%- block extrahead %}
+  {{ super() }}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   {% if theme_canonical_url %}
     <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
-  {% endif %}
-
-  {# CSS #}
-
-  {# OPENSEARCH #}
-  {% if not embedded %}
-    {% if use_opensearch %}
-      <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
-    {% endif %}
-
   {% endif %}
 
   {# RTD hosts this file, so just load on non RTD builds #}
@@ -53,41 +29,14 @@
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {% endfor %}
 
-  {%- block linktags %}
-    {%- if hasdoc('about') %}
-        <link rel="author" title="{{ _('About these documents') }}"
-              href="{{ pathto('about') }}"/>
-    {%- endif %}
-    {%- if hasdoc('genindex') %}
-        <link rel="index" title="{{ _('Index') }}"
-              href="{{ pathto('genindex') }}"/>
-    {%- endif %}
-    {%- if hasdoc('search') %}
-        <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}"/>
-    {%- endif %}
-    {%- if hasdoc('copyright') %}
-        <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}"/>
-    {%- endif %}
-    <link rel="top" title="{{ docstitle|e }}" href="{{ pathto('index') }}"/>
-    {%- if parents %}
-        <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}"/>
-    {%- endif %}
-    {%- if next %}
-        <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}"/>
-    {%- endif %}
-    {%- if prev %}
-        <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
-    {%- endif %}
-  {%- endblock %}
-  {%- block extrahead %} {% endblock %}
-
   {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
+{% endblock %}
 
-</head>
+{%- block body_tag %}<body class="wy-body-for-nav">{% endblock %}
 
-<body class="wy-body-for-nav">
-
+{%- block content %}
+  {%- block document %}
   {% block extrabody %} {% endblock %}
   <div class="wy-grid-for-nav">
 
@@ -122,7 +71,6 @@
           {% endif %}
 
           {% include "searchbox.html" %}
-
           {% endblock %}
         </div>
 
@@ -185,25 +133,6 @@
   </div>
   {% include "versions.html" %}
 
-  {% if not embedded %}
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'{{ url_root }}',
-            VERSION:'{{ release|e }}',
-            LANGUAGE:'{{ language }}',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'{{ '' if no_search_suffix else file_suffix }}',
-            HAS_SOURCE:  {{ has_source|lower }},
-            SOURCELINK_SUFFIX: '{{ sourcelink_suffix }}'
-        };
-    </script>
-    {%- for scriptfile in script_files %}
-      <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
-    {%- endfor %}
-
-  {% endif %}
-
   {# RTD hosts this file, so just load on non RTD builds #}
   {% if not READTHEDOCS %}
     <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
@@ -219,7 +148,6 @@
       });
   </script>
 
+  {%- endblock %}
+  {%- endblock %}
   {%- block footer %} {% endblock %}
-
-</body>
-</html>
