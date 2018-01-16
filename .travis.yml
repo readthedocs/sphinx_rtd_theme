@@ -11,7 +11,7 @@ matrix:
 sudo: false
 install:
   - pip install tox-travis
-  - npm install -g grunt-cli
+  - npm install -g grunt-cli bower
   - npm install
   - grunt build
 script:
