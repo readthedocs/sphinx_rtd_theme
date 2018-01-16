@@ -50,15 +50,6 @@
       <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
     {% endif %}
     <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
-    <script type="text/javascript">
-      jQuery(function () {
-          {% if theme_sticky_navigation|tobool %}
-          SphinxRtdTheme.Navigation.enableSticky();
-          {% else %}
-          SphinxRtdTheme.Navigation.enable();
-          {% endif %}
-      });
-     </script>
 
     {# OPENSEARCH #}
     {%- if use_opensearch %}
@@ -211,7 +202,15 @@
 
   </div>
   {% include "versions.html" %}
-
+  <script type="text/javascript">
+    jQuery(function () {
+        {% if theme_sticky_navigation|tobool %}
+        SphinxRtdTheme.Navigation.enableSticky();
+        {% else %}
+        SphinxRtdTheme.Navigation.enable();
+        {% endif %}
+    });
+  </script>
   {%- block footer %} {% endblock %}
 
 </body>
