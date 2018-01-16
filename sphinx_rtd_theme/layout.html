@@ -203,14 +203,15 @@
   </div>
   {% include "versions.html" %}
   <script type="text/javascript">
-    jQuery(function () {
-        {% if theme_sticky_navigation|tobool %}
-        SphinxRtdTheme.Navigation.enableSticky();
-        {% else %}
-        SphinxRtdTheme.Navigation.enable();
-        {% endif %}
-    });
+     jQuery(function () {
+          {% if theme_sticky_navigation|tobool %}
+          SphinxRtdTheme.Navigation.enableSticky();
+          {% else %}
+          SphinxRtdTheme.Navigation.enable();
+          {% endif %}
+      });
   </script>
+
   {%- block footer %} {% endblock %}
 
 </body>
