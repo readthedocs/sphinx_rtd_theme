@@ -33,7 +33,9 @@
   {# OPENSEARCH #}
   {% if not embedded %}
     {% if use_opensearch %}
-      <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+      <link rel="search" type="application/opensearchdescription+xml"
+            title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
+            href="{{ pathto('_static/opensearch.xml', 1) }}"/>
     {% endif %}
 
   {% endif %}
@@ -98,7 +100,9 @@
           {% endif %}
 
           {% if logo %}
-            {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
+            {# Not strictly valid HTML, but it's the only way to display/scale
+               it properly, without weird scripting or heaps of work
+            #}
             <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="Logo"/>
           {% endif %}
           </a>
