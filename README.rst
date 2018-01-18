@@ -130,6 +130,18 @@ These effect how we display the Table of Contents in the side bar. You can read 
 * ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the `:hidden:` option
 * ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
 
+HTML Context Configuration
+--------------------------
+
+.. code:: python
+
+    html_context = {
+        'pageview_mode': ''
+    }
+
+* ``pageview_mode`` String. Changes how to view files when using `display_github` or `display_gitlab`.
+  When using Github or Gitlab this can be any of: `blob` (default), `edit`, or `raw`. Note, Bitbucket does not support this.
+
 Page-level configuration
 ------------------------
 
