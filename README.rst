@@ -140,7 +140,8 @@ HTML Context Configuration
     }
 
 * ``pageview_mode`` String. Changes how to view files when using `display_github` or `display_gitlab`.
-  When using Github or Gitlab this can be any of: `blob` (default), `edit`, or `raw`. Note, Bitbucket does not support this.
+  When using Github or Gitlab this can be any of: `blob` (default), `edit`, or `raw`,
+  on Bitbucket, this can be either: `view` (default) or `edit`.
 
 Page-level configuration
 ------------------------
