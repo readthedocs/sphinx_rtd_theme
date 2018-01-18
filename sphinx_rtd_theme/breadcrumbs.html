@@ -49,7 +49,7 @@
               <!-- User defined Bitbucket URL -->
               <a href="{{ meta['bitbucket_url'] }}" class="fa fa-bitbucket"> {{ _('Edit on Bitbucket') }}</a>
             {% else %}
-              <a href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ suffix }}{{ pageview_mode }}" class="fa fa-bitbucket"> {{ _('Edit on Bitbucket') }}</a>
+              <a href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-bitbucket"> {{ _('Edit on Bitbucket') }}</a>
             {% endif %}
           {% elif display_gitlab %}
             {% if check_meta and 'gitlab_url' in meta %}
