@@ -136,14 +136,14 @@ HTML Context Configuration
 .. code:: python
 
     html_context = {
-        'pageview_mode': ''
+        'vcs_pageview_mode': ''
     }
 
-* ``pageview_mode`` String. Changes how to view files when using `display_github` or `display_gitlab`.
-  When using Github or Gitlab this can be any of: `blob` (default), `edit`, or `raw`,
+* ``vcs_pageview_mode`` String. Changes how to view files when using `display_github`, `display_gitlab`, ect.
+  When using Github or Gitlab this can be: `blob` (default), `edit`, or `raw`,
   on Bitbucket, this can be either: `view` (default) or `edit`.
 
-Page-level configuration
+Page-level Configuration
 ------------------------
 
 Pages support metadata that changes how the theme renders.
