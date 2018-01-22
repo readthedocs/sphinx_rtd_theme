@@ -23,8 +23,9 @@
 Read the Docs Sphinx Theme
 **************************
 
-.. contents:: 
+.. contents::
    :backlinks: none
+   :local:
 
 View a working demo_ over on readthedocs.org_.
 

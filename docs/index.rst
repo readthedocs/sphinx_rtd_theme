@@ -1,13 +1,14 @@
-
-.. include:: ../README.rst
-
-Content
-=======
+##########################
+Read the Docs Sphinx Theme
+##########################
 
 .. toctree::
-   :caption: Theme
 
-.. toctree::
-   :caption: Demo
-
+   README
    demo/index
+
+.. raw:: html
+
+    <script>
+    window.location = 'README.html';
+    </script>
