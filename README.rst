@@ -246,6 +246,7 @@ By default, the navigation will "stick" to the screen as you scroll. However if 
 is vertically too large, it will revert to static positioning. To disable the sticky nav
 altogether change the setting in ``conf.py``.
 
+
 Contributing or modifying the theme
 ===================================
 
@@ -299,16 +300,6 @@ This default task will do the following **very cool things that make it worth th
 #. Rebuild the sphinx docs anytime it notices a change to ``.rst``, ``.html``, ``.js``
    or ``.css`` files.
 
-Before you create an issue
---------------------------
-
-I don't have a lot of time to maintain this project due to other responsibilities.
-I know there are a lot of Python engineers out there that can't code sass / css and
-are unable to submit pull requests. That said, submitting random style bugs without
-at least providing sample documentation that replicates your problem is a good
-way for me to ignore your request. RST unfortunately can spit out a lot of things
-in a lot of ways. I don't have time to research your problem for you, but I do
-have time to fix the actual styling issue if you can replicate the problem for me.
 
 Releasing the Theme
 ===================
