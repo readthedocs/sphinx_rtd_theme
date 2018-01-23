@@ -7,7 +7,7 @@ Give details on your issue.
 
 Please give a link to a public reproducible project or provide an example of the Restructured Text that gives an issue.
 
-```
+```rst
 Place RST code here (if any).
 ```
 
@@ -21,5 +21,6 @@ Please describe how this should work properly.
 
 ### Environment Info
 
+- Python Version:
 - Sphinx Version:
 - RTD Theme Version:
