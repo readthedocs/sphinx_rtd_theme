@@ -122,11 +122,11 @@ TOC Options
 
 These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
 
-* ``collapse_navigation`` Bool. With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar.
+* ``collapse_navigation`` Bool. With this enabled, you will lose the ``[+]`` drop downs next to each section in the sidebar.
   This is useful for *very large* documents.
 * ``sticky_navigation`` Bool. This causes the sidebar to scroll with the main page content as you scroll the page.
 * ``navigation_depth`` Int. Indicate the max depth of the tree; by default, all levels are included.
-* ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the `:hidden:` option
+* ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the ``:hidden:`` option
 * ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
 
 Page-level configuration
