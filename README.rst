@@ -239,7 +239,7 @@ your documents, the toctree will misbuild, and the resulting menu might not show
 depth when it renders.
 
 Also note that by default the table of contents is set with ``includehidden=True``. This allows you
-to set a hidden toc in your index file with the hidden_ property that will allow you
+to set a hidden toc in your index file with the `:hidden: <hidden_>`_ property that will allow you
 to build a toc without it rendering in your index.
 
 By default, the navigation will "stick" to the screen as you scroll. However if your toc
