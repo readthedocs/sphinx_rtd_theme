@@ -171,9 +171,11 @@
            <div itemprop="articleBody">
             {% block body %}{% endblock %}
            </div>
+           {% if self.comments()|trim %}
            <div class="articleComments">
             {% block comments %}{% endblock %}
            </div>
+           {% endif%}
           </div>
           {% include "footer.html" %}
         </div>
