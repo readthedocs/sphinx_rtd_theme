@@ -8,6 +8,10 @@
 .. _demo: https://sphinx-rtd-theme.readthedocs.io/en/latest/
 .. _hidden: http://sphinx-doc.org/markup/toctree.html
 
+**************************
+Read the Docs Sphinx Theme
+**************************
+
 .. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme
 .. image:: https://travis-ci.org/rtfd/sphinx_rtd_theme.svg?branch=master
@@ -19,11 +23,7 @@
   :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
   :alt: Documentation Status
 
-**************************
-Read the Docs Sphinx Theme
-**************************
-
-.. contents:: 
+.. contents::
    :backlinks: none
 
 View a working demo_ over on readthedocs.org_.
