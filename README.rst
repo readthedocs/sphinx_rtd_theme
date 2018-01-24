@@ -114,7 +114,7 @@ Base options
 * ``analytics_id`` String. Change the Google Analytics ID that is included on pages.
 * ``display_version`` Bool. With this disabled, the version number isn't shown at the top of the sidebar.
 * ``prev_next_buttons_location`` String. can take the value ``bottom``, ``top``, ``both`` , or ``None``
-   and will display the "Next" and "Previous" buttons accordingly.
+  and will display the "Next" and "Previous" buttons accordingly.
 * ``style_external_links`` Bool. Add an icon next to external links. Defaults to ``False``.
 
 TOC Options
@@ -123,7 +123,7 @@ TOC Options
 These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
 
 * ``collapse_navigation`` Bool. With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar.
-   This is useful for _very large_ documents.
+  This is useful for _very large_ documents.
 * ``sticky_navigation`` Bool. This causes the sidebar to scroll with the main page content as you scroll the page.
 * ``navigation_depth`` Int. Indicate the max depth of the tree; by default, all levels are included.
 * ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the `:hidden:` option
@@ -263,7 +263,7 @@ Set up your environment
 #. Install sphinx_ into a virtual environment.
 
    .. code:: bash
-   
+
        pip install sphinx sphinxcontrib-httpdomain
 
 #. Install sass.
