@@ -107,7 +107,7 @@ The following options are available:
 Base options
 ~~~~~~~~~~~~
 
-* ``typekit_id`` This will let users specify a typekit id to use for displaying nicer fonts.
+* ``typekit_id`` String. This will let users specify a typekit id to use for displaying nicer fonts.
 * ``canonical_url`` String. This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
   to let search engines know they should give higher ranking to latest version of the docs.
   The url points to the root of the documentation and requires a trailing slash.
