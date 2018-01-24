@@ -40,7 +40,7 @@ Installation
 Via package
 -----------
 
-Download the package or add it to your ``requirements.txt`` file:
+Install the package (or add it to your ``requirements.txt`` file):
 
 .. code:: bash
 
