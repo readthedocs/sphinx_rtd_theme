@@ -14,11 +14,13 @@ Read the Docs Sphinx Theme
 
 .. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme
+   :alt: Pypi Version 
 .. image:: https://travis-ci.org/rtfd/sphinx_rtd_theme.svg?branch=master
    :target: https://travis-ci.org/rtfd/sphinx_rtd_theme
+   :alt: Build Status
 .. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
-   :alt: license
+   :alt: License
 .. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
   :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
   :alt: Documentation Status
@@ -26,13 +28,10 @@ Read the Docs Sphinx Theme
 .. contents::
    :backlinks: none
 
-View a working demo_ over on readthedocs.org_.
+`sphinx_rtd_theme` is a sphinx_ theme designed to look modern and be mobile-friendly.
+The primary focus of this theme is to be used on readthedocs.org_ but can work with your
+own sphinx projects. To read more and see a working demo_ head over to readthedocs.org_.
 
-This is a mobile-friendly sphinx_ theme I made for readthedocs.org_.
-
-If you'd like to update the theme,
-please make your edits to the SASS files here,
-rather than the .css files on checked into the repo.
 
 Installation
 ============
