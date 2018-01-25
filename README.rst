@@ -50,14 +50,6 @@ In your ``conf.py`` file:
 
 .. code:: python
 
-    import sphinx_rtd_theme
-    html_theme = "sphinx_rtd_theme"
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-or (since v0.2.5):
-
-.. code:: python
-
     html_theme = "sphinx_rtd_theme"
 
 Via git or download
