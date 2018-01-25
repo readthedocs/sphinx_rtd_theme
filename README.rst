@@ -1,12 +1,3 @@
-.. _readthedocs.org: http://www.readthedocs.org
-.. _bower: http://www.bower.io
-.. _sphinx: http://www.sphinx-doc.org
-.. _sass: http://www.sass-lang.com
-.. _wyrm: http://www.github.com/snide/wyrm/
-.. _grunt: http://www.gruntjs.com
-.. _node: http://www.nodejs.com
-.. _demo: https://sphinx-rtd-theme.readthedocs.io/en/latest/
-.. _hidden: http://sphinx-doc.org/markup/toctree.html
 
 **************************
 Read the Docs Sphinx Theme
@@ -28,6 +19,10 @@ Read the Docs Sphinx Theme
 The ``sphinx_rtd_theme`` is a sphinx_ theme designed to look modern and be mobile-friendly.
 This theme is primary focused to be used on readthedocs.org_ but can work with your
 own sphinx projects. To read more and see a working demo_ head over to readthedocs.org_.
+
+.. _sphinx: http://www.sphinx-doc.org
+.. _readthedocs.org: http://www.readthedocs.org
+.. _demo: https://sphinx-rtd-theme.readthedocs.io/en/latest/
 
 
 Installation
@@ -147,6 +142,7 @@ By default, the navigation will "stick" to the screen as you scroll. However if 
 is vertically too large, it will revert to static positioning. To disable the sticky nav
 altogether change the setting in ``conf.py``.
 
+.. _hidden: http://sphinx-doc.org/markup/toctree.html
 
 Contributing or modifying the theme
 ===================================
@@ -216,6 +212,12 @@ you should do the following:
 #. Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``.
 #. In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``).
 #. In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files.
+
+.. _bower: http://www.bower.io
+.. _sass: http://www.sass-lang.com
+.. _wyrm: http://www.github.com/snide/wyrm/
+.. _grunt: http://www.gruntjs.com
+.. _node: http://www.nodejs.com
 
 TODO
 ====
