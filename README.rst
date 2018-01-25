@@ -28,8 +28,8 @@ Read the Docs Sphinx Theme
 .. contents::
    :backlinks: none
 
-`sphinx_rtd_theme` is a sphinx_ theme designed to look modern and be mobile-friendly.
-The primary focus of this theme is to be used on readthedocs.org_ but can work with your
+The ``sphinx_rtd_theme`` is a sphinx_ theme designed to look modern and be mobile-friendly.
+This theme is primary focused to be used on readthedocs.org_ but can work with your
 own sphinx projects. To read more and see a working demo_ head over to readthedocs.org_.
 
 
