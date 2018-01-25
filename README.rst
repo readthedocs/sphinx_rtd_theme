@@ -1,13 +1,16 @@
 .. _readthedocs.org: http://www.readthedocs.org
 .. _bower: http://www.bower.io
 .. _sphinx: http://www.sphinx-doc.org
-.. _compass: http://www.compass-style.org
 .. _sass: http://www.sass-lang.com
 .. _wyrm: http://www.github.com/snide/wyrm/
 .. _grunt: http://www.gruntjs.com
 .. _node: http://www.nodejs.com
-.. _demo: http://docs.readthedocs.org
+.. _demo: https://sphinx-rtd-theme.readthedocs.io/en/latest/
 .. _hidden: http://sphinx-doc.org/markup/toctree.html
+
+**************************
+Read the Docs Sphinx Theme
+**************************
 
 .. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme
@@ -16,12 +19,12 @@
 .. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
    :alt: license
+.. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
+  :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
+  :alt: Documentation Status
 
-**************************
-Read the Docs Sphinx Theme
-**************************
-
-.. contents:: 
+.. contents::
+   :backlinks: none
 
 View a working demo_ over on readthedocs.org_.
 
@@ -31,16 +34,13 @@ If you'd like to update the theme,
 please make your edits to the SASS files here,
 rather than the .css files on checked into the repo.
 
-.. image:: demo_docs/source/static/screen_mobile.png
-    :width: 100%
-
 Installation
 ============
 
 Via package
 -----------
 
-Download the package or add it to your ``requirements.txt`` file:
+Install the package (or add it to your ``requirements.txt`` file):
 
 .. code:: bash
 
@@ -107,25 +107,27 @@ The following options are available:
 Base options
 ~~~~~~~~~~~~
 
-* ``typekit_id`` This will let users specify a typekit id to use for displaying nicer fonts.
-* ``canonical_url`` This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
+* ``typekit_id`` String. This will let users specify a typekit id to use for displaying nicer fonts.
+* ``canonical_url`` String. This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
   to let search engines know they should give higher ranking to latest version of the docs.
   The url points to the root of the documentation and requires a trailing slash.
-* ``analytics_id`` Change the Google Analytics ID that is included on pages.
-* ``display_version`` With this disabled, the version number isn't shown at the top of the sidebar.
-* ``prev_next_buttons_location`` can take the value ``bottom``, ``top``, ``both`` , or ``None``
-  and will display the "Next" and "Previous" buttons accordingly
-* ``style_external_links`` Add an icon next to external links. Defaults to ``False``.
+* ``analytics_id`` String. Change the Google Analytics ID that is included on pages.
+* ``display_version`` Bool. With this disabled, the version number isn't shown at the top of the sidebar.
+* ``prev_next_buttons_location`` String. can take the value ``bottom``, ``top``, ``both`` , or ``None``
+  and will display the "Next" and "Previous" buttons accordingly.
+* ``style_external_links`` Bool. Add an icon next to external links. Defaults to ``False``.
 
 TOC Options
 ~~~~~~~~~~~
 
 These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
 
-* ``collapse_navigation`` With this enabled, you will lose the `[+]` drop downs next to each section in the sidebar. This is useful for _very large_ documents.
-* ``sticky_navigation`` This causes the sidebar to scroll with the main page content as you scroll the page.
-* ``includehidden`` Specifies if the sidebar includes toctrees marked with the `:hidden:` option
-* ``titles_only`` If True, removes headers within a page from the sidebar.
+* ``collapse_navigation`` Bool. With this enabled, you will lose the ``[+]`` drop downs next to each section in the sidebar.
+  This is useful for *very large* documents.
+* ``sticky_navigation`` Bool. This causes the sidebar to scroll with the main page content as you scroll the page.
+* ``navigation_depth`` Int. Indicate the max depth of the tree; by default, all levels are included.
+* ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the ``:hidden:`` option
+* ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
 
 Page-level configuration
 ------------------------
@@ -237,12 +239,13 @@ your documents, the toctree will misbuild, and the resulting menu might not show
 depth when it renders.
 
 Also note that by default the table of contents is set with ``includehidden=True``. This allows you
-to set a hidden toc in your index file with the hidden_ property that will allow you
+to set a hidden toc in your index file with the `:hidden: <hidden_>`_ property that will allow you
 to build a toc without it rendering in your index.
 
 By default, the navigation will "stick" to the screen as you scroll. However if your toc
 is vertically too large, it will revert to static positioning. To disable the sticky nav
 altogether change the setting in ``conf.py``.
+
 
 Contributing or modifying the theme
 ===================================
@@ -260,7 +263,7 @@ Set up your environment
 #. Install sphinx_ into a virtual environment.
 
    .. code:: bash
-   
+
        pip install sphinx sphinxcontrib-httpdomain
 
 #. Install sass.
@@ -297,16 +300,6 @@ This default task will do the following **very cool things that make it worth th
 #. Rebuild the sphinx docs anytime it notices a change to ``.rst``, ``.html``, ``.js``
    or ``.css`` files.
 
-Before you create an issue
---------------------------
-
-I don't have a lot of time to maintain this project due to other responsibilities.
-I know there are a lot of Python engineers out there that can't code sass / css and
-are unable to submit pull requests. That said, submitting random style bugs without
-at least providing sample documentation that replicates your problem is a good
-way for me to ignore your request. RST unfortunately can spit out a lot of things
-in a lot of ways. I don't have time to research your problem for you, but I do
-have time to fix the actual styling issue if you can replicate the problem for me.
 
 Releasing the Theme
 ===================

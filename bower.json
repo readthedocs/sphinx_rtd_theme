@@ -12,7 +12,6 @@
   ],
   "ignore": [
     "docs",
-    "demo_docs",
     ".gitignore",
     ".DS_Store",
     ".sass-cache*",
