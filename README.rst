@@ -94,6 +94,8 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'display_version': True,
         'prev_next_buttons_location': bottom,
         'style_external_links': False,
+        'versioning' : False,
+        'READTHEDOCS' : False,
         # Toc options
         'collapse_navigation': False,
         'sticky_navigation': True,
@@ -116,6 +118,9 @@ Base options
 * ``prev_next_buttons_location`` String. can take the value ``bottom``, ``top``, ``both`` , or ``None``
   and will display the "Next" and "Previous" buttons accordingly.
 * ``style_external_links`` Bool. Add an icon next to external links. Defaults to ``False``.
+* ``versioning`` Bool. Add 'versions' menu to the bottom of the sidebar. Defaults to ``False``.
+* ``READTHEDOCS`` Bool. Enable RTD-specific features. It is functionally equivalent to ``versioning``, i) but some files
+  are externally served from readthedocs.org, and ii) RTD.org build info is provided. Defaults to ``False``.
 
 TOC Options
 ~~~~~~~~~~~
