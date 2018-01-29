@@ -37,7 +37,6 @@
             title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
             href="{{ pathto('_static/opensearch.xml', 1) }}"/>
     {% endif %}
-
   {% endif %}
 
   {# RTD hosts this file, so just load on non RTD builds #}
@@ -110,7 +109,7 @@
 
           {% if theme_display_version %}
             {%- set nav_version = version %}
-            {% if READTHEDOCS and current_version %}
+            {% if (READTHEDOCS or theme_versioning) and current_version %}
               {%- set nav_version = current_version %}
             {% endif %}
             {% if nav_version %}
@@ -158,7 +157,6 @@
         {% endblock %}
       </nav>
 
-
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
         {% if theme_style_external_links|tobool %}
@@ -184,7 +182,9 @@
     </section>
 
   </div>
-  {% include "versions.html" %}
+  {% if READTHEDOCS or theme_versioning %}
+    {% include "versions.html" %}
+  {% endif %}
 
   {% if not embedded %}
 
