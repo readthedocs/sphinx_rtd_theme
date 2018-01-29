@@ -25,37 +25,6 @@ own sphinx projects. To read more and see a working demo_ head over to readthedo
 .. _demo: https://sphinx-rtd-theme.readthedocs.io/en/latest/
 
 
-Installation
-============
-
-Via package
------------
-
-Install the package (or add it to your ``requirements.txt`` file):
-
-.. code:: bash
-
-    pip install sphinx_rtd_theme
-
-In your ``conf.py`` file:
-
-.. code:: python
-
-    html_theme = "sphinx_rtd_theme"
-
-Via git or download
--------------------
-
-Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
-``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
-``conf.py`` file:
-
-.. code:: python
-
-    html_theme = "sphinx_rtd_theme"
-    html_theme_path = ["_themes", ]
-
-
 Contributing or modifying the theme
 ===================================
 
