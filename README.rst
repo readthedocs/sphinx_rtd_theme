@@ -130,8 +130,3 @@ you should do the following:
 .. _wyrm: http://www.github.com/snide/wyrm/
 .. _grunt: http://www.gruntjs.com
 .. _node: http://www.nodejs.com
-
-TODO
-====
-
-* Separate some sass variables at the theme level so you can overwrite some basic colors.
