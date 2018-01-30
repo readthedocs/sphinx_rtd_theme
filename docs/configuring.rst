@@ -64,6 +64,11 @@ These effect how we display the Table of Contents in the side bar. You can read 
 * ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the ``:hidden:`` option
 * ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
 
+HTML Context Options
+--------------------
+
+TODO.
+
 
 Page-level Configuration
 ========================
