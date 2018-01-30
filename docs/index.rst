@@ -1,3 +1,4 @@
+.. include:: ../README.rst
 
 Content
 =======
