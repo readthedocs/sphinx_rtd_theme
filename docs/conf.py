@@ -112,9 +112,7 @@ html_theme = 'sphinx_rtd_theme'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    # 'sticky_navigation': True  # Set to False to disable the sticky nav while scrolling.
-    # 'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
-    # 'titles_only': False # If True, it'll remove headers within a page from the sidebar.
+    'logo_only': True
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
