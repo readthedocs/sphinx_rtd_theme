@@ -1,4 +1,5 @@
-**************
+
+*************
 Configuration
 *************
 
@@ -56,7 +57,7 @@ These effect how we display the Table of Contents in the side bar. You can read 
 * ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the ``:hidden:`` option
 * ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
 
-Page-level configuration
+Page-level Configuration
 ========================
 
 Pages support metadata that changes how the theme renders.
