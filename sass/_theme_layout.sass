@@ -309,7 +309,7 @@
 .wy-nav-content
   padding: $gutter $gutter * 2
   height: 100%
-  max-width: 800px
+  max-width: $nav-content-width
   margin: auto
 
 .wy-body-mask
@@ -390,7 +390,7 @@ footer
       height: 100%
       overflow: hidden
 
-+media($desktop-wider)
+@media screen and (min-width: $nav-media-query)
   .wy-nav-content-wrap
     background: rgba(0,0,0,.05)
   .wy-nav-content
