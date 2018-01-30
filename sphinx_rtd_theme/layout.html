@@ -28,8 +28,8 @@
     <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
   {% endif %}
 
-  {# Javascript -- Keepin in head #}
-  {% if not embedded %}
+  {# Javascript #}
+  {%- if not embedded %}
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'{{ url_root }}',
@@ -46,9 +46,9 @@
     {%- endfor %}
 
     {# RTD hosts this file, so just load on non RTD builds #}
-    {% if not READTHEDOCS %}
+    {%- if not READTHEDOCS %}
       <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
-    {% endif %}
+    {%- endif %}
     <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 
     {# OPENSEARCH #}
@@ -63,17 +63,17 @@
   {# RTD hosts this file, so just load on non RTD builds #}
   {% if not READTHEDOCS %}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  {% endif %}
-  
-  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-  
-  {% for cssfile in css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {% endfor %}
+  {%- endif %}
 
-  {% for cssfile in extra_css_files %}
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+
+  {%- for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {% endfor %}
+  {%- endfor %}
+
+  {%- for cssfile in extra_css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+  {%- endfor %}
 
   {%- block linktags %}
     {%- if hasdoc('about') %}
