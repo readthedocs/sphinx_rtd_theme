@@ -46,7 +46,7 @@ Base options
 * ``prev_next_buttons_location`` String. can take the value ``bottom``, ``top``, ``both`` , or ``None``
   and will display the "Next" and "Previous" buttons accordingly.
 * ``style_external_links`` Bool. Add an icon next to external links. Defaults to ``False``.
-* ``vcs_pageview_mode`` String. Changes how to view files when using `display_github`, `display_gitlab`, ect.
+* ``vcs_pageview_mode`` String. Changes how to view files when using `display_github`, `display_gitlab`, etc.
   When using Github or Gitlab this can be: `blob` (default), `edit`, or `raw`,
   on Bitbucket, this can be either: `view` (default) or `edit`.
 
