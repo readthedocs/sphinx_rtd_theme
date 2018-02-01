@@ -88,10 +88,9 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 .. code:: python
 
     html_theme_options = {
-        'analytics_id': 'UA-3463466-1', #  Provided by Google in your dashboard
+        'analytics_id': 'UA-XXXXXXX-1', #  Provided by Google in your dashboard
         'typekit_id': '',
         'canonical_url': '',
-        'analytics_id': '',
         'logo_only': False,
         'display_version': True,
         'prev_next_buttons_location': bottom,
