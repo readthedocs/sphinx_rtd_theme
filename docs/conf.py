@@ -33,6 +33,7 @@ from sphinx_rtd_theme import __version__
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
+    'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
@@ -100,6 +101,8 @@ pygments_style = 'default'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
+
+intersphinx_mapping = {'rtd': ('https://docs.readthedocs.io/en/latest/', None)}
 
 
 # -- Options for HTML output ---------------------------------------------------
