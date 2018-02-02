@@ -64,6 +64,7 @@ This default task will do the following **very cool things that make it worth th
 .. _wyrm: http://www.github.com/snide/wyrm/
 .. _grunt: http://www.gruntjs.com
 .. _node: http://www.nodejs.com
+.. _sphinx: http://www.sphinx-doc.org/en/stable/
 
 
 Releasing the Theme
