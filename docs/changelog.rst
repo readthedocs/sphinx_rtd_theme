@@ -6,19 +6,37 @@ Changelog
 master
 ======
 
-* Include fontawesome-webfont.woff2 in pip package
-* Updated wyrm_ and Font Awesome
-* Split multiple data types on different lines
-* Italicize ``.versionmodified``
-* Fix line number spacing to align with the code lines
-* Hide Edit links on auto created pages
-* Align ``.. centered::`` text to the center
-* Increase contrast for footnotes
-* Add language to the JS output variable
-* Include the lato italics font with the theme
-* Fix padding on field lists
+v0.2.5
+======
+
+New Features
+-------------
+
+* Add html language attribute
+* Allow setting 'rel' and 'title' attributes for stylesheets (#551)
+* Add option to style external links
+* Add github, gitlab, bitbucket page arguments option
+* Add pygments support
 * Add setuptools entry point allowing to use ``sphinx_rtd_theme`` as
   Sphinx ``html_theme`` directly.
+* Add language to the JS output variable
+
+Fixes
+-----
+
+* Fix some HTML warnings and errors
+* Fix many styling issues
+* Fix many sidebar glitches
+* Fix line number spacing to align with the code lines
+* Hide Edit links on auto created pages
+* Include missing font files with the theme
+
+Other Changes
+--------------
+
+* Significant improvement of our documentation
+* Compress our Javascript files
+* Updated dependencies
 
 v0.2.4
 ======
