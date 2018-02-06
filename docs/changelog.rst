@@ -12,7 +12,7 @@ v0.2.5
 New Features
 -------------
 
-* And html language attribute
+* Add html language attribute
 * Allow setting 'rel' and 'title' attributes for stylesheets (#551)
 * Add option to style external links
 * Add github, gitlab, bitbucket page arguments option
@@ -36,7 +36,7 @@ Other Changes
 
 * Significant improvement of our documentation
 * Compress our Javascript files
-* Updated Dependencies
+* Updated dependencies
 
 v0.2.4
 ======
