@@ -25,6 +25,7 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'prev_next_buttons_location': bottom,
         'style_external_links': False,
         'vcs_pageview_mode': '',
+        'versioning' : False,
         # Toc options
         'collapse_navigation': False,
         'sticky_navigation': True,
@@ -49,6 +50,8 @@ Base options
 * ``vcs_pageview_mode`` String. Changes how to view files when using `display_github`, `display_gitlab`, etc.
   When using Github or Gitlab this can be: `blob` (default), `edit`, or `raw`,
   on Bitbucket, this can be either: `view` (default) or `edit`.
+  * ``versioning`` Bool. Add 'versions' menu to the bottom of the sidebar. Defaults to ``False``.
+
 
 TOC Options
 ~~~~~~~~~~~
