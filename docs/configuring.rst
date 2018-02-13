@@ -8,6 +8,9 @@ You can configure different parts of the theme.
 Project-wide Configuration
 ==========================
 
+HTML Theme Options
+------------------
+
 The theme's project-wide options are defined in the ``sphinx_rtd_theme/theme.conf``
 file of this repository, and can be defined in your project's ``conf.py`` via
 ``html_theme_options``. For example:
@@ -21,6 +24,7 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'display_version': True,
         'prev_next_buttons_location': bottom,
         'style_external_links': False,
+        'vcs_pageview_mode': '',
         # Toc options
         'collapse_navigation': False,
         'sticky_navigation': True,
@@ -32,7 +36,7 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 The following options are available:
 
 Base options
-------------
+~~~~~~~~~~~~
 
 * ``canonical_url`` String. This will specify a `canonical url <https://en.wikipedia.org/wiki/Canonical_link_element>`__
   to let search engines know they should give higher ranking to latest version of the docs.
@@ -42,9 +46,12 @@ Base options
 * ``prev_next_buttons_location`` String. can take the value ``bottom``, ``top``, ``both`` , or ``None``
   and will display the "Next" and "Previous" buttons accordingly.
 * ``style_external_links`` Bool. Add an icon next to external links. Defaults to ``False``.
+* ``vcs_pageview_mode`` String. Changes how to view files when using `display_github`, `display_gitlab`, etc.
+  When using Github or Gitlab this can be: `blob` (default), `edit`, or `raw`,
+  on Bitbucket, this can be either: `view` (default) or `edit`.
 
 TOC Options
------------
+~~~~~~~~~~~
 
 These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
 
@@ -54,6 +61,12 @@ These effect how we display the Table of Contents in the side bar. You can read 
 * ``navigation_depth`` Int. Indicate the max depth of the tree; by default, all levels are included.
 * ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the ``:hidden:`` option
 * ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
+
+HTML Context Options
+--------------------
+
+TODO.
+
 
 Page-level Configuration
 ========================
