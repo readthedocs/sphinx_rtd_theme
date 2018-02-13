@@ -1,0 +1,3 @@
+sphinxcontrib-httpdomain
+sphinx
+-e sphinx_rtd_theme
