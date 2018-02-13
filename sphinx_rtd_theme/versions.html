@@ -1,7 +1,11 @@
 {# Add rst-badge after rst-versions for small badge style. #}
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
-    <span class="fa fa-book"> Read the Docs</span>
+    {%- if READTHEDOCS %}
+      <span class="fa fa-book"> Read the Docs</span>
+    {%- else %}
+      <span class="fa fa-info-circle"> {{ project }} </span>
+    {%- endif %}
     v: {{ current_version }}
     <span class="fa fa-caret-down"></span>
   </span>
