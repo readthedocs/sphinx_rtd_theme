@@ -14,7 +14,7 @@ setup(
     version=__version__,
     url='https://github.com/rtfd/sphinx_rtd_theme/',
     license='MIT',
-    author='Read the Docs team',
+    author='Read the Docs, Inc & contributors',
     author_email='dev@readthedocs.org',
     description='Read the Docs theme for Sphinx',
     long_description=open('README.rst', encoding='utf-8').read(),

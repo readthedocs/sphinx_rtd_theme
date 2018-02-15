@@ -3,7 +3,7 @@
   "version": "0.2.4",
   "homepage": "https://github.com/rtfd/sphinx_rtd_theme",
   "authors": [
-    "Read the Docs team <dev@readthedocs.org>"
+    "Read the Docs, Inc & contributors <dev@readthedocs.org>"
   ],
   "description": "Sphinx theme for readthedocs.org.",
   "license": "MIT",
