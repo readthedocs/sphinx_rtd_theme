@@ -5,7 +5,7 @@ Read the Docs Sphinx Theme
 
 .. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme
-   :alt: Pypi Version 
+   :alt: Pypi Version
 .. image:: https://travis-ci.org/rtfd/sphinx_rtd_theme.svg?branch=master
    :target: https://travis-ci.org/rtfd/sphinx_rtd_theme
    :alt: Build Status
