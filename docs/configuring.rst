@@ -22,7 +22,7 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'analytics_id': '',
         'logo_only': False,
         'display_version': True,
-        'prev_next_buttons_location': bottom,
+        'prev_next_buttons_location': 'bottom',
         'style_external_links': False,
         'vcs_pageview_mode': '',
         # Toc options
