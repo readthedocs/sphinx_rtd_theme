@@ -12,8 +12,8 @@ of a front-end developer (vs. that of a python developer). That means installing
 
 .. seealso::
 
-   If you are unsure of approptiate actions to take while interacting with our
-   communinty please read our :doc:`Code of Conduct <rtd:/code-of-conduct>`.
+   If you are unsure of appropriate actions to take while interacting with our
+   community please read our :doc:`Code of Conduct <rtd:/code-of-conduct>`.
 
 
 Set up your environment
