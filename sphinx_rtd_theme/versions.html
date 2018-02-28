@@ -7,6 +7,7 @@
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
+      {% if theme_versions_menu %}
       <dl>
         <dt>{{ _('Versions') }}</dt>
         {% for slug, url in versions %}
@@ -30,7 +31,9 @@
       </dl>
       <hr/>
       {% trans %}Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.{% endtrans %}
-
+      {% else %}
+      {# This content is injected by an AJAX call to readthedocs.org/readthedocs.com #}
+      {% endif %}
     </div>
   </div>
 {% endif %}
