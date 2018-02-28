@@ -28,7 +28,7 @@ own sphinx projects. To read more and see a working demo_ head over to readthedo
 Installing
 ==========
 
-The theme is disributed on PyPI_ and can be installed with pip::
+The theme is distributed on PyPI_ and can be installed with pip::
 
    pip install sphinx_rtd_theme
 
