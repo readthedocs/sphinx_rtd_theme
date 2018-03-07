@@ -177,8 +177,8 @@
       </nav>
 
 
-      {# PAGE CONTENT #}
       <div class="wy-nav-content">
+      {%- block content %}
         {% if theme_style_external_links|tobool %}
         <div class="rst-content style-external-links">
         {% else %}
@@ -186,6 +186,7 @@
         {% endif %}
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+          {%- block document %}
            <div itemprop="articleBody">
             {% block body %}{% endblock %}
            </div>
@@ -195,8 +196,10 @@
            </div>
            {% endif%}
           </div>
+          {%- endblock %}
           {% include "footer.html" %}
         </div>
+      {%- endblock %}
       </div>
 
     </section>
