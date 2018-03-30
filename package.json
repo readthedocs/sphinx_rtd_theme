@@ -1,6 +1,6 @@
 {
   "name": "sphinx_rtd_theme",
-  "version": "0.2.5b2",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {},
   "devDependencies": {
