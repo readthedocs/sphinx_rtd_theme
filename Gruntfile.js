@@ -4,6 +4,9 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
+    // Read package.json
+    pkg: grunt.file.readJSON("package.json"),
+
     open : {
       dev: {
         path: 'http://localhost:1919'
@@ -131,6 +134,19 @@ module.exports = function(grunt) {
         }]
       }
     },
+    usebanner: {
+      dist: {
+        options: {
+          position: 'top',
+          banner: '// <%= pkg.name %> version <%= pkg.version %> | MIT license\n' +
+                  '// Built <%= grunt.template.today("yyyymmdd HH:mm") %>',
+          linebreak: true
+        },
+        files: {
+          src: [ 'sphinx_rtd_theme/static/js/theme.js' ]
+        }
+      }
+    },
     exec: {
       bower_update: {
         cmd: 'bower update'
@@ -180,6 +196,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('default', ['exec:bower_update','clean','copy:fonts','sass:dev','browserify:dev','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['exec:bower_update','clean','copy:fonts','sass:build','browserify:build','uglify','exec:build_sphinx']);
+  grunt.registerTask('default', ['exec:bower_update','clean','copy:fonts','sass:dev','browserify:dev','usebanner','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean','copy:fonts','sass:build','browserify:build','uglify','usebanner','exec:build_sphinx']);
 }
