@@ -79,6 +79,11 @@
     font-family: $code-font-family
     display: block
     overflow: auto
+    & .hll
+      // Line emphasis spans full width
+      display: block
+      margin: 0 -1 * $base-line-height / 2
+      padding: 0 $base-line-height / 2
   pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
     font-size: 12px
     line-height: normal
