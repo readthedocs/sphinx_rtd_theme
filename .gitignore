@@ -10,5 +10,6 @@
 .ruby-version
 dist/
 bower_components/
-node_modules/
+node_modules
 npm-debug.log
+package-lock.json

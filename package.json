@@ -1,9 +1,9 @@
 {
   "name": "sphinx_rtd_theme",
-  "version": "0.2.5b2",
+  "version": "0.3.0",
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "bower": "^1.8.4",
     "browserify": "^13.0.0",
     "connect-livereload": "~0.6.0",
     "grunt": "~1.0.1",
