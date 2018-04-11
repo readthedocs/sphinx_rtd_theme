@@ -148,7 +148,9 @@
     margin: 0px $base-line-height $base-line-height 0px
   .align-center
     margin: auto
-    display: block
+    // Do not override display:table for tables
+    &:not(table)
+      display: block
   .toctree-wrapper p.caption
     @extend h2
 
