@@ -7,7 +7,7 @@
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
-      {% if theme_versions_menu %}
+      {% if theme_versions_menu|tobool %}
       <dl>
         <dt>{{ _('Versions') }}</dt>
         {% for slug, url in versions %}
