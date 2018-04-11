@@ -1,4 +1,4 @@
-{% if READTHEDOCS %}
+{%- if READTHEDOCS %}
 {# Add rst-badge after rst-versions for small badge style. #}
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
@@ -7,18 +7,18 @@
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
-      {% if theme_versions_menu|tobool %}
+      {%- if theme_versions_menu|tobool %}
       <dl>
         <dt>{{ _('Versions') }}</dt>
-        {% for slug, url in versions %}
+        {%- for slug, url in versions %}
           <dd><a href="{{ url }}">{{ slug }}</a></dd>
-        {% endfor %}
+        {%- endfor %}
       </dl>
       <dl>
         <dt>{{ _('Downloads') }}</dt>
-        {% for type, url in downloads %}
+        {%- for type, url in downloads %}
           <dd><a href="{{ url }}">{{ type }}</a></dd>
-        {% endfor %}
+        {%- endfor %}
       </dl>
       <dl>
         <dt>{{ _('On Read the Docs') }}</dt>
@@ -30,11 +30,11 @@
           </dd>
       </dl>
       <hr/>
-      {% trans %}Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.{% endtrans %}
-      {% else %}
+      {%- trans %}Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.{% endtrans %}
+      {%- else %}
       {# This content is injected by an AJAX call to readthedocs.org/readthedocs.com #}
-      {% endif %}
+      {%- endif %}
     </div>
   </div>
-{% endif %}
+{%- endif %}
 
