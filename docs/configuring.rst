@@ -62,7 +62,9 @@ These effect how we display the Table of Contents in the side bar. You can read 
 * ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the ``:hidden:`` option
 * ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
 
-.. note:: Setting ``collapse_navigation`` to False and using a high ``navigation_depth``
+.. note::
+   
+   Setting ``collapse_navigation`` to False and using a high ``navigation_depth``
    can cause projects with many files and a deep file structure to generate HTML files
    that are significantly larger in file size and much longer compilation times.
 
