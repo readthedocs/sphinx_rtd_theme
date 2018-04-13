@@ -79,6 +79,11 @@
     font-family: $code-font-family
     display: block
     overflow: auto
+    & .hll
+      // Line emphasis spans full width
+      display: block
+      margin: 0 -1 * $base-line-height / 2
+      padding: 0 $base-line-height / 2
   pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
     font-size: 12px
     line-height: normal
@@ -122,6 +127,8 @@
     @extend .wy-plain-list-decimal
   .section ol p, .section ul p
     margin-bottom: $base-line-height / 2
+    &:last-child
+      margin-bottom: $base-line-height
   .line-block
     margin-left: 0px
     margin-bottom: $base-line-height
@@ -143,7 +150,9 @@
     margin: 0px $base-line-height $base-line-height 0px
   .align-center
     margin: auto
-    display: block
+    // Do not override display:table for tables
+    &:not(table)
+      display: block
   .toctree-wrapper p.caption
     @extend h2
 
