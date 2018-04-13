@@ -123,7 +123,6 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: ['sphinx_rtd_theme/static/js/*.js', '!sphinx_rtd_theme/static/js/*.min.js'],
-          dest: 'sphinx_rtd_theme/static/js/',
           rename: function (dst, src) {
             // Use unminified file name for minified file
             return src;
