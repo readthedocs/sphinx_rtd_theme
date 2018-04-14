@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.2.4\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-26 11:44-0400\n"
+"POT-Creation-Date: 2018-04-14 15:30-0400\n"
 "PO-Revision-Date: 2017-03-26 18:40-0400\n"
 "Last-Translator: Leonardo Caballero <leonardocaballero@gmail.com>\n"
-"Language-Team: Spanish Team\n"
 "Language: es\n"
+"Language-Team: Spanish Team\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.5.3\n"
 
 #: sphinx_rtd_theme/breadcrumbs.html:31
 msgid "Docs"
@@ -47,12 +47,12 @@ msgstr "Próximo"
 msgid "Previous"
 msgstr "Anterior"
 
-#: sphinx_rtd_theme/footer.html:19 sphinx_rtd_theme/layout_old.html:193
+#: sphinx_rtd_theme/footer.html:19
 #, python-format
 msgid "&copy; <a href=\"%(path)s\">Copyright</a> %(copyright)s."
 msgstr "&copy; <a href=\\\"%(path)s\\\">Copyright</a> %(copyright)s."
 
-#: sphinx_rtd_theme/footer.html:21 sphinx_rtd_theme/layout_old.html:195
+#: sphinx_rtd_theme/footer.html:21
 #, python-format
 msgid "&copy; Copyright %(copyright)s."
 msgstr "&copy; Copyright %(copyright)s."
@@ -89,55 +89,42 @@ msgstr ""
 "        </span>\n"
 "      "
 
-#: sphinx_rtd_theme/footer.html:39 sphinx_rtd_theme/layout_old.html:199
+#: sphinx_rtd_theme/footer.html:39
 #, python-format
 msgid "Last updated on %(last_updated)s."
 msgstr "Actualizado por última vez en %(last_updated)s."
 
 #: sphinx_rtd_theme/footer.html:46
+#, fuzzy
 msgid ""
 "Built with <a href=\"http://sphinx-doc.org/\">Sphinx</a> using a <a "
-"href=\"https://github.com/snide/sphinx_rtd_theme\">theme</a> provided by "
+"href=\"https://github.com/rtfd/sphinx_rtd_theme\">theme</a> provided by "
 "<a href=\"https://readthedocs.org\">Read the Docs</a>"
 msgstr ""
-"Construido con <a href=\"http://sphinx-doc.org/\">Sphinx</a> usando un <a "
-"href=\"https://github.com/snide/sphinx_rtd_theme\">tema</a> proporcionado por "
-"<a href=\"https://readthedocs.org\">Read the Docs</a>"
+"Construido con <a href=\"http://sphinx-doc.org/\">Sphinx</a> usando un <a"
+" href=\"https://github.com/snide/sphinx_rtd_theme\">tema</a> "
+"proporcionado por <a href=\"https://readthedocs.org\">Read the Docs</a>"
 
-#: sphinx_rtd_theme/layout.html:35 sphinx_rtd_theme/layout_old.html:123
+#: sphinx_rtd_theme/layout.html:37
 #, python-format
 msgid "Search within %(docstitle)s"
 msgstr "Buscar en %(docstitle)s"
 
-#: sphinx_rtd_theme/layout.html:55 sphinx_rtd_theme/layout_old.html:135
+#: sphinx_rtd_theme/layout.html:61
 msgid "About these documents"
 msgstr "Sobre este documento"
 
-#: sphinx_rtd_theme/layout.html:59 sphinx_rtd_theme/layout_old.html:138
+#: sphinx_rtd_theme/layout.html:64
 msgid "Index"
 msgstr "Índice"
 
-#: sphinx_rtd_theme/layout.html:63 sphinx_rtd_theme/layout_old.html:141
-#: sphinx_rtd_theme/search.html:11
+#: sphinx_rtd_theme/layout.html:67 sphinx_rtd_theme/search.html:11
 msgid "Search"
 msgstr "Búsqueda"
 
-#: sphinx_rtd_theme/layout.html:66 sphinx_rtd_theme/layout_old.html:144
+#: sphinx_rtd_theme/layout.html:70
 msgid "Copyright"
 msgstr "Copyright"
-
-#: sphinx_rtd_theme/layout_old.html:29
-msgid "Navigation"
-msgstr "Navegación"
-
-#: sphinx_rtd_theme/layout_old.html:202
-#, python-format
-msgid ""
-"Created using <a href=\"http://sphinx-doc.org/\">Sphinx</a> "
-"%(sphinx_version)s."
-msgstr ""
-"Creado usando <a href=\"http://sphinx-doc.org/\">Sphinx</a> "
-"%(sphinx_version)s."
 
 #: sphinx_rtd_theme/search.html:26
 msgid ""
@@ -155,7 +142,10 @@ msgstr "Resultados de la búsqueda"
 msgid ""
 "Your search did not match any documents. Please make sure that all words "
 "are spelled correctly and that you've selected enough categories."
-msgstr "Su búsqueda no coincide con ningún documentos. Por favor, asegúrese de que todas las palabras estén correctamente escritas y que usted allá seleccionado las suficientes categorías."
+msgstr ""
+"Su búsqueda no coincide con ningún documentos. Por favor, asegúrese de "
+"que todas las palabras estén correctamente escritas y que usted allá "
+"seleccionado las suficientes categorías."
 
 #: sphinx_rtd_theme/searchbox.html:4
 msgid "Search docs"
@@ -188,3 +178,14 @@ msgid ""
 msgstr ""
 "Alojamiento gratuito de documentos proporcionado por <a "
 "href=\"http://www.readthedocs.org\">Read the Docs</a>."
+
+#~ msgid "Navigation"
+#~ msgstr "Navegación"
+
+#~ msgid ""
+#~ "Created using <a href=\"http://sphinx-"
+#~ "doc.org/\">Sphinx</a> %(sphinx_version)s."
+#~ msgstr ""
+#~ "Creado usando <a href=\"http://sphinx-"
+#~ "doc.org/\">Sphinx</a> %(sphinx_version)s."
+
