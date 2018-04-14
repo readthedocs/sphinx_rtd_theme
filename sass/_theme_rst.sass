@@ -70,6 +70,8 @@
     margin: 0
     padding: $base-line-height / 2 $base-line-height / 2
     font-family: $code-font-family
+    user-select: none
+    pointer-events: none
   div[class^='highlight'] pre
     white-space: pre
     margin: 0
@@ -77,6 +79,11 @@
     font-family: $code-font-family
     display: block
     overflow: auto
+    & .hll
+      // Line emphasis spans full width
+      display: block
+      margin: 0 -1 * $base-line-height / 2
+      padding: 0 $base-line-height / 2
   pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
     font-size: 12px
     line-height: normal
@@ -120,8 +127,14 @@
     @extend .wy-plain-list-decimal
   .section ol p, .section ul p
     margin-bottom: $base-line-height / 2
+    &:last-child
+      margin-bottom: $base-line-height
   .line-block
+    margin-left: 0px
+    margin-bottom: $base-line-height
+  .line-block .line-block
     margin-left: $base-line-height
+    margin-bottom: 0px
 
   // Generics handling of headings and toc stuff.
   .topic-title
@@ -137,7 +150,9 @@
     margin: 0px $base-line-height $base-line-height 0px
   .align-center
     margin: auto
-    display: block
+    // Do not override display:table for tables
+    &:not(table)
+      display: block
   .toctree-wrapper p.caption
     @extend h2
 
@@ -227,6 +242,8 @@
   table.docutils
     @extend .wy-table
     @extend .wy-table-bordered-all
+    th
+      border-color: $table-border-color
     &:not(.field-list)
       @extend .wy-table-striped
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.

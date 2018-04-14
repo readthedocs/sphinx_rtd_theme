@@ -33,6 +33,7 @@ from sphinx_rtd_theme import __version__
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
+    'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
@@ -56,7 +57,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Read the Docs Sphinx Theme'
-copyright = u'Read the Docs, Inc & contributors'
+copyright = u'Dave Snider, Read the Docs, Inc. & contributors'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -101,6 +102,8 @@ pygments_style = 'default'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
+intersphinx_mapping = {'rtd': ('https://docs.readthedocs.io/en/latest/', None)}
+
 
 # -- Options for HTML output ---------------------------------------------------
 
@@ -112,9 +115,7 @@ html_theme = 'sphinx_rtd_theme'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    # 'sticky_navigation': True  # Set to False to disable the sticky nav while scrolling.
-    # 'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
-    # 'titles_only': False # If True, it'll remove headers within a page from the sidebar.
+    'logo_only': True
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -203,7 +204,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'SphinxRTDthemedemo.tex', u'Sphinx RTD theme demo Documentation',
-   u'Dave Snider', 'manual'),
+   u'Dave Snider, Read the Docs, Inc. & contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -233,7 +234,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'sphinxrtdthemedemo', u'Sphinx RTD theme demo Documentation',
-     [u'Dave Snider'], 1)
+     [u'Dave Snider, Read the Docs, Inc. & contributors'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -247,8 +248,8 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'SphinxRTDthemedemo', u'Sphinx RTD theme demo Documentation',
-   u'Dave Snider', 'SphinxRTDthemedemo', 'One line description of project.',
-   'Miscellaneous'),
+   u'Dave Snider, Read the Docs, Inc. & contributors', 'SphinxRTDthemedemo',
+   'One line description of project.', 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
