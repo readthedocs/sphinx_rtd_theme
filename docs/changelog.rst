@@ -18,7 +18,7 @@ Fixes
 * Fix table centering (#599)
 
 Other Changes
-------------
+---------------
 
 v0.3.0
 ======
