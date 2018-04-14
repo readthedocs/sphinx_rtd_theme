@@ -1,12 +1,13 @@
+
 ******************
-Translation Guide 
+Translation Guide
 ******************
 
-.. contents:: 
+.. contents::
 
 You can help to translate the Read the Docs Sphinx Theme.
 
-Languages availables:
+Languages available:
 
 - Spanish contributed by Leonardo J. Caballero G.
 - Your Language by YOUR NAME.
@@ -28,25 +29,23 @@ You can configure different parts of the theme.
 Compile catalog
 ---------------
 
-For compile catalog of the theme's project-wide is available. 
+For compile catalog of the theme's project-wide is available.
 More options please, check out http://babel.pocoo.org/en/latest/setup.html#compile-catalog
 
 Extract messages
 ----------------
 
-It is available the option to extract messages to translate. 
+It is available the option to extract messages to translate.
 More options please, check out http://babel.pocoo.org/en/latest/setup.html#extract-messages
 
 init catalog
 ------------
 
-It is available the option to init catalog. 
+It is available the option to init catalog.
 More options please, check out http://babel.pocoo.org/en/latest/setup.html#init-catalog
 
 update catalog
 --------------
 
-It is available the option to init catalog. 
+It is available the option to init catalog.
 More options please, check out http://babel.pocoo.org/en/latest/setup.html#update-catalog
-
-

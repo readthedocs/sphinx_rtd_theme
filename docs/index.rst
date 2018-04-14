@@ -8,6 +8,7 @@
    configuring
    changelog
    contributing
+   translations
 
 
 .. toctree::

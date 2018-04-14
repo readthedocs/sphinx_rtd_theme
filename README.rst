@@ -57,4 +57,4 @@ Translations
 ------------
 
 You can help to translate the Read the Docs Sphinx Theme,
-please read the :doc:`` file for more details.
+please read the :doc:`translations </docs/translations>` guide for more details.
