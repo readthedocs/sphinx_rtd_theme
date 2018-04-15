@@ -143,7 +143,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: [ 'sphinx_rtd_theme/static/js/theme.js' ]
+          src: [ 'sphinx_rtd_theme/static/js/theme.js', 'sphinx_rtd_theme/static/css/theme.css' ]
         }
       }
     },
