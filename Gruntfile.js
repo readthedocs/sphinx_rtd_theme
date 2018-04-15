@@ -138,8 +138,8 @@ module.exports = function(grunt) {
       dist: {
         options: {
           position: 'top',
-          banner: '// <%= pkg.name %> version <%= pkg.version %> | MIT license\n' +
-                  '// Built <%= grunt.template.today("yyyymmdd HH:mm") %>',
+          banner: '/* <%= pkg.name %> version <%= pkg.version %> | MIT license */\n' +
+                  '/* Built <%= grunt.template.today("yyyymmdd HH:mm") %> */',
           linebreak: true
         },
         files: {
