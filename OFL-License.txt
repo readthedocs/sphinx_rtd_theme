@@ -1,6 +1,4 @@
-sphinx_rtd_theme/static/fonts/Inconsolata-Bold.ttf
 sphinx_rtd_theme/static/fonts/Lato-Bold.ttf
-sphinx_rtd_theme/static/fonts/Inconsolata.ttf
 sphinx_rtd_theme/static/fonts/Lato-Regular.ttf
 
 
