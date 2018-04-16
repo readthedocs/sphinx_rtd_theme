@@ -17,7 +17,7 @@ Fixes
 Other Changes
 --------------
 
-* Write theme version and built date at top of JavaScript and CSS
+* Write theme version and build date at top of JavaScript and CSS
 
 v0.3.0
 ======
