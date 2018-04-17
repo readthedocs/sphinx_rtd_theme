@@ -27,7 +27,7 @@ If the command has been correctly installed, a command should allow you to use t
 
     $ pybabel subcommand options
 
-More options about this commands, execute the following command:
+Execute the follow command for more options and follow these instructions to get details:
 
 .. code:: bash
 
@@ -142,7 +142,7 @@ allow you to use the following command:
 
     $ python ./setup.py subcommand options
 
-More options about this commands, execute the following command:
+Execute the follow command for more options and follow these instructions to get details:
 
 .. code:: bash
 
