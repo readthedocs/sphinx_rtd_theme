@@ -265,6 +265,7 @@
   tt, code
     @extend code
     color: $black
+    font-family: $code-font-family
     padding: 2px 5px
     big, em
       font-size: 100% !important
@@ -275,6 +276,8 @@
     &.xref, a &
       font-weight: bold
       color: $text-codexref-color
+  pre, kbd, samp
+    font-family: $code-font-family
   // If the literal is inside an a tag, let's color it like a link
   a tt, a code
     color: $link-color
