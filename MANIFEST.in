@@ -1,9 +1,6 @@
 include *.txt
 include babel.cfg
 include LICENSE
-recursive-include locale *.mo
-recursive-include locale *.pot
-recursive-include locale *.po
 recursive-include sphinx_rtd_theme *.conf
 recursive-include sphinx_rtd_theme *.css
 recursive-include sphinx_rtd_theme *.eot
@@ -13,4 +10,5 @@ recursive-include sphinx_rtd_theme *.svg
 recursive-include sphinx_rtd_theme *.ttf
 recursive-include sphinx_rtd_theme *.woff
 recursive-include sphinx_rtd_theme *.woff2
+recursive-include sphinx_rtd_theme/locale *.pot *.po *.mo
 prune build
