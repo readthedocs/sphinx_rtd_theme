@@ -23,7 +23,7 @@ Set up your environment
 
    .. code:: bash
 
-       pip install sphinx sphinxcontrib-httpdomain
+       pip install -r requirements.txt
 
 #. Install sass.
 
