@@ -8,8 +8,12 @@
 *.sass-cache
 .ropeproject/
 .ruby-version
+bin/
 dist/
 bower_components/
+include/
+lib/
+local/
 node_modules
 npm-debug.log
 package-lock.json
