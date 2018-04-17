@@ -1,6 +1,7 @@
 *.pyc
 *.egg-info
 *.egg
+*.mo
 *build/
 .tox
 .coverage
@@ -17,3 +18,4 @@ local/
 node_modules
 npm-debug.log
 package-lock.json
+pip-selfcheck.json
