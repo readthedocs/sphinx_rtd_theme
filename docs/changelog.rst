@@ -17,6 +17,8 @@ Fixes
 Other Changes
 --------------
 
+* Modified native font stack (#612)
+
 v0.3.0
 ======
 
