@@ -32,20 +32,6 @@ Execute the follow command for more options and follow these instructions to get
 .. code:: bash
 
     $  pybabel --help
-    Usage: pybabel command [options] [args]
-
-    Options:
-      --version       show program's version number and exit
-      -h, --help      show this help message and exit
-      --list-locales  print all known locales and exit
-      -v, --verbose   print as much as possible
-      -q, --quiet     print as little as possible
-
-    commands:
-      compile  compile message catalogs to MO files
-      extract  extract messages from source files and generate a POT file
-      init     create new message catalogs from a POT file
-      update   update existing message catalogs from a POT file
 
 Translating Applications with Babel
 -----------------------------------
@@ -147,51 +133,6 @@ Execute the follow command for more options and follow these instructions to get
 .. code:: bash
 
     $ python ./setup.py --help-commands
-    Standard commands:
-      build             build everything needed to install
-      build_py          "build" pure Python modules (copy to build directory)
-      build_ext         build C/C++ extensions (compile/link to build directory)
-      build_clib        build C/C++ libraries used by Python extensions
-      build_scripts     "build" scripts (copy and fixup #! line)
-      clean             clean up temporary files from 'build' command
-      install           install everything from build directory
-      install_lib       install all Python modules (extensions and pure Python)
-      install_headers   install C/C++ header files
-      install_scripts   install scripts (Python or otherwise)
-      install_data      install data files
-      sdist             create a source distribution (tarball, zip file, etc.)
-      register          register the distribution with the Python package index
-      bdist             create a built (binary) distribution
-      bdist_dumb        create a "dumb" built distribution
-      bdist_rpm         create an RPM distribution
-      bdist_wininst     create an executable installer for MS Windows
-      upload            upload binary package to PyPI
-      check             perform some checks on the package
-
-    Extra commands:
-      saveopts          save supplied options to setup.cfg or other config file
-      compile_catalog   compile message catalogs to binary MO files
-      develop           install package in 'development mode'
-      upload_docs       Upload documentation to PyPI
-      extract_messages  extract localizable strings from the project code
-      init_catalog      create a new catalog based on a POT file
-      test              run unit tests after in-place build
-      update_catalog    update message catalogs from a POT file
-      setopt            set an option in setup.cfg or another config file
-      install_egg_info  Install an .egg-info directory for the package
-      rotate            delete older distributions, keeping N newest files
-      bdist_wheel       create a wheel distribution
-      egg_info          create a distribution's .egg-info directory
-      alias             define a shortcut to invoke one or more commands
-      easy_install      Find/get/install Python packages
-      bdist_egg         create an "egg" distribution
-      dist_info         create a .dist-info directory
-      build_sphinx      Build Sphinx documentation
-
-    usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
-       or: setup.py --help [cmd1 cmd2 ...]
-       or: setup.py --help-commands
-       or: setup.py cmd --help
 
 .. seealso::
 
@@ -256,9 +197,8 @@ command will produce a PO file:
 
 .. code:: bash
 
-    $ python ./setup.py init_catalog -l es -i ./sphinx_rtd_theme/locale/sphinx.pot -o ./sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po
-    running init_catalog
-    creating catalog './sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po' based on './sphinx_rtd_theme/locale/sphinx.pot'
+    $ python ./setup.py init_catalog -l es -i ./sphinx_rtd_theme/locale/sphinx.pot \
+                                     -o ./sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po
 
 .. tip::
 
@@ -272,9 +212,8 @@ command will update a PO file:
 
 .. code:: bash
 
-    $ python ./setup.py update_catalog -l es -i ./sphinx_rtd_theme/locale/sphinx.pot -o ./sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po
-    running update_catalog
-    updating catalog ./sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po based on ./sphinx_rtd_theme/locale/sphinx.pot
+    $ python ./setup.py update_catalog -l es -i ./sphinx_rtd_theme/locale/sphinx.pot \
+                                             -o ./sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po
 
 .. tip::
 
@@ -288,9 +227,7 @@ command will compile catalog of PO files:
 
 .. code:: bash
 
-    $ python ./setup.py compile_catalog -d ./sphinx_rtd_theme/locale/ -l es
-    running compile_catalog
-    compiling catalog ./sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po to ./sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.mo
+    $ python ./setup.py compile_catalog -d ./sphinx_rtd_theme/locale/
 
 Statistics about translations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -301,9 +238,6 @@ command will printing the statistics:
 .. code:: bash
 
     $ pybabel compile -D sphinx -d sphinx_rtd_theme/locale/ -f --statistics
-
-    28 of 28 messages (100%) translated in sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po
-    compiling catalog sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.po to sphinx_rtd_theme/locale/es/LC_MESSAGES/sphinx.mo
 
 .. tip::
 
