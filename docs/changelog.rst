@@ -11,6 +11,7 @@ New Features
 
 * Added Spanish translation
 * Added i18n support using Babel
+* Added Translation Guide documentation
 
 Fixes
 -----
