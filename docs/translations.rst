@@ -16,13 +16,11 @@ For translating the Read the Docs Sphinx Theme you will need to install the foll
 
     $ pip install babel Jinja2
 
-If the command has been correctly installed, a command should allow you to use the following command:
-
 Translating Applications with Babel
 -----------------------------------
 
 After you marked all the strings you want to translate in this Sphinx theme with the gettext function 
-alias ``_('str')`` or  ``{% trans %}string 1, string 2, string 3, etc.{% endtrans %}`` blocks. 
+alias ``_('str')`` or ``{% trans %}string 1, string 2, string 3, etc.{% endtrans %}`` blocks.
 
 Then it’s time to create a .pot file. A .pot file contains all the strings and is the template for a 
 .po file which contains the translated strings. The ``babel`` package can do all that for you.
@@ -192,4 +190,3 @@ command will compile catalog of PO files:
 .. code:: bash
 
     $ python ./setup.py compile_catalog -d ./sphinx_rtd_theme/locale/
-
