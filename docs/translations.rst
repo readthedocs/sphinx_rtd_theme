@@ -7,11 +7,6 @@ Translation Guide
 
 You can help to translate the Read the Docs Sphinx Theme.
 
-Languages available:
-
-- Spanish contributed by Leonardo J. Caballero G.
-- Your Language by YOUR NAME.
-
 Installation
 ============
 
@@ -23,16 +18,6 @@ For translating the Read the Docs Sphinx Theme you will need to install the foll
 
 If the command has been correctly installed, a command should allow you to use the following command:
 
-.. code:: bash
-
-    $ pybabel subcommand options
-
-Execute the follow command for more options and follow these instructions to get details:
-
-.. code:: bash
-
-    $  pybabel --help
-
 Translating Applications with Babel
 -----------------------------------
 
@@ -41,16 +26,6 @@ alias ``_('str')`` or  ``{% trans %}string 1, string 2, string 3, etc.{% endtran
 
 Then it’s time to create a .pot file. A .pot file contains all the strings and is the template for a 
 .po file which contains the translated strings. The ``babel`` package can do all that for you.
-
-.. note::
-    The ``babel`` package install a command called ``pybabel``, please, check out for more options at 
-    http://babel.pocoo.org/en/latest/cmdline.html
-
-Jinja2 HTML templates
----------------------
-
-This Sphinx theme using a awesome modern and designer-friendly HTML templating language for Python 
-called ``Jinja2``. The ``Jinja2`` package is used for that.
 
 Configuration
 =============
@@ -81,10 +56,6 @@ The translations files are based on ``gettext`` format and they are placed at th
 
 :file:`sphinx.po`
     This file is the **Portable Object** Gettext format to translate.
-
-:file:`sphinx.mo`
-    This file is the **Machine Object** Gettext format generated later of translate 
-    your :file:`sphinx.po` file via the catalog compilation.
 
 Babel Configurations
 --------------------
@@ -133,13 +104,6 @@ Execute the follow command for more options and follow these instructions to get
 .. code:: bash
 
     $ python ./setup.py --help-commands
-
-.. seealso::
-
-    More details check out the following links:
-
-    - `Writing the Setup Configuration File <https://docs.python.org/3/distutils/configfile.html>`_.
-    - `How setup this file for babel configurations <http://babel.pocoo.org/en/latest/setup.html>`_.
 
 Extraction Configurations
 -------------------------
@@ -229,16 +193,3 @@ command will compile catalog of PO files:
 
     $ python ./setup.py compile_catalog -d ./sphinx_rtd_theme/locale/
 
-Statistics about translations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For to print the statistics about the theme translations from his catalog. Running the following 
-command will printing the statistics:
-
-.. code:: bash
-
-    $ pybabel compile -D sphinx -d sphinx_rtd_theme/locale/ -f --statistics
-
-.. tip::
-
-    More options for ``compile`` sub-command, please, check out http://babel.pocoo.org/en/latest/cmdline.html#compile
