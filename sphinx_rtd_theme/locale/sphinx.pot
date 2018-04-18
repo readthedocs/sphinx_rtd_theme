@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.3.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-04-16 18:43-0400\n"
+"POT-Creation-Date: 2018-04-18 17:43-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,47 +46,36 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:19
-#, python-format
-msgid "&copy; <a href=\"%(path)s\">Copyright</a> %(copyright)s."
+#: sphinx_rtd_theme/footer.html:21 sphinx_rtd_theme/footer.html:24
+#: sphinx_rtd_theme/layout.html:70
+msgid "Copyright"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:21
-#, python-format
-msgid "&copy; Copyright %(copyright)s."
+#: sphinx_rtd_theme/footer.html:30
+msgid "Build"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:26
-#, python-format
-msgid ""
-"\n"
-"        <span class=\"build\">\n"
-"          Build\n"
-"          <a href=\"%(build_url)s\">%(build_id)s</a>.\n"
-"        </span>\n"
-"      "
+#: sphinx_rtd_theme/footer.html:35
+msgid "Revision"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:33
-#, python-format
-msgid ""
-"\n"
-"        <span class=\"commit\">\n"
-"          Revision <code>%(commit)s</code>.\n"
-"        </span>\n"
-"      "
-msgstr ""
-
-#: sphinx_rtd_theme/footer.html:39
+#: sphinx_rtd_theme/footer.html:38
 #, python-format
 msgid "Last updated on %(last_updated)s."
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:46
-msgid ""
-"Built with <a href=\"http://sphinx-doc.org/\">Sphinx</a> using a <a "
-"href=\"https://github.com/rtfd/sphinx_rtd_theme\">theme</a> provided by "
-"<a href=\"https://readthedocs.org\">Read the Docs</a>"
+#: sphinx_rtd_theme/footer.html:47
+#, python-format
+msgid "Built with %(sphinx_web)s using a"
+msgstr ""
+
+#: sphinx_rtd_theme/footer.html:47
+msgid "theme"
+msgstr ""
+
+#: sphinx_rtd_theme/footer.html:47
+#, python-format
+msgid "provided by %(readthedocs_web)s"
 msgstr ""
 
 #: sphinx_rtd_theme/layout.html:37
@@ -106,18 +95,12 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:70
-msgid "Copyright"
-msgstr ""
-
 #: sphinx_rtd_theme/layout.html:107
 msgid "Logo"
 msgstr ""
 
 #: sphinx_rtd_theme/search.html:26
-msgid ""
-"Please activate JavaScript to enable the search\n"
-"      functionality."
+msgid "Please activate JavaScript to enable the search functionality."
 msgstr ""
 
 #: sphinx_rtd_theme/search.html:33
@@ -155,8 +138,6 @@ msgid "Builds"
 msgstr ""
 
 #: sphinx_rtd_theme/versions.html:32
-msgid ""
-"Free document hosting provided by <a "
-"href=\"http://www.readthedocs.org\">Read the Docs</a>."
+msgid "Free document hosting provided by"
 msgstr ""
 

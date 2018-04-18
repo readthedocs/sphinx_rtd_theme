@@ -16,25 +16,24 @@
     <p>
     {%- if show_copyright %}
       {%- if hasdoc('copyright') %}
-        {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+        {% set path = pathto('copyright') %}
+        {% set copyright = copyright|e %}
+        &copy; <a href="{{ path }}">{% trans %}Copyright{% endtrans %}</a> {{ copyright }}.
       {%- else %}
-        {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+        {% set copyright = copyright|e %}
+        &copy; {% trans %}Copyright{% endtrans %} {{ copyright }}.
       {%- endif %}
     {%- endif %}
 
     {%- if build_id and build_url %}
-      {% trans build_url=build_url, build_id=build_id %}
-        <span class="build">
-          Build
-          <a href="{{ build_url }}">{{ build_id }}</a>.
-        </span>
-      {% endtrans %}
+      <span class="build">
+        {% trans %}Build{% endtrans %}
+        <a href="{{ build_url }}">{{ build_id }}</a>.
+      </span>
     {%- elif commit %}
-      {% trans commit=commit %}
-        <span class="commit">
-          Revision <code>{{ commit }}</code>.
-        </span>
-      {% endtrans %}
+      <span class="commit">
+        {% trans %}Revision{% endtrans %} <code>{{ commit }}</code>.
+      </span>
     {%- elif last_updated %}
       {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
     {%- endif %}
@@ -43,7 +42,9 @@
   </div>
 
   {%- if show_sphinx %}
-  {% trans %}Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>{% endtrans %}.
+    {% set sphinx_web = '<a href="http://sphinx-doc.org/">Sphinx</a>' %}
+    {% set readthedocs_web = '<a href="https://readthedocs.org">Read the Docs</a>'  %}
+      {% trans sphinx_web=sphinx_web, readthedocs_web=readthedocs_web %}Built with {{ sphinx_web }} using a{% endtrans %} <a href="https://github.com/rtfd/sphinx_rtd_theme">{% trans %}theme{% endtrans %}</a> {% trans %}provided by {{ readthedocs_web }}{% endtrans %}.
   {%- endif %}
 
   {%- block extrafooter %} {% endblock %}
