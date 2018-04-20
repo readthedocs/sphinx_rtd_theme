@@ -114,16 +114,16 @@ function ThemeNav () {
 
     nav.reset = function () {
         // Get anchor from URL and open up nested nav
-        var anchor = encodeURI(window.location.hash) || '#';
+        var anchor = encodeURI(window.location.href.split('#')[1]) || '';
 
         try {
             var vmenu = $('.wy-menu-vertical');
-            var link = vmenu.find('[href="' + anchor + '"]');
+            var link = vmenu.find('[href="#' + anchor + '"]');
             if (link.length === 0) {
                 // this link was not found in the sidebar.
                 // Find associated id element, then its closest section
                 // in the document and try with that one.
-                var id_elt = $('.document [id="' + anchor.substring(1) + '"]');
+                var id_elt = $('.document [id="' + anchor + '"]');
                 var closest_section = id_elt.closest('div.section');
                 link = vmenu.find('[href="#' + closest_section.attr("id") + '"]');
                 if (link.length === 0) {
