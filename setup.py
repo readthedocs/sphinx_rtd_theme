@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """`sphinx_rtd_theme` lives on `Github`_.
 
-.. _github: https://www.github.com/snide/sphinx_rtd_theme
+.. _github: https://github.com/rtfd/sphinx_rtd_theme
 
 """
+from io import open
 from setuptools import setup
 from sphinx_rtd_theme import __version__
 
@@ -13,10 +14,10 @@ setup(
     version=__version__,
     url='https://github.com/rtfd/sphinx_rtd_theme/',
     license='MIT',
-    author='Dave Snider',
-    author_email='dave.snider@gmail.com',
+    author='Dave Snider, Read the Docs, Inc. & contributors',
+    author_email='dev@readthedocs.org',
     description='Read the Docs theme for Sphinx',
-    long_description=open('README.rst').read(),
+    long_description=open('README.rst', encoding='utf-8').read(),
     zip_safe=False,
     packages=['sphinx_rtd_theme'],
     package_data={'sphinx_rtd_theme': [
@@ -34,6 +35,8 @@ setup(
         ]
     },
     classifiers=[
+        'Framework :: Sphinx',
+        'Framework :: Sphinx :: Theme',
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Environment :: Console',
