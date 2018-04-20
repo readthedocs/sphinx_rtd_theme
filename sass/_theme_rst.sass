@@ -53,13 +53,20 @@
     line-height: $base-line-height
     margin-bottom: $base-line-height
 
+  pre.literal-block
+    white-space: pre
+    margin: 0
+    padding: $base-line-height / 2 $base-line-height / 2
+    font-family: $code-font-family
+    display: block
+    overflow: auto
   pre.literal-block, div[class^='highlight']
     border: 1px solid $table-border-color
-    padding: 0px
     overflow-x: auto
     // 1px hack otherwise border won't show. lame
     margin: 1px 0 $base-line-height 0
     div[class^='highlight']
+      padding: 0px
       border: none
       margin: 0
   // Needs 100% width for line highlighting to work properly
