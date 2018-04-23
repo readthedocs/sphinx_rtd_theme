@@ -13,12 +13,15 @@ Fixes
 -----
 
 * Fix table centering (#599)
+* Do not rely on readthedocs.org for CSS/JS (#614)
 
 Other Changes
 --------------
 
 v0.3.0
 ======
+
+**Note**: this version resulted in some JavaScript incompatibilities when used on readthedocs.org
 
 New Features
 -------------
