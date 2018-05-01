@@ -38,6 +38,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
+    'sphinx_rtd_theme',
 ]
 
 # Do not warn about external images (status badges in README.rst)
