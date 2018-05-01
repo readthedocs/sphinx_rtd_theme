@@ -17,6 +17,8 @@ Fixes
 Other Changes
 --------------
 
+* Remove Modernizr (#525)
+
 v0.3.0
 ======
 

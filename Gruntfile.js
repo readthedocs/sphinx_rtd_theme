@@ -143,7 +143,7 @@ module.exports = function(grunt) {
       build: ["docs/build"],
       fonts: ["sphinx_rtd_theme/static/fonts"],
       css: ["sphinx_rtd_theme/static/css"],
-      js: ["sphinx_rtd_theme/static/js/*", "!sphinx_rtd_theme/static/js/modernizr.min.js"]
+      js: ["sphinx_rtd_theme/static/js/*"]
     },
 
     watch: {
