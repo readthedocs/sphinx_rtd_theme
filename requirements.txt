@@ -1,2 +1,2 @@
 # sphinx 1.8.0
--e git+https://github.com/sphinx-doc/sphinx@master#egg=sphinx
+-e git+https://github.com/sphinx-doc/sphinx.git@master#egg=sphinx
