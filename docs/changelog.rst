@@ -3,19 +3,17 @@
 Changelog
 *********
 
-master
+v0.3.1
 ======
-
-New Features
--------------
 
 Fixes
 -----
 
+* Revert part of #576 causing display issues with version selector menu
+* Backwards compatibility fixes for pre-0.3.0 releases (#623)
+* Fix mkdocs version selector (#622)
+* Add open list spacing (#591)
 * Fix table centering (#599)
-
-Other Changes
---------------
 
 v0.3.0
 ======
