@@ -3,6 +3,21 @@
 Changelog
 *********
 
+master
+======
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Fix small styling issues
+
+Other Changes
+--------------
+
+
 v0.3.1
 ======
 
