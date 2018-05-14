@@ -3,6 +3,14 @@
 Changelog
 *********
 
+Master
+======
+
+Fixes
+-----
+
+* Color accessibility improvements on the left navigation
+
 v0.3.1
 ======
 

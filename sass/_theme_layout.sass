@@ -24,7 +24,9 @@
     padding: 0 $base-font-size
 
 .wy-menu-vertical
+  color: $menu-medium
   width: $nav-desktop-width
+
   header, p.caption
     height: $base-font-size * 2
     display: inline-block
@@ -35,7 +37,6 @@
     font-weight: bold
     text-transform: uppercase
     font-size: 80%
-    color: $menu-dark
     white-space: nowrap
 
   ul
@@ -97,6 +98,8 @@
     border-top: solid 1px darken($menu-vertical-background-color, 20%)
 
   // This is the on state for pages beyond second level
+  li.toctree-l2 a, li.toctree-l3 a, li.toctree-l4 a
+    color: $menu-link-color
   li.toctree-l1.current li.toctree-l2, li.toctree-l2.current li.toctree-l3
     > ul
       display: none
