@@ -7,6 +7,7 @@
     "browserify": "^13.0.0",
     "connect-livereload": "~0.6.0",
     "grunt": "~1.0.1",
+    "grunt-banner": "^0.6.0",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-connect": "^1.0.2",
