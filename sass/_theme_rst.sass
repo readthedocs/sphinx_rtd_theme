@@ -247,6 +247,9 @@
       border-color: $table-border-color
     &:not(.field-list)
       @extend .wy-table-striped
+    // Remove bottom margin for the last element (and it's last child)
+    td .last, td .last :last-child
+      margin-bottom: 0
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
     @extend .wy-table
