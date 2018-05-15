@@ -76,7 +76,6 @@
     white-space: pre
     margin: 0
     padding: $base-line-height / 2 $base-line-height / 2
-    font-family: $code-font-family
     display: block
     overflow: auto
     & .hll
@@ -85,6 +84,7 @@
       margin: 0 -1 * $base-line-height / 2
       padding: 0 $base-line-height / 2
   pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
+    font-family: $code-font-family
     font-size: 12px
     line-height: normal
 
@@ -269,6 +269,7 @@
   tt, code
     @extend code
     color: $black
+    font-family: $code-font-family
     padding: 2px 5px
     big, em
       font-size: 100% !important
@@ -279,6 +280,8 @@
     &.xref, a &
       font-weight: bold
       color: $text-codexref-color
+  pre, kbd, samp
+    font-family: $code-font-family
   // If the literal is inside an a tag, let's color it like a link
   a tt, a code
     color: $link-color
