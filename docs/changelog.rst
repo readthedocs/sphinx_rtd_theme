@@ -16,6 +16,8 @@ Other Changes
 --------------
 
 * Write theme version and build date at top of JavaScript and CSS
+* Changed code and literals to use a native font stack (#612)
+* Fix small styling issues
 
 v0.3.1
 ======

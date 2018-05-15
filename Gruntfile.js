@@ -49,14 +49,6 @@ module.exports = function(grunt) {
                     'bower_components/robotoslab-googlefont/RobotoSlab-Regular.ttf'],
               dest: 'sphinx_rtd_theme/static/fonts/',
               filter: 'isFile'
-          },
-          {
-              expand: true,
-              flatten: true,
-              src: ['bower_components/inconsolata-googlefont/Inconsolata-Bold.ttf',
-                    'bower_components/inconsolata-googlefont/Inconsolata-Regular.ttf'],
-              dest: 'sphinx_rtd_theme/static/fonts/',
-              filter: 'isFile'
           }
         ]
       }
