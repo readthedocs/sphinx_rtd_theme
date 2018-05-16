@@ -53,13 +53,20 @@
     line-height: $base-line-height
     margin-bottom: $base-line-height
 
+  pre.literal-block
+    white-space: pre
+    margin: 0
+    padding: $base-line-height / 2 $base-line-height / 2
+    font-family: $code-font-family
+    display: block
+    overflow: auto
   pre.literal-block, div[class^='highlight']
     border: 1px solid $table-border-color
-    padding: 0px
     overflow-x: auto
     // 1px hack otherwise border won't show. lame
     margin: 1px 0 $base-line-height 0
     div[class^='highlight']
+      padding: 0px
       border: none
       margin: 0
   // Needs 100% width for line highlighting to work properly
@@ -76,7 +83,6 @@
     white-space: pre
     margin: 0
     padding: $base-line-height / 2 $base-line-height / 2
-    font-family: $code-font-family
     display: block
     overflow: auto
     & .hll
@@ -85,6 +91,7 @@
       margin: 0 -1 * $base-line-height / 2
       padding: 0 $base-line-height / 2
   pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
+    font-family: $code-font-family
     font-size: 12px
     line-height: normal
 
@@ -132,6 +139,7 @@
   .line-block
     margin-left: 0px
     margin-bottom: $base-line-height
+    line-height: $base-line-height
   .line-block .line-block
     margin-left: $base-line-height
     margin-bottom: 0px
@@ -246,6 +254,9 @@
       border-color: $table-border-color
     &:not(.field-list)
       @extend .wy-table-striped
+    // Remove bottom margin for the last element (and it's last child)
+    td .last, td .last :last-child
+      margin-bottom: 0
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
     @extend .wy-table
@@ -265,6 +276,7 @@
   tt, code
     @extend code
     color: $black
+    font-family: $code-font-family
     padding: 2px 5px
     big, em
       font-size: 100% !important
@@ -275,6 +287,8 @@
     &.xref, a &
       font-weight: bold
       color: $text-codexref-color
+  pre, kbd, samp
+    font-family: $code-font-family
   // If the literal is inside an a tag, let's color it like a link
   a tt, a code
     color: $link-color
@@ -282,12 +296,14 @@
     margin-bottom: $base-line-height
     dt
       font-weight: bold
+      margin-bottom: $base-line-height / 2
     // Most of the content within these dls are one liners, so I halve the normal margins.
     p, table, ul, ol
       margin-bottom: $base-line-height / 2 !important
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
+      line-height: $base-line-height
   // This is what Sphinx spits out for it's autodocs. Depending upon what language the person is referencing
   // these things usually have a class of "method" or "class" or something similar, but really who knows.
   // Sphinx doesn't give me a generic class on these, so unfortunately I have to apply it to the root dl.

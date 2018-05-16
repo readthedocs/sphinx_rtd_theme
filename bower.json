@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "robotoslab-googlefont": "*",
-    "inconsolata-googlefont": "*",
     "font-awesome": "~4.7"
   },
   "resolutions": {
