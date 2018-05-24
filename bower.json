@@ -29,7 +29,6 @@
     "wyrm": "~1.0.x"
   },
   "dependencies": {
-    "robotoslab-googlefont": "*",
     "font-awesome": "~4.7"
   },
   "resolutions": {
