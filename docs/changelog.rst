@@ -3,7 +3,7 @@
 Changelog
 *********
 
-master
+Master
 ======
 
 New Features
@@ -11,6 +11,7 @@ New Features
 
 Fixes
 -----
+* Color accessibility improvements on the left navigation
 
 Other Changes
 --------------
