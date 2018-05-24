@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "lato-googlefont": "*",
-    "robotoslab-googlefont": "*",
     "font-awesome": "~4.7"
   },
   "resolutions": {

@@ -45,9 +45,8 @@ module.exports = function(grunt) {
           {
               expand: true,
               flatten: true,
-              src: ['bower_components/robotoslab-googlefont/RobotoSlab-Bold.ttf',
-                    'bower_components/robotoslab-googlefont/RobotoSlab-Regular.ttf'],
-              dest: 'sphinx_rtd_theme/static/fonts/',
+              src: ['fonts/RobotoSlab/*'],
+              dest: 'sphinx_rtd_theme/static/fonts/RobotoSlab/',
               filter: 'isFile'
           }
         ]
