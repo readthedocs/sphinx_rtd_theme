@@ -215,11 +215,7 @@
 
   <script type="text/javascript">
       jQuery(function () {
-          {% if theme_sticky_navigation|tobool %}
-          SphinxRtdTheme.Navigation.enableSticky();
-          {% else %}
-          SphinxRtdTheme.Navigation.enable();
-          {% endif %}
+          SphinxRtdTheme.Navigation.enable({{ 'true' if theme_sticky_navigation|tobool else 'false' }});
       });
   </script>
 
