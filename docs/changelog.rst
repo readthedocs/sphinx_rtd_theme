@@ -3,7 +3,7 @@
 Changelog
 *********
 
-master
+Master
 ======
 
 New Features
@@ -12,11 +12,27 @@ New Features
 Fixes
 -----
 
-* Fix table centering (#599)
 * Do not rely on readthedocs.org for CSS/JS (#614)
+* Color accessibility improvements on the left navigation
 
 Other Changes
 --------------
+
+* Write theme version and build date at top of JavaScript and CSS
+* Changed code and literals to use a native font stack (#612)
+* Fix small styling issues
+
+v0.3.1
+======
+
+Fixes
+-----
+
+* Revert part of #576 causing display issues with version selector menu
+* Backwards compatibility fixes for pre-0.3.0 releases (#623)
+* Fix mkdocs version selector (#622)
+* Add open list spacing (#591)
+* Fix table centering (#599)
 
 v0.3.0
 ======
