@@ -11,6 +11,8 @@ New Features
 
 Fixes
 -----
+
+* Do not rely on readthedocs.org for CSS/JS (#614)
 * Color accessibility improvements on the left navigation
 
 Other Changes
@@ -34,6 +36,8 @@ Fixes
 
 v0.3.0
 ======
+
+**Note**: this version resulted in some JavaScript incompatibilities when used on readthedocs.org
 
 New Features
 -------------
