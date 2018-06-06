@@ -3,8 +3,12 @@
 Changelog
 *********
 
-Master
+v0.4.0
 ======
+
+This version made some changes to how JS and CSS were included
+when the theme is used on Read the Docs.
+
 
 New Features
 -------------
