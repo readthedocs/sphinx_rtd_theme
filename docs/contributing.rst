@@ -84,6 +84,7 @@ you should do the following:
 
     .. code:: bash
 
+        $ rm -rf dist/
         $ python setup.py sdist bdist_wheel
         $ twine upload --sign --identity security@readthedocs.org dist/*
 
