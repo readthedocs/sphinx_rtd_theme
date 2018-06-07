@@ -80,7 +80,13 @@ you should do the following:
 #. Commit that change.
 #. Tag the release in git: ``git tag $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
-#. Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``.
+#. Upload the package to PyPI:
+
+    .. code:: bash
+
+        $ python setup.py sdist bdist_wheel
+        $ twine upload --sign --identity security@readthedocs.org dist/*
+
 #. In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version
    (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``).
 #. In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files.
