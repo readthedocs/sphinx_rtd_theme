@@ -17,6 +17,32 @@ Other Changes
 
 * Remove Modernizr (#525)
 
+
+=======
+v0.4.0
+======
+
+This version made some changes to how JS and CSS were included
+when the theme is used on Read the Docs.
+
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Do not rely on readthedocs.org for CSS/JS (#614)
+* Color accessibility improvements on the left navigation
+
+Other Changes
+--------------
+
+* Write theme version and build date at top of JavaScript and CSS
+* Changed code and literals to use a native font stack (#612)
+* Fix small styling issues
+
+
 v0.3.1
 ======
 
@@ -31,6 +57,8 @@ Fixes
 
 v0.3.0
 ======
+
+**Note**: this version resulted in some JavaScript incompatibilities when used on readthedocs.org
 
 New Features
 -------------

@@ -73,8 +73,9 @@ Releasing the Theme
 When you release a new version,
 you should do the following:
 
-#. Bump the version in ``sphinx_rtd_theme/__init__.py`` --
+#. Bump the version in ``sphinx_rtd_theme/__init__.py``, ``bower.json`` and ``package.json`` --
    we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
+#. Update the changelog (``docs/changelog.rst``) with the version information.
 #. Run a ``grunt build`` to rebuild all the theme assets.
 #. Commit that change.
 #. Tag the release in git: ``git tag $NEW_VERSION``.

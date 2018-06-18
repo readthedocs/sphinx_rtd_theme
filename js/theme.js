@@ -22,7 +22,7 @@ function ThemeNav () {
         // out from the RTD assets. This just ensures old projects that are
         // calling `enable()` get the sticky menu on by default. All other cals
         // to `enable` should include an argument for enabling the sticky menu.
-        if (typeof(withStickNav) == 'undefined') {
+        if (typeof(withStickyNav) == 'undefined') {
             withStickyNav = true;
         }
 
