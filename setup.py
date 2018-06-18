@@ -34,6 +34,9 @@ setup(
             'sphinx_rtd_theme = sphinx_rtd_theme',
         ]
     },
+    install_requires=[
+       'sphinx'
+    ],
     classifiers=[
         'Framework :: Sphinx',
         'Framework :: Sphinx :: Theme',
