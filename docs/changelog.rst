@@ -3,6 +3,23 @@
 Changelog
 *********
 
+master
+======
+
+
+New Features
+-------------
+
+Fixes
+-----
+
+
+Other Changes
+--------------
+
+* Add Sphinx as a dependency
+
+
 v0.4.0
 ======
 
