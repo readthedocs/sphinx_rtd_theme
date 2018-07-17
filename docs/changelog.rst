@@ -18,6 +18,7 @@ Other Changes
 --------------
 
 * Add Sphinx as a dependency
+* Add the ``extranav`` block after the ``menu`` block in the template
 
 
 v0.4.0
