@@ -13,6 +13,8 @@ New Features
 Fixes
 -----
 
+* Line height adjustments for Liberation Mono (#656)
+
 
 Other Changes
 --------------
