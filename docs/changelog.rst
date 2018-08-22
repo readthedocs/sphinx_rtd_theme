@@ -3,8 +3,10 @@
 Changelog
 *********
 
-master
+v0.4.1
 ======
+
+:Date: July 27, 2018
 
 
 New Features
@@ -12,6 +14,8 @@ New Features
 
 Fixes
 -----
+
+* Line height adjustments for Liberation Mono (#656)
 
 
 Other Changes
