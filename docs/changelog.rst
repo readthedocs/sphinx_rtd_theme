@@ -21,7 +21,7 @@ Other Changes
 --------------
 
 * Upload signed packages to PyPI with twine (#651)
-* Do not inforce period at the end of copyright statement (666)
+* Do not enforce period at the end of copyright statement (666)
 
 v0.4.1
 ======
