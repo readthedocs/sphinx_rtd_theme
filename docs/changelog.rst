@@ -3,11 +3,30 @@
 Changelog
 *********
 
+v0.4.2
+======
+
+:Date: Oct 1, 2018
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Set base font size on <html> (#668)
+* Fix HTML search not working with Sphinx-1.8 (#672)
+
+Other Changes
+--------------
+
+* Upload signed packages to PyPI with twine (#651)
+* Do not inforce period at the end of copyright statement (666)
+
 v0.4.1
 ======
 
 :Date: July 27, 2018
-
 
 New Features
 -------------
@@ -17,12 +36,10 @@ Fixes
 
 * Line height adjustments for Liberation Mono (#656)
 
-
 Other Changes
 --------------
 
 * Add Sphinx as a dependency
-
 
 v0.4.0
 ======
