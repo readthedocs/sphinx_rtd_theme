@@ -26,7 +26,7 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'style_external_links': False,
         'vcs_pageview_mode': '',
         # Toc options
-        'collapse_navigation': False,
+        'collapse_navigation': True,
         'sticky_navigation': True,
         'navigation_depth': 4,
         'includehidden': True,
@@ -56,11 +56,18 @@ TOC Options
 These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
 
 * ``collapse_navigation`` Bool. With this enabled, you will lose the ``[+]`` drop downs next to each section in the sidebar.
-  This is useful for *very large* documents.
 * ``sticky_navigation`` Bool. This causes the sidebar to scroll with the main page content as you scroll the page.
-* ``navigation_depth`` Int. Indicate the max depth of the tree; by default, all levels are included.
+* ``navigation_depth`` Int. Indicate the max depth of the tree; by default, 4 levels are included;
+  set it to -1 to allow unlimited depth.
 * ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the ``:hidden:`` option
 * ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
+
+.. note::
+   
+   Setting ``collapse_navigation`` to False and using a high ``navigation_depth``
+   can cause projects with many files and a deep file structure to generate HTML files
+   that are significantly larger in file size and much longer compilation times.
+
 
 HTML Context Options
 --------------------
