@@ -1,7 +1,7 @@
 {
   "name": "sphinx_rtd_theme",
   "main": "js/theme.js",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "devDependencies": {
     "bower": "^1.8.4",
