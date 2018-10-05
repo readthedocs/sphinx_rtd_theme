@@ -6,7 +6,7 @@ Changelog
 v0.4.2
 ======
 
-:Date: Oct 1, 2018
+:Date: Oct 5, 2018
 
 New Features
 -------------
