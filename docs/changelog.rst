@@ -3,8 +3,10 @@
 Changelog
 *********
 
-master
+v0.4.1
 ======
+
+:Date: July 27, 2018
 
 
 New Features
