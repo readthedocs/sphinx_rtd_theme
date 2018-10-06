@@ -1,5 +1,6 @@
 {
   "name": "sphinx_rtd_theme",
+  "main": "js/theme.js",
   "version": "0.4.2",
   "private": true,
   "devDependencies": {
