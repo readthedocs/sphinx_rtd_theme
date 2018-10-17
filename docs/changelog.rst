@@ -3,6 +3,21 @@
 Changelog
 *********
 
+master
+======
+
+New Features
+------------
+
+Fixes
+-----
+
+* Fix scrolling to active item in sidebar on load (#214)
+
+Other Changes
+-------------
+
+
 v0.4.2
 ======
 
