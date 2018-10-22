@@ -3,6 +3,23 @@
 Changelog
 *********
 
+master
+======
+
+:Date: TBD
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Style caption link for code and literal blocks
+
+Other Changes
+--------------
+
+
 v0.4.2
 ======
 
