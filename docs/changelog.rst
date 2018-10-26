@@ -3,6 +3,23 @@
 Changelog
 *********
 
+master
+======
+
+:Date: TBD
+
+New Features
+-------------
+
+Fixes
+-----
+
+Other Changes
+--------------
+
+* Menu items can now expand and collapse regardless of active item
+
+
 v0.4.2
 ======
 
