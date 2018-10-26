@@ -115,7 +115,9 @@ html_theme = 'sphinx_rtd_theme'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'logo_only': True
+    'logo_only': True,
+    'collapse_navigation': False,
+    'navigation_depth': -1
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
