@@ -85,6 +85,9 @@
 +media($tablet)
   .rst-versions
     width: 85%
-    display: none
+    transform: $sidebar-transform-hide
+    transition: $sidebar-transition
     &.shift
       display: block
+      transform: $sidebar-transform-show
+      transition: $sidebar-transition

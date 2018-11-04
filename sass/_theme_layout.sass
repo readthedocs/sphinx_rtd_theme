@@ -370,12 +370,15 @@ footer
     display: block
   .wy-nav-side
     @if $nav-desktop-position == left
-      left: -$nav-desktop-width
+      transform: $sidebar-transform-hide
+      transition: $sidebar-transition
     @else
       right: -$nav-desktop-width
     &.shift
       width: 85%
       left: 0
+      transform: $sidebar-transform-show
+      transition: $sidebar-transition
   .wy-side-scroll
     width: auto
   .wy-side-nav-search
@@ -384,15 +387,18 @@ footer
     width: auto
   .wy-nav-content-wrap
     margin-left: 0
+    transform: $sidebar-transform-show
+    transition: $sidebar-transition
     .wy-nav-content
       padding: $gutter
     &.shift
       position: fixed
       min-width: 100%
-      left: 85%
       top: 0
       height: 100%
       overflow: hidden
+      transform: translateX(85%)
+      transition: $sidebar-transition
 
 @media screen and (min-width: $nav-media-query)
   .wy-nav-content-wrap
