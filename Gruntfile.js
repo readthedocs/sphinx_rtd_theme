@@ -35,11 +35,8 @@ module.exports = function(grunt) {
           {
               expand: true,
               flatten: true,
-              src: ['bower_components/lato-googlefont/Lato-Regular.ttf',
-                    'bower_components/lato-googlefont/Lato-Italic.ttf',
-                    'bower_components/lato-googlefont/Lato-Bold.ttf',
-                    'bower_components/lato-googlefont/Lato-BoldItalic.ttf'],
-              dest: 'sphinx_rtd_theme/static/fonts/',
+              src: ['fonts/Lato/*'],
+              dest: 'sphinx_rtd_theme/static/fonts/Lato',
               filter: 'isFile'
           },
           {

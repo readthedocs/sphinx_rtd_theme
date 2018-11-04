@@ -3,8 +3,50 @@
 Changelog
 *********
 
-Master
+v0.4.2
 ======
+
+:Date: Oct 5, 2018
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Set base font size on <html> (#668)
+* Fix HTML search not working with Sphinx-1.8 (#672)
+
+Other Changes
+--------------
+
+* Upload signed packages to PyPI with twine (#651)
+* Do not enforce period at the end of copyright statement (666)
+
+v0.4.1
+======
+
+:Date: July 27, 2018
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Line height adjustments for Liberation Mono (#656)
+
+Other Changes
+--------------
+
+* Add Sphinx as a dependency
+
+v0.4.0
+======
+
+This version made some changes to how JS and CSS were included
+when the theme is used on Read the Docs.
+
 
 New Features
 -------------
@@ -15,6 +57,8 @@ New Features
 
 Fixes
 -----
+
+* Do not rely on readthedocs.org for CSS/JS (#614)
 * Color accessibility improvements on the left navigation
 
 Other Changes
@@ -38,6 +82,8 @@ Fixes
 
 v0.3.0
 ======
+
+**Note**: this version resulted in some JavaScript incompatibilities when used on readthedocs.org
 
 New Features
 -------------
