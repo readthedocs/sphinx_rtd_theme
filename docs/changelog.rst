@@ -3,6 +3,17 @@
 Changelog
 *********
 
+Master
+======
+
+New Features
+-------------
+
+* Added Spanish translation
+* Added i18n support using Babel
+* Added Translation Guide documentation
+
+
 v0.4.2
 ======
 
@@ -50,10 +61,6 @@ when the theme is used on Read the Docs.
 
 New Features
 -------------
-
-* Added Spanish translation
-* Added i18n support using Babel
-* Added Translation Guide documentation
 
 Fixes
 -----
