@@ -29,6 +29,7 @@
   {% endif %}
 
   {# Javascript #}
+  <script type="text/javascript" src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
     {% if sphinx_version >= "1.8.0" %}
@@ -52,12 +53,7 @@
         <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
       {%- endfor %}
     {% endif %}
-
-    {# RTD hosts this file, so just load on non RTD builds #}
-    {%- if not READTHEDOCS %}
-      <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
-    {%- endif %}
-    <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
     {# OPENSEARCH #}
     {%- if use_opensearch %}
