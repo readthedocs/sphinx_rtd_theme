@@ -98,6 +98,19 @@ function ThemeNav () {
                 $("[data-toggle='rst-versions']").toggleClass("shift-up");
             })
 
+            // Make nav swipeable
+            .on("swipeleft swiperight", ".wy-body-for-nav", function( event ) {
+                if ( event.type === "swipeleft" ) {
+                    $(".wy-nav-side").removeClass("shift");
+                    $(".wy-nav-content-wrap").removeClass("shift");
+                    $(".rst-versions").removeClass("shift");
+                } else if ( event.type === "swiperight" ) {
+                    $(".wy-nav-side").addClass("shift");
+                    $(".wy-nav-content-wrap").addClass("shift");
+                    $(".rst-versions").addClass("shift");
+                }
+            })
+
         // Make tables responsive
         $("table.docutils:not(.field-list,.footnote,.citation)")
             .wrap("<div class='wy-table-responsive'></div>");
@@ -238,33 +251,3 @@ if (typeof(window) != 'undefined') {
             clearTimeout(id);
         };
 }());
-
-// function for opening/closing sidebar on
-// swiping right/close.
-(function () {
-    var start = null;
-      window.addEventListener("touchstart",function(event){
-          if(event.touches.length === 1){
-              start = event.touches.item(0).clientX;
-          } else {
-              start = null;
-          }
-      });
-
-      window.addEventListener("touchend",function(event){
-          var offset = 100;
-          if(start) {
-              var end = event.changedTouches.item(0).clientX;
-              if(end > start + offset) {
-                  document.getElementById("shift-nav-side").classList.add("shift");
-                  document.getElementById("shift-nav-content-side").classList.add("shift");
-                  document.getElementById("rst-versions-id").classList.add("shift");
-              }
-              if(end < start - offset ){
-                  document.getElementById("shift-nav-side").classList.remove("shift");
-                  document.getElementById("shift-nav-content-side").classList.remove("shift");
-                  document.getElementById("rst-versions-id").classList.remove("shift");
-              }
-            }
-        });
-}())
