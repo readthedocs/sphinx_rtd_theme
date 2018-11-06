@@ -85,9 +85,8 @@
 +media($tablet)
   .rst-versions
     width: 85%
-    transform: $sidebar-transform-hide
-    transition: $sidebar-transition
+    @include prefixer(transform, $sidebar-transform-hide, webkit moz ms o spec)
+    @include prefixer(transition, $sidebar-transition, webkit moz ms o spec)
     &.shift
       display: block
-      transform: $sidebar-transform-show
-      transition: $sidebar-transition
+      transform:  @include prefixer(transform, $sidebar-transform-show, webkit moz ms o spec)
