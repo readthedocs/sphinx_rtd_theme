@@ -95,6 +95,13 @@
     font-size: 12px
     line-height: 1.4
 
+  .code-block-caption
+    font-style: italic
+    font-size: 85%
+    line-height: 1
+    padding: 1em 0
+    text-align: center
+
   @media print
     .codeblock, div[class^='highlight'], div[class^='highlight'] pre
       white-space: pre-wrap
@@ -165,7 +172,7 @@
     @extend h2
 
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
-  h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption
+  h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption, .code-block-caption
     .headerlink
       visibility: hidden
       font-size: 14px
@@ -263,6 +270,9 @@
     border: none
     td
       border: none
+      p
+        font-size: inherit
+        line-height: inherit
     td > strong
       display: inline-block
     .field-name
