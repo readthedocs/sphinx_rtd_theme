@@ -11,9 +11,11 @@ master
 New Features
 -------------
 
+
 Fixes
 -----
 
+* Fix scrolling to active item in sidebar on load (#214)
 * Style caption link for code and literal blocks
 * Fix inconsistent font size and line height for autodoc "raises" and "returns" (#267)
 
