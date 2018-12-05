@@ -3,6 +3,25 @@
 Changelog
 *********
 
+master
+======
+
+:Date: TBD
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Style caption link for code and literal blocks
+* Fix inconsistent font size and line height for autodoc "raises" and "returns" (#267)
+
+
+Other Changes
+--------------
+
+
 v0.4.2
 ======
 
