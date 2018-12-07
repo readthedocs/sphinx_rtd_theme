@@ -147,12 +147,15 @@ function ThemeNav () {
             if (link.length > 0) {
                 $('.wy-menu-vertical .current').removeClass('current');
                 link.addClass('current');
+
                 link.closest('li.toctree-l1').addClass('current expanded');
                 link.closest('li.toctree-l1').parent().addClass('current expanded');
                 link.closest('li.toctree-l1').addClass('current expanded');
                 link.closest('li.toctree-l2').addClass('current expanded');
                 link.closest('li.toctree-l3').addClass('current expanded');
                 link.closest('li.toctree-l4').addClass('current expanded');
+              
+                link[0].scrollIntoView();
             }
         }
         catch (err) {
