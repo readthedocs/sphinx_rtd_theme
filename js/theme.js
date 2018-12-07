@@ -114,7 +114,7 @@ function ThemeNav () {
                 }
             })
             .on('touchend', ".wy-body-for-nav", function(event) {
-                if (self.sidebarSwipe.startX === null) {
+                if (self.sidebarSwipe.startX) {
                     self.sidebarSwipe.endX = event.changedTouches.item(0).clientX;
                     self.sidebarSwipe.elapsedTime = self.sidebarSwipe.startTime - new Date().getTime()
                     if (self.sidebarSwipe.elapsedTime <= self.sidebarSwipe.allowedTime) {
