@@ -12,7 +12,15 @@ function ThemeNav () {
         winPosition: 0,
         winHeight: null,
         docHeight: null,
-        isRunning: false
+        isRunning: false,
+        sidebarSwipe: {
+            startX: null,
+            endX: null,
+            allowedTime: 300,
+            requiredDistance: 150,
+            elapsedTime: null,
+            startTime: null
+        }
     };
 
     nav.enable = function (withStickyNav) {
@@ -97,17 +105,29 @@ function ThemeNav () {
             .on('click', "[data-toggle='rst-current-version']", function() {
                 $("[data-toggle='rst-versions']").toggleClass("shift-up");
             })
+            .on('touchstart', ".wy-body-for-nav", function(event) {
+                if (event.touches.length === 1) {
+                    self.sidebarSwipe.startX = event.touches.item(0).clientX;
+                    self.sidebarSwipe.startTime = new Date().getTime()
+                } else {
+                    self.sidebarSwipe.startX = null;
+                }
+            })
+            .on('touchend', ".wy-body-for-nav", function(event) {
+                if (self.sidebarSwipe.startX) {
+                    self.sidebarSwipe.endX = event.changedTouches.item(0).clientX;
+                    self.sidebarSwipe.elapsedTime = self.sidebarSwipe.startTime - new Date().getTime()
+                    if (self.sidebarSwipe.elapsedTime <= self.sidebarSwipe.allowedTime) {
+                        if (self.sidebarSwipe.endX > self.sidebarSwipe.startX + self.sidebarSwipe.requiredDistance) {
+                            document.querySelector('.wy-nav-side').classList.add('shift');
+                            document.querySelector('.wy-nav-content-wrap').classList.add('shift');
+                        }
 
-            // Make nav swipeable
-            .on("swipeleft swiperight", ".wy-body-for-nav", function( event ) {
-                if ( event.type === "swipeleft" ) {
-                    $(".wy-nav-side").removeClass("shift");
-                    $(".wy-nav-content-wrap").removeClass("shift");
-                    $(".rst-versions").removeClass("shift");
-                } else if ( event.type === "swiperight" ) {
-                    $(".wy-nav-side").addClass("shift");
-                    $(".wy-nav-content-wrap").addClass("shift");
-                    $(".rst-versions").addClass("shift");
+                        if (self.sidebarSwipe.endX < self.sidebarSwipe.startX - self.sidebarSwipe.requiredDistance) {
+                            document.querySelector('.wy-nav-side').classList.remove('shift');
+                            document.querySelector('.wy-nav-content-wrap').classList.remove('shift');
+                        }
+                    }
                 }
             })
 
