@@ -14,18 +14,17 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 .rst-content
-  // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
+  // Sphinx by default applies HxW style attributes to images. This fixes that oversight.
   img
     max-width: 100%
     height: auto !important
-
-  .highlight > pre, .linenodiv > pre
-    line-height: normal
 
   div.figure
     margin-bottom: $base-line-height
     p.caption
       font-style: italic
+    p:last-child.caption
+      margin-bottom: 0px
 
   div.figure.align-center
     text-align: center
@@ -47,13 +46,68 @@
   // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
   blockquote
     margin-left: $base-line-height
-    :dir(rtl) &
+    &:dir(rtl)
       margin-left: inherit
       margin-right: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
-  .literal-block, pre.literal-block
-    @extend .codeblock
+
+  pre.literal-block
+    white-space: pre
+    margin: 0
+    padding: $base-line-height / 2 $base-line-height / 2
+    font-family: $code-font-family
+    display: block
+    overflow: auto
+  pre.literal-block, div[class^='highlight']
+    border: 1px solid $table-border-color
+    overflow-x: auto
+    // 1px hack otherwise border won't show. lame
+    margin: 1px 0 $base-line-height 0
+    div[class^='highlight']
+      padding: 0px
+      border: none
+      margin: 0
+  // Needs 100% width for line highlighting to work properly
+  div[class^='highlight'] td.code
+    width: 100%
+  .linenodiv pre
+    border-right: solid 1px lighten($table-border-color, 2%)
+    &:dir(rtl)
+      border-left: solid 1px lighten($table-border-color, 2%)
+      border-right: inherit
+    margin: 0
+    padding: $base-line-height / 2 $base-line-height / 2
+    font-family: $code-font-family
+    user-select: none
+    pointer-events: none
+  div[class^='highlight'] pre
+    white-space: pre
+    margin: 0
+    padding: $base-line-height / 2 $base-line-height / 2
+    display: block
+    overflow: auto
+    & .hll
+      // Line emphasis spans full width
+      display: block
+      margin: 0 -1 * $base-line-height / 2
+      padding: 0 $base-line-height / 2
+  pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
+    font-family: $code-font-family
+    font-size: 12px
+    line-height: 1.4
+
+  .code-block-caption
+    font-style: italic
+    font-size: 85%
+    line-height: 1
+    padding: 1em 0
+    text-align: center
+
+  @media print
+    .codeblock, div[class^='highlight'], div[class^='highlight'] pre
+      white-space: pre-wrap
+
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
     @extend .wy-alert
@@ -64,10 +118,11 @@
     @extend .fa
     @extend .fa-exclamation-circle
     &:before
-      margin-right: 4px
-      :dir(rtl) &
+      & :dir(rtl)
+        margin-right: 40px
+      & :dir(rtl)
+        margin-left: 40px
         margin-right: inherit
-        margin-left: 4px
   .note, .seealso
     @extend .wy-alert.wy-alert-info
   .hint, .tip, .important
@@ -92,11 +147,25 @@
     @extend .wy-plain-list-decimal
   .section ol p, .section ul p
     margin-bottom: $base-line-height / 2
-  .line-block
-    margin-left: $base-line-height
-    :dir(rtl) &
-      margin-left: inherit
+    &:last-child
+      margin-bottom: $base-line-height
+  .section ol li, ol.arabic li, .section ul li, .toctree-wrapper ul li,
+    &:dir(rtl)
       margin-right: $base-line-height
+      margin-left: inherit
+  .line-block
+    margin-left: 0px
+    &:dir(rtl)
+      margin-right: 0px
+      margin-left: inherit
+    margin-bottom: $base-line-height
+    line-height: $base-line-height
+  .line-block .line-block
+    margin-left: $base-line-height
+    &:dir(rtl)
+      margin-right: $base-line-height
+      margin-left: inherit
+    margin-bottom: 0px
 
   // Generics handling of headings and toc stuff.
   .topic-title
@@ -107,23 +176,25 @@
   .align-right
     float: right
     margin: 0px 0px $base-line-height $base-line-height
-    :dir(rtl) &
+    &:dir(rtl)
       float: left
-      margin: 0px $base-line-height 0px $base-line-height
+      margin: 0px $base-line-height $base-line-height 0px
   .align-left
     float: left
     margin: 0px $base-line-height $base-line-height 0px
-    :dir(rtl) &
+    &:dir(rtl)
       float: right
       margin: 0px 0px $base-line-height $base-line-height
   .align-center
     margin: auto
-    display: block
+    // Do not override display:table for tables
+    &:not(table)
+      display: block
   .toctree-wrapper p.caption
     @extend h2
 
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
-  h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption
+  h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption, .code-block-caption
     .headerlink
       visibility: hidden
       font-size: 14px
@@ -143,12 +214,13 @@
   // Sidebar content. You'll see at the bottom of this file I change it in mobile.
   .sidebar
     float: right
+    &:dir(rtl)
+      float: left
     width: 40%
     display: block
     margin: 0 0 $base-line-height $base-line-height
-    :dir(rtl) &
-      float: left
-      margin: 0 $base-line-height 0 $base-line-height
+    &:dir(rtl)
+      margin: 0 $base-line-height $base-line-height 0
     padding: $base-line-height
     background: $sidebar-background-color
     border: solid 1px $sidebar-border-color
@@ -208,33 +280,41 @@
   table.docutils
     @extend .wy-table
     @extend .wy-table-bordered-all
+    th
+      border-color: $table-border-color
     &:not(.field-list)
       @extend .wy-table-striped
+    // Remove bottom margin for the last element (and it's last child)
+    td .last, td .last :last-child
+      margin-bottom: 0
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
     @extend .wy-table
     border: none
     td
       border: none
+      p
+        font-size: inherit
+        line-height: inherit
     td > strong
       display: inline-block
     .field-name
       padding-right: 10px
       text-align: left
-      :dir(rtl) &
-        padding-right: inherit
+      &:dir(rtl)
         padding-left: 10px
         text-align: right
       white-space: nowrap
     .field-body
       text-align: left
-      :dir(rtl) &
+      &:dir(rtl)
         text-align: right
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
   tt, code
     @extend code
     color: $black
+    font-family: $code-font-family
     padding: 2px 5px
     big, em
       font-size: 100% !important
@@ -245,6 +325,8 @@
     &.xref, a &
       font-weight: bold
       color: $text-codexref-color
+  pre, kbd, samp
+    font-family: $code-font-family
   // If the literal is inside an a tag, let's color it like a link
   a tt, a code
     color: $link-color
@@ -252,15 +334,17 @@
     margin-bottom: $base-line-height
     dt
       font-weight: bold
+      margin-bottom: $base-line-height / 2
     // Most of the content within these dls are one liners, so I halve the normal margins.
     p, table, ul, ol
       margin-bottom: $base-line-height / 2 !important
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
-      :dir(rtl) &
+      &:dir(rtl)
         margin: 0  $base-line-height $base-line-height / 2 0
-  // This is what Sphinx spits out for it's autodocs. Depending upon what language the person is referencing
+      line-height: $base-line-height
+  // This is what Sphinx spits out for its autodocs. Depending upon what language the person is referencing
   // these things usually have a class of "method" or "class" or something similar, but really who knows.
   // Sphinx doesn't give me a generic class on these, so unfortunately I have to apply it to the root dl.
   // This makes me terribly unhappy and makes this code very nesty. Unfortunately I've seen hand-written docs
@@ -288,9 +372,9 @@
       margin-bottom: $base-line-height / 4
       border: none
       border-left: solid 3px hsl(0,0%,80%)
-      :dir(rtl) &
-        border-left: inherit
+      &:dir(rtl)
         border-right: solid 3px hsl(0,0%,80%)
+        border-left: inherit
       background: hsl(0,0%,94%)
       color: $method-color
       .headerlink
@@ -317,22 +401,22 @@
     .property
       display: inline-block
       padding-right: 8px
-      :dir(rtl) &
-        padding-right: inherit
+      &:dir(rtl)
         padding-left: 8px
+        padding-right: inherit
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
     color: $text-viewcode-color
     font-size: 80%
     padding-left: $base-line-height
-    :dir(rtl) &
-      padding-left: inherit
+    &:dir(rtl)
       padding-right: $base-line-height
+      padding-left: inherit
   .viewcode-back
     display: block
     float: right
-    :dir(rtl) &
+    &:dir(rtl)
       float: left
   p.rubric
     margin-bottom: 12px
@@ -353,9 +437,9 @@
       @extend .fa-download
       &:before
         margin-right: 4px
-        :dir(rtl) &
-          margin-right: inherit
+        &:dir(rtl)
           margin-left: 4px
+          margin-right: inherit
   .guilabel
     border: 1px solid lighten($guilabel-color, 25%)
     background: lighten($guilabel-color, 50%)

@@ -2,13 +2,12 @@
   position: fixed
   bottom: 0
   left: 0
-  :dir(rtl) &
-    right: 0
+  &:dir(rtl)
     left: inherit
+    right: 0
   width: $nav-desktop-width
   color: $section-background-color
   background: darken($menu-background-color, 8%)
-  border-top: solid 10px $menu-background-color
   font-family: $base-font-family
   z-index: $z-index-tray
   a
@@ -21,7 +20,7 @@
     background-color: darken($menu-background-color, 5%)
     display: block
     text-align: right
-    :dir(rtl) &
+    &:dir(rtl)
       text-align: left
     font-size: 90%
     cursor: pointer
@@ -31,11 +30,11 @@
       color: $section-background-color
     .fa-book
       float: left
-      :dir(rtl) &
+      &:dir(rtl)
         float: right
     .icon-book
       float: left
-      :dir(rtl) &
+      &:dir(rtl)
         float: right
     &.rst-out-of-date
       background-color: $red
@@ -43,6 +42,10 @@
     &.rst-active-old-version
       background-color: $yellow
       color: $black
+  &.shift-up
+    height: auto
+    max-height: 100%
+    overflow-y: scroll
   &.shift-up .rst-other-versions
     display: block
   .rst-other-versions
@@ -69,20 +72,28 @@
     bottom: 20px
     right: 20px
     left: auto
+    &:dir(rtl)
+      left: 20px
+      right: auto
     border: none
     max-width: $nav-desktop-width
+    max-height: 90%
     .icon-book
       float: none
     .fa-book
       float: none
     &.shift-up .rst-current-version
       text-align: right
-      :dir(rtl) &
+      &:dir(rtl)
         text-align: left
       .fa-book
         float: left
+        &:dir(rtl)
+          float: right
       .icon-book
         float: left
+        &:dir(rtl)
+          float: right
     .rst-current-version
       width: auto
       height: 30px
