@@ -14,7 +14,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 .rst-content
-  // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
+  // Sphinx by default applies HxW style attributes to images. This fixes that oversight.
   img
     max-width: 100%
     height: auto
@@ -50,6 +50,9 @@
   // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
   blockquote
     margin-left: $base-line-height
+    &:dir(rtl)
+      margin-left: inherit
+      margin-right: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
 
@@ -74,6 +77,9 @@
     width: 100%
   .linenodiv pre
     border-right: solid 1px lighten($table-border-color, 2%)
+    &:dir(rtl)
+      border-left: solid 1px lighten($table-border-color, 2%)
+      border-right: inherit
     margin: 0
     padding: $base-line-height / 2 $base-line-height / 2
     font-family: $code-font-family
@@ -116,7 +122,11 @@
     @extend .fa
     @extend .fa-exclamation-circle
     &:before
-      margin-right: 4px
+      & :dir(rtl)
+        margin-right: 40px
+      & :dir(rtl)
+        margin-left: 40px
+        margin-right: inherit
   .note, .seealso
     @extend .wy-alert.wy-alert-info
   .hint, .tip, .important
@@ -143,12 +153,22 @@
     margin-bottom: $base-line-height / 2
     &:last-child
       margin-bottom: $base-line-height
+  .section ol li, ol.arabic li, .section ul li, .toctree-wrapper ul li,
+    &:dir(rtl)
+      margin-right: $base-line-height
+      margin-left: inherit
   .line-block
     margin-left: 0px
+    &:dir(rtl)
+      margin-right: 0px
+      margin-left: inherit
     margin-bottom: $base-line-height
     line-height: $base-line-height
   .line-block .line-block
     margin-left: $base-line-height
+    &:dir(rtl)
+      margin-right: $base-line-height
+      margin-left: inherit
     margin-bottom: 0px
 
   // Generics handling of headings and toc stuff.
@@ -160,9 +180,15 @@
   .align-right
     float: right
     margin: 0px 0px $base-line-height $base-line-height
+    &:dir(rtl)
+      float: left
+      margin: 0px $base-line-height $base-line-height 0px
   .align-left
     float: left
     margin: 0px $base-line-height $base-line-height 0px
+    &:dir(rtl)
+      float: right
+      margin: 0px 0px $base-line-height $base-line-height
   .align-center
     margin: auto
     // Do not override display:table for tables
@@ -192,9 +218,13 @@
   // Sidebar content. You'll see at the bottom of this file I change it in mobile.
   .sidebar
     float: right
+    &:dir(rtl)
+      float: left
     width: 40%
     display: block
     margin: 0 0 $base-line-height $base-line-height
+    &:dir(rtl)
+      margin: 0 $base-line-height $base-line-height 0
     padding: $base-line-height
     background: $sidebar-background-color
     border: solid 1px $sidebar-border-color
@@ -278,9 +308,14 @@
     .field-name
       padding-right: 10px
       text-align: left
+      &:dir(rtl)
+        padding-left: 10px
+        text-align: right
       white-space: nowrap
     .field-body
       text-align: left
+      &:dir(rtl)
+        text-align: right
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
   tt, code
@@ -313,8 +348,10 @@
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
+      &:dir(rtl)
+        margin: 0  $base-line-height $base-line-height / 2 0
       line-height: $base-line-height
-  // This is what Sphinx spits out for it's autodocs. Depending upon what language the person is referencing
+  // This is what Sphinx spits out for its autodocs. Depending upon what language the person is referencing
   // these things usually have a class of "method" or "class" or something similar, but really who knows.
   // Sphinx doesn't give me a generic class on these, so unfortunately I have to apply it to the root dl.
   // This makes me terribly unhappy and makes this code very nesty. Unfortunately I've seen hand-written docs
@@ -342,6 +379,9 @@
       margin-bottom: $base-line-height / 4
       border: none
       border-left: solid 3px hsl(0,0%,80%)
+      &:dir(rtl)
+        border-right: solid 3px hsl(0,0%,80%)
+        border-left: inherit
       background: hsl(0,0%,94%)
       color: $method-color
       .headerlink
@@ -368,15 +408,23 @@
     .property
       display: inline-block
       padding-right: 8px
+      &:dir(rtl)
+        padding-left: 8px
+        padding-right: inherit
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
     color: $text-viewcode-color
     font-size: 80%
     padding-left: $base-line-height
+    &:dir(rtl)
+      padding-right: $base-line-height
+      padding-left: inherit
   .viewcode-back
     display: block
     float: right
+    &:dir(rtl)
+      float: left
   p.rubric
     margin-bottom: 12px
     font-weight: bold
@@ -396,6 +444,9 @@
       @extend .fa-download
       &:before
         margin-right: 4px
+        &:dir(rtl)
+          margin-left: 4px
+          margin-right: inherit
   .guilabel
     border: 1px solid lighten($guilabel-color, 25%)
     background: lighten($guilabel-color, 50%)

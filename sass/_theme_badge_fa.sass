@@ -27,6 +27,9 @@ li
 ul.fas
   list-style-type: none
   margin-left: 2em
+  &:dir(rtl)
+    margin-left: inherit
+    margin-right: 2em
   text-indent: -0.8em
   li
     .fa
@@ -57,12 +60,20 @@ ul.fas
 
 .fa-caret-left:before
   content: "\f0d9"
+  &:dir(rtl)
+    content: "\f0da"
 
 .icon-caret-left:before
   content: "\f0d9"
+  &:dir(rtl)
+    content: "\f0da"
 
 .fa-caret-right:before
   content: "\f0da"
+  &:dir(rtl)
+    content: "\f0d9"
 
 .icon-caret-right:before
   content: "\f0da"
+  &:dir(rtl)
+    content: "\f0d9"

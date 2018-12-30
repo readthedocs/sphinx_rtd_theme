@@ -22,3 +22,21 @@
   @extend .fa-arrow-circle-left
 .icon-link
   @extend .fa-link
+
+.fa-arrow-circle-right:before
+  content: "\f0a9"
+  &:dir(rtl)
+    content: "\f0a8"
+
+.fa-arrow-circle-left:before
+  content: "\f0a8"
+  &:dir(rtl)
+    content: "\f0a9"
+
+.float-left
+  &:dir(rtl)
+    float: right
+
+.float-right
+  &:dir(rtl)
+    float: left
