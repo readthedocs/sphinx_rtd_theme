@@ -10,6 +10,52 @@ html
   a:hover
     text-decoration: none
 
+.wy-dropdown-menu
+  :dir(rtl) &
+    float: right
+  .wy-dropdown.wy-dropdown-left
+    :dir(rtl) &
+      text-align: left
+
+.wy-form-aligned
+  .wy-control-group>label
+    :dir(rtl) &
+      float: right
+      margin: $base-line-height / 4 0 $base-line-height / 2
+  .wy-control
+    :dir(rtl) &
+      float: right
+
+.wy-control-group
+  .wy-form-full
+    :dir(rtl) &
+      float: right
+      margin-left:2.35765%;
+      margin-left:0;
+      margin-right:inherit
+    &:last-child
+      :dir(rtl) &
+        margin-left: 0
+        margin-right: inherit
+  .wy-form-halves
+    :dir(rtl) &
+      float: right
+    &:last-child, &:nth-of-type(2n)
+      :dir(rtl) &
+        margin-right:inherit
+        margin-left: 0
+    &:nth-of-type(2n+1)
+      :dir(rtl) &
+        clear: right
+    .wy-form-thirds
+      float:right
+      margin-left:2.35765%
+      margin-right:inherit
+      &:last-child, :nth-of-type(3n)
+        :dir(rtl) &
+          margin-left: 0
+          margin-right: inherit
+
 .wy-menu-horiz
   +clearfix
   ul, li
@@ -17,7 +63,7 @@ html
   li:hover
     background: rgba(255,255,255,.1)
   li
-    &.divide-left
+    &.divide-left, &:dir(rtl) .divide-right
       border-left: solid 1px hsl(0, 0%, 25%)
       &:dir(rtl)
         border-left: inherit
@@ -420,6 +466,9 @@ article ul li, article ol li, .wy-plain-list-disc li, .wy-plain-list-decimal li
   .wy-nav-side
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
+      :dir(rtl) &
+        left: inherit
+        right: -$nav-desktop-width
     @else
       right: -$nav-desktop-width
     &:dir(rtl)
