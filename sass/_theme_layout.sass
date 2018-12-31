@@ -65,12 +65,12 @@ html
   li
     &.divide-left, &:dir(rtl) .divide-right
       border-left: solid 1px hsl(0, 0%, 25%)
-      &:dir(rtl)
+      \:dir(rtl) &
         border-left: inherit
         border-right: solid 1px hsl(0, 0%, 25%)
     &.divide-right
       border-right: solid 1px hsl(0, 0%, 25%)
-      &:dir(rtl)
+      \:dir(rtl) &
         border-right: inherit
         border-left: solid 1px hsl(0, 0%, 25%)
   a
@@ -89,7 +89,7 @@ html
     line-height: $base-font-size * 2
     padding: 0 $gutter
     margin: $base-line-height / 2 0 0 0
-    &:dir(rtl)
+    \:dir(rtl) &
         margin: 0 0 $base-line-height / 2 0
     display: block
     font-weight: bold
@@ -109,7 +109,7 @@ html
       a
         color: $menu-link-medium
         border-right: solid 1px darken($menu-vertical-background-color, 20%)
-        &:dir(rtl)
+        \:dir(rtl) &
             border-right: inherit
             border-left: solid 1px darken($menu-vertical-background-color, 20%)
         padding: $gutter / 4 $gutter * 1.5
@@ -126,7 +126,7 @@ html
       display: block
       float: left
       margin-left: -1.2em
-      &:dir(rtl)
+      \:dir(rtl) &
         float: right
         margin-right: -1.2em
         margin-left: inherit
@@ -145,7 +145,7 @@ html
     background: $menu-vertical-background-color
     border: none
     padding-left: $gutter -4px
-    &:dir(rtl)
+    \:dir(rtl) &
       padding-left: inherit
       padding-right: $gutter -4px
     +font-smooth
@@ -303,21 +303,21 @@ html
   &.move-center
     left: 0
     right: auto
-    &:dir(rtl)
+    \:dir(rtl) &
       right: 0
       left: auto
     opacity: 1
   &.move-left
     right: auto
     left: -100%
-    &:dir(rtl)
+    \:dir(rtl) &
       right: -100%
       left: auto
     opacity: 0
   &.move-right
     right: -100%
     left: auto
-    &:dir(rtl)
+    \:dir(rtl) &
       left: -100%
       right: auto
     opacity: 0
@@ -336,7 +336,7 @@ html
   top: 0
   bottom: 0
   left: 0
-  &:dir(rtl)
+  \:dir(rtl) &
     left: inherit
     right: 0
   padding-bottom: 2em
@@ -371,7 +371,7 @@ html
     +font-smooth
   img
     margin-right: $base-line-height / 2
-    &:dir(rtl)
+    \:dir(rtl) &
       margin-left: $base-line-height / 2
       margin-right: inherit
     height: 45px
@@ -382,14 +382,14 @@ html
   i
     font-size: 30px
     float: left
-    &:dir(rtl)
+    \:dir(rtl) &
       float: right
     cursor: pointer
     padding-top: inherit
 
 .wy-nav-content-wrap
   margin-left: $nav-desktop-width
-  &:dir(rtl)
+  \:dir(rtl) &
     margin-left: inherit
     margin-right: $nav-desktop-width
   background: $section-background-color
@@ -449,12 +449,12 @@ footer
 
 .genindextable li > ul
     margin-left: $base-line-height
-    &:dir(rtl)
+    \:dir(rtl) &
       margin-left: inherit
       margin-right: $base-line-height
 
 article ul li, article ol li, .wy-plain-list-disc li, .wy-plain-list-decimal li
-  &:dir(rtl)
+  \:dir(rtl) &
     margin-left: inherit
     margin-right: $base-line-height
 
@@ -471,7 +471,7 @@ article ul li, article ol li, .wy-plain-list-disc li, .wy-plain-list-decimal li
         right: -$nav-desktop-width
     @else
       right: -$nav-desktop-width
-    &:dir(rtl)
+    \:dir(rtl) &
       @if $nav-desktop-position == right
         left: -$nav-desktop-width
       @else
@@ -479,7 +479,7 @@ article ul li, article ol li, .wy-plain-list-disc li, .wy-plain-list-decimal li
     &.shift
       width: 85%
       left: 0
-      &:dir(rtl)
+      \:dir(rtl) &
         left: inherit
         right: 0
   .wy-side-scroll
@@ -490,7 +490,7 @@ article ul li, article ol li, .wy-plain-list-disc li, .wy-plain-list-decimal li
     width: auto
   .wy-nav-content-wrap
     margin-left: 0
-    &:dir(rtl)
+    \:dir(rtl) &
       margin-left: inherit
       margin-right: 0
     .wy-nav-content
@@ -499,7 +499,7 @@ article ul li, article ol li, .wy-plain-list-disc li, .wy-plain-list-decimal li
       position: fixed
       min-width: 100%
       left: 85%
-      &:dir(rtl)
+      \:dir(rtl) &
         left: inherit
         right: 85%
       top: 0
@@ -518,6 +518,6 @@ article ul li, article ol li, .wy-plain-list-disc li, .wy-plain-list-decimal li
     display: none
   .wy-nav-content-wrap
     margin-left: 0
-    &:dir(rtl)
+    \:dir(rtl) &
       margin-right: 0
       margin-left: inherit
