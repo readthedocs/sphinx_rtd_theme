@@ -25,7 +25,7 @@ file of this repository, and can be defined in your project's ``conf.py`` via
         'prev_next_buttons_location': 'bottom',
         'style_external_links': False,
         'vcs_pageview_mode': '',
-        'style_nav_header_background': '',
+        'style_nav_header_background': 'white',
         # Toc options
         'collapse_navigation': True,
         'sticky_navigation': True,
