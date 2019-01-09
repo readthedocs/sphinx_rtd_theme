@@ -21,25 +21,30 @@
         {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}{% endtrans %}
       {%- endif %}
     {%- endif %}
-
+    
     {%- if build_id and build_url %}
       {% trans build_url=build_url, build_id=build_id %}
+        <br />
         <span class="build">
           Build
           <a href="{{ build_url }}">{{ build_id }}</a>.
         </span>
       {% endtrans %}
+    
     {%- elif commit %}
       {% trans commit=commit %}
+        <br />
         <span class="commit">
           Revision <code>{{ commit }}</code>.
         </span>
       {% endtrans %}
+    
     {%- elif last_updated %}
+       <br />
       {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
     {%- endif %}
-
     </p>
+  
   </div>
 
   {%- if show_sphinx %}
