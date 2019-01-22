@@ -30,13 +30,13 @@ For example:
 Table of contents options
 -------------------------
 
-The following options affect the `table of contents configuration options`_
-Sphinx uses to generate the documentation navigation.
+The following options change how :rst:dir:`sphinx:toctree` directives generate
+documentation navigation.
 
 .. confval:: collapse_navigation
 
     :type: boolean
-    :default: ``False``
+    :default: ``True``
 
     With this enabled, navigation entries are not expandable -- the ``[+]``
     icons next to each entry are removed.
@@ -46,7 +46,7 @@ Sphinx uses to generate the documentation navigation.
     :type: boolean
     :default: ``True``
 
-    Scroll the with the main page content as you scroll the page.
+    Scroll the navigation with the main page content as you scroll the page.
 
 .. confval:: navigation_depth
 
@@ -54,15 +54,16 @@ Sphinx uses to generate the documentation navigation.
     :default: ``4``
 
     The maximum depth of the table of contents tree. Set
-    this to ``-1`` to allow unlimited depth
+    this to ``-1`` to allow unlimited depth.
 
 .. confval:: includehidden
 
     :type: boolean
     :default: ``True``
 
-    Specifies if the navigation includes TOC trees marked with
-    the ``:hidden:`` option
+    Specifies if the navigation includes hidden table(s) of contents -- that is,
+    any :rst:dir:`sphinx:toctree` directive that is marked with the ``:hidden:``
+    option.
 
 .. confval:: titles_only
 
@@ -97,6 +98,9 @@ Miscellaneous options
 
     Change the Google Analytics ID that is included on pages.
 
+    .. warning::
+        This configuration option is not yet used.
+
 .. confval:: canonical_url
 
     :type: URL
@@ -110,6 +114,7 @@ Miscellaneous options
 .. confval:: display_version
 
     :type: boolean
+    :default: ``True``
 
     If ``True``, the version number is shown at the top of the sidebar.
 
@@ -124,16 +129,17 @@ Miscellaneous options
 .. confval:: prev_next_buttons_location
 
     :type: string
+    :default: ``bottom``
 
     Location to display :guilabel:`Next` and :guilabel:`Previous` buttons. This
-    can be either ``bottom``, ``top``, ``both`` , or ``None``
+    can be either ``bottom``, ``top``, ``both`` , or ``None``.
 
 .. confval:: style_external_links
 
     :type: boolean
     :default: ``False``
 
-    Add an icon next to external links
+    Add an icon next to external links.
 
 .. confval:: vcs_pageview_mode
 
@@ -156,15 +162,15 @@ The following options can be used as :ref:`file-wide metadata
 
 .. confval:: github_url
 
-    Force the :guilabel:`Edit on GitHub` button to use the configured URL
+    Force the :guilabel:`Edit on GitHub` button to use the configured URL.
 
 .. confval:: bitbucket_url
 
-    Force the :guilabel:`Edit on Bitbucket` button to use the configured URL
+    Force the :guilabel:`Edit on Bitbucket` button to use the configured URL.
 
 .. confval:: gitlab_url
 
-    Force the :guilabel:`Edit on GitLab` button to use the configured URL
+    Force the :guilabel:`Edit on GitLab` button to use the configured URL.
 
 
 Other configuration
