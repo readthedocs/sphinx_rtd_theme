@@ -1,4 +1,3 @@
-
 *********
 Changelog
 *********
@@ -6,11 +5,22 @@ Changelog
 master
 ======
 
-:Date: TBD
-
 New Features
 -------------
 
+Fixes
+-----
+
+Other Changes
+--------------
+
+0.4.3
+======
+
+:Date: Feb 12, 2019
+
+New Features
+-------------
 
 Fixes
 -----
@@ -23,7 +33,6 @@ Fixes
 
 Other Changes
 --------------
-
 
 v0.4.2
 ======
