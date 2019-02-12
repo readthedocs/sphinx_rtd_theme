@@ -1,4 +1,3 @@
-
 *********
 Changelog
 *********
@@ -6,11 +5,22 @@ Changelog
 master
 ======
 
-:Date: TBD
-
 New Features
 -------------
 
+Fixes
+-----
+
+Other Changes
+--------------
+
+0.4.3
+======
+
+:Date: Feb 12, 2019
+
+New Features
+-------------
 
 Fixes
 -----
@@ -18,11 +28,11 @@ Fixes
 * Fix scrolling to active item in sidebar on load (#214)
 * Style caption link for code and literal blocks
 * Fix inconsistent font size and line height for autodoc "raises" and "returns" (#267)
+* Fix last_updated notice appearing in same line as copyright notice (#704)
 
 
 Other Changes
 --------------
-
 
 v0.4.2
 ======
