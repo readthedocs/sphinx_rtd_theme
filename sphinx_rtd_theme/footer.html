@@ -36,9 +36,9 @@
         </span>
       {% endtrans %}
     {%- elif last_updated %}
-      <div class="lastupdated">
+      <span class="lastupdated">
         {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
-      </div>
+      </span>
     {%- endif %}
 
     </p>
