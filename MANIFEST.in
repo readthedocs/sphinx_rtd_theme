@@ -9,3 +9,5 @@ recursive-include sphinx_rtd_theme *.svg
 recursive-include sphinx_rtd_theme *.ttf
 recursive-include sphinx_rtd_theme *.woff
 recursive-include sphinx_rtd_theme *.woff2
+recursive-include tests *.py
+recursive-include tests *.rst
