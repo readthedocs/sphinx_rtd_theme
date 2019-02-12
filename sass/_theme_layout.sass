@@ -31,15 +31,16 @@ html
   width: $nav-desktop-width
 
   header, p.caption
+    color: $nav-caption
     height: $base-font-size * 2
     display: inline-block
     line-height: $base-font-size * 2
     padding: 0 $gutter
-    margin-bottom: 0
+    margin: $base-line-height / 2 0 0 0
     display: block
     font-weight: bold
     text-transform: uppercase
-    font-size: 80%
+    font-size: 85%
     white-space: nowrap
 
   ul
@@ -362,6 +363,8 @@ footer
     color: $text-medium
     font-size: 90%
 
+.genindextable li > ul
+    margin-left: $base-line-height
 
 +media($tablet)
   .wy-body-for-nav
