@@ -12,8 +12,8 @@ of a front-end developer (vs. that of a python developer). That means installing
 
 .. seealso::
 
-   If you are unsure of approptiate actions to take while interacting with our
-   communinty please read our :doc:`Code of Conduct <rtd:/code-of-conduct>`.
+   If you are unsure of appropriate actions to take while interacting with our
+   community please read our :doc:`Code of Conduct <rtd:/code-of-conduct>`.
 
 
 Set up your environment
@@ -73,13 +73,17 @@ Releasing the Theme
 When you release a new version,
 you should do the following:
 
-#. Bump the version in ``sphinx_rtd_theme/__init__.py`` --
+#. Bump the version in ``sphinx_rtd_theme/__init__.py``, ``bower.json`` and ``package.json`` --
    we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
+#. Update the changelog (``docs/changelog.rst``) with the version information.
 #. Run a ``grunt build`` to rebuild all the theme assets.
 #. Commit that change.
 #. Tag the release in git: ``git tag $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
-#. Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``.
-#. In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version
-   (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``).
-#. In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files.
+#. Upload the package to PyPI:
+
+    .. code:: bash
+
+        $ rm -rf dist/
+        $ python setup.py sdist bdist_wheel
+        $ twine upload --sign --identity security@readthedocs.org dist/*

@@ -6,9 +6,13 @@
 .coverage
 *.DS_Store
 *.sass-cache
+*.map
 .ropeproject/
 .ruby-version
 dist/
 bower_components/
-node_modules/
+node_modules
 npm-debug.log
+package-lock.json
+sphinx_rtd_theme/static/fonts/Lato/
+sphinx_rtd_theme/static/fonts/RobotoSlab/

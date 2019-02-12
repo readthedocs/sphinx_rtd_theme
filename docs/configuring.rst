@@ -19,14 +19,15 @@ file of this repository, and can be defined in your project's ``conf.py`` via
 
     html_theme_options = {
         'canonical_url': '',
-        'analytics_id': '',
+        'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
         'logo_only': False,
         'display_version': True,
-        'prev_next_buttons_location': bottom,
+        'prev_next_buttons_location': 'bottom',
         'style_external_links': False,
         'vcs_pageview_mode': '',
+        'style_nav_header_background': 'white',
         # Toc options
-        'collapse_navigation': False,
+        'collapse_navigation': True,
         'sticky_navigation': True,
         'navigation_depth': 4,
         'includehidden': True,
@@ -49,6 +50,9 @@ Base options
 * ``vcs_pageview_mode`` String. Changes how to view files when using `display_github`, `display_gitlab`, etc.
   When using Github or Gitlab this can be: `blob` (default), `edit`, or `raw`,
   on Bitbucket, this can be either: `view` (default) or `edit`.
+* ``style_nav_header_background`` String. Changes the background of the search area in the navigation bar. The value
+  can be anything valid in a CSS `background` property. The default `#2980B9` will be used if the property is not
+  defined.
 
 TOC Options
 ~~~~~~~~~~~
@@ -56,11 +60,18 @@ TOC Options
 These effect how we display the Table of Contents in the side bar. You can read more about them here: http://www.sphinx-doc.org/en/stable/templating.html#toctree
 
 * ``collapse_navigation`` Bool. With this enabled, you will lose the ``[+]`` drop downs next to each section in the sidebar.
-  This is useful for *very large* documents.
 * ``sticky_navigation`` Bool. This causes the sidebar to scroll with the main page content as you scroll the page.
-* ``navigation_depth`` Int. Indicate the max depth of the tree; by default, all levels are included.
+* ``navigation_depth`` Int. Indicate the max depth of the tree; by default, 4 levels are included;
+  set it to -1 to allow unlimited depth.
 * ``includehidden`` Bool. Specifies if the sidebar includes toctrees marked with the ``:hidden:`` option
 * ``titles_only`` Bool. If True, removes headers within a page from the sidebar.
+
+.. note::
+   
+   Setting ``collapse_navigation`` to False and using a high ``navigation_depth``
+   can cause projects with many files and a deep file structure to generate HTML files
+   that are significantly larger in file size and much longer compilation times.
+
 
 HTML Context Options
 --------------------
