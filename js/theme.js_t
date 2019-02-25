@@ -243,3 +243,15 @@ if (typeof(window) != 'undefined') {
             clearTimeout(id);
         };
 }());
+
+{# Do not conflict with RTD insertion of analytics script #}
+{%- if not READTHEDOCS %}
+    {%- if theme_analytics_id %}
+    window.addEventListener("load", function(){
+        ga('create', '{{ theme_analytics_id }}', 'auto');
+        ga('send', 'pageview');
+    })
+    {%- endif %}
+{%- endif %}
+
+    
