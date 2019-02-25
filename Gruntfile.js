@@ -85,20 +85,20 @@ module.exports = function(grunt) {
         options: {
           external: ['jquery'],
           alias: {
-            'sphinx-rtd-theme': './js/theme.js'
+            'sphinx-rtd-theme': './js/theme.js_t'
           }
         },
         src: ['js/*.js'],
-        dest: 'sphinx_rtd_theme/static/js/theme.js'
+        dest: 'sphinx_rtd_theme/static/js/theme.js_t'
       },
       build: {
         options: {
           external: ['jquery'],
           alias: {
-            'sphinx-rtd-theme': './js/theme.js'
+            'sphinx-rtd-theme': './js/theme.js_t'
           }
         },
-        src: ['js/*.js'],
+        src: ['js/*.js_t'],
         dest: 'sphinx_rtd_theme/static/js/theme.js'
       }
     },
@@ -163,7 +163,7 @@ module.exports = function(grunt) {
       },
       /* JavaScript */
       browserify: {
-        files: ['js/*.js'],
+        files: ['js/*.js_t'],
         tasks: ['browserify:dev']
       },
       /* live-reload the docs if sphinx re-builds */
