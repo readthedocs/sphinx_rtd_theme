@@ -88,7 +88,7 @@ module.exports = function(grunt) {
             'sphinx-rtd-theme': './js/theme.js_t'
           }
         },
-        src: ['js/*.js'],
+        src: ['js/*.js_t'],
         dest: 'sphinx_rtd_theme/static/js/theme.js_t'
       },
       build: {
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
           }
         },
         src: ['js/*.js_t'],
-        dest: 'sphinx_rtd_theme/static/js/theme.js'
+        dest: 'sphinx_rtd_theme/static/js/theme.js_t'
       }
     },
     uglify: {
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['sphinx_rtd_theme/static/js/*.js', '!sphinx_rtd_theme/static/js/*.min.js'],
+          src: ['sphinx_rtd_theme/static/js/*.js_t', '!sphinx_rtd_theme/static/js/*.min.js_t'],
           dest: 'sphinx_rtd_theme/static/js/',
           rename: function (dst, src) {
             // Use unminified file name for minified file
@@ -131,7 +131,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: [ 'sphinx_rtd_theme/static/js/theme.js', 'sphinx_rtd_theme/static/css/theme.css' ]
+          src: [ 'sphinx_rtd_theme/static/js/theme.js_t', 'sphinx_rtd_theme/static/css/theme.css' ]
         }
       }
     },
@@ -163,7 +163,7 @@ module.exports = function(grunt) {
       },
       /* JavaScript */
       browserify: {
-        files: ['js/*.js_t'],
+        files: ['js/*.js_t','js/*.js'],
         tasks: ['browserify:dev']
       },
       /* live-reload the docs if sphinx re-builds */
