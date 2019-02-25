@@ -109,6 +109,9 @@
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
     @extend .wy-alert
+    // These block elements are unsuitable for having floating objects next
+    // to them
+    clear: both;
     .last
       margin-bottom: 0
   .admonition-title
