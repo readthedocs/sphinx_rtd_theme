@@ -66,7 +66,11 @@ function ThemeNav () {
     // TODO remove this with a split in theme and Read the Docs JS logic as
     // well, it's only here to support 0.3.0 installs of our theme.
     nav.enableSticky = function() {
+    {%- if theme_sticky_navigation|tobool %}
         this.enable(true);
+    {%- else %}
+        this.enable(false);
+    {%- endif %}
     };
 
     nav.init = function ($) {
