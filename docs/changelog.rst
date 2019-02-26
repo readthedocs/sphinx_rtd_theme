@@ -1,4 +1,3 @@
-
 *********
 Changelog
 *********
@@ -6,6 +5,21 @@ Changelog
 master
 ======
 
+New Features
+-------------
+
+Fixes
+-----
+
+Other Changes
+--------------
+
+* Add the ``extranav`` block after the ``menu`` block in the template
+
+0.4.3
+======
+
+:Date: Feb 12, 2019
 
 New Features
 -------------
@@ -13,13 +27,54 @@ New Features
 Fixes
 -----
 
+* Fix scrolling to active item in sidebar on load (#214)
+* Style caption link for code and literal blocks
+* Fix inconsistent font size and line height for autodoc "raises" and "returns" (#267)
+* Fix last_updated notice appearing in same line as copyright notice (#704)
+
 
 Other Changes
 --------------
 
 * Add Sphinx as a dependency
-* Add the ``extranav`` block after the ``menu`` block in the template
 
+v0.4.2
+======
+
+:Date: Oct 5, 2018
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Set base font size on <html> (#668)
+* Fix HTML search not working with Sphinx-1.8 (#672)
+
+Other Changes
+--------------
+
+* Upload signed packages to PyPI with twine (#651)
+* Do not enforce period at the end of copyright statement (666)
+
+v0.4.1
+======
+
+:Date: July 27, 2018
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Line height adjustments for Liberation Mono (#656)
+
+Other Changes
+--------------
+
+* Add Sphinx as a dependency
 
 v0.4.0
 ======
