@@ -14,6 +14,8 @@ Fixes
 Other Changes
 --------------
 
+* Add the ``navigation`` template block around the navigation area.
+
 0.4.3
 ======
 
