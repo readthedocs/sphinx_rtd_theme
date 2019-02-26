@@ -54,7 +54,11 @@
       {%- endfor %}
     {% endif %}
     <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
-    <script src="https://ssl.google-analytics.com/analytics.js" async id="ga"></script>
+    {%- if not READTHEDOCS %}
+    {%- if theme_analytics_id %}
+       <script src="https://ssl.google-analytics.com/analytics.js" async id="ga"></script>
+    {%- endif %}
+    {%- endif %}
 
     {# OPENSEARCH #}
     {%- if use_opensearch %}
