@@ -102,7 +102,7 @@
 </head>
 
 <body class="wy-body-for-nav">
-
+<a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>
   {% block extrabody %} {% endblock %}
   <div class="wy-grid-for-nav">
     {# SIDE NAV, TOGGLES ON MOBILE #}
@@ -184,7 +184,7 @@
         <div class="rst-content">
         {% endif %}
           {% include "breadcrumbs.html" %}
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+          <main id="main" role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
           {%- block document %}
            <div itemprop="articleBody">
             {% block body %}{% endblock %}
@@ -197,7 +197,7 @@
           </div>
           {%- endblock %}
           {% include "footer.html" %}
-        </div>
+        </main>
       {%- endblock %}
       </div>
 
