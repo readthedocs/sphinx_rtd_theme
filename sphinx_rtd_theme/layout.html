@@ -29,6 +29,7 @@
   {% endif %}
 
   {# JAVASCRIPTS #}
+  {%- block scripts %}
   <script type="text/javascript" src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
@@ -54,6 +55,7 @@
       {%- endfor %}
     {% endif %}
     <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+    {%- endblock %}
 
     {# OPENSEARCH #}
     {%- if use_opensearch %}
