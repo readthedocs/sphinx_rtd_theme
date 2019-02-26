@@ -14,7 +14,7 @@ Fixes
 Other Changes
 --------------
 
-* Add the ``extranav`` block after the ``menu`` block in the template
+* Add the ``navigation`` template block around the navigation area.
 
 0.4.3
 ======
@@ -35,8 +35,6 @@ Fixes
 
 Other Changes
 --------------
-
-* Add Sphinx as a dependency
 
 v0.4.2
 ======
