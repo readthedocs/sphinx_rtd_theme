@@ -55,7 +55,6 @@
       {%- endfor %}
     {% endif %}
     <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
-    {%- endblock %}
 
     {# OPENSEARCH #}
     {%- if use_opensearch %}
@@ -64,6 +63,7 @@
           href="{{ pathto('_static/opensearch.xml', 1) }}"/>
     {%- endif %}
   {%- endif %}
+  {%- endblock %}
 
   {# CSS #}
   <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
