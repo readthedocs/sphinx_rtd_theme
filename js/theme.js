@@ -154,7 +154,7 @@ function ThemeNav () {
                 link.closest('li.toctree-l2').addClass('current expanded');
                 link.closest('li.toctree-l3').addClass('current expanded');
                 link.closest('li.toctree-l4').addClass('current expanded');
-              
+
                 link[0].scrollIntoView();
             }
         }
@@ -192,9 +192,6 @@ function ThemeNav () {
 
     nav.toggleExpanded = function (elem, forceExpanded) {
         var parent_li = elem.closest('li');
-        // parent_li.siblings('li.current').removeClass('current');
-        // parent_li.siblings().find('li.current').removeClass('current');
-        // parent_li.find('> ul li.current').removeClass('current');
         if (forceExpanded) {
             parent_li.addClass('expanded');
         } else {
