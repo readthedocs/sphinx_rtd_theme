@@ -8,7 +8,6 @@ matrix:
   include:
     - python: 2.7
       env: TOXENV=docs
-sudo: false
 install:
   - pip install tox-travis
 script:

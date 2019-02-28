@@ -18,6 +18,14 @@ function ThemeNav () {
     nav.enable = function (withStickyNav) {
         var self = this;
 
+        // TODO this can likely be removed once the theme javascript is broken
+        // out from the RTD assets. This just ensures old projects that are
+        // calling `enable()` get the sticky menu on by default. All other cals
+        // to `enable` should include an argument for enabling the sticky menu.
+        if (typeof(withStickyNav) == 'undefined') {
+            withStickyNav = true;
+        }
+
         if (self.isRunning) {
             // Only allow enabling nav logic once
             return;
@@ -55,6 +63,8 @@ function ThemeNav () {
 
     };
 
+    // TODO remove this with a split in theme and Read the Docs JS logic as
+    // well, it's only here to support 0.3.0 installs of our theme.
     nav.enableSticky = function() {
         this.enable(true);
     };
@@ -117,19 +127,19 @@ function ThemeNav () {
         var anchor = encodeURI(window.location.hash) || '#';
 
         try {
-            var link = $('.wy-menu-vertical')
-                .find('[href="' + anchor + '"]');
-            // If we didn't find a link, it may be because we clicked on
-            // something that is not in the sidebar (eg: when using
-            // sphinxcontrib.httpdomain it generates headerlinks but those
-            // aren't picked up and placed in the toctree). So let's find
-            // the closest header in the document and try with that one.
+            var vmenu = $('.wy-menu-vertical');
+            var link = vmenu.find('[href="' + anchor + '"]');
             if (link.length === 0) {
-              var doc_link = $('.document a[href="' + anchor + '"]');
-              var closest_section = doc_link.closest('div.section');
-              // Try again with the closest section entry.
-              link = $('.wy-menu-vertical')
-                .find('[href="#' + closest_section.attr("id") + '"]');
+                // this link was not found in the sidebar.
+                // Find associated id element, then its closest section
+                // in the document and try with that one.
+                var id_elt = $('.document [id="' + anchor.substring(1) + '"]');
+                var closest_section = id_elt.closest('div.section');
+                link = vmenu.find('[href="#' + closest_section.attr("id") + '"]');
+                if (link.length === 0) {
+                    // still not found in the sidebar. fall back to main section
+                    link = vmenu.find('[href="#"]');
+                }
             }
             // If we found a matching link then reset current and re-apply
             // otherwise retain the existing match
@@ -142,6 +152,7 @@ function ThemeNav () {
                 link.closest('li.toctree-l2').addClass('current');
                 link.closest('li.toctree-l3').addClass('current');
                 link.closest('li.toctree-l4').addClass('current');
+                link[0].scrollIntoView();
             }
         }
         catch (err) {
@@ -190,7 +201,13 @@ function ThemeNav () {
 module.exports.ThemeNav = ThemeNav();
 
 if (typeof(window) != 'undefined') {
-    window.SphinxRtdTheme = { Navigation: module.exports.ThemeNav };
+    window.SphinxRtdTheme = {
+        Navigation: module.exports.ThemeNav,
+        // TODO remove this once static assets are split up between the theme
+        // and Read the Docs. For now, this patches 0.3.0 to be backwards
+        // compatible with a pre-0.3.0 layout.html
+        StickyNav: module.exports.ThemeNav,
+    };
 }
 
 
