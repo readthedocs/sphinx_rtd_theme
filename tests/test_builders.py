@@ -30,14 +30,17 @@ def test_basic():
             assert search in content
         elif isinstance(app.builder, SingleFileHTMLBuilder):
             search = (
-                '<div class="local-toc"><ul>\n'
+                '<div class="toctree-wrapper compound">\n'
+                '<ul>\n'
                 '<li class="toctree-l1">'
-                '<a class="reference internal" href="index.html#document-foo">foo</a>'
+                '<a class="reference internal" href="foo/">foo</a>'
                 '<ul>\n'
                 '<li class="toctree-l2">'
-                '<a class="reference internal" href="index.html#document-bar">bar</a>'
+                '<a class="reference internal" href="bar/">bar</a></li>\n'
+                '</ul>\n'
                 '</li>\n'
-                '</ul>'
+                '</ul>\n'
+                '</div>'
             )
             assert search in content
         else:
