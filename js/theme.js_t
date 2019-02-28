@@ -66,7 +66,11 @@ function ThemeNav () {
     // TODO remove this with a split in theme and Read the Docs JS logic as
     // well, it's only here to support 0.3.0 installs of our theme.
     nav.enableSticky = function() {
+    {%- if theme_sticky_navigation|tobool %}
         this.enable(true);
+    {%- else %}
+        this.enable(false);
+    {%- endif %}
     };
 
     nav.init = function ($) {
@@ -239,3 +243,15 @@ if (typeof(window) != 'undefined') {
             clearTimeout(id);
         };
 }());
+
+{# Do not conflict with RTD insertion of analytics script #}
+{%- if not READTHEDOCS %}
+    {%- if theme_analytics_id %}
+    window.addEventListener("load", function(){
+        ga('create', '{{ theme_analytics_id }}', 'auto');
+        ga('send', 'pageview');
+    })
+    {%- endif %}
+{%- endif %}
+
+    
