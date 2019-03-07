@@ -1,4 +1,3 @@
-
 *********
 Changelog
 *********
@@ -13,6 +12,33 @@ New Features
 * Added i18n support using Babel
 * Added Translation Guide documentation
 
+Fixes
+-----
+
+Other Changes
+--------------
+
+* Add the ``navigation`` template block around the navigation area.
+
+0.4.3
+======
+
+:Date: Feb 12, 2019
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Fix scrolling to active item in sidebar on load (#214)
+* Style caption link for code and literal blocks
+* Fix inconsistent font size and line height for autodoc "raises" and "returns" (#267)
+* Fix last_updated notice appearing in same line as copyright notice (#704)
+
+
+Other Changes
+--------------
 
 v0.4.2
 ======

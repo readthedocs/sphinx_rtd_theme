@@ -11,4 +11,6 @@ recursive-include sphinx_rtd_theme *.ttf
 recursive-include sphinx_rtd_theme *.woff
 recursive-include sphinx_rtd_theme *.woff2
 recursive-include sphinx_rtd_theme/locale *.pot *.po *.mo
+recursive-include tests *.py
+recursive-include tests *.rst
 prune build
