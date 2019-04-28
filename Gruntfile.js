@@ -23,6 +23,16 @@ module.exports = function(grunt) {
       }
     },
     copy: {
+      html5shiv: {
+        files: [
+          {
+            expand: true,
+            flatten: true,
+            src: 'bower_components/html5shiv/dist/html5shiv.min.js',
+            dest: 'sphinx_rtd_theme/static/js/',
+          }
+        ]
+      },
       fonts: {
         files: [
           {
@@ -147,7 +157,7 @@ module.exports = function(grunt) {
       build: ["docs/build"],
       fonts: ["sphinx_rtd_theme/static/fonts"],
       css: ["sphinx_rtd_theme/static/css"],
-      js: ["sphinx_rtd_theme/static/js/*", "!sphinx_rtd_theme/static/js/modernizr.min.js"]
+      js: ["sphinx_rtd_theme/static/js/*"]
     },
 
     watch: {
@@ -184,6 +194,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('default', ['exec:bower_update','clean','copy:fonts','sass:dev','browserify:dev','usebanner','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['exec:bower_update','clean','copy:fonts','sass:build','browserify:build','uglify','usebanner','exec:build_sphinx']);
+  grunt.registerTask('default', ['exec:bower_update','clean','copy','sass:dev','browserify:dev','usebanner','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean','copy','sass:build','browserify:build','uglify','usebanner','exec:build_sphinx']);
 }

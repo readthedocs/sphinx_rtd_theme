@@ -29,7 +29,8 @@
     "wyrm": "~1.0.x"
   },
   "dependencies": {
-    "font-awesome": "~4.7"
+    "font-awesome": "~4.7",
+    "html5shiv": "^3.7.3"
   },
   "resolutions": {
     "font-awesome": "~4.7"
