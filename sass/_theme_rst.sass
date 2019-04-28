@@ -323,54 +323,56 @@
   // This makes me terribly unhappy and makes this code very nesty. Unfortunately I've seen hand-written docs
   // that output similar, but not quite the same nesting so this is really the best we can do.
   dl:not(.docutils)
-    margin-bottom: $base-line-height
-    // This would be the equivilant of a .. class::
-    dt
-      display: table
-      margin: $base-line-height / 4 0
-      font-size: 90%
-      line-height: normal
-      background: lighten($class-color, 50%)
-      color: $class-color
-      border-top: solid 3px lighten($class-color, 20%)
-      padding: $base-line-height / 4
-      position: relative
-      &:before
-        color: lighten($class-color, 20%)
-      .headerlink
-        color: $text-color
-        font-size: 100% !important
-    // And this would be the .. method::
-    dl dt
-      margin-bottom: $base-line-height / 4
-      border: none
-      border-left: solid 3px hsl(0,0%,80%)
-      background: hsl(0,0%,94%)
-      color: $method-color
-      .headerlink
-        color: $headerlink-color
-        font-size: 100% !important
-    dt:first-child
-      margin-top: 0
-    // Since dts get the callout style, we treat this less as callouts.
-    tt, code
-      font-weight: bold
-      &.descname, &.descclassname
-        background-color: transparent
+    // In Sphinx 2.0+ most DLs no longer contain .docutils, needs tighter scoping using next line
+    &.class, &.data
+      margin-bottom: $base-line-height
+      // This would be the equivilant of a .. class::
+      dt
+        display: table
+        margin: $base-line-height / 4 0
+        font-size: 90%
+        line-height: normal
+        background: lighten($class-color, 50%)
+        color: $class-color
+        border-top: solid 3px lighten($class-color, 20%)
+        padding: $base-line-height / 4
+        position: relative
+        &:before
+          color: lighten($class-color, 20%)
+        .headerlink
+          color: $text-color
+          font-size: 100% !important
+      // And this would be the .. method::
+      dl dt
+        margin-bottom: $base-line-height / 4
         border: none
-        padding: 0
-        font-size: 100% !important
-      &.descname
+        border-left: solid 3px hsl(0,0%,80%)
+        background: hsl(0,0%,94%)
+        color: $method-color
+        .headerlink
+          color: $headerlink-color
+          font-size: 100% !important
+      dt:first-child
+        margin-top: 0
+      // Since dts get the callout style, we treat this less as callouts.
+      tt, code
         font-weight: bold
-    // This is for more advanced parameter control
-    .optional
-      display: inline-block
-      padding: 0 4px
-      color: $black
-      font-weight: bold
-    .property
-      display: inline-block
-      padding-right: 8px
+        &.descname, &.descclassname
+          background-color: transparent
+          border: none
+          padding: 0
+          font-size: 100% !important
+        &.descname
+          font-weight: bold
+      // This is for more advanced parameter control
+      .optional
+        display: inline-block
+        padding: 0 4px
+        color: $black
+        font-weight: bold
+      .property
+        display: inline-block
+        padding-right: 8px
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
