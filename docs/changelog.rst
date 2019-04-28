@@ -14,6 +14,7 @@ Fixes
 Other Changes
 --------------
 
+* Remove Modernizr, but keep html5shiv (#724, #525)
 * Add the ``navigation`` template block around the navigation area.
 
 0.4.3
