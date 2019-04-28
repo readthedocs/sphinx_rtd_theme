@@ -16,3 +16,4 @@ npm-debug.log
 package-lock.json
 sphinx_rtd_theme/static/fonts/Lato/
 sphinx_rtd_theme/static/fonts/RobotoSlab/
+sphinx_rtd_theme/static/js/html5shiv.min.js
