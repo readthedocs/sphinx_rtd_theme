@@ -177,7 +177,6 @@ html
   background-color: $nav-search-background-color
   text-align: center
   padding: $gutter / 2
-  display: block
   color: $nav-search-color
   margin-bottom: $gutter / 2
   input[type=text]
@@ -267,17 +266,25 @@ html
   width: $nav-desktop-width
   overflow-x: hidden
   overflow-y: hidden
-  min-height: 100%
   color: $menu-medium
   background: $nav-background-color
   z-index: $z-index-popover
+  &.flex
+    display: flex
+    flex-flow: column
+    height: 100%
+    .wy-side-scroll
+      flex: 1
+  &:not(.flex)
+    min-height: 100%
+    .wy-side-scroll
+      height: 100%
 
 .wy-side-scroll
   width: $nav-desktop-width + 20px
   position: relative
   overflow-x: hidden
   overflow-y: scroll
-  height: 100%
 
 .wy-nav-top
   display: none

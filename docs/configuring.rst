@@ -24,6 +24,7 @@ For example:
         # Toc options
         'collapse_navigation': True,
         'sticky_navigation': True,
+        'sticky_header': False,
         'navigation_depth': 4,
         'includehidden': True,
         'titles_only': False
@@ -49,6 +50,13 @@ documentation navigation.
     :default: ``True``
 
     Scroll the navigation with the main page content as you scroll the page.
+
+.. confval:: sticky_header
+
+    :type: boolean
+    :default: ``False``
+
+    Stick the search input and logo to the top of the sidebar
 
 .. confval:: navigation_depth
 
@@ -159,7 +167,7 @@ Miscellaneous options
     :default: ``#2980B9``
 
     Changes the background of the search area in the navigation bar. The value
-    can be anything valid in a CSS `background` property. 
+    can be anything valid in a CSS `background` property.
 
 .. _canonical URL: https://en.wikipedia.org/wiki/Canonical_link_element
 
