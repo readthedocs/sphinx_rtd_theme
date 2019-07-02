@@ -3,21 +3,32 @@
   "main": "js/theme.js",
   "version": "0.4.3",
   "private": true,
-  "devDependencies": {
-    "bower": "^1.8.4",
+  "scripts": {
+    "start": "yarn webpack-dev-server --open --config webpack.dev.js",
+    "build": "yarn webpack --config webpack.prod.js"
+  },
+  "dependencies": {
+    "bourbon": "~4.3",
+    "bourbon-neat": "~1.7",
     "browserify": "^13.0.0",
-    "connect-livereload": "~0.6.0",
-    "grunt": "~1.0.1",
-    "grunt-banner": "^0.6.0",
-    "grunt-browserify": "^5.0.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-copy": "~1.0.0",
-    "grunt-contrib-sass": "~1.0.0",
-    "grunt-contrib-uglify": "~3.3.0",
-    "grunt-contrib-watch": "~1.0.0",
-    "grunt-exec": "~1.0.1",
-    "grunt-open": "0.2.3",
-    "matchdep": "~1.0.1"
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "font-awesome": "^4.7.0",
+    "imports-loader": "^0.8.0",
+    "jquery": "^3.4.1",
+    "lato-font": "^3.0.0",
+    "matchdep": "~1.0.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "roboto-fontface": "^0.10.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-merge": "^4.2.1",
+    "wyrm": "^1.0.9"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.3.1"
   }
 }
