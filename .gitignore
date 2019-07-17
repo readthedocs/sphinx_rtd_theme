@@ -1,7 +1,6 @@
 *.pyc
 *.egg-info
 *.egg
-*.mo
 *build/
 .tox
 .coverage

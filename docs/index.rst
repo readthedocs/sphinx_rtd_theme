@@ -6,15 +6,18 @@
 
    installing
    configuring
-   changelog
    contributing
-   translations
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   changelog
 
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Demo Documents
+    :caption: Demo Documentation
 
     demo/structure
     demo/demo

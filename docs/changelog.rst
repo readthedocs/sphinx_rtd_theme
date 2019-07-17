@@ -2,15 +2,11 @@
 Changelog
 *********
 
-Master
+master
 ======
 
 New Features
 -------------
-
-* Added Spanish translation
-* Added i18n support using Babel
-* Added Translation Guide documentation
 
 Fixes
 -----
@@ -19,6 +15,8 @@ Other Changes
 --------------
 
 * Add the ``navigation`` template block around the navigation area.
+* Added Spanish translation
+* Added i18n support using Babel
 
 0.4.3
 ======
