@@ -30,7 +30,7 @@ Installing
 
 The theme is distributed on PyPI_ and can be installed with pip::
 
-   pip install sphinx_rtd_theme
+   pip install sphinx-rtd-theme
 
 For more information read the full installing docs
 `here <https://sphinx-rtd-theme.readthedocs.io/en/latest/installing.html>`__.
