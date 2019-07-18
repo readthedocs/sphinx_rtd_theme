@@ -5,17 +5,21 @@ Changelog
 master
 ======
 
+:Date: TBD
+
 New Features
 -------------
 
 Fixes
 -----
 
+* Clicking active menu item no longer makes it look inactive (#306)
 * Fix definition lists looking different with Sphinx 2.0+
 
 Other Changes
 --------------
 
+* Menu items can now expand and collapse regardless of active item
 * Add the ``navigation`` template block around the navigation area.
 
 0.4.3
@@ -26,6 +30,7 @@ Other Changes
 New Features
 -------------
 
+
 Fixes
 -----
 
@@ -33,7 +38,6 @@ Fixes
 * Style caption link for code and literal blocks
 * Fix inconsistent font size and line height for autodoc "raises" and "returns" (#267)
 * Fix last_updated notice appearing in same line as copyright notice (#704)
-
 
 Other Changes
 --------------

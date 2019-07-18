@@ -52,19 +52,17 @@ html
       border-bottom: solid 1px hsl(0, 0%, 25%)
     &.current
       background: darken($menu-vertical-background-color, 10%)
+    &.current
       a
-        color: $menu-link-medium
         border-right: solid 1px darken($menu-vertical-background-color, 20%)
-        padding: $gutter / 4 $gutter * 1.5
-        &:hover
-          background: darken($menu-vertical-background-color, 15%)
     code
       border: none
       background: inherit
       color: inherit
       padding-left: 0
       padding-right: 0
-    // Expand links
+
+    // Collapse/Expand icons
     span.toctree-expand
       display: block
       float: left
@@ -74,76 +72,67 @@ html
       font-size: .8em
       line-height: 1.6em
       color: darken($menu-link-medium, 20%)
+    &.expanded > a span.toctree-expand
+      @extend .fa-minus-square-o
 
-  // On state for the first level
-  li.on a, li.current > a
-    color: $menu-link-color
+  // Expanded state for the first level
+  li.expanded > a
     padding: $gutter / 4 $gutter
-    font-weight: bold
     position: relative
-    background: $menu-vertical-background-color
     border: none
     padding-left: $gutter -4px
+  // Current/on state for first level
+  li.current > a
+    color: $menu-link-color
+    font-weight: bold
+    background: $menu-vertical-background-color
     +font-smooth
-    &:hover
-      background: $menu-vertical-background-color
-      span.toctree-expand
-        color: $menu-link-medium
-    span.toctree-expand
-      @extend .fa
-      @extend .fa-minus-square-o
-      display: block
-      font-size: .8em
-      line-height: 1.6em
-      color: darken($menu-link-medium, 30%)
-
-  li.toctree-l1.current > a
+  // Background and border for first level when both expanded and current
+  li.toctree-l1.current.expanded > a
     border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
     border-top: solid 1px darken($menu-vertical-background-color, 20%)
+    &:hover
+      border-color: lighten($menu-background-color, 10%)
 
-  // This is the on state for pages beyond second level
-  li.toctree-l2 a, li.toctree-l3 a, li.toctree-l4 a
+  // Menu link color and hover behavior
+  li.toctree-l1.current a, li.toctree-l2.current a, li.toctree-l3.current a, li.toctree-l4.current a
     color: $menu-link-color
-  li.toctree-l1.current li.toctree-l2, li.toctree-l2.current li.toctree-l3
-    > ul
-      display: none
-    &.current > ul
-      display: block
-  li.toctree-l2
-    &.current
-      > a
-        background: darken($menu-vertical-background-color, 20%)
-        padding: $gutter / 4 $gutter * 1.5
-      li.toctree-l3 > a
-        display: block
-        background: darken($menu-vertical-background-color, 20%)
-        padding: $gutter / 4 $gutter * 2.5
-    a:hover span.toctree-expand
-      color: $menu-link-medium
-    span.toctree-expand
-      color: darken($menu-vertical-background-color, 35%)
-  li.toctree-l3
-    font-size: .9em
-    &.current
-      > a
-        background: darken($menu-vertical-background-color, 25%)
-        padding: $gutter / 4 $gutter * 2.5
-      li.toctree-l4 > a
-        display: block
-        background: darken($menu-vertical-background-color, 25%)
-        padding: $gutter / 4 $gutter * 3.5
-    a:hover span.toctree-expand
-      color: $menu-link-medium
-    span.toctree-expand
-      color: darken($menu-vertical-background-color, 40%)
-  li.toctree-l4
-    font-size: .9em
+    &:hover
+      color: $menu-link-light
+      background-color: lighten($menu-background-color, 10%)
 
-  li.current ul
+  // Colored background when current
+  li.toctree-l2.current a
+    background: darken($menu-vertical-background-color, 20%)
+  li.toctree-l3.current a
+    background: darken($menu-vertical-background-color, 25%)
+
+  // Collapse/expand behavior
+  li.expanded > ul
     display: block
-  li ul
+  li > ul
     margin-bottom: 0
     display: none
+  li.toctree-l1.expanded li.toctree-l2, li.toctree-l2.expanded li.toctree-l3
+    > ul
+      display: none
+    &.expanded
+      > ul
+        display: block
+
+  // Font size and indentation for levels > 1
+  li.toctree-l2
+    > a
+      padding: $gutter / 4 $gutter * 1.5
+  li.toctree-l3
+    font-size: .9em
+    > a
+      padding: $gutter / 4 $gutter * 2.5
+  li.toctree-l4
+    font-size: .9em
+    > a
+      padding: $gutter / 4 $gutter * 3.5
+
   li ul li a
     margin-bottom: 0
     color: $menu-link-light

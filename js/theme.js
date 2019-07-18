@@ -91,7 +91,8 @@ function ThemeNav () {
                 $("[data-toggle='wy-nav-shift']").removeClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
                 // Handle dynamic display of l3 and l4 nav lists
-                self.toggleCurrent(target);
+                self.setCurrent(target);
+                self.toggleExpanded(target, true);
                 self.hashChange();
             })
             .on('click', "[data-toggle='rst-current-version']", function() {
@@ -114,7 +115,7 @@ function ThemeNav () {
             var link = $(this);
                 expand = $('<span class="toctree-expand"></span>');
             expand.on('click', function (ev) {
-                self.toggleCurrent(link);
+                self.toggleExpanded(link);
                 ev.stopPropagation();
                 return false;
             });
@@ -146,12 +147,14 @@ function ThemeNav () {
             if (link.length > 0) {
                 $('.wy-menu-vertical .current').removeClass('current');
                 link.addClass('current');
-                link.closest('li.toctree-l1').addClass('current');
-                link.closest('li.toctree-l1').parent().addClass('current');
-                link.closest('li.toctree-l1').addClass('current');
-                link.closest('li.toctree-l2').addClass('current');
-                link.closest('li.toctree-l3').addClass('current');
-                link.closest('li.toctree-l4').addClass('current');
+
+                link.closest('li.toctree-l1').addClass('current expanded');
+                link.closest('li.toctree-l1').parent().addClass('current expanded');
+                link.closest('li.toctree-l1').addClass('current expanded');
+                link.closest('li.toctree-l2').addClass('current expanded');
+                link.closest('li.toctree-l3').addClass('current expanded');
+                link.closest('li.toctree-l4').addClass('current expanded');
+
                 link[0].scrollIntoView();
             }
         }
@@ -187,13 +190,24 @@ function ThemeNav () {
         });
     };
 
-    nav.toggleCurrent = function (elem) {
+    nav.toggleExpanded = function (elem, forceExpanded) {
         var parent_li = elem.closest('li');
+        if (forceExpanded) {
+            parent_li.addClass('expanded');
+        } else {
+            parent_li.toggleClass('expanded');
+        }
+    };
+
+    nav.setCurrent = function (elem) {
+        var parent_li = elem.closest('li');
+        // Remove 'current' status from all li at parent level and lower
         parent_li.siblings('li.current').removeClass('current');
         parent_li.siblings().find('li.current').removeClass('current');
         parent_li.find('> ul li.current').removeClass('current');
-        parent_li.toggleClass('current');
-    }
+        // Make our parent 'current'
+        parent_li.addClass('current');
+    };
 
     return nav;
 };
