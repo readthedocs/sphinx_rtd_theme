@@ -14,6 +14,7 @@ Fixes
 -----
 
 * Clicking active menu item no longer makes it look inactive (#306)
+* Fix definition lists looking different with Sphinx 2.0+
 
 Other Changes
 --------------
