@@ -11,6 +11,8 @@ New Features
 Fixes
 -----
 
+* Fix definition lists looking different with Sphinx 2.0+
+
 Other Changes
 --------------
 
