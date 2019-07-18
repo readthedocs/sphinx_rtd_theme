@@ -13,7 +13,7 @@ module.exports = merge(common, {
     contentBase: path.join(__dirname, 'docs/build/html'),
     watchContentBase: true,
     compress: false,
-    port: 7070,
+    port: 1919,
     hot: false,
     liveReload: true,
     publicPath: '/_static/'
@@ -26,7 +26,9 @@ module.exports = merge(common, {
       ]
     }),
     new ShellPlugin({
-      onBuildEnd: ['make -C docs html'],
+      onBuildEnd: ['make -C docs clean html'],
+      // dev=false here to force every build to trigger make, the default is
+      // first build only.
       dev: false,
     }),
   ]
