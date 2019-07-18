@@ -257,6 +257,7 @@ html
   position: absolute
   width: 100%
   height: 100%
+  overflow-x: hidden
 
 .wy-nav-side
   position: fixed
@@ -373,12 +374,15 @@ footer
     display: block
   .wy-nav-side
     @if $nav-desktop-position == left
-      left: -$nav-desktop-width
+      width: 85%
+      @include prefixer(transform, $sidebar-transform-hide, webkit moz ms o spec)
+      @include prefixer(transition, $sidebar-transition, webkit moz ms o spec)
     @else
       right: -$nav-desktop-width
     &.shift
-      width: 85%
       left: 0
+      @include prefixer(transform, $sidebar-transform-show, webkit moz ms o spec)
+      @include prefixer(transition, $sidebar-transition, webkit moz ms o spec)
   .wy-side-scroll
     width: auto
   .wy-side-nav-search
@@ -387,15 +391,17 @@ footer
     width: auto
   .wy-nav-content-wrap
     margin-left: 0
+    @include prefixer(transform, $sidebar-transform-show, webkit moz ms o spec)
+    @include prefixer(transition, $sidebar-transition, webkit moz ms o spec)
     .wy-nav-content
       padding: $gutter
     &.shift
       position: fixed
       min-width: 100%
-      left: 85%
       top: 0
       height: 100%
       overflow: hidden
+      @include prefixer(transform, translateX(85%), webkit moz ms o spec)
 
 @media screen and (min-width: $nav-media-query)
   .wy-nav-content-wrap
