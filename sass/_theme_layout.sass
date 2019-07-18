@@ -2,6 +2,13 @@
 html
   font-size: $base-font-size
 
+// This prevents Firefox on Linux from rendering forms with dark styling
+// when using a dark system theme, which looks bad on an otherwise light
+// website theme
+input[type=text]
+  background-color: $white
+  color: $text-color
+
 .wy-affix
   position: fixed
   top: $gutter
