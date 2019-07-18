@@ -17,9 +17,11 @@ module.exports = {
         test: /\.sass$/,
         use: [{
           loader: MiniCssExtractPlugin.loader
-        }, {
+        },
+        {
           loader: "css-loader"
-        }, {
+        },
+        {
           loader: "sass-loader?indentedSyntax",
           options: {
             includePaths: [
@@ -36,9 +38,9 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',
+            name: '[name].[ext]?[hash]',
             outputPath: 'fonts/',
-            publicPath: '/_static/fonts',
+            publicPath: '../fonts/',
           }
         }]
       }
@@ -50,5 +52,5 @@ module.exports = {
       // both options are optional
       filename: 'css/theme.css'
     })
-  ]
+  ],
 };
