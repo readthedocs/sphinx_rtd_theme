@@ -29,7 +29,7 @@ Installation
 
 This theme is distributed on PyPI_ and can be installed with ``pip``:
 
-.. code:: bash
+.. code:: console
 
    pip install sphinx_rtd_theme
 

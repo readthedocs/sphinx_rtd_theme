@@ -4,7 +4,7 @@ Installation
 
 Install the package (or add it to your ``requirements.txt`` file):
 
-.. code:: bash
+.. code:: console
 
     pip install sphinx_rtd_theme
 

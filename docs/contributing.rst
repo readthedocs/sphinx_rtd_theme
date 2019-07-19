@@ -23,19 +23,19 @@ Set up your environment
 
 #. Install Sphinx_ and documentation build dependencies.
 
-   .. code:: bash
+   .. code:: console
 
        pip install -r docs/requirements.txt
 
 #. Install SASS.
 
-   .. code:: bash
+   .. code:: console
 
        gem install sass
 
 #. Install Bower, Grunt, and theme dependencies locally.
 
-   .. code:: bash
+   .. code:: console
 
        npm install
 
@@ -59,7 +59,7 @@ This default task will do the following:
 Alternatively, if you don't need to watch the files, Grunt can be called with
 the same task used for releases:
 
-.. code:: bash
+.. code:: console
 
     grunt build
 
@@ -81,7 +81,7 @@ Periodically, core team should update the translation files outside our normal
 releases. Someone from the core team, with write access to Transifex, should run
 the following:
 
-.. code:: bash
+.. code:: console
 
     grunt i18n
 
@@ -106,7 +106,7 @@ To release a new version of the theme, core team will take the following steps:
 #. Push the tag to GitHub: ``git push --tags origin``.
 #. Upload the package to PyPI:
 
-    .. code:: bash
+    .. code:: console
 
         rm -rf dist/
         python setup.py sdist bdist_wheel
