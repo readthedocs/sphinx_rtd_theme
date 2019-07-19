@@ -11,7 +11,7 @@ New Features
 Fixes
 -----
 
-* Fix definition lists looking different with Sphinx 2.0+
+* Fix definition lists, footnotes, and citations looking different with Sphinx 2.0+ (#741, #755)
 
 Other Changes
 --------------

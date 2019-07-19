@@ -234,6 +234,22 @@
   .hlist
     width: 100%
 
+  // Sphinx 2 footnotes
+  dl.footnote
+    color: $text-medium
+    .label
+      font-weight: normal
+      > .fn-backref
+        font-style: italic
+        margin-left: $base-line-height / 4
+
+  // Sphinx 2: brackets around footnote and citation labels and back references
+  dl.footnote .label > .brackets, .footnote-reference.brackets
+    &::before
+      content: "["
+    &::after
+      content: "]"
+
   // Tables! Sphinx LOVES TABLES. Most of wyrm assumes you're only going to use a table as a table
   // so I have to write a bunch of unique stuff for Sphinx to style them up differently like it's 2003.
   table.docutils.citation, table.docutils.footnote
