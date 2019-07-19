@@ -9,6 +9,8 @@
 *.map
 .ropeproject/
 .ruby-version
+.node-version
+.python-version
 dist/
 bower_components/
 node_modules
