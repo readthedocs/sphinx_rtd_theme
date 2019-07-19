@@ -44,7 +44,7 @@ Making changes
 
 Changes to the theme can be compiled and tested with the default Grunt task:
 
-.. code::
+.. code:: console
 
     grunt
 

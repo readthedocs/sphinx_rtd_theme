@@ -35,7 +35,7 @@ setup(
         ]
     },
     install_requires=[
-       'sphinx'
+       'sphinx<2.0'
     ],
     extras_require={
         'dev': [
