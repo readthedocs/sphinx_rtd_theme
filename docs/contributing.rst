@@ -25,7 +25,7 @@ Set up your environment
 
    .. code:: console
 
-       pip install -r docs/requirements.txt
+       pip install -e '.[docs]'
 
 #. Install SASS.
 
@@ -83,7 +83,7 @@ the following:
 
 .. code:: console
 
-    grunt i18n
+    npm run i18n
 
 This will extract new messages, upload the messages to Transifex, and will
 update our local translation files. Changes can be checked in to a branch and
@@ -100,7 +100,7 @@ To release a new version of the theme, core team will take the following steps:
    we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
 #. Run ``grunt build`` to rebuild all the theme assets.
-#. Run ``grunt i18n`` to compile new translation files and update Transifex
+#. Run ``npm run i18n`` to compile new translation files and update Transifex
 #. Commit that change.
 #. Tag the release in git: ``git tag $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
