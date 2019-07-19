@@ -1,14 +1,12 @@
-# English translations for sphinx_rtd_theme.
-# Copyright (C) 2019 ORGANIZATION
+# Russian translations for sphinx_rtd_theme.
+# Copyright (C) 2019 Read the Docs, Inc
 # This file is distributed under the same license as the sphinx_rtd_theme
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-07-16 15:59-0600\n"
+"Report-Msgid-Bugs-To: support@readthedocs.org\n"
+"POT-Creation-Date: 2019-07-19 12:32-0600\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -20,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.7.0\n"
 
 #: sphinx_rtd_theme/breadcrumbs.html:31
 msgid "Docs"

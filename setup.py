@@ -37,6 +37,15 @@ setup(
     install_requires=[
        'sphinx'
     ],
+    extras_require={
+        'dev': [
+            'transifex-client',
+            'sphinxcontrib-httpdomain',
+        ],
+        'docs': [
+            'sphinxcontrib-httpdomain',
+        ]
+    },
     classifiers=[
         'Framework :: Sphinx',
         'Framework :: Sphinx :: Theme',

@@ -144,18 +144,6 @@ module.exports = function(grunt) {
           locale = (typeof locale !== 'undefined') ?  locale : 'en';
           return 'sphinx-build -D language=' + locale + ' docs/ docs/build/html'
         }
-      },
-      babel_extract: {
-        cmd: 'python setup.py extract_messages'
-      },
-      babel_compile: {
-        cmd: 'python setup.py compile_catalog'
-      },
-      tx_pull: {
-        cmd: 'tx pull'
-      },
-      tx_push: {
-        cmd: 'tx push --source'
       }
     },
     clean: {
