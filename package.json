@@ -17,7 +17,7 @@
     "grunt-contrib-uglify": "~4.0.1",
     "grunt-contrib-watch": "~1.1.0",
     "grunt-exec": "~1.0.1",
-    "grunt-open": "0.2.3",
+    "grunt-open": "0.2.4",
     "matchdep": "~2.0.0"
   }
 }
