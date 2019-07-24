@@ -18,6 +18,6 @@
     "grunt-contrib-watch": "~1.0.0",
     "grunt-exec": "~1.0.1",
     "grunt-open": "0.2.3",
-    "matchdep": "~1.0.1"
+    "matchdep": "~2.0.0"
   }
 }
