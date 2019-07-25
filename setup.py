@@ -10,8 +10,6 @@ import distutils.cmd
 from io import open
 from setuptools import setup
 
-from sphinx_rtd_theme import __version__
-
 
 class LocalizeCommand(distutils.cmd.Command):
 
@@ -55,7 +53,7 @@ class TransifexCommand(distutils.cmd.Command):
 
 setup(
     name='sphinx_rtd_theme',
-    version=__version__,
+    version='0.4.3.dev0',
     url='https://github.com/rtfd/sphinx_rtd_theme/',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
@@ -90,10 +88,6 @@ setup(
             'transifex-client',
             'sphinxcontrib-httpdomain',
         ],
-        'docs': [
-            'sphinxcontrib-httpdomain',
-            'sphinx_rtd_theme==0.4.3',
-        ]
     },
     classifiers=[
         'Framework :: Sphinx',
