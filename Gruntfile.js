@@ -140,10 +140,7 @@ module.exports = function(grunt) {
         cmd: 'bower update'
       },
       build_sphinx: {
-        cmd: function (locale) {
-          locale = (typeof locale !== 'undefined') ?  locale : 'en';
-          return 'sphinx-build -D language=' + locale + ' docs/ docs/build/html'
-        }
+        cmd: 'sphinx-build docs/ docs/build'
       }
     },
     clean: {
@@ -187,33 +184,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('default', [
-      'exec:bower_update',
-      'clean',
-      'copy:fonts',
-      'sass:dev',
-      'browserify:dev',
-      'usebanner',
-      'exec:build_sphinx',
-      'connect',
-      'open',
-      'watch'
-  ]);
-  grunt.registerTask('build', [
-      'exec:bower_update',
-      'clean',
-      'copy:fonts',
-      'sass:build',
-      'browserify:build',
-      'uglify',
-      'usebanner',
-      'exec:build_sphinx'
-  ]);
-  grunt.registerTask('i18n', [
-      'exec:babel_extract',
-      'exec:tx_push',
-      'exec:tx_pull',
-      'exec:babel_compile',
-      'exec:build_sphinx:es'
-  ]);
+  grunt.registerTask('default', ['exec:bower_update','clean','copy:fonts','sass:dev','browserify:dev','usebanner','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean','copy:fonts','sass:build','browserify:build','uglify','usebanner','exec:build_sphinx']);
 }
