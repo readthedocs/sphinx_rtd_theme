@@ -6,5 +6,4 @@ python:
       path: .
       extra_requirements:
         - docs
-    - method: setuptools
-      path: .
+    - requirements: docs/requirements.txt
