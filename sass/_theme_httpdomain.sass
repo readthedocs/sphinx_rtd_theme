@@ -1,0 +1,46 @@
+.rst-content
+  dl
+    &.post, &.get, &.put, &.patch, &.delete
+      dt
+        width: 100%
+
+        p
+          float: right
+          margin-bottom: 0 !important
+          font-weight: normal
+          color: gray
+          line-height: normal
+
+        &:hover
+          box-shadow: 1px 2px 3px
+
+      &:not(.collaped) dt::before
+        content: '\25bc'
+        padding-right: 0.5em
+        color: grey
+
+      &.collaped dt::before
+        content: '\25ba'
+        padding-right: 0.5em
+        color: grey
+
+    &.post dt
+      background-color: #d4edda
+      border-top-color: #aecfb6
+      color: #155724
+
+    &.put dt
+      background-color: #f9e5c8
+      border-top-color: #fbdab7
+      color: #e88933
+
+    &.patch dt
+      background-color: #fff3cd
+      border-top-color: #e7d7a4
+      color: #856404
+
+    &.delete dt
+      background-color: #f8d7da
+      border-top-color: #deb1b6
+      color: #721c24
+
