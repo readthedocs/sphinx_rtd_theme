@@ -1,2 +1,2 @@
-sphinx<2
+sphinx
 sphinxcontrib-httpdomain

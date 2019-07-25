@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-07-24 17:44-0600\n"
+"POT-Creation-Date: 2019-07-24 23:51-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,29 +51,30 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:30
+#. Build is a noun, not a verb
+#: sphinx_rtd_theme/footer.html:31
 msgid "Build"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:35
+#: sphinx_rtd_theme/footer.html:36
 msgid "Revision"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:39
+#: sphinx_rtd_theme/footer.html:40
 #, python-format
 msgid "Last updated on %(last_updated)s."
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:49
+#: sphinx_rtd_theme/footer.html:50
 #, python-format
 msgid "Built with %(sphinx_web)s using a"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:49
+#: sphinx_rtd_theme/footer.html:50
 msgid "theme"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:49
+#: sphinx_rtd_theme/footer.html:50
 #, python-format
 msgid "provided by %(readthedocs_web)s"
 msgstr ""
@@ -103,11 +104,12 @@ msgstr ""
 msgid "Please activate JavaScript to enable the search functionality."
 msgstr ""
 
-#: sphinx_rtd_theme/search.html:33
+#. Search is a noun, not a verb
+#: sphinx_rtd_theme/search.html:34
 msgid "Search Results"
 msgstr ""
 
-#: sphinx_rtd_theme/search.html:35
+#: sphinx_rtd_theme/search.html:36
 msgid ""
 "Your search did not match any documents. Please make sure that all words "
 "are spelled correctly and that you've selected enough categories."
