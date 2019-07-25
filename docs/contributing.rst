@@ -1,89 +1,110 @@
+************
+Contributing
+************
 
-***********************************
-Contributing or modifying the theme
-***********************************
+This project follows the Read the Docs :doc:`code of conduct
+<rtd:code-of-conduct>`. If you are not familiar with our code of conduct policy,
+take a minute to read the policy before starting with your first contribution.
 
-The sphinx_rtd_theme is primarily a sass_ project that requires a few other sass libraries. I'm
-using bower_ to manage these dependencies and sass_ to build the css. The good news is
-I have a very nice set of grunt_ operations that will not only load these dependencies, but watch
-for changes, rebuild the sphinx demo docs and build a distributable version of the theme.
-The bad news is this means you'll need to set up your environment similar to that
-of a front-end developer (vs. that of a python developer). That means installing node and ruby.
-
-.. seealso::
-
-   If you are unsure of appropriate actions to take while interacting with our
-   community please read our :doc:`Code of Conduct <rtd:code-of-conduct>`.
-
-
-Set up your environment
-=======================
-
-#. Install sphinx_ into a virtual environment.
-
-   .. code:: bash
-
-       pip install sphinx sphinxcontrib-httpdomain
-
-#. Install sass.
-
-   .. code:: bash
-
-       gem install sass
-
-#. Install node, bower, grunt, and theme dependencies.
-
-   .. code:: bash
-
-       # Install node
-       brew install node
-
-       # Install bower and grunt
-       npm install -g bower grunt-cli
-
-       # Now that everything is installed, let's install the theme dependencies.
-       npm install
-
-Now that our environment is set up, make sure you're in your virtual environment, go to
-this repository in your terminal and run grunt:
-
-.. code::
-
-    grunt
-
-This default task will do the following **very cool things that make it worth the trouble**:
-
-#. Install and update any bower dependencies.
-#. Run sphinx and build new docs.
-#. Watch for changes to the sass files and build css from the changes.
-#. Rebuild the sphinx docs anytime it notices a change to ``.rst``, ``.html``, ``.js``
-   or ``.css`` files.
-
-.. _bower: http://www.bower.io
-.. _sass: http://www.sass-lang.com
-.. _wyrm: http://www.github.com/snide/wyrm/
-.. _grunt: http://www.gruntjs.com
-.. _node: http://www.nodejs.com
-.. _sphinx: http://www.sphinx-doc.org/en/stable/
-
-
-Releasing the Theme
+Modifying the theme
 ===================
 
-When you release a new version,
-you should do the following:
+The styles for this theme use SASS_ and a custom CSS framework called Wyrm_. We
+use Webpack_ and node-sass_ to build the CSS. Webpack_ is used to watch for
+changes, rebuild the static assets, and rebuild the Sphinx demo documentation.
 
-#. Bump the version in ``sphinx_rtd_theme/__init__.py``, ``bower.json`` and ``package.json`` --
-   we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
+.. note::
+    The installation of Node is outside the scope of this documentation. You
+    will need Node version 10+ in order to make changes to this theme.
+
+Set up your environment
+-----------------------
+
+#. Install Sphinx_ and documentation build dependencies.
+
+   .. code:: console
+
+       pip install -e '.[dev]'
+
+#. Install Webpack_, node-sass_, and theme dependencies locally.
+
+   .. code:: console
+
+       npm install
+
+Making changes
+--------------
+
+Changes to the theme can be compiled and tested with Webpack_:
+
+.. code:: console
+
+    npm run dev
+
+This script will do the following:
+
+#. Install and update any dependencies.
+#. Build the static CSS from SASS source files.
+#. Build the demo documentation.
+#. Watch for changes to the SASS files and documentation and rebuild everything
+   on any detected changes.
+
+Alternatively, if you don't need to watch the files, the release build script
+can be used to test built assets:
+
+.. code:: console
+
+    npm run build
+
+.. _Webpack: https://webpack.js.org/
+.. _node-sass: https://github.com/sass/node-sass
+.. _SASS: http://www.sass-lang.com
+.. _Wyrm: http://www.github.com/snide/wyrm/
+.. _Sphinx: http://www.sphinx-doc.org/en/stable/
+
+Translations
+============
+
+Translations are managed using `Transifex`_. You can join any of the existing
+language teams or request a new language is added to the project. For more
+information on our translation standards, see our docs on
+:doc:`rtd:development/i18n`
+
+Periodically, core team should update the translation files outside our normal
+releases. Someone from the core team, with write access to Transifex, should run
+the following:
+
+.. code:: console
+
+    python setup.py update_translations
+
+This will extract new messages, upload the messages to Transifex, and will
+update our local translation files. Changes can be checked in to a branch and
+put up for review.
+
+.. _Transifex: https://www.transifex.com/readthedocs/sphinx-rtd-theme
+
+Releasing the theme
+===================
+
+To release a new version of the theme, core team will take the following steps:
+
+#. Bump the version in ``sphinx_rtd_theme/__init__.py``, ``setup.py`` and
+   ``package.json``.  We follow `semver <http://semver.org/>`_ and `PEP440`_
+   (with regards to alpha release and development versions). The version
+   increment should reflect these releases and any potentially breaking changes.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
-#. Run a ``grunt build`` to rebuild all the theme assets.
+#. Run ``npm run build`` to rebuild all the theme assets.
+#. Run ``python setup.py update_translations`` to compile new translation files and update Transifex
 #. Commit that change.
 #. Tag the release in git: ``git tag $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
 #. Upload the package to PyPI:
 
-    .. code:: bash
+    .. code:: console
 
-        $ rm -rf dist/
-        $ python setup.py sdist bdist_wheel
-        $ twine upload --sign --identity security@readthedocs.org dist/*
+        rm -rf dist/
+        python setup.py sdist bdist_wheel
+        twine upload --sign --identity security@readthedocs.org dist/*
+
+.. _PEP440: https://www.python.org/dev/peps/pep-0440/
