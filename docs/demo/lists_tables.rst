@@ -225,7 +225,7 @@ Here's a grid table followed by a simple table:
 
 +------------------------+------------+----------+----------+
 | Header row, column 1   | Header 2   | Header 3 | Header 4 |
-| (header rows optional) |            |          |          |
+| (header rows optional) | asd asd as |          |          |
 +========================+============+==========+==========+
 | body row 1, column 1   | column 2   | column 3 | column 4 |
 +------------------------+------------+----------+----------+
@@ -233,7 +233,7 @@ Here's a grid table followed by a simple table:
 +------------------------+------------+---------------------+
 | body row 3             | Cells may  | - Table cells       |
 +------------------------+ span rows. | - contain           |
-| body row 4             |            | - body elements.    |
+| body row 4             | asd asd as | - body elements.    |
 +------------------------+------------+----------+----------+
 | body row 5             | Cells may also be     |          |
 |                        | empty: ``-->``        |          |
@@ -257,12 +257,20 @@ Giant Tables
 | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  | Header 1   | Header 2   | Header 3  |
 +============+============+===========+============+============+===========+============+============+===========+============+============+===========+
 | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
+| lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips |
+| ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips |
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
+| lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips |
+| ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips |
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
+| lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips |
+| ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips |
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
+| lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips | lorem      | asd asd as | lorem ips |
+| ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips | ipsum      | asd asd as | lorem ips |
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 
 List Tables
