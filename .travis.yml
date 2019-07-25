@@ -10,6 +10,7 @@ matrix:
       env: TOXENV=docs
 install:
   - pip install tox-travis
+  - pip install sphinx
 script:
   - tox
   

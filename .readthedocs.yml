@@ -1,5 +1,5 @@
-build:
-  image: latest
+version: 2
 python:
   version: 3.6
-requirements_file: docs/requirements.txt
+  install:
+    - requirements: docs/requirements.txt
