@@ -123,7 +123,7 @@
             {# Not strictly valid HTML, but it's the only way to display/scale
                it properly, without weird scripting or heaps of work
             #}
-            <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="Logo"/>
+            <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ _('Logo') }}"/>
           {% endif %}
           </a>
 

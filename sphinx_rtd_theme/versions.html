@@ -20,6 +20,7 @@
         {% endfor %}
       </dl>
       <dl>
+        {# Translators: The phrase "Read the Docs" is not translated #}
         <dt>{{ _('On Read the Docs') }}</dt>
           <dd>
             <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/?fromdocs={{ slug }}">{{ _('Project Home') }}</a>
@@ -29,7 +30,7 @@
           </dd>
       </dl>
       <hr/>
-      {% trans %}Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.{% endtrans %}
+      {% trans %}Free document hosting provided by{% endtrans %} <a href="http://www.readthedocs.org">Read the Docs</a>.
 
     </div>
   </div>

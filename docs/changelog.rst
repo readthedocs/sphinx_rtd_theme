@@ -11,10 +11,14 @@ New Features
 Fixes
 -----
 
+* Fix definition lists looking different with Sphinx 2.0+
+
 Other Changes
 --------------
 
 * Add the ``navigation`` template block around the navigation area.
+* Added Spanish translation
+* Added i18n support using Babel
 
 0.4.3
 ======
@@ -91,7 +95,7 @@ Fixes
 * Color accessibility improvements on the left navigation
 
 Other Changes
---------------
+---------------
 
 * Write theme version and build date at top of JavaScript and CSS
 * Changed code and literals to use a native font stack (#612)

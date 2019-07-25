@@ -4,11 +4,11 @@ import sys
 import os
 import re
 
-sys.path.append(os.path.abspath('..'))
+if not 'READTHEDOCS' in os.environ:
+    sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('./demo/'))
 
 from sphinx.locale import _
-
 from sphinx_rtd_theme import __version__
 
 
@@ -26,11 +26,14 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
+    'sphinx_rtd_theme',
 ]
 
 templates_path = ['_templates']
 source_suffix = '.rst'
 exclude_patterns = []
+locale_dirs = ['locale/']
+gettext_compact = False
 
 master_doc = 'index'
 suppress_warnings = ['image.nonlocal_uri']
