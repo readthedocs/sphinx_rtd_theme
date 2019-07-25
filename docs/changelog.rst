@@ -19,6 +19,7 @@ Other Changes
 * Add the ``navigation`` template block around the navigation area.
 * Added Spanish translation
 * Added i18n support using Babel
+* Moved build system from Grunt and friends to Webpack
 
 0.4.3
 ======
