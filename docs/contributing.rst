@@ -35,7 +35,7 @@ Set up your environment
 Making changes
 --------------
 
-Changes to the theme can be compiled and tested with webpacke:
+Changes to the theme can be compiled and tested with Webpack_:
 
 .. code:: console
 
