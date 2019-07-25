@@ -4,9 +4,53 @@
 .. _github: https://github.com/rtfd/sphinx_rtd_theme
 
 """
+
+import subprocess
+import distutils.cmd
 from io import open
 from setuptools import setup
+
 from sphinx_rtd_theme import __version__
+
+
+class LocalizeCommand(distutils.cmd.Command):
+
+    description = "Run all localization commands"
+
+    user_options = []
+    sub_commands = [
+        ('extract_messages', None),
+        ('update_catalog', None),
+        ('transifex', None),
+        ('compile_catalog', None),
+    ]
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        for cmd_name in self.get_sub_commands():
+            self.run_command(cmd_name)
+
+
+class TransifexCommand(distutils.cmd.Command):
+
+    description = "Update translation files through Transifex"
+
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        subprocess.run(['tx', 'push', '--source'])
+        subprocess.run(['tx', 'pull'])
 
 
 setup(
@@ -18,6 +62,10 @@ setup(
     author_email='dev@readthedocs.org',
     description='Read the Docs theme for Sphinx',
     long_description=open('README.rst', encoding='utf-8').read(),
+    cmdclass={
+        'i18n': LocalizeCommand,
+        'transifex': TransifexCommand,
+    },
     zip_safe=False,
     packages=['sphinx_rtd_theme'],
     package_data={'sphinx_rtd_theme': [
@@ -44,6 +92,7 @@ setup(
         ],
         'docs': [
             'sphinxcontrib-httpdomain',
+            'sphinx_rtd_theme==0.4.3',
         ]
     },
     classifiers=[
