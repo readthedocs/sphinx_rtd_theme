@@ -328,7 +328,7 @@
   // that output similar, but not quite the same nesting so this is really the best we can do.
   dl:not(.docutils)
     // In Sphinx 2.0+ most DLs no longer contain .docutils, needs tighter scoping using next line
-    &.class, &.data
+    &.class, &.data, &.type, &.function
       margin-bottom: $base-line-height
       // This would be the equivilant of a .. class::
       dt
