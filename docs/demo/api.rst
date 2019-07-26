@@ -1,14 +1,33 @@
-
-*********************
-:mod:`test_py_module`
-*********************
+***************************************
+API documentation and generated content
+***************************************
 
 .. contents:: Table of Contents
+
+:mod:`test_py_module`
+=====================
 
 .. automodule:: test_py_module.test
     :members:
     :private-members:
     :special-members:
+
+
+C++ API
+=======
+
+.. cpp:type:: MyType
+
+   Some type
+
+.. cpp:function:: const MyType Foo(const MyType bar)
+
+   Some function type thing
+
+.. cpp:class:: template<typename T, std::size_t N> std::array
+
+   Some cpp class
+
 
 Generated Index
 ===============
