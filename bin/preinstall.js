@@ -11,7 +11,10 @@ if (package.devDependencies['bourbon-neat'] !== '~1.9') {
     // grid system and might be more of a liability than an old release of Neat.
     // See: https://github.com/readthedocs/sphinx_rtd_theme/pull/771
     console.error(
-        'bourbon-neat 1.9 is required, Wyrm is not compatible with Neat 2.0+'
+        'bourbon-neat 1.9 is required, Wyrm is not compatible with Neat 2.0+.'
+    );
+    console.error(
+        'The expected selector for the bourbon-neat dependency in package.json is "~1.9".'
     );
     process.exit(1);
 }
