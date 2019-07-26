@@ -7,8 +7,37 @@
 
 import subprocess
 import distutils.cmd
+import setuptools.command.build_py
 from io import open
 from setuptools import setup
+
+
+class WebpackBuildCommand(setuptools.command.build_py.build_py):
+
+    """Prefix Python build with Webpack asset build"""
+
+    def run(self):
+        subprocess.run(['webpack', '--config', 'webpack.prod.js'], check=True)
+        super().run()
+
+
+class WebpackDevelopCommand(distutils.cmd.Command):
+
+    description = "Run Webpack dev server"
+
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        subprocess.run(
+            ["webpack-dev-server", "--open", "--config", "webpack.dev.js"],
+            check=True
+        )
 
 
 class UpdateTranslationsCommand(distutils.cmd.Command):
@@ -47,8 +76,8 @@ class TransifexCommand(distutils.cmd.Command):
         pass
 
     def run(self):
-        subprocess.run(['tx', 'push', '--source'])
-        subprocess.run(['tx', 'pull'])
+        subprocess.run(['tx', 'push', '--source'], check=True)
+        subprocess.run(['tx', 'pull'], check=True)
 
 
 setup(
@@ -63,6 +92,8 @@ setup(
     cmdclass={
         'update_translations': UpdateTranslationsCommand,
         'transifex': TransifexCommand,
+        'build_py': WebpackBuildCommand,
+        'watch': WebpackDevelopCommand,
     },
     zip_safe=False,
     packages=['sphinx_rtd_theme'],

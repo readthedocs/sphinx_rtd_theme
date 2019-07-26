@@ -94,9 +94,11 @@ To release a new version of the theme, core team will take the following steps:
    (with regards to alpha release and development versions). The version
    increment should reflect these releases and any potentially breaking changes.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
-#. Run ``npm run build`` to rebuild all the theme assets.
-#. Run ``python setup.py update_translations`` to compile new translation files and update Transifex
-#. Commit that change.
+#. Run ``python setup.py update_translations`` to compile new translation files
+   and update Transifex.
+#. Run ``python setup.py build`` to rebuild all the theme assets and the Python
+   package.
+#. Commit these changes.
 #. Tag the release in git: ``git tag $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
 #. Upload the package to PyPI:
