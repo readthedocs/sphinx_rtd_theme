@@ -9,7 +9,6 @@
 *.map
 .ropeproject/
 .ruby-version
-bin/
 dist/
 bower_components/
 include/
