@@ -104,8 +104,8 @@ setup(
         'theme.conf',
         '*.html',
         'static/css/*.css',
+        'static/css/fonts/*.*'
         'static/js/*.js',
-        'static/fonts/*.*'
     ]},
     include_package_data=True,
     # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
