@@ -5,6 +5,7 @@
 
 """
 
+import os
 import subprocess
 import distutils.cmd
 import setuptools.command.build_py
@@ -17,7 +18,8 @@ class WebpackBuildCommand(setuptools.command.build_py.build_py):
     """Prefix Python build with Webpack asset build"""
 
     def run(self):
-        subprocess.run(['webpack', '--config', 'webpack.prod.js'], check=True)
+        if not 'CI' in os.environ:
+            subprocess.run(['webpack', '--config', 'webpack.prod.js'], check=True)
         super().run()
 
 
