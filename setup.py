@@ -20,7 +20,7 @@ class WebpackBuildCommand(setuptools.command.build_py.build_py):
     def run(self):
         if not 'CI' in os.environ:
             subprocess.run(['webpack', '--config', 'webpack.prod.js'], check=True)
-        WebpackBuildCommand.run(self)
+        setuptools.command.build_py.build_py.run(self)
 
 
 class WebpackDevelopCommand(distutils.cmd.Command):
