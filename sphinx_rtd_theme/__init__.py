@@ -9,8 +9,9 @@ from os import path
 import sphinx
 
 
-__version__ = '0.4.3.dev0'
-__version_full__ = __version__
+with open(path.join(path.dirname(__file__), 'VERSION')) as version_file:
+    __version__ = version_file.read().strip()
+    __version_full__ = __version__
 
 
 def get_html_theme_path():

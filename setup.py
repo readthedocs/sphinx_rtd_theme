@@ -8,6 +8,7 @@
 import subprocess
 import distutils.cmd
 from io import open
+from os import path
 from setuptools import setup
 
 
@@ -53,7 +54,7 @@ class TransifexCommand(distutils.cmd.Command):
 
 setup(
     name='sphinx_rtd_theme',
-    version='0.4.3.dev0',
+    version=open(path.join('sphinx_rtd_theme', 'VERSION')).read().strip(),
     url='https://github.com/rtfd/sphinx_rtd_theme/',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
@@ -71,7 +72,8 @@ setup(
         '*.html',
         'static/css/*.css',
         'static/js/*.js',
-        'static/fonts/*.*'
+        'static/fonts/*.*',
+        'VERSION'
     ]},
     include_package_data=True,
     # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
