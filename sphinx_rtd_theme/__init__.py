@@ -5,14 +5,12 @@ From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
 """
 
 from os import path
+import pkg_resources
 
 import sphinx
 
-
-with open(path.join(path.dirname(__file__), 'VERSION')) as version_file:
-    __version__ = version_file.read().strip()
-    __version_full__ = __version__
-
+__version__ = pkg_resources.get_distribution('sphinx_rtd_theme').version
+__version_full__ = __version__
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
