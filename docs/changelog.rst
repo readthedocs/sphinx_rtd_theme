@@ -20,6 +20,7 @@ Other Changes
 * Added Spanish translation
 * Added i18n support using Babel
 * Moved build system from Grunt and friends to Webpack
+* Warn when using a pre-release version of the theme
 
 0.4.3
 ======
