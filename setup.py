@@ -8,7 +8,6 @@
 import subprocess
 import distutils.cmd
 from io import open
-from os import path
 from setuptools import setup
 
 
