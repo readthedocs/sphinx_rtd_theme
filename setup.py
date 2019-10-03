@@ -87,6 +87,7 @@ setup(
         'dev': [
             'transifex-client',
             'sphinxcontrib-httpdomain',
+            'bump2version',
         ],
     },
     classifiers=[
