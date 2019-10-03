@@ -9,13 +9,11 @@ if not 'READTHEDOCS' in os.environ:
 sys.path.append(os.path.abspath('./demo/'))
 
 from sphinx.locale import _
-from sphinx_rtd_theme import __version__
-
 
 project = u'Read the Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
-version = __version__
-release = __version__
+version = '0.4.3.dev0'
+release = '0.4.3.dev0'
 author = u'Dave Snider, Read the Docs, Inc. & contributors'
 copyright = author
 language = 'en'
