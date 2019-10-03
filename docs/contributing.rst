@@ -90,6 +90,8 @@ Releasing the theme
 To release a new version of the theme, core team will take the following steps:
 
 #. Bump the version by running ``bump2version [major|minor|patch|dev]``.
+   This will automatically increase the correct part(s) of the version number,
+   you do not need to specify the exact version number.
    We follow `semver <http://semver.org/>`_ and `PEP440`_
    (with regards to alpha release and development versions). The version
    increment should reflect these releases and any potentially breaking changes.
