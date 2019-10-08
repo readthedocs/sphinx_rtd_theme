@@ -19,6 +19,7 @@ class WebpackBuildCommand(setuptools.command.build_py.build_py):
 
     def run(self):
         if not 'CI' in os.environ:
+            subprocess.run(['npm', 'install'], check=True)
             subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
         setuptools.command.build_py.build_py.run(self)
 
@@ -115,6 +116,9 @@ setup(
     },
     install_requires=[
        'sphinx'
+    ],
+    tests_require=[
+        'pytest',
     ],
     extras_require={
         'dev': [
