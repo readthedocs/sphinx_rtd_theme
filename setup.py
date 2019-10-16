@@ -87,7 +87,7 @@ setup(
     version='0.4.3.dev0',
     url='https://github.com/rtfd/sphinx_rtd_theme/',
     use_scm_version = {
-        'write_to': 'src/sphinx_rtd_theme/__sphinx_rtd_theme_version__.py'
+        'write_to': 'sphinx_rtd_theme/__sphinx_rtd_theme_version__.py'
     },
     setup_requires=['setuptools_scm'],
     license='MIT',
