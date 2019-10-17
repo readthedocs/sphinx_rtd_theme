@@ -16,7 +16,6 @@ lib/
 local/
 node_modules
 npm-debug.log
-package-lock.json
 pip-selfcheck.json
 sphinx_rtd_theme/static/fonts/Lato/
 sphinx_rtd_theme/static/fonts/RobotoSlab/
