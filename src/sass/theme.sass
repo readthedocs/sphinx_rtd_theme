@@ -1,36 +1,23 @@
-// ------------------------------------------------------------
-// CONTRIBUTORS, PLEASE READ THIS!
-// ------------------------------------------------------------
-// This theme pulls from other frontend projects. The only
-// things you should edit are the sass files that start with
-// "theme_*.sass". All other files are loaded through bower.
-// ------------------------------------------------------------
-
 // Variable defaults set by Wyrm
 @import wyrm_core/wy_variables
 
 // Variable overrides that change coloring and fonts for this theme.
 @import theme_variables
 
+//-- Pull resources from other projects. You should not edit any of these.
+
 // bourbon.io framework
 @import ~bourbon/app/assets/stylesheets/bourbon
-
 // Bourbon.io/neat framework, with some default media queries
 @import wyrm_core/grid_settings
 @import ~bourbon-neat/app/assets/stylesheets/neat
-// Some corrections for neat
+// Some corrections for neat, custom reset and mixins
 @import wyrm_core/neat_extra
-
-// Custom reset
 @import wyrm_core/reset
-
-// Wyrm mixins
 @import wyrm_core/mixin
-
 // Font Awesome with wyrm extras
 @import ~font-awesome/scss/font-awesome
 @import wyrm_core/font_icon_defaults
-
 // Wyrm core styles used in this theme
 @import wyrm_core/alert
 @import wyrm_core/button
@@ -40,11 +27,92 @@
 @import wyrm_core/table
 @import wyrm_core/type
 
-// Theme specific styles. These are likely the files you want to edit.
-@import theme_breadcrumbs
+//-- Theme specific styles. The content below is likely what you want to edit.
+
 @import theme_layout
 @import theme_badge
 @import theme_rst
-@import theme_mathjax
-@import theme_font_awesome_compatibility
-@import theme_font_local
+
+/* MATHJAX */
+
+span[id*='MathJax-Span']
+  color: $mathjax-color
+
+.math
+  text-align: center
+
+/* FONT AWESOME COMPATIBILITY */
+
+.icon
+  @extend .fa
+.icon-home
+  @extend .fa-home
+.icon-search
+  @extend .fa-search
+.icon-book
+  @extend .fa-book
+.icon-caret-down
+  @extend .fa-caret-down
+.icon-github
+  @extend .fa-github
+.icon-bitbucket
+  @extend .fa-bitbucket
+.icon-gitlab
+  @extend .fa-gitlab
+.icon-fire
+  @extend .fa-fire
+.icon-circle-arrow-right
+  @extend .fa-arrow-circle-right
+.icon-circle-arrow-left
+  @extend .fa-arrow-circle-left
+.icon-link
+  @extend .fa-link
+
+/* FONT LOCAL */
+
+$lato-font-path: "~lato-font/fonts";
+$roboto-font-path: "~roboto-fontface/fonts/roboto-slab";
+
+//  $font-full-path: '#{$roboto-font-path}/roboto-slab/Roboto-Slab';
+
+@font-face
+  font-family: 'Lato'
+  src: url('#{$lato-font-path}/lato-normal/lato-normal.woff2') format('woff2'), url('#{$lato-font-path}/lato-normal/lato-normal.woff') format('woff')
+  font-weight: 400
+  font-style: normal
+  font-display: $font-display
+
+@font-face
+  font-family: 'Lato'
+  src: url('#{$lato-font-path}/lato-bold/lato-bold.woff2') format('woff2'), url('#{$lato-font-path}/lato-bold/lato-bold.woff') format('woff')
+  font-weight: 700
+  font-style: normal
+  font-display: $font-display
+
+@font-face
+  font-family: 'Lato'
+  src: url('#{$lato-font-path}/lato-bold-italic/lato-bold-italic.woff2') format('woff2'), url('#{$lato-font-path}/lato-bold-italic/lato-bold-italic.woff') format('woff')
+  font-weight: 700
+  font-style: italic
+  font-display: $font-display
+
+@font-face
+  font-family: 'Lato'
+  src: url('#{$lato-font-path}/lato-normal-italic/lato-normal-italic.woff2') format('woff2'), url('#{$lato-font-path}/lato-normal-italic/lato-normal-italic.woff') format('woff')
+  font-weight: 400
+  font-style: italic
+  font-display: $font-display
+
+@font-face
+  font-family: 'Roboto Slab'
+  font-style: normal
+  font-weight: 400
+  src: url('#{$roboto-font-path}/Roboto-Slab-Regular.woff2') format('woff2'), url('#{$roboto-font-path}/Roboto-Slab-Regular.woff') format('woff')
+  font-display: $font-display
+
+@font-face
+  font-family: 'Roboto Slab'
+  font-style: normal
+  font-weight: 700
+  src: url('#{$roboto-font-path}/Roboto-Slab-Bold.woff2') format('woff2'), url('#{$roboto-font-path}/Roboto-Slab-Bold.woff') format('woff')
+  font-display: $font-display
