@@ -137,3 +137,17 @@ Data
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue elit eu hendrerit mattis.
 
 Some data link :data:`Data_item_1`.
+
+Very long members
+=================
+
+These member names are very long an might break out of the content pane.
+Depending on the puncuation used, we have some ability to wrap the content.
+
+.. class:: foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo_foo.Bar(foo, bar=False, baz=[])
+
+    This one is harder, the puncuation won't break
+
+.. class:: foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.foo.Bar(foo, bar=False, baz=[])
+
+    This one should wrap okay if breaking on puncuation
