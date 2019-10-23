@@ -2,10 +2,16 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    theme: ["./src/theme.js", "./src/sass/theme.sass"],
+    badge_only: "./src/sass/badge_only.sass"
+  },
   output: {
-    filename: "js/theme.js",
+    filename: "js/[name].js?[hash]",
     path: path.resolve(__dirname, "sphinx_rtd_theme/static")
+  },
+  externals: {
+    jquery: "jQuery"
   },
   module: {
     rules: [
@@ -17,7 +23,11 @@ module.exports = {
         test: /\.sass$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: false,
+              reloadAll: true
+            }
           },
           {
             loader: "css-loader"
@@ -42,8 +52,8 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]?[hash]",
-              outputPath: "fonts/",
-              publicPath: "../fonts/"
+              outputPath: "css/fonts/",
+              publicPath: "fonts/"
             }
           }
         ]
@@ -52,9 +62,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "css/theme.css"
+      filename: "css/[name].css?[hash]",
+      chunkFilename: "css/[name].css?[hash]"
     })
   ]
 };

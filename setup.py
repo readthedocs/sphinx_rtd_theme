@@ -19,6 +19,7 @@ class WebpackBuildCommand(setuptools.command.build_py.build_py):
 
     def run(self):
         if not 'CI' in os.environ:
+            subprocess.run(['npm', 'install'], check=True)
             subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
         setuptools.command.build_py.build_py.run(self)
 
@@ -103,8 +104,8 @@ setup(
         'theme.conf',
         '*.html',
         'static/css/*.css',
+        'static/css/fonts/*.*'
         'static/js/*.js',
-        'static/fonts/*.*'
     ]},
     include_package_data=True,
     # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
@@ -115,6 +116,9 @@ setup(
     },
     install_requires=[
        'sphinx'
+    ],
+    tests_require=[
+        'pytest',
     ],
     extras_require={
         'dev': [
