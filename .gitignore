@@ -21,3 +21,4 @@ sphinx_rtd_theme/static/fonts/Lato/
 sphinx_rtd_theme/static/fonts/RobotoSlab/
 .python-version
 .node-version
+sphinx_rtd_theme/__sphinx_rtd_theme_version__.py

@@ -13,7 +13,24 @@ install:
   - pip install sphinx
 script:
   - tox
-  
+
 branches:
   only:
   - master
+
+jobs:
+  include:
+    - stage: deploy
+      python: 3.6
+      env:
+        - TOXENV=py36-sphinx18
+      deploy:
+        # production pypi
+        - provider: pypi
+          distributions: sdist bdist_wheel
+          user: deply_username
+          password:
+            secure:
+          on:
+            branch: master
+            tags: true

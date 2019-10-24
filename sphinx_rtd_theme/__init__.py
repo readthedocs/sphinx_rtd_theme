@@ -8,9 +8,10 @@ from os import path
 
 import sphinx
 
+from .__sphinx_rtd_theme_version__ import version as sphinx_rtd_theme_version
 
-__version__ = '0.4.3.dev0'
-__version_full__ = __version__
+__version__ = sphinx_rtd_theme_version
+__version_full__ = sphinx_rtd_theme_version
 
 
 def get_html_theme_path():

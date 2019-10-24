@@ -12,7 +12,6 @@ import setuptools.command.build_py
 from io import open
 from setuptools import setup
 
-
 class WebpackBuildCommand(setuptools.command.build_py.build_py):
 
     """Prefix Python build with Webpack asset build"""
@@ -87,6 +86,10 @@ setup(
     name='sphinx_rtd_theme',
     version='0.4.3.dev0',
     url='https://github.com/rtfd/sphinx_rtd_theme/',
+    use_scm_version = {
+        'write_to': 'sphinx_rtd_theme/__sphinx_rtd_theme_version__.py'
+    },
+    setup_requires=['setuptools_scm'],
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
     author_email='dev@readthedocs.org',
