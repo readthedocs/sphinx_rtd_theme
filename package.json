@@ -23,7 +23,7 @@
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "roboto-fontface": "^0.10.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^7.3.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1",
