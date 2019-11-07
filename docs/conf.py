@@ -8,14 +8,14 @@ if not 'READTHEDOCS' in os.environ:
     sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('./demo/'))
 
+import sphinx_rtd_theme
 from sphinx.locale import _
-from sphinx_rtd_theme import __version__
 
 
 project = u'Read the Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
-version = __version__
-release = __version__
+version = sphinx_rtd_theme.__version__
+release = sphinx_rtd_theme.__version__
 author = u'Dave Snider, Read the Docs, Inc. & contributors'
 copyright = author
 language = 'en'
@@ -49,7 +49,18 @@ html_theme_options = {
     'logo_only': True,
     'navigation_depth': 5,
 }
-html_theme_path = ["../.."]
+html_context = {}
+
+if not 'READTHEDOCS' in os.environ:
+    html_static_path = ['_static/']
+    html_js_files = ['debug.js']
+
+    # Add fake versions for local QA of the menu
+    html_context['test_versions'] = list(map(
+        lambda x: str(x / 10),
+        range(1, 100)
+    ))
+
 html_logo = "demo/static/logo-wordmark-light.svg"
 html_show_sourcelink = True
 
