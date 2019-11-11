@@ -39,3 +39,15 @@ Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into you
 
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
+
+You can also add the latest development version of the package with pip. 
+
+Example:
+
+.. code:: console
+
+    pip install -e git+https://github.com/readthedocs/sphinx_rtd_theme.git@2b8717a3647cc650625c566259e00305f7fb60aa#egg=sphinx_rtd_theme
+
+
+You should substitute ``2b8717a3647cc650625c566259e00305f7fb60`` with lagetest commit number. 
+Note the flag ``-e`` (editable) prevents building wheel on your system.
