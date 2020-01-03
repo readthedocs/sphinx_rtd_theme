@@ -1,36 +1,23 @@
-// ------------------------------------------------------------
-// CONTRIBUTORS, PLEASE READ THIS!
-// ------------------------------------------------------------
-// This theme pulls from other frontend projects. The only
-// things you should edit are the sass files that start with
-// "theme_*.sass". All other files are loaded through bower.
-// ------------------------------------------------------------
-
 // Variable defaults set by Wyrm
 @import wyrm_core/wy_variables
 
 // Variable overrides that change coloring and fonts for this theme.
 @import theme_variables
 
+//-- Pull resources from other projects. You should not edit any of these.
+
 // bourbon.io framework
 @import ~bourbon/app/assets/stylesheets/bourbon
-
 // Bourbon.io/neat framework, with some default media queries
 @import wyrm_core/grid_settings
 @import ~bourbon-neat/app/assets/stylesheets/neat
-// Some corrections for neat
+// Some corrections for neat, custom reset and mixins
 @import wyrm_core/neat_extra
-
-// Custom reset
 @import wyrm_core/reset
-
-// Wyrm mixins
 @import wyrm_core/mixin
-
 // Font Awesome with wyrm extras
 @import ~font-awesome/scss/font-awesome
 @import wyrm_core/font_icon_defaults
-
 // Wyrm core styles used in this theme
 @import wyrm_core/alert
 @import wyrm_core/button
@@ -40,11 +27,9 @@
 @import wyrm_core/table
 @import wyrm_core/type
 
-// Theme specific styles. These are likely the files you want to edit.
-@import theme_breadcrumbs
+//-- Theme specific styles. The content below is likely what you want to edit.
+
 @import theme_layout
 @import theme_badge
 @import theme_rst
-@import theme_mathjax
-@import theme_font_awesome_compatibility
-@import theme_font_local
+@import theme_fonts
