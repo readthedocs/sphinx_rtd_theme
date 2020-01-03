@@ -323,8 +323,9 @@ html
     display: block
 footer
   color: $footer-color
-  p
-    margin-bottom: $base-line-height / 2
+  padding-bottom: 10px
+  hr
+    margin-bottom: 10px
   span.commit code
     padding: 0px
     font-family: $code-font-family
@@ -333,14 +334,28 @@ footer
     border: none
     color: $footer-color
 
-.rst-footer-buttons
-  &:before, &:after
-    width: 100%
-  +clearfix
+hr.marginbot
+  margin-top: 0
 
-.rst-breadcrumbs-buttons
-  margin-top: 12px
-  +clearfix
+hr.nomargin
+  margin: 0
+
+.contentinfo
+  text-align: center
+  display: flex
+  flex-direction: row
+
+.contentinfo-content
+  flex-grow: 1
+  p
+    margin-bottom: 0
+    font-size: 80%
+    line-height: $base-line-height * 3 / 4
+
+.prevnext
+  min-width: 80px
+  a
+    line-height: $base-line-height * 1.5
 
 #search-results
   .search li
