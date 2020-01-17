@@ -7,6 +7,15 @@
   {%- set titlesuffix = "" %}
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
+{%- if builder != "dirhtml" %}
+  {%- set canonical_page = pagename + ".html" %}
+{%- elif pagename == "index" %}
+  {%- set canonical_page = "" %}
+{%- elif pagename.endswith("/index") %}
+  {%- set canonical_page = pagename[:-("/index"|length)] + "/" %}
+{%- else %}
+  {%- set canonical_page = pagename + "/" %}
+{%- endif %}
 
 <!DOCTYPE html>
 <html lang="{{ lang_attr }}" >
@@ -24,7 +33,7 @@
   {% endif %}
   {# CANONICAL URL #}
   {% if theme_canonical_url %}
-    <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
+    <link rel="canonical" href="{{ theme_canonical_url }}{{ canonical_page }}"/>
   {% endif %}
 
   {# JAVASCRIPTS #}
