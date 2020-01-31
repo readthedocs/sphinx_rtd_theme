@@ -69,14 +69,29 @@
   </ul>
 
   {% if (theme_prev_next_buttons_location == 'top' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      {% if next %}
-        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">{{ _('Next') }} <span class="fa fa-arrow-circle-right"></span></a>
-      {% endif %}
-      {% if prev %}
-        <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> {{ _('Previous') }}</a>
-      {% endif %}
+  <div class="rst-page-nav" role="navigation" aria-label="breadcrumb navigation">
+    <hr class="top" />
+    {% if next %}
+    <div class="nav-next">
+      <div class="nav-text">
+        {{ _('Next') }}<br />
+        <a href="{{ next.link|e }}" title="{{ next.title|striptags|e }}">{{ next.title|striptags|e }}</a>
+      </div>
+      <a class="nav-arrow" href="{{ next.link|e }}" title="{{ next.title|striptags|e }}" accesskey="n" rel="next"><span class="fa fa-angle-right"></span></a>
+    </div>
+    {% endif %}
+    {% if prev %}
+    <div class="nav-prev">
+      <a class="nav-arrow" href="{{ prev.link|e }}" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-angle-left"></span></a>
+      <div class="nav-text">
+        {{ _('Previous') }}<br />
+        <a href="{{ prev.link|e }}" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev">{{ prev.title|striptags|e }}</a>
+      </div>
+    </div>
+    {% endif %}
+    <hr class="bottom" />
   </div>
+  {% else %}
+  <hr />
   {% endif %}
-  <hr/>
 </div>
