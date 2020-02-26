@@ -21,6 +21,8 @@ Other Changes
 * Added i18n support using Babel
 * Moved build system from Grunt and friends to Webpack
 * Warn when using a pre-release version of the theme
+* Remove Modernizr, but keep html5shiv (#724, #525)
+
 
 0.4.3
 ======

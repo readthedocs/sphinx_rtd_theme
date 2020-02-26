@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -64,6 +65,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/[name].css?[hash]",
       chunkFilename: "css/[name].css?[hash]"
-    })
+    }),
+    new CopyPlugin([
+      {
+        from: 'node_modules/html5shiv/dist/*.min.js',
+        flatten: true,
+        to: path.resolve(__dirname,'sphinx_rtd_theme/static/js') },
+    ]),
   ]
 };
