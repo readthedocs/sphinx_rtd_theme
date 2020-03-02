@@ -239,3 +239,36 @@ if (typeof(window) != 'undefined') {
             clearTimeout(id);
         };
 }());
+
+
+// creates Read Mode button to toggle navigation sidebar
+
+(function() {
+    document.addEventListener("DOMContentLoaded", function() {
+        var readModeToggle = function () {
+            var sidebarStyle = document.querySelector('.wy-nav-side').style;
+            var contentWrapStyle = document.
+                querySelector('.wy-nav-content-wrap').style;
+            var contentStyle = document.querySelector('.wy-nav-content').style;
+
+            if (sidebarStyle.display != "none") {
+                sidebarStyle.display = "none";
+                contentWrapStyle.marginLeft = "0px";
+                contentStyle.maxWidth = "unset";
+            } else {
+                sidebarStyle.display = "";
+                contentWrapStyle.marginLeft = "300px";
+            }
+        }
+
+        var readModeToggleButton = document.createElement('button');
+        readModeToggleButton.style.backgroundColor = "burlywood";
+        readModeToggleButton.style.border = "none";
+        readModeToggleButton.style.borderRadius = "3px";
+        readModeToggleButton.textContent = "Read Mode"
+        readModeToggleButton.addEventListener('click', readModeToggle);
+
+        console.log(document.querySelector('.wy-breadcrumbs'))
+        document.querySelector('.wy-breadcrumbs').appendChild(readModeToggleButton)
+    })
+}());
