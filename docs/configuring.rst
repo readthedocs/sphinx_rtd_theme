@@ -40,7 +40,7 @@ documentation navigation.
     :type: boolean
     :default: ``True``
 
-    With this enabled, navigation entries are not expandable -- the ``[+]``
+    With this disabled, navigation entries are not expandable -- the ``[+]``
     icons next to each entry are removed.
 
 .. confval:: sticky_navigation
