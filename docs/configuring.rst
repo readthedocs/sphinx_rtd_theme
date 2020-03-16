@@ -15,6 +15,7 @@ For example:
     html_theme_options = {
         'canonical_url': '',
         'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+        'analythics_anonymize_ip': False,
         'logo_only': False,
         'display_version': True,
         'prev_next_buttons_location': 'bottom',
@@ -100,6 +101,14 @@ Miscellaneous options
 
     If specified, Google Analytics' javascript is included in your pages.
     Set the value to the ID provided to you by google (like ``UA-XXXXXXX``).
+
+.. confval:: analythics_anonymize_ip
+
+   :type: boolean
+   :default: ``False``
+
+   Enabling this will make it so the users’ IP addresses are anonymized
+   within Google Analytics.
 
 .. confval:: canonical_url
 

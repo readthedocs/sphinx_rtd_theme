@@ -228,6 +228,9 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', '{{ theme_analytics_id }}', 'auto');
+    {% if theme_analythics_anonymize_ip %}
+    ga('set', 'anonymizeIp', true);
+    {% endif %}
     ga('send', 'pageview');
     </script>
 
