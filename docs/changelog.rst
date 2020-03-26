@@ -20,6 +20,7 @@ Other Changes
 * Added Spanish translation
 * Added i18n support using Babel
 * Moved build system from Grunt and friends to Webpack
+* Remove Modernizr, but keep html5shiv (#724, #525)
 
 0.4.3
 ======

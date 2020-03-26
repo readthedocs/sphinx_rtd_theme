@@ -94,6 +94,11 @@
     font-family: $code-font-family
     font-size: 12px
     line-height: 1.4
+  
+  // Do not allow selection of code block prompts
+  div.highlight .gp 
+    user-select: none
+    pointer-events: none
 
   .code-block-caption
     font-style: italic

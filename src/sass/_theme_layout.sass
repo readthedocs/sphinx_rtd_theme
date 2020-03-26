@@ -33,7 +33,6 @@ html
   header, p.caption
     color: $nav-caption
     height: $base-font-size * 2
-    display: inline-block
     line-height: $base-font-size * 2
     padding: 0 $gutter
     margin: $base-line-height / 2 0 0 0
@@ -102,42 +101,62 @@ html
     border-top: solid 1px darken($menu-vertical-background-color, 20%)
 
   // This is the on state for pages beyond second level
-  li.toctree-l2 a, li.toctree-l3 a, li.toctree-l4 a
-    color: $menu-link-color
-  li.toctree-l1.current li.toctree-l2, li.toctree-l2.current li.toctree-l3
+
+  %hide_show_toctree_ul
     > ul
       display: none
     &.current > ul
       display: block
+
+  %shrink_toctree_element
+    font-size: .9em
+
+  %toctree_link_color
+    color: $menu-link-color
+
+  %toctree_hover_link_color
+    color: $menu-link-medium
+
+  %display_current_toctree_element
+    display: block
+
+  @for $toc_level from 1 through 10
+    .toctree-l#{$toc_level}.current .toctree-l#{$toc_level + 1}
+      @extend %hide_show_toctree_ul
+
+    @if $toc_level > 1
+      li.toctree-l#{$toc_level}
+        a
+          @extend %toctree_link_color
+        &.current
+          > a
+            padding: $gutter / 4 $gutter * ($toc_level - 1 + .5)
+
+          li.toctree-l#{$toc_level + 1}  > a
+            @extend %display_current_toctree_element
+            padding: $gutter / 4 $gutter * ($toc_level + .5)
+        a:hover span.toctree-expand
+          @extend %toctree_hover_link_color
+    @if $toc_level > 2 and $toc_level < 5
+      li.toctree-l#{$toc_level}
+        @extend %shrink_toctree_element
+
   li.toctree-l2
     &.current
       > a
         background: darken($menu-vertical-background-color, 20%)
-        padding: $gutter / 4 $gutter * 1.5
       li.toctree-l3 > a
-        display: block
         background: darken($menu-vertical-background-color, 20%)
-        padding: $gutter / 4 $gutter * 2.5
-    a:hover span.toctree-expand
-      color: $menu-link-medium
     span.toctree-expand
       color: darken($menu-vertical-background-color, 35%)
   li.toctree-l3
-    font-size: .9em
     &.current
       > a
         background: darken($menu-vertical-background-color, 25%)
-        padding: $gutter / 4 $gutter * 2.5
       li.toctree-l4 > a
-        display: block
         background: darken($menu-vertical-background-color, 25%)
-        padding: $gutter / 4 $gutter * 3.5
-    a:hover span.toctree-expand
-      color: $menu-link-medium
     span.toctree-expand
       color: darken($menu-vertical-background-color, 40%)
-  li.toctree-l4
-    font-size: .9em
 
   li.current ul
     display: block
@@ -149,7 +168,6 @@ html
     color: $menu-link-light
     font-weight: normal
   a
-    display: inline-block
     line-height: 18px
     padding: $gutter / 4 $gutter
     display: block
@@ -176,10 +194,7 @@ html
   z-index: $z-index-popover
   background-color: $nav-search-background-color
   text-align: center
-  padding: $gutter / 2
-  display: block
   color: $nav-search-color
-  margin-bottom: $gutter / 2
   input[type=text]
     width: 100%
     border-radius: 50px
@@ -220,7 +235,6 @@ html
     font-weight: normal
     color: rgba(255,255,255,.3)
 
-
 .wy-nav .wy-menu-vertical
   header
     color: $link-color
@@ -248,7 +262,6 @@ html
     right: -100%
     left: auto
     opacity: 0
-
 
 .wy-body-for-nav
   background: $section-background-color
@@ -364,7 +377,7 @@ footer
     font-size: 90%
 
 .genindextable li > ul
-    margin-left: $base-line-height
+  margin-left: $base-line-height
 
 +media($tablet)
   .wy-body-for-nav
