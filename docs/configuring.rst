@@ -107,8 +107,7 @@ Miscellaneous options
    :type: boolean
    :default: ``False``
 
-   Enabling this will make it so the users’ IP addresses are anonymized
-   within Google Analytics.
+   Anonymize visitor IP addresses in Google Analytics.
 
 .. confval:: canonical_url
 
