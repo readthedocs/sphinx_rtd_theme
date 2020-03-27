@@ -228,7 +228,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', '{{ theme_analytics_id }}', 'auto');
-    {% if theme_analythics_anonymize_ip %}
+    {% if theme_analytics_anonymize_ip|tobool %}
     ga('set', 'anonymizeIp', true);
     {% endif %}
     ga('send', 'pageview');
