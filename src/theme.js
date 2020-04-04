@@ -152,6 +152,7 @@ function ThemeNav () {
                 link.closest('li.toctree-l2').addClass('current');
                 link.closest('li.toctree-l3').addClass('current');
                 link.closest('li.toctree-l4').addClass('current');
+                link.closest('li.toctree-l5').addClass('current');
                 link[0].scrollIntoView();
             }
         }
