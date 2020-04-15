@@ -11,7 +11,22 @@ New Features
 Fixes
 -----
 
+Other Changes
+--------------
+
+0.4.4
+=====
+
+:Date: Apr 15, 2020
+
+New Features
+-------------
+
+Fixes
+-----
+
 * Fix definition lists looking different with Sphinx 2.0+
+* Add compatibility with Sphinx 3.x
 
 Other Changes
 --------------
