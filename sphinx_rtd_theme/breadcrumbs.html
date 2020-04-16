@@ -58,6 +58,8 @@
             {% else %}
               <a href="https://{{ gitlab_host|default("gitlab.com") }}/{{ gitlab_user }}/{{ gitlab_repo }}/{{ theme_vcs_pageview_mode|default("blob") }}/{{ gitlab_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-gitlab"> {{ _('Edit on GitLab') }}</a>
             {% endif %}
+          {% elif display_github_url %}
+            <a href="{{ display_github_url }}" class="fa fa-github" target="_blank"> {{ _('View on GitHub') }}</a>
           {% elif show_source and source_url_prefix %}
             <a href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}">{{ _('View page source') }}</a>
           {% elif show_source and has_source and sourcename %}
