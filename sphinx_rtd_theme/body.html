@@ -1,0 +1,66 @@
+<body class="wy-body-for-nav">
+
+  {% block extrabody %} {% endblock %}
+  <div class="wy-grid-for-nav">
+    {# SIDE NAV, TOGGLES ON MOBILE #}
+    {% include "sidenav.html" %}
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+      <nav class="wy-nav-top" aria-label="top navigation">
+        {% block mobile_nav %}
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+        {% endblock %}
+      </nav>
+      <div class="wy-nav-content">
+      {%- block content %}
+        {% if theme_style_external_links|tobool %}
+        <div class="rst-content style-external-links">
+        {% else %}
+        <div class="rst-content">
+        {% endif %}
+          {% include "breadcrumbs.html" %}
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+          {%- block document %}
+           <div itemprop="articleBody">
+            {% block body %}{% endblock %}
+           </div>
+           {% if self.comments()|trim %}
+           <div class="articleComments">
+            {% block comments %}{% endblock %}
+           </div>
+           {% endif%}
+          </div>
+          {%- endblock %}
+          {% include "footer.html" %}
+        </div>
+      {%- endblock %}
+      </div>
+    </section>
+  </div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable({{ 'true' if theme_sticky_navigation|tobool else 'false' }});
+      });
+  </script>
+
+  {# Do not conflict with RTD insertion of analytics script #}
+  {% if not READTHEDOCS %}
+    {% if theme_analytics_id %}
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '{{ theme_analytics_id }}', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    {% endif %}
+  {% endif %}
+
+  {%- block footer %} {% endblock %}
+</body>
