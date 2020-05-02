@@ -24,8 +24,6 @@ sys.path.append(os.path.abspath('./demo/'))
 import sphinx_rtd_theme
 from sphinx.locale import _
 
-print(f'Using sphinx_rtd_theme: {sphinx_rtd_theme.__file__}')
-
 project = u'Read the Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
 version = sphinx_rtd_theme.__version__
