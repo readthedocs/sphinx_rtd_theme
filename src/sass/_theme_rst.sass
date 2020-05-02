@@ -148,9 +148,12 @@
   .section ol, ol.arabic
     @extend .wy-plain-list-decimal
   .section ol p, .section ul p
-    margin-bottom: $base-line-height / 2
-    &:last-child
-      margin-bottom: $base-line-height
+    html.writer-html4 &
+      margin-bottom: $base-line-height / 2
+      &:last-child
+        margin-bottom: $base-line-height
+    html.writer-html5 &
+      margin-bottom: 0rem
   .line-block
     margin-left: 0px
     margin-bottom: $base-line-height
@@ -239,22 +242,60 @@
   .hlist
     width: 100%
 
-  // Tables! Sphinx LOVES TABLES. Most of wyrm assumes you're only going to use a table as a table
-  // so I have to write a bunch of unique stuff for Sphinx to style them up differently like it's 2003.
-  table.docutils.citation, table.docutils.footnote
-    background: none
-    border: none
-    color: $text-medium
-    td, tr
+  // The html4 writer outputs the citation and footnotes as a table, and the
+  // html5 writer outputs these as a definition list. We will use the fairly
+  // well supported css `grid` attribute to make these back into a table
+  // HTML4 writer
+  html.writer-html4 &
+    table.docutils.citation, table.docutils.footnote
+      background: none
       border: none
-      background-color: transparent !important
-      white-space: normal
-    td.label
-      padding-left: 0
-      padding-right: 0
-      vertical-align: top
+      td, tr
+        border: none
+        background-color: transparent !important
+        white-space: normal
+      td.label
+        padding-left: 0
+        padding-right: 0
+        vertical-align: top
+  // HTML5 writer
+  html.writer-html5 &
+    dl.footnote,
+    dl.field-list
+      display: grid
+      grid-template-columns: max-content auto
+      > dt, > dd
+        margin-bottom: 0rem
+    dl.footnote
+      font-size: .9rem
+      > dt
+        margin: 0rem .5rem .5rem 0rem
+        line-height: 1.2rem
+        word-break: break-all
+        font-weight: normal
+        > span.brackets
+          margin-right: .5rem
+          &:before
+            content: "["
+          &:after
+            content: "]"
+        > span.fn-backref
+          font-style: italic
+      > dd
+        margin: 0rem 0rem .5rem 0rem
+        line-height: 1.2rem
+        p
+          font-size: .9rem
+    dl.option-list
+      kbd
+        font-size: .9rem
+  // Both
+  html.writer-html4 & table.docutils.citation, table.docutils.footnote,
+  html.writer-html5 & dl.footnote
+    color: $text-medium
     code
       color: $gray
+
   // Remove the large vertical space between citations and footnotes
   .wy-table-responsive.citation, .wy-table-responsive.footnote
     margin-bottom: 0
@@ -271,6 +312,13 @@
     @extend .wy-table-bordered-all
     th
       border-color: $table-border-color
+      html.writer-html5 &
+        border: 1px solid $table-border-color
+    html.writer-html5 &
+      th > p, td > p
+        line-height: 1rem
+        margin-bottom: 0rem
+        font-size: .9rem
     &:not(.field-list)
       @extend .wy-table-striped
     // Remove bottom margin for the last element (and it's last child)
@@ -321,7 +369,7 @@
       margin-bottom: $base-line-height / 2
     // Most of the content within these dls are one liners, so I halve the normal margins.
     p, table, ul, ol
-      margin-bottom: $base-line-height / 2 !important
+      margin-bottom: $base-line-height / 2
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
