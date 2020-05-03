@@ -260,6 +260,9 @@
         vertical-align: top
   // HTML5 writer
   html.writer-html5 &
+    dl dt span.classifier
+      &:before
+        content: " : "
     dl.footnote,
     dl.field-list
       display: grid
