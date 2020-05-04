@@ -43,6 +43,7 @@
     {%- endif %}
 
     </p>
+  {%- endblock %}
   </div>
 
   {%- if show_sphinx %}
@@ -50,7 +51,6 @@
     {% set readthedocs_web = '<a href="https://readthedocs.org">Read the Docs</a>'  %}
       {% trans sphinx_web=sphinx_web, readthedocs_web=readthedocs_web %}Built with {{ sphinx_web }} using a{% endtrans %} <a href="https://github.com/rtfd/sphinx_rtd_theme">{% trans %}theme{% endtrans %}</a> {% trans %}provided by {{ readthedocs_web }}{% endtrans %}.
   {%- endif %}
-  {%- endblock %}
 
   {%- block extrafooter %} {% endblock %}
 
