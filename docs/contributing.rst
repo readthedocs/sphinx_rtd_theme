@@ -24,13 +24,13 @@ Set up your environment
 
    .. code:: console
 
-       pip install -e '.[dev]'
+       $ pip install -e '.[dev]'
 
 #. Install Webpack_, node-sass_, and theme dependencies locally.
 
    .. code:: console
 
-       npm install
+       $ npm install
 
 Making changes
 --------------
@@ -39,7 +39,7 @@ Changes to the theme can be compiled and tested with Webpack_:
 
 .. code:: console
 
-    npm run dev
+    $ npm run dev
 
 This script will do the following:
 
@@ -54,7 +54,7 @@ can be used to test built assets:
 
 .. code:: console
 
-    npm run build
+    $ npm run build
 
 .. _Webpack: https://webpack.js.org/
 .. _node-sass: https://github.com/sass/node-sass
@@ -76,7 +76,7 @@ the following:
 
 .. code:: console
 
-    python setup.py update_translations
+    $ python setup.py update_translations
 
 This will extract new messages, upload the messages to Transifex, and will
 update our local translation files. Changes can be checked in to a branch and
@@ -105,8 +105,8 @@ To release a new version of the theme, core team will take the following steps:
 
     .. code:: console
 
-        rm -rf dist/
-        python setup.py sdist bdist_wheel
-        twine upload --sign --identity security@readthedocs.org dist/*
+        $ rm -rf dist/
+        $ python setup.py sdist bdist_wheel
+        $ twine upload --sign --identity security@readthedocs.org dist/*
 
 .. _PEP440: https://www.python.org/dev/peps/pep-0440/

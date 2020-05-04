@@ -94,6 +94,11 @@
     font-family: $code-font-family
     font-size: 12px
     line-height: 1.4
+  
+  // Do not allow selection of code block prompts
+  div.highlight .gp 
+    user-select: none
+    pointer-events: none
 
   .code-block-caption
     font-style: italic
@@ -181,7 +186,7 @@
     // Do not override display:table for tables
     &:not(table)
       display: block
-  .toctree-wrapper p.caption
+  .toctree-wrapper > p.caption
     @extend h2
 
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
@@ -228,9 +233,9 @@
   // Sphinx can highlight searched text with ?highlighted=searchterm
   .highlighted
     background: $highlight-color
-    display: inline-block
+    box-shadow: 0 0 0 $base-line-height / 12 $highlight-color
+    display: inline
     font-weight: bold
-    padding: 0 $base-line-height / 4
 
   // These are the little citation links [1] that show up within paragraphs.
   .footnote-reference, .citation-reference
