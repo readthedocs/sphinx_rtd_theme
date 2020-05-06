@@ -12,8 +12,8 @@ from sphinx.locale import _
 
 project = u'Read the Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
-version = '0.4.3alpha0'
-release = '0.4.3alpha0'
+version = '0.4.3alpha1'
+release = '0.4.3alpha1'
 author = u'Dave Snider, Read the Docs, Inc. & contributors'
 copyright = author
 language = 'en'
