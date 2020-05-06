@@ -33,6 +33,7 @@
       </span>
     {%- elif commit %}
       <span class="commit">
+        {# Translators: the phrase "revision" comes from Git, referring to a commit #}
         {% trans %}Revision{% endtrans %} <code>{{ commit }}</code>.
       </span>
     {%- elif last_updated %}
@@ -47,7 +48,12 @@
   {%- if show_sphinx %}
     {% set sphinx_web = '<a href="http://sphinx-doc.org/">Sphinx</a>' %}
     {% set readthedocs_web = '<a href="https://readthedocs.org">Read the Docs</a>'  %}
-      {% trans sphinx_web=sphinx_web, readthedocs_web=readthedocs_web %}Built with {{ sphinx_web }} using a{% endtrans %} <a href="https://github.com/rtfd/sphinx_rtd_theme">{% trans %}theme{% endtrans %}</a> {% trans %}provided by {{ readthedocs_web }}{% endtrans %}.
+    {# Translators: the variable "sphinx_web" is a link to the Sphinx project documentation with the text "Sphinx" #}
+    {% trans sphinx_web=sphinx_web, readthedocs_web=readthedocs_web %}Built with {{ sphinx_web }} using a{% endtrans %}
+    {# Translators: "theme" refers to a theme for Sphinx, which alters the appearance of the generated documenation #}
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">{% trans %}theme{% endtrans %}</a>
+    {# Translators: this is always used as "provided by Read the Docs", and should not imply Read the Docs is an author of the generated documentation. #}
+    {% trans %}provided by {{ readthedocs_web }}{% endtrans %}.
   {%- endif %}
 
   {%- block extrafooter %} {% endblock %}
