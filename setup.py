@@ -18,7 +18,7 @@ class WebpackBuildCommand(setuptools.command.build_py.build_py):
     """Prefix Python build with Webpack asset build"""
 
     def run(self):
-        if not 'CI' in os.environ:
+        if not 'CI' in os.environ and not 'TOX_ENV_NAME' in os.environ:
             subprocess.run(['npm', 'install'], check=True)
             subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
         setuptools.command.build_py.build_py.run(self)
