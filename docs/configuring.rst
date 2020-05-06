@@ -98,10 +98,8 @@ Miscellaneous options
 
     :type: string
 
-    Change the Google Analytics ID that is included on pages.
-
-    .. warning::
-        This configuration option is not yet used.
+    If specified, Google Analytics' javascript is included in your pages.
+    Set the value to the ID provided to you by google (like ``UA-XXXXXXX``).
 
 .. confval:: canonical_url
 

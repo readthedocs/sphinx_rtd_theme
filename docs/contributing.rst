@@ -24,13 +24,13 @@ Set up your environment
 
    .. code:: console
 
-       pip install -e '.[dev]'
+       $ pip install -e '.[dev]'
 
 #. Install Webpack_, node-sass_, and theme dependencies locally.
 
    .. code:: console
 
-       npm install
+       $ npm install
 
 Making changes
 --------------
@@ -39,7 +39,7 @@ Changes to the theme can be compiled and tested with Webpack_:
 
 .. code:: console
 
-    npm run dev
+    $ npm run dev
 
 This script will do the following:
 
@@ -54,7 +54,7 @@ can be used to test built assets:
 
 .. code:: console
 
-    npm run build
+    $ npm run build
 
 .. _Webpack: https://webpack.js.org/
 .. _node-sass: https://github.com/sass/node-sass
@@ -76,7 +76,7 @@ the following:
 
 .. code:: console
 
-    python setup.py update_translations
+    $ python setup.py update_translations
 
 This will extract new messages, upload the messages to Transifex, and will
 update our local translation files. Changes can be checked in to a branch and
@@ -99,17 +99,19 @@ To release a new version of the theme, core team will take the following steps:
    run ``bump2version --allow-dirty releast`` to update the release to an ``rc``
    release. If this is a final release, run the command again.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
-#. Run ``python setup.py build`` to rebuild all the theme assets.
-#. Run ``python setup.py update_translations`` to compile new translation files and update Transifex
-#. Commit that change.
+#. Run ``python setup.py update_translations`` to compile new translation files
+   and update Transifex.
+#. Run ``python setup.py build`` to rebuild all the theme assets and the Python
+   package.
+#. Commit these changes.
 #. Tag the release in git: ``git tag $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
 #. Upload the package to PyPI:
 
     .. code:: console
 
-        rm -rf dist/
-        python setup.py sdist bdist_wheel
-        twine upload --sign --identity security@readthedocs.org dist/*
+        $ rm -rf dist/
+        $ python setup.py sdist bdist_wheel
+        $ twine upload --sign --identity security@readthedocs.org dist/*
 
 .. _PEP440: https://www.python.org/dev/peps/pep-0440/
