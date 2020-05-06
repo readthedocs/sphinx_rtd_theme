@@ -80,7 +80,7 @@ class TransifexCommand(distutils.cmd.Command):
 
     def run(self):
         subprocess.run(['tx', 'push', '--source'], check=True)
-        subprocess.run(['tx', 'pull', '--mode', 'onlyreviewed', '-f'], check=True)
+        subprocess.run(['tx', 'pull', '--mode', 'onlyreviewed', '-f', '-a'], check=True)
 
 
 setup(
