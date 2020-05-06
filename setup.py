@@ -85,7 +85,7 @@ class TransifexCommand(distutils.cmd.Command):
 
 setup(
     name='sphinx_rtd_theme',
-    version='0.4.3alpha1',
+    version='0.5.0rc1',
     url='https://github.com/rtfd/sphinx_rtd_theme/',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',

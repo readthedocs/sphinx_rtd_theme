@@ -5,24 +5,24 @@ Changelog
 master
 ======
 
-New Features
--------------
+v0.5.0rc1
+=========
 
 Fixes
 -----
 
-* Fix definition lists looking different with Sphinx 2.0+
+* Fix many styling issues that look different when using the Sphinx HTML5 writer
 
 Other Changes
 --------------
 
 * Add the ``navigation`` template block around the navigation area.
-* Added Spanish translation
 * Added i18n support using Babel
+* Added translations for 10 new languages
 * Moved build system from Grunt and friends to Webpack
 * Remove Modernizr, but keep html5shiv (#724, #525)
 
-0.4.3
+v0.4.3
 ======
 
 :Date: Feb 12, 2019
