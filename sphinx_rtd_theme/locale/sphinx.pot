@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-07-24 23:51-0600\n"
+"POT-Creation-Date: 2020-05-06 13:13-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,25 +56,32 @@ msgstr ""
 msgid "Build"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:36
+#. the phrase "revision" comes from Git, referring to a commit
+#: sphinx_rtd_theme/footer.html:37
 msgid "Revision"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:40
+#: sphinx_rtd_theme/footer.html:41
 #, python-format
 msgid "Last updated on %(last_updated)s."
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:50
+#. the variable "sphinx_web" is a link to the Sphinx project documentation with
+#. the text "Sphinx"
+#: sphinx_rtd_theme/footer.html:52
 #, python-format
 msgid "Built with %(sphinx_web)s using a"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:50
+#. "theme" refers to a theme for Sphinx, which alters the appearance of the
+#. generated documenation
+#: sphinx_rtd_theme/footer.html:54
 msgid "theme"
 msgstr ""
 
-#: sphinx_rtd_theme/footer.html:50
+#. this is always used as "provided by Read the Docs", and should not imply
+#. Read the Docs is an author of the generated documentation.
+#: sphinx_rtd_theme/footer.html:56
 #, python-format
 msgid "provided by %(readthedocs_web)s"
 msgstr ""
