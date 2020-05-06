@@ -95,10 +95,11 @@ To release a new version of the theme, core team will take the following steps:
    We follow `semver <http://semver.org/>`_ and `PEP440`_
    (with regards to alpha release and development versions). The version
    increment should reflect these releases and any potentially breaking changes.
-#. If the new version is not a dev version, run ``bump2version --allow-dirty release`` to
-   remove the ``.devX`` part of the version.
+#. New versions are by default ``alpha`` releases. If this is a release candidate,
+   run ``bump2version --allow-dirty releast`` to update the release to an ``rc``
+   release. If this is a final release, run the command again.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
-#. Run ``npm run build`` to rebuild all the theme assets.
+#. Run ``python setup.py build`` to rebuild all the theme assets.
 #. Run ``python setup.py update_translations`` to compile new translation files and update Transifex
 #. Commit that change.
 #. Tag the release in git: ``git tag $NEW_VERSION``.
