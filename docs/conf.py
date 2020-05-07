@@ -3,6 +3,7 @@
 import sys
 import os
 import re
+import time
 
 # If we are building locally, or the build on Read the Docs looks like a PR
 # build, prefer to use the version of the theme in this repo, not the installed
@@ -118,3 +119,24 @@ def setup(app):
             ),
         ]
     )
+
+    # Add cache busting just for our docs for now. This will make PR testing
+    # more accurate, as CDN caching of static assets makes it impossible to see
+    # style changes on additional commits.
+    re_cache_files = re.compile('^.*\.(js|css|svg|woff2?|png)$')
+
+    def event_context_no_cache(app, pagename, templatename, context, doctree):
+        pathto = context['pathto']
+
+        def pathto_no_cache(*args, **kwargs):
+            uri = pathto(*args, **kwargs)
+            if re_cache_files.match(uri):
+                postfix = str(int(time.time()))
+                if 'commit' in context:
+                    postfix = context['commit']
+                uri = f"{uri}?{postfix}"
+            return uri
+
+        context['pathto'] = pathto_no_cache
+
+    app.connect('html-page-context', event_context_no_cache)
