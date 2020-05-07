@@ -360,6 +360,68 @@ footer
   margin-top: 12px
   +clearfix
 
+#local-table-of-contents
+  padding-bottom: 20px
+  #local-table-of-contents-title
+    margin-bottom: 10px
+  a[href="#"]
+    display: none
+  & > ul
+    & > li
+      list-style: none
+      margin-top: 0
+  li
+    list-style: square
+    margin-bottom: 5px
+    margin-top: 5px
+  ul
+    ul
+      padding-left: 0
+      margin-left: 20px
+      padding-right: 0
+
+@media screen and (min-width: $nav-media-query + $local-toc-width)
+  #local-table-of-contents
+    display: block
+    position: fixed
+    margin-left: 0
+    overflow-y: auto
+    height: 95%
+    top: 45px
+    left: 1100px
+    width: $local-toc-width
+    #local-table-of-contents-title
+      display: block
+      font-size: 16px
+      width: 100%
+      padding-left: 10px
+      padding-top: 10px
+      padding-bottom: 5px
+      margin-bottom: -5px
+      border-left: 7px solid darken($local-toc-border-color, 20%)
+    ul
+      list-style: none
+    & > ul
+      border-left: 7px solid darken($local-toc-border-color, 20%)
+      padding-bottom: 10px
+    ul
+      &:first-of-type
+        padding-left: 0
+        margin-left: 0
+    li
+      margin-top: 5px
+      margin-bottom: 5px
+      margin-left: 20px
+    & > ul
+      & > li
+        margin-left: 10px
+    ul
+      ul
+        padding-left: 0
+        margin-left: 10px
+        padding-right: 0
+        margin-right: 10px
+
 #search-results
   .search li
     margin-bottom: $base-line-height
