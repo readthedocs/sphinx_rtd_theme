@@ -49,6 +49,18 @@ Term : classifier
 Term
     Definition
 
+I have no clue why the definition list below is classified as a different style
+of definition list than the one above.
+
+Is it the spaces in the term?
+    Maybe it was the multiple line paragraph
+    in the line below that caused this?
+
+Is it the paragraph above the list maybe?
+    I guess a lot of these lists don't have leading paragraphs?
+
+Is it everything all at once?
+    Who knows?!
 
 Option Lists
 ------------
