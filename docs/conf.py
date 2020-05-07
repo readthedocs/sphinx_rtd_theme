@@ -134,7 +134,7 @@ def setup(app):
                 postfix = str(int(time.time()))
                 if 'commit' in context:
                     postfix = context['commit']
-                uri = f"{uri}?{postfix}"
+                uri = "{uri}?{postfix}".format(uri=uri, postfix=postfix)
             return uri
 
         context['pathto'] = pathto_no_cache
