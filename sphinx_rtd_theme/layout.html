@@ -7,9 +7,10 @@
   {%- set titlesuffix = "" %}
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
+{%- set sphinx_writer = 'writer-html5' if html5_doctype else 'writer-html4' %}
 
 <!DOCTYPE html>
-<html lang="{{ lang_attr }}" >
+<html class="{{ sphinx_writer }}" lang="{{ lang_attr }}" >
 <head>
   <meta charset="utf-8">
   {{ metatags }}
