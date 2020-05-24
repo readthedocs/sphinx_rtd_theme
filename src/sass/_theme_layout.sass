@@ -351,14 +351,38 @@ footer
     border: none
     color: $footer-color
 
-.rst-footer-buttons
-  &:before, &:after
-    width: 100%
-  +clearfix
-
-.rst-breadcrumbs-buttons
-  margin-top: 12px
-  +clearfix
+.rst-page-nav
+  font-size: .9em
+  a
+    color: #2980B9
+  hr.bottom
+    clear: both
+    margin-top: 0px
+  hr.top
+    clear: both
+    margin-bottom: 0px
+  .nav-prev
+    width: 50%
+    text-align: left
+    float: left
+    white-space: nowrap
+  .nav-next
+    width: 50%
+    text-align: right
+    float: right
+    white-space: nowrap
+  .nav-prev, .nav-next
+    .nav-text
+      display: inline-block
+      white-space: normal
+      padding: 10px 7px 8px 7px
+      vertical-align: top
+      max-width: 95%
+      a:hover
+        text-decoration: underline
+    .nav-arrow
+      font-size: 3em
+      display: inline-block
 
 #search-results
   .search li
