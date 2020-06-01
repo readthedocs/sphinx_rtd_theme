@@ -82,6 +82,7 @@ function ThemeNav () {
             .on('click', "[data-toggle='wy-nav-top']", function() {
                 $("[data-toggle='wy-nav-shift']").toggleClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
+                $(".wy-header").toggleClass("shift");
             })
 
             // Nav menu link click operations
@@ -90,6 +91,7 @@ function ThemeNav () {
                 // Close menu when you click a link.
                 $("[data-toggle='wy-nav-shift']").removeClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
+                $(".wy-header").toggleClass("shift");
                 // Handle dynamic display of l3 and l4 nav lists
                 self.toggleCurrent(target);
                 self.hashChange();
@@ -262,4 +264,4 @@ if (typeof(window) != 'undefined') {
         window.cancelAnimationFrame = function(id) {
             clearTimeout(id);
         };
-}());
+})();

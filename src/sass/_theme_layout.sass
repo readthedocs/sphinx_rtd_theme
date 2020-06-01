@@ -1,3 +1,6 @@
+$gutter: 1.25rem
+$menu-link-font-family: "SF Pro Display", "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
+
 // Set uniform (but not relative) base font size
 html
   font-size: $base-font-size
@@ -7,6 +10,7 @@ html
   top: $gutter
 
 .wy-menu
+  padding: 0 $gutter
   a:hover
     text-decoration: none
 
@@ -15,7 +19,7 @@ html
   ul, li
     display: inline-block
   li:hover
-    background: rgba(255, 255, 255, 0.1)
+    background: transparent
   li
     &.divide-left
       border-left: solid 1px hsl(0, 0%, 25%)
@@ -35,34 +39,43 @@ html
     height: $base-font-size * 2
     line-height: $base-font-size * 2
     padding: 0 $gutter
-    margin: ($base-line-height / 2) 0 0 0
+    margin: ($base-line-height / 4) 0
     display: block
     font-weight: bold
+    font-family: $menu-link-font-family
     text-transform: uppercase
-    font-size: 85%
+    font-size: 89%
     white-space: nowrap
+
+  p.caption
+    white-space: pre-wrap
+    height: auto
+    min-height: $base-font-size * 2
 
   ul
     margin-bottom: 0
+  a
+    font-weight: 400
   li
     &.divide-top
       border-top: solid 1px hsl(0, 0%, 25%)
     &.divide-bottom
       border-bottom: solid 1px hsl(0, 0%, 25%)
     &.current
-      background: darken($menu-vertical-background-color, 10%)
+      // background: darken($menu-vertical-background-color, 10%)
       a
         color: $menu-link-medium
-        border-right: solid 1px darken($menu-vertical-background-color, 20%)
+        // border-right: solid 1px darken($menu-vertical-background-color, 20%)
         padding: ($gutter / 4) ($gutter * 1.5)
         &:hover
-          background: darken($menu-vertical-background-color, 15%)
+          background: transparent
     code
       border: none
       background: inherit
       color: inherit
       padding-left: 0
       padding-right: 0
+      color: #FF3737
     // Expand links
     button.toctree-expand
       display: block
@@ -78,16 +91,16 @@ html
 
   // On state for the first level
   li.on a, li.current > a
-    color: $menu-link-color
+    color: $menu-link-dark
     padding: ($gutter / 4) $gutter
     font-weight: bold
     position: relative
-    background: $menu-vertical-background-color
+    background: transparent
     border: none
     padding-left: $gutter -4px
     +font-smooth
     &:hover
-      background: $menu-vertical-background-color
+      background: transparent
       button.toctree-expand
         color: $menu-link-medium
     button.toctree-expand
@@ -98,8 +111,8 @@ html
       color: darken($menu-link-medium, 30%)
 
   li.toctree-l1.current > a
-    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
-    border-top: solid 1px darken($menu-vertical-background-color, 20%)
+    // border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
+    // border-top: solid 1px darken($menu-vertical-background-color, 20%)
 
   // This is the on state for pages beyond second level
 
@@ -128,14 +141,12 @@ html
     @if $toc_level > 1
       li.toctree-l#{$toc_level}
         a
-          @extend %toctree_link_color
+          // @extend %toctree_link_color
+          padding: $gutter / 3 ($gutter) * ($toc_level)
         &.current
-          > a
-            padding: ($gutter / 4) ($gutter * ($toc_level - 1 + 0.5))
-
           li.toctree-l#{$toc_level + 1}  > a
             @extend %display_current_toctree_element
-            padding: ($gutter / 4) ($gutter * ($toc_level + 0.5))
+            padding: ($gutter / 4) ($gutter * ($toc_level + 1))
             padding-right: $gutter
         a:hover button.toctree-expand
           @extend %toctree_hover_link_color
@@ -146,17 +157,17 @@ html
   li.toctree-l2
     &.current
       > a
-        background: darken($menu-vertical-background-color, 20%)
+        // background: darken($menu-vertical-background-color, 20%)
       li.toctree-l3 > a
-        background: darken($menu-vertical-background-color, 20%)
+        // background: darken($menu-vertical-background-color, 20%)
     button.toctree-expand
       color: darken($menu-vertical-background-color, 35%)
   li.toctree-l3
     &.current
       > a
-        background: darken($menu-vertical-background-color, 25%)
+        // background: darken($menu-vertical-background-color, 25%)
       li.toctree-l4 > a
-        background: darken($menu-vertical-background-color, 25%)
+        // background: darken($menu-vertical-background-color, 25%)
     button.toctree-expand
       color: darken($menu-vertical-background-color, 40%)
 
@@ -174,7 +185,8 @@ html
     padding: ($gutter / 4) $gutter
     display: block
     position: relative
-    font-size: 90%
+    font-size: 100%
+    font-family: $menu-link-font-family
     color: $menu-link-light
     &:hover
       background-color: lighten($menu-background-color, 10%)
@@ -182,26 +194,36 @@ html
       button.toctree-expand
         color: $menu-link-light
     &:active
-      background-color: $menu-logo-color
+      // background-color: $menu-logo-color
       cursor: pointer
-      color: $menu-link-active
+      // color: $menu-link-active
       button.toctree-expand
-        color: $menu-link-active
+        // color: $menu-link-active
 
 .wy-side-nav-search
   display: block
   width: $nav-desktop-width
-  padding: $gutter / 2
+  padding: $gutter * 1.3 $gutter * 2 $gutter / 2
   margin-bottom: $gutter / 2
   z-index: $z-index-popover
   background-color: $nav-search-background-color
   text-align: center
   color: $nav-search-color
+
+  &.bottom
+    width: 95%
+    padding: 6px
+    background-color: transparent
+    margin-bottom: 24px
+
   input[type=text]
+    display: block
     width: 100%
-    border-radius: 50px
-    padding: 6px 12px
-    border-color: darken($link-color, 5%)
+    font-size: 1rem
+    border-radius: 4px
+    padding: 7.5px 12px
+    border-color: #d3d3d3
+    box-shadow: none
   img
     display: block
     margin: auto auto ($gutter / 2) auto
@@ -220,7 +242,7 @@ html
     max-width: 100%
     +font-smooth
     &:hover
-      background: rgba(255, 255, 255, 0.1)
+      background: transparent
     img.logo
       display: block  // display on its own line all the time
       margin: 0 auto
@@ -236,7 +258,7 @@ html
     margin-top: -1 * $gutter / 4
     margin-bottom: $gutter / 2
     font-weight: normal
-    color: rgba(255, 255, 255, 0.3)
+    color: $text-color
 
 .wy-nav .wy-menu-vertical
   header
@@ -244,7 +266,7 @@ html
   a
     color: $text-light
     &:hover
-      background-color: $link-color
+      background-color: transparent
       color: $white
 
 [data-menu-wrap]
@@ -272,18 +294,18 @@ html
 .wy-grid-for-nav
   position: absolute
   width: 100%
-  height: 100%
+  top: 71px
+  bottom: 0
 
 .wy-nav-side
   position: fixed
-  top: 0
+  top: 71px
   bottom: 0
   left: 0
-  padding-bottom: 2em
+  padding-bottom: 3.2em
   width: $nav-desktop-width
   overflow-x: hidden
   overflow-y: hidden
-  min-height: 100%
   color: $menu-medium
   background: $nav-background-color
   z-index: $z-index-popover
@@ -297,8 +319,8 @@ html
 
 .wy-nav-top
   display: none
-  background: $link-color
-  color: $white
+  background: transparent
+  color: $text-color
   padding: ($gutter / 4) ($gutter / 2)
   position: relative
   line-height: 50px
@@ -306,7 +328,7 @@ html
   font-size: 100%
   +clearfix
   a
-    color: $white
+    color: $text-color
     font-weight: bold
     +font-smooth
   img
@@ -318,6 +340,7 @@ html
     border-radius: 100%
   i
     font-size: 30px
+    color: #C4C4C4
     float: left
     cursor: pointer
     padding-top: inherit
@@ -409,13 +432,11 @@ footer
       position: fixed
       min-width: 100%
       left: 85%
-      top: 0
+      top: 71px
       height: 100%
       overflow: hidden
 
 @media screen and (min-width: $nav-media-query)
-  .wy-nav-content-wrap
-    background: rgba(0, 0, 0, 0.05)
   .wy-nav-content
     margin: 0
     background: $section-background-color
@@ -425,3 +446,121 @@ footer
     display: none
   .wy-nav-content-wrap
     margin-left: 0
+
+.wy-header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 0 26px
+  border-bottom: 1px solid #d7d7d7
+  position: fixed
+  background-color: $white
+  z-index: 201
+  top: 0
+  right: 0
+  left: 0
+
+  .wy-header-left
+    display: flex
+    align-items: center
+
+  .wy-github-stars
+    line-height: 0
+    margin: 0 $gutter * 1.5
+
+  .wy-header-logo-wrapper
+    display: flex
+    align-items: center
+    height: 70px
+
+    img
+      display: block
+      width: auto
+      height: 35px
+
+.wy-main-nav
+  .wy-main-nav-checkbox
+    display: none
+
+  .wy-main-nav-toggle
+    display: none
+
+  ul
+    display: flex
+
+  li + li
+    margin-left: 30px
+
+  a
+    color: $text-color
+    font-weight: 600
+
++media($tablet)
+  .wy-header
+    position: relative
+    flex-direction: column
+    align-items: stretch
+
+    &::before
+      content: " "
+      height: 1px
+      background-color: #E9E9E9
+      left: 0
+      right: 0
+      top: 70px
+      position: absolute
+
+  .wy-main-nav
+    .wy-main-nav-menu
+      display: none
+      padding: $gutter
+      border-bottom: 1px solid #E9E9E9
+      position: absolute
+      top: 70px
+      z-index: 100
+      background: #fff
+      width: 100%
+      left: 0
+
+    .wy-main-nav-toggle
+      display: block
+      position: absolute
+      right: 0
+      top: 0
+      font-size: 14px
+      font-weight: 600
+      color: #919191
+      height: 70px
+      line-height: 70px
+      padding: 0 26px
+
+      &::before
+        content: " "
+        display: none
+
+    .wy-main-nav-checkbox:checked + .wy-main-nav-toggle
+      width: 90px
+      font-size: 0
+      color: transparent
+
+      &::before
+        display: block
+        width: 13px
+        height: 13px
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMyAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAuNDg5MTQ1IDAuNDg5NTcyQy0wLjA5NjY0MzUgMS4wNzUzNiAtMC4wOTY2NDA4IDIuMDI1MTEgMC40ODkxNDUgMi42MTA4OUw0LjM3ODIzIDYuNDk5OThMMC40ODkxNDUgMTAuMzg5MUMtMC4wOTY2NDM1IDEwLjk3NDkgLTAuMDk2NjQwOCAxMS45MjQ2IDAuNDg5MTQ1IDEyLjUxMDRDMS4wNzQ5MyAxMy4wOTYyIDIuMDI0NjggMTMuMDk2MiAyLjYxMDQ3IDEyLjUxMDRMNi40OTk1NSA4LjYyMTNMMTAuMzg4NiAxMi41MTA0QzEwLjk3NDQgMTMuMDk2MiAxMS45MjQyIDEzLjA5NjIgMTIuNTEgMTIuNTEwNEMxMy4wOTU3IDExLjkyNDYgMTMuMDk1NyAxMC45NzQ5IDEyLjUxIDEwLjM4OTFMOC42MjA4NyA2LjQ5OTk4TDEyLjUxIDIuNjEwODlDMTMuMDk1NyAyLjAyNTEgMTMuMDk1NyAxLjA3NTM2IDEyLjUxIDAuNDg5NTcyQzExLjkyNDIgLTAuMDk2MjEzNSAxMC45NzQ0IC0wLjA5NjIxNjMgMTAuMzg4NiAwLjQ4OTU3Mkw2LjQ5OTU1IDQuMzc4NjZMMi42MTA0NyAwLjQ4OTU3MkMyLjAyNDY4IC0wLjA5NjIxMzUgMS4wNzQ5MyAtMC4wOTYyMTYzIDAuNDg5MTQ1IDAuNDg5NTcyWiIgZmlsbD0iIzkwOTA5MCIvPgo8L3N2Zz4KCg==")
+        background-size: cover
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate3d(-50%, -50%, 0)
+
+    .wy-main-nav-checkbox:checked + label + .wy-main-nav-menu
+      display: block
+
+    li + li
+      margin-left: 0
+
+    a
+      display: block
+      text-align: center
+      padding: $gutter 0

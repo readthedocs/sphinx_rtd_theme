@@ -48,3 +48,25 @@
 @import theme_mathjax
 @import theme_font_awesome_compatibility
 @import theme_font_local
+
+// Overrides
+.rst-content 
+  pre.literal-block, 
+  div[class^="highlight"],
+  tt,
+  code,
+  .sidebar,
+  .admonition
+    border-radius: 2px
+
+  .admonition-title
+    border-top-left-radius: 2px
+    border-top-right-radius: 2px
+
+  tt.literal,
+  tt.literal,
+  code.literal
+    color: #FF3737
+
+  .highlight
+    background-color: #FAFAFA

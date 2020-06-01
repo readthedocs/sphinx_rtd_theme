@@ -12,8 +12,8 @@ Docs. This is for local testing purposes only.
   {%- if not READTHEDOCS %}
     <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
       <span class="rst-current-version" data-toggle="rst-current-version">
-        <span class="fa fa-book"> Read the Docs</span>
-        v: latest
+        <span class="rst-current-version-label"> Read the Docs</span>
+        version: latest
         <span class="fa fa-caret-down"></span>
       </span>
       <div class="rst-other-versions">
@@ -45,10 +45,19 @@ Docs. This is for local testing purposes only.
               <a href="#">{{ _('Builds') }}</a>
             </dd>
         </dl>
-        <dl>
+        <!-- <dl>
           <dt>Debug</dt>
           <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>
+        </dl> -->
+        <dl>
+          <dt>Search</dt>
+          <dd>
+            <div class="wy-side-nav-search bottom">
+              {% include "searchbox.html" %}
+            </div>
+          </dd>
         </dl>
+        <small>Hosted by <a href="#">Read te Docs</a> · <a href="#">Privacy Policy</a></small>
       </div>
     </div>
   {%- endif %}

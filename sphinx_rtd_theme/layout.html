@@ -124,19 +124,12 @@
 </head>
 
 <body class="wy-body-for-nav">
-
-  {%- block extrabody %} {% endblock %}
-  <div class="wy-grid-for-nav">
-    {#- SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
-          {%- block sidebartitle %}
-
+  <header class="wy-header">
+    <div class="wy-header-left">
           {%- if logo and theme_logo_only %}
-            <a href="{{ pathto(master_doc) }}">
+            <a href="{{ pathto(master_doc) }}" class="wy-header-logo-wrapper">
           {%- else %}
-            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
+            <a href="{{ pathto(master_doc) }}" class="wy-header-logo-wrapper icon icon-home"> {{ project }}
           {%- endif %}
 
           {%- if logo %}
@@ -151,16 +144,42 @@
           {%- endif %}
           </a>
 
+        <span class="wy-github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=cilium&repo=cilium&type=star&count=true&size=large"
+            frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+        </span>
+    </div>
+
+    <nav class="wy-main-nav">
+      <input name="wy-main-nav-checkbox" id="wy-main-nav-checkbox" class="wy-main-nav-checkbox" type="checkbox">
+      <label for="wy-main-nav-checkbox" class="wy-main-nav-toggle">Menu</label>
+      <ul id="#wy-main-nav-menu" class="wy-main-nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  {%- block extrabody %} {% endblock %}
+  <div class="wy-grid-for-nav">
+    {#- SIDE NAV, TOGGLES ON MOBILE #}
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
+          {%- block sidebartitle %}
+
           {%- if theme_display_version %}
             {%- set nav_version = version %}
             {%- if READTHEDOCS and current_version %}
               {%- set nav_version = current_version %}
             {%- endif %}
-            {%- if nav_version %}
+            <!-- {%- if nav_version %}
               <div class="version">
                 {{ nav_version }}
               </div>
-            {%- endif %}
+            {%- endif %} -->
           {%- endif %}
 
           {%- include "searchbox.html" %}

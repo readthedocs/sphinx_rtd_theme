@@ -2,8 +2,8 @@
 {# Add rst-badge after rst-versions for small badge style. #}
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      <span class="fa fa-book"> Read the Docs</span>
-      v: {{ current_version }}
+      <span class="ret-current-version-label"> Read the Docs</span>
+      version: {{ current_version }}
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -29,6 +29,15 @@
             <a href="//{{ PRODUCTION_DOMAIN }}/builds/{{ slug }}/?fromdocs={{ slug }}">{{ _('Builds') }}</a>
           </dd>
       </dl>
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div class="wy-side-nav-search bottom">
+            {% include "searchbox.html" %}
+          </div>
+        </dd>
+      </dl>
+      <small>Hosted by <a href="#">Read te Docs</a> · <a href="#">Privacy Policy</a></small>
     </div>
   </div>
 {% endif %}

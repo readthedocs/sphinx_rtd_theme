@@ -3,18 +3,24 @@
   bottom: 0
   left: 0
   width: $nav-desktop-width
-  color: $section-background-color
-  background: darken($menu-background-color, 8%)
+  color: $text-color
+  background: #F7F7F7
   font-family: $base-font-family
   z-index: $z-index-tray
+
+  small
+    color: $text-color
+    font-size: 95%
+    a
+      color: $nav-link-color
+
   a
-    color: $link_color
+    color: $text-color
     text-decoration: none
   .rst-badge-small
     display: none
   .rst-current-version
-    padding: $base-line-height / 2
-    background-color: darken($menu-background-color, 5%)
+    padding: $base-line-height / 1.5
     display: block
     text-align: right
     font-size: 90%
@@ -22,10 +28,10 @@
     color: $green
     +clearfix
     .fa
-      color: $section-background-color
-    .fa-book
-      float: left
-    .icon-book
+      color: #868686
+    .rst-current-version-label
+      color: $text-color
+      font-weight: 600
       float: left
     &.rst-out-of-date
       background-color: $red
@@ -33,6 +39,8 @@
     &.rst-active-old-version
       background-color: $yellow
       color: $black
+    span
+      color: $text-color
   &.shift-up
     height: auto
     max-height: 100%
@@ -51,13 +59,17 @@
       margin: 20px 0
       padding: 0
       border-top: solid 1px lighten($menu-background-color, 5%)
+    dt
+      color: #868686
+      padding: 0.25rem 0
     dd
       display: inline-block
       margin: 0
+      line-height: 1.4rem
       a
         display: inline-block
         padding: $base-line-height / 4
-        color: $section-background-color
+        color: $text-color
   &.rst-badge
     width: auto
     bottom: 20px
