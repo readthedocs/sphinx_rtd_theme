@@ -162,7 +162,7 @@ Second list level
   - here is an inner bullet ``oh``
 
     - one more ``with an inline literally``. `yahoo <http://www.yahoo.com>`_
-      
+
       heh heh. child. try to beat this embed:
 
       .. literalinclude:: test_py_module/test.py
@@ -172,6 +172,11 @@ Second list level
   - and another. `yahoo <http://www.yahoo.com>`_
   - `yahoo <http://www.yahoo.com>`_
   - ``hi``
+- how about an admonition?
+
+  .. note::
+      This is a note nested in a list.
+
 - and hehe
 
 But deeper down the rabbit hole
