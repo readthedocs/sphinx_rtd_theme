@@ -86,9 +86,9 @@ class TransifexCommand(distutils.cmd.Command):
 
 
 setup(
-    name='sphinx_rtd_theme',
+    name='sphinx_rtd_theme_cilium',
     version='1.0.1alpha1',
-    url='https://github.com/readthedocs/sphinx_rtd_theme',
+    url='https://github.com/cilium/sphinx_rtd_theme',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
     author_email='dev@readthedocs.org',
@@ -113,7 +113,7 @@ setup(
     # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
     entry_points = {
         'sphinx.html_themes': [
-            'sphinx_rtd_theme = sphinx_rtd_theme',
+            'sphinx_rtd_theme_cilium = sphinx_rtd_theme',
         ]
     },
     python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',

@@ -45,7 +45,7 @@ def setup(app):
             logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
 
     # Register the theme that can be referenced without adding a theme path
-    app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
+    app.add_html_theme('sphinx_rtd_theme_cilium', path.abspath(path.dirname(__file__)))
 
     if sphinx_version >= (1, 8, 0):
         # Add Sphinx message catalog for newer versions of Sphinx

@@ -1,5 +1,5 @@
 {
-  "name": "sphinx_rtd_theme",
+  "name": "sphinx_rtd_theme_cilium",
   "main": "js/theme.js",
   "version": "1.0.1alpha1",
   "scripts": {
