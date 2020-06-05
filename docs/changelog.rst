@@ -8,6 +8,8 @@ master
 v0.5.0rc2
 =========
 
+:Date: June 5, 2020
+
 Fixes
 -----
 
@@ -18,6 +20,8 @@ Fixes
 
 v0.5.0rc1
 =========
+
+:Date: May 6, 2020
 
 Fixes
 -----
