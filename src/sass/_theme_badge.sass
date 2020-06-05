@@ -1,4 +1,4 @@
-.rst-versions
+.rst-versions.rst-versions.rst-versions
   position: fixed
   bottom: 0
   left: 0
@@ -7,6 +7,22 @@
   background: #F7F7F7
   font-family: $base-font-family
   z-index: $z-index-tray
+
+  #flyout-search-form
+    padding: 0 0 $base-line-height / 2.2
+    width: 100%
+    max-width: 260px
+    background: transparent
+
+  .injected 
+    .rst-versions
+      position: static
+
+    .rst-other-versions
+      padding: 0
+
+    .rst-current-version
+      display: none !important
 
   small
     color: $text-color
@@ -19,16 +35,19 @@
     text-decoration: none
   .rst-badge-small
     display: none
-  .rst-current-version
+  .rst-current-version.rst-current-version.rst-current-version
     padding: $base-line-height / 1.5
     display: block
     text-align: right
     font-size: 90%
     cursor: pointer
     color: $green
+    background-color: transparent
     +clearfix
     .fa
       color: #868686
+    .fa-book
+      color: $text-color
     .rst-current-version-label
       color: $text-color
       font-weight: 600
@@ -49,7 +68,7 @@
     display: block
   .rst-other-versions
     font-size: 90%
-    padding: $base-line-height / 2
+    padding: 0 $base-line-height / 1.5 $base-line-height / 1.5
     color: $text-medium
     display: none
     hr
@@ -70,13 +89,12 @@
         display: inline-block
         padding: $base-line-height / 4
         color: $text-color
-  &.rst-badge
-    width: auto
-    bottom: 20px
-    right: 20px
-    left: auto
+  &.rst-badge.rst-badge.rst-badge.rst-badge
+    width: $nav-desktop-width - $base-line-height
+    bottom: 0
+    right: auto
+    left: 0
     border: none
-    max-width: $nav-desktop-width
     max-height: 90%
     .icon-book
       float: none
@@ -97,6 +115,9 @@
       padding: 0 $base-line-height / 4
       display: block
       text-align: center
+
+    hr
+      display: none
 
 +media($tablet)
   .rst-versions
