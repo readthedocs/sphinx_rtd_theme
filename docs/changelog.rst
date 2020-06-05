@@ -11,6 +11,17 @@ v0.5.0rc1
 Fixes
 -----
 
+* Fix issue with simple definition lists that was missed
+* Change FOUT back to FOIT
+* Fix several margin issues with lists, nested lists, and nested content
+* Add colon back to field lists
+
+v0.5.0rc1
+=========
+
+Fixes
+-----
+
 * Fix many styling issues that look different when using the Sphinx HTML5 writer
 
 Other Changes
