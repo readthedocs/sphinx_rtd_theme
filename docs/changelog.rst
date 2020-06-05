@@ -5,7 +5,7 @@ Changelog
 master
 ======
 
-v0.5.0rc1
+v0.5.0rc2
 =========
 
 Fixes
