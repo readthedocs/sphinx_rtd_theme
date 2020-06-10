@@ -87,7 +87,7 @@ class TransifexCommand(distutils.cmd.Command):
 
 setup(
     name='sphinx_rtd_theme_cilium',
-    version='1.0.1alpha1',
+    version='1.0.2',
     url='https://github.com/cilium/sphinx_rtd_theme',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
