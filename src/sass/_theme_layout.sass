@@ -298,18 +298,22 @@ html
   top: 71px
   bottom: 0
 
-.wy-nav-side
+.wy-nav-wrapper
+  display: flex
+  flex-direction: column
+  width: $nav-desktop-width
+  background: $nav-background-color
+  z-index: $z-index-popover
   position: fixed
   top: 71px
   bottom: 0
   left: 0
+
+.wy-nav-side
   padding-bottom: 3.2em
-  width: $nav-desktop-width
   overflow-x: hidden
   overflow-y: hidden
   color: $menu-medium
-  background: $nav-background-color
-  z-index: $z-index-popover
 
 .wy-side-scroll
   width: $nav-desktop-width + 20px
@@ -407,11 +411,19 @@ footer
   margin-left: $base-line-height
 
 +media($tablet)
+  #rtd-search-form
+    display: flex
+    .algolia-autocomplete
+      width: 100%
+      .ds-dropdown-menu
+        min-width: 100%
+        max-width: 100%
+
   .wy-body-for-nav
     background: $section-background-color
   .wy-nav-top
     display: block
-  .wy-nav-side
+  .wy-nav-wrapper
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
     @else
@@ -443,7 +455,7 @@ footer
     background: $section-background-color
 
 @media print
-  .rst-versions, footer, .wy-nav-side
+  .rst-versions, footer, .wy-nav-wrapper
     display: none
   .wy-nav-content-wrap
     margin-left: 0
@@ -468,6 +480,8 @@ footer
   .wy-github-stars
     line-height: 0
     margin: 0 $gutter * 1.5
+    +media($mobile)
+      display: none
 
   .wy-header-logo-wrapper
     display: flex
@@ -573,4 +587,3 @@ footer
       display: block
       text-align: center
       padding: $gutter 0
-

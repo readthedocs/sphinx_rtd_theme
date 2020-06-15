@@ -123,6 +123,19 @@ function ThemeNav () {
             });
             link.prepend(expand);
         });
+
+        // Fix scrolling position bug caused by sticky header
+        $(".wy-menu a[href^='#']").on("click", function (event) {
+          event.preventDefault();
+
+          var scrollToElement = $($(this).attr("href"));
+
+          window.scrollTo({
+            top: scrollToElement.offset().top - 70,
+            left: 0,
+            behavior: "smooth",
+          });
+        });
     };
 
     nav.reset = function () {

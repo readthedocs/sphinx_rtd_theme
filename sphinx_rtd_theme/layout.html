@@ -165,8 +165,7 @@
   {%- block extrabody %} {% endblock %}
   <div class="wy-grid-for-nav">
     {#- SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
+    <div class="wy-nav-wrapper" data-toggle="wy-nav-shift" >
         <div class="wy-side-nav-search" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
           {%- block sidebartitle %}
 
@@ -187,6 +186,8 @@
           {%- endblock %}
         </div>
 
+      <nav class="wy-nav-side">
+      <div class="wy-side-scroll">
         {%- block navigation %}
         {#- Translators: This is an ARIA section label for the main navigation menu -#}
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="{{ _('Navigation menu') }}">
@@ -205,7 +206,8 @@
         </div>
         {%- endblock %}
       </div>
-    </nav>
+      </nav>
+    </div>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
@@ -271,6 +273,16 @@
   {%- endif %}
 
   {%- block footer %} {% endblock %}
+
+  <script>
+    docsearch({
+      indexName: 'cilium_docs',
+      apiKey: '4e9b6e188b87deb43926a7c10d0f4d44',
+      appId: 'QWB13UU32F', 
+      inputSelector: '#rtd-search-form input, #flyout-search-form input',
+      debug: false,
+    });
+  </script>
 
 </body>
 </html>
