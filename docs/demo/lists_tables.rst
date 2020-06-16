@@ -172,6 +172,13 @@ Complex
 - ``inline literall``
 - ``inline literall``
 - ``inline literall``
+- This item has multiple paragraphs.
+
+  This item has multiple paragraphs.
+- This item has multiple paragraphs.
+
+  This item has multiple paragraphs.
+
 
 Second list level
 ^^^^^^^^^^^^^^^^^
