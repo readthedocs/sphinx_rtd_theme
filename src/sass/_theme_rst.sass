@@ -147,14 +147,23 @@
     list-style: upper-alpha
   .section ol, ol.arabic
     @extend .wy-plain-list-decimal
+  // Complex bullet lists, they have more item margins than simple lists
   .section ol li, .section ul li
     > *
       margin-top: $base-line-height / 2
+      margin-bottom: $base-line-height / 2
       &:first-child
         margin-top: 0rem
     > p
       margin-bottom: 0rem
     > ul, > ol
+      margin-bottom: $base-line-height / 2
+  // Simple lists, no item margins
+  .section ol.simple li, .section ul.simple li
+    > *
+      margin-top: 0rem
+      margin-bottom: 0rem
+    ul, ol
       margin-top: 0rem
       margin-bottom: 0rem
   .line-block
