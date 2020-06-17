@@ -5,6 +5,16 @@ Changelog
 master
 ======
 
+v0.5.0
+======
+
+:Date: Jun 17, 2020
+
+Fixes
+-----
+
+* Fix bullet list spacing to respect simple/complex list styles
+
 v0.5.0rc2
 =========
 
