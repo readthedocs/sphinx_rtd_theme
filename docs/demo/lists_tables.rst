@@ -130,6 +130,28 @@ Field list
 Bullet Lists
 ------------
 
+..
+    Docutils supports two types of lists, "simple" and "complex". Complex lists
+    have item margins, simple lists do not.
+    https://docutils.sourceforge.io/sandbox/html4strict/data/simple-lists.html
+
+Simple
+^^^^^^
+
+- A simple list.
+- There are no margins between list items.
+- Simple lists do not contain multiple paragraphs. That's a complex list.
+- In the case of a nested list
+
+  - There are no margins between elements
+
+    - Still no margins
+
+      - Still no margins
+
+Complex
+^^^^^^^
+
 - A bullet list
 
   + Nested bullet list.
@@ -150,6 +172,13 @@ Bullet Lists
 - ``inline literall``
 - ``inline literall``
 - ``inline literall``
+- This item has multiple paragraphs.
+
+  This item has multiple paragraphs.
+- This item has multiple paragraphs.
+
+  This item has multiple paragraphs.
+
 
 Second list level
 ^^^^^^^^^^^^^^^^^
