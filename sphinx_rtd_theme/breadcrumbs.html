@@ -24,6 +24,8 @@
 {% set display_gitlab = True %}
 {% endif %}
 
+{% set display_vcs_links = display_vcs_links if display_vcs_links is defined else True %}
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -36,8 +38,8 @@
     {% endblock %}
     {% block breadcrumbs_aside %}
       <li class="wy-breadcrumbs-aside">
-        {% if hasdoc(pagename) %}
-            {% if display_github %}
+        {% if hasdoc(pagename) and display_vcs_links %}
+          {% if display_github %}
             {% if check_meta and 'github_url' in meta %}
               <!-- User defined GitHub URL -->
               <a href="{{ meta['github_url'] }}" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
