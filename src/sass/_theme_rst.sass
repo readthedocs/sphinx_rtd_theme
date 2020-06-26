@@ -117,7 +117,7 @@
     // These block elements are unsuitable for having floating objects next
     // to them
     clear: both
-    .last
+    .last, > *:last-child
       margin-bottom: 0
   .admonition-title
     @extend .wy-alert-title
@@ -147,12 +147,27 @@
     list-style: upper-alpha
   .section ol, ol.arabic
     @extend .wy-plain-list-decimal
-  .section ol p, .section ul p
-    html.writer-html4 &
+  // Complex bullet lists, they have more item margins than simple lists
+  .section ol li, .section ul li
+    > *
+      margin-top: $base-line-height / 2
       margin-bottom: $base-line-height / 2
-      &:last-child
-        margin-bottom: $base-line-height
-    html.writer-html5 &
+      &:first-child
+        margin-top: 0rem
+    > p
+      &, &:last-child
+        margin-bottom: $base-line-height / 2
+      &:only-child, &:only-child:last-child
+        margin-bottom: 0rem
+    > ul, > ol
+      margin-bottom: $base-line-height / 2
+  // Simple lists, no item margins
+  .section ol.simple li, .section ul.simple li
+    > *
+      margin-top: 0rem
+      margin-bottom: 0rem
+    ul, ol
+      margin-top: 0rem
       margin-bottom: 0rem
   .line-block
     margin-left: 0px
@@ -212,7 +227,7 @@
     // Sidebar content is usually less relevant, so adjust the margins and sizes.
     p, ul, dl
       font-size: 90%
-    .last, *:last-child
+    .last, > *:last-child
       margin-bottom: 0
     .sidebar-title
       display: block
@@ -269,6 +284,8 @@
       grid-template-columns: max-content auto
       > dt
         padding-left: 1rem
+        &:after
+          content: ":"
       > dt, > dd
         margin-bottom: 0rem
     dl.footnote
@@ -327,7 +344,7 @@
     &:not(.field-list)
       @extend .wy-table-striped
     // Remove bottom margin for the last element (and it's last child)
-    td .last, td .last :last-child
+    td .last, td .last > *:last-child
       margin-bottom: 0
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
