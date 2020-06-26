@@ -94,9 +94,9 @@
     font-family: $code-font-family
     font-size: 12px
     line-height: 1.4
-  
+
   // Do not allow selection of code block prompts
-  div.highlight .gp 
+  div.highlight .gp
     user-select: none
     pointer-events: none
 
@@ -481,7 +481,16 @@
     font-weight: 700
     border-radius: $base-line-height / 6
     padding: $base-line-height / 10 $base-line-height / 4
-    margin: auto $base-line-height / 12
+    margin: auto 0
+  kbd, .kbd
+    color: inherit
+    font-size: 80%
+    background-color: lighten($text-light, 30%)
+    border: 1px solid darken($text-light, 5%)
+    border-radius: $base-line-height / 6
+    box-shadow: grey 0px $base-line-height / 12
+    padding: $base-line-height / 10 $base-line-height / 4
+    margin: auto 0
   .versionmodified
     font-style: italic
 
