@@ -530,6 +530,12 @@ footer
         position: relative
         top: 1px
 
+*:target::before
+  content: ""
+  display: block
+  height: 71px
+  margin: -71px 0 0
+
 @media screen and (max-width: 920px)
   .wy-main-nav li + li
     margin-left: 0
@@ -601,3 +607,6 @@ footer
 // seems to do the trick, haven't noticed any visual regressions with tables 
 .rst-content table.docutils td:first-child
   border-left-width: 1px
+
+  *:target::before
+    display: none
