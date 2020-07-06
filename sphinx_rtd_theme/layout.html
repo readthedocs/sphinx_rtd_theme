@@ -145,9 +145,7 @@
             <img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
             {%- endif %}
           {%- endif %}
-          </a>
-
-        <span class="wy-github-stars">
+        </a><span class="wy-github-stars">
           <iframe src="https://ghbtns.com/github-btn.html?user=cilium&repo=cilium&type=star&count=true&size=large"
             frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
         </span>
@@ -157,7 +155,13 @@
       <input name="wy-main-nav-checkbox" id="wy-main-nav-checkbox" class="wy-main-nav-checkbox" type="checkbox">
       <label for="wy-main-nav-checkbox" class="wy-main-nav-toggle">Menu</label>
       <ul id="#wy-main-nav-menu" class="wy-main-nav-menu">
-        <li><a href="https://isovalent.com" style="color: white; background: rgb(52, 79, 138, 1);">Enterprise</a></li>
+        <li>
+          <a href="https://isovalent.com" class="callToAction">
+            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 0L9.02433 4.21375L13.6574 4.83688L10.2754 8.06425L11.1145 12.6631L7 10.444L2.8855 12.6631L3.72456 8.06425L0.342604 4.83688L4.97567 4.21375L7 0Z" fill="white"/>
+            </svg><span>Enterprise</span>
+          </a>
+        </li>
         <li><a href="https://cilium.io">Cilium</a></li>
         <li><a href="https://cilium.io/blog">Blog</a></li>
         <li><a href="https://docs.cilium.io">Documentation</a></li>

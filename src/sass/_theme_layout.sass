@@ -295,7 +295,7 @@ html
 .wy-grid-for-nav
   position: absolute
   width: 100%
-  top: 71px
+  top: 76px
   bottom: 0
 
 .wy-nav-wrapper
@@ -305,7 +305,7 @@ html
   background: $nav-background-color
   z-index: $z-index-popover
   position: fixed
-  top: 71px
+  top: 76px
   bottom: 0
   left: 0
 
@@ -445,7 +445,7 @@ footer
       position: fixed
       min-width: 100%
       left: 85%
-      top: 71px
+      top: 76px
       height: 100%
       overflow: hidden
 
@@ -464,8 +464,8 @@ footer
   display: flex
   align-items: center
   justify-content: space-between
-  padding: 0 26px
-  border-bottom: 1px solid #d7d7d7
+  padding: 18px 26px 17px
+  border-bottom: 1px solid #e9e9e9
   position: fixed
   background-color: $white
   z-index: 201
@@ -474,19 +474,18 @@ footer
   left: 0
 
   .wy-header-left
-    display: flex
-    align-items: center
+    display: inline-block
+    > *
+      display: inline-block
 
   .wy-github-stars
-    line-height: 0
-    margin: 0 $gutter * 1.5
+    position: relative
+    top: -2px
+    margin-left: 20px
     +media($mobile)
-      display: none
+    display: none
 
   .wy-header-logo-wrapper
-    display: flex
-    align-items: center
-    height: 70px
     min-width: 119px
 
     img
@@ -503,47 +502,55 @@ footer
 
   ul
     display: flex
-
-  li + li
-    margin-left: 30px
+    align-items: center
 
   a
-    color: $text-color
+    color: #9A9A9A
+    font-size: 0.875rem
     font-weight: 600
     display: inline-block
-    padding: 7px 15px
+    padding: 0
+    margin-left: 40px
 
+    &.callToAction
+      padding: 7px 15px
+      background: #2980B9
+      border-radius: 3px
+      font-weight: 600
+      font-size: 14px
+      color: #fff
+      border: 0
+      cursor: pointer
+
+      svg
+        display: inline-block
+        width: 14px
+        height: 14px
+        margin-right: 5px
+        position: relative
+        top: 1px
 
 @media screen and (max-width: 920px)
   .wy-main-nav li + li
     margin-left: 0
 
-@media screen and (max-width: 790px)
+@media screen and (max-width: 900px)
   .wy-header
-    position: relative
     flex-direction: column
     align-items: stretch
-
-    &::before
-      content: " "
-      height: 1px
-      background-color: #E9E9E9
-      left: 0
-      right: 0
-      top: 70px
-      position: absolute
 
   .wy-main-nav
     .wy-main-nav-menu
       display: none
-      padding: $gutter
+      padding: 0
       border-bottom: 1px solid #E9E9E9
       position: absolute
-      top: 70px
+      top: 67px
       z-index: 100
       background: #fff
       width: 100%
       left: 0
+      padding-bottom: 17px
 
     .wy-main-nav-toggle
       display: block
@@ -562,7 +569,7 @@ footer
         display: none
 
     .wy-main-nav-checkbox:checked + .wy-main-nav-toggle
-      width: 90px
+      width: 70px
       font-size: 0
       color: transparent
 
@@ -570,7 +577,7 @@ footer
         display: block
         width: 13px
         height: 13px
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMyAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAuNDg5MTQ1IDAuNDg5NTcyQy0wLjA5NjY0MzUgMS4wNzUzNiAtMC4wOTY2NDA4IDIuMDI1MTEgMC40ODkxNDUgMi42MTA4OUw0LjM3ODIzIDYuNDk5OThMMC40ODkxNDUgMTAuMzg5MUMtMC4wOTY2NDM1IDEwLjk3NDkgLTAuMDk2NjQwOCAxMS45MjQ2IDAuNDg5MTQ1IDEyLjUxMDRDMS4wNzQ5MyAxMy4wOTYyIDIuMDI0NjggMTMuMDk2MiAyLjYxMDQ3IDEyLjUxMDRMNi40OTk1NSA4LjYyMTNMMTAuMzg4NiAxMi41MTA0QzEwLjk3NDQgMTMuMDk2MiAxMS45MjQyIDEzLjA5NjIgMTIuNTEgMTIuNTEwNEMxMy4wOTU3IDExLjkyNDYgMTMuMDk1NyAxMC45NzQ5IDEyLjUxIDEwLjM4OTFMOC42MjA4NyA2LjQ5OTk4TDEyLjUxIDIuNjEwODlDMTMuMDk1NyAyLjAyNTEgMTMuMDk1NyAxLjA3NTM2IDEyLjUxIDAuNDg5NTcyQzExLjkyNDIgLTAuMDk2MjEzNSAxMC45NzQ0IC0wLjA5NjIxNjMgMTAuMzg4NiAwLjQ4OTU3Mkw2LjQ5OTU1IDQuMzc4NjZMMi42MTA0NyAwLjQ4OTU3MkMyLjAyNDY4IC0wLjA5NjIxMzUgMS4wNzQ5MyAtMC4wOTYyMTYzIDAuNDg5MTQ1IDAuNDg5NTcyWiIgZmlsbD0iIzkwOTA5MCIvPgo8L3N2Zz4KCg==")
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTS40OS40OWExLjUgMS41IDAgMDAwIDIuMTJMNC4zNzcgNi41LjQ5IDEwLjM5YTEuNSAxLjUgMCAxMDIuMTIxIDIuMTJMNi41IDguNjIxbDMuODg5IDMuODlhMS41IDEuNSAwIDAwMi4xMjEtMi4xMjJMOC42MiA2LjVsMy44OS0zLjg5QTEuNSAxLjUgMCAwMDEwLjM4OS40OWwtMy44OSAzLjg4OUwyLjYxLjQ4OWExLjUgMS41IDAgMDAtMi4xMiAweiIgZmlsbD0iIzkwOTA5MCIvPjwvc3ZnPg==")
         background-size: cover
         position: absolute
         top: 50%
@@ -580,10 +587,17 @@ footer
     .wy-main-nav-checkbox:checked + label + .wy-main-nav-menu
       display: block
 
-    li + li
-      margin-left: 0
+    li
+      text-align: center
+      margin: 0 0 12px
 
     a
-      display: block
+      display: inline-block
       text-align: center
-      padding: $gutter 0
+      padding: 0
+      margin: 0
+
+// possible fix for table border bug? hard to test whether it's a bug or a feature :/
+// seems to do the trick, haven't noticed any visual regressions with tables 
+.rst-content table.docutils td:first-child
+  border-left-width: 1px
