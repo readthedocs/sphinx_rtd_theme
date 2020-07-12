@@ -16,6 +16,7 @@ For example:
         'canonical_url': '',
         'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
         'logo_only': False,
+        'logo_url': '',
         'display_version': True,
         'prev_next_buttons_location': 'bottom',
         'style_external_links': False,
@@ -125,6 +126,12 @@ Miscellaneous options
 
     Only display the logo image, do not display the project name at the top of
     the sidebar
+
+.. confval:: logo_url
+
+    :type: URL
+
+    Custom URL for the logo image, for example the official project website
 
 .. confval:: prev_next_buttons_location
 

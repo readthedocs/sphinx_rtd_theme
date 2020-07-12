@@ -116,9 +116,9 @@
           {% block sidebartitle %}
 
           {% if logo and theme_logo_only %}
-            <a href="{{ pathto(master_doc) }}">
+            <a href="{{ theme_logo_url or pathto(master_doc) }}">
           {% else %}
-            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
+            <a href="{{ theme_logo_url or pathto(master_doc) }}" class="icon icon-home"> {{ project }}
           {% endif %}
 
           {% if logo %}
