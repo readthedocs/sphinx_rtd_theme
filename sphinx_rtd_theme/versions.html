@@ -1,4 +1,4 @@
-{% if READTHEDOCS %}
+{% if READTHEDOCS or display_lower_left %}
 {# Add rst-badge after rst-versions for small badge style. #}
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
@@ -7,18 +7,35 @@
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
+      {% if languages|length >= 1 %}
+      <dl>
+        <dt>{{ _('Languages') }}</dt>
+        {% for slug, url in languages %}
+          {% if slug == current_language %} <strong> {% endif %}
+          <dd><a href="{{ url }}">{{ slug }}</a></dd>
+          {% if slug == current_language %} </strong> {% endif %}
+        {% endfor %}
+      </dl>
+      {% endif %}
+      {% if versions|length >= 1 %}
       <dl>
         <dt>{{ _('Versions') }}</dt>
         {% for slug, url in versions %}
+          {% if slug == current_version %} <strong> {% endif %}
           <dd><a href="{{ url }}">{{ slug }}</a></dd>
+          {% if slug == current_version %} </strong> {% endif %}
         {% endfor %}
       </dl>
+      {% endif %}
+      {% if downloads|length >= 1 %}
       <dl>
         <dt>{{ _('Downloads') }}</dt>
         {% for type, url in downloads %}
           <dd><a href="{{ url }}">{{ type }}</a></dd>
         {% endfor %}
       </dl>
+      {% endif %}
+      {% if READTHEDOCS %}
       <dl>
         {# Translators: The phrase "Read the Docs" is not translated #}
         <dt>{{ _('On Read the Docs') }}</dt>
@@ -29,6 +46,7 @@
             <a href="//{{ PRODUCTION_DOMAIN }}/builds/{{ slug }}/?fromdocs={{ slug }}">{{ _('Builds') }}</a>
           </dd>
       </dl>
+      {% endif %}
     </div>
   </div>
 {% endif %}
