@@ -131,7 +131,7 @@ Miscellaneous options
 
     :type: URL
 
-    Custom URL for the logo image, for example the official project website
+    Custom logo link URL, for example the official project website
 
 .. confval:: prev_next_buttons_location
 
