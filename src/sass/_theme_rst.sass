@@ -46,7 +46,7 @@
   // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
   blockquote
     margin-left: $base-line-height
-    \:dir(rtl) &
+    @include rtl
       margin-left: inherit
       margin-right: $base-line-height
     line-height: $base-line-height
@@ -73,7 +73,7 @@
     width: 100%
   .linenodiv pre
     border-right: solid 1px lighten($table-border-color, 2%)
-    \:dir(rtl) &
+    @include rtl
       border-left: solid 1px lighten($table-border-color, 2%)
       border-right: inherit
     margin: 0
@@ -127,7 +127,7 @@
     @extend .fa-exclamation-circle
     &:before
       margin-right: 40px
-      \:dir(rtl) &
+      @include rtl
         margin-left: 40px
         margin-right: 0px  // Not sure why this is necessary but with "inherit" it ends up with a negative right margin
   .note, .seealso
@@ -176,14 +176,14 @@
       margin-bottom: 0rem
   .line-block
     margin-left: 0px
-    \:dir(rtl) &
+    @include rtl
       margin-right: 0px
       margin-left: inherit
     margin-bottom: $base-line-height
     line-height: $base-line-height
   .line-block .line-block
     margin-left: $base-line-height
-    \:dir(rtl) &
+    @include rtl
       margin-right: $base-line-height
       margin-left: inherit
     margin-bottom: 0px
@@ -197,13 +197,13 @@
   .align-right
     float: right
     margin: 0px 0px $base-line-height $base-line-height
-    \:dir(rtl) &
+    @include rtl
       float: left
       margin: 0px $base-line-height $base-line-height 0px
   .align-left
     float: left
     margin: 0px $base-line-height $base-line-height 0px
-    \:dir(rtl) &
+    @include rtl
       float: right
       margin: 0px 0px $base-line-height $base-line-height
   .align-center
@@ -235,12 +235,12 @@
   // Sidebar content. You'll see at the bottom of this file I change it in mobile.
   .sidebar
     float: right
-    \:dir(rtl) &
+    @include rtl
       float: left
     width: 40%
     display: block
     margin: 0 0 $base-line-height $base-line-height
-    \:dir(rtl) &
+    @include rtl
       margin: 0 $base-line-height $base-line-height 0
     padding: $base-line-height
     background: $sidebar-background-color
@@ -378,13 +378,13 @@
     .field-name
       padding-right: 10px
       text-align: left
-      \:dir(rtl) &
+      @include rtl
         padding-left: 10px
         text-align: right
       white-space: nowrap
     .field-body
       text-align: left
-      \:dir(rtl) &
+      @include rtl
         text-align: right
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
@@ -418,7 +418,7 @@
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
-      \:dir(rtl) &
+      @include rtl
         margin: 0  $base-line-height $base-line-height / 2 0
       line-height: $base-line-height
   html.writer-html4 & dl:not(.docutils),
@@ -445,7 +445,7 @@
       margin-bottom: $base-line-height / 4
       border: none
       border-left: solid 3px hsl(0,0%,80%)
-      \:dir(rtl) &
+      @include rtl
         border-right: solid 3px hsl(0,0%,80%)
         border-left: inherit
       background: hsl(0,0%,94%)
@@ -474,7 +474,7 @@
     .property
       display: inline-block
       padding-right: 8px
-      \:dir(rtl) &
+      @include rtl
         padding-left: 8px
         padding-right: inherit
   // Doc links to sourcecode
@@ -483,13 +483,13 @@
     color: $text-viewcode-color
     font-size: 80%
     padding-left: $base-line-height
-    \:dir(rtl) &
+    @include rtl
       padding-right: $base-line-height
       padding-left: inherit
   .viewcode-back
     display: block
     float: right
-    \:dir(rtl) &
+    @include rtl
       float: left
   p.rubric
     margin-bottom: 12px
@@ -510,7 +510,7 @@
       @extend .fa-download
       &:before
         margin-right: 4px
-        \:dir(rtl) &
+        @include rtl
           margin-left: 4px
           margin-right: inherit
   .guilabel

@@ -1,0 +1,6 @@
+$rtl-languages: he, ar
+
+@mixin rtl
+  @each $lang in $rtl-languages
+    \:lang(#{$lang}) &
+      @content
