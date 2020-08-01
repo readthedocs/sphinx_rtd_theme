@@ -1,4 +1,3 @@
-
 *********
 Changelog
 *********
@@ -6,11 +5,55 @@ Changelog
 master
 ======
 
-:Date: TBD
+v0.5.0
+======
+
+:Date: Jun 17, 2020
+
+Fixes
+-----
+
+* Fix bullet list spacing to respect simple/complex list styles
+
+v0.5.0rc2
+=========
+
+:Date: June 5, 2020
+
+Fixes
+-----
+
+* Fix issue with simple definition lists that was missed
+* Change FOUT back to FOIT
+* Fix several margin issues with lists, nested lists, and nested content
+* Add colon back to field lists
+
+v0.5.0rc1
+=========
+
+:Date: May 6, 2020
+
+Fixes
+-----
+
+* Fix many styling issues that look different when using the Sphinx HTML5 writer
+
+Other Changes
+--------------
+
+* Add the ``navigation`` template block around the navigation area.
+* Added i18n support using Babel
+* Added translations for 10 new languages
+* Moved build system from Grunt and friends to Webpack
+* Remove Modernizr, but keep html5shiv (#724, #525)
+
+v0.4.3
+======
+
+:Date: Feb 12, 2019
 
 New Features
 -------------
-
 
 Fixes
 -----
@@ -18,11 +61,11 @@ Fixes
 * Fix scrolling to active item in sidebar on load (#214)
 * Style caption link for code and literal blocks
 * Fix inconsistent font size and line height for autodoc "raises" and "returns" (#267)
+* Fix last_updated notice appearing in same line as copyright notice (#704)
 
 
 Other Changes
 --------------
-
 
 v0.4.2
 ======
@@ -79,7 +122,7 @@ Fixes
 * Color accessibility improvements on the left navigation
 
 Other Changes
---------------
+---------------
 
 * Write theme version and build date at top of JavaScript and CSS
 * Changed code and literals to use a native font stack (#612)
