@@ -94,6 +94,9 @@
     {%- endif %}
     <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
+    <link rel="stylesheet" href="{{ pathto('_static/css/github-button.css', 1) }}" type="text/css" />
+    <script type="text/javascript" src="{{ pathto('_static/js/github-button.js', 1) }}"></script>
+
     {#- OPENSEARCH #}
     {%- if use_opensearch %}
     <link rel="search" type="application/opensearchdescription+xml"
@@ -146,8 +149,25 @@
             {%- endif %}
           {%- endif %}
         </a><span class="wy-github-stars">
-          <iframe src="https://ghbtns.com/github-btn.html?user=cilium&repo=cilium&type=star&count=true&size=large"
-            frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+            <span class="github-btn github-stargazers github-btn-large">
+              <a
+                class="gh-btn"
+                href="https://github.com/cilium/cilium"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span class="gh-ico" aria-hidden="true"></span>
+                <span class="gh-text">Star</span>
+              </a>
+              <a
+                class="gh-count"
+                href="https://github.com/cilium/cilium/stargazers"
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label={`${this.state.stars} stargazers on GitHub`}
+              >
+              </a>
+            </span>
         </span>
     </div>
 
