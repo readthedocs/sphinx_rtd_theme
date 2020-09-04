@@ -1,10 +1,13 @@
 <footer>
-  {% if (theme_prev_next_buttons_location == 'bottom' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
+  {%- if meta is defined and meta is not none and 'ignorenav' in meta %}
+      {%- set ignorenav = meta.get('ignorenav') %}
+  {%- endif %}
+  {% if (theme_prev_next_buttons_location == 'bottom' or theme_prev_next_buttons_location == 'both') and (next or prev) and ignorenav != 'both' %}
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      {% if next %}
+      {% if next and ignorenav != 'next' %}
         <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">{{ _('Next') }} <span class="fa fa-arrow-circle-right"></span></a>
       {% endif %}
-      {% if prev %}
+      {% if prev and ignorenav != 'prev' %}
         <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> {{ _('Previous') }}</a>
       {% endif %}
     </div>
