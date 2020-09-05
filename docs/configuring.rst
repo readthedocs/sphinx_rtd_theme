@@ -180,6 +180,11 @@ The following options can be used as :ref:`file-wide metadata
 
     Force the :guilabel:`Edit on GitLab` button to use the configured URL.
 
+.. confval:: ignorenav
+
+    Acceptable values are ``prev``, ``next``, and ``both``. ``prev`` will
+    override/ignore the previous nav buttons, similar applies to ``next``, and
+    ``both`` will ignore both previous and next buttons.
 
 Other configuration
 ===================
