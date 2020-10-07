@@ -5,6 +5,12 @@ Changelog
 master
 ======
 
+Other Changes
+-------------
+
+* Drop support for Python 2.7
+* Drop support for Sphinx 1.6 and 1.7
+
 v0.5.0
 ======
 
