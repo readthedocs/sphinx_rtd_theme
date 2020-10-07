@@ -100,6 +100,22 @@ Miscellaneous options
     If specified, Google Analytics' javascript is included in your pages.
     Set the value to the ID provided to you by google (like ``UA-XXXXXXX``).
 
+.. confval:: canonical_url
+
+    :type: URL
+
+    This will specify a `canonical URL`_ meta link element to tell search
+    engines which URL should be ranked as the primary URL for your
+    documentation. This is important if you have multiple URLs that your
+    documentation is available through. The URL points to the root path of the
+    documentation and requires a trailing slash.
+
+    .. deprecated:: 0.6.0
+
+       Use :confval:`sphinx:html_baseurl` instead.
+
+    .. _canonical URL: https://en.wikipedia.org/wiki/Canonical_link_element
+
 .. confval:: display_version
 
     :type: boolean
