@@ -8,7 +8,13 @@ from os import path
 
 from sphinx import version_info
 from sphinx.locale import _
-from sphinx.util.logging import getLogger
+
+try:
+    # Avaliable from Sphinx 1.6
+    from sphinx.util.logging import getLogger
+except ImportError:
+    from logging import getLogger
+
 
 __version__ = '0.5.0'
 __version_full__ = __version__
@@ -41,7 +47,6 @@ def setup(app):
         # See http://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.add_message_catalog
         rtd_locale_path = path.join(path.abspath(path.dirname(__file__)), 'locale')
         app.add_message_catalog('sphinx', rtd_locale_path)
-
-    app.connect('config-inited', config_initiated)
+        app.connect('config-inited', config_initiated)
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}
