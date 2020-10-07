@@ -13,7 +13,6 @@ For example:
 .. code:: python
 
     html_theme_options = {
-        'canonical_url': '',
         'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
         'logo_only': False,
         'display_version': True,
@@ -101,16 +100,6 @@ Miscellaneous options
     If specified, Google Analytics' javascript is included in your pages.
     Set the value to the ID provided to you by google (like ``UA-XXXXXXX``).
 
-.. confval:: canonical_url
-
-    :type: URL
-
-    This will specify a `canonical URL`_ meta link element to tell search
-    engines which URL should be ranked as the primary URL for your
-    documentation. This is important if you have multiple URLs that your
-    documentation is available through. The URL points to the root path of the
-    documentation and requires a trailing slash.
-
 .. confval:: display_version
 
     :type: boolean
@@ -157,10 +146,7 @@ Miscellaneous options
     :default: ``#2980B9``
 
     Changes the background of the search area in the navigation bar. The value
-    can be anything valid in a CSS `background` property. 
-
-.. _canonical URL: https://en.wikipedia.org/wiki/Canonical_link_element
-
+    can be anything valid in a CSS `background` property.
 
 File-wide metadata
 ==================

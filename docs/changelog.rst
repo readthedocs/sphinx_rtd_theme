@@ -5,6 +5,11 @@ Changelog
 master
 ======
 
+Other Changes
+-------------
+
+* The ``canonical_url`` option was removed in favor of Sphinx's ``html_baseurl``.
+
 v0.5.0
 ======
 
