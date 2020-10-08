@@ -9,7 +9,7 @@ from os import path
 import sphinx
 
 
-__version__ = '0.4.3.dev0'
+__version__ = '0.5.0'
 __version_full__ = __version__
 
 
@@ -21,7 +21,9 @@ def get_html_theme_path():
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
-    app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
+    if sphinx.version_info >= (1, 6, 0):
+        # Register the theme that can be referenced without adding a theme path
+        app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
 
     if sphinx.version_info >= (1, 8, 0):
         # Add Sphinx message catalog for newer versions of Sphinx

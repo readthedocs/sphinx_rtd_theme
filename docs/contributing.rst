@@ -89,10 +89,15 @@ Releasing the theme
 
 To release a new version of the theme, core team will take the following steps:
 
-#. Bump the version in ``sphinx_rtd_theme/__init__.py``, ``setup.py`` and
-   ``package.json``.  We follow `semver <http://semver.org/>`_ and `PEP440`_
+#. Bump the version by running ``bump2version [major|minor|patch|dev]``.
+   This will automatically increase the correct part(s) of the version number,
+   you do not need to specify the exact version number.
+   We follow `semver <http://semver.org/>`_ and `PEP440`_
    (with regards to alpha release and development versions). The version
    increment should reflect these releases and any potentially breaking changes.
+#. New versions are by default ``alpha`` releases. If this is a release candidate,
+   run ``bump2version --allow-dirty releast`` to update the release to an ``rc``
+   release. If this is a final release, run the command again.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
 #. Run ``python setup.py update_translations`` to compile new translation files
    and update Transifex.

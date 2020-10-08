@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """`sphinx_rtd_theme` lives on `Github`_.
 
-.. _github: https://github.com/rtfd/sphinx_rtd_theme
+.. _github: https://github.com/readthedocs/sphinx_rtd_theme
 
 """
 
@@ -18,7 +18,7 @@ class WebpackBuildCommand(setuptools.command.build_py.build_py):
     """Prefix Python build with Webpack asset build"""
 
     def run(self):
-        if not 'CI' in os.environ:
+        if not 'CI' in os.environ and not 'TOX_ENV_NAME' in os.environ:
             subprocess.run(['npm', 'install'], check=True)
             subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
         setuptools.command.build_py.build_py.run(self)
@@ -80,13 +80,13 @@ class TransifexCommand(distutils.cmd.Command):
 
     def run(self):
         subprocess.run(['tx', 'push', '--source'], check=True)
-        subprocess.run(['tx', 'pull'], check=True)
+        subprocess.run(['tx', 'pull', '--mode', 'onlyreviewed', '-f', '-a'], check=True)
 
 
 setup(
     name='sphinx_rtd_theme',
-    version='0.4.3.dev0',
-    url='https://github.com/rtfd/sphinx_rtd_theme/',
+    version='0.5.0',
+    url='https://github.com/readthedocs/sphinx_rtd_theme',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
     author_email='dev@readthedocs.org',
@@ -115,7 +115,7 @@ setup(
         ]
     },
     install_requires=[
-       'sphinx'
+        'sphinx'
     ],
     tests_require=[
         'pytest',
@@ -124,6 +124,7 @@ setup(
         'dev': [
             'transifex-client',
             'sphinxcontrib-httpdomain',
+            'bump2version',
         ],
     },
     classifiers=[

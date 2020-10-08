@@ -1,26 +1,27 @@
-# Spanish translations for sphinx_rtd_theme.
-# Copyright (C) 2019 Read the Docs, Inc
+# English translations for sphinx_rtd_theme.
+# Copyright (C) 2019 ORGANIZATION
 # This file is distributed under the same license as the sphinx_rtd_theme
 # project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# 
+# Translators:
+# Anthony <aj@ohess.org>, 2019
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
-"Report-Msgid-Bugs-To: support@readthedocs.org\n"
-"POT-Creation-Date: 2019-07-24 23:51-0600\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-05-06 13:38-0600\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
-"Last-Translator: Anthony <aj@ohess.org>, 2019\n"
-"Language: es\n"
-"Language-Team: Spanish "
-"(https://www.transifex.com/readthedocs/teams/101354/es/)\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020\n"
+"Language-Team: Spanish (https://www.transifex.com/readthedocs/teams/101354/es/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
-
-#: sphinx_rtd_theme/breadcrumbs.html:31
-msgid "Docs"
-msgstr "Documentos"
+"Generated-By: Babel 2.8.0\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: sphinx_rtd_theme/breadcrumbs.html:43 sphinx_rtd_theme/breadcrumbs.html:45
 msgid "Edit on GitHub"
@@ -47,7 +48,7 @@ msgid "Previous"
 msgstr "Anterior"
 
 #: sphinx_rtd_theme/footer.html:21 sphinx_rtd_theme/footer.html:24
-#: sphinx_rtd_theme/layout.html:92
+#: sphinx_rtd_theme/layout.html:96
 msgid "Copyright"
 msgstr "Derechos de autor"
 
@@ -56,66 +57,79 @@ msgstr "Derechos de autor"
 msgid "Build"
 msgstr "Construido"
 
-#: sphinx_rtd_theme/footer.html:36
+#. the phrase "revision" comes from Git, referring to a commit
+#: sphinx_rtd_theme/footer.html:37
 msgid "Revision"
 msgstr "Revisión"
 
-#: sphinx_rtd_theme/footer.html:40
+#: sphinx_rtd_theme/footer.html:41
 #, python-format
 msgid "Last updated on %(last_updated)s."
 msgstr "Actualizado por última vez en %(last_updated)s."
 
-#: sphinx_rtd_theme/footer.html:50
+#. the variable "sphinx_web" is a link to the Sphinx project documentation
+#. with
+#. the text "Sphinx"
+#: sphinx_rtd_theme/footer.html:52
 #, python-format
 msgid "Built with %(sphinx_web)s using a"
 msgstr "Construido con %(sphinx_web)s usando un"
 
-#: sphinx_rtd_theme/footer.html:50
+#. "theme" refers to a theme for Sphinx, which alters the appearance of the
+#. generated documenation
+#: sphinx_rtd_theme/footer.html:54
 msgid "theme"
 msgstr "tema"
 
-#: sphinx_rtd_theme/footer.html:50
+#. this is always used as "provided by Read the Docs", and should not imply
+#. Read the Docs is an author of the generated documentation.
+#: sphinx_rtd_theme/footer.html:56
 #, python-format
 msgid "provided by %(readthedocs_web)s"
 msgstr "proporcionado por %(readthedocs_web)s"
 
-#: sphinx_rtd_theme/layout.html:61
+#: sphinx_rtd_theme/layout.html:79
 #, python-format
 msgid "Search within %(docstitle)s"
 msgstr "Buscar en %(docstitle)s"
 
-#: sphinx_rtd_theme/layout.html:83
+#: sphinx_rtd_theme/layout.html:87
 msgid "About these documents"
 msgstr "Sobre esta documentación"
 
-#: sphinx_rtd_theme/layout.html:86
+#: sphinx_rtd_theme/layout.html:90
 msgid "Index"
 msgstr "Índice"
 
-#: sphinx_rtd_theme/layout.html:89 sphinx_rtd_theme/search.html:11
+#: sphinx_rtd_theme/layout.html:93 sphinx_rtd_theme/search.html:11
 msgid "Search"
 msgstr "Búsqueda"
 
-#: sphinx_rtd_theme/layout.html:124
+#: sphinx_rtd_theme/layout.html:121
+msgid "Documentation Home"
+msgstr "Inicio de Documentación"
+
+#: sphinx_rtd_theme/layout.html:128
 msgid "Logo"
 msgstr "Logotipo"
 
-#: sphinx_rtd_theme/search.html:26
+#: sphinx_rtd_theme/search.html:29
 msgid "Please activate JavaScript to enable the search functionality."
-msgstr "Por favor, active JavaScript para habilitar la funcionalidad de búsqueda."
+msgstr ""
+"Por favor, active JavaScript para habilitar la funcionalidad de búsqueda."
 
 #. Search is a noun, not a verb
-#: sphinx_rtd_theme/search.html:34
+#: sphinx_rtd_theme/search.html:37
 msgid "Search Results"
 msgstr "Resultados de la búsqueda"
 
-#: sphinx_rtd_theme/search.html:36
+#: sphinx_rtd_theme/search.html:39
 msgid ""
-"Your search did not match any documents. Please make sure that all words "
-"are spelled correctly and that you've selected enough categories."
+"Your search did not match any documents. Please make sure that all words are"
+" spelled correctly and that you've selected enough categories."
 msgstr ""
-"Su búsqueda no coincide con ningún documento. Por favor, asegúrese de que"
-" todas las palabras estén correctamente escritas y que usted haya "
+"Su búsqueda no coincide con ningún documento. Por favor, asegúrese de que "
+"todas las palabras estén correctamente escritas y que usted haya "
 "seleccionado las suficientes categorías."
 
 #: sphinx_rtd_theme/searchbox.html:4
@@ -143,7 +157,8 @@ msgstr "Página de Proyecto"
 msgid "Builds"
 msgstr "Construcciones"
 
-#: sphinx_rtd_theme/versions.html:33
-msgid "Free document hosting provided by"
-msgstr "Alojamiento gratuito de documentos proporcionado por"
+#~ msgid "Docs"
+#~ msgstr "Documentos"
 
+#~ msgid "Free document hosting provided by"
+#~ msgstr "Alojamiento gratuito de documentos proporcionado por"

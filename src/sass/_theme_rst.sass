@@ -117,7 +117,7 @@
     // These block elements are unsuitable for having floating objects next
     // to them
     clear: both
-    .last
+    .last, > *:last-child
       margin-bottom: 0
   .admonition-title
     @extend .wy-alert-title
@@ -141,16 +141,34 @@
       border-color: rgba(0,0,0,.1) !important
   .section ul, .toctree-wrapper ul
     @extend .wy-plain-list-disc
-  .section ol.loweralpha, .section ol.loweralpha li
+  .section ol.loweralpha, .section ol.loweralpha > li
     list-style: lower-alpha
-  .section ol.upperalpha, .section ol.upperalpha li
+  .section ol.upperalpha, .section ol.upperalpha > li
     list-style: upper-alpha
   .section ol, ol.arabic
     @extend .wy-plain-list-decimal
-  .section ol p, .section ul p
-    margin-bottom: $base-line-height / 2
-    &:last-child
-      margin-bottom: $base-line-height
+  // Complex bullet lists, they have more item margins than simple lists
+  .section ol li, .section ul li
+    > *
+      margin-top: $base-line-height / 2
+      margin-bottom: $base-line-height / 2
+      &:first-child
+        margin-top: 0rem
+    > p
+      &, &:last-child
+        margin-bottom: $base-line-height / 2
+      &:only-child, &:only-child:last-child
+        margin-bottom: 0rem
+    > ul, > ol
+      margin-bottom: $base-line-height / 2
+  // Simple lists, no item margins
+  .section ol.simple li, .section ul.simple li
+    > *
+      margin-top: 0rem
+      margin-bottom: 0rem
+    ul, ol
+      margin-top: 0rem
+      margin-bottom: 0rem
   .line-block
     margin-left: 0px
     margin-bottom: $base-line-height
@@ -209,7 +227,7 @@
     // Sidebar content is usually less relevant, so adjust the margins and sizes.
     p, ul, dl
       font-size: 90%
-    .last
+    .last, > *:last-child
       margin-bottom: 0
     .sidebar-title
       display: block
@@ -239,22 +257,67 @@
   .hlist
     width: 100%
 
-  // Tables! Sphinx LOVES TABLES. Most of wyrm assumes you're only going to use a table as a table
-  // so I have to write a bunch of unique stuff for Sphinx to style them up differently like it's 2003.
-  table.docutils.citation, table.docutils.footnote
-    background: none
-    border: none
-    color: $text-medium
-    td, tr
+  // The html4 writer outputs the citation and footnotes as a table, and the
+  // html5 writer outputs these as a definition list. We will use the fairly
+  // well supported css `grid` attribute to make these back into a table
+  // HTML4 writer
+  html.writer-html4 &
+    table.docutils.citation, table.docutils.footnote
+      background: none
       border: none
-      background-color: transparent !important
-      white-space: normal
-    td.label
-      padding-left: 0
-      padding-right: 0
-      vertical-align: top
+      td, tr
+        border: none
+        background-color: transparent !important
+        white-space: normal
+      td.label
+        padding-left: 0
+        padding-right: 0
+        vertical-align: top
+  // HTML5 writer
+  html.writer-html5 &
+    dl dt span.classifier
+      &:before
+        content: " : "
+    dl.footnote,
+    dl.field-list
+      display: grid
+      grid-template-columns: max-content auto
+      > dt
+        padding-left: 1rem
+        &:after
+          content: ":"
+      > dt, > dd
+        margin-bottom: 0rem
+    dl.footnote
+      font-size: .9rem
+      > dt
+        margin: 0rem .5rem .5rem 0rem
+        line-height: 1.2rem
+        word-break: break-all
+        font-weight: normal
+        > span.brackets
+          margin-right: .5rem
+          &:before
+            content: "["
+          &:after
+            content: "]"
+        > span.fn-backref
+          font-style: italic
+      > dd
+        margin: 0rem 0rem .5rem 0rem
+        line-height: 1.2rem
+        p
+          font-size: .9rem
+    dl.option-list
+      kbd
+        font-size: .9rem
+  // Both
+  html.writer-html4 & table.docutils.citation, table.docutils.footnote,
+  html.writer-html5 & dl.footnote
+    color: $text-medium
     code
       color: $gray
+
   // Remove the large vertical space between citations and footnotes
   .wy-table-responsive.citation, .wy-table-responsive.footnote
     margin-bottom: 0
@@ -271,10 +334,17 @@
     @extend .wy-table-bordered-all
     th
       border-color: $table-border-color
+      html.writer-html5 &
+        border: 1px solid $table-border-color
+    html.writer-html5 &
+      th > p, td > p
+        line-height: 1rem
+        margin-bottom: 0rem
+        font-size: .9rem
     &:not(.field-list)
       @extend .wy-table-striped
     // Remove bottom margin for the last element (and it's last child)
-    td .last, td .last :last-child
+    td .last, td .last > *:last-child
       margin-bottom: 0
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
@@ -321,67 +391,61 @@
       margin-bottom: $base-line-height / 2
     // Most of the content within these dls are one liners, so I halve the normal margins.
     p, table, ul, ol
-      margin-bottom: $base-line-height / 2 !important
+      margin-bottom: $base-line-height / 2
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
       line-height: $base-line-height
-  // This is what Sphinx spits out for it's autodocs. Depending upon what language the person is referencing
-  // these things usually have a class of "method" or "class" or something similar, but really who knows.
-  // Sphinx doesn't give me a generic class on these, so unfortunately I have to apply it to the root dl.
-  // This makes me terribly unhappy and makes this code very nesty. Unfortunately I've seen hand-written docs
-  // that output similar, but not quite the same nesting so this is really the best we can do.
-  dl:not(.docutils)
-    // In Sphinx 2.0+ most DLs no longer contain .docutils, needs tighter scoping using next line
-    &.class, &.data, &.type, &.function
-      margin-bottom: $base-line-height
-      // This would be the equivilant of a .. class::
-      dt
-        display: table
-        margin: $base-line-height / 4 0
-        font-size: 90%
-        line-height: normal
-        background: lighten($class-color, 50%)
-        color: $class-color
-        border-top: solid 3px lighten($class-color, 20%)
-        padding: $base-line-height / 4
-        position: relative
-        &:before
-          color: lighten($class-color, 20%)
-        .headerlink
-          color: $text-color
-          font-size: 100% !important
-      // And this would be the .. method::
-      dl dt
-        margin-bottom: $base-line-height / 4
+  html.writer-html4 & dl:not(.docutils),
+  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
+    margin-bottom: $base-line-height
+    > dt
+      display: table
+      margin: $base-line-height / 4 0
+      font-size: 90%
+      line-height: normal
+      background: lighten($class-color, 50%)
+      color: $class-color
+      border-top: solid 3px lighten($class-color, 20%)
+      padding: $base-line-height / 4
+      position: relative
+      &:before
+        color: lighten($class-color, 20%)
+      .headerlink
+        color: $text-color
+        font-size: 100% !important
+    // In the html4 writer, parameters is a table. In html5 writer, parameters
+    // is a nested dl.field-list
+    dl:not(.field-list) > dt
+      margin-bottom: $base-line-height / 4
+      border: none
+      border-left: solid 3px hsl(0,0%,80%)
+      background: hsl(0,0%,94%)
+      color: $method-color
+      .headerlink
+        color: $headerlink-color
+        font-size: 100% !important
+    > dt:first-child
+      margin-top: 0
+    // Since dts get the callout style, we treat this less as callouts.
+    tt, code
+      font-weight: bold
+      &.descname, &.descclassname
+        background-color: transparent
         border: none
-        border-left: solid 3px hsl(0,0%,80%)
-        background: hsl(0,0%,94%)
-        color: $method-color
-        .headerlink
-          color: $headerlink-color
-          font-size: 100% !important
-      dt:first-child
-        margin-top: 0
-      // Since dts get the callout style, we treat this less as callouts.
-      tt, code
+        padding: 0
+        font-size: 100% !important
+      &.descname
         font-weight: bold
-        &.descname, &.descclassname
-          background-color: transparent
-          border: none
-          padding: 0
-          font-size: 100% !important
-        &.descname
-          font-weight: bold
-      // This is for more advanced parameter control
-      .optional
-        display: inline-block
-        padding: 0 4px
-        color: $black
-        font-weight: bold
-      .property
-        display: inline-block
-        padding-right: 8px
+    // This is for more advanced parameter control
+    .optional
+      display: inline-block
+      padding: 0 4px
+      color: $black
+      font-weight: bold
+    .property
+      display: inline-block
+      padding-right: 8px
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
