@@ -73,10 +73,22 @@
   {% if (theme_prev_next_buttons_location == 'top' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       {% if next %}
-        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">{{ _('Next') }} <span class="fa fa-arrow-circle-right"></span></a>
+        {%- if meta is defined and meta is not none and 'next_link' in meta %}
+          {%- set next_link = meta.get('next_link') %}
+          {%- set next_title = meta.get('next_title') %}
+          <a href="{{ next_link|e }}" class="btn btn-neutral float-right" title="{{ next_title|striptags|e }}" accesskey="n">{{ _('Next') }} <span class="fa fa-arrow-circle-right"></span></a>
+        {% else %}
+          <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">{{ _('Next') }} <span class="fa fa-arrow-circle-right"></span></a>
+        {% endif %}
       {% endif %}
       {% if prev %}
-        <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> {{ _('Previous') }}</a>
+        {%- if meta is defined and meta is not none and 'prev_link' in meta %}
+          {%- set prev_link = meta.get('prev_link') %}
+          {%- set prev_title = meta.get('prev_title') %}
+          <a href="{{ prev_link|e }}" class="btn btn-neutral float-left" title="{{ prev_title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> {{ _('Previous') }}</a>
+        {% else %}
+          <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> {{ _('Previous') }}</a>
+        {% endif %}
       {% endif %}
   </div>
   {% endif %}

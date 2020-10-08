@@ -180,6 +180,26 @@ The following options can be used as :ref:`file-wide metadata
 
     Force the :guilabel:`Edit on GitLab` button to use the configured URL.
 
+.. confval:: prev_link
+
+    Override the link for the previous page's nav buttons. Must be used with
+    ``prev_title``.
+
+.. confval:: prev_title
+
+    Override the title for the previous page's nav buttons. Must be used with
+    ``prev_link``.
+
+.. confval:: next_link
+
+    Override the link for the next page's nav buttons. Must be used with
+    ``next_title``.
+
+.. confval:: next_title
+
+    Override the title for the next page's nav buttons. Must be used with
+    ``next_link``.
+
 
 Other configuration
 ===================
