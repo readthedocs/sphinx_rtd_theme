@@ -76,12 +76,24 @@ function ThemeNav () {
         this.navBar = $('div.wy-side-scroll:first');
         this.win = $(window);
 
+        if (this.isDisplayed()) {
+          this.makeMenuFocusable()
+        } else {
+          this.makeMenuUnfocusable();
+        }
+
         // Set up javascript UX bits
         $(document)
             // Shift nav in mobile when clicking the menu.
             .on('click', "[data-toggle='wy-nav-top']", function() {
                 $("[data-toggle='wy-nav-shift']").toggleClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
+
+                if (self.isDisplayed()) {
+                  self.makeMenuFocusable()
+                } else {
+                  self.makeMenuUnfocusable();
+                }
             })
 
             // Nav menu link click operations
@@ -179,6 +191,12 @@ function ThemeNav () {
         this.winResize = false;
         this.winHeight = this.win.height();
         this.docHeight = $(document).height();
+
+        if (this.isDisplayed()) {
+          this.makeMenuFocusable()
+        } else {
+          this.makeMenuUnfocusable();
+        }
     };
 
     nav.hashChange = function () {
@@ -194,6 +212,22 @@ function ThemeNav () {
         parent_li.siblings().find('li.current').removeClass('current');
         parent_li.find('> ul li.current').removeClass('current');
         parent_li.toggleClass('current');
+    }
+
+    nav.isDisplayed = function() {
+        return $("[data-toggle='wy-nav-shift']").css("left") === "0px";
+    }
+
+    nav.makeMenuFocusable = function() {
+        $(".wy-side-nav-search > a").removeAttr("tabindex");
+        $("#rtd-search-form > input[type='text']").removeAttr("tabindex");
+        $(".wy-menu a").removeAttr("tabindex");
+    }
+
+    nav.makeMenuUnfocusable = function() {
+        $(".wy-side-nav-search > a").attr("tabindex", -1);
+        $("#rtd-search-form > input[type='text']").attr("tabindex", -1);
+        $(".wy-menu a").attr("tabindex", -1);
     }
 
     return nav;
