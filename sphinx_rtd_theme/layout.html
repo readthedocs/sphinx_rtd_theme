@@ -127,6 +127,11 @@
     {%- endif %}
   {%- endblock %}
   {%- block extrahead %} {% endblock %}
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:site" content="@ciliumproject"/>
+  <meta name="twitter:title" content="{{ title|striptags|e }}{{ titlesuffix }}"/>
+  <meta name="twitter:image" content="{{ canonical_url }}{{ pathto('_static/' + logo, 1) }}"/>
 </head>
 
 <body class="wy-body-for-nav">
