@@ -22,12 +22,19 @@ class WebpackBuildCommand(distutils.cmd.Command):
 
     def run(self):
         if not 'CI' in os.environ and not 'TOX_ENV_NAME' in os.environ:
-            # Readthedocs ships with a very old version of NPM(3.5.2) that causes npm install
-            # to fail. So we first install an updated version of npm and run install.
-            # Remove the below command once we have recent enough version of npm in readthedocs
-            # build image.
-            subprocess.run(['npm', 'install', '-g', 'npm@6.14.8'], check=True)
-            subprocess.run(['npm', 'install'], check=True)
+            # When running build inside ReadTheDocs this env variable must be set to True.
+            # https://docs.readthedocs.io/en/stable/faq.html#how-do-i-change-behavior-when-building-with-read-the-docs
+            if os.environ.get('READTHEDOCS') == 'True':
+                # Readthedocs ships with a very old version of NPM(3.5.2) that causes npm install
+                # to fail. So we first install an updated version of npm and run install.
+                # Remove the below command once we have recent enough version of npm in readthedocs
+                # build image.
+                subprocess.run(['mkdir', '-p', '/home/docs/.npm_global'])
+                subprocess.run(['npm', 'config', 'set', 'prefix', '/home/docs/.npm_global'])
+                subprocess.run(['npm', 'install', '-g', 'npm@6.14.8'])
+                subprocess.run(['/home/docs/.npm_global/bin/npm', 'install'], check=True)
+            else:
+                subprocess.run(['npm', 'install'], check=True)
             subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
 
 
