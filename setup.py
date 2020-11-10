@@ -22,6 +22,11 @@ class WebpackBuildCommand(distutils.cmd.Command):
 
     def run(self):
         if not 'CI' in os.environ and not 'TOX_ENV_NAME' in os.environ:
+            # Readthedocs ships with a very old version of NPM(3.5.2) that causes npm install
+            # to fail. So we first install an updated version of npm and run install.
+            # Remove the below command once we have recent enough version of npm in readthedocs
+            # build image.
+            subprocess.run(['npm', 'install', '-g', 'npm@6.14.8'], check=True)
             subprocess.run(['npm', 'install'], check=True)
             subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
 
