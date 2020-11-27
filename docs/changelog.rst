@@ -10,6 +10,12 @@ Other Changes
 
 * The ``canonical_url`` option was deprecated in favor of Sphinx's ``html_baseurl``.
 
+New Features
+------------
+
+* New theme option to enable anonymous ip addresses when using Google Analytics (#889)
+
+
 v0.5.0
 ======
 
