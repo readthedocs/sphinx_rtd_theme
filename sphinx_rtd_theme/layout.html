@@ -38,10 +38,16 @@
   {% if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
   {% endif %}
-  {# CANONICAL URL #}
-  {% if theme_canonical_url %}
+
+  {# CANONICAL URL (deprecated) #}
+  {% if theme_canonical_url and not pageurl %}
     <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
   {% endif %}
+
+  {# CANONICAL URL #}
+  {%- if pageurl %}
+    <link rel="canonical" href="{{ pageurl|e }}" />
+  {%- endif %}
 
   {# JAVASCRIPTS #}
   {%- block scripts %}

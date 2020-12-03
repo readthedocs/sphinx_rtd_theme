@@ -13,7 +13,6 @@ For example:
 .. code:: python
 
     html_theme_options = {
-        'canonical_url': '',
         'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
         'analytics_anonymize_ip': False,
         'logo_only': False,
@@ -119,6 +118,12 @@ Miscellaneous options
     documentation is available through. The URL points to the root path of the
     documentation and requires a trailing slash.
 
+    .. deprecated:: 0.6.0
+
+       Use :confval:`sphinx:html_baseurl` instead.
+
+    .. _canonical URL: https://en.wikipedia.org/wiki/Canonical_link_element
+
 .. confval:: display_version
 
     :type: boolean
@@ -165,10 +170,7 @@ Miscellaneous options
     :default: ``#2980B9``
 
     Changes the background of the search area in the navigation bar. The value
-    can be anything valid in a CSS `background` property. 
-
-.. _canonical URL: https://en.wikipedia.org/wiki/Canonical_link_element
-
+    can be anything valid in a CSS `background` property.
 
 File-wide metadata
 ==================
