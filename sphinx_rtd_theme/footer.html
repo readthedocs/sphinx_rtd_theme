@@ -16,12 +16,9 @@
     <p>
     {%- if show_copyright %}
       {%- if hasdoc('copyright') %}
-        {% set path = pathto('copyright') %}
-        {% set copyright = copyright|e %}
-        &copy; <a href="{{ path }}">{% trans %}Copyright{% endtrans %}</a> {{ copyright }}
+        {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
       {%- else %}
-        {% set copyright = copyright|e %}
-        &copy; {% trans %}Copyright{% endtrans %} {{ copyright }}
+        {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
       {%- endif %}
     {%- endif %}
 
