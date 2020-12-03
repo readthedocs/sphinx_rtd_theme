@@ -12,9 +12,9 @@
 <!DOCTYPE html>
 <html class="{{ sphinx_writer }}" lang="{{ lang_attr }}" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   {{ metatags }}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
   {% endblock %}
@@ -38,10 +38,16 @@
   {% if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
   {% endif %}
-  {# CANONICAL URL #}
-  {% if theme_canonical_url %}
+
+  {# CANONICAL URL (deprecated) #}
+  {% if theme_canonical_url and not pageurl %}
     <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
   {% endif %}
+
+  {# CANONICAL URL #}
+  {%- if pageurl %}
+    <link rel="canonical" href="{{ pageurl|e }}" />
+  {%- endif %}
 
   {# JAVASCRIPTS #}
   {%- block scripts %}
@@ -118,7 +124,7 @@
           {% if logo and theme_logo_only %}
             <a href="{{ pathto(master_doc) }}">
           {% else %}
-            <a href="{{ pathto(master_doc) }}" class="icon icon-home" alt="{{ _("Documentation Home") }}"> {{ project }}
+            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
           {% endif %}
 
           {% if logo %}
@@ -229,6 +235,9 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', '{{ theme_analytics_id }}', 'auto');
+    {% if theme_analytics_anonymize_ip|tobool %}
+    ga('set', 'anonymizeIp', true);
+    {% endif %}
     ga('send', 'pageview');
     </script>
 

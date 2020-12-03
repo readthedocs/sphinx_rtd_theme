@@ -2,10 +2,10 @@
   {% if (theme_prev_next_buttons_location == 'bottom' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       {% if next %}
-        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">{{ _('Next') }} <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">{{ _('Next') }} <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       {% endif %}
       {% if prev %}
-        <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> {{ _('Previous') }}</a>
+        <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> {{ _('Previous') }}</a>
       {% endif %}
     </div>
   {% endif %}
@@ -16,12 +16,9 @@
     <p>
     {%- if show_copyright %}
       {%- if hasdoc('copyright') %}
-        {% set path = pathto('copyright') %}
-        {% set copyright = copyright|e %}
-        &copy; <a href="{{ path }}">{% trans %}Copyright{% endtrans %}</a> {{ copyright }}
+        {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
       {%- else %}
-        {% set copyright = copyright|e %}
-        &copy; {% trans %}Copyright{% endtrans %} {{ copyright }}
+        {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
       {%- endif %}
     {%- endif %}
 
@@ -36,7 +33,8 @@
         {# Translators: the phrase "revision" comes from Git, referring to a commit #}
         {% trans %}Revision{% endtrans %} <code>{{ commit }}</code>.
       </span>
-    {%- elif last_updated %}
+    {%- endif %}
+    {%- if last_updated %}
       <span class="lastupdated">
         {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
       </span>

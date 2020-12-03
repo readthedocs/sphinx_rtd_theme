@@ -5,7 +5,7 @@
     Template for the search page.
 
     :copyright: Copyright 2007-2013 by the Sphinx team, see AUTHORS.
-    :license: BSD, see LICENSE for details.
+    :license: BSD, see https://github.com/sphinx-doc/sphinx/blob/master/LICENSE for details.
 #}
 {%- extends "layout.html" %}
 {% set title = _('Search') %}
@@ -13,6 +13,7 @@
 {%- block scripts %}
     {{ super() }}
     <script type="text/javascript" src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>
 {%- endblock %}
 {% block footer %}
   <script type="text/javascript">
