@@ -1,0 +1,9 @@
+[sphinx-rtd-theme.sphinx-rtd-theme]
+file_filter = sphinx_rtd_theme/locale/<lang>/LC_MESSAGES/sphinx.po
+source_file = sphinx_rtd_theme/locale/en/LC_MESSAGES/sphinx.po
+source_lang = en
+minimum_perc = 90
+
+[main]
+host = https://www.transifex.com
+type = PO

@@ -1,14 +1,100 @@
-
-*********************
-:mod:`test_py_module`
-*********************
+***************************************
+API documentation and generated content
+***************************************
 
 .. contents:: Table of Contents
+
+:mod:`test_py_module`
+=====================
 
 .. automodule:: test_py_module.test
     :members:
     :private-members:
     :special-members:
+
+
+C++ API
+=======
+
+.. cpp:type:: MyType
+
+   Some type
+
+.. cpp:function:: const MyType Foo(const MyType bar)
+
+   Some function type thing
+
+.. cpp:class:: template<typename T, std::size_t N> std::array
+
+   Some cpp class
+
+.. cpp:member:: float Sphinx::version
+
+   The description of Sphinx::version.
+
+.. cpp:var:: int version
+
+   The description of version.
+
+.. cpp:type:: std::vector<int> List
+
+   The description of List type.
+
+.. cpp:enum:: MyEnum
+
+   An unscoped enum.
+
+   .. cpp:enumerator:: A
+
+.. cpp:enum-class:: MyScopedEnum
+
+   A scoped enum.
+
+   .. cpp:enumerator:: B
+
+.. cpp:enum-struct:: protected MyScopedVisibilityEnum : std::underlying_type<MySpecificEnum>::type
+
+   A scoped enum with non-default visibility, and with a specified underlying type.
+
+   .. cpp:enumerator:: B
+
+
+JavaScript API
+==============
+
+.. Copied from sphinx-doc/sphinx/tests/roots
+
+.. js:module:: module_a.submodule
+
+* Link to :js:class:`ModTopLevel`
+
+.. js:class:: ModTopLevel
+
+    * Link to :js:meth:`mod_child_1`
+    * Link to :js:meth:`ModTopLevel.mod_child_1`
+
+.. js:method:: ModTopLevel.mod_child_1
+
+    * Link to :js:meth:`mod_child_2`
+
+.. js:method:: ModTopLevel.mod_child_2
+
+    * Link to :js:meth:`module_a.submodule.ModTopLevel.mod_child_1`
+
+.. js:module:: module_b.submodule
+
+* Link to :js:class:`ModTopLevel`
+
+.. js:class:: ModNested
+
+    .. js:method:: nested_child_1
+
+        * Link to :js:meth:`nested_child_2`
+
+    .. js:method:: nested_child_2
+
+        * Link to :js:meth:`nested_child_1`
+
 
 Generated Index
 ===============
