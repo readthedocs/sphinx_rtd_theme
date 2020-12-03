@@ -5,8 +5,44 @@ Changelog
 master
 ======
 
+Other Changes
+-------------
+
+* The ``canonical_url`` option was deprecated in favor of Sphinx's ``html_baseurl``.
+
+New Features
+------------
+
+* New theme option to enable anonymous ip addresses when using Google Analytics (#889)
+
+
+v0.5.0
+======
+
+:Date: Jun 17, 2020
+
+Fixes
+-----
+
+* Fix bullet list spacing to respect simple/complex list styles
+
+v0.5.0rc2
+=========
+
+:Date: June 5, 2020
+
+Fixes
+-----
+
+* Fix issue with simple definition lists that was missed
+* Change FOUT back to FOIT
+* Fix several margin issues with lists, nested lists, and nested content
+* Add colon back to field lists
+
 v0.5.0rc1
 =========
+
+:Date: May 6, 2020
 
 Fixes
 -----
