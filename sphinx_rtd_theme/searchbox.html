@@ -7,16 +7,17 @@
     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
     :license: BSD, see https://github.com/sphinx-doc/sphinx/blob/master/LICENSE for details.
 
-    .. note:: This file is the same, except the "Go" button was removed.
+    .. note::
+
+       This file is the same, except the "Go" button was removed and the label is hidden.
 #}
 {%- if pagename != "search" and builder != "singlehtml" %}
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">{{ _('Quick search') }}</h3>
-    <div class="searchformwrapper">
+<div id="searchbox" role="search">
+  <div class="searchformwrapper">
     <form class="search" action="{{ pathto('search') }}" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <label class="hidden" for="main-search">{{ _('Search docs') }}</label>
+      <input type="text" name="q" id="main-search" placeholder="{{ _('Search docs') }}"/>
     </form>
-    </div>
+  </div>
 </div>
-<script>$('#searchbox').show(0);</script>
 {%- endif %}
