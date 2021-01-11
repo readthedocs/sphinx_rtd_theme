@@ -9,14 +9,13 @@
 
     .. note::
 
-       This file is the same, except the "Go" button was removed and the label is hidden.
+       This file is the same, except the "Go" button was removed and the label is an aria-label.
 #}
 {%- if pagename != "search" and builder != "singlehtml" %}
 <div id="searchbox" role="search">
   <div class="searchformwrapper">
     <form class="search" action="{{ pathto('search') }}" method="get">
-      <label class="hidden" for="main-search">{{ _('Search docs') }}</label>
-      <input type="text" name="q" id="main-search" placeholder="{{ _('Search docs') }}"/>
+      <input aria-label="Search docs" type="text" name="q" id="main-search" placeholder="{{ _('Search docs') }}"/>
     </form>
   </div>
 </div>
