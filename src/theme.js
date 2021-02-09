@@ -192,8 +192,12 @@ function ThemeNav () {
         var parent_li = elem.closest('li');
         parent_li.siblings('li.current').removeClass('current');
         parent_li.siblings().find('li.current').removeClass('current');
-        parent_li.find('> ul li.current').removeClass('current');
-        parent_li.toggleClass('current');
+        var children = parent_li.find('> ul li');
+        // Don't toggle terminal elements.
+        if (children.length) {
+            children.removeClass('current');
+            parent_li.toggleClass('current');
+        }
     }
 
     return nav;
