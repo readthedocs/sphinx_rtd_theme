@@ -6,10 +6,13 @@ commands:
     parameters:
       version:
         type: string
+      sphinx-version:
+        type: string
+        default: "16,17,18,20,21,22,23,24,30,31,32,33,34,latest"
     steps:
       - checkout
       - run: pip install --user tox
-      - run: tox -e "<<parameters.version>>-sphinx{16,17,18,20,21,22,23,24,30,31,32}"
+      - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
 
 jobs:
   py27:
