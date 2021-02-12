@@ -14,10 +14,10 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 .rst-content
-  // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
+  // Sphinx by default applies HxW style attributes to images. This fixes that oversight.
   img
     max-width: 100%
-    height: auto
+    height: auto !important
 
   div.figure
     margin-bottom: $base-line-height
@@ -33,10 +33,6 @@
   .section > img,   .section > a > img
     margin-bottom: $base-line-height
 
-  // normalize browser styling
-  abbr[title]
-    text-decoration: none
-
   // Style external links
   &.style-external-links a.reference.external:after
     font-family: FontAwesome
@@ -50,6 +46,9 @@
   // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
   blockquote
     margin-left: $base-line-height
+    @include rtl
+      margin-left: inherit
+      margin-right: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
 
@@ -74,6 +73,9 @@
     width: 100%
   .linenodiv pre
     border-right: solid 1px lighten($table-border-color, 2%)
+    @include rtl
+      border-left: solid 1px lighten($table-border-color, 2%)
+      border-right: inherit
     margin: 0
     padding: $base-line-height / 2 $base-line-height / 2
     font-family: $code-font-family
@@ -124,7 +126,10 @@
     @extend .fa
     @extend .fa-exclamation-circle
     &:before
-      margin-right: 4px
+      margin-right: 40px
+      @include rtl
+        margin-left: 40px
+        margin-right: 0px  // Not sure why this is necessary but with "inherit" it ends up with a negative right margin
   .note, .seealso
     @extend .wy-alert.wy-alert-info
   .hint, .tip, .important
@@ -171,10 +176,16 @@
       margin-bottom: 0rem
   .line-block
     margin-left: 0px
+    @include rtl
+      margin-right: 0px
+      margin-left: inherit
     margin-bottom: $base-line-height
     line-height: $base-line-height
   .line-block .line-block
     margin-left: $base-line-height
+    @include rtl
+      margin-right: $base-line-height
+      margin-left: inherit
     margin-bottom: 0px
 
   // Generics handling of headings and toc stuff.
@@ -186,9 +197,15 @@
   .align-right
     float: right
     margin: 0px 0px $base-line-height $base-line-height
+    @include rtl
+      float: left
+      margin: 0px $base-line-height $base-line-height 0px
   .align-left
     float: left
     margin: 0px $base-line-height $base-line-height 0px
+    @include rtl
+      float: right
+      margin: 0px 0px $base-line-height $base-line-height
   .align-center
     margin: auto
     // Do not override display:table for tables
@@ -218,9 +235,13 @@
   // Sidebar content. You'll see at the bottom of this file I change it in mobile.
   .sidebar
     float: right
+    @include rtl
+      float: left
     width: 40%
     display: block
     margin: 0 0 $base-line-height $base-line-height
+    @include rtl
+      margin: 0 $base-line-height $base-line-height 0
     padding: $base-line-height
     background: $sidebar-background-color
     border: solid 1px $sidebar-border-color
@@ -247,10 +268,7 @@
 
   // These are the little citation links [1] that show up within paragraphs.
   .footnote-reference, .citation-reference
-    vertical-align: baseline
-    position: relative
-    top: -0.4em
-    line-height: 0
+    vertical-align: super
     font-size: 90%
 
   // Horizontal lists have multiple columns; use full width
@@ -360,9 +378,14 @@
     .field-name
       padding-right: 10px
       text-align: left
+      @include rtl
+        padding-left: 10px
+        text-align: right
       white-space: nowrap
     .field-body
       text-align: left
+      @include rtl
+        text-align: right
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
   tt, code
@@ -395,6 +418,8 @@
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
+      @include rtl
+        margin: 0  $base-line-height $base-line-height / 2 0
       line-height: $base-line-height
   html.writer-html4 & dl:not(.docutils),
   html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
@@ -420,6 +445,9 @@
       margin-bottom: $base-line-height / 4
       border: none
       border-left: solid 3px hsl(0,0%,80%)
+      @include rtl
+        border-right: solid 3px hsl(0,0%,80%)
+        border-left: inherit
       background: hsl(0,0%,94%)
       color: $method-color
       .headerlink
@@ -446,15 +474,23 @@
     .property
       display: inline-block
       padding-right: 8px
+      @include rtl
+        padding-left: 8px
+        padding-right: inherit
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
     color: $text-viewcode-color
     font-size: 80%
     padding-left: $base-line-height
+    @include rtl
+      padding-right: $base-line-height
+      padding-left: inherit
   .viewcode-back
     display: block
     float: right
+    @include rtl
+      float: left
   p.rubric
     margin-bottom: 12px
     font-weight: bold
@@ -474,6 +510,9 @@
       @extend .fa-download
       &:before
         margin-right: 4px
+        @include rtl
+          margin-left: 4px
+          margin-right: inherit
   .guilabel
     border: 1px solid lighten($guilabel-color, 25%)
     background: lighten($guilabel-color, 50%)
