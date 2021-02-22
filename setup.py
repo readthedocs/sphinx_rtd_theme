@@ -1,22 +1,29 @@
 # -*- coding: utf-8 -*-
 
+import distutils.cmd
 import os
 import subprocess
-import distutils.cmd
-import setuptools.command.build_py
 from io import open
+
 from setuptools import setup
 
 
-class WebpackBuildCommand(setuptools.command.build_py.build_py):
+class WebpackBuildCommand(distutils.cmd.Command):
 
-    """Prefix Python build with Webpack asset build"""
+    description = "Generate static assets"
+
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
 
     def run(self):
         if not 'CI' in os.environ and not 'TOX_ENV_NAME' in os.environ:
             subprocess.run(['npm', 'install'], check=True)
             subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
-        setuptools.command.build_py.build_py.run(self)
 
 
 class WebpackDevelopCommand(distutils.cmd.Command):
