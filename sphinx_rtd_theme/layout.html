@@ -112,107 +112,105 @@
 </head>
 
 <body>
-  {% block extrabody %} {% endblock %}
-  <div>
-    {# SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="sidebar-collapse" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
-          {% block sidebartitle %}
+   {% block extrabody %} {% endblock %}
 
-          {% if logo and theme_logo_only %}
-            <a href="{{ pathto(master_doc) }}">
-          {% else %}
-            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
-          {% endif %}
+  <div class="d-flex" id="wrapper">
 
-          {% if logo %}
-            {# Not strictly valid HTML, but it's the only way to display/scale
-               it properly, without weird scripting or heaps of work
-            #}
-            <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ _('Logo') }}"/>
-          {% endif %}
-          </a>
+    <!-- Sidebar -->
+    <div class="border-right sidebar-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">
+         {% block sidebartitle %}
 
-          {% if theme_display_version %}
-            {%- set nav_version = version %}
-            {% if READTHEDOCS and current_version %}
-              {%- set nav_version = current_version %}
-            {% endif %}
-            {% if nav_version %}
-              <div class="version">
-                {{ nav_version }}
-              </div>
-            {% endif %}
-          {% endif %}
+         {% if logo and theme_logo_only %}
+           <a href="{{ pathto(master_doc) }}">
+         {% else %}
+           <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
+         {% endif %}
 
-          {% include "searchbox.html" %}
+         {% if logo %}
+           {# Not strictly valid HTML, but it's the only way to display/scale
+              it properly, without weird scripting or heaps of work
+           #}
+           <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ _('Logo') }}"/>
+         {% endif %}
+         </a>
 
-          {% endblock %}
-        </div>
+         {% if theme_display_version %}
+           {%- set nav_version = version %}
+           {% if READTHEDOCS and current_version %}
+             {%- set nav_version = current_version %}
+           {% endif %}
+           {% if nav_version %}
+             <div class="version">
+               {{ nav_version }}
+             </div>
+           {% endif %}
+         {% endif %}
 
-        {% block navigation %}
-        <div class="wy-menu-vertical" data-spy="affix" role="navigation" aria-label="{{ _('Main') }}">
-          {% block menu %}
-            {#
-              The singlehtml builder doesn't handle this toctree call when the
-              toctree is empty. Skip building this for now.
-            #}
-            {% if 'singlehtml' not in builder %}
-              {% set global_toc = toctree(maxdepth=theme_navigation_depth|int,
-                                          collapse=theme_collapse_navigation|tobool,
-                                          includehidden=theme_includehidden|tobool,
-                                          titles_only=theme_titles_only|tobool) %}
-            {% endif %}
-            {% if global_toc %}
-              {{ global_toc }}
-            {% else %}
-              <!-- Local TOC -->
-              <div class="local-toc">{{ toc }}</div>
-            {% endif %}
-          {% endblock %}
-        </div>
-        {% endblock %}
+         {% include "searchbox.html" %}
+
+         {% endblock %}
       </div>
-    </nav>
+      <div class="sidebar-navigation">
+         {% block navigation %}
+           {% block menu %}
+             {#
+               The singlehtml builder doesn't handle this toctree call when the
+               toctree is empty. Skip building this for now.
+             #}
+             {% if 'singlehtml' not in builder %}
+               {% set global_toc = toctree(maxdepth=theme_navigation_depth|int,
+                                           collapse=theme_collapse_navigation|tobool,
+                                           includehidden=theme_includehidden|tobool,
+                                           titles_only=theme_titles_only|tobool) %}
+             {% endif %}
+             {% if global_toc %}
+               {{ global_toc }}
+             {% else %}
+               <!-- Local TOC -->
+               <div class="local-toc">{{ toc }}</div>
+             {% endif %}
+           {% endblock %}
+         {% endblock %}
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
 
-    <section data-toggle="sidebar-collapse" class="wy-nav-content-wrap">
-
-      {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-      <nav class="wy-nav-top" aria-label="{{ _('Top') }}">
+    <!-- Page Content -->
+   <div id="page-content-wrapper">
+      <nav class="wy-nav-top navbar navbar-expand-lg navbar-light bg-light border-bottom" aria-label="{{ _('Top') }}">
         {% block mobile_nav %}
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+           <a href="{{ pathto(master_doc) }}">{{ project }}</a>
         {% endblock %}
       </nav>
 
-
-      <div class="wy-nav-content">
-      {%- block content %}
-        {% if theme_style_external_links|tobool %}
-        <div class="rst-content style-external-links">
-        {% else %}
-        <div class="rst-content">
-        {% endif %}
-          {% include "breadcrumbs.html" %}
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-          {%- block document %}
-           <div itemprop="articleBody">
-            {% block body %}{% endblock %}
+      <div class="container-fluid">
+         {%- block content %}
+           {% if theme_style_external_links|tobool %}
+           <div class="rst-content style-external-links">
+           {% else %}
+           <div class="rst-content">
+           {% endif %}
+             {% include "breadcrumbs.html" %}
+             <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+             {%- block document %}
+              <div itemprop="articleBody">
+               {% block body %}{% endblock %}
+              </div>
+              {% if self.comments()|trim %}
+              <div class="articleComments">
+               {% block comments %}{% endblock %}
+              </div>
+              {% endif%}
+             </div>
+             {%- endblock %}
+             {% include "footer.html" %}
            </div>
-           {% if self.comments()|trim %}
-           <div class="articleComments">
-            {% block comments %}{% endblock %}
-           </div>
-           {% endif%}
-          </div>
-          {%- endblock %}
-          {% include "footer.html" %}
-        </div>
-      {%- endblock %}
+         {%- endblock %}
       </div>
-
-    </section>
+    </div>
+    <!-- /#page-content-wrapper -->
 
   </div>
   {% include "versions.html" %}
