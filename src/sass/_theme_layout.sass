@@ -2,30 +2,9 @@
 html
   font-size: $base-font-size
 
-.wy-affix
-  position: fixed
-  top: $gutter
-
 .wy-menu
   a:hover
     text-decoration: none
-
-.wy-menu-horiz
-  +clearfix
-  ul, li
-    display: inline-block
-  li:hover
-    background: rgba(255,255,255,.1)
-  li
-    &.divide-left
-      border-left: solid 1px hsl(0, 0%, 25%)
-    &.divide-right
-      border-right: solid 1px hsl(0, 0%, 25%)
-  a
-    height: $base-font-size * 2
-    display: inline-block
-    line-height: $base-font-size * 2
-    padding: 0 $base-font-size
 
 .wy-menu-vertical
   width: $nav-desktop-width
