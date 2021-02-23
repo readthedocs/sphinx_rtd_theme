@@ -80,7 +80,7 @@ function ThemeNav () {
         $(document)
             // Shift nav in mobile when clicking the menu.
             .on('click', "[data-toggle='wy-nav-top']", function() {
-                $("[data-toggle='wy-nav-shift']").toggleClass("shift");
+                $("[data-toggle='sidebar-collapse']").toggleClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
             })
 
@@ -88,7 +88,7 @@ function ThemeNav () {
             .on('click', ".wy-menu-vertical .current ul li a", function() {
                 var target = $(this);
                 // Close menu when you click a link.
-                $("[data-toggle='wy-nav-shift']").removeClass("shift");
+                $("[data-toggle='sidebar-collapse']").removeClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
                 // Handle dynamic display of l3 and l4 nav lists
                 self.toggleCurrent(target);
