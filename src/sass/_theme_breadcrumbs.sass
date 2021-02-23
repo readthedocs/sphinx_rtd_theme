@@ -1,27 +1,11 @@
-.wy-breadcrumbs
-  +clearfix
-
-.wy-breadcrumbs li
-  display: inline-block
-  &.wy-breadcrumbs-aside
-    float: right
-  a
-    display: inline-block
-    padding: 5px
-    &:first-child
-      padding-left: 0
-  code
-    padding: 5px
-    border: none
-    background: none
-    &.literal
-      color: $text-color
-
+.breadcrumb
+   padding-left: 0px
+   background-color: inherit
 
 +media($mobile)
-  .wy-breadcrumbs li.wy-breadcrumbs-aside
+  .breadcrumb li.breadcrumb-aside
     display: none
 
 @media print
-  .wy-breadcrumbs li.wy-breadcrumbs-aside
+  .breadcrumb li.breadcrumb-aside
     display: none
