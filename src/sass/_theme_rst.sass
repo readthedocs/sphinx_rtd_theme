@@ -141,13 +141,39 @@
       background: transparent !important
       border-color: rgba(0,0,0,.1) !important
   .section ul, .toctree-wrapper ul
-    // @extend .wy-plain-list-disc
+     list-style: disc
+     line-height: $base-line-height
+     margin-bottom: $base-line-height
+     li
+       list-style: disc
+       margin-left: $base-line-height
+       p:last-child
+         margin-bottom: 0
+       ul
+         margin-bottom: 0
+       li
+         list-style: circle
+         li
+           list-style: square
+       ol li
+         list-style: decimal
   .section ol.loweralpha, .section ol.loweralpha > li
     list-style: lower-alpha
   .section ol.upperalpha, .section ol.upperalpha > li
     list-style: upper-alpha
   .section ol, ol.arabic
-    // @extend .wy-plain-list-decimal
+     list-style: decimal
+     line-height: $base-line-height
+     margin-bottom: $base-line-height
+     li
+       list-style: decimal
+       margin-left: $base-line-height
+       p:last-child
+         margin-bottom: 0
+       ul
+         margin-bottom: 0
+         li
+           list-style: disc
   // Complex bullet lists, they have more item margins than simple lists
   .section ol li, .section ul li
     > *
