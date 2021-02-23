@@ -330,7 +330,7 @@
   .wy-table-responsive.citation:last-child, .wy-table-responsive.footnote:last-child
     margin-bottom: $base-line-height
   table.docutils
-    // @extend .wy-table
+    @extend .table
     // @extend .wy-table-bordered-all
     th
       border-color: $table-border-color
@@ -342,13 +342,13 @@
         margin-bottom: 0rem
         font-size: .9rem
     &:not(.field-list)
-      // @extend .wy-table-striped
+      @extend .table-striped
     // Remove bottom margin for the last element (and it's last child)
     td .last, td .last > *:last-child
       margin-bottom: 0
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
-    // @extend .wy-table
+    @extend .table
     border: none
     td
       border: none
