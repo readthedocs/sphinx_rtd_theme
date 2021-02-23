@@ -59,7 +59,6 @@ can be used to test built assets:
 .. _Webpack: https://webpack.js.org/
 .. _node-sass: https://github.com/sass/node-sass
 .. _SASS: http://www.sass-lang.com
-.. _Wyrm: http://www.github.com/snide/wyrm/
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
 
 Translations

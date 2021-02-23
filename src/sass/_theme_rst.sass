@@ -94,9 +94,9 @@
     font-family: $code-font-family
     font-size: 12px
     line-height: 1.4
-  
+
   // Do not allow selection of code block prompts
-  div.highlight .gp 
+  div.highlight .gp
     user-select: none
     pointer-events: none
 
@@ -113,26 +113,26 @@
 
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
-    @extend .wy-alert
+    // @extend .wy-alert
     // These block elements are unsuitable for having floating objects next
     // to them
     clear: both
     .last, > *:last-child
       margin-bottom: 0
   .admonition-title
-    @extend .wy-alert-title
+    // @extend .wy-alert-title
     @extend .fa
     @extend .fa-exclamation-circle
     &:before
       margin-right: 4px
   .note, .seealso
-    @extend .wy-alert.wy-alert-info
+    // @extend .wy-alert.wy-alert-info
   .hint, .tip, .important
-    @extend .wy-alert.wy-alert-success
+    // @extend .wy-alert.wy-alert-success
   .error, .danger
-    @extend .wy-alert.wy-alert-danger
+    // @extend .wy-alert.wy-alert-danger
   .warning, .caution, .attention, .admonition-todo
-    @extend .wy-alert.wy-alert-warning
+    // @extend .wy-alert.wy-alert-warning
   // Some people put tables in notes. Let's give them very basic support.
   .admonition table
     border-color: rgba(0,0,0,.1)
@@ -140,13 +140,13 @@
       background: transparent !important
       border-color: rgba(0,0,0,.1) !important
   .section ul, .toctree-wrapper ul
-    @extend .wy-plain-list-disc
+    // @extend .wy-plain-list-disc
   .section ol.loweralpha, .section ol.loweralpha > li
     list-style: lower-alpha
   .section ol.upperalpha, .section ol.upperalpha > li
     list-style: upper-alpha
   .section ol, ol.arabic
-    @extend .wy-plain-list-decimal
+    // @extend .wy-plain-list-decimal
   // Complex bullet lists, they have more item margins than simple lists
   .section ol li, .section ul li
     > *
@@ -330,8 +330,8 @@
   .wy-table-responsive.citation:last-child, .wy-table-responsive.footnote:last-child
     margin-bottom: $base-line-height
   table.docutils
-    @extend .wy-table
-    @extend .wy-table-bordered-all
+    // @extend .wy-table
+    // @extend .wy-table-bordered-all
     th
       border-color: $table-border-color
       html.writer-html5 &
@@ -342,13 +342,13 @@
         margin-bottom: 0rem
         font-size: .9rem
     &:not(.field-list)
-      @extend .wy-table-striped
+      // @extend .wy-table-striped
     // Remove bottom margin for the last element (and it's last child)
     td .last, td .last > *:last-child
       margin-bottom: 0
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
-    @extend .wy-table
+    // @extend .wy-table
     border: none
     td
       border: none

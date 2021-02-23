@@ -2,6 +2,162 @@
 // that are set in wyrm_core/wy_variables.sass. You'll find wyrm in bower_components if you're looking
 // for a reference.
 
+
+// copied from wyrm
+
+// Locations
+$static-img:                          "img/"
+
+
+// Colors
+$background-color:                    #edf0f2
+$section-background-color:            hsl(0,0%,99%)
+$dropdown-color:                      $section-background-color
+$dropdown-border-color:               darken($background-color, 10%)
+
+$black:                               #000 !default
+$gray-darker:                         #222 !default
+$gray-dark:                           #333 !default
+$gray:                                #555 !default
+$gray-light:                          #999 !default
+$gray-lighter:                        #ccc !default
+$white:                               #fff !default
+
+$green:                               #27AE60
+$offgreen:                            #1ABC9C
+$blue:                                #2980B9
+$purple:                              #9B59B6
+$cobalt:                              #34495E
+$yellow:                              #F1C40F
+$orange:                              #E67E22
+$red:                                 #E74C3C
+$shell:                               #ECF0F1
+
+// Typography
+$base-font-size:                      16px !default
+$base-font-family:                    "Helvetica Neue", Arial, sans-serif !default
+$base-font-family-bold:               bold
+$base-line-height:                    24px !default
+$custom-font-family:                  "Georgia", serif !default
+$custom-font-family2:                 "Georgia", serif !default
+$code-font-family:                    "Consolas", "Monaco", monospace !default
+$icon-font-family:                    "FontAwesome"
+$text-color:                          hsl(0,0%,25%) !default
+$text-invert:                         hsl(0,0%,100%) !default
+$text-code-color:                     $red
+$text-code-background-color:          $white
+$text-code-border-color:              hsl(195,7%,89%)
+$text-dark:                           lighten($text-color,15%) !default
+$text-medium:                         lighten($text-color,25%) !default
+$text-light:                          lighten($text-color,45%) !default
+$text-lighter:                        lighten($text-color,60%) !default
+
+// Tables
+$table-background-color:              transparent
+$table-border-color:                  hsl(195, 7%, 89%)
+$table-stripe-color:                  hsl(185,15%,96%)
+$table-bg-hover-color:                hsl(0,0%,85%)
+$table-head-background-color:         $table-border-color
+$table-font-size:                     90%
+$table-padding-size:                  $base-font-size / 2 $base-font-size
+
+// Forms
+$input-text-color:                    #cad2d3 !default
+$input-background-color:              $white !default
+$input-border-color:                  #ccc !default
+$input-shadow-color:                  #ddd !default
+$input-focus-color:                   $gray-dark
+
+// Links
+$link-color:                          $blue
+$link-color-visited:                  $purple
+$link-color-hover:                    lighten($link-color, 6%) !default
+$link-color-alt:                      hsl(33, 100%, 51%)
+
+
+// Buttons
+$button-background-color:             $green
+$button-neutral-background-color:     $table-stripe-color
+
+// Spinner
+$spinner-color:                       $link-color
+
+// Menu
+$menu-top-link-color:                 hsl(0, 0%, 95%)
+$menu-background-color:           rgb(52, 49, 49)
+$menu-logo-color:                     $link-color
+$nav-desktop-width:                   300px
+$nav-desktop-position:                left
+
+// Z-index master list
+$z-index-dropdown:                    100 !default
+$z-index-popover:                     200 !default
+$z-index-tooltip:                     300 !default
+$z-index-tray:                        400 !default
+$z-index-modal:                       500 !default
+$z-index-alert:                       600 !default
+
+// By default wyrm expects the following font-classes
+// to exist. By default, uses Font Awesome 4.0
+// but this is completely configurable should you
+// want to use a different icon pack.
+$icon-prefix:                         "fa"
+$icon-close:                          "times"
+$icon-arrow-left:                     "arrow-left"
+$icon-arrow-right:                    "arrow-right"
+$icon-arrow-down:                     "arrow-down"
+$icon-arrow-up:                       "arrow-up"
+$icon-expand:                         "expand"
+$icon-compress:                       "compress"
+$icon-trash:                          "trash-o"
+$icon-table:                          "table"
+$icon-link:                           "link"
+$icon-quote-right:                    "quote-right"
+$icon-align-left:                     "align-left"
+$icon-align-right:                    "align-right"
+$icon-align-justify:                  "align-justify"
+$icon-align-center:                   "align-center"
+$icon-arrows-alt:                     "arrows-alt"
+$icon-picture:                        "picture-o"
+$icon-youtube:                        "youtube-play"
+$icon-code:                           "code"
+$icon-text-height:                    "text-height"
+$icon-bold:                           "bold"
+$icon-italic:                         "italic"
+$icon-strikethrough:                  "strikethrough"
+$icon-list-ul:                        "list-ul"
+$icon-list-ol:                        "list-ol"
+$icon-outdent:                        "outdent"
+$icon-indent:                         "indent"
+$icon-paperclip:                      "paperclip"
+$icon-caret-down:                     "caret-down"
+$icon-ok:                             "check-circle"
+$icon-remove:                         "times-circle"
+$icon-alert:                          "exclamation-circle"
+
+
+
+// ------------------------------------------------------------
+
+@import "neat-helpers"
+
+$column: golden-ratio(1em, 3) !default
+$gutter: golden-ratio(1em, 1) !default
+$grid-columns: 12 !default
+$max-width: 100% !default
+$border-box-sizing: true !default
+$default-feature: min-width
+$default-layout-direction: LTR !default
+
+$mobile: new-breakpoint(max-width 480px 4)
+$tablet: new-breakpoint(max-width 768px 8)
+$desktop: new-breakpoint(min-width 769px 12)
+$desktop-wide: new-breakpoint(min-width 1200px 12)
+$desktop-wider: new-breakpoint(min-width 1400px 12)
+
+
+// end copy
+
 $fa-font-path:                        "~font-awesome/fonts"
 $static-img:                          "../img/"
 

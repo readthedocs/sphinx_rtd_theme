@@ -37,10 +37,10 @@ module.exports = {
             loader: "sass-loader?indentedSyntax",
             options: {
               includePaths: [
+                "node_modules/bootstrap/scss",
                 "node_modules/bourbon/app/assets/stylesheets",
                 "node_modules/bourbon-neat/app/assets/stylesheets",
-                "node_modules/font-awesome/scss",
-                "node_modules/wyrm/sass"
+                "node_modules/font-awesome/scss"
               ]
             }
           }
