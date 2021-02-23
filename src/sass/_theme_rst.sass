@@ -113,7 +113,7 @@
 
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
-    // @extend .wy-alert
+    @extend .alert
     // These block elements are unsuitable for having floating objects next
     // to them
     clear: both
@@ -126,13 +126,13 @@
     &:before
       margin-right: 4px
   .note, .seealso
-    // @extend .wy-alert.wy-alert-info
+    @extend .alert-info
   .hint, .tip, .important
-    // @extend .wy-alert.wy-alert-success
+    @extend .alert-success
   .error, .danger
-    // @extend .wy-alert.wy-alert-danger
+    @extend .alert-danger
   .warning, .caution, .attention, .admonition-todo
-    // @extend .wy-alert.wy-alert-warning
+    @extend .alert-warning
   // Some people put tables in notes. Let's give them very basic support.
   .admonition table
     border-color: rgba(0,0,0,.1)
