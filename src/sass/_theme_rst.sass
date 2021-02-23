@@ -62,7 +62,7 @@
     display: block
     overflow: auto
   pre.literal-block, div[class^='highlight']
-    border: 1px solid $gray-500
+    border: 1px solid $gray-300
     overflow-x: auto
     // 1px hack otherwise border won't show. lame
     margin: 1px 0 $base-line-height 0
@@ -74,7 +74,7 @@
   div[class^='highlight'] td.code
     width: 100%
   .linenodiv pre
-    border-right: solid 1px lighten($gray-500, 2%)
+    border-right: solid 1px $gray-300
     margin: 0
     padding: $base-line-height / 2 $base-line-height / 2
     font-family: $code-font-family
@@ -360,9 +360,9 @@
     @extend .table
     @extend .table-bordered
     th
-      border-color: $gray-500
+      border-color: $gray-300
       html.writer-html5 &
-        border: 1px solid $gray-500
+        border: 1px solid $gray-300
     html.writer-html5 &
       th > p, td > p
         line-height: 1rem
