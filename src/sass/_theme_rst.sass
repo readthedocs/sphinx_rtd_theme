@@ -7,9 +7,9 @@
 //        * That said, know that I'm very unlikely to accept PRs from wyrm just to change style here.
 //    2. I plan to remove the !importants in here. Part of it is due to lazyness, part to sphinx's fondness for nesting.
 //    3. Try to use variables from wyrm_core/wy_variables.sass. Notable are...
-//        * $base-line-height // All margins, padding and line-height should use this in .25 increments.
+//        * $line-height-base // All margins, padding and line-height should use this in .25 increments.
 //        * $text-color, $text-light, $text-dark...etc
-//        * $base-font-family, $code-font-family
+//        * $font-family-base, $font-family-code
 //    4. If you have changes for mobile/tablet, put them at the bottom of the sass file.
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@
     height: auto
 
   div.figure
-    margin-bottom: $base-line-height
+    margin-bottom: $line-height-base
     p.caption
       font-style: italic
     p:last-child.caption
@@ -31,7 +31,7 @@
 
   // Usually it's a good idea to give images some space.
   .section > img,   .section > a > img
-    margin-bottom: $base-line-height
+    margin-bottom: $line-height-base
 
   // normalize browser styling
   abbr[title]
@@ -50,22 +50,22 @@
   // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
   blockquote
     @extend .blockquote
-    margin-left: $base-line-height
-    line-height: $base-line-height
-    margin-bottom: $base-line-height
+    margin-left: $line-height-base
+    line-height: $line-height-base
+    margin-bottom: $line-height-base
 
   pre.literal-block
     white-space: pre
     margin: 0
-    padding: $base-line-height / 2 $base-line-height / 2
-    font-family: $code-font-family
+    padding: $line-height-base / 2 $line-height-base / 2
+    font-family: $font-family-code
     display: block
     overflow: auto
   pre.literal-block, div[class^='highlight']
     border: 1px solid $gray-300
     overflow-x: auto
     // 1px hack otherwise border won't show. lame
-    margin: 1px 0 $base-line-height 0
+    margin: 1px 0 $line-height-base 0
     div[class^='highlight']
       padding: 0px
       border: none
@@ -76,23 +76,23 @@
   .linenodiv pre
     border-right: solid 1px $gray-300
     margin: 0
-    padding: $base-line-height / 2 $base-line-height / 2
-    font-family: $code-font-family
+    padding: $line-height-base / 2 $line-height-base / 2
+    font-family: $font-family-code
     user-select: none
     pointer-events: none
   div[class^='highlight'] pre
     white-space: pre
     margin: 0
-    padding: $base-line-height / 2 $base-line-height / 2
+    padding: $line-height-base / 2 $line-height-base / 2
     display: block
     overflow: auto
     & .hll
       // Line emphasis spans full width
       display: block
-      margin: 0 -1 * $base-line-height / 2
-      padding: 0 $base-line-height / 2
+      margin: 0 -1 * $line-height-base / 2
+      padding: 0 $line-height-base / 2
   pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
-    font-family: $code-font-family
+    font-family: $font-family-code
     font-size: 12px
     line-height: 1.4
 
@@ -142,11 +142,11 @@
       border-color: rgba(0,0,0,.1) !important
   .section ul, .toctree-wrapper ul
      list-style: disc
-     line-height: $base-line-height
-     margin-bottom: $base-line-height
+     line-height: $line-height-base
+     margin-bottom: $line-height-base
      li
        list-style: disc
-       margin-left: $base-line-height
+       margin-left: $line-height-base
        p:last-child
          margin-bottom: 0
        ul
@@ -163,11 +163,11 @@
     list-style: upper-alpha
   .section ol, ol.arabic
      list-style: decimal
-     line-height: $base-line-height
-     margin-bottom: $base-line-height
+     line-height: $line-height-base
+     margin-bottom: $line-height-base
      li
        list-style: decimal
-       margin-left: $base-line-height
+       margin-left: $line-height-base
        p:last-child
          margin-bottom: 0
        ul
@@ -177,17 +177,17 @@
   // Complex bullet lists, they have more item margins than simple lists
   .section ol li, .section ul li
     > *
-      margin-top: $base-line-height / 2
-      margin-bottom: $base-line-height / 2
+      margin-top: $line-height-base / 2
+      margin-bottom: $line-height-base / 2
       &:first-child
         margin-top: 0rem
     > p
       &, &:last-child
-        margin-bottom: $base-line-height / 2
+        margin-bottom: $line-height-base / 2
       &:only-child, &:only-child:last-child
         margin-bottom: 0rem
     > ul, > ol
-      margin-bottom: $base-line-height / 2
+      margin-bottom: $line-height-base / 2
   // Simple lists, no item margins
   .section ol.simple li, .section ul.simple li
     > *
@@ -198,24 +198,24 @@
       margin-bottom: 0rem
   .line-block
     margin-left: 0px
-    margin-bottom: $base-line-height
-    line-height: $base-line-height
+    margin-bottom: $line-height-base
+    line-height: $line-height-base
   .line-block .line-block
-    margin-left: $base-line-height
+    margin-left: $line-height-base
     margin-bottom: 0px
 
   // Generics handling of headings and toc stuff.
   .topic-title
     font-weight: bold
-    margin-bottom: $base-line-height / 2
+    margin-bottom: $line-height-base / 2
   .toc-backref
     color: $text-color
   .align-right
     float: right
-    margin: 0px 0px $base-line-height $base-line-height
+    margin: 0px 0px $line-height-base $line-height-base
   .align-left
     float: left
-    margin: 0px $base-line-height $base-line-height 0px
+    margin: 0px $line-height-base $line-height-base 0px
   .align-center
     margin: auto
     // Do not override display:table for tables
@@ -247,8 +247,8 @@
     float: right
     width: 40%
     display: block
-    margin: 0 0 $base-line-height $base-line-height
-    padding: $base-line-height
+    margin: 0 0 $line-height-base $line-height-base
+    padding: $line-height-base
     background: $sidebar-background-color
     border: solid 1px $sidebar-border-color
     // Sidebar content is usually less relevant, so adjust the margins and sizes.
@@ -258,17 +258,17 @@
       margin-bottom: 0
     .sidebar-title
       display: block
-      font-family: $base-font-family:
+      font-family: $font-family-base:
       font-weight: bold
       background: $gray-500
-      padding: $base-line-height / 4 $base-line-height / 2
-      margin: -$base-line-height
-      margin-bottom: $base-line-height
+      padding: $line-height-base / 4 $line-height-base / 2
+      margin: -$line-height-base
+      margin-bottom: $line-height-base
       font-size: 100%
   // Sphinx can highlight searched text with ?highlighted=searchterm
   .highlighted
     background: $highlight-color
-    box-shadow: 0 0 0 $base-line-height / 12 $highlight-color
+    box-shadow: 0 0 0 $line-height-base / 12 $highlight-color
     display: inline
     font-weight: bold
 
@@ -352,10 +352,10 @@
   // if the following element is of a different type
   .table-responsive.citation + :not(.citation),
   .table-responsive.footnote + :not(.footnote)
-    margin-top: $base-line-height
+    margin-top: $line-height-base
   // Re-add vertical space after citation and footnotes if it is the last child of a parent
   .table-responsive.citation:last-child, .table-responsivefootnote:last-child
-    margin-bottom: $base-line-height
+    margin-bottom: $line-height-base
   table.docutils
     @extend .table
     @extend .table-bordered
@@ -395,7 +395,7 @@
   tt, code
     @extend code
     color: $black
-    font-family: $code-font-family
+    font-family: $font-family-code
     padding: 2px 5px
     big, em
       font-size: 100% !important
@@ -407,34 +407,34 @@
       font-weight: bold
       color: $text-codexref-color
   pre, kbd, samp
-    font-family: $code-font-family
+    font-family: $font-family-code
   // If the literal is inside an a tag, let's color it like a link
   a tt, a code
     color: $link-color
   dl
-    margin-bottom: $base-line-height
+    margin-bottom: $line-height-base
     dt
       font-weight: bold
-      margin-bottom: $base-line-height / 2
+      margin-bottom: $line-height-base / 2
     // Most of the content within these dls are one liners, so I halve the normal margins.
     p, table, ul, ol
-      margin-bottom: $base-line-height / 2
+      margin-bottom: $line-height-base / 2
     // rST seems to want dds to be treated as the browser would, indented.
     dd
-      margin: 0  0 $base-line-height / 2 $base-line-height
-      line-height: $base-line-height
+      margin: 0  0 $line-height-base / 2 $line-height-base
+      line-height: $line-height-base
   html.writer-html4 & dl:not(.docutils),
   html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
-    margin-bottom: $base-line-height
+    margin-bottom: $line-height-base
     > dt
       display: table
-      margin: $base-line-height / 4 0
+      margin: $line-height-base / 4 0
       font-size: 90%
       line-height: normal
       background: lighten($class-color, 50%)
       color: $class-color
       border-top: solid 3px lighten($class-color, 20%)
-      padding: $base-line-height / 4
+      padding: $line-height-base / 4
       position: relative
       &:before
         color: lighten($class-color, 20%)
@@ -444,7 +444,7 @@
     // In the html4 writer, parameters is a table. In html5 writer, parameters
     // is a nested dl.field-list
     dl:not(.field-list) > dt
-      margin-bottom: $base-line-height / 4
+      margin-bottom: $line-height-base / 4
       border: none
       border-left: solid 3px hsl(0,0%,80%)
       background: hsl(0,0%,94%)
@@ -478,7 +478,7 @@
     display: inline-block
     color: $text-viewcode-color
     font-size: 80%
-    padding-left: $base-line-height
+    padding-left: $line-height-base
   .viewcode-back
     display: block
     float: right
@@ -506,9 +506,9 @@
     background: lighten($guilabel-color, 50%)
     font-size: 80%
     font-weight: 700
-    border-radius: $base-line-height / 6
-    padding: $base-line-height / 10 $base-line-height / 4
-    margin: auto $base-line-height / 12
+    border-radius: $line-height-base / 6
+    padding: $line-height-base / 10 $line-height-base / 4
+    margin: auto $line-height-base / 12
   .versionmodified
     font-style: italic
 

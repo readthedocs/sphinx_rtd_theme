@@ -1,6 +1,6 @@
 // Set uniform (but not relative) base font size
 html
-  font-size: $base-font-size
+  font-size: $font-size-base
 
 ol, ul
   padding-left: 0px
@@ -14,10 +14,10 @@ ol, ul
 
   header, p.caption
     color: $nav-caption
-    height: $base-font-size * 2
-    line-height: $base-font-size * 2
+    height: $font-size-base * 2
+    line-height: $font-size-base * 2
     padding: 0 $gutter
-    margin: $base-line-height / 2 0 0 0
+    margin: $line-height-base / 2 0 0 0
     display: block
     font-weight: bold
     text-transform: uppercase
@@ -194,7 +194,7 @@ ol, ul
     font-size: 100%
     font-weight: bold
     display: inline-block
-    padding: $base-line-height / 6 $base-line-height / 4
+    padding: $line-height-base / 6 $line-height-base / 4
     margin-bottom: $gutter / 2
     &:hover
       background: rgba(255,255,255,.1)
@@ -286,7 +286,7 @@ ol, ul
     color: $white
     font-weight: bold
   img
-    margin-right: $base-line-height / 2
+    margin-right: $line-height-base / 2
     height: 45px
     width: 45px
     background-color: $menu-logo-color
@@ -312,10 +312,10 @@ ol, ul
 footer
   color: $footer-color
   p
-    margin-bottom: $base-line-height / 2
+    margin-bottom: $line-height-base / 2
   span.commit code
     padding: 0px
-    font-family: $code-font-family
+    font-family: $font-family-code
     font-size: 1em
     background: none
     border: none
@@ -332,22 +332,22 @@ footer
 
 #search-results
   .search li
-    margin-bottom: $base-line-height
+    margin-bottom: $line-height-base
     border-bottom: solid 1px $table_border_color
-    padding-bottom: $base-line-height
+    padding-bottom: $line-height-base
   .search li:first-child
     border-top: solid 1px $table_border_color
-    padding-top: $base-line-height
+    padding-top: $line-height-base
   .search li a
     font-size: 120%
-    margin-bottom: $base-line-height / 2
+    margin-bottom: $line-height-base / 2
     display: inline-block
   .context
     color: $text-medium
     font-size: 90%
 
 .genindextable li > ul
-  margin-left: $base-line-height
+  margin-left: $line-height-base
 
 @include media-breakpoint-down(md)
   .wy-body-for-nav
