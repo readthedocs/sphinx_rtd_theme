@@ -85,7 +85,7 @@ function ThemeNav () {
             })
 
             // Nav menu link click operations
-            .on('click', ".wy-menu-vertical .current ul li a", function() {
+            .on('click', ".sidebar-navigation .current ul li a", function() {
                 var target = $(this);
                 // Close menu when you click a link.
                 $("[data-toggle='sidebar-collapse']").removeClass("shift");
@@ -110,7 +110,7 @@ function ThemeNav () {
             .wrap("<div class='table-responsive citation'></div>");
 
         // Add expand links to all parents of nested ul
-        $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {
+        $('.sidebar-navigation ul').not('.simple').siblings('a').each(function () {
             var link = $(this);
                 expand = $('<span class="toctree-expand"></span>');
             expand.on('click', function (ev) {
@@ -127,7 +127,7 @@ function ThemeNav () {
         var anchor = encodeURI(window.location.hash) || '#';
 
         try {
-            var vmenu = $('.wy-menu-vertical');
+            var vmenu = $('.sidebar-navigation');
             var link = vmenu.find('[href="' + anchor + '"]');
             if (link.length === 0) {
                 // this link was not found in the sidebar.
@@ -144,7 +144,7 @@ function ThemeNav () {
             // If we found a matching link then reset current and re-apply
             // otherwise retain the existing match
             if (link.length > 0) {
-                $('.wy-menu-vertical .current').removeClass('current');
+                $('.sidebar-navigation .current').removeClass('current');
                 link.addClass('current');
                 link.closest('li.toctree-l1').addClass('current');
                 link.closest('li.toctree-l1').parent().addClass('current');

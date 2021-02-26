@@ -5,7 +5,7 @@ html
 ol, ul
   padding-left: 0px
 
-.wy-menu-vertical
+.sidebar-navigation
   width: $nav-desktop-width
 
   a:hover
@@ -188,7 +188,7 @@ ol, ul
     background-color: $menu-logo-color
     padding: 5px
     border-radius: 100%
-  > a, .wy-dropdown > a
+  > a
     color: $nav-search-color
     font-size: 100%
     font-weight: bold
@@ -213,15 +213,6 @@ ol, ul
     margin-bottom: $gutter / 2
     font-weight: normal
     color: rgba(255,255,255,.3)
-
-.wy-nav .wy-menu-vertical
-  header
-    color: $link-color
-  a
-    color: $text-light
-    &:hover
-      background-color: $link-color
-      color: $white
 
 [data-menu-wrap]
   +transition(all .2s ease-in)
@@ -360,7 +351,7 @@ footer
     width: auto
   .wy-side-nav-search
     width: auto
-  .wy-menu-vertical
+  .sidebar-navigation
     width: auto
   .page-content-wrapper
     margin-left: 0
