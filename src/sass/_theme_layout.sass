@@ -2,30 +2,9 @@
 html
   font-size: $base-font-size
 
-.wy-affix
-  position: fixed
-  top: $gutter
-
 .wy-menu
   a:hover
     text-decoration: none
-
-.wy-menu-horiz
-  +clearfix
-  ul, li
-    display: inline-block
-  li:hover
-    background: rgba(255,255,255,.1)
-  li
-    &.divide-left
-      border-left: solid 1px hsl(0, 0%, 25%)
-    &.divide-right
-      border-right: solid 1px hsl(0, 0%, 25%)
-  a
-    height: $base-font-size * 2
-    display: inline-block
-    line-height: $base-font-size * 2
-    padding: 0 $base-font-size
 
 .wy-menu-vertical
   width: $nav-desktop-width
@@ -244,25 +223,6 @@ html
       background-color: $link-color
       color: $white
 
-[data-menu-wrap]
-  +transition(all .2s ease-in)
-  position: absolute
-  opacity: 1
-  width: 100%
-  opacity: 0
-  &.move-center
-    left: 0
-    right: auto
-    opacity: 1
-  &.move-left
-    right: auto
-    left: -100%
-    opacity: 0
-  &.move-right
-    right: -100%
-    left: auto
-    opacity: 0
-
 .wy-body-for-nav
   background: $section-background-color
 
@@ -319,6 +279,19 @@ html
     cursor: pointer
     padding-top: inherit
 
+.wy-breadcrumbs
+  +clearfix
+
+.wy-breadcrumbs li
+  display: inline-block
+  &.wy-breadcrumbs-aside
+    float: right
+  a
+    display: inline-block
+    padding: 5px
+    &:first-child
+      padding-left: 0
+
 .wy-nav-content-wrap
   margin-left: $nav-desktop-width
   background: $section-background-color
@@ -330,15 +303,6 @@ html
   max-width: $nav-content-width
   margin: auto
 
-.wy-body-mask
-  position: fixed
-  width: 100%
-  height: 100%
-  background: rgba(0,0,0,.2)
-  display: none
-  z-index: $z-index-modal - 1
-  &.on
-    display: block
 footer
   color: $footer-color
   p
@@ -378,6 +342,10 @@ footer
 
 .genindextable li > ul
   margin-left: $base-line-height
+
++media($mobile)
+  .wy-breadcrumbs li.wy-breadcrumbs-aside
+    display: none
 
 +media($tablet)
   .wy-body-for-nav
@@ -419,6 +387,8 @@ footer
 
 @media print
   .rst-versions, footer, .wy-nav-side
+    display: none
+  .wy-breadcrumbs li.wy-breadcrumbs-aside
     display: none
   .wy-nav-content-wrap
     margin-left: 0
