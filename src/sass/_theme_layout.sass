@@ -242,7 +242,7 @@ ol, ul
     left: auto
     opacity: 0
 
-.wy-body-for-nav
+.d-flex
   background: $section-background-color
 
 .sidebar-right
@@ -294,7 +294,7 @@ ol, ul
 
 .page-content-wrapper
   margin-left: $nav-desktop-width
-  background: $section-background-color
+  background: $content-background-color
   min-height: 100%
 
 .container-fluid
@@ -344,7 +344,7 @@ footer
   margin-left: $line-height-base
 
 @include media-breakpoint-down(md)
-  .wy-body-for-nav
+  .d-flex
     background: $section-background-color
   .wy-nav-top
     display: block
@@ -362,9 +362,9 @@ footer
     width: auto
   .wy-menu-vertical
     width: auto
-  .wy-nav-content-wrap
+  .page-content-wrapper
     margin-left: 0
-    .wy-nav-content
+    .container-fluid
       padding: $gutter
     &.shift
       position: fixed
@@ -375,14 +375,14 @@ footer
       overflow: hidden
 
 @media screen and (min-width: $nav-media-query)
-  .wy-nav-content-wrap
+  .page-content-wrapper
     background: rgba(0,0,0,.05)
-  .wy-nav-content
+  .container-fluid
     margin: 0
-    background: $section-background-color
+    background: $content-background-color
 
 @media print
   .rst-versions, footer, .wy-nav-side
     display: none
-  .wy-nav-content-wrap
+  .page-content-wrapper
     margin-left: 0
