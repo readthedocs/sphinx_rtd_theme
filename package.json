@@ -4,8 +4,7 @@
   "version": "0.5.1",
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "preinstall": "bin/preinstall.js"
+    "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {},
   "devDependencies": {
