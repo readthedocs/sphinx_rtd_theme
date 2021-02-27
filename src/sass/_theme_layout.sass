@@ -358,7 +358,7 @@ footer
     background: $section-background-color
   .wy-nav-top
     display: block
-  .wy-nav-side
+  .sidebar-right
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
     @else
@@ -368,7 +368,7 @@ footer
       left: 0
   .wy-side-scroll
     width: auto
-  .wy-side-nav-search
+  .sidebar-heading
     width: auto
   .sidebar-navigation
     width: auto
@@ -392,7 +392,7 @@ footer
     background: $content-background-color
 
 @media print
-  .rst-versions, footer, .wy-nav-side
+  .rst-versions, footer, .sidebar-right
     display: none
   .page-content-wrapper
     margin-left: 0
