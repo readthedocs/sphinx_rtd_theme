@@ -4,7 +4,7 @@ const package = require('../package.json');
 
 // Sorry everyone, this is the closest we can get to commenting on package.json
 // dependencies :(
-if (package.devDependencies['bourbon-neat'] !== '~1.9') {
+if (package.dependencies['bourbon-neat'] !== '~1.9') {
     // Wyrm is not compatible with Neat 2.0+, and Neat 1.9 at least pins a
     // node-sass version that doesn't require Python 2. The changes to Wyrm to
     // support Neat 2.0+ are all fairly minor changes, but it deeply affects the
