@@ -30,11 +30,11 @@
 
   <ol class="breadcrumb">
     {% block breadcrumbs %}
-      <li class="breadcrumb-item"><a href="{{ pathto(master_doc) }}" class="icon icon-home"></a> &raquo;</li>
-        {% for doc in parents %}
-          <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
-        {% endfor %}
-      <li>{{ title }}</li>
+      <li class="breadcrumb-item"><a href="{{ pathto(master_doc) }}" class="icon icon-home"></a></li>
+      {% for doc in parents %}
+        <li class="breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+      {% endfor %}
+      <li class="breadcrumb-item active">{{ title }}</li>
     {% endblock %}
     {% block breadcrumbs_aside %}
       <li class="breadcrumb-aside">
