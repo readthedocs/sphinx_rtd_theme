@@ -24,13 +24,13 @@ Set up your environment
 
    .. code:: console
 
-       pip install -e '.[dev]'
+       $ pip install -e '.[dev]'
 
 #. Install Webpack_, node-sass_, and theme dependencies locally.
 
    .. code:: console
 
-       npm install
+       $ npm install
 
 Making changes
 --------------
@@ -39,7 +39,7 @@ Changes to the theme can be compiled and tested with Webpack_:
 
 .. code:: console
 
-    npm run dev
+    $ npm run dev
 
 This script will do the following:
 
@@ -54,7 +54,7 @@ can be used to test built assets:
 
 .. code:: console
 
-    npm run build
+    $ npm run build
 
 .. _Webpack: https://webpack.js.org/
 .. _node-sass: https://github.com/sass/node-sass
@@ -76,7 +76,7 @@ the following:
 
 .. code:: console
 
-    python setup.py update_translations
+    $ python setup.py update_translations
 
 This will extract new messages, upload the messages to Transifex, and will
 update our local translation files. Changes can be checked in to a branch and
@@ -89,10 +89,15 @@ Releasing the theme
 
 To release a new version of the theme, core team will take the following steps:
 
-#. Bump the version in ``sphinx_rtd_theme/__init__.py``, ``setup.py`` and
-   ``package.json``.  We follow `semver <http://semver.org/>`_ and `PEP440`_
+#. Bump the version by running ``bump2version [major|minor|patch|dev]``.
+   This will automatically increase the correct part(s) of the version number,
+   you do not need to specify the exact version number.
+   We follow `semver <http://semver.org/>`_ and `PEP440`_
    (with regards to alpha release and development versions). The version
    increment should reflect these releases and any potentially breaking changes.
+#. New versions are by default ``alpha`` releases. If this is a release candidate,
+   run ``bump2version --allow-dirty release`` to update the release to an ``rc``
+   release. If this is a final release, run the command again.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
 #. Run ``python setup.py update_translations`` to compile new translation files
    and update Transifex.
@@ -105,8 +110,8 @@ To release a new version of the theme, core team will take the following steps:
 
     .. code:: console
 
-        rm -rf dist/
-        python setup.py sdist bdist_wheel
-        twine upload --sign --identity security@readthedocs.org dist/*
+        $ rm -rf dist/
+        $ python setup.py sdist bdist_wheel
+        $ twine upload --sign --identity security@readthedocs.org dist/*
 
 .. _PEP440: https://www.python.org/dev/peps/pep-0440/

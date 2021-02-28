@@ -7,34 +7,57 @@
   {%- set titlesuffix = "" %}
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
+{%- set sphinx_writer = 'writer-html5' if html5_doctype else 'writer-html4' %}
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
+<html class="{{ sphinx_writer }}" lang="{{ lang_attr }}" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   {{ metatags }}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
   {% endblock %}
+
+  {# CSS #}
+  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+  {%- for css in css_files %}
+    {%- if css|attr("rel") %}
+  <link rel="{{ css.rel }}" href="{{ pathto(css.filename, 1) }}" type="text/css"{% if css.title is not none %} title="{{ css.title }}"{% endif %} />
+    {%- else %}
+  <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
+    {%- endif %}
+  {%- endfor %}
+
+  {%- for cssfile in extra_css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+  {%- endfor %}
 
   {# FAVICON #}
   {% if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
   {% endif %}
-  {# CANONICAL URL #}
-  {% if theme_canonical_url %}
+
+  {# CANONICAL URL (deprecated) #}
+  {% if theme_canonical_url and not pageurl %}
     <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
   {% endif %}
 
+  {# CANONICAL URL #}
+  {%- if pageurl %}
+    <link rel="canonical" href="{{ pageurl|e }}" />
+  {%- endif %}
+
   {# JAVASCRIPTS #}
   {%- block scripts %}
-  <script type="text/javascript" src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
+  <!--[if lt IE 9]>
+    <script src="{{ pathto('_static/js/html5shiv.min.js', 1) }}"></script>
+  <![endif]-->
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
     {% if sphinx_version >= "1.8.0" %}
-      <script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
       {%- for scriptfile in script_files %}
         {{ js_tag(scriptfile) }}
       {%- endfor %}
@@ -64,21 +87,6 @@
     {%- endif %}
   {%- endif %}
   {%- endblock %}
-
-  {# CSS #}
-  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-  {%- for css in css_files %}
-    {%- if css|attr("rel") %}
-  <link rel="{{ css.rel }}" href="{{ pathto(css.filename, 1) }}" type="text/css"{% if css.title is not none %} title="{{ css.title }}"{% endif %} />
-    {%- else %}
-  <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
-    {%- endif %}
-  {%- endfor %}
-
-  {%- for cssfile in extra_css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {%- endfor %}
 
   {%- block linktags %}
     {%- if hasdoc('about') %}
@@ -116,7 +124,7 @@
           {% if logo and theme_logo_only %}
             <a href="{{ pathto(master_doc) }}">
           {% else %}
-            <a href="{{ pathto(master_doc) }}" class="icon icon-home" alt="{{ _("Documentation Home") }}"> {{ project }}
+            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
           {% endif %}
 
           {% if logo %}
@@ -145,7 +153,7 @@
         </div>
 
         {% block navigation %}
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="{{ _('Main') }}">
           {% block menu %}
             {#
               The singlehtml builder doesn't handle this toctree call when the
@@ -172,7 +180,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="{{ _('Top') }}">
         {% block mobile_nav %}
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="{{ pathto(master_doc) }}">{{ project }}</a>
@@ -227,6 +235,9 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', '{{ theme_analytics_id }}', 'auto');
+    {% if theme_analytics_anonymize_ip|tobool %}
+    ga('set', 'anonymizeIp', true);
+    {% endif %}
     ga('send', 'pageview');
     </script>
 

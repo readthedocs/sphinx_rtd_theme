@@ -5,9 +5,9 @@ Read the Docs Sphinx Theme
 .. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme
    :alt: Pypi Version
-.. image:: https://travis-ci.org/readthedocs/sphinx_rtd_theme.svg?branch=master
-   :target: https://travis-ci.org/readthedocs/sphinx_rtd_theme
+.. image:: https://circleci.com/gh/readthedocs/sphinx_rtd_theme.svg?style=svg
    :alt: Build Status
+   :target: https://circleci.com/gh/readthedocs/sphinx_rtd_theme
 .. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
    :alt: License
@@ -31,7 +31,7 @@ This theme is distributed on PyPI_ and can be installed with ``pip``:
 
 .. code:: console
 
-   pip install sphinx-rtd-theme
+   $ pip install sphinx-rtd-theme
 
 To use the theme in your Sphinx project, you will need to add the following to
 your ``conf.py`` file:
