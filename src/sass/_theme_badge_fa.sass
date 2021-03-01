@@ -1,8 +1,11 @@
 // Slimmer version of FA for use on the badge_only.sass file.
 
-+font-face(FontAwesome, '#{$fa-font-path}/fontawesome-webfont')
++font-face(FontAwesome, '#{$fa-font-path}/fa-solid-900')
 
-.fa:before
+.fas
+  font-family: FontAwesome
+
+.fas:before
   display: inline-block
   font-family: FontAwesome
   font-style: normal
@@ -11,13 +14,13 @@
   text-decoration: inherit
   +font-smooth
 
-a .fa
+a .fas
   display: inline-block
   text-decoration: inherit
 
 
 li
-  .fa
+  .fas
     display: inline-block
   .fa-large:before,
   .fa-large:before
@@ -29,7 +32,7 @@ ul.fas
   margin-left: 2em
   text-indent: -0.8em
   li
-    .fa
+    .fas
       width: .8em
     .fa-large:before,
     .fa-large:before

@@ -7,14 +7,13 @@
     "build": "webpack --config webpack.prod.js",
     "preinstall": "bin/preinstall.js"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "bourbon": "~4.3",
     "bourbon-neat": "~1.9",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.1.0",
     "file-loader": "^3.0.1",
-    "font-awesome": "^4.7.0",
     "html5shiv": "^3.7.3",
     "imports-loader": "^0.8.0",
     "jquery": "^3.4.1",
