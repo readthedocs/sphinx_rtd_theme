@@ -452,6 +452,8 @@
       .headerlink
         color: $headerlink-color
         font-size: 100% !important
+      &:not(.sig-name)
+        color: darken($method-color, 35%)
     > dt:first-child
       margin-top: 0
     // Since dts get the callout style, we treat this less as callouts.
