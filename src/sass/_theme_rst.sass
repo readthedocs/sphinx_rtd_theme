@@ -289,63 +289,46 @@
   .hlist
     width: 100%
 
-  // The html4 writer outputs the citation and footnotes as a table, and the
-  // html5 writer outputs these as a definition list. We will use the fairly
-  // well supported css `grid` attribute to make these back into a table
-  // HTML4 writer
-  html.writer-html4 &
-    table.docutils.citation, table.docutils.footnote
-      background: none
-      border: none
-      td, tr
-        border: none
-        background-color: transparent !important
-        white-space: normal
-      td.label
-        padding-left: 0
-        padding-right: 0
-        vertical-align: top
-  // HTML5 writer
-  html.writer-html5 &
-    dl dt span.classifier
-      &:before
-        content: " : "
-    dl.footnote,
-    dl.field-list
-      display: grid
-      grid-template-columns: max-content auto
-      > dt
-        padding-left: 1rem
+  // Formate citation and footnotes as a table.
+  // We will use the fairly well supported css `grid` attribute
+  dl dt span.classifier
+    &:before
+      content: " : "
+  dl.footnote,
+  dl.field-list
+    display: grid
+    grid-template-columns: max-content auto
+    > dt
+      padding-left: 1rem
+      &:after
+        content: ":"
+    > dt, > dd
+      margin-bottom: 0rem
+  dl.footnote
+    font-size: .9rem
+    > dt
+      margin: 0rem .5rem .5rem 0rem
+      line-height: 1.2rem
+      word-break: break-all
+      font-weight: normal
+      > span.brackets
+        margin-right: .5rem
+        &:before
+          content: "["
         &:after
-          content: ":"
-      > dt, > dd
-        margin-bottom: 0rem
-    dl.footnote
-      font-size: .9rem
-      > dt
-        margin: 0rem .5rem .5rem 0rem
-        line-height: 1.2rem
-        word-break: break-all
-        font-weight: normal
-        > span.brackets
-          margin-right: .5rem
-          &:before
-            content: "["
-          &:after
-            content: "]"
-        > span.fn-backref
-          font-style: italic
-      > dd
-        margin: 0rem 0rem .5rem 0rem
-        line-height: 1.2rem
-        p
-          font-size: .9rem
-    dl.option-list
-      kbd
+          content: "]"
+      > span.fn-backref
+        font-style: italic
+    > dd
+      margin: 0rem 0rem .5rem 0rem
+      line-height: 1.2rem
+      p
         font-size: .9rem
-  // Both
-  html.writer-html4 & table.docutils.citation, table.docutils.footnote,
-  html.writer-html5 & dl.footnote
+  dl.option-list
+    kbd
+      font-size: .9rem
+
+  table.docutils.footnote, dl.footnote
     color: $text-medium
     code
       color: $gray-500
