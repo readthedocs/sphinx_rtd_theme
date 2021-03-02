@@ -286,7 +286,7 @@ ol, ul
   line-height: 50px
   text-align: center
   font-size: 100%
-  +clearfix
+  @include clearfix;
   a
     color: $white
     font-weight: bold
@@ -327,13 +327,13 @@ footer
     color: $footer-color
 
 .rst-footer-buttons
+  @include clearfix;
   &:before, &:after
     width: 100%
-  +clearfix
 
 .rst-breadcrumbs-buttons
+  @include clearfix;
   margin-top: 12px
-  +clearfix
 
 #search-results
   .search li
