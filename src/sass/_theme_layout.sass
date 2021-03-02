@@ -50,13 +50,13 @@ ol, ul
     &.divide-bottom
       border-bottom: solid 1px hsl(0, 0%, 25%)
     &.current
-      background: darken($menu-vertical-background-color, 10%)
+      background: darken($nav-menu-background-color, 10%)
       a
         color: $menu-link-medium
-        border-right: solid 1px darken($menu-vertical-background-color, 20%)
+        border-right: solid 1px darken($nav-menu-background-color, 20%)
         padding: $gutter / 4 $gutter * 1.5
         &:hover
-          background: darken($menu-vertical-background-color, 15%)
+          background: darken($nav-menu-background-color, 15%)
     code
       border: none
       background: inherit
@@ -80,11 +80,11 @@ ol, ul
     padding: $gutter / 4 $gutter
     font-weight: bold
     position: relative
-    background: $menu-vertical-background-color
+    background: $nav-menu-background-color
     border: none
     padding-left: $gutter -4px
     &:hover
-      background: $menu-vertical-background-color
+      background: $nav-menu-background-color
       span.toctree-expand
         color: $menu-link-medium
     span.toctree-expand
@@ -96,8 +96,8 @@ ol, ul
       color: darken($menu-link-medium, 30%)
 
   li.toctree-l1.current > a
-    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
-    border-top: solid 1px darken($menu-vertical-background-color, 20%)
+    border-bottom: solid 1px darken($nav-menu-background-color, 20%)
+    border-top: solid 1px darken($nav-menu-background-color, 20%)
 
   // This is the on state for pages beyond second level
 
@@ -143,19 +143,19 @@ ol, ul
   li.toctree-l2
     &.current
       > a
-        background: darken($menu-vertical-background-color, 20%)
+        background: darken($nav-menu-background-color, 20%)
       li.toctree-l3 > a
-        background: darken($menu-vertical-background-color, 20%)
+        background: darken($nav-menu-background-color, 20%)
     span.toctree-expand
-      color: darken($menu-vertical-background-color, 35%)
+      color: darken($nav-menu-background-color, 35%)
   li.toctree-l3
     &.current
       > a
-        background: darken($menu-vertical-background-color, 25%)
+        background: darken($nav-menu-background-color, 25%)
       li.toctree-l4 > a
-        background: darken($menu-vertical-background-color, 25%)
+        background: darken($nav-menu-background-color, 25%)
     span.toctree-expand
-      color: darken($menu-vertical-background-color, 40%)
+      color: darken($nav-menu-background-color, 40%)
 
   li.current ul
     display: block
@@ -174,12 +174,12 @@ ol, ul
     font-size: 90%
     color: $menu-link-light
     &:hover
-      background-color: lighten($menu-background-color, 10%)
+      background-color: lighten($nav-background-color, 10%)
       cursor: pointer
       span.toctree-expand
         color: $menu-link-light
     &:active
-      background-color: $menu-logo-color
+      background-color: $nav-search-background-color
       cursor: pointer
       color: $menu-link-active
       span.toctree-expand
@@ -204,7 +204,7 @@ ol, ul
     margin: auto auto $gutter / 2 auto
     height: 45px
     width: 45px
-    background-color: $menu-logo-color
+    background-color: $nav-search-background-color
     padding: 5px
     border-radius: 100%
   > a
@@ -265,7 +265,6 @@ ol, ul
   overflow-x: hidden
   overflow-y: hidden
   min-height: 100%
-  color: $menu-medium
   background: $nav-background-color
   z-index: $zindex-fixed
 
@@ -294,7 +293,7 @@ ol, ul
     margin-right: $line-height-base / 2
     height: 45px
     width: 45px
-    background-color: $menu-logo-color
+    background-color: $nav-search-background-color
     padding: 5px
     border-radius: 100%
   i

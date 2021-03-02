@@ -1,14 +1,15 @@
-// In here are varibles used for sphinx_rtd_theme, they either add to or overwrite the default ones
-// that are set in wyrm_core/wy_variables.sass. You'll find wyrm in bower_components if you're looking
-// for a reference.
+// -------------------------Paths-------------------------
+$fa-font-path:                        "~font-awesome/fonts"
 
+// -------------------------Layout-------------------------
+$gutter: golden-ratio(1em, 1) !default
 
-// copied from wyrm
-// Colors
-$section-background-color:            $gray-200
-$content-background-color:            $white
+$nav-desktop-position:                left
+$nav-desktop-width:                   300px
+$nav-content-width:                   800px
+$nav-media-query:                     (($nav-desktop-width) + ($nav-content-width))
 
-// Typography
+// -------------------------Typography-------------------------
 $font-family-base:                    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
 $font-family-headings:                "Roboto Slab", ff-tisa-web-pro, Georgia, Arial, sans-serif
 $font-family-code:                    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace
@@ -16,37 +17,26 @@ $font-display:                        block
 $font-size-base:                      16px
 $line-height-base:                    24px
 
+// -------------------------Colors-------------------------
+// Text
 $text-color:                          hsl(0,0%,25%) !default
 $text-dark:                           lighten($text-color,15%) !default
 $text-medium:                         lighten($text-color,25%) !default
 $text-light:                          lighten($text-color,45%) !default
 $text-lighter:                        lighten($text-color,60%) !default
 
+// Content
+$section-background-color:            $gray-200
+$content-background-color:            $white
+$footer-color:                        $text-medium
+
 // Links
 $link-color:                          $blue
 $link-color-visited:                  $purple
-
-// Menu
-$menu-top-link-color:                 hsl(0, 0%, 95%)
-$menu-background-color:               rgb(52, 49, 49)
-$menu-logo-color:                     $link-color
-$nav-desktop-width:                   300px
-$nav-desktop-position:                left
-
-// ------------------------------------------------------------
-
-$gutter: golden-ratio(1em, 1) !default
-
-// end copy
-
-$fa-font-path:                        "~font-awesome/fonts"
-
-$nav-content-width:                   800px
-$nav-media-query:                     (($nav-desktop-width) + ($nav-content-width))
-
-$mathjax-color:                       $text-color
-
 $headerlink-color:                    $text-color
+
+// Math
+$mathjax-color:                       $text-color
 
 // Code colors
 $text-viewcode-color:                 $green
@@ -59,19 +49,6 @@ $method-color:                        $gray-500
 // GUI label color
 $guilabel-color:                      $blue
 
-// Footer colors
-$footer-color:                        $text-medium
-
-// Menu colors
-$menu-vertical-background-color:      $section-background-color
-
-// Menu text colors
-$menu-color:                          $gray-500
-$menu-dark:                           lighten($menu-color,10%) !default
-$menu-medium:                         lighten($menu-color,27.5%) !default
-$menu-light:                          lighten($menu-color,45%) !default
-$menu-lighter:                        lighten($menu-color,60%) !default
-
 // Menu link colors
 $menu-link-color:                     $text-color
 $menu-link-medium:                    $text-medium
@@ -82,12 +59,8 @@ $menu-link-active:                    $white
 $nav-background-color:                #343131
 $nav-search-background-color:         #2980B9
 $nav-search-color:                    $section-background-color
+$nav-menu-background-color:           $section-background-color
 $nav-caption:                         $nav-search-background-color
-
-// Sidebar colors
-$sidebar-background-color:            hsl(185,15%,96%)
-$sidebar-border-color:                hsl(195, 7%, 89%)
-$sidebar-title-background-color:      hsl(195, 7%, 89%)
 
 // Sphinx highlight color
 $highlight-color:                     $yellow
