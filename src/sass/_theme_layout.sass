@@ -27,12 +27,6 @@ html
     line-height: $base-font-size * 2
     padding: 0 $base-font-size
 
-%menu-vertical-btn
-  @extend .fa
-  @extend .fa-plus-square-o
-  display: block
-  line-height: 18px
-
 .wy-menu-vertical
   width: $nav-desktop-width
 
@@ -71,9 +65,13 @@ html
       padding-right: 0
     // Expand links
     span.toctree-expand
-      @extend %menu-vertical-btn
+      display: block
       float: left
       margin-left: -1.2em
+      @extend .fa
+      @extend .fa-plus-square-o
+      font-size: .8em
+      line-height: 1.6em
       color: darken($menu-link-medium, 20%)
 
   // On state for the first level
@@ -91,6 +89,11 @@ html
       span.toctree-expand
         color: $menu-link-medium
     span.toctree-expand
+      @extend .fa
+      @extend .fa-minus-square-o
+      display: block
+      font-size: .8em
+      line-height: 1.6em
       color: darken($menu-link-medium, 30%)
 
   li.toctree-l1.current > a
