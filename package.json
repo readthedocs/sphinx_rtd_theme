@@ -8,8 +8,6 @@
   },
   "devDependencies": {
     "bootstrap": "^4.6.0",
-    "bourbon": "~4.3",
-    "bourbon-neat": "~1.9",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.1.0",
     "file-loader": "^3.0.1",
