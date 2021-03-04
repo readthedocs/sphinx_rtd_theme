@@ -133,6 +133,7 @@ html
           li.toctree-l#{$toc_level + 1}  > a
             @extend %display_current_toctree_element
             padding: $gutter / 4 $gutter * ($toc_level + .5)
+            padding-right: $gutter
         a:hover span.toctree-expand
           @extend %toctree_hover_link_color
     @if $toc_level > 2 and $toc_level < 5
