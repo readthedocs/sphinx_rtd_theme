@@ -70,8 +70,7 @@ ol, ul
       margin-left: -1.2em
       @extend .fa
       @extend .fa-plus-square-o
-      font-size: .8em
-      line-height: 1.6em
+      line-height: 18px
       color: darken($menu-link-medium, 20%)
 
   // On state for the first level
@@ -91,8 +90,7 @@ ol, ul
       @extend .fa
       @extend .fa-minus-square-o
       display: block
-      font-size: .8em
-      line-height: 1.6em
+      line-height: 18px
       color: darken($menu-link-medium, 30%)
 
   li.toctree-l1.current > a
@@ -134,6 +132,7 @@ ol, ul
           li.toctree-l#{$toc_level + 1}  > a
             @extend %display_current_toctree_element
             padding: $gutter / 4 $gutter * ($toc_level + .5)
+            padding-right: $gutter
         a:hover span.toctree-expand
           @extend %toctree_hover_link_color
     @if $toc_level > 2 and $toc_level < 5
