@@ -152,6 +152,7 @@ function ThemeNav () {
                 link.closest('li.toctree-l2').addClass('current');
                 link.closest('li.toctree-l3').addClass('current');
                 link.closest('li.toctree-l4').addClass('current');
+                link.closest('li.toctree-l5').addClass('current');
                 link[0].scrollIntoView();
             }
         }
@@ -191,8 +192,12 @@ function ThemeNav () {
         var parent_li = elem.closest('li');
         parent_li.siblings('li.current').removeClass('current');
         parent_li.siblings().find('li.current').removeClass('current');
-        parent_li.find('> ul li.current').removeClass('current');
-        parent_li.toggleClass('current');
+        var children = parent_li.find('> ul li');
+        // Don't toggle terminal elements.
+        if (children.length) {
+            children.removeClass('current');
+            parent_li.toggleClass('current');
+        }
     }
 
     return nav;

@@ -1,6 +1,7 @@
 include *.txt
 include babel.cfg
 include LICENSE
+include bin/preinstall.js
 recursive-include sphinx_rtd_theme *.conf
 recursive-include sphinx_rtd_theme *.css
 recursive-include sphinx_rtd_theme *.eot
