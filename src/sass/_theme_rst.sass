@@ -391,8 +391,8 @@
     dd
       margin: 0  0 $line-height-base / 2 $line-height-base
       line-height: $line-height-base
-  html.writer-html4 & dl:not(.docutils),
-  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
+
+  dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
     margin-bottom: $line-height-base
     > dt
       display: table
@@ -409,8 +409,7 @@
       .headerlink
         color: $text-color
         font-size: 100% !important
-    // In the html4 writer, parameters is a table. In html5 writer, parameters
-    // is a nested dl.field-list
+    // parameters
     dl:not(.field-list) > dt
       margin-bottom: $line-height-base / 4
       border: none
