@@ -156,9 +156,9 @@
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="{{ _('Main') }}">
           {%- block menu %}
             {%- set toctree = toctree(maxdepth=theme_navigation_depth|int,
-                                         collapse=theme_collapse_navigation|tobool,
-                                         includehidden=theme_includehidden|tobool,
-                                         titles_only=theme_titles_only|tobool) %}
+                                      collapse=theme_collapse_navigation|tobool,
+                                      includehidden=theme_includehidden|tobool,
+                                      titles_only=theme_titles_only|tobool) %}
             {%- if toctree %}
               {{ toctree }}
             {%- else %}
