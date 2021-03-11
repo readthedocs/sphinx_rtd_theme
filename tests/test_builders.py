@@ -33,9 +33,6 @@ def test_basic():
                 '<ul>\n'
                 '<li class="toctree-l1">'
                 '<a class="reference internal" href="index.html#document-foo">foo</a>'
-                '<ul>\n'
-                '<li class="toctree-l2">'
-                '<a class="reference internal" href="index.html#document-bar">bar</a>'
                 '</li>\n'
                 '</ul>'
             )
