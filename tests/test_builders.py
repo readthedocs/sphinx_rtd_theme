@@ -13,7 +13,8 @@ def test_basic():
         assert app.env.get_doctree('index').traverse(addnodes.toctree)
         content = open(os.path.join(app.outdir, 'index.html')).read()
 
-        if isinstance(app.builder, DirectoryHTMLBuilder):
+        
+        if sphinx.version_info < (4, 0) and isinstance(app.builder, DirectoryHTMLBuilder):
             search = (
                 '<div class="toctree-wrapper compound">\n'
                 '<ul>\n'
