@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """`sphinx_rtd_theme` lives on `Github`_.
 
-.. _github: https://github.com/rtfd/sphinx_rtd_theme
+.. _github: https://github.com/readthedocs/sphinx_rtd_theme
 
 """
 
@@ -85,8 +85,8 @@ class TransifexCommand(distutils.cmd.Command):
 
 setup(
     name='sphinx_rtd_theme',
-    version='0.5.0rc2',
-    url='https://github.com/rtfd/sphinx_rtd_theme/',
+    version='0.5.1',
+    url='https://github.com/readthedocs/sphinx_rtd_theme',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
     author_email='dev@readthedocs.org',
