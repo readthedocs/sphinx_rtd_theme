@@ -96,7 +96,7 @@ To release a new version of the theme, core team will take the following steps:
    (with regards to alpha release and development versions). The version
    increment should reflect these releases and any potentially breaking changes.
 #. New versions are by default ``alpha`` releases. If this is a release candidate,
-   run ``bump2version --allow-dirty releast`` to update the release to an ``rc``
+   run ``bump2version --allow-dirty release`` to update the release to an ``rc``
    release. If this is a final release, run the command again.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
 #. Run ``python setup.py update_translations`` to compile new translation files
