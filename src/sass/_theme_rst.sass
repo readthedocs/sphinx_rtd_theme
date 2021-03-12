@@ -278,8 +278,7 @@
     dl dt span.classifier
       &:before
         content: " : "
-    dl.footnote,
-    dl.field-list
+    dl.footnote, dl.citation, dl.field-list
       display: grid
       grid-template-columns: max-content auto
       > dt
@@ -288,7 +287,7 @@
           content: ":"
       > dt, > dd
         margin-bottom: 0rem
-    dl.footnote
+    dl.footnote, dl.citation
       font-size: .9rem
       > dt
         margin: 0rem .5rem .5rem 0rem
@@ -313,7 +312,7 @@
         font-size: .9rem
   // Both
   html.writer-html4 & table.docutils.citation, table.docutils.footnote,
-  html.writer-html5 & dl.footnote
+  html.writer-html5 & dl.footnote, dl.citation
     color: $text-medium
     code
       color: $gray
@@ -398,7 +397,7 @@
       margin: 0  0 $base-line-height / 2 $base-line-height
       line-height: $base-line-height
   html.writer-html4 & dl:not(.docutils),
-  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
+  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple):not(.citation)
     margin-bottom: $base-line-height
     > dt
       display: table
