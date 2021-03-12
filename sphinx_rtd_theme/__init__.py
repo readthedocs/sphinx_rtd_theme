@@ -33,6 +33,8 @@ def config_initiated(app, config):
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
     app.require_sphinx('2.0')
+    if app.config.html4_writer:
+        logger.warning("'html4_writer' is not compatible with sphinx_rtd_theme")
     # Register the theme that can be referenced without adding a theme path
     app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
 
