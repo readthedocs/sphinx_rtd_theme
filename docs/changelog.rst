@@ -5,16 +5,35 @@ Changelog
 master
 ======
 
-Other Changes
--------------
+v0.5.1
+======
 
-* The ``canonical_url`` option was deprecated in favor of Sphinx's ``html_baseurl``.
+:Date: January 4, 2021
+
+Fixes
+-----
+
+* Set ``url_root`` properly on index (#1025)
+* Do not load ``language_data.js`` in non-search pages (#1021)
+* Hide the search box on any ``singlehtml`` like builder (#975)
+* Fix ``vcs_pageview_mode`` template parameter (#1010)
+* Mark nex/prev icons as aria-hidden (#1007)
+* Use well-formed XML syntax (#1006)
+* Footer: show both ``commit`` and ``last_updated`` if available (#897)
+* Search page: don't show "edit on" links (#935)
 
 New Features
 ------------
 
 * New theme option to enable anonymous ip addresses when using Google Analytics (#889)
 
+Other Changes
+-------------
+
+* The ``canonical_url`` option was deprecated in favor of Sphinx's ``html_baseurl`` (#1003)
+* Add ``contentinfo`` block to ``footer.html`` template (#896)
+* Make Copyright template match sphinx's basic (#933)
+* Packaging: include ``bin/preinstall.js`` (#1005)
 
 v0.5.0
 ======
