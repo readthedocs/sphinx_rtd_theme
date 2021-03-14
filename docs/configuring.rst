@@ -191,7 +191,6 @@ The following options can be used as :ref:`file-wide metadata
 
     Force the :guilabel:`Edit on GitLab` button to use the configured URL.
 
-
 Other configuration
 ===================
 
