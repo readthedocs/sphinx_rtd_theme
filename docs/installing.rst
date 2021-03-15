@@ -45,3 +45,11 @@ Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into you
 
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
+
+Compatibility
+=============
+
+``sphinx_rtd_theme`` depends on at least Sphinx 1.6 although,
+we recommend at least Sphinx 2 to take advantage of the html5 writer.
+The html4 writer is still supported however,
+it is deprecated and support will be removed in the near future.
