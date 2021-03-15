@@ -23,13 +23,19 @@ In your ``conf.py`` file:
 
 
 .. note::
-    Adding this theme as an extension is what enables localization of theme
-    strings in your translated output. If these strings are not translated in
-    your output, either we lack the localized strings for your locale, or you
-    are using an old version of the theme.
+
+   Adding this theme as an extension is what enables localization of theme
+   strings in your translated output. If these strings are not translated in
+   your output, either we lack the localized strings for your locale, or you
+   are using an old version of the theme.
 
 Via Git or Download
 ===================
+
+.. warning::
+
+   Installing directly from the repo is deprecated.
+   Static assets won't be included in the repo in a future release.
 
 Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
 ``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
