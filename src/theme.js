@@ -148,7 +148,7 @@ function ThemeNav () {
                 link.addClass('current');
                 link.closest('li.toctree-l1').parent().addClass('current');
                 for (let i = 1; i <= 10; i++) {
-                    link.closest(`li.toctree-l${i}`).addClass('current');
+                    link.closest('li.toctree-l' + i).addClass('current');
                 }
                 link[0].scrollIntoView();
             }
