@@ -37,49 +37,49 @@ documentation navigation.
 
 .. confval:: collapse_navigation
 
-    :type: boolean
-    :default: ``True``
-
     With this enabled, navigation entries are not expandable -- the ``[+]``
     icons next to each entry are removed.
 
+    :type: boolean
+    :default: ``True``
+
+    .. note::
+        Setting :confval:`collapse_navigation` to ``False`` and using a high value
+        for :confval:`navigation_depth` on projects with many files and a deep file
+        structure can cause long compilation times and can result in HTML files that
+        are significantly larger in file size.
+
 .. confval:: sticky_navigation
+
+    Scroll the navigation with the main page content as you scroll the page.
 
     :type: boolean
     :default: ``True``
 
-    Scroll the navigation with the main page content as you scroll the page.
-
 .. confval:: navigation_depth
-
-    :type: integer
-    :default: ``4``
 
     The maximum depth of the table of contents tree. Set
     this to ``-1`` to allow unlimited depth.
 
-.. confval:: includehidden
+    :type: integer
+    :default: ``4``
 
-    :type: boolean
-    :default: ``True``
+.. confval:: includehidden
 
     Specifies if the navigation includes hidden table(s) of contents -- that is,
     any :rst:dir:`sphinx:toctree` directive that is marked with the ``:hidden:``
     option.
 
-.. confval:: titles_only
-
     :type: boolean
-    :default: False
+    :default: ``True``
+
+.. confval:: titles_only
 
     When enabled, page subheadings are not included in the
     navigation.
 
-.. note::
-    Setting :confval:`collapse_navigation` to ``False`` and using a high value
-    for :confval:`navigation_depth` on projects with many files and a deep file
-    structure can cause long compilation times and can result in HTML files that
-    are significantly larger in file size.
+    :type: boolean
+    :default: False
 
 .. _table of contents configuration options: http://www.sphinx-doc.org/en/stable/templating.html#toctree
 
@@ -96,27 +96,27 @@ Miscellaneous options
 
 .. confval:: analytics_id
 
-    :type: string
-
     If specified, Google Analytics' javascript is included in your pages.
     Set the value to the ID provided to you by google (like ``UA-XXXXXXX``).
 
+    :type: string
+
 .. confval:: analytics_anonymize_ip
+
+    Anonymize visitor IP addresses in Google Analytics.
 
    :type: boolean
    :default: ``False``
 
-   Anonymize visitor IP addresses in Google Analytics.
-
 .. confval:: canonical_url
-
-    :type: URL
 
     This will specify a `canonical URL`_ meta link element to tell search
     engines which URL should be ranked as the primary URL for your
     documentation. This is important if you have multiple URLs that your
     documentation is available through. The URL points to the root path of the
     documentation and requires a trailing slash.
+
+    :type: URL
 
     .. deprecated:: 0.6.0
 
@@ -126,51 +126,52 @@ Miscellaneous options
 
 .. confval:: display_version
 
+    If ``True``, the version number is shown at the top of the sidebar.
+
     :type: boolean
     :default: ``True``
 
-    If ``True``, the version number is shown at the top of the sidebar.
-
 .. confval:: logo_only
-
-    :type: boolean
-    :default: ``False``
 
     Only display the logo image, do not display the project name at the top of
     the sidebar
 
-.. confval:: prev_next_buttons_location
+    :type: boolean
+    :default: ``False``
 
-    :type: string
-    :default: ``bottom``
+.. confval:: prev_next_buttons_location
 
     Location to display :guilabel:`Next` and :guilabel:`Previous` buttons. This
     can be either ``bottom``, ``top``, ``both`` , or ``None``.
 
+    :type: string
+    :default: ``bottom``
+
 .. confval:: style_external_links
+
+    Add an icon next to external links.
 
     :type: boolean
     :default: ``False``
 
-    Add an icon next to external links.
-
 .. confval:: vcs_pageview_mode
-
-    :type: string
-    :default: ``blob`` or ``view``
 
     Changes how to view files when using ``display_github``, ``display_gitlab``,
     etc.  When using GitHub or GitLab this can be: ``blob`` (default), ``edit``,
     or ``raw``. On Bitbucket, this can be either: ``view`` (default) or
     ``edit``.
 
+    :type: string
+    :default: ``blob`` or ``view``
+
 .. confval:: style_nav_header_background
+
+    Changes the background of the search area in the navigation bar. The value
+    can be anything valid in a CSS `background` property.
 
     :type: string
     :default: ``#2980B9``
 
-    Changes the background of the search area in the navigation bar. The value
-    can be anything valid in a CSS `background` property.
 
 File-wide metadata
 ==================
@@ -189,7 +190,6 @@ The following options can be used as :ref:`file-wide metadata
 .. confval:: gitlab_url
 
     Force the :guilabel:`Edit on GitLab` button to use the configured URL.
-
 
 Other configuration
 ===================
