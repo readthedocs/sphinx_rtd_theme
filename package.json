@@ -7,6 +7,16 @@
     "build": "webpack --config webpack.prod.js",
     "preinstall": "bin/preinstall.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/readthedocs/sphinx_rtd_theme.git"
+  },
+  "author": "Read the Docs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/readthedocs/sphinx_rtd_theme/issues"
+  },
+  "homepage": "https://github.com/readthedocs/sphinx_rtd_theme",
   "dependencies": {},
   "devDependencies": {
     "bourbon": "~4.3",
