@@ -45,15 +45,10 @@ html
   ul
     margin-bottom: 0
   li
-    &.divide-top
-      border-top: solid 1px hsl(0, 0%, 25%)
-    &.divide-bottom
-      border-bottom: solid 1px hsl(0, 0%, 25%)
     &.current
       background: darken($menu-vertical-background-color, 10%)
       a
         color: $menu-link-medium
-        border-right: solid 1px darken($menu-vertical-background-color, 20%)
         padding: $gutter / 4 $gutter * 1.5
         &:hover
           background: darken($menu-vertical-background-color, 15%)
@@ -79,7 +74,6 @@ html
     font-weight: bold
     position: relative
     background: $menu-vertical-background-color
-    border: none
     padding-left: $gutter -4px
     +font-smooth
     &:hover
@@ -91,10 +85,6 @@ html
       @extend .fa-angle-down
       display: block
       line-height: 18px
-
-  li.toctree-l1.current > a
-    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
-    border-top: solid 1px darken($menu-vertical-background-color, 20%)
 
   // This is the on state for pages beyond second level
 
@@ -188,9 +178,9 @@ html
   color: $nav-search-color
   input[type=text]
     width: 100%
-    border-radius: 50px
+    border-radius: px
+    border: none
     padding: 6px 12px
-    border-color: darken($link-color, 5%)
   img
     display: block
     margin: auto auto $gutter / 2 auto
