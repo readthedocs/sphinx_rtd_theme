@@ -114,7 +114,7 @@ html
       li.toctree-l#{$toc_level}
         a
           @extend %toctree_link_color
-          background: darken($menu-vertical-background-color, 5% * $toc_level)
+          background: darken($menu-vertical-background-color, 6% * $toc_level)
         &.current
           > a
             padding: $gutter / 4 $gutter * ($toc_level - 1 + .5)
