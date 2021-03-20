@@ -80,15 +80,15 @@ function ThemeNav () {
         $(document)
             // Shift nav in mobile when clicking the menu.
             .on('click', "[data-toggle='wy-nav-top']", function() {
-                $("[data-toggle='wy-nav-shift']").toggleClass("shift");
+                $("[data-toggle='sidebar-collapse']").toggleClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
             })
 
             // Nav menu link click operations
-            .on('click', ".wy-menu-vertical .current ul li a", function() {
+            .on('click', ".sidebar-navigation .current ul li a", function() {
                 var target = $(this);
                 // Close menu when you click a link.
-                $("[data-toggle='wy-nav-shift']").removeClass("shift");
+                $("[data-toggle='sidebar-collapse']").removeClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
                 // Handle dynamic display of l3 and l4 nav lists
                 self.toggleCurrent(target);
@@ -100,17 +100,17 @@ function ThemeNav () {
 
         // Make tables responsive
         $("table.docutils:not(.field-list,.footnote,.citation)")
-            .wrap("<div class='wy-table-responsive'></div>");
+            .wrap("<div class='table-responsive'></div>");
 
         // Add extra class to responsive tables that contain
         // footnotes or citations so that we can target them for styling
         $("table.docutils.footnote")
-            .wrap("<div class='wy-table-responsive footnote'></div>");
+            .wrap("<div class='table-responsive footnote'></div>");
         $("table.docutils.citation")
-            .wrap("<div class='wy-table-responsive citation'></div>");
+            .wrap("<div class='table-responsive citation'></div>");
 
         // Add expand links to all parents of nested ul
-        $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {
+        $('.sidebar-navigation ul').not('.simple').siblings('a').each(function () {
             var link = $(this);
                 expand = $('<span class="toctree-expand"></span>');
             expand.on('click', function (ev) {
@@ -127,7 +127,7 @@ function ThemeNav () {
         var anchor = encodeURI(window.location.hash) || '#';
 
         try {
-            var vmenu = $('.wy-menu-vertical');
+            var vmenu = $('.sidebar-navigation');
             var link = vmenu.find('[href="' + anchor + '"]');
             if (link.length === 0) {
                 // this link was not found in the sidebar.
@@ -144,7 +144,7 @@ function ThemeNav () {
             // If we found a matching link then reset current and re-apply
             // otherwise retain the existing match
             if (link.length > 0) {
-                $('.wy-menu-vertical .current').removeClass('current');
+                $('.sidebar-navigation .current').removeClass('current');
                 link.addClass('current');
                 link.closest('li.toctree-l1').parent().addClass('current');
                 for (let i = 1; i <= 10; i++) {

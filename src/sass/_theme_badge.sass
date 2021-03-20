@@ -4,23 +4,23 @@
   left: 0
   width: $nav-desktop-width
   color: $section-background-color
-  background: darken($menu-background-color, 8%)
-  font-family: $base-font-family
-  z-index: $z-index-tray
+  background: darken($nav-background-color, 8%)
+  font-family: $font-family-base
+  z-index: $zindex-popover
   a
     color: $link_color
     text-decoration: none
   .rst-badge-small
     display: none
   .rst-current-version
-    padding: $base-line-height / 2
-    background-color: darken($menu-background-color, 5%)
+    padding: $line-height-base / 2
+    background-color: darken($nav-background-color, 5%)
     display: block
     text-align: right
     font-size: 90%
     cursor: pointer
     color: $green
-    +clearfix
+    @include clearfix
     .fa
       color: $section-background-color
     .fa-book
@@ -41,7 +41,7 @@
     display: block
   .rst-other-versions
     font-size: 90%
-    padding: $base-line-height / 2
+    padding: $line-height-base / 2
     color: $text-medium
     display: none
     hr
@@ -50,13 +50,13 @@
       border: 0
       margin: 20px 0
       padding: 0
-      border-top: solid 1px lighten($menu-background-color, 5%)
+      border-top: solid 1px lighten($nav-background-color, 5%)
     dd
       display: inline-block
       margin: 0
       a
         display: inline-block
-        padding: $base-line-height / 4
+        padding: $line-height-base / 4
         color: $section-background-color
   &.rst-badge
     width: auto
@@ -82,11 +82,11 @@
       width: auto
       height: 30px
       line-height: 30px
-      padding: 0 $base-line-height / 4
+      padding: 0 $line-height-base / 4
       display: block
       text-align: center
 
-+media($tablet)
+@media (max-width: $nav-media-query)
   .rst-versions
     width: 85%
     display: none

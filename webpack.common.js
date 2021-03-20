@@ -37,10 +37,10 @@ module.exports = {
             loader: "sass-loader?indentedSyntax",
             options: {
               includePaths: [
+                "node_modules/bootstrap/scss",
                 "node_modules/bourbon/app/assets/stylesheets",
                 "node_modules/bourbon-neat/app/assets/stylesheets",
-                "node_modules/font-awesome/scss",
-                "node_modules/wyrm/sass"
+                "node_modules/font-awesome/scss"
               ]
             }
           }
@@ -66,11 +66,5 @@ module.exports = {
       filename: "css/[name].css?[hash]",
       chunkFilename: "css/[name].css?[hash]"
     }),
-    new CopyPlugin([
-      {
-        from: 'node_modules/html5shiv/dist/*.min.js',
-        flatten: true,
-        to: path.resolve(__dirname,'sphinx_rtd_theme/static/js') },
-    ]),
   ]
 };

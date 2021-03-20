@@ -1,41 +1,41 @@
 // Set uniform (but not relative) base font size
-html
-  font-size: $base-font-size
+body
+  font-family: $font-family-base
+  font-size: $font-size-base
 
-.wy-affix
-  position: fixed
-  top: $gutter
+h1, h2, h3, h4, h5, h6
+   font-family: $font-family-headings
+   font-weight: 700
+   margin-bottom: $line-height-base
 
-.wy-menu
+h1
+  font-size: 175%
+h2
+  font-size: 150%
+h3
+  font-size: 125%
+h4
+  font-size: 115%
+h5
+  font-size: 110%
+h6
+  font-size: 100%
+
+ol, ul
+  padding-left: 0px
+
+.sidebar-navigation
+  width: $nav-desktop-width
+
   a:hover
     text-decoration: none
 
-.wy-menu-horiz
-  +clearfix
-  ul, li
-    display: inline-block
-  li:hover
-    background: rgba(255,255,255,.1)
-  li
-    &.divide-left
-      border-left: solid 1px hsl(0, 0%, 25%)
-    &.divide-right
-      border-right: solid 1px hsl(0, 0%, 25%)
-  a
-    height: $base-font-size * 2
-    display: inline-block
-    line-height: $base-font-size * 2
-    padding: 0 $base-font-size
-
-.wy-menu-vertical
-  width: $nav-desktop-width
-
   header, p.caption
     color: $nav-caption
-    height: $base-font-size * 2
-    line-height: $base-font-size * 2
+    height: $font-size-base * 2
+    line-height: $font-size-base * 2
     padding: 0 $gutter
-    margin: $base-line-height / 2 0 0 0
+    margin: $line-height-base / 2 0 0 0
     display: block
     font-weight: bold
     text-transform: uppercase
@@ -50,13 +50,13 @@ html
     &.divide-bottom
       border-bottom: solid 1px hsl(0, 0%, 25%)
     &.current
-      background: darken($menu-vertical-background-color, 10%)
+      background: darken($nav-menu-background-color, 10%)
       a
         color: $menu-link-medium
-        border-right: solid 1px darken($menu-vertical-background-color, 20%)
+        border-right: solid 1px darken($nav-menu-background-color, 20%)
         padding: $gutter / 4 $gutter * 1.5
         &:hover
-          background: darken($menu-vertical-background-color, 15%)
+          background: darken($nav-menu-background-color, 15%)
     code
       border: none
       background: inherit
@@ -79,12 +79,11 @@ html
     padding: $gutter / 4 $gutter
     font-weight: bold
     position: relative
-    background: $menu-vertical-background-color
+    background: $nav-menu-background-color
     border: none
     padding-left: $gutter -4px
-    +font-smooth
     &:hover
-      background: $menu-vertical-background-color
+      background: $nav-menu-background-color
       span.toctree-expand
         color: $menu-link-medium
     span.toctree-expand
@@ -95,8 +94,8 @@ html
       color: darken($menu-link-medium, 30%)
 
   li.toctree-l1.current > a
-    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
-    border-top: solid 1px darken($menu-vertical-background-color, 20%)
+    border-bottom: solid 1px darken($nav-menu-background-color, 20%)
+    border-top: solid 1px darken($nav-menu-background-color, 20%)
 
   // This is the on state for pages beyond second level
 
@@ -143,19 +142,19 @@ html
   li.toctree-l2
     &.current
       > a
-        background: darken($menu-vertical-background-color, 20%)
+        background: darken($nav-menu-background-color, 20%)
       li.toctree-l3 > a
-        background: darken($menu-vertical-background-color, 20%)
+        background: darken($nav-menu-background-color, 20%)
     span.toctree-expand
-      color: darken($menu-vertical-background-color, 35%)
+      color: darken($nav-menu-background-color, 35%)
   li.toctree-l3
     &.current
       > a
-        background: darken($menu-vertical-background-color, 25%)
+        background: darken($nav-menu-background-color, 25%)
       li.toctree-l4 > a
-        background: darken($menu-vertical-background-color, 25%)
+        background: darken($nav-menu-background-color, 25%)
     span.toctree-expand
-      color: darken($menu-vertical-background-color, 40%)
+      color: darken($nav-menu-background-color, 40%)
 
   li.current ul
     display: block
@@ -174,23 +173,23 @@ html
     font-size: 90%
     color: $menu-link-light
     &:hover
-      background-color: lighten($menu-background-color, 10%)
+      background-color: lighten($nav-background-color, 10%)
       cursor: pointer
       span.toctree-expand
         color: $menu-link-light
     &:active
-      background-color: $menu-logo-color
+      background-color: $nav-search-background-color
       cursor: pointer
       color: $menu-link-active
       span.toctree-expand
         color: $menu-link-active
 
-.wy-side-nav-search
+.sidebar-heading
   display: block
   width: $nav-desktop-width
   padding: $gutter / 2
   margin-bottom: $gutter / 2
-  z-index: $z-index-popover
+  z-index: $zindex-fixed
   background-color: $nav-search-background-color
   text-align: center
   color: $nav-search-color
@@ -204,17 +203,16 @@ html
     margin: auto auto $gutter / 2 auto
     height: 45px
     width: 45px
-    background-color: $menu-logo-color
+    background-color: $nav-search-background-color
     padding: 5px
     border-radius: 100%
-  > a, .wy-dropdown > a
+  > a
     color: $nav-search-color
     font-size: 100%
     font-weight: bold
     display: inline-block
-    padding: $base-line-height / 6 $base-line-height / 4
+    padding: $line-height-base / 6 $line-height-base / 4
     margin-bottom: $gutter / 2
-    +font-smooth
     &:hover
       background: rgba(255,255,255,.1)
     img.logo
@@ -233,15 +231,6 @@ html
     margin-bottom: $gutter / 2
     font-weight: normal
     color: rgba(255,255,255,.3)
-
-.wy-nav .wy-menu-vertical
-  header
-    color: $link-color
-  a
-    color: $text-light
-    &:hover
-      background-color: $link-color
-      color: $white
 
 [data-menu-wrap]
   +transition(all .2s ease-in)
@@ -262,15 +251,10 @@ html
     left: auto
     opacity: 0
 
-.wy-body-for-nav
+.d-flex
   background: $section-background-color
 
-.wy-grid-for-nav
-  position: absolute
-  width: 100%
-  height: 100%
-
-.wy-nav-side
+.sidebar-right
   position: fixed
   top: 0
   bottom: 0
@@ -280,11 +264,11 @@ html
   overflow-x: hidden
   overflow-y: hidden
   min-height: 100%
-  color: $menu-medium
   background: $nav-background-color
-  z-index: $z-index-popover
+  z-index: $zindex-fixed
 
-.wy-side-scroll
+.sidebar-scroll
+  padding-bottom: $gutter / 2
   width: $nav-desktop-width + 20px
   position: relative
   overflow-x: hidden
@@ -300,16 +284,15 @@ html
   line-height: 50px
   text-align: center
   font-size: 100%
-  +clearfix
+  @include clearfix
   a
     color: $white
     font-weight: bold
-    +font-smooth
   img
-    margin-right: $base-line-height / 2
+    margin-right: $line-height-base / 2
     height: 45px
     width: 45px
-    background-color: $menu-logo-color
+    background-color: $nav-search-background-color
     padding: 5px
     border-radius: 100%
   i
@@ -318,72 +301,63 @@ html
     cursor: pointer
     padding-top: inherit
 
-.wy-nav-content-wrap
+.page-content-wrapper
   margin-left: $nav-desktop-width
-  background: $section-background-color
+  background: $content-background-color
   min-height: 100%
 
-.wy-nav-content
+.container-fluid
   padding: $gutter $gutter * 2
   height: 100%
   max-width: $nav-content-width
   margin: auto
 
-.wy-body-mask
-  position: fixed
-  width: 100%
-  height: 100%
-  background: rgba(0,0,0,.2)
-  display: none
-  z-index: $z-index-modal - 1
-  &.on
-    display: block
 footer
   color: $footer-color
   p
-    margin-bottom: $base-line-height / 2
+    margin-bottom: $line-height-base / 2
   span.commit code
     padding: 0px
-    font-family: $code-font-family
+    font-family: $font-family-code
     font-size: 1em
     background: none
     border: none
     color: $footer-color
 
 .rst-footer-buttons
+  @include clearfix
   &:before, &:after
     width: 100%
-  +clearfix
 
 .rst-breadcrumbs-buttons
+  @include clearfix
   margin-top: 12px
-  +clearfix
 
 #search-results
   .search li
-    margin-bottom: $base-line-height
+    margin-bottom: $line-height-base
     border-bottom: solid 1px $table_border_color
-    padding-bottom: $base-line-height
+    padding-bottom: $line-height-base
   .search li:first-child
     border-top: solid 1px $table_border_color
-    padding-top: $base-line-height
+    padding-top: $line-height-base
   .search li a
     font-size: 120%
-    margin-bottom: $base-line-height / 2
+    margin-bottom: $line-height-base / 2
     display: inline-block
   .context
     color: $text-medium
     font-size: 90%
 
 .genindextable li > ul
-  margin-left: $base-line-height
+  margin-left: $line-height-base
 
-+media($tablet)
-  .wy-body-for-nav
+@media (max-width: $nav-media-query)
+  .d-flex
     background: $section-background-color
   .wy-nav-top
     display: block
-  .wy-nav-side
+  .sidebar-right
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
     @else
@@ -391,15 +365,15 @@ footer
     &.shift
       width: 85%
       left: 0
-  .wy-side-scroll
+  .sidebar-scroll
     width: auto
-  .wy-side-nav-search
+  .sidebar-heading
     width: auto
-  .wy-menu.wy-menu-vertical
+  .sidebar-navigation
     width: auto
-  .wy-nav-content-wrap
+  .page-content-wrapper
     margin-left: 0
-    .wy-nav-content
+    .container-fluid
       padding: $gutter
     &.shift
       position: fixed
@@ -410,14 +384,14 @@ footer
       overflow: hidden
 
 @media screen and (min-width: $nav-media-query)
-  .wy-nav-content-wrap
+  .page-content-wrapper
     background: rgba(0,0,0,.05)
-  .wy-nav-content
+  .container-fluid
     margin: 0
-    background: $section-background-color
+    background: $content-background-color
 
 @media print
-  .rst-versions, footer, .wy-nav-side
+  .rst-versions, footer, .sidebar-right
     display: none
-  .wy-nav-content-wrap
+  .page-content-wrapper
     margin-left: 0

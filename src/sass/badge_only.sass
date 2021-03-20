@@ -4,13 +4,10 @@
 // This generates the RTD sticky badge for non RTD themes. As
 // always, only files labeled "theme_*.sass should be edited".
 // ------------------------------------------------------------
-$border-box-sizing: false !default
 
-@import wyrm_core/wy_variables
+@import "node_modules/bootstrap/scss/functions"
+@import "node_modules/bootstrap/scss/variables"
+@import "node_modules/bootstrap/scss/mixins"
 @import theme_variables
-@import ~bourbon/app/assets/stylesheets/bourbon
-@import ~bourbon-neat/app/assets/stylesheets/neat
-@import wyrm_core/mixin
-@import wyrm_core/grid_settings
-@import _theme_badge_fa
-@import _theme_badge
+@import theme_badge_fa
+@import theme_badge
