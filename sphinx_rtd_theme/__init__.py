@@ -8,12 +8,7 @@ from os import path
 
 from sphinx import version_info
 from sphinx.locale import _
-
-try:
-    # Avaliable from Sphinx 1.6
-    from sphinx.util.logging import getLogger
-except ImportError:
-    from logging import getLogger
+from sphinx.util.logging import getLogger
 
 
 __version__ = '0.5.1'
@@ -38,9 +33,16 @@ def config_initiated(app, config):
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
-    if version_info >= (1, 6, 0):
-        # Register the theme that can be referenced without adding a theme path
-        app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
+    app.require_sphinx('1.6')
+    if version_info <= (2, 0, 0):
+        if not app.config.html_experimental_html5_writer:
+            logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
+    else:
+        if app.config.html4_writer:
+            logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
+
+    # Register the theme that can be referenced without adding a theme path
+    app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
 
     if version_info >= (1, 8, 0):
         # Add Sphinx message catalog for newer versions of Sphinx
