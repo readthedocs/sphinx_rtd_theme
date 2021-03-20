@@ -1,8 +1,8 @@
 const path = require("path");
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const exec = require("child_process").exec;
 const WatchPlugin = require("webpack-watch-files-plugin").default;
-const ShellPlugin = require("webpack-shell-plugin");
+const ShellPlugin = require("webpack-shell-plugin-next");
 const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
@@ -30,7 +30,10 @@ module.exports = merge(common, {
       files: ["./docs/**/*.rst", "./docs/**/*.py"]
     }),
     new ShellPlugin({
-      onBuildStart: ["make -C docs clean html"],
+      onBuildStart:{
+        scripts: ["make -C docs clean html"],
+        blocking: true
+      }
     })
   ]
 });

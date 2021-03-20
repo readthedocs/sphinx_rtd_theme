@@ -40,7 +40,7 @@ class WebpackDevelopCommand(distutils.cmd.Command):
 
     def run(self):
         subprocess.run(
-            ["node_modules/.bin/webpack-dev-server", "--open", "--config", "webpack.dev.js"],
+            ["node_modules/.bin/webpack serve", "--open", "--config", "webpack.dev.js"],
             check=True
         )
 
