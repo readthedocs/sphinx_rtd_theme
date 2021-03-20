@@ -26,7 +26,6 @@
     "file-loader": "^6.2.0",
     "font-awesome": "^4.7.0",
     "html5shiv": "^3.7.3",
-    "imports-loader": "^2.0.0",
     "jquery": "^3.6.0",
     "lato-font": "^3.0.0",
     "mini-css-extract-plugin": "^1.3.9",
