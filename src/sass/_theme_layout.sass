@@ -51,7 +51,7 @@ html
         color: $menu-link-medium
         padding: $gutter / 4 $gutter * 1.5
         &:hover
-          background: darken($menu-vertical-background-color, 15%)
+          background: $menu-vertical-background-color
     code
       border: none
       background: inherit
@@ -68,7 +68,7 @@ html
       line-height: 18px
 
   // On state for the first level
-  li.on a, li.current > a
+  li.current > a
     color: $menu-link-color
     padding: $gutter / 4 $gutter
     font-weight: bold
@@ -114,11 +114,12 @@ html
       li.toctree-l#{$toc_level}
         a
           @extend %toctree_link_color
+          background: darken($menu-vertical-background-color, 5% * $toc_level)
         &.current
           > a
             padding: $gutter / 4 $gutter * ($toc_level - 1 + .5)
 
-          li.toctree-l#{$toc_level + 1}  > a
+          li.toctree-l#{$toc_level + 1} > a
             @extend %display_current_toctree_element
             padding: $gutter / 4 $gutter * ($toc_level + .5)
             padding-right: $gutter
@@ -127,19 +128,6 @@ html
     @if $toc_level > 2 and $toc_level < 5
       li.toctree-l#{$toc_level}
         @extend %shrink_toctree_element
-
-  li.toctree-l2
-    &.current
-      > a
-        background: darken($menu-vertical-background-color, 20%)
-      li.toctree-l3 > a
-        background: darken($menu-vertical-background-color, 20%)
-  li.toctree-l3
-    &.current
-      > a
-        background: darken($menu-vertical-background-color, 25%)
-      li.toctree-l4 > a
-        background: darken($menu-vertical-background-color, 25%)
 
   li.current ul
     display: block
