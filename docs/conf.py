@@ -4,21 +4,9 @@ import sys
 import os
 import re
 
-# If we are building locally, or the build on Read the Docs looks like a PR
-# build, prefer to use the version of the theme in this repo, not the installed
-# version of the theme.
-def is_development_build():
-    # PR builds have an interger version
-    re_version = re.compile(r'^[\d]+$')
-    if 'READTHEDOCS' in os.environ:
-        version = os.environ.get('READTHEDOCS_VERSION', '')
-        if re_version.match(version):
-            return True
-        return False
-    return True
-
-if is_development_build():
-    sys.path.insert(0, os.path.abspath('..'))
+# Prefer to use the version of the theme in this repo
+# and not the installed version of the theme.
+sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('./demo/'))
 
 import sphinx_rtd_theme
@@ -26,8 +14,8 @@ from sphinx.locale import _
 
 project = u'Read the Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
-version = '0.5.0'
-release = '0.5.0'
+version = '0.5.1'
+release = '0.5.1'
 author = u'Dave Snider, Read the Docs, Inc. & contributors'
 copyright = author
 language = 'en'
@@ -52,8 +40,8 @@ suppress_warnings = ['image.nonlocal_uri']
 pygments_style = 'default'
 
 intersphinx_mapping = {
-    'rtd': ('https://docs.readthedocs.io/en/latest/', None),
-    'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+    'rtd': ('https://docs.readthedocs.io/en/stable/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/stable/', None),
 }
 
 html_theme = 'sphinx_rtd_theme'
