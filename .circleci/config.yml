@@ -1,0 +1,57 @@
+version: 2.1
+
+commands:
+  run-tox:
+    description: "Run tox"
+    parameters:
+      version:
+        type: string
+      sphinx-version:
+        type: string
+        default: "16,17,18,20,21,22,23,24,30,31,32,33,34,latest"
+    steps:
+      - checkout
+      - run: pip install --user tox
+      - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
+
+jobs:
+  py27:
+    docker:
+      - image: 'cimg/python:2.7'
+    steps:
+      - run-tox:
+          version: py27
+  py36:
+    docker:
+      - image: 'cimg/python:3.6'
+    steps:
+      - run-tox:
+          version: py36
+  py37:
+    docker:
+      - image: 'cimg/python:3.7'
+    steps:
+      - run-tox:
+          version: py37
+  py38:
+    docker:
+      - image: 'cimg/python:3.8'
+    steps:
+      - run-tox:
+          version: py38
+  py39:
+    docker:
+      - image: 'cimg/python:3.9'
+    steps:
+      - run-tox:
+          version: py39
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - py39
+      - py38
+      - py37
+      - py36
+      - py27
