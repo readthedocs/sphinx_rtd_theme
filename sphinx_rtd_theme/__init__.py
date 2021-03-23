@@ -33,8 +33,11 @@ def config_initiated(app, config):
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
+    if sys.version_info[0] < 3:
+        logger.warning("Python2 is deprecated with sphinx_rtd_theme, update to Python3")
     app.require_sphinx('1.6')
     if version_info <= (2, 0, 0):
+        logger.warning("Sphinx 1.x is deprecated with sphinx_rtd_theme, update to Sphinx 2.x")
         if not app.config.html_experimental_html5_writer:
             logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
     else:
