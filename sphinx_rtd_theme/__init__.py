@@ -6,7 +6,6 @@ From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
 
 from os import path
 
-from sphinx import version_info
 from sphinx.locale import _
 from sphinx.util.logging import getLogger
 
@@ -33,22 +32,17 @@ def config_initiated(app, config):
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
-    app.require_sphinx('1.6')
-    if version_info <= (2, 0, 0):
-        if not app.config.html_experimental_html5_writer:
-            logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
-    else:
-        if app.config.html4_writer:
-            logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
+    app.require_sphinx('2.0')
+    if app.config.html4_writer:
+        logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
 
     # Register the theme that can be referenced without adding a theme path
     app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
 
-    if version_info >= (1, 8, 0):
-        # Add Sphinx message catalog for newer versions of Sphinx
-        # See http://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.add_message_catalog
-        rtd_locale_path = path.join(path.abspath(path.dirname(__file__)), 'locale')
-        app.add_message_catalog('sphinx', rtd_locale_path)
-        app.connect('config-inited', config_initiated)
+    # Add Sphinx message catalog for newer versions of Sphinx
+    # See http://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.add_message_catalog
+    rtd_locale_path = path.join(path.abspath(path.dirname(__file__)), 'locale')
+    app.add_message_catalog('sphinx', rtd_locale_path)
+    app.connect('config-inited', config_initiated)
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}

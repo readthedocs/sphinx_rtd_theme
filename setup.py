@@ -117,7 +117,7 @@ setup(
         ]
     },
     install_requires=[
-        'sphinx>=1.6'
+        'sphinx>=2.0'
     ],
     tests_require=[
         'pytest',
@@ -137,7 +137,6 @@ setup(
         'Environment :: Console',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
