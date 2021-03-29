@@ -5,6 +5,40 @@ Changelog
 master
 ======
 
+v1.0.0
+======
+
+Incompatible Changes
+--------------------
+
+* The minimum supported python version is now 2.7 or 3.4 and greater (#1093)
+* The minimum supported Sphinx version is now 1.6 (#1091)
+
+Deprecated
+----------
+
+* Support for sphinx's html4 writer is deprecated and will be removed in version 2.0 (#1091)
+
+Other Changes
+-------------
+
+* Update npm development dependencies (#1096)
+* Don't require npm to build from source (#1039)
+* Use regular toctree instead of toc for singlehtml builder (#507)
+* Templates: Cleanup Whitespace (#1060)
+
+Fixes
+-----
+
+* Javascript: Add support for deep toc levels (#1089)
+* Use Proper Sass Syntax (#1069)
+* Nav: Fix right padding on level2+ (#1068)
+* Fix Nav Buttons Size (#1067)
+* Fix: wrap inline literals (#1050)
+* Fix aria label (#1056)
+* Respect tab order for prev/next buttons (#1051)
+* Nav: Don't toggle terminal nodes (#1049)
+
 v0.5.1
 ======
 
