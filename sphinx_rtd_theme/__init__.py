@@ -35,7 +35,7 @@ def config_initiated(app, config):
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
     if python_version[0] < 3:
-        logger.warning("Python2 is deprecated with sphinx_rtd_theme, update to Python3")
+        logger.warning("Python 2 is deprecated with sphinx_rtd_theme, update to Python 3")
     app.require_sphinx('1.6')
     if sphinx_version <= (2, 0, 0):
         logger.warning("Sphinx 1.x is deprecated with sphinx_rtd_theme, update to Sphinx 2.x or greater")
