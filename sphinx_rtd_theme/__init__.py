@@ -38,7 +38,7 @@ def setup(app):
         logger.warning("Python2 is deprecated with sphinx_rtd_theme, update to Python3")
     app.require_sphinx('1.6')
     if sphinx_version <= (2, 0, 0):
-        logger.warning("Sphinx 1.x is deprecated with sphinx_rtd_theme, update to Sphinx 2.x")
+        logger.warning("Sphinx 1.x is deprecated with sphinx_rtd_theme, update to Sphinx 2.x or greater")
         if not app.config.html_experimental_html5_writer:
             logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
     else:
