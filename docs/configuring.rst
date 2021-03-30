@@ -21,6 +21,7 @@ For example:
         'style_external_links': False,
         'vcs_pageview_mode': '',
         'style_nav_header_background': 'white',
+        'versions_menu': False,
         # Toc options
         'collapse_navigation': True,
         'sticky_navigation': True,
@@ -178,7 +179,7 @@ Miscellaneous options
     to VCS repository.
 
     :type: boolean
-    :default: True
+    :default: False
 
 File-wide metadata
 ==================
