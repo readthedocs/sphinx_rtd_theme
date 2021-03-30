@@ -9,22 +9,26 @@
     </span>
     <div class="rst-other-versions">
       {%- block versions %}
+      {%- if versions|length >= 1 %}
       <dl>
         <dt>{{ _('Versions') }}</dt>
-        {% for slug, url in versions %}
+        {%- for slug, url in versions %}
           <dd><a href="{{ url }}">{{ slug }}</a></dd>
-        {% endfor %}
+        {%- endfor %}
       </dl>
+      {%- endif %}
       {%- endblock %}
       {%- block downloads %}
+      {%- if versions|length >= 1 %}
       <dl>
         <dt>{{ _('Downloads') }}</dt>
-        {% for type, url in downloads %}
+        {%- for type, url in downloads %}
           <dd><a href="{{ url }}">{{ type }}</a></dd>
-        {% endfor %}
+        {%- endfor %}
       </dl>
+      {%- endif %}
       {%- endblock %}
     </div>
   </div>
-{% endif %}
+{%- endif %}
 {%- endblock %}
