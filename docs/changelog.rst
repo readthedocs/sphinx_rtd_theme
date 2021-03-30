@@ -26,6 +26,7 @@ Other Changes
 * Don't require npm to build from source (#1039)
 * Use regular toctree instead of toc for singlehtml builder (#507)
 * Templates: Cleanup Whitespace (#1060)
+* Add support for version menu outside the Read The Docs environment
 
 Fixes
 -----
