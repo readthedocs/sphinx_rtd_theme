@@ -3,7 +3,8 @@ import os
 import pytest
 import sphinx
 from sphinx import addnodes
-from sphinx.builders.html import SingleFileHTMLBuilder, DirectoryHTMLBuilder
+import sphinx.builders.dirhtml.DirectoryHTMLBuilder
+import sphinx.builders.singlehtml.SingleFileHTMLBuilder
 
 from .util import build_all
 
