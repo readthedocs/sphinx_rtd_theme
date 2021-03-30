@@ -172,6 +172,13 @@ Miscellaneous options
     :type: string
     :default: ``#2980B9``
 
+.. confval:: versions_menu
+
+    Whether or not to show the bottom left menu listing the versions and links
+    to VCS repository.
+
+    :type: boolean
+    :default: True
 
 File-wide metadata
 ==================
