@@ -10,6 +10,7 @@
       {%- endblock %}
     </span>
     <div class="rst-other-versions">
+    {%- block versions_menu_contents %}
       {%- block languages %}
       {%- if languages|length >= 1 %}
       <dl>
@@ -42,6 +43,7 @@
       </dl>
       {%- endif %}
       {%- endblock %}
+    {%- endblock %}
     </div>
   </div>
 {%- endif %}
