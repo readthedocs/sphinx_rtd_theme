@@ -34,7 +34,7 @@
       {%- endblock %}
 
       {%- block downloads %}
-      {%- if versions|length >= 1 %}
+      {%- if downloads|length >= 1 %}
       <dl>
         <dt>{{ _('Downloads') }}</dt>
         {%- for type, url in downloads %}
