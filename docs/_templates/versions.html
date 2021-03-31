@@ -1,4 +1,4 @@
-{%- extends "!layout.html" %}
+{%- extends "!versions.html" %}
 
 {#-
 
@@ -8,8 +8,24 @@ Docs. This is for local testing purposes only.
 
 #}
 
-{%- block footer %}
-  {%- if not READTHEDOCS %}
+{%- block versions_menu_contents %}
+  {{ super() }}
+  <dl>
+    {#- Translators: The phrase "Read the Docs" is not translated #}
+    <dt>{{ _('On Read the Docs') }}</dt>
+      <dd>
+        <a href="#">{{ _('Project Home') }}</a>
+      </dd>
+      <dd>
+        <a href="#">{{ _('Builds') }}</a>
+      </dd>
+  </dl>
+  <dl>
+    <dt>Debug</dt>
+    <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>
+  </dl>
+{%- endblock %}
+  <!-- {%- if theme_versions_menu|tobool %}
     <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
       <span class="rst-current-version" data-toggle="rst-current-version">
         <span class="fa fa-book"> Read the Docs</span>
@@ -51,5 +67,4 @@ Docs. This is for local testing purposes only.
         </dl>
       </div>
     </div>
-  {%- endif %}
-{%- endblock %}
+  {%- endif %} -->
