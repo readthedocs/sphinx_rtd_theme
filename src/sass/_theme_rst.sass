@@ -253,9 +253,13 @@
     line-height: 0
     font-size: 90%
 
-  // Horizontal lists have multiple columns; use full width
   .hlist
     width: 100%
+    tr
+      display: flex
+      flex-flow: row wrap
+    td
+      margin-right: auto
 
   // The html4 writer outputs the citation and footnotes as a table, and the
   // html5 writer outputs these as a definition list. We will use the fairly

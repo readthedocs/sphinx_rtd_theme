@@ -226,8 +226,20 @@ Hlists
 ------
 
 .. hlist::
-    :columns: 2
+    :columns: 3
 
+    - First item
+    - Second item
+    - Third item
+    - Forth item
+    - Fifth item
+    - Sixths item
+    - First item
+    - Second item
+    - Third item
+    - Forth item
+    - Fifth item
+    - Sixths item
     - First item
     - Second item
     - Third item
