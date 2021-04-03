@@ -41,7 +41,7 @@ pygments_style = 'default'
 
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/stable/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 
 html_theme = 'sphinx_rtd_theme'
