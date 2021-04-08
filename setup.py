@@ -117,7 +117,7 @@ setup(
         ]
     },
     install_requires=[
-        'sphinx>=1.6'
+        'sphinx>=1.6',
         'docutils<0.17', # https://github.com/sphinx-doc/sphinx/issues/9001
     ],
     tests_require=[
