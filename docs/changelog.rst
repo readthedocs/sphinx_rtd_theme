@@ -18,6 +18,7 @@ Deprecated
 ----------
 
 * Support for sphinx's html4 writer is deprecated and will be removed in version 2.0 (#1091)
+* Installing from git is deprecated; Sphinx will warn if not using an official version of the theme.
 
 Other Changes
 -------------
@@ -119,10 +120,10 @@ Other Changes
 * Added i18n support using Babel
 * Added translations for 10 new languages
 * Moved build system from Grunt and friends to Webpack
-* Warn when using a pre-release version of the theme
 * Remove Modernizr, but keep html5shiv (#724, #525)
 
 v0.4.3
+======
 
 :Date: Feb 12, 2019
 
