@@ -13,20 +13,12 @@ from sphinx import version_info as sphinx_version
 from sphinx.locale import _
 from sphinx.util.logging import getLogger
 
-try:
-    # Available from Sphinx 1.6
-    from sphinx.util.logging import getLogger
-except ImportError:
-    from logging import getLogger
-
 
 __version__ = '0.5.1'
 __version_full__ = __version__
 
 logger = getLogger(__name__)
 
-
-logger = getLogger(__name__)
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
