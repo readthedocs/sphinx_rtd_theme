@@ -18,7 +18,7 @@
 
 {%- set display_vcs_links = display_vcs_links if display_vcs_links is defined else True %}
 
-<div role="navigation" aria-label="{{ _('Breadcrumbs') }}">
+<nav aria-label="{{ _('Breadcrumbs') }}">
   <ul class="wy-breadcrumbs">
     {%- block breadcrumbs %}
       <li><a href="{{ pathto(master_doc) }}" class="icon icon-home"></a> &raquo;</li>
@@ -72,4 +72,4 @@
   </div>
   {%- endif %}
   <hr/>
-</div>
+</nav>

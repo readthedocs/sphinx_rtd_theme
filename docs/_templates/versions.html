@@ -1,4 +1,4 @@
-{%- extends "!layout.html" %}
+{%- extends "!versions.html" %}
 
 {#-
 
@@ -7,8 +7,8 @@ the theme normally renders the menu on local builds and on builds on Read the
 Docs. This is for local testing purposes only.
 
 #}
-
-{%- block footer %}
+ 
+{%- block rstversions %}
   {%- if not READTHEDOCS %}
     <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
       <span class="rst-current-version" data-toggle="rst-current-version">
