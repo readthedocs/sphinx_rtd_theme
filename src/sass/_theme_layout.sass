@@ -288,7 +288,6 @@ body
 
 .wy-nav-top
   display: none
-  width: 100%
   margin-left: $nav-desktop-width
   background: $link-color
   color: $white
@@ -320,7 +319,6 @@ body
   background: $section-background-color
   padding: $gutter ($gutter * 2)
   height: 100%
-  width: 100%
   max-width: $nav-content-width
   min-height: 100%
 
@@ -373,7 +371,7 @@ footer
 .genindextable li > ul
   margin-left: $base-line-height
 
-+media($tablet)
+@media(max-width: $nav-content-width)
   .wy-nav-side
     display: none
     &.shift
@@ -382,11 +380,13 @@ footer
     display: block
     margin-left: 0px
     &.shift
+      width: 100%
       margin-left: $nav-desktop-width
   .wy-nav-content
     padding: $gutter
     margin-left: 0px
     &.shift
+      width: 100%
       margin-left: $nav-desktop-width
 
 @media print
@@ -394,4 +394,3 @@ footer
     display: none
   .wy-nav-content	
     margin-left: 0	
-
