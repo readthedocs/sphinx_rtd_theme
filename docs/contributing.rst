@@ -89,24 +89,29 @@ Releasing the theme
 
 To release a new version of the theme, core team will take the following steps:
 
-#. Bump the version in ``sphinx_rtd_theme/__init__.py``, ``setup.py`` and
-   ``package.json``.  We follow `semver <http://semver.org/>`_ and `PEP440`_
+#. Bump the version by running ``bump2version [major|minor|patch|dev]``.
+   This will automatically increase the correct part(s) of the version number,
+   you do not need to specify the exact version number.
+   We follow `semver <http://semver.org/>`_ and `PEP440`_
    (with regards to alpha release and development versions). The version
    increment should reflect these releases and any potentially breaking changes.
+#. New versions are by default ``alpha`` releases. If this is a release candidate,
+   run ``bump2version --allow-dirty release`` to update the release to an ``rc``
+   release. If this is a final release, run the command again.
 #. Update the changelog (``docs/changelog.rst``) with the version information.
 #. Run ``python setup.py update_translations`` to compile new translation files
    and update Transifex.
-#. Run ``python setup.py build`` to rebuild all the theme assets and the Python
+#. Run ``python setup.py build_assets`` to rebuild all the theme assets and the Python
    package.
 #. Commit these changes.
 #. Tag the release in git: ``git tag $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
 #. Upload the package to PyPI:
 
-    .. code:: console
+   .. code:: console
 
-        $ rm -rf dist/
-        $ python setup.py sdist bdist_wheel
-        $ twine upload --sign --identity security@readthedocs.org dist/*
+      $ rm -rf dist/
+      $ python setup.py sdist bdist_wheel
+      $ twine upload --sign --identity security@readthedocs.org dist/*
 
 .. _PEP440: https://www.python.org/dev/peps/pep-0440/

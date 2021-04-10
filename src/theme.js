@@ -146,13 +146,10 @@ function ThemeNav () {
             if (link.length > 0) {
                 $('.wy-menu-vertical .current').removeClass('current');
                 link.addClass('current');
-                link.closest('li.toctree-l1').addClass('current');
                 link.closest('li.toctree-l1').parent().addClass('current');
-                link.closest('li.toctree-l1').addClass('current');
-                link.closest('li.toctree-l2').addClass('current');
-                link.closest('li.toctree-l3').addClass('current');
-                link.closest('li.toctree-l4').addClass('current');
-                link.closest('li.toctree-l5').addClass('current');
+                for (let i = 1; i <= 10; i++) {
+                    link.closest('li.toctree-l' + i).addClass('current');
+                }
                 link[0].scrollIntoView();
             }
         }
@@ -192,8 +189,12 @@ function ThemeNav () {
         var parent_li = elem.closest('li');
         parent_li.siblings('li.current').removeClass('current');
         parent_li.siblings().find('li.current').removeClass('current');
-        parent_li.find('> ul li.current').removeClass('current');
-        parent_li.toggleClass('current');
+        var children = parent_li.find('> ul li');
+        // Don't toggle terminal elements.
+        if (children.length) {
+            children.removeClass('current');
+            parent_li.toggleClass('current');
+        }
     }
 
     return nav;

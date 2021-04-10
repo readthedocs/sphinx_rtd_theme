@@ -5,24 +5,123 @@ Changelog
 master
 ======
 
-New Features
+v1.0.0
+======
+
+Incompatible Changes
+--------------------
+
+* The minimum supported python version is now 2.7 or 3.4 and greater (#1093)
+* The minimum supported Sphinx version is now 1.6 (#1091)
+
+Deprecated
+----------
+
+* Support for sphinx's html4 writer is deprecated and will be removed in version 2.0 (#1091)
+
+Other Changes
 -------------
+
+* Update npm development dependencies (#1096)
+* Don't require npm to build from source (#1039)
+* Use regular toctree instead of toc for singlehtml builder (#507)
+* Templates: Cleanup Whitespace (#1060)
 
 Fixes
 -----
 
-* Fix definition lists looking different with Sphinx 2.0+
+* Javascript: Add support for deep toc levels (#1089)
+* Use Proper Sass Syntax (#1069)
+* Nav: Fix right padding on level2+ (#1068)
+* Fix Nav Buttons Size (#1067)
+* Fix: wrap inline literals (#1050)
+* Fix aria label (#1056)
+* Respect tab order for prev/next buttons (#1051)
+* Nav: Don't toggle terminal nodes (#1049)
+
+v0.5.2
+======
+
+:Date: April 5, 2021
+
+.. note:: This commit will not be in ``master``, but was branched directly off ``0.5.1`` to minimize issues.
+          The next full release will contain all PR's previously merged.
+
+* Depend on docutils < 0.17 (#1113)
+
+v0.5.1
+======
+
+:Date: January 4, 2021
+
+Fixes
+-----
+
+* Set ``url_root`` properly on index (#1025)
+* Do not load ``language_data.js`` in non-search pages (#1021)
+* Hide the search box on any ``singlehtml`` like builder (#975)
+* Fix ``vcs_pageview_mode`` template parameter (#1010)
+* Mark nex/prev icons as aria-hidden (#1007)
+* Use well-formed XML syntax (#1006)
+* Footer: show both ``commit`` and ``last_updated`` if available (#897)
+* Search page: don't show "edit on" links (#935)
+
+New Features
+------------
+
+* New theme option to enable anonymous ip addresses when using Google Analytics (#889)
+
+Other Changes
+-------------
+
+* The ``canonical_url`` option was deprecated in favor of Sphinx's ``html_baseurl`` (#1003)
+* Add ``contentinfo`` block to ``footer.html`` template (#896)
+* Make Copyright template match sphinx's basic (#933)
+* Packaging: include ``bin/preinstall.js`` (#1005)
+
+v0.5.0
+======
+
+:Date: Jun 17, 2020
+
+Fixes
+-----
+
+* Fix bullet list spacing to respect simple/complex list styles
+
+v0.5.0rc2
+=========
+
+:Date: June 5, 2020
+
+Fixes
+-----
+
+* Fix issue with simple definition lists that was missed
+* Change FOUT back to FOIT
+* Fix several margin issues with lists, nested lists, and nested content
+* Add colon back to field lists
+
+v0.5.0rc1
+=========
+
+:Date: May 6, 2020
+
+Fixes
+-----
+
+* Fix many styling issues that look different when using the Sphinx HTML5 writer
 
 Other Changes
 --------------
 
 * Add the ``navigation`` template block around the navigation area.
-* Added Spanish translation
 * Added i18n support using Babel
+* Added translations for 10 new languages
 * Moved build system from Grunt and friends to Webpack
 * Remove Modernizr, but keep html5shiv (#724, #525)
 
-0.4.3
+v0.4.3
 ======
 
 :Date: Feb 12, 2019
