@@ -292,6 +292,8 @@ body
   background: $link-color
   color: $white
   padding: ($gutter / 4) ($gutter / 2)
+  width: 100%
+  max-width: $nav-content-width
   position: relative
   line-height: 50px
   text-align: center
@@ -319,6 +321,7 @@ body
   background: $section-background-color
   padding: $gutter ($gutter * 2)
   height: 100%
+  width: 100%
   max-width: $nav-content-width
   min-height: 100%
 
@@ -371,7 +374,7 @@ footer
 .genindextable li > ul
   margin-left: $base-line-height
 
-@media(max-width: $nav-content-width)
+@media(max-width: $nav-media-query)
   .wy-nav-side
     display: none
     &.shift
@@ -380,13 +383,11 @@ footer
     display: block
     margin-left: 0px
     &.shift
-      width: 100%
       margin-left: $nav-desktop-width
   .wy-nav-content
     padding: $gutter
     margin-left: 0px
     &.shift
-      width: 100%
       margin-left: $nav-desktop-width
 
 @media print
