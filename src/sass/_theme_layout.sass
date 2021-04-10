@@ -385,10 +385,13 @@ footer
     &.shift
       margin-left: $nav-desktop-width
   .wy-nav-content
-    padding: $gutter
     margin-left: 0px
     &.shift
       margin-left: $nav-desktop-width
+
+@media(max-width: $nav-content-width)
+  .wy-nav-content
+    padding: $gutter
 
 @media print
   header, footer, .wy-nav-side
