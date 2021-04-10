@@ -134,14 +134,14 @@
   .warning, .caution, .attention, .admonition-todo
     @extend .wy-alert.wy-alert-warning
   
-  .seealso .admonition-title
-    background-color: #7a87e6
-	.seealso
+  .seealso
     background-color: #e7ebfa
-	.important .admonition-title
-    background-color: #ddca3b
-	.important
+    &.admonition-title
+      background-color: #7a87e6
+  .important
     background-color: #f6f3a5
+    &.admonition-title
+      background-color: #ddca3b
 
   // Some people put tables in notes. Let's give them very basic support.
   .admonition table
