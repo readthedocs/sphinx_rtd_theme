@@ -5,18 +5,14 @@ From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
 """
 
 from os import path
+from sys import version_info as python_version
 
-from sphinx import version_info
+from sphinx import version_info as sphinx_version
 from sphinx.locale import _
-
-try:
-    # Avaliable from Sphinx 1.6
-    from sphinx.util.logging import getLogger
-except ImportError:
-    from logging import getLogger
+from sphinx.util.logging import getLogger
 
 
-__version__ = '0.5.1'
+__version__ = '0.5.2'
 __version_full__ = __version__
 
 logger = getLogger(__name__)
@@ -38,11 +34,21 @@ def config_initiated(app, config):
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
-    if version_info >= (1, 6, 0):
-        # Register the theme that can be referenced without adding a theme path
-        app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
+    if python_version[0] < 3:
+        logger.warning("Python 2 is deprecated with sphinx_rtd_theme, update to Python 3")
+    app.require_sphinx('1.6')
+    if sphinx_version <= (2, 0, 0):
+        logger.warning("Sphinx 1.x is deprecated with sphinx_rtd_theme, update to Sphinx 2.x or greater")
+        if not app.config.html_experimental_html5_writer:
+            logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
+    else:
+        if app.config.html4_writer:
+            logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
 
-    if version_info >= (1, 8, 0):
+    # Register the theme that can be referenced without adding a theme path
+    app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
+
+    if sphinx_version >= (1, 8, 0):
         # Add Sphinx message catalog for newer versions of Sphinx
         # See http://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.add_message_catalog
         rtd_locale_path = path.join(path.abspath(path.dirname(__file__)), 'locale')
