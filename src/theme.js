@@ -1,7 +1,20 @@
 var jQuery = (typeof(window) != 'undefined') ? window.jQuery : require('jquery');
 
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+
+
 // Sphinx theme nav state
 function ThemeNav () {
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if ((prevScrollpos > currentScrollPos) || (currentScrollPos < 40)) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-50px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
 
     var nav = {
         navBar: null,
