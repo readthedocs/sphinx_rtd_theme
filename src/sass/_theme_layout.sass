@@ -298,8 +298,8 @@ html
   position: fixed
   top: 0
   width: 100%
-  height: 50px
-  line-height: 50px
+  height: $nav-header-height
+  line-height: $nav-header-height
   text-align: center
   font-size: 100%
   transition: top 0.4s
@@ -314,7 +314,7 @@ html
     cursor: pointer
     padding-top: inherit
     padding-left: $gutter / 4
-    line-height: 50px
+    line-height: $nav-header-height
 
 .wy-nav-content-wrap
   margin-left: $nav-desktop-width
@@ -398,7 +398,7 @@ footer
   .wy-nav-content-wrap
     margin-left: 0
     .wy-nav-content
-      margin-top: 50px
+      margin-top: $nav-header-height
       padding: $gutter
     &.shift
       position: fixed
