@@ -235,7 +235,7 @@
       gtag('js', new Date());
 
       gtag('config', '{{ theme_analytics_id }}', {
-        'anonymize_ip': 'true' if theme_analytics_anonymize_ip|tobool else 'false',
+	      'anonymize_ip': {{ 'true' if theme_analytics_anonymize_ip|tobool else 'false' }},
       });
     </script>
 
