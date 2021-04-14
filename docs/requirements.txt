@@ -1,2 +1,2 @@
-sphinx>=3.0
+sphinx>=4.0.dev0
 sphinxcontrib-httpdomain
