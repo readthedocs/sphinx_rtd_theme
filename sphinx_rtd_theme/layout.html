@@ -219,23 +219,13 @@
   {%- if not READTHEDOCS %}
     {%- if theme_analytics_id %}
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
     <script>
-      (function () {
-        // New Google Site Tag (gtag.js) tagging/analytics framework
-        // https://developers.google.com/gtagjs
-        var script = document.createElement("script");
-        script.src = "https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}";
-        script.type = "text/javascript";
-        script.async = true;
-        document.getElementsByTagName("head")[0].appendChild(script);
-      }())
-
-      window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', '{{ theme_analytics_id }}', {
-	      'anonymize_ip': {{ 'true' if theme_analytics_anonymize_ip|tobool else 'false' }},
+          'anonymize_ip': {{ 'true' if theme_analytics_anonymize_ip|tobool else 'false' }},
       });
     </script>
 
