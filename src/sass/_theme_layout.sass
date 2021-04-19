@@ -289,32 +289,29 @@ body
 .wy-nav-top
   display: none
   margin-left: $nav-desktop-width
-  background: $link-color
+  background: $nav-search-background-color
   color: $white
-  padding: ($gutter / 4) ($gutter / 2)
+  position: fixed
+  top: 0
   width: 100%
-  max-width: $nav-content-width
-  position: relative
-  line-height: 50px
+  max-width: 800px;
+  height: $nav-header-height
+  line-height: $nav-header-height
   text-align: center
   font-size: 100%
+  transition: top 0.4s
   +clearfix
   a
     color: $white
     font-weight: bold
     +font-smooth
-  img
-    margin-right: $base-line-height / 2
-    height: 45px
-    width: 45px
-    background-color: $menu-logo-color
-    padding: 5px
-    border-radius: 100%
   i
     font-size: 30px
     float: left
     cursor: pointer
     padding-top: inherit
+    padding-left: $gutter / 4
+    line-height: $nav-header-height
 
 .wy-nav-content
   margin-left: $nav-desktop-width
@@ -385,6 +382,7 @@ footer
     &.shift
       margin-left: $nav-desktop-width
   .wy-nav-content
+    margin-top: $nav-header-height
     margin-left: 0px
     &.shift
       margin-left: $nav-desktop-width

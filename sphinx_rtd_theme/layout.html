@@ -115,7 +115,7 @@
   {%- block extrabody %} {% endblock %}
   {#- MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
   <header>
-    <nav data-toggle="wy-nav-shift" class="wy-nav-top" aria-label="{{ _('Top') }}"  {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
+    <nav id="navbar" data-toggle="wy-nav-shift" class="wy-nav-top" aria-label="{{ _('Top') }}"  {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
       {%- block mobile_nav %}
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
         <a href="{{ pathto(master_doc) }}">{{ project }}</a>
