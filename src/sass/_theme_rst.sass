@@ -281,13 +281,16 @@
     dl.footnote,
     dl.field-list
       display: grid
-      grid-template-columns: max-content auto
+      grid-template-columns: fit-content(20%) auto
+      gap: ($base-line-height / 2) $base-line-height
+      padding-left: 1rem
       > dt
-        padding-left: 1rem
         &:after
           content: ":"
       > dt, > dd
-        margin-bottom: 0rem
+        margin: 0
+      > dd > p:last-child
+        margin-bottom: 0
     dl.footnote
       font-size: 0.9rem
       > dt
