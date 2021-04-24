@@ -6,6 +6,7 @@ python:
     - requirements: docs/requirements.txt
     - method: pip
       path: .
+    - requirements: docs/docutils-test.txt
 
 sphinx:
   configuration: docs/conf.py

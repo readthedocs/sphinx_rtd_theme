@@ -1,3 +1,2 @@
 sphinx>=4.0.dev0
-docutils==0.17
 sphinxcontrib-httpdomain
