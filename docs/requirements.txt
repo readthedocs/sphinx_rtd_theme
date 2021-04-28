@@ -1,3 +1,4 @@
-sphinx>=4.0.dev0
+# sphinx>=4.0.dev0
+https://github.com/astrojuanlu/sphinx/archive/refs/heads/unpin-docutils.zip
 docutils==0.17
 sphinxcontrib-httpdomain
