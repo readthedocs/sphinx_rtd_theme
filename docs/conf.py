@@ -28,7 +28,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
-    'sphinx_rtd_theme',
+    # 'sphinx_rtd_theme',
 ]
 
 templates_path = ['_templates']
@@ -46,11 +46,11 @@ intersphinx_mapping = {
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 
-html_theme = 'sphinx_rtd_theme'
-html_theme_options = {
-    'logo_only': True,
-    'navigation_depth': 5,
-}
+html_theme = 'alabaster'
+# html_theme_options = {
+#     'logo_only': True,
+#     'navigation_depth': 5,
+# }
 html_context = {}
 
 if not 'READTHEDOCS' in os.environ:
