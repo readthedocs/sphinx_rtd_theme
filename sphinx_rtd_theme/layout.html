@@ -57,12 +57,12 @@
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
     {%- if sphinx_version >= "1.8.0" -%}
-      <script type="text/javascript" id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+      <script id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
       {%- for scriptfile in script_files %}
         {{ js_tag(scriptfile) }}
       {%- endfor %}
     {%- else %}
-      <script type="text/javascript">
+      <script>
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'{{ url_root }}',
               VERSION:'{{ release|e }}',
@@ -74,10 +74,10 @@
           };
       </script>
       {%- for scriptfile in script_files %}
-        <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+        <script src="{{ pathto(scriptfile, 1) }}"></script>
       {%- endfor %}
     {%- endif %}
-    <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+    <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
     {#- OPENSEARCH #}
     {%- if use_opensearch %}
@@ -209,7 +209,7 @@
   </div>
   {% include "versions.html" -%}
 
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable({{ 'true' if theme_sticky_navigation|tobool else 'false' }});
       });
