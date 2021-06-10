@@ -209,6 +209,10 @@
     &:hover .headerlink:after
       visibility: visible
 
+  // override the Wyrm accessibility anti-pattern of hiding button focus
+  .btn:focus
+    outline: 2px solid
+
   table > caption .headerlink:after
     font-size: 12px
 
