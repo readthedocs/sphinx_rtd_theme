@@ -20,7 +20,7 @@
   {%- endblock -%}
 
   {#- CSS #}
-  {%- if (sphinx_version <= "4.0.0") -%}
+  {%- if (sphinx_version < "4.0.0") -%}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
   {%- endif %}
@@ -59,7 +59,7 @@
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
     {%- if sphinx_version >= "1.8.0" -%}
-      {%- if sphinx_version <= "4.0.0" -%}
+      {%- if sphinx_version < "4.0.0" -%}
       <script type="text/javascript" id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
       {%- endif -%}
       {%- for scriptfile in script_files %}
