@@ -16,39 +16,38 @@ Docs. This is for local testing purposes only.
         v: latest
         <span class="fa fa-caret-down"></span>
       </button>
-      <div class="rst-other-versions" id="docs_versions">
-        <dl>
-          <dt>{{ _('Versions') }}</dt>
+      <div class="rst-other-versions">
+        <h3 class="label" id="version-versions">{{ _('Versions') }}</h3>
+        <ul aria-labeledby="version-versions">
           {%- if test_versions %}
             {%- for version in test_versions %}
-            <dd><a href="#">{{ version }}</a></dd>
+            <li><a href="#">{{ version }}</a></li>
             {%- endfor %}
           {%- else %}
-            <dd><a href="#">latest</a></dd>
-            <dd><a href="#">1.0</a></dd>
-            <dd><a href="#">1.1</a></dd>
+            <li><a href="#">latest</a></li>
+            <li><a href="#">1.0</a></li>
+            <li><a href="#">1.1</a></li>
           {%- endif %}
-        </dl>
-        <dl>
-          <dt>{{ _('Downloads') }}</dt>
-          <dd><a href="#">PDF</a></dd>
-          <dd><a href="#">ePub</a></dd>
-          <dd><a href="#">HTML</a></dd>
-        </dl>
-        <dl>
-          {#- Translators: The phrase "Read the Docs" is not translated #}
-          <dt>{{ _('On Read the Docs') }}</dt>
-            <dd>
-              <a href="#">{{ _('Project Home') }}</a>
-            </dd>
-            <dd>
-              <a href="#">{{ _('Builds') }}</a>
-            </dd>
-        </dl>
-        <dl>
-          <dt>Debug</dt>
-          <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>
-        </dl>
+        </ul>
+
+        <h3 class="label" id="version-downloads">{{ _('Downloads') }}</h3>
+        <ul aria-labeledby="version-downloads">
+          <li><a href="#">PDF</a></li>
+          <li><a href="#">ePub</a></li>
+          <li><a href="#">HTML</a></li>
+        </ul>
+
+        {#- Translators: The phrase "Read the Docs" is not translated #}
+        <h3 class="label" id="version-rtd-proj">{{ _('On Read the Docs') }}</h3>
+        <ul aria-labeledby="version-rtd-proj">
+          <li><a href="#">{{ _('Project Home') }}</a></li>
+          <li><a href="#">{{ _('Builds') }}</a></li>
+        </ul>
+
+        <h3 class="label" id="version-debug">Debug</h3>
+        <ul aria-labeledby="version-debug">
+          <li><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></li>
+        </ul>
       </div>
     </div>
   {%- endif %}
