@@ -55,4 +55,7 @@ def setup(app):
         app.add_message_catalog('sphinx', rtd_locale_path)
         app.connect('config-inited', config_initiated)
 
+    # sphinx emits the permalink icon for headers, so choose one more in keeping with our theme
+    app.config.html_permalinks_icon = "🔗"
+
     return {'parallel_read_safe': True, 'parallel_write_safe': True}
