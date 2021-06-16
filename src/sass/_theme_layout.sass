@@ -64,7 +64,7 @@ html
       padding-left: 0
       padding-right: 0
     // Expand links
-    span.toctree-expand
+    button.toctree-expand
       display: block
       float: left
       margin-left: -1.2em
@@ -72,6 +72,9 @@ html
       @extend .fa-plus-square-o
       line-height: 18px
       color: darken($menu-link-medium, 20%)
+      border: none
+      background: none
+      padding: 0
 
   // On state for the first level
   li.on a, li.current > a
@@ -85,9 +88,9 @@ html
     +font-smooth
     &:hover
       background: $menu-vertical-background-color
-      span.toctree-expand
+      button.toctree-expand
         color: $menu-link-medium
-    span.toctree-expand
+    button.toctree-expand
       @extend .fa
       @extend .fa-minus-square-o
       display: block
@@ -134,7 +137,7 @@ html
             @extend %display_current_toctree_element
             padding: ($gutter / 4) ($gutter * ($toc_level + 0.5))
             padding-right: $gutter
-        a:hover span.toctree-expand
+        a:hover button.toctree-expand
           @extend %toctree_hover_link_color
     @if $toc_level > 2 and $toc_level < 5
       li.toctree-l#{$toc_level}
@@ -146,7 +149,7 @@ html
         background: darken($menu-vertical-background-color, 20%)
       li.toctree-l3 > a
         background: darken($menu-vertical-background-color, 20%)
-    span.toctree-expand
+    button.toctree-expand
       color: darken($menu-vertical-background-color, 35%)
   li.toctree-l3
     &.current
@@ -154,7 +157,7 @@ html
         background: darken($menu-vertical-background-color, 25%)
       li.toctree-l4 > a
         background: darken($menu-vertical-background-color, 25%)
-    span.toctree-expand
+    button.toctree-expand
       color: darken($menu-vertical-background-color, 40%)
 
   li.current ul
@@ -176,13 +179,13 @@ html
     &:hover
       background-color: lighten($menu-background-color, 10%)
       cursor: pointer
-      span.toctree-expand
+      button.toctree-expand
         color: $menu-link-light
     &:active
       background-color: $menu-logo-color
       cursor: pointer
       color: $menu-link-active
-      span.toctree-expand
+      button.toctree-expand
         color: $menu-link-active
 
 .wy-side-nav-search
