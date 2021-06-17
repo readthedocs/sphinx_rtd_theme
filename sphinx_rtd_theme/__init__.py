@@ -57,8 +57,8 @@ def setup(app):
 
     # sphinx emits the permalink icon for headers, so choose one more in keeping with our theme
     if sphinx_version >= (3, 5, 0):
-        app.config.html_permalinks_icon = "🔗"
+        app.config.html_permalinks_icon = "\uf0c1"
     else:
-        app.config.html_add_permalinks = "🔗"
+        app.config.html_add_permalinks = "\uf0c1"
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}
