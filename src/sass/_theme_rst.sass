@@ -200,14 +200,15 @@
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
   h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption, .code-block-caption
     .headerlink
-      visibility: hidden
+      opacity: 0
       font-size: 14px
+      font-family: FontAwesome
+      margin-left: 0.5em
       @extend .fa
-      &:after
-        content: "\f0c1"
-        font-family: FontAwesome
-    &:hover .headerlink:after
-      visibility: visible
+      &:focus
+        opacity: 1
+    &:hover .headerlink
+      opacity: 1
 
   // override the Wyrm accessibility anti-pattern of hiding button focus
   .btn:focus
