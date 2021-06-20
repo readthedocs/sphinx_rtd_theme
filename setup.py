@@ -86,71 +86,11 @@ class TransifexCommand(distutils.cmd.Command):
 
 
 setup(
-    name='sphinx_rtd_theme',
     version='0.5.2',
-    url='https://github.com/readthedocs/sphinx_rtd_theme',
-    license='MIT',
-    author='Dave Snider, Read the Docs, Inc. & contributors',
-    author_email='dev@readthedocs.org',
-    description='Read the Docs theme for Sphinx',
-    long_description=open('README.rst', encoding='utf-8').read(),
     cmdclass={
         'update_translations': UpdateTranslationsCommand,
         'transifex': TransifexCommand,
         'build_assets': WebpackBuildCommand,
         'watch': WebpackDevelopCommand,
-    },
-    zip_safe=False,
-    packages=['sphinx_rtd_theme'],
-    package_data={'sphinx_rtd_theme': [
-        'theme.conf',
-        '*.html',
-        'static/css/*.css',
-        'static/css/fonts/*.*'
-        'static/js/*.js',
-    ]},
-    include_package_data=True,
-    # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
-    entry_points = {
-        'sphinx.html_themes': [
-            'sphinx_rtd_theme = sphinx_rtd_theme',
-        ]
-    },
-    install_requires=[
-        'sphinx>=1.6',
-        'docutils<0.17', # https://github.com/sphinx-doc/sphinx/issues/9001
-    ],
-    tests_require=[
-        'pytest',
-    ],
-    extras_require={
-        'dev': [
-            'transifex-client',
-            'sphinxcontrib-httpdomain',
-            'bump2version',
-        ],
-    },
-    classifiers=[
-        'Framework :: Sphinx',
-        'Framework :: Sphinx :: Theme',
-        'Development Status :: 5 - Production/Stable',
-        'License :: OSI Approved :: MIT License',
-        'Environment :: Console',
-        'Environment :: Web Environment',
-        'Intended Audience :: Developers',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Operating System :: OS Independent',
-        'Topic :: Documentation',
-        'Topic :: Software Development :: Documentation',
-    ],
-    project_urls={
-        'Homepage': 'https://sphinx-rtd-theme.readthedocs.io/',
-        'Source Code': 'https://github.com/readthedocs/sphinx_rtd_theme',
-        'Issue Tracker': 'https://github.com/readthedocs/sphinx_rtd_theme/issues',
     },
 )
