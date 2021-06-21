@@ -17,7 +17,7 @@ Docs. This is for local testing purposes only.
         <span class="fa fa-caret-down"></span>
       </span>
       <div class="rst-other-versions">
-        <h3 id="versions-versions">{{ _('Versions') }}</h3>
+        <h3 class="label" id="versions-versions">{{ _('Versions') }}</h3>
         <ul aria-labeledby="version-versions">
           {%- if test_versions %}
             {%- for version in test_versions %}
@@ -30,7 +30,7 @@ Docs. This is for local testing purposes only.
           {%- endif %}
         </ul>
 
-        <h3 id="versions-downloads">{{ _('Downloads') }}</h3>
+        <h3 class="label" id="versions-downloads">{{ _('Downloads') }}</h3>
         <ul aria-labeledby="versions-downloads">
           <li><a href="#">PDF</a></li>
           <li><a href="#">ePub</a></li>
@@ -38,13 +38,13 @@ Docs. This is for local testing purposes only.
         </ul>
 
         {#- Translators: The phrase "Read the Docs" is not translated #}
-        <h3 id="versions-rtd-proj">{{ _('On Read the Docs') }}</h3>
+        <h3 class="label" id="versions-rtd-proj">{{ _('On Read the Docs') }}</h3>
         <ul aria-labeledby="versions-rtd-proj">
           <li><a href="#">{{ _('Project Home') }}</a></li>
           <li><a href="#">{{ _('Builds') }}</a></li>
         </ul>
 
-        <h3 id="versions-debug">Debug</h3>
+        <h3 class="label" id="versions-debug">Debug</h3>
         <ul aria-labeledby="versions-debug">
           <li><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></li>
         </ul>
