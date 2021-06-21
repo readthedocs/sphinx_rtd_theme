@@ -7,7 +7,7 @@
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
-      <h3 class="label" id="versions-versions">{{ _('Versions') }}</h3>
+      <h3 class="label" id="version-versions">{{ _('Versions') }}</h3>
       <ul aria-labeledby="version-versions">
         {% for slug, url in versions %}
           <li><a href="{{ url }}">{{ slug }}</a></li>
@@ -21,8 +21,8 @@
         {% endfor %}
       </ul>
 
-      <h3 class="label" id="versions-rtd-proj">{{ _('On Read the Docs') }}</h3>
-      <ul aria-labeledby="versions-rtd-proj">
+      <h3 class="label" id="version-rtd-proj">{{ _('On Read the Docs') }}</h3>
+      <ul aria-labeledby="version-rtd-proj">
         {# Translators: The phrase "Read the Docs" is not translated #}
         <li><a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/?fromdocs={{ slug }}">{{ _('Project Home') }}</a></li>
         <li><a href="//{{ PRODUCTION_DOMAIN }}/builds/{{ slug }}/?fromdocs={{ slug }}">{{ _('Builds') }}</a></li>
