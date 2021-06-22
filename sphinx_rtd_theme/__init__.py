@@ -12,7 +12,7 @@ from sphinx.locale import _
 from sphinx.util.logging import getLogger
 
 
-__version__ = '0.5.1'
+__version__ = '0.5.2'
 __version_full__ = __version__
 
 logger = getLogger(__name__)
@@ -54,5 +54,11 @@ def setup(app):
         rtd_locale_path = path.join(path.abspath(path.dirname(__file__)), 'locale')
         app.add_message_catalog('sphinx', rtd_locale_path)
         app.connect('config-inited', config_initiated)
+
+    # sphinx emits the permalink icon for headers, so choose one more in keeping with our theme
+    if sphinx_version >= (3, 5, 0):
+        app.config.html_permalinks_icon = "\uf0c1"
+    else:
+        app.config.html_add_permalinks = "\uf0c1"
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}

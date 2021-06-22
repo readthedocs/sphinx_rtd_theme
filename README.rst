@@ -33,21 +33,15 @@ This theme is distributed on PyPI_ and can be installed with ``pip``:
 
    $ pip install sphinx-rtd-theme
 
-To use the theme in your Sphinx project, you will need to add the following to
-your ``conf.py`` file:
+To use the theme in your Sphinx project, you will need to edit
+your ``conf.py`` file's ``html_theme`` setting:
 
 .. code:: python
 
-    import sphinx_rtd_theme
-
-    extensions = [
-        ...
-        "sphinx_rtd_theme",
-    ]
-
     html_theme = "sphinx_rtd_theme"
 
-For more information read the full documentation on `installing the theme`_
+For more information, including a full example with localized strings enabled,
+read the documentation on `installing the theme`_.
 
 .. _PyPI: https://pypi.python.org/pypi/sphinx_rtd_theme
 .. _installing the theme: https://sphinx-rtd-theme.readthedocs.io/en/latest/installing.html

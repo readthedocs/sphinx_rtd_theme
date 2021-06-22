@@ -56,7 +56,7 @@
   pre.literal-block
     white-space: pre
     margin: 0
-    padding: $base-line-height / 2 $base-line-height / 2
+    padding: ($base-line-height / 2) ($base-line-height / 2)
     font-family: $code-font-family
     display: block
     overflow: auto
@@ -75,21 +75,21 @@
   .linenodiv pre
     border-right: solid 1px lighten($table-border-color, 2%)
     margin: 0
-    padding: $base-line-height / 2 $base-line-height / 2
+    padding: ($base-line-height / 2) ($base-line-height / 2)
     font-family: $code-font-family
     user-select: none
     pointer-events: none
   div[class^='highlight'] pre
     white-space: pre
     margin: 0
-    padding: $base-line-height / 2 $base-line-height / 2
+    padding: ($base-line-height / 2) ($base-line-height / 2)
     display: block
     overflow: auto
     & .hll
       // Line emphasis spans full width
       display: block
-      margin: 0 -1 * $base-line-height / 2
-      padding: 0 $base-line-height / 2
+      margin: 0 (-1 * $base-line-height / 2)
+      padding: 0 ($base-line-height / 2)
   pre.literal-block, div[class^='highlight'] pre, .linenodiv pre
     font-family: $code-font-family
     font-size: 12px
@@ -135,10 +135,10 @@
     @extend .wy-alert.wy-alert-warning
   // Some people put tables in notes. Let's give them very basic support.
   .admonition table
-    border-color: rgba(0,0,0,.1)
+    border-color: rgba(0, 0, 0, 0.1)
     td, th
       background: transparent !important
-      border-color: rgba(0,0,0,.1) !important
+      border-color: rgba(0, 0, 0, 0.1) !important
   .section ul, .toctree-wrapper ul
     @extend .wy-plain-list-disc
   .section ol.loweralpha, .section ol.loweralpha > li
@@ -200,14 +200,19 @@
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
   h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption, .code-block-caption
     .headerlink
-      visibility: hidden
+      opacity: 0
       font-size: 14px
+      font-family: FontAwesome
+      margin-left: 0.5em
       @extend .fa
-      &:after
-        content: "\f0c1"
-        font-family: FontAwesome
-    &:hover .headerlink:after
-      visibility: visible
+      &:focus
+        opacity: 1
+    &:hover .headerlink
+      opacity: 1
+
+  // override the Wyrm accessibility anti-pattern of hiding button focus
+  .btn:focus
+    outline: 2px solid
 
   table > caption .headerlink:after
     font-size: 12px
@@ -234,14 +239,14 @@
       font-family: $custom-font-family
       font-weight: bold
       background: $table-border-color
-      padding: $base-line-height / 4 $base-line-height / 2
+      padding: ($base-line-height / 4) ($base-line-height / 2)
       margin: -$base-line-height
       margin-bottom: $base-line-height
       font-size: 100%
   // Sphinx can highlight searched text with ?highlighted=searchterm
   .highlighted
     background: $highlight-color
-    box-shadow: 0 0 0 $base-line-height / 12 $highlight-color
+    box-shadow: 0 0 0 ($base-line-height / 12) $highlight-color
     display: inline
     font-weight: bold
 
@@ -289,14 +294,14 @@
       > dt, > dd
         margin-bottom: 0rem
     dl.footnote
-      font-size: .9rem
+      font-size: 0.9rem
       > dt
-        margin: 0rem .5rem .5rem 0rem
+        margin: 0rem 0.5rem 0.5rem 0rem
         line-height: 1.2rem
         word-break: break-all
         font-weight: normal
         > span.brackets
-          margin-right: .5rem
+          margin-right: 0.5rem
           &:before
             content: "["
           &:after
@@ -304,13 +309,13 @@
         > span.fn-backref
           font-style: italic
       > dd
-        margin: 0rem 0rem .5rem 0rem
+        margin: 0rem 0rem 0.5rem 0rem
         line-height: 1.2rem
         p
-          font-size: .9rem
+          font-size: 0.9rem
     dl.option-list
       kbd
-        font-size: .9rem
+        font-size: 0.9rem
   // Both
   html.writer-html4 & table.docutils.citation, table.docutils.footnote,
   html.writer-html5 & dl.footnote
@@ -340,7 +345,7 @@
       th > p, td > p
         line-height: 1rem
         margin-bottom: 0rem
-        font-size: .9rem
+        font-size: 0.9rem
     &:not(.field-list)
       @extend .wy-table-striped
     // Remove bottom margin for the last element (and it's last child)
@@ -395,14 +400,14 @@
       margin-bottom: $base-line-height / 2
     // rST seems to want dds to be treated as the browser would, indented.
     dd
-      margin: 0  0 $base-line-height / 2 $base-line-height
+      margin: 0 0 ($base-line-height / 2) $base-line-height
       line-height: $base-line-height
   html.writer-html4 & dl:not(.docutils),
   html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
     margin-bottom: $base-line-height
     > dt
       display: table
-      margin: $base-line-height / 4 0
+      margin: ($base-line-height / 4) 0
       font-size: 90%
       line-height: normal
       background: lighten($class-color, 50%)
@@ -420,8 +425,8 @@
     dl:not(.field-list) > dt
       margin-bottom: $base-line-height / 4
       border: none
-      border-left: solid 3px hsl(0,0%,80%)
-      background: hsl(0,0%,94%)
+      border-left: solid 3px hsl(0, 0%, 80%)
+      background: hsl(0, 0%, 94%)
       color: $method-color
       .headerlink
         color: $headerlink-color
@@ -481,8 +486,8 @@
     font-size: 80%
     font-weight: 700
     border-radius: $base-line-height / 6
-    padding: $base-line-height / 10 $base-line-height / 4
-    margin: auto $base-line-height / 12
+    padding: ($base-line-height / 10) ($base-line-height / 4)
+    margin: auto ($base-line-height / 12)
   .versionmodified
     font-style: italic
 
