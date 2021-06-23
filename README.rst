@@ -2,14 +2,14 @@
 Read the Docs Sphinx Theme
 **************************
 
-.. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
-   :target: https://pypi.python.org/pypi/sphinx_rtd_theme
+.. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme_citus.svg
+   :target: https://pypi.python.org/pypi/sphinx_rtd_theme_citus
    :alt: Pypi Version
-.. image:: https://circleci.com/gh/readthedocs/sphinx_rtd_theme.svg?style=svg
+.. image:: https://circleci.com/gh/readthedocs/sphinx_rtd_theme_citus.svg?style=svg
    :alt: Build Status
-   :target: https://circleci.com/gh/readthedocs/sphinx_rtd_theme
-.. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
-   :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
+   :target: https://circleci.com/gh/readthedocs/sphinx_rtd_theme_citus
+.. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme_citus.svg
+   :target: https://pypi.python.org/pypi/sphinx_rtd_theme_citus/
    :alt: License
 .. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
   :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
@@ -38,12 +38,12 @@ your ``conf.py`` file's ``html_theme`` setting:
 
 .. code:: python
 
-    html_theme = "sphinx_rtd_theme"
+    html_theme = "sphinx_rtd_theme_citus"
 
 For more information, including a full example with localized strings enabled,
 read the documentation on `installing the theme`_.
 
-.. _PyPI: https://pypi.python.org/pypi/sphinx_rtd_theme
+.. _PyPI: https://pypi.python.org/pypi/sphinx_rtd_theme_citus
 .. _installing the theme: https://sphinx-rtd-theme.readthedocs.io/en/latest/installing.html
 
 Configuration

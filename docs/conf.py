@@ -9,9 +9,9 @@ import re
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('./demo/'))
 
-import sphinx_rtd_theme
-from sphinx_rtd_theme import __version__ as theme_version
-from sphinx_rtd_theme import __version_full__ as theme_version_full
+import sphinx_rtd_theme_citus
+from sphinx_rtd_theme_citus import __version__ as theme_version
+from sphinx_rtd_theme_citus import __version_full__ as theme_version_full
 from sphinx.locale import _
 
 project = u'Read the Docs Sphinx Theme'
@@ -28,7 +28,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
-    'sphinx_rtd_theme',
+    'sphinx_rtd_theme_citus',
 ]
 
 templates_path = ['_templates']
@@ -46,7 +46,7 @@ intersphinx_mapping = {
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_rtd_theme_citus'
 html_theme_options = {
     'logo_only': True,
     'navigation_depth': 5,

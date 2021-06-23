@@ -1,7 +1,7 @@
 {
-  "name": "sphinx_rtd_theme",
+  "name": "sphinx_rtd_theme_citus",
   "main": "js/theme.js",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/readthedocs/sphinx_rtd_theme.git"
+    "url": "https://github.com/readthedocs/sphinx_rtd_theme_citus.git"
   },
   "author": "Read the Docs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/readthedocs/sphinx_rtd_theme/issues"
+    "url": "https://github.com/readthedocs/sphinx_rtd_theme_citus/issues"
   },
-  "homepage": "https://github.com/readthedocs/sphinx_rtd_theme",
+  "homepage": "https://github.com/readthedocs/sphinx_rtd_theme_citus",
   "dependencies": {},
   "devDependencies": {
     "bourbon": "~4.3",

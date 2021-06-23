@@ -1,4 +1,4 @@
-sphinx_rtd_theme/static/fonts/Lato/*
+sphinx_rtd_theme_citus/static/fonts/Lato/*
 
 Copyright (c) 2010-2015, Łukasz Dziedzic (dziedzic@typoland.com),
 with Reserved Font Name Lato.
