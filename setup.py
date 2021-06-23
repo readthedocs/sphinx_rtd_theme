@@ -106,7 +106,7 @@ setup(
         'theme.conf',
         '*.html',
         'static/css/*.css',
-        'static/css/fonts/*.*'
+        'static/css/fonts/*.*',
         'static/js/*.js',
     ]},
     include_package_data=True,
@@ -116,6 +116,7 @@ setup(
             'sphinx_rtd_theme = sphinx_rtd_theme',
         ]
     },
+    python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     install_requires=[
         'sphinx>=1.6',
         'docutils<0.17', # https://github.com/sphinx-doc/sphinx/issues/9001
