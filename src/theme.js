@@ -250,13 +250,13 @@ function ThemeNav () {
     nav.makeMenuFocusable = function() {
         $(".wy-side-nav-search > a").removeAttr("tabindex");
         $("#rtd-search-form > input[type='text']").removeAttr("tabindex");
-        $(".wy-menu a").removeAttr("tabindex");
+        $(".wy-menu a").add($(".wy-menu button")).removeAttr("tabindex");
     }
 
     nav.makeMenuUnfocusable = function() {
         $(".wy-side-nav-search > a").attr("tabindex", -1);
         $("#rtd-search-form > input[type='text']").attr("tabindex", -1);
-        $(".wy-menu a").attr("tabindex", -1);
+        $(".wy-menu a").add($(".wy-menu button")).attr("tabindex", -1);
     }
 
     return nav;
