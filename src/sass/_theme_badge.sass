@@ -1,4 +1,4 @@
-.rst-versions
+.rst-versions, .rtd-versions
   position: fixed
   bottom: 0
   left: 0
@@ -12,7 +12,7 @@
     text-decoration: none
   .rst-badge-small
     display: none
-  .rst-current-version
+  .rst-current-version, .rtd-current-version
     padding: $base-line-height / 2
     background-color: darken($menu-background-color, 5%)
     display: block
@@ -37,9 +37,9 @@
     height: auto
     max-height: 100%
     overflow-y: scroll
-  &.shift-up .rst-other-versions
+  &.shift-up .rst-other-versions, &.shift-up .rtd-version-selector-content
     display: block
-  .rst-other-versions
+  .rst-other-versions, .rtd-version-selector-content
     font-size: 90%
     padding: $base-line-height / 2
     color: $text-medium
@@ -51,14 +51,14 @@
       margin: 20px 0
       padding: 0
       border-top: solid 1px lighten($menu-background-color, 5%)
-    dd
+    dd, li
       display: inline-block
       margin: 0
       a
         display: inline-block
         padding: $base-line-height / 4
         color: $section-background-color
-  &.rst-badge
+  &.rst-badge, &.rtd-version-selector
     width: auto
     bottom: 20px
     right: 20px
@@ -72,13 +72,13 @@
     .fa-book
       float: none
       line-height: 30px
-    &.shift-up .rst-current-version
+    &.shift-up .rst-current-version, &.shift-up .rtd-current-version
       text-align: right
       .fa-book
         float: left
       .icon-book
         float: left
-    > .rst-current-version
+    > .rst-current-version, .rtd-current-version
       width: auto
       height: 30px
       line-height: 30px
@@ -87,7 +87,7 @@
       text-align: center
 
 +media($tablet)
-  .rst-versions
+  .rst-versions, .rtd-version-selector
     width: 85%
     display: none
     &.shift
