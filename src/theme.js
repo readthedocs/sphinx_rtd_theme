@@ -232,6 +232,7 @@ if (typeof(window) != 'undefined') {
         // compatible with a pre-0.3.0 layout.html
         StickyNav: module.exports.ThemeNav,
     };
+    //console.log('HELLO');
 }
 
 

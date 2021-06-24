@@ -15,6 +15,7 @@ module.exports = merge(common, {
   // development.
   devServer: {
     contentBase: "docs/build/html",
+    host: "0.0.0.0",
     port: 1919,
     open: false,
     hot: false,
