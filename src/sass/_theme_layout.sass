@@ -425,14 +425,15 @@ footer
   .wy-nav-content-wrap
     margin-left: 0
     
-*:target > h1,
-*:target > h2,
-*:target > h3,
-*:target > h4,
-*:target > h5,
+.section:target > h1,
+.section:target > h2,
+.section:target > h3,
+.section:target > h4,
+.section:target > h5,
 dt:target
   background: $highlight-color !important
-  -webkit-transition: all 0.5s
+  -webkit-transition: all .8s
+  transition: all .8s
 
 dt:target
   border-color: $yellow !important
