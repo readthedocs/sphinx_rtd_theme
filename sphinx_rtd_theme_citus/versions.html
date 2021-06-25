@@ -1,4 +1,3 @@
-{% if READTHEDOCS %}
 {# Add rst-badge after rst-versions for small badge style. #}
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
     <button class="rst-current-version" aria-expanded="false" aria-controls="docs_versions" data-toggle="rst-current-version">
@@ -9,9 +8,15 @@
     <div class="rst-other-versions">
       <h3 class="label" id="version-versions">{{ _('Versions') }}</h3>
       <ul aria-labeledby="version-versions">
-        {% for slug, url in versions %}
-          <li><a href="{{ url }}">{{ slug }}</a></li>
-        {% endfor %}
+          <li><a href="#">latest</a></li>
+          <li><a href="#">stable</a></li>
+          <li><a href="#">v10.0</a></li>
+          <li><a href="#">v9.5</a></li>
+          <li><a href="#">v9.4</a></li>
+          <li><a href="#">v9.3</a></li>
+          <li><a href="#">v9.2</a></li>
+          <li><a href="#">v9.1</a></li>
+          <li><a href="#">v9.0</a></li>
       </ul>
 
       <h3 class="label" id="version-downloads">{{ _('Downloads') }}</h3>
@@ -29,4 +34,3 @@
       </ul>
     </div>
   </div>
-{% endif %}
