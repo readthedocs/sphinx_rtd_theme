@@ -247,16 +247,20 @@ function ThemeNav () {
         return $("[data-toggle='wy-nav-shift']").css("left") === "0px";
     }
 
+    nav.menuElements = function() {
+        return $(".wy-side-nav-search > a")
+            .add(".rst-versions button")
+            .add(".wy-side-nav-search input")
+            .add(".wy-menu a")
+            .add(".wy-menu button");
+    }
+
     nav.makeMenuFocusable = function() {
-        $(".wy-side-nav-search > a").removeAttr("tabindex");
-        $("#rtd-search-form > input[type='text']").removeAttr("tabindex");
-        $(".wy-menu a").add($(".wy-menu button")).removeAttr("tabindex");
+        this.menuElements().removeAttr("tabindex");
     }
 
     nav.makeMenuUnfocusable = function() {
-        $(".wy-side-nav-search > a").attr("tabindex", -1);
-        $("#rtd-search-form > input[type='text']").attr("tabindex", -1);
-        $(".wy-menu a").add($(".wy-menu button")).attr("tabindex", -1);
+        this.menuElements().attr("tabindex", -1);
     }
 
     return nav;

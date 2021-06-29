@@ -171,6 +171,8 @@
       </div>
     </nav>
 
+    {% include "versions.html" %}
+
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       {#- MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
@@ -205,9 +207,9 @@
         </div>
       {%- endblock %}
       </div>
+
     </section>
   </div>
-  {% include "versions.html" -%}
 
   <script>
       jQuery(function () {
@@ -232,8 +234,6 @@
 
     {%- endif %}
   {%- endif %}
-
-  {%- block footer %} {% endblock %}
 
 </body>
 </html>
