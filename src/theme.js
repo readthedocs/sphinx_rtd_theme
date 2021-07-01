@@ -139,6 +139,9 @@ function ThemeNav () {
             });
             link.prepend(expand);
         });
+
+        // provide better aria landmarks
+        $('.wy-menu p.caption').attr('role', 'heading');
     };
 
     nav.reset = function () {
