@@ -90,7 +90,8 @@ function ThemeNav () {
                 $("[data-toggle='rst-versions']").toggleClass("shift");
 
                 if (self.isDisplayed()) {
-                  self.makeMenuFocusable()
+                  self.makeMenuFocusable();
+                  $('.wy-side-nav-search input').focus();
                 } else {
                   self.makeMenuUnfocusable();
                 }
