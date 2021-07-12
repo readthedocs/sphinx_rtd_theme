@@ -39,6 +39,16 @@ Fixes
 * Respect tab order for prev/next buttons (#1051)
 * Nav: Don't toggle terminal nodes (#1049)
 
+v0.5.2
+======
+
+:Date: April 5, 2021
+
+.. note:: This commit will not be in ``master``, but was branched directly off ``0.5.1`` to minimize issues.
+          The next full release will contain all PR's previously merged.
+
+* Depend on docutils < 0.17 (#1113)
+
 v0.5.1
 ======
 
