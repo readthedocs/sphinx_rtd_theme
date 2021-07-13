@@ -130,9 +130,13 @@ function ThemeNav () {
 
         // Add expand links to all parents of nested ul
         $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {
-            var link = $(this);
-                expand =
-                    $('<button class="toctree-expand" title="Open/close menu"></button>');
+            var link = $(this),
+                expand = $('<button class="toctree-expand"></button>');
+
+            expand
+                .attr('title', "Sub-menu for " + link.text())
+                .attr('aria-expanded','false');
+
             expand.on('click', function (ev) {
                 self.toggleCurrent(link);
                 ev.stopPropagation();
@@ -167,22 +171,15 @@ function ThemeNav () {
             // If we found a matching link then reset current and re-apply
             // otherwise retain the existing match
             if (link.length > 0) {
-                $('.wy-menu-vertical .current')
-                    .removeClass('current')
-                    .attr('aria-expanded','false');
-                link.addClass('current')
-                    .attr('aria-expanded','true');
-                link.closest('li.toctree-l1')
-                    .parent()
-                    .addClass('current')
-                    .attr('aria-expanded','true');
+                $('.wy-menu-vertical .current').removeClass('current');
+                link.addClass('current');
+                link.closest('li.toctree-l1').parent().addClass('current');
                 for (let i = 1; i <= 10; i++) {
-                    link.closest('li.toctree-l' + i)
-                        .addClass('current')
-                        .attr('aria-expanded','true');
+                    link.closest('li.toctree-l' + i).addClass('current');
                 }
                 link[0].scrollIntoView();
             }
+            this.updateAria();
         }
         catch (err) {
             console.log("Error expanding nav for anchor", err);
@@ -224,27 +221,23 @@ function ThemeNav () {
 
     nav.toggleCurrent = function (elem) {
         var parent_li = elem.closest('li');
-        parent_li
-            .siblings('li.current')
-            .removeClass('current')
-            .attr('aria-expanded','false');
-        parent_li
-            .siblings()
-            .find('li.current')
-            .removeClass('current')
-            .attr('aria-expanded','false');
+        parent_li.siblings('li.current').removeClass('current');
+        parent_li.siblings().find('li.current').removeClass('current');
         var children = parent_li.find('> ul li');
         // Don't toggle terminal elements.
         if (children.length) {
-            children
-                .removeClass('current')
-                .attr('aria-expanded','false');
-            parent_li
-                .toggleClass('current')
-                .attr('aria-expanded', function(i, old) {
-                    return old == 'true' ? 'false' : 'true';
-                });
+            children.removeClass('current');
+            parent_li.toggleClass('current');
         }
+        this.updateAria();
+    }
+
+    nav.updateAria = function() {
+        // collapsed until proven expanded
+        $('button.toctree-expand').attr('aria-expanded','false');
+        // mark expanded
+        $('.wy-side-scroll li.current > a > button.toctree-expand')
+            .attr('aria-expanded','true');
     }
 
     nav.isDisplayed = function() {
