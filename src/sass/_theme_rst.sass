@@ -403,6 +403,7 @@
     > dt
       display: table
       margin: ($base-line-height / 4) 0
+      font-family: $code-font-family
       font-size: 90%
       line-height: normal
       background: lighten($class-color, 50%)
@@ -447,6 +448,8 @@
     .property
       display: inline-block
       padding-right: 8px
+    .descname, .descclassname
+      color: $black
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
