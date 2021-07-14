@@ -296,30 +296,28 @@ html
 
 .wy-nav-top
   display: none
-  background: $link-color
+  background: $nav-search-background-color
   color: $white
-  padding: ($gutter / 4) ($gutter / 2)
-  position: relative
-  line-height: 50px
+  position: fixed
+  top: 0
+  width: 100%
+  height: $nav-header-height
+  line-height: $nav-header-height
   text-align: center
   font-size: 100%
+  transition: top 0.4s
   +clearfix
   a
     color: $white
     font-weight: bold
     +font-smooth
-  img
-    margin-right: $base-line-height / 2
-    height: 45px
-    width: 45px
-    background-color: $menu-logo-color
-    padding: 5px
-    border-radius: 100%
   i
     font-size: 30px
     float: left
     cursor: pointer
     padding-top: inherit
+    padding-left: $gutter / 4
+    line-height: $nav-header-height
 
 .wy-nav-content-wrap
   margin-left: $nav-desktop-width
@@ -403,6 +401,7 @@ footer
   .wy-nav-content-wrap
     margin-left: 0
     .wy-nav-content
+      margin-top: $nav-header-height
       padding: $gutter
     &.shift
       position: fixed
