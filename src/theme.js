@@ -146,7 +146,9 @@ function ThemeNav () {
         });
 
         // provide better aria landmarks
-        $('.wy-menu p.caption').attr('role', 'heading');
+        $('.wy-menu p.caption')
+            .attr('role', 'heading')
+            .attr('aria-level', '2');
     };
 
     nav.reset = function () {
