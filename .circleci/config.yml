@@ -23,7 +23,7 @@ commands:
 jobs:
   build:
     docker:
-      - image: 'cimg/node:16.4.0'
+      - image: 'cimg/python:3.9-node'
     steps:
       - run-build: {}
   py27:
