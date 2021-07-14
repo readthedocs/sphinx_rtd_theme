@@ -265,13 +265,8 @@ html
     left: auto
     opacity: 0
 
-.wy-body-for-nav
-  background: $section-background-color
-
-.wy-grid-for-nav
-  position: absolute
-  width: 100%
-  height: 100%
+body
+  background: rgba(0, 0, 0, 0.05)
 
 .wy-nav-side
   position: fixed
@@ -296,9 +291,12 @@ html
 
 .wy-nav-top
   display: none
+  margin-left: $nav-desktop-width
   background: $link-color
   color: $white
   padding: ($gutter / 4) ($gutter / 2)
+  width: 100%
+  max-width: $nav-content-width
   position: relative
   line-height: 50px
   text-align: center
@@ -321,16 +319,14 @@ html
     cursor: pointer
     padding-top: inherit
 
-.wy-nav-content-wrap
+.wy-nav-content
   margin-left: $nav-desktop-width
   background: $section-background-color
-  min-height: 100%
-
-.wy-nav-content
   padding: $gutter ($gutter * 2)
   height: 100%
+  width: 100%
   max-width: $nav-content-width
-  margin: auto
+  min-height: 100%
 
 .wy-body-mask
   position: fixed
@@ -381,46 +377,27 @@ footer
 .genindextable li > ul
   margin-left: $base-line-height
 
-+media($tablet)
-  .wy-body-for-nav
-    background: $section-background-color
+@media(max-width: $nav-media-query)
+  .wy-nav-side
+    display: none
+    &.shift
+      display: block
   .wy-nav-top
     display: block
-  .wy-nav-side
-    @if $nav-desktop-position == left
-      left: -$nav-desktop-width
-    @else
-      right: -$nav-desktop-width
+    margin-left: 0px
     &.shift
-      width: 85%
-      left: 0
-  .wy-side-scroll
-    width: auto
-  .wy-side-nav-search
-    width: auto
-  .wy-menu.wy-menu-vertical
-    width: auto
-  .wy-nav-content-wrap
-    margin-left: 0
-    .wy-nav-content
-      padding: $gutter
-    &.shift
-      position: fixed
-      min-width: 100%
-      left: 85%
-      top: 0
-      height: 100%
-      overflow: hidden
-
-@media screen and (min-width: $nav-media-query)
-  .wy-nav-content-wrap
-    background: rgba(0, 0, 0, 0.05)
+      margin-left: $nav-desktop-width
   .wy-nav-content
-    margin: 0
-    background: $section-background-color
+    margin-left: 0px
+    &.shift
+      margin-left: $nav-desktop-width
+
+@media(max-width: $nav-content-width)
+  .wy-nav-content
+    padding: $gutter
 
 @media print
-  .rst-versions, footer, .wy-nav-side
+  header, footer, .wy-nav-side
     display: none
-  .wy-nav-content-wrap
+  .wy-nav-content
     margin-left: 0

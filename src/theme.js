@@ -134,7 +134,7 @@ function ThemeNav () {
                 // this link was not found in the sidebar.
                 // Find associated id element, then its closest section
                 // in the document and try with that one.
-                var id_elt = $('.document [id="' + anchor.substring(1) + '"]');
+                var id_elt = $('main [id="' + anchor.substring(1) + '"]');
                 var closest_section = id_elt.closest('div.section');
                 link = vmenu.find('[href="#' + closest_section.attr("id") + '"]');
                 if (link.length === 0) {
