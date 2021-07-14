@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  untracked_changes: niteo/check-untracked-changes@1.0.0
+
 commands:
   run-tox:
     description: "Run tox"
@@ -19,6 +22,8 @@ commands:
       - checkout
       - run: npm ci
       - run: npm run build
+      - untracked_changes/check:
+          path: sphinx_rtd_theme/
 
 jobs:
   build:
