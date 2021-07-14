@@ -89,11 +89,19 @@
     font-family: $code-font-family
     font-size: 12px
     line-height: 1.4
-  
+
   // Do not allow selection of code block prompts and line numbers
-  .linenos, .gp 
-    user-select: none
-    pointer-events: none
+  div.highlight
+    span.linenos, .gp
+      user-select: none
+      pointer-events: none
+
+    span.linenos
+     display: inline-block
+     padding-left: 0px
+     padding-right: ($base-line-height / 2)
+     margin-right: ($base-line-height / 2)
+     border-right: 1px solid lighten($table-border-color, 2%)
 
   .code-block-caption
     font-style: italic
