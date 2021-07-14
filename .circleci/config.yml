@@ -13,8 +13,19 @@ commands:
       - checkout
       - run: pip install --user tox
       - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
+  run-build:
+    description: "Build assets"
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build
 
 jobs:
+  build:
+    docker:
+      - image: 'cimg/node:16.4.0'
+    steps:
+      - run-build: {}
   py27:
     docker:
       - image: 'cimg/python:2.7'
@@ -50,6 +61,7 @@ workflows:
   version: 2
   tests:
     jobs:
+      - build
       - py39
       - py38
       - py37
