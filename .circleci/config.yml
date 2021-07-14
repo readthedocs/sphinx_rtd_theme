@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  untracked_changes: niteo/check-untracked-changes@1.0.0
+
 commands:
   run-tox:
     description: "Run tox"
@@ -13,8 +16,21 @@ commands:
       - checkout
       - run: pip install --user tox
       - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
+  run-build:
+    description: "Verify assets were built"
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build
+      - untracked_changes/check:
+          path: sphinx_rtd_theme/
 
 jobs:
+  build:
+    docker:
+      - image: 'cimg/python:3.9-node'
+    steps:
+      - run-build: {}
   py27:
     docker:
       - image: 'cimg/python:2.7'
@@ -50,6 +66,7 @@ workflows:
   version: 2
   tests:
     jobs:
+      - build
       - py39
       - py38
       - py37
