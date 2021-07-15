@@ -9,6 +9,10 @@
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 {%- set sphinx_writer = 'writer-html5' if html5_doctype else 'writer-html4' -%}
 
+{# Build sphinx_version_info tuple from sphinx_version string in pure Jinja #}
+{%- set (_ver_major, _ver_minor, _ver_bugfix) = sphinx_version.split('.') | map('int') -%}
+{%- set sphinx_version_info = (_ver_major, _ver_minor, _ver_bugfix) -%}
+
 <!DOCTYPE html>
 <html class="{{ sphinx_writer }}" lang="{{ lang_attr }}" >
 <head>
@@ -20,7 +24,7 @@
   {%- endblock -%}
 
   {#- CSS #}
-  {%- if sphinx_version_tuple < (4, 0,) -%}
+  {%- if sphinx_version_info < (4, 0) -%}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
   {%- endif %}
@@ -58,8 +62,8 @@
   <![endif]-->
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
-    {%- if sphinx_version_tuple >= (1, 8) -%}
-      {%- if sphinx_version_tuple < (4, 0) -%}
+    {%- if sphinx_version_info >= (1, 8) -%}
+      {%- if sphinx_version_info < (4, 0) -%}
       <script id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
       {%- endif -%}
       {%- for scriptfile in script_files %}

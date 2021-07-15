@@ -31,10 +31,6 @@ def config_initiated(app, config):
             _('The canonical_url option is deprecated, use the html_baseurl option from Sphinx instead.')
         )
 
-def page_context_handler(app, pagename, templatename, context, doctree):
-    """Expose sphinx version to html templates in a more programatic way."""
-    context['sphinx_version_tuple'] = sphinx_version
-
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
     if python_version[0] < 3:
@@ -63,7 +59,5 @@ def setup(app):
         app.config.html_permalinks_icon = "\uf0c1"
     else:
         app.config.html_add_permalinks = "\uf0c1"
-
-    app.connect('html-page-context', page_context_handler)
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}
