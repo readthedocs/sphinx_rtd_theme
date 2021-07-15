@@ -149,6 +149,9 @@ function ThemeNav () {
         $('.wy-menu p.caption')
             .attr('role', 'heading')
             .attr('aria-level', '2');
+
+        // use proper markup in version picker DOM
+        nav.rewriteVersionPicker();
     };
 
     nav.reset = function () {
@@ -260,6 +263,34 @@ function ThemeNav () {
 
     nav.makeMenuUnfocusable = function() {
         this.menuElements().attr("tabindex", -1);
+    }
+
+    /* transform markup that Read The Docs injects after page load */
+    nav.rewriteVersionPicker = function() {
+        var picker = $('.rst-other-versions');
+        var dest = $('<div class="replaced" />');
+        picker.find('dl').each(function () {
+            var dl = $(this),
+                header = $('<h3 class="label" />');
+            header.text(dl.find('dt').text())
+            dest.append(header);
+
+            var dds = dl.find('dd');
+            if (dds.length > 1)
+            {
+                var items = $('<ul />');
+                dds.each(function () {
+                    var dd = $(this),
+                        li = $('<li />');
+                    li.html(dd.html());
+                    items.append(li);
+                });
+                dest.append(items);
+            }
+            else if (dds.length == 1)
+                dest.append(dds[0].innerHTML);
+        });
+        picker.find('.injected').replaceWith(dest);
     }
 
     return nav;
