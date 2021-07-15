@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  untracked_changes: niteo/check-untracked-changes@1.0.0
-
 commands:
   run-tox:
     description: "Run tox"
@@ -17,13 +14,20 @@ commands:
       - run: pip install --user tox
       - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
   run-build:
-    description: "Verify assets were built"
+    description: "Ensure built assets are up toe date"
     steps:
       - checkout
       - run: npm ci
       - run: npm run build
-      - untracked_changes/check:
-          path: sphinx_rtd_theme/
+      - run:
+          name: Ensure built assets are up to date
+          command: |
+            if [[ `git status sphinx_rtd_theme/ --porcelain` ]]
+            then
+              echo "ERROR: assets are out of date. Make sure to run `npm run build` on your branch."
+              git status --porcelain
+              exit 1
+            fi
 
 jobs:
   build:
