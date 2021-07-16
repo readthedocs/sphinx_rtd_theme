@@ -9,5 +9,46 @@ Docs. This is for local testing purposes only.
 #}
 
 {%- block footer %}
-  {% include "versions.html" -%}
+  {%- if not READTHEDOCS %}
+    <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
+      <button class="rst-current-version" aria-expanded="false" aria-controls="docs_versions" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Read the Docs</span>
+        v: latest
+        <span class="fa fa-caret-down"></span>
+      </button>
+      <div class="rst-other-versions" id="docs_versions">
+        <h3 class="label" id="version-versions">{{ _('Versions') }}</h3>
+        <ul aria-labeledby="version-versions">
+          {%- if test_versions %}
+            {%- for version in test_versions %}
+            <li><a href="#">{{ version }}</a></li>
+            {%- endfor %}
+          {%- else %}
+            <li><a href="#">latest</a></li>
+            <li><a href="#">1.0</a></li>
+            <li><a href="#">1.1</a></li>
+          {%- endif %}
+        </ul>
+
+        <h3 class="label" id="version-downloads">{{ _('Downloads') }}</h3>
+        <ul aria-labeledby="version-downloads">
+          <li><a href="#">PDF</a></li>
+          <li><a href="#">ePub</a></li>
+          <li><a href="#">HTML</a></li>
+        </ul>
+
+        {#- Translators: The phrase "Read the Docs" is not translated #}
+        <h3 class="label" id="version-rtd-proj">{{ _('On Read the Docs') }}</h3>
+        <ul aria-labeledby="version-rtd-proj">
+          <li><a href="#">{{ _('Project Home') }}</a></li>
+          <li><a href="#">{{ _('Builds') }}</a></li>
+        </ul>
+
+        <h3 class="label" id="version-debug">Debug</h3>
+        <ul aria-labeledby="version-debug">
+          <li><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></li>
+        </ul>
+      </div>
+    </div>
+  {%- endif %}
 {%- endblock %}

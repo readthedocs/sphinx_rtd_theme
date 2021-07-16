@@ -6,27 +6,29 @@
       v: {{ current_version }}
       <span class="fa fa-caret-down"></span>
     </button>
-    <div class="rst-other-versions" id="docs_version">
-      <h3 class="label" id="version-versions">{{ _('Versions') }}</h3>
-      <ul aria-labeledby="version-versions">
+    <div class="rst-other-versions" id="docs_versions">
+      <dl>
+        <dt>{{ _('Versions') }}</dt>
         {% for slug, url in versions %}
-          <li><a href="{{ url }}">{{ slug }}</a></li>
+          <dd><a href="{{ url }}">{{ slug }}</a></dd>
         {% endfor %}
-      </ul>
-
-      <h3 class="label" id="version-downloads">{{ _('Downloads') }}</h3>
-      <ul aria-labeledby="version-downloads">
+      </dl>
+      <dl>
+        <dt>{{ _('Downloads') }}</dt>
         {% for type, url in downloads %}
-          <li><a href="{{ url }}">{{ type }}</a></li>
+          <dd><a href="{{ url }}">{{ type }}</a></dd>
         {% endfor %}
-      </ul>
-
-      <h3 class="label" id="version-rtd-proj">{{ _('On Read the Docs') }}</h3>
-      <ul aria-labeledby="version-rtd-proj">
+      </dl>
+      <dl>
         {# Translators: The phrase "Read the Docs" is not translated #}
-        <li><a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/?fromdocs={{ slug }}">{{ _('Project Home') }}</a></li>
-        <li><a href="//{{ PRODUCTION_DOMAIN }}/builds/{{ slug }}/?fromdocs={{ slug }}">{{ _('Builds') }}</a></li>
-      </ul>
+        <dt>{{ _('On Read the Docs') }}</dt>
+          <dd>
+            <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/?fromdocs={{ slug }}">{{ _('Project Home') }}</a>
+          </dd>
+          <dd>
+            <a href="//{{ PRODUCTION_DOMAIN }}/builds/{{ slug }}/?fromdocs={{ slug }}">{{ _('Builds') }}</a>
+          </dd>
+      </dl>
     </div>
   </div>
 {% endif %}
