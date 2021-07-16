@@ -150,8 +150,28 @@ function ThemeNav () {
             .attr('role', 'heading')
             .attr('aria-level', '2');
 
-        // use proper markup in version picker DOM
-        nav.rewriteVersionPicker();
+		// wait for RTD to mess with our page, then get the
+		// last word to change the version picker for accessibility
+		var Mut = window.MutationObserver
+			|| window.WebKitMutationObserver;
+		var observer = new Mut(function(mutations, observer) {
+			if ($('.rst-other-versions .injected').length > 0)
+			{
+				observer.disconnect();
+				console.log("Rewriting version picker for accessibility");
+				nav.rewriteVersionPicker();
+			}
+		});
+		var picker = $('.rst-other-versions');
+		if (picker.length > 0)
+		{
+			observer.observe(picker[0], {
+				subtree: true,
+				childList: true
+			});
+		}
+		else
+			console.log("No version picker to rewrite");
     };
 
     nav.reset = function () {
