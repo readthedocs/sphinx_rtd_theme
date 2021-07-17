@@ -71,8 +71,13 @@ workflows:
   tests:
     jobs:
       - build
-      - py39
-      - py38
-      - py37
-      - py36
-      - py27
+      - py39:
+          requires: build
+      - py38:
+          requires: build
+      - py37:
+          requires: build
+      - py36:
+          requires: build
+      - py27:
+          requires: build
