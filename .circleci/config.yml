@@ -14,7 +14,7 @@ commands:
       - run: pip install --user tox
       - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
   run-build:
-    description: "Ensure built assets are up toe date"
+    description: "Ensure built assets are up to date"
     steps:
       - checkout
       - run: npm ci
