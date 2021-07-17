@@ -72,12 +72,17 @@ workflows:
     jobs:
       - build
       - py39:
-          requires: build
+          requires:
+            - build
       - py38:
-          requires: build
+          requires:
+            - build
       - py37:
-          requires: build
+          requires:
+            - build
       - py36:
-          requires: build
+          requires:
+            - build
       - py27:
-          requires: build
+          requires:
+            - build
