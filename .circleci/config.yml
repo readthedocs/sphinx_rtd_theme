@@ -13,8 +13,28 @@ commands:
       - checkout
       - run: pip install --user tox
       - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
+  run-build:
+    description: "Ensure built assets are up to date"
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build
+      - run:
+          name: Ensure built assets are up to date
+          command: |
+            if [[ `git status sphinx_rtd_theme/ --porcelain` ]]
+            then
+              echo "ERROR: assets are out of date. Make sure to run 'npm run build' on your branch."
+              git status sphinx_rtd_theme/ --porcelain
+              exit 1
+            fi
 
 jobs:
+  build:
+    docker:
+      - image: 'cimg/python:3.9-node'
+    steps:
+      - run-build: {}
   py27:
     docker:
       - image: 'cimg/python:2.7'
@@ -50,8 +70,19 @@ workflows:
   version: 2
   tests:
     jobs:
-      - py39
-      - py38
-      - py37
-      - py36
-      - py27
+      - build
+      - py39:
+          requires:
+            - build
+      - py38:
+          requires:
+            - build
+      - py37:
+          requires:
+            - build
+      - py36:
+          requires:
+            - build
+      - py27:
+          requires:
+            - build
