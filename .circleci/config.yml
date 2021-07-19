@@ -25,7 +25,7 @@ commands:
             if [[ `git status sphinx_rtd_theme/ --porcelain` ]]
             then
               echo "ERROR: assets are out of date. Make sure to run 'npm run build' on your branch."
-              git status --porcelain
+              git status sphinx_rtd_theme/ --porcelain
               exit 1
             fi
 
