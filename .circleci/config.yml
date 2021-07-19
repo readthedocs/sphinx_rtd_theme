@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  untracked_changes: niteo/check-untracked-changes@1.0.0
-
 commands:
   run-tox:
     description: "Run tox"
