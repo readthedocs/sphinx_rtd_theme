@@ -31,7 +31,6 @@ def config_initiated(app, config):
             _('The canonical_url option is deprecated, use the html_baseurl option from Sphinx instead.')
         )
 
-
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
     if python_version[0] < 3:
