@@ -62,6 +62,89 @@ can be used to test built assets:
 .. _Wyrm: http://www.github.com/snide/wyrm/
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
 
+Testing
+=======
+
+QA testing theme changes and pull requests is complex, due to backwards
+compatibility.
+
+The following cases need to be tested with changes to CSS or JavaScript:
+
+* Multiple, modern browsers should be tested. We officially support back
+  to IE11 at the moment
+* Multiple viewport sizes should be tested for changes. We support large,
+  tablet, and mobile viewport sizes
+* We currently support both the Sphinx HTML4 writer and HTML5 writer. This makes
+  for some complex CSS selectors
+* Multiple major versions of Sphinx should be tested. We currently support back
+  to Sphinx version ``1.x``
+
+It's easiest to test combinations of dependency versions using ``tox``:
+
+.. code:: console
+
+    % tox -e py3-sphinx34-html4
+
+If the tests and build are successful, you can view the built documentation at
+the directory noted by Sphinx:
+
+.. code:: console
+
+    build succeeded, 10 warnings.
+
+    The HTML pages are in .tox/py3-sphinx34-html4/tmp/html.
+    ___________________________ summary ___________________________
+      py3-sphinx34-html4: commands succeeded
+      congratulations :)
+
+You can then open up this path with a series of browsers to test.
+
+The best way to spot UI issues is to compare two or more builds. You can build
+multiple ``tox`` environments, and open both up for comparison:
+
+.. code:: console
+
+    % tox -e py3-sphinx34-html4
+    ...
+    % tox -e py3-sphinx34-html5
+    ...
+    % firefox .tox/py3-sphinx34-html4/tmp/html/index.html
+    % firefox .tox/py3-sphinx34-html5/tmp/html/index.html
+
+You can also use a separate ``tox`` environment for building output to compare
+against. All of the ``tox`` environments have an additional postfix, ``-qa``, to
+allow building the same environment twice, without overwriting any files. In
+this test scenario, you would build from a branch or tag before building the
+same ``tox`` environment for the pull request branch you are testing.
+
+For example, to test against the tag ``0.5.2``:
+
+.. code:: console
+
+    % git checkout 0.5.2
+    % tox -e py3-sphinx34-html4-qa
+    ...
+    % git checkout feature/example-pull-request
+    % tox -e py3-sphinx34-html4
+    ...
+    % firefox .tox/py3-sphinx34-html4-qa/tmp/html/index.html
+    % firefox .tox/py3-sphinx34-html4/tmp/html/index.html
+
+Currently, the most important environments to QA are:
+
+.. This list is purposely shorter than what we describe above. If we test all of
+   the cases above, we'll be here all day. Python 3, HTML4/5 writer, and latest
+   minor of each major Sphinx release should give us enough work.
+
+* ``py3-sphinx18-html4``
+* ``py3-sphinx18-html5``
+* ``py3-sphinx24-html4``
+* ``py3-sphinx24-html5``
+* ``py3-sphinx35-html4``
+* ``py3-sphinx35-html5``
+* ``py3-sphinx41-html4``
+* ``py3-sphinx41-html5``
+
 Translations
 ============
 
