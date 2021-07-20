@@ -30,3 +30,9 @@
     :caption: This is an incredibly long caption for a long menu
 
     demo/long
+    
+.. toctree::
+    :maxdepth: 3
+    :caption: Breadcrumbs
+
+    demo/level1/index.rst
