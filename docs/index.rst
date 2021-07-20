@@ -7,6 +7,7 @@
    installing
    configuring
    contributing
+   githubpages
 
 .. toctree::
    :maxdepth: 1
