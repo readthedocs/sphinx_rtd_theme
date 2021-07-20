@@ -5,6 +5,8 @@ From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
 """
 
 from os import path
+import pkg_resources
+
 from sys import version_info as python_version
 
 from sphinx import version_info as sphinx_version
@@ -33,9 +35,18 @@ def config_initiated(app, config):
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
+    app.require_sphinx('1.6')
+    
+    # Warn if a prerelease version of the theme is used
+    parsed_version = pkg_resources.parse_version(__version__)
+    if parsed_version.is_prerelease:
+        logger.warning(_('You are using a pre-release version (%s) of sphinx-rtd-theme.'), __version__)
+        logger.warning(_('Use a stable release if you encounter problems.'))
+        logger.warning(_('See <https://sphinx-rtd-theme.readthedocs.io/en/stable/installing.html>.'))
+    
     if python_version[0] < 3:
         logger.warning("Python 2 is deprecated with sphinx_rtd_theme, update to Python 3")
-    app.require_sphinx('1.6')
+
     if sphinx_version <= (2, 0, 0):
         logger.warning("Sphinx 1.x is deprecated with sphinx_rtd_theme, update to Sphinx 2.x or greater")
         if not app.config.html_experimental_html5_writer:
