@@ -36,10 +36,6 @@
     {%- endif %}
   {%- endfor %}
 
-  {%- for cssfile in extra_css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {%- endfor -%}
-
   {#- FAVICON #}
   {%- if favicon %}
     {%- if sphinx_version_info < (4, 0) -%}
