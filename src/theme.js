@@ -36,7 +36,7 @@ function ThemeNav () {
             self.init($);
 
             self.reset();
-            self.win.on('hashchange', self.reset);
+            self.win.on('hashchange', function() { self.reset(); });
 
             if (withStickyNav) {
                 // Set scroll monitor
