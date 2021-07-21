@@ -1,17 +1,4 @@
-{#
-    basic/searchbox.html
-    ~~~~~~~~~~~~~~~~~~~~
-
-    Sphinx sidebar template: quick search box.
-
-    :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
-    :license: BSD, see https://github.com/sphinx-doc/sphinx/blob/master/LICENSE for details.
-
-    .. note::
-
-       This file is the same, except the "Go" button was removed and the label is an aria-label.
-#}
-{%- if pagename != "search" and builder != "singlehtml" %}
+{%- if builder != "singlehtml" %}
 <div id="searchbox" role="search">
   <div class="searchformwrapper">
     <form class="search" action="{{ pathto('search') }}" method="get">
