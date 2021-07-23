@@ -49,6 +49,14 @@ Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into you
 Compatibility
 =============
 
+Python
+------
+
+``sphinx_rtd_theme`` requires Python 2.7 or Python 3.4 or greater.
+
+Sphinx
+------
+
 ``sphinx_rtd_theme`` depends on at least Sphinx 1.6 although,
 we recommend at least Sphinx 2 to take advantage of the html5 writer.
 The html4 writer is still supported however,
