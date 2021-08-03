@@ -77,7 +77,7 @@ The following cases need to be tested with changes to CSS or JavaScript:
 * We currently support both the Sphinx HTML4 writer and HTML5 writer. This makes
   for some complex CSS selectors
 * Multiple major versions of Sphinx should be tested. We currently support back
-  to Sphinx version ``1.x``
+  to Sphinx version ``1.6``
 
 It's easiest to test combinations of dependency versions using ``tox``:
 
