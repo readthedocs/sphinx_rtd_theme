@@ -321,6 +321,18 @@ html
     cursor: pointer
     padding-top: inherit
 
+.wy-close-top
+  display: none
+  margin: 0 0 0 -($base-line-height / 2)
+  text-align: right
+  i
+    font-size: 25px
+    line-height: 1
+    padding: 0 20px
+    cursor: pointer
+    &:hover
+      color: #fff
+
 .wy-nav-content-wrap
   margin-left: $nav-desktop-width
   background: $section-background-color
@@ -384,7 +396,7 @@ footer
 +media($tablet)
   .wy-body-for-nav
     background: $section-background-color
-  .wy-nav-top
+  .wy-nav-top, .wy-close-top
     display: block
   .wy-nav-side
     @if $nav-desktop-position == left
@@ -392,7 +404,7 @@ footer
     @else
       right: -$nav-desktop-width
     &.shift
-      width: 85%
+      width: 100%
       left: 0
   .wy-side-scroll
     width: auto

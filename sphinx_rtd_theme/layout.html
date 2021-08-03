@@ -170,6 +170,12 @@
 
         {%- block navigation %}
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="{{ _('Main') }}">
+          
+          {#- MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+          <div class="wy-close-top">
+            <i data-toggle="wy-nav-top" class="fa fa-close"></i>
+          </div>
+
           {%- block menu %}
             {%- set toctree = toctree(maxdepth=theme_navigation_depth|int,
                                       collapse=theme_collapse_navigation|tobool,
