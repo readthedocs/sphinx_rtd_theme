@@ -173,7 +173,7 @@
           
           {#- MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
           <div class="wy-close-top">
-              <i span aria-label="Close" data-toggle="wy-nav-top" class="fa fa-close"></i>
+              <i aria-label="Close side navigation" data-toggle="wy-nav-top" class="fa fa-close"></i>
           </div>
 
           {%- block menu %}
@@ -198,7 +198,7 @@
       {#- MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" aria-label="{{ _('Top') }}" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
         {%- block mobile_nav %}
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <i aria-label="Open side navigation" data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="{{ pathto(master_doc) }}">{{ project }}</a>
         {%- endblock %}
       </nav>
