@@ -42,7 +42,11 @@
 
   {#- FAVICON #}
   {%- if favicon %}
+    {%- if sphinx_version_info < (4, 0) -%}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- else %}
+    <link rel="shortcut icon" href="{{ favicon_url }}"/>
+    {%- endif %}
   {%- endif -%}
 
   {#- CANONICAL URL (deprecated) #}
@@ -139,7 +143,11 @@
             {#- Not strictly valid HTML, but it's the only way to display/scale
                 it properly, without weird scripting or heaps of work
             #}
+            {%- if sphinx_version_info < (4, 0) -%}
             <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ _('Logo') }}"/>
+            {%- else %}
+            <img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
+            {%- endif %}
           {%- endif %}
           </a>
 
