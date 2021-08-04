@@ -170,6 +170,12 @@
 
         {%- block navigation %}
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="{{ _('Main') }}">
+          
+          {#- MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+          <div class="wy-close-top">
+              <i aria-label="{{ _('Close side navigation') }}" data-toggle="wy-nav-top" class="fa fa-close"></i>
+          </div>
+
           {%- block menu %}
             {%- set toctree = toctree(maxdepth=theme_navigation_depth|int,
                                       collapse=theme_collapse_navigation|tobool,
@@ -192,7 +198,7 @@
       {#- MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" aria-label="{{ _('Top') }}" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
         {%- block mobile_nav %}
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <i aria-label="{{ _('Open side navigation') }}" data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="{{ pathto(master_doc) }}">{{ project }}</a>
         {%- endblock %}
       </nav>
