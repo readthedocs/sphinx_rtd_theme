@@ -278,6 +278,7 @@
     dl dt span.classifier
       &:before
         content: " : "
+    dl.citation,
     dl.footnote,
     dl.field-list
       display: grid
@@ -288,6 +289,7 @@
           content: ":"
       > dt, > dd
         margin-bottom: 0rem
+    dl.citation,
     dl.footnote
       font-size: 0.9rem
       > dt
@@ -312,14 +314,19 @@
       kbd
         font-size: 0.9rem
   // Both
-  html.writer-html4 & table.docutils.citation, table.docutils.footnote,
+  table.docutils.citation,
+  table.docutils.footnote,
+  html.writer-html4 & table.docutils.citation,
+  html.writer-html4 & table.docutils.footnote,
+  html.writer-html5 & dl.citation,
   html.writer-html5 & dl.footnote
     color: $text-medium
     code
       color: $gray
 
   // Remove the large vertical space between citations and footnotes
-  .wy-table-responsive.citation, .wy-table-responsive.footnote
+  .wy-table-responsive.citation, 
+  .wy-table-responsive.footnote
     margin-bottom: 0
   // Re-add vertical space to element directly following citation and footnotes,
   // if the following element is of a different type
@@ -327,7 +334,8 @@
   .wy-table-responsive.footnote + :not(.footnote)
     margin-top: $base-line-height
   // Re-add vertical space after citation and footnotes if it is the last child of a parent
-  .wy-table-responsive.citation:last-child, .wy-table-responsive.footnote:last-child
+  .wy-table-responsive.citation:last-child, 
+  .wy-table-responsive.footnote:last-child
     margin-bottom: $base-line-height
   table.docutils
     @extend .wy-table
@@ -398,7 +406,7 @@
       margin: 0 0 ($base-line-height / 2) $base-line-height
       line-height: $base-line-height
   html.writer-html4 & dl:not(.docutils),
-  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
+  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple)
     margin-bottom: $base-line-height
     > dt
       display: table
