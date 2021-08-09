@@ -119,7 +119,7 @@ setup(
     python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     install_requires=[
         'sphinx>=1.6',
-        'docutils<=0.17.1',
+        'docutils<0.18',
     ],
     tests_require=[
         'pytest',
