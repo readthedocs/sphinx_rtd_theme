@@ -270,6 +270,12 @@
   .hlist
     width: 100%
 
+  // Global classifier class format
+  // the classifier class is used both inside the Html4 writer tables and the html5 writer definition lists
+  span.classifier
+    &:before
+      content: " : "
+
   // The html4 writer outputs the citation and footnotes as a table, and the
   // html5 writer outputs these as a definition list. We will use the fairly
   // well supported css `grid` attribute to make these back into a table
@@ -288,9 +294,6 @@
         vertical-align: top
   // HTML5 writer
   html.writer-html5 &
-    dl dt span.classifier
-      &:before
-        content: " : "
     dl.footnote,
     dl.field-list
       display: grid
