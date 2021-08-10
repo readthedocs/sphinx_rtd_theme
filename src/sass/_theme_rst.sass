@@ -218,6 +218,10 @@
     &:hover .headerlink
       opacity: 1
 
+  // Make links inside paragraphs wrap when they are too long
+  p a
+    overflow-wrap: anywhere
+
   // override the Wyrm accessibility anti-pattern of hiding button focus
   .btn:focus
     outline: 2px solid
