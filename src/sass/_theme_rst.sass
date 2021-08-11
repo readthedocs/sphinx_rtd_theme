@@ -410,6 +410,12 @@
     dd
       margin: 0 0 ($base-line-height / 2) $base-line-height
       line-height: $base-line-height
+    dd:last-child
+      > p:last-child,
+      > ol:last-child,
+      > ul:last-child,
+      > table:last-child
+        margin-bottom: 0
   html.writer-html4 & dl:not(.docutils),
   html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
     margin-bottom: $base-line-height
