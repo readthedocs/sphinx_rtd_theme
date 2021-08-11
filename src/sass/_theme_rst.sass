@@ -16,7 +16,6 @@
 .rst-content
   // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
   img
-    margin-bottom: $base-line-height
     max-width: 100%
     height: auto
 
@@ -28,6 +27,11 @@
       margin-bottom: 0px
     &.align-center
       text-align: center
+
+  // Usually it's a good idea to give images some space.
+  .section, section >
+    img, a > img
+      margin-bottom: $base-line-height
 
   // normalize browser styling
   abbr[title]
