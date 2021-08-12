@@ -152,8 +152,12 @@
       background: transparent !important
       border-color: rgba(0, 0, 0, 0.1) !important
 
+  // TOC wrapper can be outside a section
+  .toctree-wrapper ul
+    @extend .wy-plain-list-disc
+
   .section, section
-    ul, .toctree-wrapper ul
+    ul
       @extend .wy-plain-list-disc
     ol.loweralpha, ol.loweralpha > li
       list-style: lower-alpha
