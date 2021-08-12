@@ -270,11 +270,14 @@
   .hlist
     width: 100%
 
-  // Global classifier class format
-  // the classifier class is used both inside the Html4 writer tables and the html5 writer definition lists
-  span.classifier
+  // Definition lists term/classifier separator
+  // Adds a separator for Sphinx > 1.x as a pseudo-element
+  // and hides the hardcoded separator from Sphinx 1.x
+  dl dt span.classifier
     &:before
       content: " : "
+  dl dt span.classifier-delimiter
+    display: none !important
 
   // The html4 writer outputs the citation and footnotes as a table, and the
   // html5 writer outputs these as a definition list. We will use the fairly
