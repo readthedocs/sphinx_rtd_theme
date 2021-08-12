@@ -197,4 +197,8 @@ To release a new version of the theme, core team will take the following steps:
       $ python setup.py sdist bdist_wheel
       $ twine upload --sign --identity security@readthedocs.org dist/*
 
+#. Finally, open a new pull request updating the development release version to
+   the next patch by running ``bump2version patch``. Open a pull request with
+   this change.
+
 .. _PEP440: https://www.python.org/dev/peps/pep-0440/
