@@ -2,11 +2,10 @@
 Changelog
 *********
 
-master
-======
+Development version (|development_version|)
+===========================================
 
-v1.0.0
-======
+.. |development_version| replace:: 1.0.0alpha1
 
 Incompatible Changes
 --------------------
