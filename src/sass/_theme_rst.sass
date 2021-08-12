@@ -270,6 +270,15 @@
   .hlist
     width: 100%
 
+  // Definition lists term/classifier separator
+  // Adds a separator for Sphinx > 1.x as a pseudo-element
+  // and hides the hardcoded separator from Sphinx 1.x
+  dl dt span.classifier
+    &:before
+      content: " : "
+  dl dt span.classifier-delimiter
+    display: none !important
+
   // The html4 writer outputs the citation and footnotes as a table, and the
   // html5 writer outputs these as a definition list. We will use the fairly
   // well supported css `grid` attribute to make these back into a table
@@ -288,9 +297,6 @@
         vertical-align: top
   // HTML5 writer
   html.writer-html5 &
-    dl dt span.classifier
-      &:before
-        content: " : "
     dl.footnote,
     dl.field-list
       display: grid
