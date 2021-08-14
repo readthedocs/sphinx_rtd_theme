@@ -1,0 +1,27 @@
+{%- extends "!versions.html" %}
+
+{#-
+
+This template exists as a way to implement a version menu without changing what
+the theme normally renders the menu on local builds and on builds on Read the
+Docs. This is for local testing purposes only.
+
+#}
+
+{%- block versions_menu_contents %}
+  {{ super() }}
+  <dl>
+    {#- Translators: The phrase "Read the Docs" is not translated #}
+    <dt>{{ _('On Read the Docs') }}</dt>
+      <dd>
+        <a href="#">{{ _('Project Home') }}</a>
+      </dd>
+      <dd>
+        <a href="#">{{ _('Builds') }}</a>
+      </dd>
+  </dl>
+  <dl>
+    <dt>Debug</dt>
+    <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>
+  </dl>
+{%- endblock %}

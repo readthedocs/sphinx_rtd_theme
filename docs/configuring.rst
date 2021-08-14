@@ -21,6 +21,7 @@ For example:
         'style_external_links': False,
         'vcs_pageview_mode': '',
         'style_nav_header_background': 'white',
+        'versions_menu': False,
         # Toc options
         'collapse_navigation': True,
         'sticky_navigation': True,
@@ -174,6 +175,13 @@ Miscellaneous options
     :type: string
     :default: ``#2980B9``
 
+.. confval:: versions_menu
+
+    Whether or not to show the bottom left menu listing the versions and links
+    to VCS repository.
+
+    :type: boolean
+    :default: False
 
 File-wide metadata
 ==================

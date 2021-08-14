@@ -1,34 +1,50 @@
-{% if READTHEDOCS %}
+{%- block versions_menu %}
+{%- if theme_versions_menu|tobool %}
 {# Add rst-badge after rst-versions for small badge style. #}
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      <span class="fa fa-book"> Read the Docs</span>
-      v: {{ current_version }}
+      {%- block versions_menu_title %}
+      <span class="fa fa-book"> {{ project }}</span>
+      v: {{ version }}
       <span class="fa fa-caret-down"></span>
+      {%- endblock %}
     </span>
     <div class="rst-other-versions">
+    {%- block versions_menu_contents %}
+      {%- block languages %}
+      {%- if languages|length >= 1 %}
+      <dl>
+        <dt>{{ _('Languages') }}</dt>
+        {%- for slug, url in languages %}
+          <dd><a href="{{ url }}">{{ slug }}</a></dd>
+        {%- endfor %}
+      </dl>
+      {%- endif %}
+      {%- endblock %} 
+
+      {%- block versions %}
+      {%- if versions|length >= 1 %}
       <dl>
         <dt>{{ _('Versions') }}</dt>
-        {% for slug, url in versions %}
+        {%- for slug, url in versions %}
           <dd><a href="{{ url }}">{{ slug }}</a></dd>
-        {% endfor %}
+        {%- endfor %}
       </dl>
+      {%- endif %}
+      {%- endblock %}
+
+      {%- block downloads %}
+      {%- if downloads|length >= 1 %}
       <dl>
         <dt>{{ _('Downloads') }}</dt>
-        {% for type, url in downloads %}
+        {%- for type, url in downloads %}
           <dd><a href="{{ url }}">{{ type }}</a></dd>
-        {% endfor %}
+        {%- endfor %}
       </dl>
-      <dl>
-        {# Translators: The phrase "Read the Docs" is not translated #}
-        <dt>{{ _('On Read the Docs') }}</dt>
-          <dd>
-            <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/?fromdocs={{ slug }}">{{ _('Project Home') }}</a>
-          </dd>
-          <dd>
-            <a href="//{{ PRODUCTION_DOMAIN }}/builds/{{ slug }}/?fromdocs={{ slug }}">{{ _('Builds') }}</a>
-          </dd>
-      </dl>
+      {%- endif %}
+      {%- endblock %}
+    {%- endblock %}
     </div>
   </div>
-{% endif %}
+{%- endif %}
+{%- endblock %}

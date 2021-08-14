@@ -153,7 +153,7 @@
 
           {%- if theme_display_version %}
             {%- set nav_version = version %}
-            {%- if READTHEDOCS and current_version %}
+            {%- if current_version %}
               {%- set nav_version = current_version %}
             {%- endif %}
             {%- if nav_version %}
@@ -231,8 +231,7 @@
       });
   </script>
 
-  {#- Do not conflict with RTD insertion of analytics script #}
-  {%- if not READTHEDOCS %}
+  {%- block analytics %}
     {%- if theme_analytics_id %}
     <!-- Theme Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
@@ -247,7 +246,7 @@
     </script>
 
     {%- endif %}
-  {%- endif %}
+  {%- endblock %}
 
   {%- block footer %} {% endblock %}
 
