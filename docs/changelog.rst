@@ -5,7 +5,7 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.0.0alpha1
+.. |development_version| replace:: 1.0.0rc1
 
 Incompatible Changes
 --------------------
@@ -16,7 +16,37 @@ Incompatible Changes
 Deprecated
 ----------
 
-* Support for sphinx's html4 writer is deprecated and will be removed in version 2.0 (#1091)
+* Support for Sphinx's HTML4 writer is deprecated and will be removed in version 2.0 (#1091)
+
+Features
+--------
+
+* Add support for Sphinx 4.x (#1123)
+* Add support for Docutils 0.17 (#1185 and #1199)
+* Fixed logo scaling on IE11 (#1183)
+* Added support for logos as URLs (#1171)
+* Align top and side navigation background colors on mobile (#1132)
+* Added support for deep toc levels (#1089)
+
+A number of accessibility features were added in this release:
+
+* Allow keyboard to toggle menu expansion (#1167)
+* Allow keyboard to activate permalink (#1162)
+* Show keyboard focus on buttons (#1161)
+* Maintain aria-expanded along with .current in menu (#1151)
+* Respect tab order for prev/next buttons (#1051)
+
+Fixes
+-----
+
+* Updated Google analytics integration (#1129)
+* Add classifier separation on Sphinx 2+ HTML4 writer (#1192)
+* Added missing space char in footer (#1188)
+* Fix navigation right padding on level2+ elements (#1068)
+* Fix navigation expansion button sizes (#1067)
+* Wrap inline literals (#1050)
+* Fix aria labels (#1056)
+* Don't toggle navigation terminal nodes (#1049)
 
 Other Changes
 -------------
@@ -24,19 +54,7 @@ Other Changes
 * Update npm development dependencies (#1096)
 * Don't require npm to build from source (#1039)
 * Use regular toctree instead of toc for singlehtml builder (#507)
-* Templates: Cleanup Whitespace (#1060)
-
-Fixes
------
-
-* Javascript: Add support for deep toc levels (#1089)
-* Use Proper Sass Syntax (#1069)
-* Nav: Fix right padding on level2+ (#1068)
-* Fix Nav Buttons Size (#1067)
-* Fix: wrap inline literals (#1050)
-* Fix aria label (#1056)
-* Respect tab order for prev/next buttons (#1051)
-* Nav: Don't toggle terminal nodes (#1049)
+* Cleanup whitespace in templates (#1060)
 
 v0.5.2
 ======
