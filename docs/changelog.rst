@@ -5,7 +5,7 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.0.0alpha1
+.. |development_version| replace:: 1.0.0rc1
 
 Incompatible Changes
 --------------------
