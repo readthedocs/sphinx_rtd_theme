@@ -3,48 +3,66 @@
 # This file is distributed under the same license as the sphinx_rtd_theme
 # project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-# 
+#
 # Translators:
 # Daniel Holmberg <daniel.holmberg97@gmail.com>, 2020
-# 
 msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-01-04 13:48-0800\n"
+"POT-Creation-Date: 2021-08-16 17:05-0600\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
 "Last-Translator: Daniel Holmberg <daniel.holmberg97@gmail.com>, 2020\n"
-"Language-Team: Swedish (https://www.transifex.com/readthedocs/teams/101354/sv/)\n"
+"Language: sv\n"
+"Language-Team: Swedish "
+"(https://www.transifex.com/readthedocs/teams/101354/sv/)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: sphinx_rtd_theme/breadcrumbs.html:45 sphinx_rtd_theme/breadcrumbs.html:47
+#: sphinx_rtd_theme/breadcrumbs.html:21 sphinx_rtd_theme/breadcrumbs.html:65
+msgid "Breadcrumbs"
+msgstr ""
+
+#: sphinx_rtd_theme/breadcrumbs.html:36 sphinx_rtd_theme/breadcrumbs.html:38
 msgid "Edit on GitHub"
 msgstr "Editera på GitHub"
 
-#: sphinx_rtd_theme/breadcrumbs.html:52 sphinx_rtd_theme/breadcrumbs.html:54
+#: sphinx_rtd_theme/breadcrumbs.html:43 sphinx_rtd_theme/breadcrumbs.html:45
 msgid "Edit on Bitbucket"
 msgstr "Editera på Bitbucket"
 
-#: sphinx_rtd_theme/breadcrumbs.html:59 sphinx_rtd_theme/breadcrumbs.html:61
+#: sphinx_rtd_theme/breadcrumbs.html:50 sphinx_rtd_theme/breadcrumbs.html:52
 msgid "Edit on GitLab"
 msgstr "Editera på GitLab"
 
-#: sphinx_rtd_theme/breadcrumbs.html:64 sphinx_rtd_theme/breadcrumbs.html:66
+#: sphinx_rtd_theme/breadcrumbs.html:55 sphinx_rtd_theme/breadcrumbs.html:57
 msgid "View page source"
 msgstr "Visa sidkälla"
 
-#: sphinx_rtd_theme/breadcrumbs.html:76 sphinx_rtd_theme/footer.html:5
+#: sphinx_rtd_theme/breadcrumbs.html:67 sphinx_rtd_theme/footer.html:5
+msgid "Previous"
+msgstr "Tillbaka"
+
+#: sphinx_rtd_theme/breadcrumbs.html:70 sphinx_rtd_theme/footer.html:8
 msgid "Next"
 msgstr "Nästa"
 
-#: sphinx_rtd_theme/breadcrumbs.html:79 sphinx_rtd_theme/footer.html:8
-msgid "Previous"
-msgstr "Tillbaka"
+#: sphinx_rtd_theme/footer.html:3
+msgid "Footer"
+msgstr ""
+
+#: sphinx_rtd_theme/footer.html:20
+#, python-format
+msgid "&#169; <a href=\"%(path)s\">Copyright</a> %(copyright)s."
+msgstr ""
+
+#: sphinx_rtd_theme/footer.html:22
+#, python-format
+msgid "&#169; Copyright %(copyright)s."
+msgstr ""
 
 #. Build is a noun, not a verb
 #: sphinx_rtd_theme/footer.html:29
@@ -61,8 +79,7 @@ msgstr "Ändra"
 msgid "Last updated on %(last_updated)s."
 msgstr "Senast uppdaterad %(last_updated)s."
 
-#. the variable "sphinx_web" is a link to the Sphinx project documentation
-#. with
+#. the variable "sphinx_web" is a link to the Sphinx project documentation with
 #. the text "Sphinx"
 #: sphinx_rtd_theme/footer.html:52
 #, python-format
@@ -82,35 +99,42 @@ msgstr "tema"
 msgid "provided by %(readthedocs_web)s"
 msgstr "erhållet av %(readthedocs_web)s"
 
-#: sphinx_rtd_theme/layout.html:85
+#: sphinx_rtd_theme/layout.html:97
 #, python-format
 msgid "Search within %(docstitle)s"
 msgstr "Sök i %(docstitle)s"
 
-#: sphinx_rtd_theme/layout.html:93
+#: sphinx_rtd_theme/layout.html:105
 msgid "About these documents"
 msgstr "Om dessa dokument"
 
-#: sphinx_rtd_theme/layout.html:96
+#: sphinx_rtd_theme/layout.html:108
 msgid "Index"
 msgstr "Index"
 
-#: sphinx_rtd_theme/layout.html:99 sphinx_rtd_theme/search.html:11
+#: sphinx_rtd_theme/layout.html:111 sphinx_rtd_theme/search.html:11
 msgid "Search"
 msgstr "Sök"
 
-#: sphinx_rtd_theme/layout.html:102
+#: sphinx_rtd_theme/layout.html:114
 msgid "Copyright"
 msgstr "Upphovsrätt"
 
-#: sphinx_rtd_theme/layout.html:134
+#: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
 msgid "Logo"
 msgstr "Logo"
 
+#: sphinx_rtd_theme/layout.html:172
+msgid "Main"
+msgstr ""
+
+#: sphinx_rtd_theme/layout.html:193
+msgid "Top"
+msgstr ""
+
 #: sphinx_rtd_theme/search.html:31
 msgid "Please activate JavaScript to enable the search functionality."
-msgstr ""
-"Var vänlig och aktivera JavaScript för att möjliggöra sökfunktionaliteten."
+msgstr "Var vänlig och aktivera JavaScript för att möjliggöra sökfunktionaliteten."
 
 #. Search is a noun, not a verb
 #: sphinx_rtd_theme/search.html:39
@@ -119,17 +143,17 @@ msgstr "Sökresultat"
 
 #: sphinx_rtd_theme/search.html:41
 msgid ""
-"Your search did not match any documents. Please make sure that all words are"
-" spelled correctly and that you've selected enough categories."
+"Your search did not match any documents. Please make sure that all words "
+"are spelled correctly and that you've selected enough categories."
 msgstr ""
-"Din sökning gav inga träffar. Var vänlig och se till att alla ord är rätt "
-"stavade och att du har valt tillräckligt många kategorier."
+"Din sökning gav inga träffar. Var vänlig och se till att alla ord är rätt"
+" stavade och att du har valt tillräckligt många kategorier."
 
 #: sphinx_rtd_theme/searchbox.html:4
 msgid "Search docs"
 msgstr "Sök i dokumentationen"
 
-#: sphinx_rtd_theme/versions.html:11
+#: sphinx_rtd_theme/versions.html:3 sphinx_rtd_theme/versions.html:11
 msgid "Versions"
 msgstr "Versioner"
 
@@ -146,6 +170,11 @@ msgstr "På Read the Docs"
 msgid "Project Home"
 msgstr "Projekt Hem"
 
+#: sphinx_rtd_theme/versions.html:29
+#, fuzzy
+msgid "Builds"
+msgstr "Bygg"
+
 #~ msgid "Docs"
 #~ msgstr "Dokumentation"
 
@@ -154,3 +183,4 @@ msgstr "Projekt Hem"
 
 #~ msgid "Documentation Home"
 #~ msgstr "Dokumentation Hem"
+
