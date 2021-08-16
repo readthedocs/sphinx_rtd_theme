@@ -6,6 +6,7 @@
 
    installing
    configuring
+   development
    contributing
 
 .. toctree::
