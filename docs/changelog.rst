@@ -27,6 +27,9 @@ Features
 * Added support for logos as URLs (#1171)
 * Align top and side navigation background colors on mobile (#1132)
 * Added support for deep toc levels (#1089)
+* Updated translations for Chinese, Dutch, Estonian, French, German, Italian,
+  Lithuanian, Persian, Polish, Portuguese, Russian, Spanish, Swedish, and
+  Turkish locales
 
 A number of accessibility features were added in this release:
 
