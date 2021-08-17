@@ -169,7 +169,8 @@
         </div>
 
         {%- block navigation %}
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="{{ _('Main') }}">
+        {#- Translators: This is an ARIA section label for the main navigation menu -#}
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="{{ _('Navigation menu') }}">
           {%- block menu %}
             {%- set toctree = toctree(maxdepth=theme_navigation_depth|int,
                                       collapse=theme_collapse_navigation|tobool,
@@ -190,7 +191,8 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       {#- MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-      <nav class="wy-nav-top" aria-label="{{ _('Top') }}" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
+      {#- Translators: This is an ARIA section label for the navigation menu that is visible when viewing the page on mobile devices -#}
+      <nav class="wy-nav-top" aria-label="{{ _('Mobile navigation menu') }}" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
         {%- block mobile_nav %}
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="{{ pathto(master_doc) }}">{{ project }}</a>
