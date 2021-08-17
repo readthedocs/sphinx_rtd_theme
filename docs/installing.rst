@@ -35,12 +35,13 @@ In your ``conf.py`` file:
    are using an old version of the theme.
 
 Via Git or Download
-===================
+-------------------
 
 .. warning::
 
-   Installing directly from the repo is deprecated.
-   Static assets won't be included in the repo in a future release.
+   Installing directly from the repository source is deprecated and is not
+   recommended. Static assets won't be included in the repository starting in
+   release :ref:`3.0.0`.
 
 Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
 ``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx

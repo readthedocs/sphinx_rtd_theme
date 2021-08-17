@@ -90,7 +90,7 @@ version:
 
 .. code:: console
 
-    % pip install "sphinx_rtd_theme<=2.0.0"
+    $ pip install "sphinx_rtd_theme<=2.0.0"
 
 .. _semantic versioning: http://semver.org/
 
@@ -111,7 +111,7 @@ it resolves bugs with the latest release of Docutils, version 0.17.
 Starting with this release, several deprecation warnings will be emitted at
 build time:
 
-Direction installation is deprecated
+Direct installation is deprecated
     Support for direct installation through GitHub is no longer a suggested
     installation method. In an effort to ease maintenance, compiled assets will
     eventually be removed from the theme repository. These files will only be
