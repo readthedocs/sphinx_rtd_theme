@@ -3,29 +3,25 @@
 # This file is distributed under the same license as the sphinx_rtd_theme
 # project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# 
 # Translators:
 # Anthony <aj@ohess.org>, 2020
-# Ivar Smolin <okul@linux.ee>, 2020
+# Ivar Smolin <okul@linux.ee>, 2021
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-08-16 17:05-0600\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
-"Last-Translator: Ivar Smolin <okul@linux.ee>, 2020\n"
-"Language: et\n"
-"Language-Team: Estonian "
-"(https://www.transifex.com/readthedocs/teams/101354/et/)\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>, 2021\n"
+"Language-Team: Estonian (https://www.transifex.com/readthedocs/teams/101354/et/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-
-#: sphinx_rtd_theme/breadcrumbs.html:21 sphinx_rtd_theme/breadcrumbs.html:65
-msgid "Breadcrumbs"
-msgstr ""
+"Language: et\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: sphinx_rtd_theme/breadcrumbs.html:36 sphinx_rtd_theme/breadcrumbs.html:38
 msgid "Edit on GitHub"
@@ -51,19 +47,15 @@ msgstr "Eelmine"
 msgid "Next"
 msgstr "Järgmine"
 
-#: sphinx_rtd_theme/footer.html:3
-msgid "Footer"
-msgstr ""
-
 #: sphinx_rtd_theme/footer.html:20
 #, python-format
 msgid "&#169; <a href=\"%(path)s\">Copyright</a> %(copyright)s."
-msgstr ""
+msgstr "&#169; <a href=\"%(path)s\">Autoriõigus</a> %(copyright)s."
 
 #: sphinx_rtd_theme/footer.html:22
 #, python-format
 msgid "&#169; Copyright %(copyright)s."
-msgstr ""
+msgstr "&#169; Autoriõigus %(copyright)s."
 
 #. Build is a noun, not a verb
 #: sphinx_rtd_theme/footer.html:29
@@ -80,7 +72,8 @@ msgstr "Redaktsioon"
 msgid "Last updated on %(last_updated)s."
 msgstr "Viimati uuendatud  %(last_updated)s."
 
-#. the variable "sphinx_web" is a link to the Sphinx project documentation with
+#. the variable "sphinx_web" is a link to the Sphinx project documentation
+#. with
 #. the text "Sphinx"
 #: sphinx_rtd_theme/footer.html:52
 #, python-format
@@ -98,7 +91,7 @@ msgstr "kujundusteema"
 #: sphinx_rtd_theme/footer.html:56
 #, python-format
 msgid "provided by %(readthedocs_web)s"
-msgstr ""
+msgstr "on loonud %(readthedocs_web)s"
 
 #: sphinx_rtd_theme/layout.html:97
 #, python-format
@@ -125,14 +118,6 @@ msgstr "Autoriõigus"
 msgid "Logo"
 msgstr "Logo"
 
-#: sphinx_rtd_theme/layout.html:172
-msgid "Main"
-msgstr ""
-
-#: sphinx_rtd_theme/layout.html:193
-msgid "Top"
-msgstr ""
-
 #: sphinx_rtd_theme/search.html:31
 msgid "Please activate JavaScript to enable the search functionality."
 msgstr "Otsimisfunktsiooni lubamiseks aktiveeri palun JavaScript"
@@ -144,12 +129,11 @@ msgstr "Otsingu tulemused"
 
 #: sphinx_rtd_theme/search.html:41
 msgid ""
-"Your search did not match any documents. Please make sure that all words "
-"are spelled correctly and that you've selected enough categories."
+"Your search did not match any documents. Please make sure that all words are"
+" spelled correctly and that you've selected enough categories."
 msgstr ""
-"Sinu otsingule ei vastanud ükski dokument. Palun veendu, et kõik "
-"sisestatud sõnad on õigesti kirjutatud ja sa oled valikud piisaval hulgal"
-" kategooriaid."
+"Sinu otsingule ei vastanud ükski dokument. Palun veendu, et kõik sisestatud "
+"sõnad on õigesti kirjutatud ja sa oled valikud piisaval hulgal kategooriaid."
 
 #: sphinx_rtd_theme/searchbox.html:4
 msgid "Search docs"
@@ -184,4 +168,3 @@ msgstr "Ehitused"
 
 #~ msgid "Documentation Home"
 #~ msgstr "Dokumentatsiooni kodu"
-

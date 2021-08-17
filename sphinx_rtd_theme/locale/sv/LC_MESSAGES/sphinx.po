@@ -3,9 +3,10 @@
 # This file is distributed under the same license as the sphinx_rtd_theme
 # project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# 
 # Translators:
 # Daniel Holmberg <daniel.holmberg97@gmail.com>, 2020
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
@@ -13,18 +14,13 @@ msgstr ""
 "POT-Creation-Date: 2021-08-16 17:05-0600\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
 "Last-Translator: Daniel Holmberg <daniel.holmberg97@gmail.com>, 2020\n"
-"Language: sv\n"
-"Language-Team: Swedish "
-"(https://www.transifex.com/readthedocs/teams/101354/sv/)\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language-Team: Swedish (https://www.transifex.com/readthedocs/teams/101354/sv/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-
-#: sphinx_rtd_theme/breadcrumbs.html:21 sphinx_rtd_theme/breadcrumbs.html:65
-msgid "Breadcrumbs"
-msgstr ""
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: sphinx_rtd_theme/breadcrumbs.html:36 sphinx_rtd_theme/breadcrumbs.html:38
 msgid "Edit on GitHub"
@@ -50,20 +46,6 @@ msgstr "Tillbaka"
 msgid "Next"
 msgstr "Nästa"
 
-#: sphinx_rtd_theme/footer.html:3
-msgid "Footer"
-msgstr ""
-
-#: sphinx_rtd_theme/footer.html:20
-#, python-format
-msgid "&#169; <a href=\"%(path)s\">Copyright</a> %(copyright)s."
-msgstr ""
-
-#: sphinx_rtd_theme/footer.html:22
-#, python-format
-msgid "&#169; Copyright %(copyright)s."
-msgstr ""
-
 #. Build is a noun, not a verb
 #: sphinx_rtd_theme/footer.html:29
 msgid "Build"
@@ -79,7 +61,8 @@ msgstr "Ändra"
 msgid "Last updated on %(last_updated)s."
 msgstr "Senast uppdaterad %(last_updated)s."
 
-#. the variable "sphinx_web" is a link to the Sphinx project documentation with
+#. the variable "sphinx_web" is a link to the Sphinx project documentation
+#. with
 #. the text "Sphinx"
 #: sphinx_rtd_theme/footer.html:52
 #, python-format
@@ -124,17 +107,10 @@ msgstr "Upphovsrätt"
 msgid "Logo"
 msgstr "Logo"
 
-#: sphinx_rtd_theme/layout.html:172
-msgid "Main"
-msgstr ""
-
-#: sphinx_rtd_theme/layout.html:193
-msgid "Top"
-msgstr ""
-
 #: sphinx_rtd_theme/search.html:31
 msgid "Please activate JavaScript to enable the search functionality."
-msgstr "Var vänlig och aktivera JavaScript för att möjliggöra sökfunktionaliteten."
+msgstr ""
+"Var vänlig och aktivera JavaScript för att möjliggöra sökfunktionaliteten."
 
 #. Search is a noun, not a verb
 #: sphinx_rtd_theme/search.html:39
@@ -143,11 +119,11 @@ msgstr "Sökresultat"
 
 #: sphinx_rtd_theme/search.html:41
 msgid ""
-"Your search did not match any documents. Please make sure that all words "
-"are spelled correctly and that you've selected enough categories."
+"Your search did not match any documents. Please make sure that all words are"
+" spelled correctly and that you've selected enough categories."
 msgstr ""
-"Din sökning gav inga träffar. Var vänlig och se till att alla ord är rätt"
-" stavade och att du har valt tillräckligt många kategorier."
+"Din sökning gav inga träffar. Var vänlig och se till att alla ord är rätt "
+"stavade och att du har valt tillräckligt många kategorier."
 
 #: sphinx_rtd_theme/searchbox.html:4
 msgid "Search docs"
@@ -171,9 +147,8 @@ msgid "Project Home"
 msgstr "Projekt Hem"
 
 #: sphinx_rtd_theme/versions.html:29
-#, fuzzy
 msgid "Builds"
-msgstr "Bygg"
+msgstr "Versioner"
 
 #~ msgid "Docs"
 #~ msgstr "Dokumentation"
@@ -183,4 +158,3 @@ msgstr "Bygg"
 
 #~ msgid "Documentation Home"
 #~ msgstr "Dokumentation Hem"
-
