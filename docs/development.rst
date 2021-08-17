@@ -6,6 +6,8 @@ planning. Documentation authors can decide which theme release works best for
 their project based on required browser/operating system combinations or
 dependency support.
 
+.. _supported-browsers:
+
 Supported browsers
 ------------------
 
@@ -46,6 +48,8 @@ Opera (any OS, any version)
     **Community support only.** We do not receive enough traffic with this
     browser to officially support it in testing and development.
 
+.. _supported-dependencies:
+
 Supported dependencies
 ----------------------
 
@@ -57,6 +61,8 @@ The theme officially supports the following dependencies in your Sphinx project:
 
     * - Dependency
       - Versions
+    * - Python
+      - 2.7 or 3.6 or greater
     * - Sphinx
       - 1.7 up to at least 4.1
     * - docutils
