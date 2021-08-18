@@ -86,7 +86,7 @@ function ThemeNav () {
             
             // Shift nav in mobile when pressing ENTER if menu has focus 
             .on('keypress', function(evt) {
-              var menuIcon = $("[data-toggle='wy-nav-top']")
+              var menuIcon = $("[data-toggle='wy-nav-top']");
               if (menuIcon.is(":focus")) {
                 var keyCode = evt.keyCode || evt.which;
                 if (keyCode === 13) {
