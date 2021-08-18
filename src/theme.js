@@ -77,7 +77,7 @@ function ThemeNav () {
         this.win = $(window);
 
         if (this.isDisplayed()) {
-          this.makeMenuFocusable()
+          this.makeMenuFocusable();
         } else {
           this.makeMenuUnfocusable();
         }
@@ -90,7 +90,7 @@ function ThemeNav () {
                 $("[data-toggle='rst-versions']").toggleClass("shift");
 
                 if (self.isDisplayed()) {
-                  self.makeMenuFocusable()
+                  self.makeMenuFocusable();
                 } else {
                   self.makeMenuUnfocusable();
                 }
@@ -193,7 +193,7 @@ function ThemeNav () {
         this.docHeight = $(document).height();
 
         if (this.isDisplayed()) {
-          this.makeMenuFocusable()
+          this.makeMenuFocusable();
         } else {
           this.makeMenuUnfocusable();
         }
