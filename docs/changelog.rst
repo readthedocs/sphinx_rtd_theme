@@ -2,13 +2,102 @@
 Changelog
 *********
 
-master
+Development version (|development_version|)
+===========================================
+
+.. |development_version| replace:: 1.0.0rc2
+
+Incompatible Changes
+--------------------
+
+* The minimum supported python version is now 2.7 or 3.4 and greater (#1093)
+* The minimum supported Sphinx version is now 1.6 (#1091)
+
+Deprecated
+----------
+
+* Support for Sphinx's HTML4 writer is deprecated and will be removed in version 2.0 (#1091)
+
+Features
+--------
+
+* Add support for Sphinx 4.x (#1123)
+* Add support for Docutils 0.17 (#1185 and #1199)
+* Fixed logo scaling on IE11 (#1183)
+* Added support for logos as URLs (#1171)
+* Align top and side navigation background colors on mobile (#1132)
+* Added support for deep toc levels (#1089)
+* Updated translations for Chinese, Dutch, Estonian, French, German, Italian,
+  Lithuanian, Persian, Polish, Portuguese, Russian, Spanish, Swedish, and
+  Turkish locales
+
+A number of accessibility features were added in this release:
+
+* Allow keyboard to toggle menu expansion (#1167)
+* Allow keyboard to activate permalink (#1162)
+* Show keyboard focus on buttons (#1161)
+* Maintain aria-expanded along with .current in menu (#1151)
+* Respect tab order for prev/next buttons (#1051)
+
+Fixes
+-----
+
+* Updated Google analytics integration (#1129)
+* Add classifier separation on Sphinx 2+ HTML4 writer (#1192)
+* Added missing space char in footer (#1188)
+* Fix navigation right padding on level2+ elements (#1068)
+* Fix navigation expansion button sizes (#1067)
+* Wrap inline literals (#1050)
+* Fix aria labels (#1056)
+* Don't toggle navigation terminal nodes (#1049)
+
+Other Changes
+-------------
+
+* Update npm development dependencies (#1096)
+* Don't require npm to build from source (#1039)
+* Use regular toctree instead of toc for singlehtml builder (#507)
+* Cleanup whitespace in templates (#1060)
+
+v0.5.2
 ======
+
+:Date: April 5, 2021
+
+.. note:: This commit will not be in ``master``, but was branched directly off ``0.5.1`` to minimize issues.
+          The next full release will contain all PR's previously merged.
+
+* Depend on docutils < 0.17 (#1113)
+
+v0.5.1
+======
+
+:Date: January 4, 2021
+
+Fixes
+-----
+
+* Set ``url_root`` properly on index (#1025)
+* Do not load ``language_data.js`` in non-search pages (#1021)
+* Hide the search box on any ``singlehtml`` like builder (#975)
+* Fix ``vcs_pageview_mode`` template parameter (#1010)
+* Mark nex/prev icons as aria-hidden (#1007)
+* Use well-formed XML syntax (#1006)
+* Footer: show both ``commit`` and ``last_updated`` if available (#897)
+* Search page: don't show "edit on" links (#935)
 
 New Features
 ------------
 
 * New theme option to enable anonymous ip addresses when using Google Analytics (#889)
+
+Other Changes
+-------------
+
+* The ``canonical_url`` option was deprecated in favor of Sphinx's ``html_baseurl`` (#1003)
+* Add ``contentinfo`` block to ``footer.html`` template (#896)
+* Make Copyright template match sphinx's basic (#933)
+* Packaging: include ``bin/preinstall.js`` (#1005)
 
 v0.5.0
 ======
