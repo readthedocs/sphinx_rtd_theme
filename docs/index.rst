@@ -1,6 +1,8 @@
 Read the Docs Sphinx Theme
 ==========================
 
+Test.
+
 This Sphinx_ theme was designed to provide a great reader experience for
 documentation users on both desktop and mobile devices. This theme is commonly
 used with projects on `Read the Docs`_ but can work with any Sphinx project.
