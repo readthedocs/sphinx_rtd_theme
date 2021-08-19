@@ -59,8 +59,10 @@ Other Changes
 * Use regular toctree instead of toc for singlehtml builder (#507)
 * Cleanup whitespace in templates (#1060)
 
-v0.5.2
-======
+.. _0.5.2:
+
+0.5.2
+=====
 
 :Date: April 5, 2021
 
@@ -69,8 +71,10 @@ v0.5.2
 
 * Depend on docutils < 0.17 (#1113)
 
-v0.5.1
-======
+.. _0.5.1:
+
+0.5.1
+=====
 
 :Date: January 4, 2021
 
@@ -99,8 +103,10 @@ Other Changes
 * Make Copyright template match sphinx's basic (#933)
 * Packaging: include ``bin/preinstall.js`` (#1005)
 
-v0.5.0
-======
+.. _0.5.0:
+
+0.5.0
+=====
 
 :Date: Jun 17, 2020
 
@@ -109,8 +115,8 @@ Fixes
 
 * Fix bullet list spacing to respect simple/complex list styles
 
-v0.5.0rc2
-=========
+0.5.0rc2
+========
 
 :Date: June 5, 2020
 
@@ -122,8 +128,8 @@ Fixes
 * Fix several margin issues with lists, nested lists, and nested content
 * Add colon back to field lists
 
-v0.5.0rc1
-=========
+0.5.0rc1
+========
 
 :Date: May 6, 2020
 
@@ -141,8 +147,10 @@ Other Changes
 * Moved build system from Grunt and friends to Webpack
 * Remove Modernizr, but keep html5shiv (#724, #525)
 
-v0.4.3
-======
+.. _0.4.3:
+
+0.4.3
+=====
 
 :Date: Feb 12, 2019
 
@@ -161,8 +169,10 @@ Fixes
 Other Changes
 --------------
 
-v0.4.2
-======
+.. _0.4.2:
+
+0.4.2
+=====
 
 :Date: Oct 5, 2018
 
@@ -181,8 +191,8 @@ Other Changes
 * Upload signed packages to PyPI with twine (#651)
 * Do not enforce period at the end of copyright statement (666)
 
-v0.4.1
-======
+0.4.1
+=====
 
 :Date: July 27, 2018
 
@@ -199,8 +209,8 @@ Other Changes
 
 * Add Sphinx as a dependency
 
-v0.4.0
-======
+0.4.0
+=====
 
 This version made some changes to how JS and CSS were included
 when the theme is used on Read the Docs.
@@ -222,8 +232,8 @@ Other Changes
 * Changed code and literals to use a native font stack (#612)
 * Fix small styling issues
 
-v0.3.1
-======
+0.3.1
+=====
 
 Fixes
 -----
@@ -234,8 +244,8 @@ Fixes
 * Add open list spacing (#591)
 * Fix table centering (#599)
 
-v0.3.0
-======
+0.3.0
+=====
 
 **Note**: this version resulted in some JavaScript incompatibilities when used on readthedocs.org
 
@@ -268,40 +278,40 @@ Other Changes
 * Compress our Javascript files
 * Updated dependencies
 
-v0.2.4
-======
+0.2.4
+=====
 
 * Yet another patch to deal with extra builders outside Spinx, such as the
   singlehtml builders from the Read the Docs Sphinx extension
 
-v0.2.3
-======
+0.2.3
+=====
 
 * Temporarily patch Sphinx issue with ``singlehtml`` builder by inspecting the
   builder in template.
 
-v0.2.2
-======
+0.2.2
+=====
 
 * Roll back toctree fix in 0.2.1 (#367). This didn't fix the issue and
   introduced another bug with toctrees display.
 
-v0.2.1
-======
+0.2.1
+=====
 
 * Add the ``rel`` HTML attribute to the footer links which point to
   the previous and next pages.
 * Fix toctree issue caused by Sphinx singlehtml builder (#367)
 
-v0.2.0
-======
+0.2.0
+=====
 
 * Adds the ``comments`` block after the ``body`` block in the template
 * Added "Edit on GitLab" support
 * Many bug fixes
 
-v0.1.10-alpha
-=============
+0.1.10-alpha
+============
 
 .. note:: This is a pre-release version
 
@@ -310,8 +320,8 @@ v0.1.10-alpha
 * Adds a ``body_begin`` block to the template
 * Added ``prev_next_buttons_location``
 
-v0.1.9
-======
+0.1.9
+=====
 
 * Intermittent scrollbar visibility bug fixed. This change introduces a
   backwards incompatible change to the theme's layout HTML. This should only be
@@ -327,8 +337,8 @@ v0.1.9
 
 .. _#215: https://github.com/rtfd/sphinx_rtd_theme/pull/215
 
-v0.1.8
-======
+0.1.8
+=====
 
 * Start keeping changelog :)
 * Support for third and fourth level headers in the sidebar
