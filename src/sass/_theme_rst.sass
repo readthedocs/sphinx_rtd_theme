@@ -14,7 +14,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 .rst-content
-  // Some browsers like to give arbituary margins :( make them all consistent.
+  // Some browsers like to give arbitrary margins :( make them all consistent.
   h1, h2, h3, h4, h5, h6
     margin-bottom: $base-line-height
 
@@ -224,6 +224,13 @@
         opacity: 1
     &:hover .headerlink
       opacity: 1
+
+  // Consistent font sizing for table typography
+  .wy-table
+    th, td
+      p, ul, ol
+          font-size: inherit
+          line-height: inherit
 
   // override the Wyrm accessibility anti-pattern of hiding button focus
   .btn:focus
