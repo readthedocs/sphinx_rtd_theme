@@ -13,7 +13,7 @@ For example:
 .. code:: python
 
     html_theme_options = {
-        'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+        'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
         'analytics_anonymize_ip': False,
         'logo_only': False,
         'display_version': True,
@@ -96,10 +96,12 @@ Miscellaneous options
 
 .. confval:: analytics_id
 
-    If specified, Google Analytics' javascript is included in your pages.
-    Set the value to the ID provided to you by google (like ``UA-XXXXXXX``).
+    If specified, Google Analytics' `gtag.js`_ is included in your pages.
+    Set the value to the ID provided to you by google (like ``UA-XXXXXXX`` or ``G-XXXXXXXXXX``).
 
     :type: string
+
+    .. _gtag.js: https://developers.google.com/gtagjs
 
 .. confval:: analytics_anonymize_ip
 

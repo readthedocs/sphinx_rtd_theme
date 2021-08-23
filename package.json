@@ -1,7 +1,7 @@
 {
   "name": "sphinx_rtd_theme",
   "main": "js/theme.js",
-  "version": "0.5.2",
+  "version": "1.0.0rc2",
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",

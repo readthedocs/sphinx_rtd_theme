@@ -14,24 +14,28 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 .rst-content
+  // Some browsers like to give arbituary margins :( make them all consistent.
+  h1, h2, h3, h4, h5, h6
+    margin-bottom: $base-line-height
+
   // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
   img
     max-width: 100%
     height: auto
 
-  div.figure
+  div.figure, figure
     margin-bottom: $base-line-height
-    p.caption
+    .caption-text
       font-style: italic
     p:last-child.caption
       margin-bottom: 0px
-
-  div.figure.align-center
-    text-align: center
+    &.align-center
+      text-align: center
 
   // Usually it's a good idea to give images some space.
-  .section > img,   .section > a > img
-    margin-bottom: $base-line-height
+  .section >, section >
+    img, a > img
+      margin-bottom: $base-line-height
 
   // normalize browser styling
   abbr[title]
@@ -94,11 +98,19 @@
     font-family: $code-font-family
     font-size: 12px
     line-height: 1.4
-  
-  // Do not allow selection of code block prompts
-  div.highlight .gp 
-    user-select: none
-    pointer-events: none
+
+  // Do not allow selection of code block prompts and line numbers
+  div.highlight
+    span.linenos, .gp
+      user-select: none
+      pointer-events: none
+
+    span.linenos
+     display: inline-block
+     padding-left: 0px
+     padding-right: ($base-line-height / 2)
+     margin-right: ($base-line-height / 2)
+     border-right: 1px solid lighten($table-border-color, 2%)
 
   .code-block-caption
     font-style: italic
@@ -139,36 +151,39 @@
     td, th
       background: transparent !important
       border-color: rgba(0, 0, 0, 0.1) !important
-  .section ul, .toctree-wrapper ul
-    @extend .wy-plain-list-disc
-  .section ol.loweralpha, .section ol.loweralpha > li
-    list-style: lower-alpha
-  .section ol.upperalpha, .section ol.upperalpha > li
-    list-style: upper-alpha
-  .section ol, ol.arabic
-    @extend .wy-plain-list-decimal
-  // Complex bullet lists, they have more item margins than simple lists
-  .section ol li, .section ul li
-    > *
-      margin-top: $base-line-height / 2
-      margin-bottom: $base-line-height / 2
-      &:first-child
-        margin-top: 0rem
-    > p
-      &, &:last-child
+
+  .section, section, .toctree-wrapper
+    ul
+      @extend .wy-plain-list-disc
+    ol.loweralpha, ol.loweralpha > li
+      list-style: lower-alpha
+    ol.upperalpha, ol.upperalpha > li
+      list-style: upper-alpha
+    ol, ol.arabic
+      @extend .wy-plain-list-decimal
+    // Complex bullet lists, they have more item margins than simple lists
+    ol li, ul li
+      > *
+        margin-top: $base-line-height / 2
         margin-bottom: $base-line-height / 2
-      &:only-child, &:only-child:last-child
+        &:first-child
+          margin-top: 0rem
+      > p
+        &, &:last-child
+          margin-bottom: $base-line-height / 2
+        &:only-child, &:only-child:last-child
+          margin-bottom: 0rem
+      > ul, > ol
+        margin-bottom: $base-line-height / 2
+    // Simple lists, no item margins
+    ol.simple li, ul.simple li
+      > *
+        margin-top: 0rem
         margin-bottom: 0rem
-    > ul, > ol
-      margin-bottom: $base-line-height / 2
-  // Simple lists, no item margins
-  .section ol.simple li, .section ul.simple li
-    > *
-      margin-top: 0rem
-      margin-bottom: 0rem
-    ul, ol
-      margin-top: 0rem
-      margin-bottom: 0rem
+      ul, ol
+        margin-top: 0rem
+        margin-bottom: 0rem
+
   .line-block
     margin-left: 0px
     margin-bottom: $base-line-height
@@ -198,16 +213,21 @@
     @extend h2
 
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
-  h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption, .code-block-caption
+  h1, h2, h3, h4, h5, h6, dl dt, p, p.caption, table > caption, .code-block-caption, .eqno
     .headerlink
-      visibility: hidden
+      opacity: 0
       font-size: 14px
+      font-family: FontAwesome
+      margin-left: 0.5em
       @extend .fa
-      &:after
-        content: "\f0c1"
-        font-family: FontAwesome
-    &:hover .headerlink:after
-      visibility: visible
+      &:focus
+        opacity: 1
+    &:hover .headerlink
+      opacity: 1
+
+  // override the Wyrm accessibility anti-pattern of hiding button focus
+  .btn:focus
+    outline: 2px solid
 
   table > caption .headerlink:after
     font-size: 12px
@@ -257,6 +277,15 @@
   .hlist
     width: 100%
 
+  // Definition lists term/classifier separator
+  // Adds a separator for Sphinx > 1.x as a pseudo-element
+  // and hides the hardcoded separator from Sphinx 1.x
+  dl dt span.classifier
+    &:before
+      content: " : "
+  dl dt span.classifier-delimiter
+    display: none !important
+
   // The html4 writer outputs the citation and footnotes as a table, and the
   // html5 writer outputs these as a definition list. We will use the fairly
   // well supported css `grid` attribute to make these back into a table
@@ -275,9 +304,6 @@
         vertical-align: top
   // HTML5 writer
   html.writer-html5 &
-    dl dt span.classifier
-      &:before
-        content: " : "
     dl.footnote,
     dl.field-list
       display: grid
@@ -446,6 +472,12 @@
     .property
       display: inline-block
       padding-right: 8px
+    // This is keywords such as "const"
+    .k
+      font-style: italic
+    .sig-name, .descname, .descclassname
+      font-family: $code-font-family
+      color: $black
   // Doc links to sourcecode
   .viewcode-link, .viewcode-back
     display: inline-block
