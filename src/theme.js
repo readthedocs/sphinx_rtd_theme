@@ -99,7 +99,7 @@ function ThemeNav () {
             })
 
         // Make tables responsive
-        $("table.docutils:not(.field-list,.footnote,.citation)")
+        $("table.docutils:not(.field-list,.footnote,.citation,.rtd-exclude-wy-table)")
             .wrap("<div class='wy-table-responsive'></div>");
 
         // Add extra class to responsive tables that contain

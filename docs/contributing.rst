@@ -203,3 +203,16 @@ To release a new version of the theme, core team will take the following steps:
 
 .. _PEP440: https://www.python.org/dev/peps/pep-0440/
 .. _semantic versioning: http://semver.org/
+
+
+Table handling
+==============
+The theme wraps tables into a ``div.wy-table-responsive`` container, to easily make tables responsive.
+
+If this behavior is not needed for some specific tables, the class name ``rtd-exclude-wy-table`` must be set
+for the table. This may be important especially for other Sphinx extensions, which create and configure tables
+for their use case on their own.
+
+
+
+

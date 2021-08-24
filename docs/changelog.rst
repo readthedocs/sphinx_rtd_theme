@@ -50,6 +50,7 @@ Fixes
 * Wrap inline literals (#1050)
 * Fix aria labels (#1056)
 * Don't toggle navigation terminal nodes (#1049)
+* Allow deactivation of table handling for selected tables (#1179)
 
 Other Changes
 -------------
