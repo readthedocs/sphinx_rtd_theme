@@ -169,9 +169,21 @@ Complex
 
   * Nested item 3.
 
-- ``inline literall``
-- ``inline literall``
-- ``inline literall``
+- ``inline literal``
+- ``inline literal``
+- .. code-block:: text
+
+      Literal block
+
+- .. code-block:: text
+
+      Literal block
+      that
+      has several
+      lines of code
+
+  and then also a paragraph.
+
 - This item has multiple paragraphs.
 
   This item has multiple paragraphs.
