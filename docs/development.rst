@@ -94,7 +94,7 @@ version:
 
 .. _semantic versioning: http://semver.org/
 
-.. _1.0.0:
+.. _release-1.0.0:
 
 1.0.0
 ~~~~~
@@ -126,7 +126,7 @@ HTML4 support is deprecated
     Support for the Sphinx HTML4 writer will be removed in the :ref:`2.0.0`
     release.
 
-.. _1.1.0:
+.. _release-1.1.0:
 
 1.1.0
 ~~~~~
@@ -138,7 +138,7 @@ the 1.x release series. The 1.1 release will not be adding any major features
 and will instead mark the last release targeting projects with old dependencies
 like Sphinx 1.8, HTML4, or required support for IE11.
 
-.. _2.0.0:
+.. _release-2.0.0:
 
 2.0.0
 ~~~~~
@@ -166,7 +166,7 @@ HTML4 support will be removed
     support and should no longer be required to use a modern combination of this
     theme and Sphinx.
 
-.. _3.0.0:
+.. _release-3.0.0:
 
 3.0.0
 ~~~~~
