@@ -60,7 +60,7 @@ Other Changes
 * Use regular toctree instead of toc for singlehtml builder (#507)
 * Cleanup whitespace in templates (#1060)
 
-.. _0.5.2:
+.. _release-0.5.2:
 
 0.5.2
 =====
@@ -72,7 +72,7 @@ Other Changes
 
 * Depend on docutils < 0.17 (#1113)
 
-.. _0.5.1:
+.. _release-0.5.1:
 
 0.5.1
 =====
@@ -104,7 +104,7 @@ Other Changes
 * Make Copyright template match sphinx's basic (#933)
 * Packaging: include ``bin/preinstall.js`` (#1005)
 
-.. _0.5.0:
+.. _release-0.5.0:
 
 0.5.0
 =====
@@ -115,6 +115,8 @@ Fixes
 -----
 
 * Fix bullet list spacing to respect simple/complex list styles
+
+.. _release-0.5.0rc2:
 
 0.5.0rc2
 ========
@@ -128,6 +130,8 @@ Fixes
 * Change FOUT back to FOIT
 * Fix several margin issues with lists, nested lists, and nested content
 * Add colon back to field lists
+
+.. _release-0.5.0rc1:
 
 0.5.0rc1
 ========
@@ -148,7 +152,7 @@ Other Changes
 * Moved build system from Grunt and friends to Webpack
 * Remove Modernizr, but keep html5shiv (#724, #525)
 
-.. _0.4.3:
+.. _release-0.4.3:
 
 0.4.3
 =====
@@ -170,7 +174,7 @@ Fixes
 Other Changes
 --------------
 
-.. _0.4.2:
+.. _release-0.4.2:
 
 0.4.2
 =====
