@@ -2,6 +2,11 @@
 Changelog
 *********
 
+Development version (|development_version|)
+===========================================
+
+.. |development_version| replace:: 1.0.0
+
 .. _release-1.0.0:
 
 1.0.0
