@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "preinstall": "bin/preinstall.js"
+    "preinstall": "bin/preinstall.js",
+    "happo": "happo"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,9 @@
     "url": "https://github.com/readthedocs/sphinx_rtd_theme/issues"
   },
   "homepage": "https://github.com/readthedocs/sphinx_rtd_theme",
-  "dependencies": {},
+  "dependencies": {
+    "happo.io": "^6.7.0"
+  },
   "devDependencies": {
     "bourbon": "~4.3",
     "bourbon-neat": "~1.9",
