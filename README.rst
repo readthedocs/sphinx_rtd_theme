@@ -40,7 +40,8 @@ your ``conf.py`` file's ``html_theme`` setting:
 
     html_theme = "sphinx_rtd_theme"
 
-.. seealso::
+.. admonition:: See also:
+
     `Supported browsers`_
         Officially supported and tested browser/operating system combinations
 
