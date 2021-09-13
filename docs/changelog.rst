@@ -2,10 +2,10 @@
 Changelog
 *********
 
-Development version (|development_version|)
-===========================================
+.. _release-1.0.0:
 
-.. |development_version| replace:: 1.0.0rc2
+1.0.0
+=====
 
 Incompatible Changes
 --------------------
@@ -50,6 +50,8 @@ Fixes
 * Wrap inline literals (#1050)
 * Fix aria labels (#1056)
 * Don't toggle navigation terminal nodes (#1049)
+* Fix ``<pre>`` overflow (#1220)
+* Fix literal/ref style inside ``<dl>`` (#1088)
 
 Other Changes
 -------------
