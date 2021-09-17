@@ -5,16 +5,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 # 
 # Translators:
+# 王赛 <wangsai@bootcss.com>, 2019
 # Anthony <aj@ohess.org>, 2020
-# 王赛 <wangsai@bootcss.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-17 10:02-0600\n"
+"POT-Creation-Date: 2021-09-13 13:35-0600\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
-"Last-Translator: 王赛 <wangsai@bootcss.com>, 2020\n"
+"Last-Translator: Anthony <aj@ohess.org>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/readthedocs/teams/101354/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,12 +147,3 @@ msgstr "项目首页"
 #: sphinx_rtd_theme/versions.html:29
 msgid "Builds"
 msgstr "构建"
-
-#~ msgid "Docs"
-#~ msgstr "文档"
-
-#~ msgid "Free document hosting provided by"
-#~ msgstr "此文档免费托管于"
-
-#~ msgid "Documentation Home"
-#~ msgstr "文档首页"
