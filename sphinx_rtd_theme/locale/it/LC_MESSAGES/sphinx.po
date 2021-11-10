@@ -95,7 +95,7 @@ msgstr "Ultimo aggiornamento il %(last_updated)s."
 #: sphinx_rtd_theme/footer.html:53
 #, python-format
 msgid "Built with %(sphinx_web)s using a"
-msgstr "Realizzato con %(sphinx_web)s e il tema"
+msgstr "Realizzato con %(sphinx_web)s usando un"
 
 #. "theme" refers to a theme for Sphinx, which alters the appearance of the
 #. generated documenation
