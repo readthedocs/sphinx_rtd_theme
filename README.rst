@@ -2,6 +2,10 @@
 Read the Docs Sphinx Theme
 **************************
 
+Forked from `readthedocs/sphinx_rtd_theme`_
+
+An example of debugging CI/CD locally.
+
 .. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme
    :alt: Pypi Version
@@ -51,6 +55,7 @@ your ``conf.py`` file's ``html_theme`` setting:
     `Example documentation`_
         A full example of this theme output, with localized strings enabled.
 
+.. _readthedocs/sphinx_rtd_theme: https://github.com/readthedocs/sphinx_rtd_theme
 .. _PyPI: https://pypi.python.org/pypi/sphinx_rtd_theme
 .. _Supported browsers: https://sphinx-rtd-theme.readthedocs.io/en/stable/development.html#supported-browsers
 .. _Supported dependencies: https://sphinx-rtd-theme.readthedocs.io/en/stable/development.html#supported-dependencies

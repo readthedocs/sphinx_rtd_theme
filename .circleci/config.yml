@@ -68,7 +68,7 @@ jobs:
 
 workflows:
   version: 2
-  tests:
+  test-flow:
     jobs:
       - build
       - py39:
