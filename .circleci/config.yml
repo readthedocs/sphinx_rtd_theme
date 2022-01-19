@@ -33,8 +33,9 @@ jobs:
   build:
     docker:
       - image: 'cimg/python:3.9'
-      - image: 'cimg/node:15.14.0'
     steps:
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+      - nvm install v15.14.0
       - run-build: {}
   py27:
     docker:
