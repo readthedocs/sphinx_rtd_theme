@@ -32,7 +32,7 @@ commands:
 jobs:
   build:
     docker:
-      - image: 'cimg/python:3.9'
+      - image: 'cimg/python:3.9-node'
     steps:
       - run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
       - run: source ~/.bashrc
