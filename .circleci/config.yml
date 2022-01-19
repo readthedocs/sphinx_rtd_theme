@@ -35,6 +35,7 @@ jobs:
       - image: 'cimg/python:3.9'
     steps:
       - run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+      - run: source ~/.bashrc
       - run: nvm install v15.14.0
       - run-build: {}
   py27:
