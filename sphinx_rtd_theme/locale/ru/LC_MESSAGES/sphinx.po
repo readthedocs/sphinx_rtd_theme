@@ -98,7 +98,7 @@ msgid "Built with %(sphinx_web)s using a"
 msgstr "Собрано при помощи %(sphinx_web)s с использованием"
 
 #. "theme" refers to a theme for Sphinx, which alters the appearance of the
-#. generated documenation
+#. generated documentation
 #: sphinx_rtd_theme/footer.html:55
 msgid "theme"
 msgstr "темы,"
