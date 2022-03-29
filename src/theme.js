@@ -159,7 +159,15 @@ function ThemeNav () {
                         .addClass('current')
                         .attr('aria-expanded','true');
                 }
-                link[0].scrollIntoView();
+                /* Scroll the link's top-level parent into view first.  Then
+                 * scroll the link itself into view, which will only have an
+                 * effect if the top-level parent is taller than the viewport
+                 * and the link is still outside the viewport after the first
+                 * scroll.  (This seems likely to be rare.)
+                 */
+                link.closest('li.toctree-l1')[0]
+                  .scrollIntoView({block: "nearest"});
+                link[0].scrollIntoView({block: "nearest"});
             }
         }
         catch (err) {
