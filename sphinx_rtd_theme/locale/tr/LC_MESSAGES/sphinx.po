@@ -62,7 +62,7 @@ msgid "Last updated on %(last_updated)s."
 msgstr "Son olarak %(last_updated)s tarihinde güncellendi."
 
 #. "theme" refers to a theme for Sphinx, which alters the appearance of the
-#. generated documenation
+#. generated documentation
 #: sphinx_rtd_theme/footer.html:55
 msgid "theme"
 msgstr "tema"
