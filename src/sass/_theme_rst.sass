@@ -390,23 +390,31 @@
     .field-body
       text-align: left
 
-  // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
+  // These are generic code blocks from includes
   tt, code
-    @extend code
+    display: block
+    border: none
+    padding: 0px
+    background: inherit
+    font-size: unset
+    white-space: pre
     color: $black
-    font-family: $code-font-family
-    padding: 2px 5px
     big, em
-      font-size: 100% !important
       line-height: normal
+      font-size: 100% !important
 
+    // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
     &.literal
-      color: $text-code-color
+      display: inline
+      border: 1px solid $table-border-color
+      padding: 2px 5px
+      font-size: 75%
       white-space: normal
+      color: $text-code-color
     &.xref, a &
       font-weight: bold
       color: $text-codexref-color
-  pre, kbd, samp
+  pre, kbd, samp, code
     font-family: $code-font-family
   // If the literal is inside an a tag, let's color it like a link
   a tt, a code

@@ -154,11 +154,21 @@ Python-specific usage examples; begun with ">>>"
 Code Blocks
 -----------
 
+.. rubric:: ``include``
+
+.. include:: test_py_module/test.py
+  :code: python
+  :number-lines:
+  :end-line: 10
+
+.. rubric:: ``parsed-literal``
+
 .. parsed-literal::
 
     # parsed-literal test
     curl -O http://someurl/release-|version|.tar-gz
 
+.. rubric:: ``code-block``
 
 .. code-block:: json
     :caption: Code Blocks can have captions.
