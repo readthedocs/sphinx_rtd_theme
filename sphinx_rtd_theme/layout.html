@@ -24,6 +24,7 @@
   {%- endblock -%}
 
   {#- CSS #}
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   {%- if sphinx_version_info < (4, 0) -%}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
@@ -162,7 +163,7 @@
                 target="_blank"
               >
                 <span class="gh-ico" aria-hidden="true"></span>
-                <span class="gh-text">Star</span>
+                <span class="gh-text">GitHub Stars</span>
               </a>
               <a
                 class="gh-count"
@@ -170,8 +171,20 @@
                 rel="noopener noreferrer"
                 target="_blank"
                 aria-label={`${this.state.stars} stargazers on GitHub`}
+                style="margin-left: 0px;"
               >
               </a>
+
+              <a
+                class="gh-btn"
+                href="https://cilium.herokuapp.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+                style="margin-left: 15px;"
+              >
+                <img style="height: 1em;" src="{{ pathto('_static/icons/slack.inline.svg', 1) }}" alt="slack_icon">
+                <span class="gh-text">Join Slack</span>
+            </a>
             </span>
         </span>
     </div>
@@ -180,14 +193,52 @@
       <input name="wy-main-nav-checkbox" id="wy-main-nav-checkbox" class="wy-main-nav-checkbox" type="checkbox">
       <label for="wy-main-nav-checkbox" class="wy-main-nav-toggle">Menu</label>
       <ul id="#wy-main-nav-menu" class="wy-main-nav-menu">
+        <li><a class="w3-hover-text-blue" href="https://cilium.io/enterprise/">Enterprise</a></li>
         <li>
-          <a href="https://isovalent.com" class="callToAction">
-            <span>Enterprise</span>
-          </a>
+          <div style="background-color: white; font-size: 16px; font-weight: 600; margin-left: 40px" class="w3-dropdown-hover">
+            <button class="w3-button w3-white w3-hover-white w3-hover-text-blue">Learn <span class="triangle">▾</span></button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+              <a style = "margin-left: 0px; display: inline-flex;" href="https://cilium.io/get-started" class="w3-bar-item w3-button w3-hover-white w3-hover-text-blue">
+                <img style="height: 1.5em; margin-right: .5em" src="{{ pathto('_static/icons/get-started.inline.svg', 1) }}" alt="get-started-icon">
+                Get Started
+              </a>
+              <a style = "margin-left: 0px; display: inline-flex; padding-right: 10px;" href="https://cilium.io/get-involved" class="w3-bar-item w3-button w3-hover-white w3-hover-text-blue">
+                <img style="height: 1.5em; margin-right: .5em" src="{{ pathto('_static/icons/get-involved.inline.svg', 1) }}" alt="get-involved-icon">
+                Get Involved
+              </a>
+              <a style = "margin-left: 0px; display: inline-flex;" href="https://cilium.io/get-help" class="w3-bar-item w3-button w3-hover-white w3-hover-text-blue">
+                <img style="height: 1.5em; margin-right: .5em" src="{{ pathto('_static/icons/get-help.inline.svg', 1) }}" alt="get-help-icon">
+                Get Help
+              </a>
+            </div>
+          </div>
+        
         </li>
-        <li><a href="https://cilium.io">Cilium</a></li>
-        <li><a href="https://cilium.io/blog">Blog</a></li>
-        <li><a href="https://docs.cilium.io">Documentation</a></li>
+        <li>
+          <div style="background-color: white; font-size: 16px;font-weight: 600; margin-left: 40px" class="w3-dropdown-hover">
+            <button class="w3-button w3-white w3-hover-white w3-hover-text-blue">News and media <span class="triangle">▾</span></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+              <a style = "margin-left: 0px; display: inline-flex;" href="https://cilium.io/adopters" class="w3-bar-item w3-button w3-hover-white w3-hover-text-blue">
+                <img style="height: 1.5em; margin-right: .5em" src="{{ pathto('_static/icons/adopters.inline.svg', 1) }}" alt="adopters-icon">
+                Adopters
+              </a>
+              <a style = "margin-left: 0px; display: inline-flex;" href="https://cilium.io/blog" class="w3-bar-item w3-button w3-hover-white w3-hover-text-blue">
+                <img style="height: 1.5em; margin-right: .5em" src="{{ pathto('_static/icons/blog.inline.svg', 1) }}" alt="blog-icon">
+                Blog
+              </a>
+              <a style = "margin-left: 0px; display: inline-flex;" href="https://github.com/cncf/artwork/blob/master/examples/incubating.md#cilium-logos" class="w3-bar-item w3-button w3-hover-white w3-hover-text-blue">
+                <img style="height: 1.5em; margin-right: .5em" src="{{ pathto('_static/icons/branding.inline.svg', 1) }}" alt="branding-icon">
+                Branding
+              </a>
+              <a style = "margin-left: 0px; display: inline-flex;" href="https://cilium.io/newsletter" class="w3-bar-item w3-button w3-hover-white w3-hover-text-blue">
+                <img style="height: 1.5em; margin-right: .5em" src="{{ pathto('_static/icons/newsletter.inline.svg', 1) }}" alt="newsletter-icon">
+                Newsletter
+              </a>
+            </div>
+          </div>
+
+        </li>
+        <li><a class="w3-hover-text-blue" href="https://docs.cilium.io/en/stable/">Documentation</a></li>
       </ul>
     </nav>
   </header>
