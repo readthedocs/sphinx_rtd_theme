@@ -35,8 +35,9 @@
       color: $black
   &.shift-up
     height: auto
-    max-height: 100%
-    overflow-y: scroll
+    max-height: calc(100vh - 50px)
+    overflow-y: auto
+    overscroll-behavior: contain
   &.shift-up .rst-other-versions
     display: block
   .rst-other-versions
@@ -74,6 +75,8 @@
       line-height: 30px
     &.shift-up .rst-current-version
       text-align: right
+      position: sticky
+      top: 0
       .fa-book
         float: left
       .icon-book
