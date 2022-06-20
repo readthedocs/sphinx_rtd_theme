@@ -228,8 +228,8 @@
   {% include "versions.html" -%}
 
   <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable({{ 'true' if theme_sticky_navigation|tobool else 'false' }});
+      document.addEventListener("DOMContentLoaded", function () {
+        SphinxRtdTheme.Navigation.enable({{ 'true' if theme_sticky_navigation|tobool else 'false' }});
       });
   </script>
 

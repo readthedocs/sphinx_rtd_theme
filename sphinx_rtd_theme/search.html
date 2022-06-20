@@ -17,7 +17,9 @@
 {%- endblock %}
 {% block footer %}
   <script>
-    jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
+    document.addEventListener("DOMContentLoaded", function () {
+      Search.loadIndex("{{ pathto('searchindex.js', 1) }}");
+    });
   </script>
   {# this is used when loading the search index using $.ajax fails,
      such as on Chrome for documents on localhost #}

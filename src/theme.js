@@ -1,4 +1,20 @@
-var jQuery = (typeof(window) != 'undefined') ? window.jQuery : require('jquery');
+/**
+ * Inject jquery if isn't present already.
+ *
+ * @param {function} fn - Function to be executed after jquery has been loaded.
+ */
+function injectJQuery(fn) {
+    if (!window.jQuery) {
+        console.log("JQuery not found. Injecting.");
+        var script = document.createElement("script");
+        script.type = 'text/javascript';
+        script.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js";
+        script.onload = fn;
+        document.head.appendChild(script);
+    } else {
+        fn();
+    }
+}
 
 // Sphinx theme nav state
 function ThemeNav () {
@@ -32,8 +48,8 @@ function ThemeNav () {
         }
 
         self.isRunning = true;
-        jQuery(function ($) {
-            self.init($);
+        injectJQuery(function () {
+            self.init();
 
             self.reset();
             self.win.on('hashchange', self.reset);
@@ -69,7 +85,7 @@ function ThemeNav () {
         this.enable(true);
     };
 
-    nav.init = function ($) {
+    nav.init = function () {
         var doc = $(document),
             self = this;
 
