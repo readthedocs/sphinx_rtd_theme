@@ -4,10 +4,15 @@
  * @param {function} fn - Function to be executed after jquery has been loaded.
  */
 function injectJQuery(fn) {
-    let url = "https://code.jquery.com/jquery-3.6.0.min.js";
     if (!window.jQuery) {
         console.debug("jQuery not found. Injecting.");
-        System.import(url).then(fn());
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+        script.integrity = "sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==";
+        script.crossOrigin = "anonymous";
+        script.onload = fn;
+        document.head.appendChild(script);
     } else {
         fn();
     }
