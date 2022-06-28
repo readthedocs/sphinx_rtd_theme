@@ -6,6 +6,7 @@
 function injectJQuery(fn) {
     let url = "https://code.jquery.com/jquery-3.6.0.min.js";
     if (!window.jQuery) {
+        console.debug("jQuery not found. Injecting.");
         System.import(url).then(fn());
     } else {
         fn();
