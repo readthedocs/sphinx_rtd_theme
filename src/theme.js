@@ -4,13 +4,9 @@
  * @param {function} fn - Function to be executed after jquery has been loaded.
  */
 function injectJQuery(fn) {
+    let url = "https://code.jquery.com/jquery-3.6.0.min.js";
     if (!window.jQuery) {
-        console.log("JQuery not found. Injecting.");
-        var script = document.createElement("script");
-        script.type = 'text/javascript';
-        script.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js";
-        script.onload = fn;
-        document.head.appendChild(script);
+        System.import(url).then(fn());
     } else {
         fn();
     }
@@ -86,8 +82,7 @@ function ThemeNav () {
     };
 
     nav.init = function () {
-        var doc = $(document),
-            self = this;
+        var self = this;
 
         this.navBar = $('div.wy-side-scroll:first');
         this.win = $(window);
