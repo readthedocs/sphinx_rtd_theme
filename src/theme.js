@@ -1,4 +1,4 @@
- var $ = require('jquery');
+var $ = require('jquery');
 
 // Sphinx theme nav state
 function ThemeNav () {
