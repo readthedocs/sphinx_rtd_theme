@@ -1,22 +1,4 @@
-/**
- * Inject jquery if isn't present already.
- *
- * @param {function} fn - Function to be executed after jquery has been loaded.
- */
-function injectJQuery(fn) {
-    if (!window.jQuery) {
-        console.debug("jQuery not found. Injecting.");
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-        script.integrity = "sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==";
-        script.crossOrigin = "anonymous";
-        script.onload = fn;
-        document.head.appendChild(script);
-    } else {
-        fn();
-    }
-}
+ var $ = require('jquery');
 
 // Sphinx theme nav state
 function ThemeNav () {
@@ -50,7 +32,7 @@ function ThemeNav () {
         }
 
         self.isRunning = true;
-        injectJQuery(function () {
+        $(function () {
             self.init();
 
             self.reset();

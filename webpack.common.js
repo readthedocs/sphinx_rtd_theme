@@ -11,9 +11,6 @@ module.exports = {
     filename: "js/[name].js?[hash]",
     path: path.resolve(__dirname, "sphinx_rtd_theme/static")
   },
-  externals: {
-    jquery: "jQuery"
-  },
   module: {
     rules: [
       {

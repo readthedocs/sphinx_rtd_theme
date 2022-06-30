@@ -17,7 +17,9 @@
     "url": "https://github.com/readthedocs/sphinx_rtd_theme/issues"
   },
   "homepage": "https://github.com/readthedocs/sphinx_rtd_theme",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
   "devDependencies": {
     "bourbon": "~4.3",
     "bourbon-neat": "~1.9",
@@ -27,7 +29,6 @@
     "font-awesome": "^4.7.0",
     "html5shiv": "^3.7.3",
     "imports-loader": "^0.8.0",
-    "jquery": "^3.6.0",
     "lato-font": "^3.0.0",
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.13.1",
