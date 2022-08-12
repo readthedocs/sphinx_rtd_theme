@@ -515,6 +515,18 @@
     border-radius: $base-line-height / 6
     padding: ($base-line-height / 10) ($base-line-height / 4)
     margin: auto ($base-line-height / 12)
+  :not(kbd) > kbd,
+  :not(kbd) > .kbd,
+  :not(.kbd) > kbd,
+  :not(.kbd) > .kbd
+    color: inherit
+    font-size: 80%
+    background-color: lighten($text-light, 30%)
+    border: 1px solid darken($text-light, 5%)
+    border-radius: $base-line-height / 6
+    box-shadow: grey 0px $base-line-height / 12
+    padding: $base-line-height / 10 $base-line-height / 4
+    margin: auto 0
   .versionmodified
     font-style: italic
 
