@@ -20,7 +20,7 @@ commands:
       - setup_remote_docker
       # - run: npm ci
       - run: docker build -t sphinx_rtd_theme:latest .
-      - run: docker run --cidfile=.container_id --mount type=bind,source="$(pwd)/src",target=/project/src,readonly sphinx_rtd_theme:latest
+      - run: docker run --cidfile=.container_id --mount type=bind,source="${CIRCLE_WORKING_DIRECTORY}/src",target=/project/src,readonly sphinx_rtd_theme:latest
       - run: docker cp "$(cat .container_id):/project/sphinx_rtd_theme" .
       - run: docker cp "$(cat .container_id):/project/package-lock.json" .
       - run:
