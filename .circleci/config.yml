@@ -17,8 +17,10 @@ commands:
     description: "Ensure built assets are up to date"
     steps:
       - checkout
-      - run: npm ci
-      - run: npm run build
+      # - run: npm ci
+      - run: make docker-images
+      - run: make docker-run
+      - run: make docker-copy-assets
       - run:
           name: Ensure built assets are up to date
           command: |
@@ -32,7 +34,7 @@ commands:
 jobs:
   build:
     docker:
-      - image: 'cimg/python:3.9-node'
+      - image: 'cimg/python:3.9'
     steps:
       - run-build: {}
   py27:
