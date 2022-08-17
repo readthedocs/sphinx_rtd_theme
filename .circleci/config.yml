@@ -17,12 +17,15 @@ commands:
     description: "Ensure built assets are up to date"
     steps:
       - checkout
-      - setup_remote_docker
+      # - setup_remote_docker
       # - run: npm ci
-      - run: docker build -t sphinx_rtd_theme:latest .
-      - run: docker run --cidfile=.container_id --mount type=bind,source="${CIRCLE_WORKING_DIRECTORY}/src",target=/project/src,readonly sphinx_rtd_theme:latest
-      - run: docker cp "$(cat .container_id):/project/sphinx_rtd_theme" .
-      - run: docker cp "$(cat .container_id):/project/package-lock.json" .
+      - run: make docker-images
+      - run: make docker-run
+      - run: make docker-copy-assets
+      # - run: docker build -t sphinx_rtd_theme:latest .
+      # - run: docker run --cidfile=.container_id --mount type=bind,source="${CIRCLE_WORKING_DIRECTORY}/src",target=/project/src,readonly sphinx_rtd_theme:latest
+      # - run: docker cp "$(cat .container_id):/project/sphinx_rtd_theme" .
+      # - run: docker cp "$(cat .container_id):/project/package-lock.json" .
       - run:
           name: Ensure built assets are up to date
           command: |
@@ -35,8 +38,10 @@ commands:
 
 jobs:
   build:
-    docker:
-      - image: docker:17.05.0-ce-git
+    machine: # executor type
+      image: ubuntu-2004:202010-01 # # recommended linux image - includes Ubuntu 20.04, docker 19.03.13, docker-compose 1.27.4
+    # docker:
+    #   - image: docker:17.05.0-ce-git
     steps:
       - run-build: {}
   py27:
