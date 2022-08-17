@@ -34,7 +34,7 @@ commands:
 jobs:
   build:
     docker:
-      - image: 'cimg/python:3.9'
+      - image: docker:17.05.0-ce-git
     steps:
       - run-build: {}
   py27:
