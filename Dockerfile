@@ -11,10 +11,6 @@ COPY package.json /project/
 #COPY package-lock.json /project/
 COPY bin/preinstall.js /project/bin/preinstall.js
 
-COPY docker-entrypoint.sh /entrypoint.sh
-
-RUN chmod +x /entrypoint.sh
-
 RUN cd /project
 
 # There is a very stubborn npm package that keeps complaining even though
@@ -25,4 +21,7 @@ RUN npm install --package-lock-only &&\
     npm audit fix &&\
     npm install
 
-CMD /entrypoint.sh
+COPY docker-entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

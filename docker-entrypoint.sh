@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cp -R /git-readonly /git
 
