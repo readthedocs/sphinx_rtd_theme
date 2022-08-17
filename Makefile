@@ -10,3 +10,4 @@ docker-run:
 
 docker-copy-assets:
 	docker cp "$(shell cat .container_id):/project/sphinx_rtd_theme" .
+	docker cp "$(shell cat .container_id):/project/package-lock.json" .
