@@ -3,7 +3,7 @@ FROM python:2-alpine
 
 RUN apk add --update npm
 
-RUN mkdir -p /project/bin
+RUN mkdir -p /project/src/
 
 WORKDIR /project
 
@@ -20,6 +20,8 @@ RUN cd /project
 RUN npm install --package-lock-only &&\
     npm audit fix &&\
     npm install
+
+COPY webpack.common.js webpack.dev.js webpack.prod.js /project/
 
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

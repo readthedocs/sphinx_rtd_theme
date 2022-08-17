@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp -R /git-readonly /git
+cd /project
 
-cd /git
 npm run build
+
