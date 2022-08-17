@@ -17,6 +17,7 @@ commands:
     description: "Ensure built assets are up to date"
     steps:
       - checkout
+      - setup_remote_docker
       # - run: npm ci
       - run: make docker-images
       - run: make docker-run
