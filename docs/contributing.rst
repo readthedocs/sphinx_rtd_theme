@@ -82,18 +82,16 @@ Use the following steps:
 .. code-block:: console
 
     # Builds an updated version of the docker image
-    $ make docker-images
+    $ docker-compose build
 
     # Runs the docker environment and builds the assets. The container exits after completing the build.
-    $ make docker-run command=build
+    $ docker-compose run sphinx_rtd_theme build
 
     # Runs the development webserver
-    $ make docker-run command=dev
+    $ docker-compose run sphinx_rtd_theme dev
 
 
-Every time you change the Node or Python requirements, you will need to rebuild images with ``make docker-images``. If you change SASS or JS, you will need to rebuild assets.
-
-If you need a different setup, refer to ``Makefile`` to see the exact method used to invoke the Docker environment.
+Every time you change the Node or Python requirements, you will need to rebuild images with ``docker-compose run sphinx_rtd_theme build``. If you change SASS or JS, you will need to rebuild assets.
 
 Testing
 =======

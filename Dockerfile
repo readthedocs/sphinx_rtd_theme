@@ -1,6 +1,4 @@
-# python:3-alpine contains node 18 so has to go first
-# in order to get overwritten
-FROM python:3-alpine
+# This implicitely includes Python 3.10
 FROM node:14-alpine
 
 # Do not use --update since that will also fetch the
@@ -10,7 +8,9 @@ RUN apk add npm make py3-pip py3-wheel
 
 # Add an extra verification that we have the right node
 # because the above caused issues
-RUN node -v && node -v | grep -q v14
+RUN python3 --version
+RUN node -v && node -v | grep -q v14 &&\
+    python3 --version && python3 --version | grep -q "3.10"
 
 RUN pip install pip --upgrade
 
