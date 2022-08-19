@@ -6,6 +6,9 @@ This project follows the Read the Docs :doc:`code of conduct
 <rtd:code-of-conduct>`. If you are not familiar with our code of conduct policy,
 take a minute to read the policy before starting with your first contribution.
 
+.. tip::
+    There is a new dockerized build environment, see :ref:`dockerized-build`.
+
 Modifying the theme
 ===================
 
@@ -61,6 +64,39 @@ can be used to test built assets:
 .. _SASS: http://www.sass-lang.com
 .. _Wyrm: http://www.github.com/snide/wyrm/
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
+
+
+_dockerized-build::
+
+Dockerized development
+======================
+
+If you have Docker available on your platform, you can get started building CSS and JS artifacts a bit faster and won't have to worry about any of the setup spilling over into your general environment.
+
+When building with Docker, we create an image containing the build dependencies, such as `SASS`_ , `Wyrm` and `Webpack`_ in the anticipated versions. Some of these are quite outdated and therefore ideal to isolate a container. The image is tagged as ``sphinx_rtd_theme:latest``.
+
+Inside the running docker image, we mount the working copy of the repository, build the artifacts and finally copy out those artifacts into your external environment.
+
+Use the following steps:
+
+.. code-block:: console
+
+    # Builds an updated version of the docker image
+    $ make docker-images
+
+    # Runs the docker environment and builds the assets. The container exits after completing the build.
+    $ make docker-run command=build
+
+    # Runs the development webserver
+    $ make docker-run command=dev
+
+    # Copies out the assets from the most recent docker-run
+    $ make docker-copy-assets
+
+
+Every time you change the Node or Python requirements, you will need to rebuild images with ``make docker-images``. If you change SASS or JS, you will need to rebuild assets.
+
+If you need a different setup, refer to ``Makefile`` to see the exact method used to invoke the Docker environment.
 
 Testing
 =======
