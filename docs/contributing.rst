@@ -73,7 +73,7 @@ Dockerized development
 
 If you have Docker available on your platform, you can get started building CSS and JS artifacts a bit faster and won't have to worry about any of the setup spilling over into your general environment.
 
-When building with Docker, we create an image containing the build dependencies, such as `SASS`_ , `Wyrm` and `Webpack`_ in the anticipated versions. Some of these are quite outdated and therefore ideal to isolate a container. The image is tagged as ``sphinx_rtd_theme:latest``.
+When building with Docker, we create an image containing the build dependencies. Some of these are quite outdated and therefore ideal to isolate a container. The image is tagged as ``sphinx_rtd_theme:latest``.
 
 Inside the running docker image, we mount the working copy of the repository, build the artifacts and finally copy out those artifacts into your external environment.
 
