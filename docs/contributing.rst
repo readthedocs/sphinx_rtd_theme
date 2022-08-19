@@ -75,7 +75,7 @@ If you have Docker available on your platform, you can get started building CSS 
 
 When building with Docker, we create an image containing the build dependencies. Some of these are quite outdated and therefore ideal to isolate a container. The image is tagged as ``sphinx_rtd_theme:latest``.
 
-Inside the running docker image, we mount the working copy of the repository, build the artifacts and finally copy out those artifacts into your external environment.
+Inside the running docker image, we mount the working copy of the repository, build the artifacts and finally observe that the artifacts have been built and left in your current git checkout.
 
 Use the following steps:
 
@@ -89,9 +89,6 @@ Use the following steps:
 
     # Runs the development webserver
     $ make docker-run command=dev
-
-    # Copies out the assets from the most recent docker-run
-    $ make docker-copy-assets
 
 
 Every time you change the Node or Python requirements, you will need to rebuild images with ``make docker-images``. If you change SASS or JS, you will need to rebuild assets.

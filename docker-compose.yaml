@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+
+  sphinx_rtd_theme:
+    build: .
+    volumes:
+      - type: "bind"
+        source: "./"
+        target: "/project-working-copy"
+    network_mode: host
+    ports:
+      - "1919:1919"
