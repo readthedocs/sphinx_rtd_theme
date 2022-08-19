@@ -2,11 +2,15 @@
 Changelog
 *********
 
-master
-======
+Development version (|development_version|)
+===========================================
 
-v1.0.0
-======
+.. |development_version| replace:: 1.0.1alpha1
+
+.. _release-1.0.0:
+
+1.0.0
+=====
 
 Incompatible Changes
 --------------------
@@ -17,7 +21,42 @@ Incompatible Changes
 Deprecated
 ----------
 
-* Support for sphinx's html4 writer is deprecated and will be removed in version 2.0 (#1091)
+* Support for Sphinx's HTML4 writer is deprecated and will be removed in version 2.0 (#1091)
+
+Features
+--------
+
+* Add support for Sphinx 4.x (#1123)
+* Add support for Docutils 0.17 (#1185 and #1199)
+* Fixed logo scaling on IE11 (#1183)
+* Added support for logos as URLs (#1171)
+* Align top and side navigation background colors on mobile (#1132)
+* Added support for deep toc levels (#1089)
+* Updated translations for Chinese, Dutch, Estonian, French, German, Italian,
+  Lithuanian, Persian, Polish, Portuguese, Russian, Spanish, Swedish, and
+  Turkish locales
+
+A number of accessibility features were added in this release:
+
+* Allow keyboard to toggle menu expansion (#1167)
+* Allow keyboard to activate permalink (#1162)
+* Show keyboard focus on buttons (#1161)
+* Maintain aria-expanded along with .current in menu (#1151)
+* Respect tab order for prev/next buttons (#1051)
+
+Fixes
+-----
+
+* Updated Google analytics integration (#1129)
+* Add classifier separation on Sphinx 2+ HTML4 writer (#1192)
+* Added missing space char in footer (#1188)
+* Fix navigation right padding on level2+ elements (#1068)
+* Fix navigation expansion button sizes (#1067)
+* Wrap inline literals (#1050)
+* Fix aria labels (#1056)
+* Don't toggle navigation terminal nodes (#1049)
+* Fix ``<pre>`` overflow (#1220)
+* Fix literal/ref style inside ``<dl>`` (#1088)
 
 Other Changes
 -------------
@@ -25,22 +64,12 @@ Other Changes
 * Update npm development dependencies (#1096)
 * Don't require npm to build from source (#1039)
 * Use regular toctree instead of toc for singlehtml builder (#507)
-* Templates: Cleanup Whitespace (#1060)
+* Cleanup whitespace in templates (#1060)
 
-Fixes
------
+.. _release-0.5.2:
 
-* Javascript: Add support for deep toc levels (#1089)
-* Use Proper Sass Syntax (#1069)
-* Nav: Fix right padding on level2+ (#1068)
-* Fix Nav Buttons Size (#1067)
-* Fix: wrap inline literals (#1050)
-* Fix aria label (#1056)
-* Respect tab order for prev/next buttons (#1051)
-* Nav: Don't toggle terminal nodes (#1049)
-
-v0.5.2
-======
+0.5.2
+=====
 
 :Date: April 5, 2021
 
@@ -49,8 +78,10 @@ v0.5.2
 
 * Depend on docutils < 0.17 (#1113)
 
-v0.5.1
-======
+.. _release-0.5.1:
+
+0.5.1
+=====
 
 :Date: January 4, 2021
 
@@ -79,8 +110,10 @@ Other Changes
 * Make Copyright template match sphinx's basic (#933)
 * Packaging: include ``bin/preinstall.js`` (#1005)
 
-v0.5.0
-======
+.. _release-0.5.0:
+
+0.5.0
+=====
 
 :Date: Jun 17, 2020
 
@@ -89,8 +122,10 @@ Fixes
 
 * Fix bullet list spacing to respect simple/complex list styles
 
-v0.5.0rc2
-=========
+.. _release-0.5.0rc2:
+
+0.5.0rc2
+========
 
 :Date: June 5, 2020
 
@@ -102,8 +137,10 @@ Fixes
 * Fix several margin issues with lists, nested lists, and nested content
 * Add colon back to field lists
 
-v0.5.0rc1
-=========
+.. _release-0.5.0rc1:
+
+0.5.0rc1
+========
 
 :Date: May 6, 2020
 
@@ -121,8 +158,10 @@ Other Changes
 * Moved build system from Grunt and friends to Webpack
 * Remove Modernizr, but keep html5shiv (#724, #525)
 
-v0.4.3
-======
+.. _release-0.4.3:
+
+0.4.3
+=====
 
 :Date: Feb 12, 2019
 
@@ -141,8 +180,10 @@ Fixes
 Other Changes
 --------------
 
-v0.4.2
-======
+.. _release-0.4.2:
+
+0.4.2
+=====
 
 :Date: Oct 5, 2018
 
@@ -161,8 +202,8 @@ Other Changes
 * Upload signed packages to PyPI with twine (#651)
 * Do not enforce period at the end of copyright statement (666)
 
-v0.4.1
-======
+0.4.1
+=====
 
 :Date: July 27, 2018
 
@@ -179,8 +220,8 @@ Other Changes
 
 * Add Sphinx as a dependency
 
-v0.4.0
-======
+0.4.0
+=====
 
 This version made some changes to how JS and CSS were included
 when the theme is used on Read the Docs.
@@ -202,8 +243,8 @@ Other Changes
 * Changed code and literals to use a native font stack (#612)
 * Fix small styling issues
 
-v0.3.1
-======
+0.3.1
+=====
 
 Fixes
 -----
@@ -214,8 +255,8 @@ Fixes
 * Add open list spacing (#591)
 * Fix table centering (#599)
 
-v0.3.0
-======
+0.3.0
+=====
 
 **Note**: this version resulted in some JavaScript incompatibilities when used on readthedocs.org
 
@@ -248,40 +289,40 @@ Other Changes
 * Compress our Javascript files
 * Updated dependencies
 
-v0.2.4
-======
+0.2.4
+=====
 
 * Yet another patch to deal with extra builders outside Spinx, such as the
   singlehtml builders from the Read the Docs Sphinx extension
 
-v0.2.3
-======
+0.2.3
+=====
 
 * Temporarily patch Sphinx issue with ``singlehtml`` builder by inspecting the
   builder in template.
 
-v0.2.2
-======
+0.2.2
+=====
 
 * Roll back toctree fix in 0.2.1 (#367). This didn't fix the issue and
   introduced another bug with toctrees display.
 
-v0.2.1
-======
+0.2.1
+=====
 
 * Add the ``rel`` HTML attribute to the footer links which point to
   the previous and next pages.
 * Fix toctree issue caused by Sphinx singlehtml builder (#367)
 
-v0.2.0
-======
+0.2.0
+=====
 
 * Adds the ``comments`` block after the ``body`` block in the template
 * Added "Edit on GitLab" support
 * Many bug fixes
 
-v0.1.10-alpha
-=============
+0.1.10-alpha
+============
 
 .. note:: This is a pre-release version
 
@@ -290,8 +331,8 @@ v0.1.10-alpha
 * Adds a ``body_begin`` block to the template
 * Added ``prev_next_buttons_location``
 
-v0.1.9
-======
+0.1.9
+=====
 
 * Intermittent scrollbar visibility bug fixed. This change introduces a
   backwards incompatible change to the theme's layout HTML. This should only be
@@ -307,8 +348,8 @@ v0.1.9
 
 .. _#215: https://github.com/rtfd/sphinx_rtd_theme/pull/215
 
-v0.1.8
-======
+0.1.8
+=====
 
 * Start keeping changelog :)
 * Support for third and fourth level headers in the sidebar
