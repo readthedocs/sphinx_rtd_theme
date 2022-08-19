@@ -120,6 +120,7 @@ setup(
     install_requires=[
         'sphinx>=1.6',
         'docutils<0.19',
+        'Jinja2<3.1',
     ],
     tests_require=[
         'pytest',
