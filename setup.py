@@ -130,6 +130,7 @@ setup(
             'transifex-client',
             'sphinxcontrib-httpdomain',
             'bump2version',
+            'wheel',
         ],
     },
     classifiers=[
