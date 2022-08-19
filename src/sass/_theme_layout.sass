@@ -15,7 +15,7 @@ html
   ul, li
     display: inline-block
   li:hover
-    background: rgba(255,255,255,.1)
+    background: rgba(255, 255, 255, 0.1)
   li
     &.divide-left
       border-left: solid 1px hsl(0, 0%, 25%)
@@ -35,7 +35,7 @@ html
     height: $base-font-size * 2
     line-height: $base-font-size * 2
     padding: 0 $gutter
-    margin: $base-line-height / 2 0 0 0
+    margin: ($base-line-height / 2) 0 0 0
     display: block
     font-weight: bold
     text-transform: uppercase
@@ -54,7 +54,7 @@ html
       a
         color: $menu-link-medium
         border-right: solid 1px darken($menu-vertical-background-color, 20%)
-        padding: $gutter / 4 $gutter * 1.5
+        padding: ($gutter / 4) ($gutter * 1.5)
         &:hover
           background: darken($menu-vertical-background-color, 15%)
     code
@@ -64,7 +64,7 @@ html
       padding-left: 0
       padding-right: 0
     // Expand links
-    span.toctree-expand
+    button.toctree-expand
       display: block
       float: left
       margin-left: -1.2em
@@ -72,11 +72,14 @@ html
       @extend .fa-plus-square-o
       line-height: 18px
       color: darken($menu-link-medium, 20%)
+      border: none
+      background: none
+      padding: 0
 
   // On state for the first level
   li.on a, li.current > a
     color: $menu-link-color
-    padding: $gutter / 4 $gutter
+    padding: ($gutter / 4) $gutter
     font-weight: bold
     position: relative
     background: $menu-vertical-background-color
@@ -85,9 +88,9 @@ html
     +font-smooth
     &:hover
       background: $menu-vertical-background-color
-      span.toctree-expand
+      button.toctree-expand
         color: $menu-link-medium
-    span.toctree-expand
+    button.toctree-expand
       @extend .fa
       @extend .fa-minus-square-o
       display: block
@@ -107,7 +110,7 @@ html
       display: block
 
   %shrink_toctree_element
-    font-size: .9em
+    font-size: 0.9em
 
   %toctree_link_color
     color: $menu-link-color
@@ -128,13 +131,13 @@ html
           @extend %toctree_link_color
         &.current
           > a
-            padding: $gutter / 4 $gutter * ($toc_level - 1 + .5)
+            padding: ($gutter / 4) ($gutter * ($toc_level - 1 + 0.5))
 
           li.toctree-l#{$toc_level + 1}  > a
             @extend %display_current_toctree_element
-            padding: $gutter / 4 $gutter * ($toc_level + .5)
+            padding: ($gutter / 4) ($gutter * ($toc_level + 0.5))
             padding-right: $gutter
-        a:hover span.toctree-expand
+        a:hover button.toctree-expand
           @extend %toctree_hover_link_color
     @if $toc_level > 2 and $toc_level < 5
       li.toctree-l#{$toc_level}
@@ -146,7 +149,7 @@ html
         background: darken($menu-vertical-background-color, 20%)
       li.toctree-l3 > a
         background: darken($menu-vertical-background-color, 20%)
-    span.toctree-expand
+    button.toctree-expand
       color: darken($menu-vertical-background-color, 35%)
   li.toctree-l3
     &.current
@@ -154,7 +157,7 @@ html
         background: darken($menu-vertical-background-color, 25%)
       li.toctree-l4 > a
         background: darken($menu-vertical-background-color, 25%)
-    span.toctree-expand
+    button.toctree-expand
       color: darken($menu-vertical-background-color, 40%)
 
   li.current ul
@@ -168,7 +171,7 @@ html
     font-weight: normal
   a
     line-height: 18px
-    padding: $gutter / 4 $gutter
+    padding: ($gutter / 4) $gutter
     display: block
     position: relative
     font-size: 90%
@@ -176,13 +179,13 @@ html
     &:hover
       background-color: lighten($menu-background-color, 10%)
       cursor: pointer
-      span.toctree-expand
+      button.toctree-expand
         color: $menu-link-light
     &:active
       background-color: $menu-logo-color
       cursor: pointer
       color: $menu-link-active
-      span.toctree-expand
+      button.toctree-expand
         color: $menu-link-active
 
 .wy-side-nav-search
@@ -201,7 +204,7 @@ html
     border-color: darken($link-color, 5%)
   img
     display: block
-    margin: auto auto $gutter / 2 auto
+    margin: auto auto ($gutter / 2) auto
     height: 45px
     width: 45px
     background-color: $menu-logo-color
@@ -212,11 +215,12 @@ html
     font-size: 100%
     font-weight: bold
     display: inline-block
-    padding: $base-line-height / 6 $base-line-height / 4
+    padding: ($base-line-height / 6) ($base-line-height / 4)
     margin-bottom: $gutter / 2
+    max-width: 100%
     +font-smooth
     &:hover
-      background: rgba(255,255,255,.1)
+      background: rgba(255, 255, 255, 0.1)
     img.logo
       display: block  // display on its own line all the time
       margin: 0 auto
@@ -224,15 +228,15 @@ html
       width: auto
       border-radius: 0
       max-width: 100%  // shrink on mobile, if appropriate
-      background: rgba(0,0,0,0)  // make hover background of parent show up properly
+      background: rgba(0, 0, 0, 0)  // make hover background of parent show up properly
     &.icon
       img.logo
         margin-top: 0.85em  // space it away from the title text
   > div.version
-    margin-top: -1 * ($gutter / 4)
+    margin-top: -1 * $gutter / 4
     margin-bottom: $gutter / 2
     font-weight: normal
-    color: rgba(255,255,255,.3)
+    color: rgba(255, 255, 255, 0.3)
 
 .wy-nav .wy-menu-vertical
   header
@@ -244,7 +248,7 @@ html
       color: $white
 
 [data-menu-wrap]
-  +transition(all .2s ease-in)
+  +transition(all 0.2s ease-in)
   position: absolute
   opacity: 1
   width: 100%
@@ -295,7 +299,7 @@ html
   display: none
   background: $link-color
   color: $white
-  padding: $gutter / 4 $gutter / 2
+  padding: ($gutter / 4) ($gutter / 2)
   position: relative
   line-height: 50px
   text-align: center
@@ -324,7 +328,7 @@ html
   min-height: 100%
 
 .wy-nav-content
-  padding: $gutter $gutter * 2
+  padding: $gutter ($gutter * 2)
   height: 100%
   max-width: $nav-content-width
   margin: auto
@@ -333,7 +337,7 @@ html
   position: fixed
   width: 100%
   height: 100%
-  background: rgba(0,0,0,.2)
+  background: rgba(0, 0, 0, 0.2)
   display: none
   z-index: $z-index-modal - 1
   &.on
@@ -411,7 +415,7 @@ footer
 
 @media screen and (min-width: $nav-media-query)
   .wy-nav-content-wrap
-    background: rgba(0,0,0,.05)
+    background: rgba(0, 0, 0, 0.05)
   .wy-nav-content
     margin: 0
     background: $section-background-color
