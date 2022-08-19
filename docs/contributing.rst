@@ -184,8 +184,8 @@ To release a new version of the theme, core team will take the following steps:
 #. Update the changelog (``docs/changelog.rst``) with the version information.
 #. Run ``python setup.py update_translations`` to compile new translation files
    and update Transifex.
-#. Run ``npm install && npm run build && python setup.py bdist_wheel sdist`` to rebuild all the theme assets and the Python
-   package, notice that ``package-lock.json`` will be updated with a new package
+#. Run ``npm install && npm run build`` to rebuild all the theme assets,
+   notice that ``package-lock.json`` will be updated with a new package
    version. But take care that it isn't also bumping versions of dependencies
    in ways that are risky to the release. *If* ``package-lock.json`` changes, you
    need to commit it to git and tag it together with your release.
