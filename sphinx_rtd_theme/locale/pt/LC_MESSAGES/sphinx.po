@@ -5,8 +5,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 # 
 # Translators:
-# Anthony <aj@ohess.org>, 2019
-# Radina Matic <radina.matic@gmail.com>, 2021
+# Ana Costa <anacosta.xl@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
@@ -14,30 +13,42 @@ msgstr ""
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-09-13 13:35-0600\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
-"Last-Translator: Radina Matic <radina.matic@gmail.com>, 2021\n"
-"Language-Team: Spanish (https://www.transifex.com/readthedocs/teams/101354/es/)\n"
+"Last-Translator: Ana Costa <anacosta.xl@gmail.com>, 2021\n"
+"Language-Team: Portuguese (https://www.transifex.com/readthedocs/teams/101354/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Language: es\n"
+"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. This is an ARIA section label for page links, including previous/next page
+#. link and links to GitHub/GitLab/etc.
+#: sphinx_rtd_theme/breadcrumbs.html:22
+msgid "Page navigation"
+msgstr "Navegação da página"
 
 #: sphinx_rtd_theme/breadcrumbs.html:37 sphinx_rtd_theme/breadcrumbs.html:39
 msgid "Edit on GitHub"
-msgstr "Editar en GitHub"
+msgstr "Editar no GitHub"
 
 #: sphinx_rtd_theme/breadcrumbs.html:44 sphinx_rtd_theme/breadcrumbs.html:46
 msgid "Edit on Bitbucket"
-msgstr "Editar en Bitbucket"
+msgstr "Editar no Bitbucket"
 
 #: sphinx_rtd_theme/breadcrumbs.html:51 sphinx_rtd_theme/breadcrumbs.html:53
 msgid "Edit on GitLab"
-msgstr "Editar en GitLab"
+msgstr "Editar no GitLab"
 
 #: sphinx_rtd_theme/breadcrumbs.html:56 sphinx_rtd_theme/breadcrumbs.html:58
 msgid "View page source"
-msgstr "Ver código fuente de la página"
+msgstr "Ver código-fonte da página"
+
+#. This is an ARIA section label for sequential page links, such as previous
+#. and next page links.
+#: sphinx_rtd_theme/breadcrumbs.html:67
+msgid "Sequential page navigation"
+msgstr "Navegação sequencial da página"
 
 #: sphinx_rtd_theme/breadcrumbs.html:69 sphinx_rtd_theme/footer.html:6
 msgid "Previous"
@@ -45,37 +56,22 @@ msgstr "Anterior"
 
 #: sphinx_rtd_theme/breadcrumbs.html:72 sphinx_rtd_theme/footer.html:9
 msgid "Next"
-msgstr "Siguiente"
+msgstr "Seguinte"
 
 #. This is an ARIA section label for the footer section of the page.
 #: sphinx_rtd_theme/footer.html:4
 msgid "Footer"
-msgstr "Pie de página"
-
-#: sphinx_rtd_theme/footer.html:21
-#, python-format
-msgid "&#169; <a href=\"%(path)s\">Copyright</a> %(copyright)s."
-msgstr "&#169; <a href=\"%(path)s\">Derechos de autor</a> %(copyright)s."
-
-#: sphinx_rtd_theme/footer.html:23
-#, python-format
-msgid "&#169; Copyright %(copyright)s."
-msgstr "&#169; Derechos de autor %(copyright)s."
-
-#. Build is a noun, not a verb
-#: sphinx_rtd_theme/footer.html:30
-msgid "Build"
-msgstr "Compilación"
+msgstr "Rodapé"
 
 #. the phrase "revision" comes from Git, referring to a commit
 #: sphinx_rtd_theme/footer.html:36
 msgid "Revision"
-msgstr "Revisión"
+msgstr "Revisão"
 
 #: sphinx_rtd_theme/footer.html:41
 #, python-format
 msgid "Last updated on %(last_updated)s."
-msgstr "Actualizado por última vez el %(last_updated)s."
+msgstr "Última actualização em %(last_updated)s."
 
 #. the variable "sphinx_web" is a link to the Sphinx project documentation
 #. with
@@ -83,7 +79,7 @@ msgstr "Actualizado por última vez el %(last_updated)s."
 #: sphinx_rtd_theme/footer.html:53
 #, python-format
 msgid "Built with %(sphinx_web)s using a"
-msgstr "Compilado con %(sphinx_web)s usando un"
+msgstr "Compilado com %(sphinx_web)s usando um"
 
 #. "theme" refers to a theme for Sphinx, which alters the appearance of the
 #. generated documentation
@@ -96,16 +92,16 @@ msgstr "tema"
 #: sphinx_rtd_theme/footer.html:57
 #, python-format
 msgid "provided by %(readthedocs_web)s"
-msgstr "proporcionado por %(readthedocs_web)s"
+msgstr "fornecido por %(readthedocs_web)s"
 
 #: sphinx_rtd_theme/layout.html:97
 #, python-format
 msgid "Search within %(docstitle)s"
-msgstr "Buscar en %(docstitle)s"
+msgstr "Procurar em %(docstitle)s"
 
 #: sphinx_rtd_theme/layout.html:105
 msgid "About these documents"
-msgstr "Sobre esta documentación"
+msgstr "Sobre estes documentos"
 
 #: sphinx_rtd_theme/layout.html:108
 msgid "Index"
@@ -113,56 +109,53 @@ msgstr "Índice"
 
 #: sphinx_rtd_theme/layout.html:111 sphinx_rtd_theme/search.html:11
 msgid "Search"
-msgstr "Búsqueda"
-
-#: sphinx_rtd_theme/layout.html:114
-msgid "Copyright"
-msgstr "Derechos de autor"
+msgstr "Pesquisar"
 
 #: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
 msgid "Logo"
-msgstr "Logotipo"
+msgstr "Logo"
+
+#. This is an ARIA section label for the main navigation menu
+#: sphinx_rtd_theme/layout.html:173
+msgid "Navigation menu"
+msgstr "Menu de navegação"
+
+#. This is an ARIA section label for the navigation menu that is visible when
+#. viewing the page on mobile devices
+#: sphinx_rtd_theme/layout.html:195
+msgid "Mobile navigation menu"
+msgstr "Menu de navegação móvel"
 
 #: sphinx_rtd_theme/search.html:31
 msgid "Please activate JavaScript to enable the search functionality."
-msgstr ""
-"Por favor, active JavaScript para habilitar la funcionalidad de búsqueda."
+msgstr "Por favor, active o JavaScript para permitir a função de pesquisa."
 
 #. Search is a noun, not a verb
 #: sphinx_rtd_theme/search.html:39
 msgid "Search Results"
-msgstr "Resultados de la búsqueda"
+msgstr "Resultados de Pesquisa"
 
 #: sphinx_rtd_theme/search.html:41
 msgid ""
 "Your search did not match any documents. Please make sure that all words are"
 " spelled correctly and that you've selected enough categories."
 msgstr ""
-"Su búsqueda no coincide con ningún documento. Por favor, asegúrese de que "
-"todas las palabras estén correctamente escritas y que usted haya "
-"seleccionado las suficientes categorías."
+"A sua pesquisa não encontrou nenhum documento. Por favor confirme que todas "
+"as palavras estão bem escritas e que selecionou categorias suficientes."
 
 #: sphinx_rtd_theme/searchbox.html:4
 msgid "Search docs"
-msgstr "Buscar documentos"
+msgstr "Pesquisar docs"
 
 #: sphinx_rtd_theme/versions.html:3 sphinx_rtd_theme/versions.html:11
 msgid "Versions"
-msgstr "Versiones"
+msgstr "Versões"
 
 #: sphinx_rtd_theme/versions.html:17
 msgid "Downloads"
-msgstr "Descargas"
+msgstr "Transferências"
 
 #. The phrase "Read the Docs" is not translated
 #: sphinx_rtd_theme/versions.html:24
 msgid "On Read the Docs"
-msgstr "En Read the Docs"
-
-#: sphinx_rtd_theme/versions.html:26
-msgid "Project Home"
-msgstr "Página de Proyecto"
-
-#: sphinx_rtd_theme/versions.html:29
-msgid "Builds"
-msgstr "Compilaciones"
+msgstr "No Read the Docs"

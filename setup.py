@@ -87,7 +87,7 @@ class TransifexCommand(distutils.cmd.Command):
 
 setup(
     name='sphinx_rtd_theme',
-    version='0.5.2',
+    version='1.0.1alpha1',
     url='https://github.com/readthedocs/sphinx_rtd_theme',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
@@ -119,7 +119,8 @@ setup(
     python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     install_requires=[
         'sphinx>=1.6',
-        'docutils<0.17', # https://github.com/sphinx-doc/sphinx/issues/9001
+        'docutils<0.18',
+        'Jinja2<3.1',
     ],
     tests_require=[
         'pytest',
