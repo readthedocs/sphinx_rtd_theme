@@ -86,14 +86,7 @@ class TransifexCommand(distutils.cmd.Command):
 
 
 setup(
-    name='sphinx_rtd_theme',
     version='1.0.1alpha1',
-    url='https://github.com/readthedocs/sphinx_rtd_theme',
-    license='MIT',
-    author='Dave Snider, Read the Docs, Inc. & contributors',
-    author_email='dev@readthedocs.org',
-    description='Read the Docs theme for Sphinx',
-    long_description=open('README.rst', encoding='utf-8').read(),
     cmdclass={
         'update_translations': UpdateTranslationsCommand,
         'transifex': TransifexCommand,
