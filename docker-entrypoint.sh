@@ -7,4 +7,11 @@ cp -r /project/node_modules /project-working-copy/
 cd /project-working-copy
 pip install --upgrade -e ".[dev]"
 
+# This helps a potential permission issue, but might be removed
+# pending some more investigation of docker host file system
+# permissions in the bind mount
+npm cache clean --force
+npm install
+
+echo "Going to invoke: npm run $@"
 npm run $@

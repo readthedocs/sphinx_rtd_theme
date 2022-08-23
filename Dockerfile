@@ -16,7 +16,8 @@ RUN pip install pip --upgrade
 
 RUN mkdir -p /project/src/ &&\
     mkdir -p /project/docs/ &&\
-    mkdir -p /project-static-copy
+    mkdir -p /project-minimal-copy/sphinx_rtd_theme &&\
+    touch /project-minimal-copy/sphinx_rtd_theme/__init__.py
 
 WORKDIR /project
 
@@ -36,9 +37,9 @@ RUN npm install --package-lock-only &&\
 
 # This is strictly speaking not necessary, just makes
 # running the container faster...
-# Install dependencies, then uninstall project itself
-COPY . /project-static-copy
-RUN cd /project-static-copy &&\
+# Install dependencies, then uninstall project itsel
+COPY setup.py README.rst /project-minimal-copy/
+RUN cd /project-minimal-copy &&\
     pip install ".[dev]" &&\
     /usr/bin/yes | pip uninstall sphinx_rtd_theme
 
