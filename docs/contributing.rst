@@ -6,6 +6,9 @@ This project follows the Read the Docs :doc:`code of conduct
 <rtd:code-of-conduct>`. If you are not familiar with our code of conduct policy,
 take a minute to read the policy before starting with your first contribution.
 
+.. tip::
+    There is a new dockerized build environment, see :ref:`dockerized-build`.
+
 Modifying the theme
 ===================
 
@@ -61,6 +64,36 @@ can be used to test built assets:
 .. _SASS: http://www.sass-lang.com
 .. _Wyrm: http://www.github.com/snide/wyrm/
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
+
+
+_dockerized-build::
+
+Dockerized development
+======================
+
+If you have Docker available on your platform, you can get started building CSS and JS artifacts a bit faster and won't have to worry about any of the setup spilling over into your general environment.
+
+When building with Docker, we create an image containing the build dependencies. Some of these are quite outdated and therefore ideal to isolate a container. The image is tagged as ``sphinx_rtd_theme:latest``.
+
+Inside the running docker image, we mount the working copy of the repository, build the artifacts and finally observe that the artifacts have been built and left in your current git checkout.
+
+Use the following steps:
+
+.. code-block:: console
+
+    # Builds an updated version of the docker image
+    $ docker-compose build
+
+    # Runs the development webserver
+    $ docker-compose run sphinx_rtd_theme dev
+    
+    # If you want to copy stuff out of the Docker environment, run this make
+    # target or read the actual Makefile to see what is going on.
+    # We suggest running this command every time that you want to quickly build
+    # new CSS/JS assets
+    $ make docker-build-all
+
+Every time you change the Node or Python requirements, you will need to rebuild images with ``docker-compose run sphinx_rtd_theme build``. If you change SASS or JS, you will need to rebuild assets.
 
 Testing
 =======
