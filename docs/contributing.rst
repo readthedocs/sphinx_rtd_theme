@@ -84,12 +84,14 @@ Use the following steps:
     # Builds an updated version of the docker image
     $ docker-compose build
 
-    # Runs the docker environment and builds the assets. The container exits after completing the build.
-    $ docker-compose run sphinx_rtd_theme build
-
     # Runs the development webserver
     $ docker-compose run sphinx_rtd_theme dev
-
+    
+    # If you want to copy stuff out of the Docker environment, run this make
+    # target or read the actual Makefile to see what is going on.
+    # We suggest running this command every time that you want to quickly build
+    # new CSS/JS assets
+    $ make docker-build-all
 
 Every time you change the Node or Python requirements, you will need to rebuild images with ``docker-compose run sphinx_rtd_theme build``. If you change SASS or JS, you will need to rebuild assets.
 
