@@ -302,7 +302,7 @@ A reference can be found under `Inline Markup`_, above. `Inline
 hyperlink targets`_ are also possible.
 
 Section headers are implicit targets, referred to by name. See
-Targets_, which is a subsection of `Body Elements`_.
+Targets_, which is a subsection of `References`_.
 
 Explicit external targets are interpolated into references such as "Python_".
 
