@@ -423,6 +423,11 @@
     dd
       margin: 0 0 ($base-line-height / 2) $base-line-height
       line-height: $base-line-height
+      > p:last-child,
+      > ol:last-child,
+      > ul:last-child,
+      > table:last-child
+        margin-bottom: 0
   html.writer-html4 & dl:not(.docutils),
   html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
     margin-bottom: $base-line-height
@@ -515,10 +520,8 @@
     border-radius: $base-line-height / 6
     padding: ($base-line-height / 10) ($base-line-height / 4)
     margin: auto ($base-line-height / 12)
-  :not(kbd) > kbd,
-  :not(kbd) > .kbd,
-  :not(.kbd) > kbd,
-  :not(.kbd) > .kbd
+  *:not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > kbd,
+  *:not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > .kbd
     color: inherit
     font-size: 80%
     background-color: lighten($text-light, 30%)
