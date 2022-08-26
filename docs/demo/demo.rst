@@ -51,6 +51,10 @@ should    be grouped    in pairs).``
 
 If the ``--pep-references`` option was supplied, there should be a live link to PEP 258 here.
 
+.. regression test for https://github.com/readthedocs/sphinx_rtd_theme/pull/1193
+
+Very long URLs should be wrapped so lines do not overflow and cause horizontal scrolling: https://www.google.com/search?hl=en&q=very%20long%20url%20example%20of%20a%20url%20that%20is%20extremely%20long%20you%20probably%20want%20to%20avoid%20it%20but%20here%20we%20are
+
 Math
 ====
 
