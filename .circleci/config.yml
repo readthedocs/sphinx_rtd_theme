@@ -46,6 +46,7 @@ jobs:
     steps:
       - run-tox:
           version: py27
+          sphinx-version: "16,17,18"
   py36:
     docker:
       - image: 'cimg/python:3.6'
