@@ -3,3 +3,17 @@ span[id*='MathJax-Span']
 
 .math
   text-align: center
+
+span.eqno
+  margin-left: 5px
+  float: right
+
+  .headerlink
+    display: none
+    visibility: hidden
+  &:after
+    visibility: visible
+    display: inline-block
+  &:hover .headerlink
+    display: inline-block
+    visibility: visible
