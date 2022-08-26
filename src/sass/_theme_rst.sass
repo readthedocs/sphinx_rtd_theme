@@ -304,8 +304,7 @@
         vertical-align: top
   // HTML5 writer
   html.writer-html5 &
-    dl.footnote,
-    dl.field-list
+    dl.footnote, dl.citation, dl.field-list
       display: grid
       grid-template-columns: max-content auto
       > dt
@@ -314,8 +313,8 @@
           content: ":"
       > dt, > dd
         margin-bottom: 0rem
-    dl.footnote
-      font-size: 0.9rem
+    dl.footnote, dl.citation
+      font-size: .9rem
       > dt
         margin: 0rem 0.5rem 0.5rem 0rem
         line-height: 1.2rem
@@ -339,7 +338,7 @@
         font-size: 0.9rem
   // Both
   html.writer-html4 & table.docutils.citation, table.docutils.footnote,
-  html.writer-html5 & dl.footnote
+  html.writer-html5 & dl.footnote, dl.citation
     color: $text-medium
     code
       color: $gray
@@ -429,7 +428,7 @@
       > table:last-child
         margin-bottom: 0
   html.writer-html4 & dl:not(.docutils),
-  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
+  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple)
     margin-bottom: $base-line-height
     > dt
       display: table
