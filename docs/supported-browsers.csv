@@ -1,0 +1,5 @@
+Browser,Operating System,Versions
+Chrome,"Windows, MacOS, Linux, Android",>=90
+Firefox,"Linux, Windows",>=90
+Edge,Windows,>=90
+Safari,"MacOS, iOS",>=13

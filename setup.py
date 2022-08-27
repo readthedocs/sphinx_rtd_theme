@@ -1,27 +1,29 @@
 # -*- coding: utf-8 -*-
-"""`sphinx_rtd_theme` lives on `Github`_.
 
-.. _github: https://github.com/readthedocs/sphinx_rtd_theme
-
-"""
-
+import distutils.cmd
 import os
 import subprocess
-import distutils.cmd
-import setuptools.command.build_py
 from io import open
+
 from setuptools import setup
 
 
-class WebpackBuildCommand(setuptools.command.build_py.build_py):
+class WebpackBuildCommand(distutils.cmd.Command):
 
-    """Prefix Python build with Webpack asset build"""
+    description = "Generate static assets"
+
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
 
     def run(self):
         if not 'CI' in os.environ and not 'TOX_ENV_NAME' in os.environ:
             subprocess.run(['npm', 'install'], check=True)
             subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
-        setuptools.command.build_py.build_py.run(self)
 
 
 class WebpackDevelopCommand(distutils.cmd.Command):
@@ -84,18 +86,11 @@ class TransifexCommand(distutils.cmd.Command):
 
 
 setup(
-    name='sphinx_rtd_theme',
-    version='0.5.1',
-    url='https://github.com/readthedocs/sphinx_rtd_theme',
-    license='MIT',
-    author='Dave Snider, Read the Docs, Inc. & contributors',
-    author_email='dev@readthedocs.org',
-    description='Read the Docs theme for Sphinx',
-    long_description=open('README.rst', encoding='utf-8').read(),
+    version='1.0.1alpha1',
     cmdclass={
         'update_translations': UpdateTranslationsCommand,
         'transifex': TransifexCommand,
-        'build_py': WebpackBuildCommand,
+        'build_assets': WebpackBuildCommand,
         'watch': WebpackDevelopCommand,
     },
     zip_safe=False,
@@ -104,7 +99,7 @@ setup(
         'theme.conf',
         '*.html',
         'static/css/*.css',
-        'static/css/fonts/*.*'
+        'static/css/fonts/*.*',
         'static/js/*.js',
     ]},
     include_package_data=True,
@@ -114,8 +109,11 @@ setup(
             'sphinx_rtd_theme = sphinx_rtd_theme',
         ]
     },
+    python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     install_requires=[
-        'sphinx'
+        'sphinx>=1.6',
+        'docutils<0.18',
+        'Jinja2<3.1',
     ],
     tests_require=[
         'pytest',
@@ -125,6 +123,7 @@ setup(
             'transifex-client',
             'sphinxcontrib-httpdomain',
             'bump2version',
+            'wheel',
         ],
     },
     classifiers=[
@@ -137,12 +136,17 @@ setup(
         'Intended Audience :: Developers',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Operating System :: OS Independent',
         'Topic :: Documentation',
         'Topic :: Software Development :: Documentation',
     ],
+    project_urls={
+        'Homepage': 'https://sphinx-rtd-theme.readthedocs.io/',
+        'Source Code': 'https://github.com/readthedocs/sphinx_rtd_theme',
+        'Issue Tracker': 'https://github.com/readthedocs/sphinx_rtd_theme/issues',
+    },
 )

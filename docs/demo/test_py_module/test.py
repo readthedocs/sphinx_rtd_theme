@@ -65,6 +65,7 @@ class Foo:
         :type val2: int
         :rtype: int
 
+        The parameters of this method are described in the parameter list.
         """
 
         return val1 + val2
@@ -111,3 +112,23 @@ class Foo:
             This is deprecated since 3.0
         """
         return sum(kwargs.values()) / len(kwargs), a + b
+
+
+def add_numbers(a: int, b: int = 0) -> int:
+    """Add two numbers together
+
+    :param a: The first number
+    :param b: The second number
+
+    Here is some more text.
+    """
+    return a + b
+
+
+def subtract_numbers(a: int, b: int = 0) -> int:
+    """Subtract two numbers
+
+    :param a: The first number
+    :param b: The second number
+    """
+    return a - b
