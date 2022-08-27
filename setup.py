@@ -86,14 +86,7 @@ class TransifexCommand(distutils.cmd.Command):
 
 
 setup(
-    name='sphinx_rtd_theme',
-    version='0.5.1',
-    url='https://github.com/readthedocs/sphinx_rtd_theme',
-    license='MIT',
-    author='Dave Snider, Read the Docs, Inc. & contributors',
-    author_email='dev@readthedocs.org',
-    description='Read the Docs theme for Sphinx',
-    long_description=open('README.rst', encoding='utf-8').read(),
+    version='1.0.1alpha1',
     cmdclass={
         'update_translations': UpdateTranslationsCommand,
         'transifex': TransifexCommand,
@@ -106,7 +99,7 @@ setup(
         'theme.conf',
         '*.html',
         'static/css/*.css',
-        'static/css/fonts/*.*'
+        'static/css/fonts/*.*',
         'static/js/*.js',
     ]},
     include_package_data=True,
@@ -116,8 +109,11 @@ setup(
             'sphinx_rtd_theme = sphinx_rtd_theme',
         ]
     },
+    python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     install_requires=[
-        'sphinx>=1.6'
+        'sphinx>=1.6',
+        'docutils<0.18',
+        'Jinja2<3.1',
     ],
     tests_require=[
         'pytest',
@@ -127,6 +123,7 @@ setup(
             'transifex-client',
             'sphinxcontrib-httpdomain',
             'bump2version',
+            'wheel',
         ],
     },
     classifiers=[
