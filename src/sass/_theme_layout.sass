@@ -342,6 +342,8 @@ html
   z-index: $z-index-modal - 1
   &.on
     display: block
+
+
 footer
   color: $footer-color
   p
@@ -420,8 +422,29 @@ footer
     margin: 0
     background: $section-background-color
 
++media($desktop)
+  .wy-table-responsive table td
+    white-space: normal
+  .rst-content table.docutils td
+    vertical-align: top
+
++media($desktop-wider)
+  .wy-nav-content-wrap
+    background: rgba(0,0,0,.05)
+  .wy-nav-content
+    background: $section-background-color
+
 @media print
   .rst-versions, footer, .wy-nav-side
     display: none
   .wy-nav-content-wrap
     margin-left: 0
+
+  .wy-table-responsive
+    overflow: visible
+  .wy-table-responsive table td,
+  .wy-table-responsive table th
+    white-space: normal
+  .rst-content table.docutils td
+    vertical-align: top
+
