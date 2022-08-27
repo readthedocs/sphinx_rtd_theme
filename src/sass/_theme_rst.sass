@@ -452,7 +452,7 @@
         font-size: 100% !important
     // In the html4 writer, parameters is a table. In html5 writer, parameters
     // is a nested dl.field-list
-    dl:not(.field-list) > dt
+    dl:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt
       margin-bottom: $base-line-height / 4
       border: none
       border-left: solid 3px hsl(0, 0%, 80%)
