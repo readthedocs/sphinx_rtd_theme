@@ -346,3 +346,26 @@ List Tables
 
            This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
            Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+
+
+Tables with paragraphs
+----------------------
+
+.. regression test for https://github.com/readthedocs/sphinx_rtd_theme/issues/289
+
+Test to see that tables behave well with nested paragraphs.
+
++------------+----------+-------------------------+
+| Precedence | Operator | Description             |
++============+==========+=========================+
+| 1          | \::      | Scope resolution        |
++------------+----------+-------------------------+
+| 2          | ( )      | Function call           |
+|            |          |                         |
+|            | [ ]      | Subscript               |
+|            |          |                         |
+|            | .        | Member access           |
+|            |          |                         |
+|            | .{ }     | Bit-field concatenation |
++------------+----------+-------------------------+
+
