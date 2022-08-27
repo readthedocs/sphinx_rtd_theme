@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-17 10:02-0600\n"
+"POT-Creation-Date: 2021-09-13 13:35-0600\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
 "Last-Translator: Daniel Holmberg <daniel.holmberg97@gmail.com>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/readthedocs/teams/101354/sv/)\n"
@@ -149,12 +149,3 @@ msgstr "Projekt Hem"
 #: sphinx_rtd_theme/versions.html:29
 msgid "Builds"
 msgstr "Versioner"
-
-#~ msgid "Docs"
-#~ msgstr "Dokumentation"
-
-#~ msgid "Free document hosting provided by"
-#~ msgstr "Gratis dokumentations hysning erhållen av"
-
-#~ msgid "Documentation Home"
-#~ msgstr "Dokumentation Hem"
