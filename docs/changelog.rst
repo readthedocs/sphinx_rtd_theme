@@ -1,13 +1,211 @@
-
 *********
 Changelog
 *********
 
-v0.4.1
-======
+Development version (|development_version|)
+===========================================
+
+.. |development_version| replace:: 1.0.1alpha1
+
+.. _release-1.0.0:
+
+1.0.0
+=====
+
+Incompatible Changes
+--------------------
+
+* The minimum supported python version is now 2.7 or 3.4 and greater (#1093)
+* The minimum supported Sphinx version is now 1.6 (#1091)
+
+Deprecated
+----------
+
+* Support for Sphinx's HTML4 writer is deprecated and will be removed in version 2.0 (#1091)
+
+Features
+--------
+
+* Add support for Sphinx 4.x (#1123)
+* Add support for Docutils 0.17 (#1185 and #1199)
+* Fixed logo scaling on IE11 (#1183)
+* Added support for logos as URLs (#1171)
+* Align top and side navigation background colors on mobile (#1132)
+* Added support for deep toc levels (#1089)
+* Updated translations for Chinese, Dutch, Estonian, French, German, Italian,
+  Lithuanian, Persian, Polish, Portuguese, Russian, Spanish, Swedish, and
+  Turkish locales
+
+A number of accessibility features were added in this release:
+
+* Allow keyboard to toggle menu expansion (#1167)
+* Allow keyboard to activate permalink (#1162)
+* Show keyboard focus on buttons (#1161)
+* Maintain aria-expanded along with .current in menu (#1151)
+* Respect tab order for prev/next buttons (#1051)
+
+Fixes
+-----
+
+* Updated Google analytics integration (#1129)
+* Add classifier separation on Sphinx 2+ HTML4 writer (#1192)
+* Added missing space char in footer (#1188)
+* Fix navigation right padding on level2+ elements (#1068)
+* Fix navigation expansion button sizes (#1067)
+* Wrap inline literals (#1050)
+* Fix aria labels (#1056)
+* Don't toggle navigation terminal nodes (#1049)
+* Fix ``<pre>`` overflow (#1220)
+* Fix literal/ref style inside ``<dl>`` (#1088)
+
+Other Changes
+-------------
+
+* Update npm development dependencies (#1096)
+* Don't require npm to build from source (#1039)
+* Use regular toctree instead of toc for singlehtml builder (#507)
+* Cleanup whitespace in templates (#1060)
+
+.. _release-0.5.2:
+
+0.5.2
+=====
+
+:Date: April 5, 2021
+
+.. note:: This commit will not be in ``master``, but was branched directly off ``0.5.1`` to minimize issues.
+          The next full release will contain all PR's previously merged.
+
+* Depend on docutils < 0.17 (#1113)
+
+.. _release-0.5.1:
+
+0.5.1
+=====
+
+:Date: January 4, 2021
+
+Fixes
+-----
+
+* Set ``url_root`` properly on index (#1025)
+* Do not load ``language_data.js`` in non-search pages (#1021)
+* Hide the search box on any ``singlehtml`` like builder (#975)
+* Fix ``vcs_pageview_mode`` template parameter (#1010)
+* Mark nex/prev icons as aria-hidden (#1007)
+* Use well-formed XML syntax (#1006)
+* Footer: show both ``commit`` and ``last_updated`` if available (#897)
+* Search page: don't show "edit on" links (#935)
+
+New Features
+------------
+
+* New theme option to enable anonymous ip addresses when using Google Analytics (#889)
+
+Other Changes
+-------------
+
+* The ``canonical_url`` option was deprecated in favor of Sphinx's ``html_baseurl`` (#1003)
+* Add ``contentinfo`` block to ``footer.html`` template (#896)
+* Make Copyright template match sphinx's basic (#933)
+* Packaging: include ``bin/preinstall.js`` (#1005)
+
+.. _release-0.5.0:
+
+0.5.0
+=====
+
+:Date: Jun 17, 2020
+
+Fixes
+-----
+
+* Fix bullet list spacing to respect simple/complex list styles
+
+.. _release-0.5.0rc2:
+
+0.5.0rc2
+========
+
+:Date: June 5, 2020
+
+Fixes
+-----
+
+* Fix issue with simple definition lists that was missed
+* Change FOUT back to FOIT
+* Fix several margin issues with lists, nested lists, and nested content
+* Add colon back to field lists
+
+.. _release-0.5.0rc1:
+
+0.5.0rc1
+========
+
+:Date: May 6, 2020
+
+Fixes
+-----
+
+* Fix many styling issues that look different when using the Sphinx HTML5 writer
+
+Other Changes
+--------------
+
+* Add the ``navigation`` template block around the navigation area.
+* Added i18n support using Babel
+* Added translations for 10 new languages
+* Moved build system from Grunt and friends to Webpack
+* Remove Modernizr, but keep html5shiv (#724, #525)
+
+.. _release-0.4.3:
+
+0.4.3
+=====
+
+:Date: Feb 12, 2019
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Fix scrolling to active item in sidebar on load (#214)
+* Style caption link for code and literal blocks
+* Fix inconsistent font size and line height for autodoc "raises" and "returns" (#267)
+* Fix last_updated notice appearing in same line as copyright notice (#704)
+
+
+Other Changes
+--------------
+
+.. _release-0.4.2:
+
+0.4.2
+=====
+
+:Date: Oct 5, 2018
+
+New Features
+-------------
+
+Fixes
+-----
+
+* Set base font size on <html> (#668)
+* Fix HTML search not working with Sphinx-1.8 (#672)
+
+Other Changes
+--------------
+
+* Upload signed packages to PyPI with twine (#651)
+* Do not enforce period at the end of copyright statement (666)
+
+0.4.1
+=====
 
 :Date: July 27, 2018
-
 
 New Features
 -------------
@@ -17,15 +215,13 @@ Fixes
 
 * Line height adjustments for Liberation Mono (#656)
 
-
 Other Changes
 --------------
 
 * Add Sphinx as a dependency
 
-
-v0.4.0
-======
+0.4.0
+=====
 
 This version made some changes to how JS and CSS were included
 when the theme is used on Read the Docs.
@@ -41,14 +237,14 @@ Fixes
 * Color accessibility improvements on the left navigation
 
 Other Changes
---------------
+---------------
 
 * Write theme version and build date at top of JavaScript and CSS
 * Changed code and literals to use a native font stack (#612)
 * Fix small styling issues
 
-v0.3.1
-======
+0.3.1
+=====
 
 Fixes
 -----
@@ -59,8 +255,8 @@ Fixes
 * Add open list spacing (#591)
 * Fix table centering (#599)
 
-v0.3.0
-======
+0.3.0
+=====
 
 **Note**: this version resulted in some JavaScript incompatibilities when used on readthedocs.org
 
@@ -93,40 +289,40 @@ Other Changes
 * Compress our Javascript files
 * Updated dependencies
 
-v0.2.4
-======
+0.2.4
+=====
 
 * Yet another patch to deal with extra builders outside Spinx, such as the
   singlehtml builders from the Read the Docs Sphinx extension
 
-v0.2.3
-======
+0.2.3
+=====
 
 * Temporarily patch Sphinx issue with ``singlehtml`` builder by inspecting the
   builder in template.
 
-v0.2.2
-======
+0.2.2
+=====
 
 * Roll back toctree fix in 0.2.1 (#367). This didn't fix the issue and
   introduced another bug with toctrees display.
 
-v0.2.1
-======
+0.2.1
+=====
 
 * Add the ``rel`` HTML attribute to the footer links which point to
   the previous and next pages.
 * Fix toctree issue caused by Sphinx singlehtml builder (#367)
 
-v0.2.0
-======
+0.2.0
+=====
 
 * Adds the ``comments`` block after the ``body`` block in the template
 * Added "Edit on GitLab" support
 * Many bug fixes
 
-v0.1.10-alpha
-=============
+0.1.10-alpha
+============
 
 .. note:: This is a pre-release version
 
@@ -135,8 +331,8 @@ v0.1.10-alpha
 * Adds a ``body_begin`` block to the template
 * Added ``prev_next_buttons_location``
 
-v0.1.9
-======
+0.1.9
+=====
 
 * Intermittent scrollbar visibility bug fixed. This change introduces a
   backwards incompatible change to the theme's layout HTML. This should only be
@@ -152,8 +348,8 @@ v0.1.9
 
 .. _#215: https://github.com/rtfd/sphinx_rtd_theme/pull/215
 
-v0.1.8
-======
+0.1.8
+=====
 
 * Start keeping changelog :)
 * Support for third and fourth level headers in the sidebar
