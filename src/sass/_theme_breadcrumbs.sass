@@ -1,21 +1,22 @@
 .wy-breadcrumbs
   +clearfix
 
-.wy-breadcrumbs li
+.wy-breadcrumbs > li
   display: inline-block
+  padding-top: 5px
   &.wy-breadcrumbs-aside
     float: right
-  a
-    display: inline-block
-    padding: 5px
-    &:first-child
-      padding-left: 0
+  /* Style literals as links */
   code
-    padding: 5px
-    border: none
-    background: none
-    &.literal
-      color: $text-color
+    all: inherit
+    color: inherit
+
+.breadcrumb-item::before
+  content: "/"
+  color: #bbb
+  font-size: 13px
+  padding: 0 6px 0 3px
+
 .wy-breadcrumbs-extra
   margin-bottom: 0
   color: $text-light
