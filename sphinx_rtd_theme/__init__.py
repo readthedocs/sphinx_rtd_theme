@@ -7,6 +7,7 @@ From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
 from os import path
 from sys import version_info as python_version
 
+import packaging.version
 from sphinx import version_info as sphinx_version
 from sphinx.locale import _
 from sphinx.util.logging import getLogger
@@ -30,6 +31,12 @@ def config_initiated(app, config):
         logger.warning(
             _('The canonical_url option is deprecated, use the html_baseurl option from Sphinx instead.')
         )
+
+
+def extend_html_context(app, pagename, templatename, context, doctree):
+     # Extend the page context to be albe to parse versions correctly.
+     context['parse_version'] = packaging.version.parse
+
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
@@ -59,5 +66,8 @@ def setup(app):
         app.config.html_permalinks_icon = "\uf0c1"
     else:
         app.config.html_add_permalinks = "\uf0c1"
+
+    # Extend the default context when rendering the templates.
+    app.connect("html-page-context", extend_html_context)
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}

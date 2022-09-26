@@ -9,9 +9,7 @@
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 {%- set sphinx_writer = 'writer-html5' if html5_doctype else 'writer-html4' -%}
 
-{# Build sphinx_version_info tuple from sphinx_version string in pure Jinja #}
-{%- set (_ver_major, _ver_minor, _ver_bugfix) = sphinx_version.split('.') | map('int') -%}
-{%- set sphinx_version_info = (_ver_major, _ver_minor, _ver_bugfix) -%}
+{%- set sphinx_vn = parse_version(sphinx_version) -%}
 
 <!DOCTYPE html>
 <html class="{{ sphinx_writer }}" lang="{{ lang_attr }}" >
@@ -24,7 +22,7 @@
   {%- endblock -%}
 
   {#- CSS #}
-  {%- if sphinx_version_info < (4, 0) -%}
+  {%- if sphinx_vn < parse_version("4.0") -%}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
   {%- endif %}
@@ -42,7 +40,7 @@
 
   {#- FAVICON #}
   {%- if favicon %}
-    {%- if sphinx_version_info < (4, 0) -%}
+    {%- if sphinx_vn < parse_version("4.0") -%}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
     {%- else %}
     <link rel="shortcut icon" href="{{ favicon_url }}"/>
@@ -66,8 +64,8 @@
   <![endif]-->
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
-    {%- if sphinx_version_info >= (1, 8) -%}
-      {%- if sphinx_version_info < (4, 0) -%}
+    {%- if sphinx_vn >= parse_version("1.8") -%}
+      {%- if sphinx_vn < parse_version("4.0") -%}
       <script id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
       {%- endif -%}
       {%- for scriptfile in script_files %}
@@ -143,7 +141,7 @@
             {#- Not strictly valid HTML, but it's the only way to display/scale
                 it properly, without weird scripting or heaps of work
             #}
-            {%- if sphinx_version_info < (4, 0) -%}
+            {%- if sphinx_vn < parse_version("4.0") -%}
             <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ _('Logo') }}"/>
             {%- else %}
             <img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
