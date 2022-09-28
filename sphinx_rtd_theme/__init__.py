@@ -7,7 +7,6 @@ From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
 from os import path
 from sys import version_info as python_version
 
-import packaging.version
 from sphinx import version_info as sphinx_version
 from sphinx.locale import _
 from sphinx.util.logging import getLogger
@@ -34,8 +33,8 @@ def config_initiated(app, config):
 
 
 def extend_html_context(app, pagename, templatename, context, doctree):
-     # Extend the page context to be albe to parse versions correctly.
-     context['parse_version'] = packaging.version.parse
+     # Add ``sphinx_version_info`` tuple for use in Jinja templates
+     context['sphinx_version_info'] = sphinx_version[:3]
 
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
