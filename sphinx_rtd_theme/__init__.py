@@ -34,7 +34,7 @@ def config_initiated(app, config):
 
 def extend_html_context(app, pagename, templatename, context, doctree):
      # Add ``sphinx_version_info`` tuple for use in Jinja templates
-     context['sphinx_version_info'] = sphinx_version[:3]
+     context['sphinx_version_info'] = sphinx_version
 
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
