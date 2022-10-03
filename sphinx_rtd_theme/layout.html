@@ -9,10 +9,6 @@
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 {%- set sphinx_writer = 'writer-html5' if html5_doctype else 'writer-html4' -%}
 
-{# Build sphinx_version_info tuple from sphinx_version string in pure Jinja #}
-{%- set (_ver_major, _ver_minor, _ver_bugfix) = sphinx_version.split('.') | map('int') -%}
-{%- set sphinx_version_info = (_ver_major, _ver_minor, _ver_bugfix) -%}
-
 <!DOCTYPE html>
 <html class="{{ sphinx_writer }}" lang="{{ lang_attr }}" >
 <head>
