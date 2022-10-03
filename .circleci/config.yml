@@ -11,7 +11,7 @@ commands:
         type: string
       sphinx-version:
         type: string
-        default: "16,17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,latest"
+        default: "16,17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,50,51,52,latest"
     steps:
       - checkout
       - run: pip install --user tox
@@ -77,7 +77,7 @@ jobs:
     steps:
       - run-tox:
           version: py310
-          sphinx-version: "42,43,44,45,50,51,latest"
+          sphinx-version: "42,43,44,45,50,51,52,latest"
 
 workflows:
   version: 2
