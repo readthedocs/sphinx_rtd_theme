@@ -51,6 +51,10 @@ should    be grouped    in pairs).``
 
 If the ``--pep-references`` option was supplied, there should be a live link to PEP 258 here.
 
+.. regression test for https://github.com/readthedocs/sphinx_rtd_theme/pull/1193
+
+Very long URLs should be wrapped so lines do not overflow and cause horizontal scrolling: https://www.google.com/search?hl=en&q=very%20long%20url%20example%20of%20a%20url%20that%20is%20extremely%20long%20you%20probably%20want%20to%20avoid%20it%20but%20here%20we%20are
+
 Math
 ====
 
@@ -264,7 +268,7 @@ Footnotes
 Citations
 ---------
 
-.. [11] This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.
+.. [Citation] This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.
 
 .. [12] This citation has some ``code blocks`` in it, maybe some **bold** and
        *italics* too. Heck, lets put a link to a meta citation [13]_ too.
@@ -272,9 +276,7 @@ Citations
 .. [13] This citation will have two backlinks.
 
 
-Here's a reference to the above, [12]_, and a [nonexistent]_ citation.
-
-Here is another type of citation: `citation`
+Here's a reference to the above, [Citation]_, and a [nonexistent]_ citation.
 
 Glossary
 --------
@@ -302,7 +304,7 @@ A reference can be found under `Inline Markup`_, above. `Inline
 hyperlink targets`_ are also possible.
 
 Section headers are implicit targets, referred to by name. See
-Targets_, which is a subsection of `Body Elements`_.
+Targets_, which is a subsection of `References`_.
 
 Explicit external targets are interpolated into references such as "Python_".
 

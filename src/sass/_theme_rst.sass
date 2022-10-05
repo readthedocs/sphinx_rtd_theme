@@ -225,6 +225,15 @@
     &:hover .headerlink
       opacity: 1
 
+  // Make links inside paragraphs wrap when they are too long
+  p a
+    overflow-wrap: anywhere
+  // Consistent font sizing for table typography
+  .wy-table
+    th, td
+      p, ul
+          font-size: inherit
+
   // override the Wyrm accessibility anti-pattern of hiding button focus
   .btn:focus
     outline: 2px solid
@@ -304,8 +313,7 @@
         vertical-align: top
   // HTML5 writer
   html.writer-html5 &
-    dl.footnote,
-    dl.field-list
+    dl.footnote, dl.citation, dl.field-list
       display: grid
       grid-template-columns: max-content auto
       > dt
@@ -314,8 +322,8 @@
           content: ":"
       > dt, > dd
         margin-bottom: 0rem
-    dl.footnote
-      font-size: 0.9rem
+    dl.footnote, dl.citation
+      font-size: .9rem
       > dt
         margin: 0rem 0.5rem 0.5rem 0rem
         line-height: 1.2rem
@@ -352,8 +360,7 @@
 
   // Both
   html.writer-html4 & table.docutils.citation, table.docutils.footnote,
-  html.writer-html5 & dl.footnote
-  html.writer-html5 & aside.footnote
+  html.writer-html5 & dl.footnote, dl.citation, aside.footnote
     color: $text-medium
     code
       color: $gray
@@ -393,7 +400,6 @@
     td
       border: none
       p
-        font-size: inherit
         line-height: inherit
     td > strong
       display: inline-block
@@ -443,7 +449,7 @@
       > table:last-child
         margin-bottom: 0
   html.writer-html4 & dl:not(.docutils),
-  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
+  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple)
     margin-bottom: $base-line-height
     > dt
       display: table
@@ -462,7 +468,7 @@
         font-size: 100% !important
     // In the html4 writer, parameters is a table. In html5 writer, parameters
     // is a nested dl.field-list
-    dl:not(.field-list) > dt
+    dl:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt
       margin-bottom: $base-line-height / 4
       border: none
       border-left: solid 3px hsl(0, 0%, 80%)
@@ -534,10 +540,8 @@
     border-radius: $base-line-height / 6
     padding: ($base-line-height / 10) ($base-line-height / 4)
     margin: auto ($base-line-height / 12)
-  *:not(kbd) > kbd,
-  *:not(kbd) > .kbd,
-  *:not(.kbd) > kbd,
-  *:not(.kbd) > .kbd
+  *:not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > kbd,
+  *:not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > .kbd
     color: inherit
     font-size: 80%
     background-color: lighten($text-light, 30%)
