@@ -337,9 +337,23 @@
     dl.option-list
       kbd
         font-size: 0.9rem
+
+    // docutils >= 0.18
+    aside.footnote
+      font-size: 0.9rem
+
+    aside.footnote > span,
+    div.citation > span
+      font-weight: 500
+
+    aside.footnote > p,
+    div.citation > p
+      margin-left: 2rem
+
   // Both
   html.writer-html4 & table.docutils.citation, table.docutils.footnote,
   html.writer-html5 & dl.footnote
+  html.writer-html5 & aside.footnote
     color: $text-medium
     code
       color: $gray
