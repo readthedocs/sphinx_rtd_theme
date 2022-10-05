@@ -2,7 +2,7 @@
 
 # Update latest Python dependencies in case they have changed
 cd /project-readonly
-pip install --upgrade -e ".[dev]"
+pip install --upgrade --upgrade-strategy eager -e ".[dev]"
 
 # This helps a potential permission issue, but might be removed
 # pending some more investigation of docker host file system
