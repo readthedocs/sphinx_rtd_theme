@@ -347,8 +347,11 @@
         font-size: 0.9rem
 
     // docutils >= 0.18
-    aside.footnote
+    aside.footnote,
+    div.citation
       font-size: 0.9rem
+      p, span.label
+        font-size: 0.9rem
 
     aside.footnote > span,
     div.citation > span
@@ -359,8 +362,13 @@
       margin-left: 2rem
 
   // Both
-  html.writer-html4 & table.docutils.citation, table.docutils.footnote,
-  html.writer-html5 & dl.footnote, dl.citation, aside.footnote
+  html.writer-html4 & table.docutils.citation,
+  html.writer-html4 & table.docutils.footnote,
+  html.writer-html5 & dl.footnote,
+  html.writer-html5 & dl.citation,
+  // For some odd reason, with docutils 0.18, this is a div.citation not aside.citation
+  html.writer-html5 & div.citation,
+  html.writer-html5 & aside.footnote
     color: $text-medium
     code
       color: $gray
