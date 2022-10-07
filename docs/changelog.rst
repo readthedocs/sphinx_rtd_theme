@@ -50,7 +50,7 @@ Minor changes
 Incompatible Changes
 --------------------
 
-There are no known incompatible changes in this release, but we should note to users of ``docutils`` 0.18 and 0.19 that they are not yet support until ``sphinx-rtd-theme`` 1.2.0 is released.
+There are no known incompatible changes in this release. Support for ``docutils`` versions 0.18 and 0.19 are scheduled for our next release.
 
 
 .. _release-1.0.0:
