@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-09-13 13:35-0600\n"
+"POT-Creation-Date: 2022-10-06 17:05+0200\n"
 "PO-Revision-Date: 2019-07-16 15:43-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.10.3\n"
 
 #. This is an ARIA section label for page links, including previous/next page
 #. link and links to GitHub/GitLab/etc.
@@ -105,39 +105,39 @@ msgstr ""
 msgid "provided by %(readthedocs_web)s"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:97
+#: sphinx_rtd_theme/layout.html:93
 #, python-format
 msgid "Search within %(docstitle)s"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:105
+#: sphinx_rtd_theme/layout.html:101
 msgid "About these documents"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:108
+#: sphinx_rtd_theme/layout.html:104
 msgid "Index"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:111 sphinx_rtd_theme/search.html:11
+#: sphinx_rtd_theme/layout.html:107 sphinx_rtd_theme/search.html:11
 msgid "Search"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:114
+#: sphinx_rtd_theme/layout.html:110
 msgid "Copyright"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
+#: sphinx_rtd_theme/layout.html:143 sphinx_rtd_theme/layout.html:145
 msgid "Logo"
 msgstr ""
 
 #. This is an ARIA section label for the main navigation menu
-#: sphinx_rtd_theme/layout.html:173
+#: sphinx_rtd_theme/layout.html:169
 msgid "Navigation menu"
 msgstr ""
 
 #. This is an ARIA section label for the navigation menu that is visible when
 #. viewing the page on mobile devices
-#: sphinx_rtd_theme/layout.html:195
+#: sphinx_rtd_theme/layout.html:191
 msgid "Mobile navigation menu"
 msgstr ""
 
