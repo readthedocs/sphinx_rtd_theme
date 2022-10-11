@@ -10,7 +10,7 @@
 {%- set sphinx_writer = 'writer-html5' if html5_doctype else 'writer-html4' -%}
 
 {# Build sphinx_version_info tuple from sphinx_version string in pure Jinja #}
-{%- set (_ver_major, _ver_minor, _ver_bugfix) = sphinx_version.split('.') | map('int') -%}
+{%- set (_ver_major, _ver_minor, _ver_bugfix) = (sphinx_version.split('.') | map('int') | list)[:3] -%}
 {%- set sphinx_version_info = (_ver_major, _ver_minor, _ver_bugfix) -%}
 
 <!DOCTYPE html>
