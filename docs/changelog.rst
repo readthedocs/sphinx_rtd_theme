@@ -5,12 +5,12 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.1.0alpha1
+.. |development_version| replace:: 1.1.0b2
 
-.. _release-1.1.0alpha1:
+.. _release-1.1.0b2:
 
-1.1.0alpha1
-===========
+1.1.0b2
+=======
 
 Dependency Changes
 ------------------
