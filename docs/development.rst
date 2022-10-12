@@ -96,8 +96,8 @@ version:
 
 .. _release-1.0.0:
 
-1.0.0
-~~~~~
+1.0.0 (RELEASED!)
+~~~~~~~~~~~~~~~~~
 
 :Planned release date: August 2021
 
@@ -131,19 +131,28 @@ HTML4 support is deprecated
 1.1.0
 ~~~~~
 
-:Planned release date: 2021 Q3
+:Planned release date: 2022 Q3
 
 We aim to follow up release :ref:`1.0.0` with at least one bug fix release in
 the 1.x release series. The 1.1 release will not be adding any major features
 and will instead mark the last release targeting projects with old dependencies
 like Sphinx 1.8, HTML4, or required support for IE11.
 
+
+1.2.0
+~~~~~
+
+:Planned release date: 2022 Q4
+
+This release will add docutils 0.18 and possibly docutils 0.19 support.
+
+
 .. _release-2.0.0:
 
 2.0.0
 ~~~~~
 
-:Planned release date: 2022 Q1
+:Planned release date: 2022 Q4
 
 This release will mark the beginning of a new round of feature development, as
 well as a number of backward incompatible changes and deprecations.
