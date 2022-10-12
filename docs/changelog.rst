@@ -45,6 +45,7 @@ Minor changes
 * Python 3.10 added to test matrix (#1334)
 * Supplemental Docker setup for development (#1319)
 * Most of setup.py migrated to setup.cfg (#1116)
+* Jinja2 context variable ``sphinx_version_info`` is now ``(major, minor, -1)``, the patch component is always ``-1``. Reason: It's complicated. (#1345)
 
 
 Incompatible Changes
