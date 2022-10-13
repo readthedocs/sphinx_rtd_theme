@@ -17,11 +17,11 @@ Dependency Changes
 
 Many documentation projects depend on ``sphinx-rtd-theme`` without specifying a version of the theme (unpinned) while also depending on unpinned versions of Sphinx. The latest version of ``sphinx-rtd-theme`` ideally always supports the latest version of Sphinx, but this is now guaranteed.
 
-This release adds upper bounds to direct dependencies ``Sphinx``, ``docutils`` and ``Jinja2``, which will safeguard from mixing with possibly incompatible future versions of Sphinx & friends.
+This release adds upper bounds to direct dependencies ``Sphinx`` and ``docutils`` which will safeguard from mixing with possibly incompatible future versions of Sphinx & docutils.
 
 * Sphinx versions supported: 1.6 to 5.2.x
-* ``Jinja<3.1`` (#1316)
 * ``Sphinx<6`` (#1332)
+* ``docutils<0.18`` (unchanged, but will be bumped in an upcoming release)
 
 
 Features
@@ -38,7 +38,8 @@ Fixes
 * Definition lists rendered wrongly in api docs (#1052)
 * Citation not styled properly (#1078)
 
-Minor changes
+
+Minor Changes
 -------------
 
 * Sphinx 5.2 added to test matrix (#1348)
