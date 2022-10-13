@@ -11,6 +11,9 @@ pip install --upgrade -e ".[dev]"
 # npm install
 
 cd /project
+
+# TODO: This is a bad approach, it copies from the image which
+# may be outdated to the current git tree
 cp -r /project-readonly/sphinx_rtd_theme .
 
 echo "Going to invoke: npm run $@"
