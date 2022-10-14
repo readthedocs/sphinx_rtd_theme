@@ -5,11 +5,11 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.1.0b2
+.. |development_version| replace:: 1.1.0b3
 
-.. _release-1.1.0b2:
+.. _release-1.1.0b3:
 
-1.1.0b2
+1.1.0b3
 =======
 
 Dependency Changes
@@ -28,6 +28,7 @@ Features
 --------
 
 * Nicer styles for <kbd> (#967)
+* New styling for breadcrumbs (#1073)
 
 
 Fixes
@@ -37,6 +38,7 @@ Fixes
 * Table cells with multiple paragraphs gets wrong formatting (#289)
 * Definition lists rendered wrongly in api docs (#1052)
 * Citation not styled properly (#1078)
+* Long URLs did not wrap (#1193)
 
 
 Minor Changes
