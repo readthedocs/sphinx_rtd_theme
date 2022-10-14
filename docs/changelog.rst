@@ -38,6 +38,7 @@ Fixes
 * Table cells with multiple paragraphs gets wrong formatting (#289)
 * Definition lists rendered wrongly in api docs (#1052)
 * Citation not styled properly (#1078)
+* Long URLs did not wrap (#1193)
 
 
 Minor Changes
