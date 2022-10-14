@@ -28,6 +28,7 @@ Features
 --------
 
 * Nicer styles for <kbd> (#967)
+* New styling for breadcrumbs (#1073)
 
 
 Fixes
