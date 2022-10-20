@@ -42,7 +42,7 @@ Internet Explorer (any OS, versions <=10)
 
 Internet Explorer (any OS, version 11)
     We currently only partially support IE11, and only test for major bugs.
-    Support will be removed in the :ref:`2.0.0` release.
+    Support will be removed in the :ref:`roadmap-release-2.0.0` release.
 
 Opera (any OS, any version)
     **Community support only.** We do not receive enough traffic with this
@@ -94,7 +94,7 @@ version:
 
 .. _semantic versioning: http://semver.org/
 
-.. _release-1.0.0:
+.. _roadmap-release-1.0.0:
 
 1.0.0
 ~~~~~
@@ -102,7 +102,7 @@ version:
 :Planned release date: August 2021
 
 This release will be a slightly backwards incompatible release to follow the
-:ref:`0.5.2` release. It will drop support for Sphinx 1.6, which is a rather old
+:ref:`release-0.5.2` release. It will drop support for Sphinx 1.6, which is a rather old
 release at this point.
 
 This version will add official support for the Sphinx 4.x release series and
@@ -120,25 +120,25 @@ Direct installation is deprecated
     We plan to start putting development releases up on PyPI more frequently, so
     that installation from the theme source repository is no longer necessary.
 
-    Built assets are tentatively planned to be removed in version :ref:`3.0.0`:.
+    Built assets are tentatively planned to be removed in version :ref:`roadmap-release-3.0.0`:.
 
 HTML4 support is deprecated
-    Support for the Sphinx HTML4 writer will be removed in the :ref:`2.0.0`
+    Support for the Sphinx HTML4 writer will be removed in the :ref:`roadmap-release-2.0.0`
     release.
 
-.. _release-1.1.0:
+.. _roadmap-release-1.1.0:
 
 1.1.0
 ~~~~~
 
 :Planned release date: 2021 Q3
 
-We aim to follow up release :ref:`1.0.0` with at least one bug fix release in
+We aim to follow up release :ref:`release-1.0.0` with at least one bug fix release in
 the 1.x release series. The 1.1 release will not be adding any major features
 and will instead mark the last release targeting projects with old dependencies
 like Sphinx 1.8, HTML4, or required support for IE11.
 
-.. _release-2.0.0:
+.. _roadmap-release-2.0.0:
 
 2.0.0
 ~~~~~
@@ -166,7 +166,7 @@ HTML4 support will be removed
     support and should no longer be required to use a modern combination of this
     theme and Sphinx.
 
-.. _release-3.0.0:
+.. _roadmap-release-3.0.0:
 
 3.0.0
 ~~~~~
