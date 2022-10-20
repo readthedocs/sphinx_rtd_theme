@@ -42,7 +42,7 @@ In your Sphinx project's ``conf.py`` file, add ``sphinx_rtd_theme`` to the list 
       See: https://github.com/readthedocs/readthedocs.org/pull/9654
 
 
-.. _rtd_upgrade:
+.. _howto_upgrade:
 
 How to upgrade
 --------------
