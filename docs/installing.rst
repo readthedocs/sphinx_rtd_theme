@@ -85,7 +85,3 @@ Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into you
 
     html_theme = "sphinx_rtd_theme"
     html_theme_path = ["_themes", ]
-
-
-
-
