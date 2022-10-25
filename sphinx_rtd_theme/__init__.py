@@ -12,7 +12,7 @@ from sphinx.locale import _
 from sphinx.util.logging import getLogger
 
 
-__version__ = '1.0.0rc2'
+__version__ = '1.1.0b3'
 __version_full__ = __version__
 
 logger = getLogger(__name__)
@@ -30,6 +30,12 @@ def config_initiated(app, config):
         logger.warning(
             _('The canonical_url option is deprecated, use the html_baseurl option from Sphinx instead.')
         )
+
+
+def extend_html_context(app, pagename, templatename, context, doctree):
+     # Add ``sphinx_version_info`` tuple for use in Jinja templates
+     context['sphinx_version_info'] = sphinx_version
+
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
@@ -59,5 +65,8 @@ def setup(app):
         app.config.html_permalinks_icon = "\uf0c1"
     else:
         app.config.html_add_permalinks = "\uf0c1"
+
+    # Extend the default context when rendering the templates.
+    app.connect("html-page-context", extend_html_context)
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}

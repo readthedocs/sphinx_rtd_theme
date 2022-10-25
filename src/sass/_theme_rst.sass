@@ -5,7 +5,7 @@
 //    1. Lots of this @extends from wyrm_core/_type.sass (http://www.github.com/snide/wyrm/.
 //        * Try not to replace any @extends code. It's pretty generic stuff meant to work together.
 //        * That said, know that I'm very unlikely to accept PRs from wyrm just to change style here.
-//    2. I plan to remove the !importants in here. Part of it is due to lazyness, part to sphinx's fondness for nesting.
+//    2. I plan to remove the !importants in here. Part of it is due to laziness, part to sphinx's fondness for nesting.
 //    3. Try to use variables from wyrm_core/wy_variables.sass. Notable are...
 //        * $base-line-height // All margins, padding and line-height should use this in .25 increments.
 //        * $text-color, $text-light, $text-dark...etc
@@ -14,7 +14,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 .rst-content
-  // Some browsers like to give arbituary margins :( make them all consistent.
+  // Some browsers like to give arbitrary margins :( make them all consistent.
   h1, h2, h3, h4, h5, h6
     margin-bottom: $base-line-height
 
@@ -106,11 +106,11 @@
       pointer-events: none
 
     span.linenos
-     display: inline-block
-     padding-left: 0px
-     padding-right: ($base-line-height / 2)
-     margin-right: ($base-line-height / 2)
-     border-right: 1px solid lighten($table-border-color, 2%)
+      display: inline-block
+      padding-left: 0px
+      padding-right: ($base-line-height / 2)
+      margin-right: ($base-line-height / 2)
+      border-right: 1px solid lighten($table-border-color, 2%)
 
   .code-block-caption
     font-style: italic
@@ -225,6 +225,15 @@
     &:hover .headerlink
       opacity: 1
 
+  // Make links inside paragraphs wrap when they are too long
+  p a
+    overflow-wrap: anywhere
+  // Consistent font sizing for table typography
+  .wy-table
+    th, td
+      p, ul
+          font-size: inherit
+
   // override the Wyrm accessibility anti-pattern of hiding button focus
   .btn:focus
     outline: 2px solid
@@ -304,8 +313,7 @@
         vertical-align: top
   // HTML5 writer
   html.writer-html5 &
-    dl.footnote,
-    dl.field-list
+    dl.footnote, dl.citation, dl.field-list
       display: grid
       grid-template-columns: max-content auto
       > dt
@@ -314,8 +322,8 @@
           content: ":"
       > dt, > dd
         margin-bottom: 0rem
-    dl.footnote
-      font-size: 0.9rem
+    dl.footnote, dl.citation
+      font-size: .9rem
       > dt
         margin: 0rem 0.5rem 0.5rem 0rem
         line-height: 1.2rem
@@ -339,7 +347,7 @@
         font-size: 0.9rem
   // Both
   html.writer-html4 & table.docutils.citation, table.docutils.footnote,
-  html.writer-html5 & dl.footnote
+  html.writer-html5 & dl.footnote, dl.citation
     color: $text-medium
     code
       color: $gray
@@ -379,7 +387,6 @@
     td
       border: none
       p
-        font-size: inherit
         line-height: inherit
     td > strong
       display: inline-block
@@ -423,8 +430,13 @@
     dd
       margin: 0 0 ($base-line-height / 2) $base-line-height
       line-height: $base-line-height
+      > p:last-child,
+      > ol:last-child,
+      > ul:last-child,
+      > table:last-child
+        margin-bottom: 0
   html.writer-html4 & dl:not(.docutils),
-  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
+  html.writer-html5 & dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple)
     margin-bottom: $base-line-height
     > dt
       display: table
@@ -443,7 +455,7 @@
         font-size: 100% !important
     // In the html4 writer, parameters is a table. In html5 writer, parameters
     // is a nested dl.field-list
-    dl:not(.field-list) > dt
+    dl:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt
       margin-bottom: $base-line-height / 4
       border: none
       border-left: solid 3px hsl(0, 0%, 80%)
@@ -515,6 +527,16 @@
     border-radius: $base-line-height / 6
     padding: ($base-line-height / 10) ($base-line-height / 4)
     margin: auto ($base-line-height / 12)
+  *:not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > kbd,
+  *:not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > .kbd
+    color: inherit
+    font-size: 80%
+    background-color: lighten($text-light, 30%)
+    border: 1px solid darken($text-light, 5%)
+    border-radius: $base-line-height / 6
+    box-shadow: grey 0px $base-line-height / 12
+    padding: $base-line-height / 10 $base-line-height / 4
+    margin: auto 0
   .versionmodified
     font-style: italic
 
