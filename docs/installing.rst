@@ -52,11 +52,11 @@ How to upgrade
 
 Adding ``sphinx-rtd-theme`` to your project's dependencies will make pip install the latest compatible version of the theme.
 
-If you want to test a **pre-release**, you need to be explicit about the version in ``requirements.txt``.
+If you want to test a **pre-release**, you need to be explicit about the version you specify.
 Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.1.0b3`` to test a pre-release.
 
 .. tip::
-    We always recommend that you pin the version of Sphinx that your project is built with.
+    We always recommend that you pin the exact version of Sphinx that your project is built with.
     We'll make sure not to release sphinx-rtd-theme that installs together with a Sphinx theme that it is incompatible with.
     
     It can never be guaranteed that sphinx-rtd-theme is compatible with everything in your project.
