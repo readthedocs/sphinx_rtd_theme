@@ -50,7 +50,7 @@ How to upgrade
 .. tip:: 
     **Read the Docs users:** To know which version of ``sphinx-rtd-theme`` you are running, you can always check your latest build outputs. One or more steps in the documentation build will install python packages, one of which is ``sphinx-rtd-theme``.
 
-Adding ``sphinx-rtd-theme`` to your project's ``requirements.txt`` will make pip install the latest compatible version of the theme.
+Adding ``sphinx-rtd-theme`` to your project's dependencies will make pip install the latest compatible version of the theme.
 
 If you want to test a **pre-release**, you need to be explicit about the version in ``requirements.txt``.
 Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.1.0b3`` to test a pre-release.
