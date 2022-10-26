@@ -57,7 +57,7 @@ Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.
 
 .. tip::
     We always recommend that you pin the exact version of Sphinx that your project is built with.
-    We'll make sure not to release sphinx-rtd-theme that installs together with a Sphinx theme that it is incompatible with.
+    We won't release sphinx-rtd-theme without marking its compatibility with Sphinx. So if you do not pin ``sphinx-rtd-theme`` itself, you will always get the *latest compatible* release.
     
     It can never be guaranteed that sphinx-rtd-theme is compatible with everything in your project.
     If your project is complex or needs reproducible documentation builds, you should pin or put an upper bound on ``sphinx-rtd-theme``.
