@@ -47,24 +47,19 @@ In your Sphinx project's ``conf.py`` file, add ``sphinx_rtd_theme`` to the list 
 How to upgrade
 --------------
 
-.. tip:: 
-    **Read the Docs users:** To know which version of ``sphinx-rtd-theme`` you are running, you can always check your latest build outputs. One or more steps in the documentation build will install python packages, one of which is ``sphinx-rtd-theme``.
-
 Adding ``sphinx-rtd-theme`` to your project's ``requirements.txt`` will make pip install the latest compatible version of the theme.
 
 If you want to test a **pre-release**, you need to be explicit about the version in ``requirements.txt``.
 Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.1.0b3`` to test a pre-release.
 
+.. tip:: 
+    **Read the Docs users:** To know which version of ``sphinx-rtd-theme`` you are running, you can always check your latest build outputs. One or more steps in the documentation build will install python packages, one of which is ``sphinx-rtd-theme``.
+
 .. tip::
-    We always recommend that you pin the version of Sphinx that your project is built with.
+    We recommend that you pin the version of Sphinx that your project is built with.
     We'll make sure not to release sphinx-rtd-theme that installs together with a Sphinx theme that it is incompatible with.
     
-    It can never be guaranteed that sphinx-rtd-theme is compatible with everything in your project.
-    If your project is complex or needs reproducible documentation builds, you should pin or put an upper bound on ``sphinx-rtd-theme``.
-    For instance, you could add this to ``requirements.txt``::
-    
-        # Ensure that we do not automatically include changes from the next major series
-        sphinx-rtd-theme>=1,<2
+    More information is available in Read the Docs' documentation: :doc:`rtd:guides/reproducible-builds`
 
 
 
