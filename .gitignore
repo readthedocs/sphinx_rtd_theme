@@ -1,3 +1,6 @@
+# This folder is auto-generated
+docs/api
+
 *.pyc
 *.egg-info
 *.egg

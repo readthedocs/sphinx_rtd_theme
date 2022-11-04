@@ -29,6 +29,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
     'sphinx_rtd_theme',
+    'sphinx_automodapi.automodapi',
 ]
 
 templates_path = ['_templates']

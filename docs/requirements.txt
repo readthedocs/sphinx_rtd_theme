@@ -1,2 +1,5 @@
 sphinx>=3.0
 sphinxcontrib-httpdomain
+
+# Testing that we properly style outputs of this extension
+sphinx-automodapi==0.14.1
