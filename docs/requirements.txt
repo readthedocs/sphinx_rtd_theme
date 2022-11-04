@@ -1,5 +1,6 @@
 sphinx>=3.0
 sphinxcontrib-httpdomain
 
-# Testing that we properly style outputs of this extension
-sphinx-automodapi==0.14.1
+# Once we drop Python 2.7, we can enable sphinx-automodapi in order to auto-generate more
+# variations of API references for the demo.
+# sphinx-automodapi==0.14.1
