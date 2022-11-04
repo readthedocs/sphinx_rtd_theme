@@ -25,11 +25,11 @@ language = 'en'
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
     'sphinx_rtd_theme',
-    'sphinx_automodapi.automodapi',
 ]
 
 templates_path = ['_templates']
