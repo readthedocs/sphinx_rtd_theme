@@ -200,6 +200,33 @@ put up for review.
 
 .. _Transifex: https://www.transifex.com/readthedocs/sphinx-rtd-theme
 
+Versioning
+==========
+
+..
+    TODO make these instructions organization wide. We've talked about
+    standardizing packaging version and tooling here (bumpver instead of
+    bump2version).
+
+In between releases, the package version specified will always be a alpha
+release, matching ``1.1.1alpha1``.
+
+As pull requests are merged and the release impact changes, this version will
+incremented ahead of release. For example, if we merge a new feature pull
+request, we'd run ``bump2version minor`` to increment ``1.1.1alpha1`` to
+``1.2.0alpha1``.
+
+To put out a release for testing, we will upload a release candidate. We would
+run ``bump2version release`` to increment ``1.2.0alpha1`` to ``1.2.0rc1``.
+
+After a testing period, the release candidate can become a full release. We
+would run ``bump2version release`` again to increment ``1.2.0rc1`` to ``1.2.0``.
+
+After the release process below, we increment the version again, so that the
+development version -- the version found in the repository -- is always greater
+than the most recent release. We follow up with another pull request by running
+``bump2version patch``, which increments ``1.2.0`` to ``1.2.1alpha1``.
+
 Releasing the theme
 ===================
 
@@ -222,7 +249,9 @@ To release a new version of the theme, core team will take the following steps:
    version. But take care that it isn't also bumping versions of dependencies
    in ways that are risky to the release. *If* ``package-lock.json`` changes, you
    need to commit it to git and tag it together with your release.
-#. Commit these changes.
+#. Commit these changes to a pull request.
+#. Merge the pull request after review.
+#. Check out ``master`` branch locally for tagging
 #. Tag the release in git: ``git tag $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
 #. Upload the package to PyPI:
@@ -235,7 +264,7 @@ To release a new version of the theme, core team will take the following steps:
 
 #. Finally, open a new pull request updating the development release version to
    the next patch by running ``bump2version patch``. Open a pull request with
-   this change.
+   this change. See `Versioning`_ above for more details.
 
 .. _PEP440: https://www.python.org/dev/peps/pep-0440/
 .. _semantic versioning: http://semver.org/
