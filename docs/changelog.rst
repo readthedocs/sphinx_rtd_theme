@@ -5,7 +5,7 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.1.1
+.. |development_version| replace:: 1.1.2alpha1
 
 .. _release-1.1.1:
 
