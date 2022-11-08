@@ -7,12 +7,22 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.1.0b3
+.. |development_version| replace:: 1.1.2alpha1
 
-.. _release-1.1.0b3:
+.. _release-1.1.1:
 
-1.1.0b3
-=======
+1.1.1
+=====
+
+Fixes
+-----
+
+* Fix wrapping bug on cross references (#1368)
+
+.. _release-1.1.0:
+
+1.1.0
+=====
 
 Dependency Changes
 ------------------

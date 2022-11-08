@@ -413,6 +413,8 @@
     &.xref, a &
       font-weight: bold
       color: $text-codexref-color
+      // https://github.com/readthedocs/sphinx_rtd_theme/issues/1368
+      overflow-wrap: normal
   pre, kbd, samp
     font-family: $code-font-family
   // If the literal is inside an a tag, let's color it like a link

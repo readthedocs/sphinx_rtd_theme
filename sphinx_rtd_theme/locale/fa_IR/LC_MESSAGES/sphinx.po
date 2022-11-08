@@ -12,14 +12,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-10-06 17:05+0200\n"
+"POT-Creation-Date: 2022-11-04 12:02-0700\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
 "Last-Translator: Peyman M., 2022\n"
 "Language-Team: Persian (Iran) (https://www.transifex.com/readthedocs/teams/101354/fa_IR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.10.1\n"
 "Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
@@ -93,28 +93,28 @@ msgstr "پوسته"
 msgid "provided by %(readthedocs_web)s"
 msgstr "تهیّه شده با %(readthedocs_web)s"
 
-#: sphinx_rtd_theme/layout.html:93
+#: sphinx_rtd_theme/layout.html:97
 #, python-format
 msgid "Search within %(docstitle)s"
 msgstr "جستجو در %(docstitle)s"
 
-#: sphinx_rtd_theme/layout.html:101
+#: sphinx_rtd_theme/layout.html:105
 msgid "About these documents"
 msgstr "درباره این مستندات"
 
-#: sphinx_rtd_theme/layout.html:104
+#: sphinx_rtd_theme/layout.html:108
 msgid "Index"
 msgstr "فهرست"
 
-#: sphinx_rtd_theme/layout.html:107 sphinx_rtd_theme/search.html:11
+#: sphinx_rtd_theme/layout.html:111 sphinx_rtd_theme/search.html:11
 msgid "Search"
 msgstr "جستجوی"
 
-#: sphinx_rtd_theme/layout.html:110
+#: sphinx_rtd_theme/layout.html:114
 msgid "Copyright"
 msgstr "کپی رایت"
 
-#: sphinx_rtd_theme/layout.html:143 sphinx_rtd_theme/layout.html:145
+#: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
 msgid "Logo"
 msgstr "آرم"
 
