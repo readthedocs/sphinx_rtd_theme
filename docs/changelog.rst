@@ -4,10 +4,15 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
+.. |development_version| replace:: 1.1.2alpha1
+
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.1.2alpha1
+Deprecated
+----------
+
+* A reminder to not install the theme directly from Git, we will remove support for this in 3.0
 
 .. _release-1.1.1:
 
