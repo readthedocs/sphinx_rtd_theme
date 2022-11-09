@@ -58,12 +58,6 @@ Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.
     
     More information is available in Read the Docs' documentation on :doc:`rtd:guides/reproducible-builds`.
 
-.. tip:: 
-    **Read the Docs users:** If you are upgrading a project created before October 20, 2020 (January 21, 2021 for Read the Docs for Business), it's a requirement to specify the version of ``sphinx-rtd-theme``. Otherwise, ``sphinx-rtd-theme`` is pinned to a lower version to address legacy issues.
-    More information is available in Read the Docs' documentation on :doc:`rtd:build-default-versions`.
-    We recommend checking your build logs to verify which version of ``sphinx-rtd-theme`` you are running.
-
-
 
 Via Git or Download
 -------------------
