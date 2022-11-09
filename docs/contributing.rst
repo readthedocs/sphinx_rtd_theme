@@ -3,7 +3,7 @@ Contributing
 ************
 
 This project follows the Read the Docs :doc:`code of conduct
-<rtd:code-of-conduct>`. If you are not familiar with our code of conduct policy,
+<rtd-dev:code-of-conduct>`. If you are not familiar with our code of conduct policy,
 take a minute to read the policy before starting with your first contribution.
 
 .. tip::
@@ -66,7 +66,7 @@ can be used to test built assets:
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
 
 
-_dockerized-build::
+.. _dockerized-build:
 
 Dockerized development
 ======================
@@ -184,7 +184,7 @@ Translations
 Translations are managed using `Transifex`_. You can join any of the existing
 language teams or request a new language is added to the project. For more
 information on our translation standards, see our docs on
-:doc:`rtd:development/i18n`
+:doc:`rtd-dev:i18n`
 
 Periodically, core team should update the translation files outside our normal
 releases. Someone from the core team, with write access to Transifex, should run

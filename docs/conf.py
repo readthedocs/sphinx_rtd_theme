@@ -9,7 +9,6 @@ import re
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('./demo/'))
 
-import sphinx_rtd_theme
 from sphinx_rtd_theme import __version__ as theme_version
 from sphinx_rtd_theme import __version_full__ as theme_version_full
 from sphinx.locale import _
@@ -49,6 +48,7 @@ else:
 
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
+    'rtd-dev': ('https://dev.readthedocs.io/en/stable/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 
