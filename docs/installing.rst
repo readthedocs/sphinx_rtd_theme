@@ -52,14 +52,16 @@ Adding ``sphinx-rtd-theme`` to your project's dependencies will make pip install
 If you want to test a **pre-release**, you need to be explicit about the version you specify.
 Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.1.0b3`` to test a pre-release.
 
-.. tip:: 
-    **Read the Docs users:** To know which version of ``sphinx-rtd-theme`` you are running, you can always check your latest build outputs. One or more steps in the documentation build will install python packages, one of which is ``sphinx-rtd-theme``.
-
 .. tip::
     We recommend that you pin the version of Sphinx that your project is built with.
     We won't release sphinx-rtd-theme without marking its compatibility with Sphinx. So if you do not pin ``sphinx-rtd-theme`` itself, you will always get the *latest compatible* release.
     
     More information is available in Read the Docs' documentation on :doc:`rtd:guides/reproducible-builds`.
+
+.. tip:: 
+    **Read the Docs users:** If you are upgrading a project created before October 20, 2020 (January 21, 2021 for Read the Docs for Business), it's a requirement to specify the version of ``sphinx-rtd-theme``. Otherwise, ``sphinx-rtd-theme`` is pinned to a lower version to address legacy issues.
+    More information is available in Read the Docs' documentation on :doc:`rtd:build-default-versions`.
+    We recommend checking your build logs to verify which version of ``sphinx-rtd-theme`` you are running.
 
 
 
