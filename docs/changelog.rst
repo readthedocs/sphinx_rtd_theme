@@ -2,10 +2,72 @@
 Changelog
 *********
 
+.. seealso:: :ref:`howto_upgrade`
+
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.0.1alpha1
+.. |development_version| replace:: 1.1.2alpha1
+
+.. _release-1.1.1:
+
+1.1.1
+=====
+
+Fixes
+-----
+
+* Fix wrapping bug on cross references (#1368)
+
+.. _release-1.1.0:
+
+1.1.0
+=====
+
+Dependency Changes
+------------------
+
+Many documentation projects depend on ``sphinx-rtd-theme`` without specifying a version of the theme (unpinned) while also depending on unpinned versions of Sphinx. The latest version of ``sphinx-rtd-theme`` ideally always supports the latest version of Sphinx, but this is now guaranteed.
+
+This release adds upper bounds to direct dependencies ``Sphinx`` and ``docutils`` which will safeguard from mixing with possibly incompatible future versions of Sphinx & docutils.
+
+* Sphinx versions supported: 1.6 to 5.2.x
+* ``Sphinx<6`` (#1332)
+* ``docutils<0.18`` (unchanged, but will be bumped in an upcoming release)
+
+
+Features
+--------
+
+* Nicer styles for <kbd> (#967)
+* New styling for breadcrumbs (#1073)
+
+
+Fixes
+-----
+
+* Suffixes in Sphinx version caused build errors (#1345)
+* Table cells with multiple paragraphs gets wrong formatting (#289)
+* Definition lists rendered wrongly in api docs (#1052)
+* Citation not styled properly (#1078)
+* Long URLs did not wrap (#1193)
+
+
+Minor Changes
+-------------
+
+* Sphinx 5.2 added to test matrix (#1348)
+* Python 3.10 added to test matrix (#1334)
+* Supplemental Docker setup for development (#1319)
+* Most of setup.py migrated to setup.cfg (#1116)
+* Jinja2 context variable ``sphinx_version_info`` is now ``(major, minor, -1)``, the patch component is always ``-1``. Reason: It's complicated. (#1345)
+
+
+Incompatible Changes
+--------------------
+
+There are no known incompatible changes in this release. Support for ``docutils`` versions 0.18 and 0.19 are scheduled for our next release.
+
 
 .. _release-1.0.0:
 
