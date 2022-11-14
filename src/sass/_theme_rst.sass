@@ -322,6 +322,8 @@
           content: ":"
       > dt, > dd
         margin-bottom: 0rem
+    
+    
     dl.footnote, dl.citation
       font-size: .9rem
       > dt
@@ -347,19 +349,33 @@
         font-size: 0.9rem
 
     // docutils >= 0.18
+    aside.footnote-list,
+    div.citation-list
+      margin-bottom: 2rem;
+
     aside.footnote,
     div.citation
+      display: block
       font-size: 0.9rem
-      p, span.label
+      padding-left: 1rem
+      margin-bottom: .5rem
+      clear: both;
+      > p, > span
         font-size: 0.9rem
-
-    aside.footnote > span,
-    div.citation > span
-      font-weight: 500
-
-    aside.footnote > p,
-    div.citation > p
-      margin-left: 2rem
+        line-height: 24px
+        margin-right: 0.5rem
+        margin-bottom: .5rem
+      > span
+        float: left
+        display: block
+      > span.backrefs
+        font-style: italic
+      > p
+        margin-left: 3rem
+        margin-bottom: 0
+        overflow: hidden  // This is a CSS hack'ish way of making the text wrap
+                          // equally along the left side, rather than "floating"
+                          // ...like this comment! :) 
 
   // Both
   html.writer-html4 & table.docutils.citation,
