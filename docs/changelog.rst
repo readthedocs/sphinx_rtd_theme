@@ -12,7 +12,7 @@ Development version (|development_version|)
 Deprecated
 ----------
 
-* A reminder to not install the theme directly from Git, we will remove support for this in 3.0
+* Reminder: In 3.0, we will remove support for installing this theme directly from its git repository. Instead, please use releases from PyPi.
 
 .. _release-1.1.1:
 
