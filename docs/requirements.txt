@@ -1,2 +1,5 @@
 sphinx>=3.0
+
+# NB! sphinxcontrib-httpdomain dropped Sphinx 1.7 support
+# https://github.com/sphinx-contrib/httpdomain/issues/64
 sphinxcontrib-httpdomain
