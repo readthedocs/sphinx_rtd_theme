@@ -313,9 +313,30 @@
         vertical-align: top
   // HTML5 writer
   html.writer-html5 &
+    // docutils < 0.18 grid layout. Some spacing is the dl/dt/dd margins
     dl.footnote, dl.citation, dl.field-list
       display: grid
       grid-template-columns: max-content auto
+    // docutils => 0.18 grid layout
+    aside.footnote-list, aside.citation-list, div.citation-list
+      > aside.footnote, aside.citation, div.citation
+        display: grid
+        // Two any width columns for label and backrefs, a noop column to expand
+        // to fill the width allocated to the first two columns, and then the
+        // content column for the paragraphs.
+        grid-template-columns: auto auto minmax(0.65rem, 10%) 90%
+        & > span.label
+          grid-column-start: 1
+          grid-column-end: 2
+        & > span.backrefs
+          grid-column-start: 2
+          grid-column-end: 3
+        & > p
+          grid-column-start: 4
+          grid-column-end: 5
+
+    // docutils < 0.18 html5 writer styling
+    dl.footnote, dl.citation, dl.field-list,
       > dt
         padding-left: 1rem
         &:after
@@ -342,12 +363,34 @@
         line-height: 1.2rem
         p
           font-size: 0.9rem
+
+    // docutils => 0.18 html5 writer styling
+    aside.footnote-list, aside.citation-list, div.citation-list
+      > aside.footnote, aside.citation, div.citation
+        padding-left: 1rem
+        padding-right: 1rem
+        font-size: 0.9rem
+        p
+          font-size: 0.9rem
+          line-height: 1.2rem
+          margin-bottom: $base-line-height / 2
+        span.backrefs
+          margin-left: 0.5rem
+          > a
+            font-style: italic
+        span.label, span.backrefs
+          line-height: 1.2rem
+
     dl.option-list
       kbd
         font-size: 0.9rem
   // Both
   html.writer-html4 & table.docutils.citation, table.docutils.footnote,
-  html.writer-html5 & dl.footnote, dl.citation
+  html.writer-html5 & dl.footnote,
+  html.writer-html5 & dl.citation,
+  html.writer-html5 & aside.footnote,
+  html.writer-html5 & aside.footnote-list aside.footnote,
+  html.writer-html5 & div.citation-list > div.citation
     color: $text-medium
     code
       color: $gray
