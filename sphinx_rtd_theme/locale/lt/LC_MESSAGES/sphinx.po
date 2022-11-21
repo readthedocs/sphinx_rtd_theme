@@ -11,14 +11,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-10-06 17:05+0200\n"
+"POT-Creation-Date: 2022-11-04 12:02-0700\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
 "Last-Translator: Tomas Straupis, 2021\n"
 "Language-Team: Lithuanian (https://www.transifex.com/readthedocs/teams/101354/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.10.1\n"
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
@@ -109,39 +109,39 @@ msgstr "temą"
 msgid "provided by %(readthedocs_web)s"
 msgstr "pateiktą %(readthedocs_web)s"
 
-#: sphinx_rtd_theme/layout.html:93
+#: sphinx_rtd_theme/layout.html:97
 #, python-format
 msgid "Search within %(docstitle)s"
 msgstr "Ieškoti %(docstitle)s"
 
-#: sphinx_rtd_theme/layout.html:101
+#: sphinx_rtd_theme/layout.html:105
 msgid "About these documents"
 msgstr "Apie šiuos dokumentus"
 
-#: sphinx_rtd_theme/layout.html:104
+#: sphinx_rtd_theme/layout.html:108
 msgid "Index"
 msgstr "Indeksas"
 
-#: sphinx_rtd_theme/layout.html:107 sphinx_rtd_theme/search.html:11
+#: sphinx_rtd_theme/layout.html:111 sphinx_rtd_theme/search.html:11
 msgid "Search"
 msgstr "Paieška"
 
-#: sphinx_rtd_theme/layout.html:110
+#: sphinx_rtd_theme/layout.html:114
 msgid "Copyright"
 msgstr "Autorių teisės"
 
-#: sphinx_rtd_theme/layout.html:143 sphinx_rtd_theme/layout.html:145
+#: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
 msgid "Logo"
 msgstr "Logo"
 
 #. This is an ARIA section label for the main navigation menu
-#: sphinx_rtd_theme/layout.html:169
+#: sphinx_rtd_theme/layout.html:173
 msgid "Navigation menu"
 msgstr "Navigacijos meniu"
 
 #. This is an ARIA section label for the navigation menu that is visible when
 #. viewing the page on mobile devices
-#: sphinx_rtd_theme/layout.html:191
+#: sphinx_rtd_theme/layout.html:195
 msgid "Mobile navigation menu"
 msgstr "Mobilios navigacijos meniu"
 
