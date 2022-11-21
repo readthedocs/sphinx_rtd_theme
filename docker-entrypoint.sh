@@ -1,8 +1,13 @@
 #!/bin/sh
 
 # Update latest Python dependencies in case they have changed
+# Notice that we are using the 'eager' strategy
+# This should only be relevant to development environments where
+# the theme is being used. For purposes of "production" or
+# building the sdist/wheel, installing dependencies should not
+# affect the outcome.
 cd /project-readonly
-pip install --upgrade -e ".[dev]"
+pip install --upgrade --upgrade-strategy eager -e ".[dev]"
 
 # This helps a potential permission issue, but might be removed
 # pending some more investigation of docker host file system
