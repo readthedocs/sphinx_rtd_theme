@@ -22,7 +22,7 @@
 <div role="navigation" aria-label="{{ _('Page navigation') }}">
   <ul class="wy-breadcrumbs">
     {%- block breadcrumbs %}
-      <li><a href="{{ pathto(master_doc) }}" class="icon icon-home"></a></li>
+      <li><a href="{{ pathto(master_doc) }}" class="icon icon-home" aria-label="Home"></a></li>
         {%- for doc in parents %}
           <li class="breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
         {%- endfor %}
