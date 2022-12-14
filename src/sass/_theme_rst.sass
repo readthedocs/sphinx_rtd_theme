@@ -329,7 +329,7 @@
       // Two any width columns for label and backrefs, a noop column to expand
       // to fill the width allocated to the first two columns, and then the
       // content column for the paragraphs.
-      grid-template-columns: auto auto minmax(0.65rem, auto) minmax(80%, 95%)
+      grid-template-columns: auto auto minmax(0.65rem, auto) minmax(40%, 95%)
       & > span.label
         grid-column-start: 1
         grid-column-end: 2
@@ -344,22 +344,9 @@
 
     // Shared backrefs styling for docutils versions
     @mixin footnote-backrefs
-      // Don't use `visibility` here, as this breaks the line-height and height
-      // calculation, and super vertical alignment isn't possible. Instead, use
-      // hacks to hide the unwanted characters.
-      word-break: break-all
-      font-size: 0rem
       text-align: left
-      > a
-        word-break: normal
-        font-style: italic
-        font-size: 0.65rem
-        padding: 0em .15em
-        // These are all required to emulate superscript via CSS consistently
-        line-height: 1.2rem
-        vertical-align: super
-        position: relative
-        top: -0.3em
+      font-style: italic
+      margin-left: .65rem;
 
     // docutils < 0.18 html5 writer styling
     dl.footnote, dl.citation, dl.field-list,
