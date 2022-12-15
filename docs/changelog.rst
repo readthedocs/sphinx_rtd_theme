@@ -9,6 +9,19 @@ Development version (|development_version|)
 
 .. |development_version| replace:: 1.1.2alpha1
 
+Dependency Changes
+------------------
+
+* docutils 0.18 is supported. (#1381)
+
+Note for users of Sphinx<3
+--------------------------
+
+If you cannot use a more recent Sphinx release,
+you should at least ensure you are using the most recent release for your major version.
+Currently, these are Sphinx `1.8.6` and `2.4.5`.
+Older releases may install unsupported versions of several dependencies, including Jinja2 and docutils.
+
 .. _release-1.1.1:
 
 1.1.1
