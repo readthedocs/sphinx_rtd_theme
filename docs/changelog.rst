@@ -9,6 +9,21 @@ Development version (|development_version|)
 
 .. |development_version| replace:: 1.1.2alpha1
 
+Dependency Changes
+------------------
+
+* docutils 0.18 is supported. (#1381)
+
+Note for users of Sphinx<3
+--------------------------
+
+If you have pinned your documentation project to use versions of
+``sphinx<1.8.6`` or ``Sphinx>=2.0,<2.4.5``, you need to either
+add ``docutils<0.18`` to your requirements since newer versions of docutils are incompatible with these older Sphinx versions
+**or**
+update to a later release of Sphinx that has docutils correctly pinned.
+Read more in `this comment <https://github.com/readthedocs/sphinx_rtd_theme/pull/1304#issuecomment-1266924478>`.
+
 .. _release-1.1.1:
 
 1.1.1
