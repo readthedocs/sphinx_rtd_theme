@@ -1,1 +1,1 @@
-sphinx==6.0b2
+sphinx==6.0.0
