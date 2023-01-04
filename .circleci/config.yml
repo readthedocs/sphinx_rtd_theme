@@ -79,13 +79,23 @@ jobs:
     steps:
       - run-tox:
           version: py310
-          sphinx-version: "42,43,44,45,50,51,52,60,latest"
+          sphinx-version: "42,43,44,45,50,51,52,53,60,latest"
+  py311:
+    docker:
+      - image: 'cimg/python:3.11'
+    steps:
+      - run-tox:
+          version: py311
+          sphinx-version: "53,60,latest"
 
 workflows:
   version: 2
   tests:
     jobs:
       - build
+      - py311:
+          requires:
+            - build
       - py310:
           requires:
             - build

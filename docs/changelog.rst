@@ -13,6 +13,8 @@ Dependency Changes
 ------------------
 
 * docutils 0.18 is supported. (#1381)
+* Python 3.11 is officially supported and tested. (#1395)
+* Python 3.4 and 3.5 are officially not supported (#1395)
 
 Note for users of Sphinx<3
 --------------------------
