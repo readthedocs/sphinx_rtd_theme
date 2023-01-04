@@ -50,6 +50,15 @@ def setup(app):
         if app.config.html4_writer:
             logger.warning("'html4_writer' is deprecated with sphinx_rtd_theme")
 
+    # Since Sphinx 6, jquery isn't bundled anymore and we need to ensure that
+    # the sphinxcontrib-jquery extension is enabled.
+    # See: https://dev.readthedocs.io/en/latest/design/sphinx-jquery.html
+    if sphinx_version >= (6, 0, 0):
+        # Documentation of Sphinx guarantees that an extension is added and
+        # enabled at most once.
+        # See: https://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.setup_extension
+        app.setup_extension("sphinxcontrib.jquery")
+
     # Register the theme that can be referenced without adding a theme path
     app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
 
