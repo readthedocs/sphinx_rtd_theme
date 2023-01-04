@@ -7,14 +7,17 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.2.0rc1
+.. |development_version| replace:: 1.2.0rc2
 
-Dependency Changes
+Dependency changes
 ------------------
 
 * docutils 0.18 is supported. (#1381)
+* Sphinx 6 support added (#1385)
+* Added ``sphinxcontrib-jquery`` as a dependency (#1385)
 * Python 3.11 is officially supported and tested. (#1395)
 * Python 3.4 and 3.5 are officially not supported (#1395)
+
 
 Note for users of Sphinx<3
 --------------------------
