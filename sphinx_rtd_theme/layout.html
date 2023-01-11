@@ -41,11 +41,13 @@
   {%- endfor -%}
 
   {#- FAVICON #}
-  {%- if favicon %}
-    {%- if sphinx_version_info < (4, 0) -%}
-    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
-    {%- else %}
-    <link rel="shortcut icon" href="{{ favicon_url }}"/>
+  {%- if sphinx_version_info < (4, 0) -%}
+    {%- if favicon %}
+      <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- endif %}
+  {%- else %}
+    {%- if favicon_url %}
+      <link rel="shortcut icon" href="{{ favicon_url }}"/>
     {%- endif %}
   {%- endif -%}
 
@@ -134,24 +136,31 @@
           {%- block sidebartitle %}
 
           {%- if ( logo or logo_url ) and theme_logo_only %}
-            <a href="{{ pathto(master_doc) }}">
-          {%- else %}
-            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
-          {%- endif %}
 
           {%- if sphinx_version_info < (4, 0) -%}
             {# the logo helper function was removed in Sphinx 6 and deprecated since Sphinx 4 #}
+            {# the master_doc variable was renamed to root_doc in Sphinx 4 (master_doc still exists in later Sphinx versions) #}
             {%- if logo %}
+            <a href="{{ pathto(master_doc) }}">
               <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ _('Logo') }}"/>
+            </a>
             {%- endif %}
           {# Behavior since Sphinx 4 #}
           {%- else %}
             {% if logo_url %}
-              <img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
+              <a href="{{ pathto(root_doc) }}">
+                <img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
+              </a>
             {%- endif %}
           {%- endif %}
 
-          </a>
+          {%- else %}
+            {%- if sphinx_version_info < (4, 0) -%}
+              <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}</a>
+            {%- else %}
+              <a href="{{ pathto(root_doc) }}" class="icon icon-home"> {{ project }}</a>
+            {%- endif %}
+          {%- endif %}
 
           {%- if theme_display_version %}
             {%- set nav_version = version %}
