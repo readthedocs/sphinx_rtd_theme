@@ -65,7 +65,10 @@
       Workaround for: https://github.com/sphinx-doc/sphinx/issues/9730
       Once a fix is released in Sphinx, put an upper bound on the Sphinx version for the workaround
     -#}
-    {%- if builder == 'dirhtml' and pageurl.endswith('.html') %}
+    {%- if builder == 'dirhtml' and pageurl.endswith('index.html') %}
+      {#- This expression trims away index.html entirely #}
+      <link rel="canonical" href="{{ (pageurl|e)[:-10] }}" />
+    {%- elif builder == 'dirhtml' and pageurl.endswith('.html') %}
       {#- This expression trims away .html and adds a / #}
       <link rel="canonical" href="{{ (pageurl|e)[:-5] }}/" />
     {%- else %}
