@@ -54,19 +54,23 @@
     <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}{% if builder == 'dirhtml' %}/{% else %}.html{% endif %}"/>
   {%- endif -%}
 
-  {#- CANONICAL URL #}
-  {# NB! pageurl is currently a non-documented template context variable! #}
-  {# pageurl implementation: https://www.sphinx-doc.org/en/master/_modules/sphinx/builders/html.html #}
-  {%- if pageurl %}
-    {# pageurl implementation wrongly: adds .html for the dirhtml builder's pageurl #}
-    {# Workaround for: https://github.com/sphinx-doc/sphinx/issues/9730 #}
-    {# Once a fix is released in Sphinx, put an upper bound on the Sphinx version for the workaround #}
-    {% if builder == 'dirhtml' and pageurl.endswith('.html') %}
-      {# This expression trims away .html and adds a / #}
+  {#-
+    CANONICAL URL
+    NB! pageurl is currently a non-documented template context variable!
+    pageurl implementation: https://www.sphinx-doc.org/en/master/_modules/sphinx/builders/html.html
+  -#}
+  {%- if pageurl -%}
+    {#-
+      pageurl implementation wrongly: adds .html for the dirhtml builder's pageurl
+      Workaround for: https://github.com/sphinx-doc/sphinx/issues/9730
+      Once a fix is released in Sphinx, put an upper bound on the Sphinx version for the workaround
+    -#}
+    {%- if builder == 'dirhtml' and pageurl.endswith('.html') -%}
+      {#- This expression trims away .html and adds a / -#}
       <link rel="canonical" href="{{ (pageurl|e)[:-5] }}/" />
-    {% else %}
+    {%- else -%}
       <link rel="canonical" href="{{ pageurl|e }}" />
-    {% endif %}
+    {%- endif -%}
   {%- endif -%}
 
   {#- JAVASCRIPTS #}
