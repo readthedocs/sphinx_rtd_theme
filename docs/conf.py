@@ -70,6 +70,7 @@ if not 'READTHEDOCS' in os.environ:
 
 html_logo = "demo/static/logo-wordmark-light.svg"
 html_show_sourcelink = True
+html_favicon = "demo/static/favicon.ico"
 
 htmlhelp_basename = slug
 
