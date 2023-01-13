@@ -27,8 +27,16 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinx_rtd_theme',
+#    'sphinx_rtd_theme',
 ]
+
+
+# This same code is added by RTD
+# here:
+# https://github.com/readthedocs/readthedocs.org/blob/ce0a72398e3a72d77a4a18fc61997e04a5ee137d/readthedocs/doc_builder/templates/doc_builder/conf.py.tmpl#L65-L68
+# By adding it here, the issue can be reproduced locally
+import sphinx_rtd_theme as theme
+html_theme_path = [theme.get_html_theme_path()]
 
 templates_path = ['_templates']
 source_suffix = '.rst'
