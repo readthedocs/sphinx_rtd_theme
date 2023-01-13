@@ -37,6 +37,9 @@ def extend_html_context(app, pagename, templatename, context, doctree):
      context['sphinx_version_info'] = sphinx_version
 
 
+def update_context(app, pagename, templatename, context, doctree):
+    context["rtd_theme_version"] = __version_full__
+
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
     if python_version[0] < 3:
@@ -78,4 +81,5 @@ def setup(app):
     # Extend the default context when rendering the templates.
     app.connect("html-page-context", extend_html_context)
 
+    app.connect("html-page-context", update_context)
     return {'parallel_read_safe': True, 'parallel_write_safe': True}
