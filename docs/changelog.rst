@@ -7,7 +7,7 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.2.0rc2
+.. |development_version| replace:: 1.2.0rc3
 
 Dependency changes
 ------------------
