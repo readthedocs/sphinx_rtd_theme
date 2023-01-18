@@ -7,7 +7,8 @@ This project follows the Read the Docs :doc:`code of conduct
 take a minute to read the policy before starting with your first contribution.
 
 .. tip::
-    There is a new dockerized build environment, see :ref:`dockerized-build`.
+
+   There is a new dockerized build environment, see `dockerized-build`_.
 
 Modifying the theme
 ===================
