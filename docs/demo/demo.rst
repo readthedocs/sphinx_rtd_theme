@@ -34,10 +34,6 @@ and explicit roles for :emphasis:`standard` :strong:`inline` :literal:`markup`.
 GUI labels are a useful way to indicate that :guilabel:`Some action` is to be taken by the user.
 The GUI label should not run over ``line-height`` so as not to :guilabel:`interfere` with text from adjacent lines.
 
-Same as with GUI labels, ``:menuselection:`` is useful to indicate a :menuselection:`Menu --> choice`.
-The separator used is really up to you,
-but the Sphinx documentation suggests ``-->`` which will turn into a ‣.
-
 Key-bindings indicate that [1]_ the read is to press a button on the keyboard or mouse,
 for example :kbd:`MMB` and :kbd:`Shift-MMB`. Another useful markup to indicate a user action
 is to use ``menuselection`` this [1]_ can [1]_ be [1]_ used [1]_ to [1]_ show [1]_ short [1]_ and long menus in software.
