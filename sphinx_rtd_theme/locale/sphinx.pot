@@ -1,15 +1,15 @@
 # Translations template for sphinx_rtd_theme.
-# Copyright (C) 2022 ORGANIZATION
+# Copyright (C) 2023 ORGANIZATION
 # This file is distributed under the same license as the sphinx_rtd_theme
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: sphinx_rtd_theme 1.2.0rc2\n"
+"Project-Id-Version: sphinx_rtd_theme 1.2.0rc4\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-12-30 21:31+0100\n"
+"POT-Creation-Date: 2023-02-06 15:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,18 +125,18 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
+#: sphinx_rtd_theme/layout.html:143
 msgid "Logo"
 msgstr ""
 
 #. This is an ARIA section label for the main navigation menu
-#: sphinx_rtd_theme/layout.html:173
+#: sphinx_rtd_theme/layout.html:166
 msgid "Navigation menu"
 msgstr ""
 
 #. This is an ARIA section label for the navigation menu that is visible when
 #. viewing the page on mobile devices
-#: sphinx_rtd_theme/layout.html:195
+#: sphinx_rtd_theme/layout.html:188
 msgid "Mobile navigation menu"
 msgstr ""
 
