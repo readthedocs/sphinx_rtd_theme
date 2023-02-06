@@ -23,8 +23,8 @@ Changes
 
 * Automatically use ``sphinxcontrib-jquery`` in Sphinx 6+ (#1399)
 * Use new context vars ``logo_url``, ``favicon_url`` and ``root_doc`` when available (#1405)
-* Translations updated: French, Hungarian, Croatian, Chinese (Taiwan)
-* Translations added: Danish
+* Translations updated: French, Hungarian, Croatian
+* Translations added: Danish, Chinese (Taiwan)
 
 Note for users of Sphinx<4
 --------------------------
