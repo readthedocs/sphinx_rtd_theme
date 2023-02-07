@@ -7,14 +7,16 @@
 # Translators:
 # Anthony <aj@ohess.org>, 2020
 # Radina Matic <radina.matic@gmail.com>, 2021
+# Jérémie Tarot <silopolis@gmail.com>, 2023
+# CapitainFlam, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-12-30 21:31+0100\n"
+"POT-Creation-Date: 2023-02-06 15:36+0100\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
-"Last-Translator: Radina Matic <radina.matic@gmail.com>, 2021\n"
+"Last-Translator: CapitainFlam, 2023\n"
 "Language-Team: French (https://www.transifex.com/readthedocs/teams/101354/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,7 +121,7 @@ msgstr "Rechercher"
 msgid "Copyright"
 msgstr "Droits d'auteur"
 
-#: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
+#: sphinx_rtd_theme/layout.html:143
 msgid "Logo"
 msgstr "Logo"
 

@@ -7,23 +7,24 @@ Changelog
 Development version (|development_version|)
 ===========================================
 
-.. |development_version| replace:: 1.2.0rc3
+.. |development_version| replace:: 1.2.0rc4
 
 Dependency changes
 ------------------
 
 * docutils 0.18 is supported. (#1381)
 * Sphinx 6 support added
-* Added ``sphinxcontrib-jquery`` as a dependency (#1385)
+* Added ``sphinxcontrib-jquery`` as a dependency (#1385 #1421)
 * Python 3.11 is officially supported and tested. (#1395)
 * Python 3.4 and 3.5 are officially not supported (#1395)
-
 
 Changes
 -------
 
 * Automatically use ``sphinxcontrib-jquery`` in Sphinx 6+ (#1399)
 * Use new context vars ``logo_url``, ``favicon_url`` and ``root_doc`` when available (#1405)
+* Translations updated: French, Hungarian, Croatian
+* Translations added: Danish, Chinese (Taiwan)
 
 Note for users of Sphinx<4
 --------------------------
@@ -43,6 +44,8 @@ See `readthedocs.org issue #9654`_ for updates.
 .. _readthedocs.org issue #9654: https://github.com/readthedocs/readthedocs.org/pull/9654
 
 .. _release-1.1.1:
+
+
 
 1.1.1
 =====
