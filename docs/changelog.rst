@@ -4,10 +4,13 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-Development version (|development_version|)
-===========================================
+.. |theme_version| replace:: 1.2.0
 
-.. |development_version| replace:: 1.2.0rc4
+
+.. _release-1.2.0:
+
+1.2.0
+=====
 
 Dependency changes
 ------------------
@@ -43,9 +46,8 @@ See `readthedocs.org issue #9654`_ for updates.
 
 .. _readthedocs.org issue #9654: https://github.com/readthedocs/readthedocs.org/pull/9654
 
+
 .. _release-1.1.1:
-
-
 
 1.1.1
 =====
