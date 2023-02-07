@@ -4,10 +4,10 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-Development version (|development_version|)
-===========================================
+|theme_version|
+===============
 
-.. |development_version| replace:: 1.2.0rc4
+.. |theme_version| replace:: 1.2.0rc4
 
 Dependency changes
 ------------------
