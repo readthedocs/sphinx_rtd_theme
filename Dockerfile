@@ -33,6 +33,8 @@ RUN cd /project
 
 # It matters that the node environment is installed into the same
 # folder, i.e. /project where we will run the environment from
+# TODO: We don't want to update package-lock.json here, we
+# should use npm ci instead
 RUN npm install --package-lock-only &&\
     npm audit fix &&\
     npm install

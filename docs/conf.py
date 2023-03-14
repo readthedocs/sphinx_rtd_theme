@@ -9,7 +9,6 @@ import re
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('./demo/'))
 
-import sphinx_rtd_theme
 from sphinx_rtd_theme import __version__ as theme_version
 from sphinx_rtd_theme import __version_full__ as theme_version_full
 from sphinx.locale import _
@@ -25,9 +24,9 @@ language = 'en'
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinxcontrib.httpdomain',
     'sphinx_rtd_theme',
 ]
 
@@ -41,8 +40,14 @@ master_doc = 'index'
 suppress_warnings = ['image.nonlocal_uri']
 pygments_style = 'default'
 
+if sys.version_info < (3, 0):
+    tags.add("python2")
+else:
+    tags.add("python3")
+
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
+    'rtd-dev': ('https://dev.readthedocs.io/en/stable/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 
@@ -65,6 +70,7 @@ if not 'READTHEDOCS' in os.environ:
 
 html_logo = "demo/static/logo-wordmark-light.svg"
 html_show_sourcelink = True
+html_favicon = "demo/static/favicon.ico"
 
 htmlhelp_basename = slug
 

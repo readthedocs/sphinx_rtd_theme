@@ -1,3 +1,4 @@
+// jQuery is included via the sphinxcontrib-jquery extension that we depend on
 var jQuery = (typeof(window) != 'undefined') ? window.jQuery : require('jquery');
 
 // Sphinx theme nav state

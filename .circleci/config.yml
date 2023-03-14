@@ -11,10 +11,10 @@ commands:
         type: string
       sphinx-version:
         type: string
-        default: "16,17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,latest"
+        default: "17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,42,43,44,45,50,51,52,latest"
     steps:
       - checkout
-      - run: pip install --user tox
+      - run: pip install --user tox~=3.27
       - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
   run-build:
     description: "Ensure built assets are up to date"
@@ -46,7 +46,7 @@ jobs:
     steps:
       - run-tox:
           version: py27
-          sphinx-version: "16,17,18"
+          sphinx-version: "17,18"
   py36:
     docker:
       - image: 'cimg/python:3.6'
@@ -65,25 +65,37 @@ jobs:
     steps:
       - run-tox:
           version: py38
+          sphinx-version: "17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,42,43,44,45,50,51,52,60,latest"
   py39:
     docker:
       - image: 'cimg/python:3.9'
     steps:
       - run-tox:
           version: py39
+          sphinx-version: "17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,42,43,44,45,50,51,52,60,latest"
   py310:
     docker:
       - image: 'cimg/python:3.10'
     steps:
       - run-tox:
           version: py310
-          sphinx-version: "42,43,44,45,50,51,latest"
+          sphinx-version: "42,43,44,45,50,51,52,53,60,latest"
+  py311:
+    docker:
+      - image: 'cimg/python:3.11'
+    steps:
+      - run-tox:
+          version: py311
+          sphinx-version: "53,60,latest"
 
 workflows:
   version: 2
   tests:
     jobs:
       - build
+      - py311:
+          requires:
+            - build
       - py310:
           requires:
             - build
