@@ -8,7 +8,7 @@ used with projects on `Read the Docs`_ but can work with any Sphinx project.
 .. _Sphinx: http://www.sphinx-doc.org
 .. _Read the Docs: http://www.readthedocs.org
 
-Using this theme
+第一章
 ----------------
 
 :doc:`installing`
@@ -23,7 +23,7 @@ Using this theme
 :ref:`supported-dependencies`
     Supported project dependencies, like Python and Sphinx.
 
-Development
+第二章
 -----------
 
 :doc:`contributing`
