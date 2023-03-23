@@ -48,13 +48,12 @@
 
   {% if show_sphinx %}
     {%- set sphinx_web = '<a href="https://www.sphinx-doc.org/">Sphinx ' + sphinx_version + '</a>' %}
-    {%- set readthedocs_web = '<a href="https://readthedocs.org">Read the Docs</a>'  %}
-    {#- Translators: the variable "sphinx_web" is a link to the Sphinx project documentation with the text "Sphinx" #}
-    {%- trans sphinx_web=sphinx_web, readthedocs_web=readthedocs_web %}Built with {{ sphinx_web }} using a{% endtrans %}
-    {#- Translators: "theme" refers to a theme for Sphinx, which alters the appearance of the generated documentation #}
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">{% trans %}theme {% endtrans %}{%- if rtd_theme_version -%} (v{{ rtd_theme_version }}){%- endif -%}</a>
-    {#- Translators: this is always used as "provided by Read the Docs", and should not imply Read the Docs is an author of the generated documentation. #}
-    {% trans %}provided by {{ readthedocs_web }}{% endtrans %}.
+    {%- set readthedocs_web = '<a href="https://about.readthedocs.com">Read the Docs</a>'  %}
+    {%- set sphinx_rtd_theme_web = '<a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx-rtd-theme ' + rtd_theme_version + '</a>'  %}
+    {#- Translators: the variable "sphinx_web" is a link to the Sphinx project documentation with the text "Sphinx 1.2.3", the last 3 digits are the automatically generated version numbers #}
+    {#- Translators: the variable "sphinx_rtd_theme_web" is a link to the theme's documentation with the text "sphinx-rtd-theme 1.2.3", the last 3 digits are the automatically generated version numbers #}
+    {#- Translators: "provided by Read the Docs" refers to the theme, and should not imply that Read the Docs is an author of the generated documentation, nor that the documentation is necessarily hosted or built by Read the Docs, as the theme is very often used independently. #}
+    {%- trans sphinx_web=sphinx_web, readthedocs_web=readthedocs_web %}Built with {{ sphinx_web }} using {{ sphinx_rtd_theme_web }} provided by {{ readthedocs_web }}.{% endtrans %}
   {% endif %}
 
   {%- block extrafooter %} {% endblock %}
