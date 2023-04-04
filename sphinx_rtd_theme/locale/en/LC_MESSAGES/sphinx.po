@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-12-30 21:31+0100\n"
+"POT-Creation-Date: 2023-02-06 15:36+0100\n"
 "PO-Revision-Date: 2019-07-16 15:43-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -126,18 +126,18 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
+#: sphinx_rtd_theme/layout.html:143
 msgid "Logo"
 msgstr ""
 
 #. This is an ARIA section label for the main navigation menu
-#: sphinx_rtd_theme/layout.html:173
+#: sphinx_rtd_theme/layout.html:166
 msgid "Navigation menu"
 msgstr ""
 
 #. This is an ARIA section label for the navigation menu that is visible when
 #. viewing the page on mobile devices
-#: sphinx_rtd_theme/layout.html:195
+#: sphinx_rtd_theme/layout.html:188
 msgid "Mobile navigation menu"
 msgstr ""
 
