@@ -25,7 +25,7 @@
 
   {#- CSS #}
   {%- if sphinx_version_info < (4, 0) -%}
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/' + styles[-1], 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
   {%- endif %}
   {%- for css in css_files %}
