@@ -7,7 +7,7 @@ Changelog
 |theme_version|
 ===============
 
-.. |theme_version| replace:: 1.2.1alpha1
+.. |theme_version| replace:: 1.2.1
 
 
 .. _release-1.2.0:
