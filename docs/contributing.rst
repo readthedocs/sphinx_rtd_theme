@@ -252,7 +252,7 @@ To release a new version of the theme, core team will take the following steps:
 #. Commit these changes to a pull request.
 #. Merge the pull request after review.
 #. Check out ``master`` branch locally for tagging. **Remember to pull from remote**.
-#. Tag the release in git: ``git tag $NEW_VERSION``.
+#. Tag the release in git: ``git tag -s $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
 #. Upload the package to PyPI:
 
