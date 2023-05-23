@@ -486,13 +486,17 @@
     margin-bottom: $base-line-height
     dt
       font-weight: bold
-      margin-bottom: $base-line-height / 2
+      margin-bottom: ($base-line-height / 8)
     // Most of the content within these dls are one liners, so I halve the normal margins.
     p, table, ul, ol
       margin-bottom: $base-line-height / 2
     // rST seems to want dds to be treated as the browser would, indented.
     dd
-      margin: 0 0 ($base-line-height / 2) $base-line-height
+      // The 20px are hard-coded to match the typical width of an emoji
+      // that is often used as prefix in definition lists.
+      // Previous value was "$base-line-height" which is not related to indenting
+      // This is a popular pattern here: https://docs.readthedocs.io/
+      margin: 0 0 ($base-line-height / 2) 20px
       line-height: $base-line-height
       > p:last-child,
       > ol:last-child,
