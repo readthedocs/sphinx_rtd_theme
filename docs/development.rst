@@ -90,7 +90,7 @@ version:
 
 .. code:: console
 
-    $ pip install "sphinx_rtd_theme<=2.0.0"
+    $ pip install "sphinx_rtd_theme<2.0.0"
 
 .. _semantic versioning: http://semver.org/
 

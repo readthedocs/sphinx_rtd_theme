@@ -4,10 +4,17 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
+.. _release-1.2.1:
+
 |theme_version|
 ===============
 
-.. |theme_version| replace:: 1.2.1alpha1
+.. |theme_version| replace:: 1.2.1
+
+Fixes
+-----
+
+* Load jQuery correctly when using latest sphinxcontrib-jquery release (#1448)
 
 
 .. _release-1.2.0:
