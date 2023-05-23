@@ -9,7 +9,7 @@ Changelog
 |theme_version|
 ===============
 
-.. |theme_version| replace:: 1.2.1
+.. |theme_version| replace:: 1.3.0alpha1
 
 Fixes
 -----
