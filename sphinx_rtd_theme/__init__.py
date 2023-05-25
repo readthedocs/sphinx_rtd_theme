@@ -12,7 +12,7 @@ from sphinx.locale import _
 from sphinx.util.logging import getLogger
 
 
-__version__ = '1.2.1alpha1'
+__version__ = '1.2.1'
 __version_full__ = __version__
 
 logger = getLogger(__name__)
@@ -58,6 +58,10 @@ def setup(app):
         # enabled at most once.
         # See: https://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.setup_extension
         app.setup_extension("sphinxcontrib.jquery")
+        # However, we need to call the extension's callback since setup_extension doesn't do it
+        # See: https://github.com/sphinx-contrib/jquery/issues/23
+        from sphinxcontrib.jquery import add_js_files as jquery_add_js_files
+        jquery_add_js_files(app, app.config)
 
     # Register the theme that can be referenced without adding a theme path
     app.add_html_theme('sphinx_rtd_theme', path.abspath(path.dirname(__file__)))
