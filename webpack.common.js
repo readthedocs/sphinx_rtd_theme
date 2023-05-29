@@ -70,7 +70,8 @@ module.exports = {
       {
         from: 'node_modules/html5shiv/dist/*.min.js',
         flatten: true,
-        to: path.resolve(__dirname,'sphinx_rtd_theme/static/js') },
+        to: path.resolve(__dirname, 'sphinx_rtd_theme/static/js')
+      },
     ]),
   ]
 };
