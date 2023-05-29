@@ -1,6 +1,5 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {

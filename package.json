@@ -20,7 +20,6 @@
   "devDependencies": {
     "bourbon": "~4.3",
     "bourbon-neat": "~1.9",
-    "copy-webpack-plugin": "^5.1.2",
     "css-loader": "^3.6.0",
     "file-loader": "^3.0.1",
     "font-awesome": "^4.7.0",
