@@ -4,12 +4,29 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
+.. |theme_version| replace:: 1.2.2
+
+
+.. _release-1.2.2:
+
+1.2.2
+=====
+
+Fixes
+-----
+
+* Require `sphinxcontrib-jquery>=4,<5` (#1446)
+
+Added
+-----
+
+* Styling for `:menuselection:` (#1426)
+
+
 .. _release-1.2.1:
 
-|theme_version|
-===============
-
-.. |theme_version| replace:: 1.2.1
+1.2.1
+=====
 
 Fixes
 -----
