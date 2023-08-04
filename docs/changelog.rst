@@ -4,8 +4,17 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 1.2.2
+.. |theme_version| replace:: 1.3.0rc1
 
+.. _release-1.3.0:
+
+1.3.0rc1
+========
+
+Added
+-----
+
+* Relaxed requirements to include Sphinx release ``7.0``
 
 .. _release-1.2.2:
 
