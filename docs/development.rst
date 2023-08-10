@@ -143,36 +143,43 @@ like Sphinx 1.8, HTML4, or required support for IE11.
 2.0.0
 ~~~~~
 
-:Planned release date: 2022 Q1
+:Planned release date: 2023 Q3
 
-This release will mark the beginning of a new round of feature development, as
-well as a number of backward incompatible changes and deprecations.
+This release will drop support for old Python and Sphinx versions.
 
-Of note, the following backwards incompatible changes are planned for this
+Note the following backwards incompatible changes are planned for this
 release:
 
-Sphinx 1.x, Sphinx 2.x, and Docutils 0.16 will not be tested
+Python < 3.8, Sphinx <5 and Docutils < 0.18 will not be tested
     Official support will drop for these version, though they may still continue
     to work. Theme developers will not be testing these versions any longer.
-
-HTML4 support will be removed
-    Starting with this release, we will only support the HTML5 writer output,
-    and builds attempting to use the HTML4 writer will fail. If you are still
-    using the HTML4 writer, or have the ``html4_writer = True`` option in your
-    Sphinx configuration file, you will need to either remove this option or pin
-    your dependency to ``sphinx_rtd_theme<=2.0.0`` until you can.
-
-    This option was suggested in the past to work around issues with HTML5
-    support and should no longer be required to use a modern combination of this
-    theme and Sphinx.
 
 .. _roadmap-release-3.0.0:
 
 3.0.0
 ~~~~~
 
-This release is not yet planned, however there are plans to potentially replace
-Wyrm with Bootstrap in a release after 2.0.
+:Planned release date: 2024 Q1
+
+This release is not yet fully planned.
+However, we already know that HTML4 support will be dropped.
+
+HTML4 support will be removed
+    Starting with this release, we will only support the HTML5 writer output,
+    and builds attempting to use the HTML4 writer will fail. If you are still
+    using the HTML4 writer, or have the ``html4_writer = True`` option in your
+    Sphinx configuration file, you will need to either remove this option or pin
+    your dependency to ``sphinx_rtd_theme<=3`` until you can.
+
+    This option was suggested in the past to work around issues with HTML5
+    support and should no longer be required to use a modern combination of this
+    theme and Sphinx.
+
+4.0.0
+~~~~~
+
+This release is not yet planned.
+There are plans to potentially replace Wyrm with Bootstrap in a release after 3.0.
 
 Also tentatively planned for this release is finally removing built CSS and
 JavaScript assets from our repository. This will remove the ability to install
