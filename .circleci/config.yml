@@ -40,13 +40,6 @@ jobs:
       - image: 'cimg/python:3.9-node'
     steps:
       - run-build: {}
-  py27:
-    docker:
-      - image: 'cimg/python:2.7'
-    steps:
-      - run-tox:
-          version: py27
-          sphinx-version: "17,18"
   py38:
     docker:
       - image: 'cimg/python:3.8'
@@ -91,8 +84,5 @@ workflows:
           requires:
             - build
       - py38:
-          requires:
-            - build
-      - py27:
           requires:
             - build
