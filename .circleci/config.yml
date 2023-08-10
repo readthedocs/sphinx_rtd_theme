@@ -67,7 +67,7 @@ jobs:
     steps:
       - run-tox:
           version: py311
-          sphinx-version: "50,51,52,53,60,61,62,70,71,latest"
+          sphinx-version: "53,60,61,62,70,71,latest"
 
 workflows:
   version: 2
