@@ -62,11 +62,20 @@ The theme officially supports the following dependencies in your Sphinx project:
     * - Dependency
       - Versions
     * - Python
-      - 2.7 or 3.6 or greater
+      - 3.6 or greater
     * - Sphinx
-      - 1.7 up to at least 4.1
+      - 5 or greater
     * - docutils
-      - Up to 0.17
+      - >= 0.14, < 0.19
+
+.. deprecated:: 2.0
+    Sphinx < 5 support removed
+
+.. deprecated:: 2.0
+    Python < 3.6 support removed
+
+.. deprecated:: 2.0
+    docutils < 0.14 support removed
 
 .. versionadded:: 1.0
     Sphinx 4.0 support added
@@ -150,7 +159,7 @@ This release will drop support for old Python and Sphinx versions.
 Note the following backwards incompatible changes are planned for this
 release:
 
-Python < 3.8, Sphinx <5 and Docutils < 0.18 will not be tested
+Python < 3.6, Sphinx < 5 and Docutils < 0.14 will not be tested
     Official support will drop for these version, though they may still continue
     to work. Theme developers will not be testing these versions any longer.
 
