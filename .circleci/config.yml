@@ -19,7 +19,7 @@ commands:
       #   $ tox run -e "py310-sphinx{50,51}"
       #   ROOT: HandledError| provided environments not found in configuration file: ['51}']
       - run: pip install --user 'tox~=3.27'
-      - run: tox
+      - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
   run-build:
     description: "Ensure built assets are up to date"
     steps:
