@@ -42,7 +42,7 @@ Internet Explorer (any OS, versions <=10)
 
 Internet Explorer (any OS, version 11)
     We currently only partially support IE11, and only test for major bugs.
-    Support will be removed in the :ref:`roadmap-release-2.0.0` release.
+    Support will be removed in the :ref:`roadmap-release-3.0.0` release.
 
 Opera (any OS, any version)
     **Community support only.** We do not receive enough traffic with this
@@ -171,7 +171,16 @@ Python < 3.6, Sphinx < 5 and Docutils < 0.14 will not be tested
 :Planned release date: 2024 Q1
 
 This release is not yet fully planned.
-However, we already know that HTML4 support will be dropped.
+However, we already know that we will be dropping support for older version of different dependencies and browsers.
+
+Sphinx 5, Python < 3.8 and docutils < 0.18 support will be removed
+    Sphinx 5 is the latest version that supports Python 3.6 and 3.7,
+    and docutils < 0.18.
+
+Internet Explorer 11 support will be dropped
+    `IE11 reached end of life on 14 June 20222 <https://endoflife.date/internet-explorer>`_,
+    so we are not supporting it on newer versions,
+    starting on 3.0.0.
 
 HTML4 support will be removed
     Starting with this release, we will only support the HTML5 writer output,
@@ -184,8 +193,12 @@ HTML4 support will be removed
     support and should no longer be required to use a modern combination of this
     theme and Sphinx.
 
+.. _roadmap-release-4.0.0:
+
 4.0.0
 ~~~~~
+
+:Planned release date: 2024 Q2
 
 This release is not yet planned.
 There are plans to potentially replace Wyrm with Bootstrap in a release after 3.0.
@@ -193,4 +206,4 @@ There are plans to potentially replace Wyrm with Bootstrap in a release after 3.
 Also tentatively planned for this release is finally removing built CSS and
 JavaScript assets from our repository. This will remove the ability to install
 the package directly from GitHub, and instead users will be advised to install
-development releases from PyPI
+development releases from PyPI.
