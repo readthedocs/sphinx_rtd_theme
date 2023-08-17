@@ -14,8 +14,12 @@ commands:
         default: "latest"
     steps:
       - checkout
-      - run: pip install --user tox
-      - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
+      # We cannot upgrade to Tox4 because running generative environments doesn't work.
+      # I guess it has changed its syntax or similar.
+      #   $ tox run -e "py310-sphinx{50,51}"
+      #   ROOT: HandledError| provided environments not found in configuration file: ['51}']
+      - run: pip install --user 'tox~=3.27'
+      - run: tox
   run-build:
     description: "Ensure built assets are up to date"
     steps:
@@ -98,5 +102,11 @@ workflows:
           requires:
             - build
       - py38:
+          requires:
+            - build
+      - py37:
+          requires:
+            - build
+      - py36:
           requires:
             - build
