@@ -167,7 +167,7 @@
           {%- block menu %}
             {%- set toctree = toctree(maxdepth=theme_navigation_depth|int,
                                       collapse=theme_collapse_navigation|tobool,
-                                      includehidden=theme_includehidden|tobool,
+                                      includehidden=theme_includehidden,
                                       titles_only=theme_titles_only|tobool) %}
             {%- if toctree %}
               {{ toctree }}
