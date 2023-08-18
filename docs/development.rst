@@ -163,6 +163,17 @@ Python < 3.6, Sphinx < 5 and Docutils < 0.14 will not be tested
     Official support will drop for these version, though they may still continue
     to work. Theme developers will not be testing these versions any longer.
 
+HTML4 support will be removed
+    Starting with this release, we will only support the HTML5 writer output,
+    and builds attempting to use the HTML4 writer will fail. If you are still
+    using the HTML4 writer, or have the ``html4_writer = True`` option in your
+    Sphinx configuration file, you will need to either remove this option or pin
+    your dependency to ``sphinx_rtd_theme<=3`` until you can.
+
+    This option was suggested in the past to work around issues with HTML5
+    support and should no longer be required to use a modern combination of this
+    theme and Sphinx.
+
 .. _roadmap-release-3.0.0:
 
 3.0.0
@@ -181,17 +192,6 @@ Internet Explorer 11 support will be dropped
     `IE11 reached end of life on 14 June 20222 <https://endoflife.date/internet-explorer>`_,
     so we are not supporting it on newer versions,
     starting on 3.0.0.
-
-HTML4 support will be removed
-    Starting with this release, we will only support the HTML5 writer output,
-    and builds attempting to use the HTML4 writer will fail. If you are still
-    using the HTML4 writer, or have the ``html4_writer = True`` option in your
-    Sphinx configuration file, you will need to either remove this option or pin
-    your dependency to ``sphinx_rtd_theme<=3`` until you can.
-
-    This option was suggested in the past to work around issues with HTML5
-    support and should no longer be required to use a modern combination of this
-    theme and Sphinx.
 
 .. _roadmap-release-4.0.0:
 
