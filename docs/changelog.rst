@@ -4,7 +4,21 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 1.3.0
+.. |theme_version| replace:: 2.0.0rc1
+
+.. _release-2.0.0:
+
+2.0.0rc1
+========
+
+Deprecations
+------------
+
+* The HTML4 writer is now officially deprecated. An error will be thrown if your
+  project configuration still uses the HTML4 writer.
+* Support for Sphinx versions < 5.0 was removed.
+* In addition, our supported dependencies will match the dependencies from our
+  lowest supported Sphinx release, version 5.0: Python >= 3.6 and docutils > 0.14 and < 0.19
 
 .. _release-1.3.0:
 
