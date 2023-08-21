@@ -4,7 +4,7 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 2.0.0rc1
+.. |theme_version| replace:: 2.0.0rc2
 
 .. _release-2.0.0:
 
