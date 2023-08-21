@@ -4,12 +4,12 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 1.3.0rc2
+.. |theme_version| replace:: 1.3.0
 
 .. _release-1.3.0:
 
-1.3.0rc1
-========
+1.3.0
+=====
 
 Added
 -----
