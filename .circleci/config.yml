@@ -11,10 +11,14 @@ commands:
         type: string
       sphinx-version:
         type: string
-        default: "17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,42,43,44,45,50,51,52,latest"
+        default: "latest"
     steps:
       - checkout
-      - run: pip install --user tox~=3.27
+      # We cannot upgrade to Tox4 because running generative environments doesn't work.
+      # I guess it has changed its syntax or similar.
+      #   $ tox run -e "py310-sphinx{50,51}"
+      #   ROOT: HandledError| provided environments not found in configuration file: ['51}']
+      - run: pip install --user 'tox~=3.27'
       - run: tox -e "<<parameters.version>>-sphinx{<<parameters.sphinx-version>>}"
   run-build:
     description: "Ensure built assets are up to date"
@@ -40,53 +44,48 @@ jobs:
       - image: 'cimg/python:3.9-node'
     steps:
       - run-build: {}
-  py27:
-    docker:
-      - image: 'cimg/python:2.7'
-    steps:
-      - run-tox:
-          version: py27
-          sphinx-version: "17,18"
   py36:
     docker:
       - image: 'cimg/python:3.6'
     steps:
       - run-tox:
           version: py36
+          sphinx-version: "50,51,52,53"
   py37:
     docker:
       - image: 'cimg/python:3.7'
     steps:
       - run-tox:
           version: py37
+          sphinx-version: "50,51,52,53"
   py38:
     docker:
       - image: 'cimg/python:3.8'
     steps:
       - run-tox:
           version: py38
-          sphinx-version: "17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,42,43,44,45,50,51,52,60,latest"
+          sphinx-version: "50,51,52,53,60,61,62,70,71,latest"
   py39:
     docker:
       - image: 'cimg/python:3.9'
     steps:
       - run-tox:
           version: py39
-          sphinx-version: "17,18,20,21,22,23,24,30,31,32,33,34,35,40,41,42,43,44,45,50,51,52,60,latest"
+          sphinx-version: "50,51,52,53,60,61,62,70,71,72,latest"
   py310:
     docker:
       - image: 'cimg/python:3.10'
     steps:
       - run-tox:
           version: py310
-          sphinx-version: "42,43,44,45,50,51,52,53,60,latest"
+          sphinx-version: "50,51,52,53,60,61,62,70,71,72,latest"
   py311:
     docker:
       - image: 'cimg/python:3.11'
     steps:
       - run-tox:
           version: py311
-          sphinx-version: "53,60,latest"
+          sphinx-version: "53,60,61,62,70,71,72,latest,dev"
 
 workflows:
   version: 2
@@ -109,8 +108,5 @@ workflows:
           requires:
             - build
       - py36:
-          requires:
-            - build
-      - py27:
           requires:
             - build

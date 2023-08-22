@@ -7,6 +7,7 @@ docker-images:
 docker-npm-build:
 	rm -f .container_id
 	docker-compose run -d sphinx_rtd_theme build > .container_id
+	sleep 1s
 	docker container wait "$(shell cat .container_id)"
 	docker cp "$(shell cat .container_id):/project/sphinx_rtd_theme" .
 	docker cp "$(shell cat .container_id):/project/package-lock.json" .
@@ -14,5 +15,5 @@ docker-npm-build:
 
 docker-npm-dev:
 	docker-compose run sphinx_rtd_theme dev
-	
+
 docker-build-all: docker-images docker-npm-build

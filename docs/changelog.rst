@@ -4,12 +4,52 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
+.. |theme_version| replace:: 2.0.0rc2
+
+.. _release-2.0.0:
+
+2.0.0rc1
+========
+
+Deprecations
+------------
+
+* The HTML4 writer is now officially deprecated. An error will be thrown if your
+  project configuration still uses the HTML4 writer.
+* Support for Sphinx versions < 5.0 was removed.
+* In addition, our supported dependencies will match the dependencies from our
+  lowest supported Sphinx release, version 5.0: Python >= 3.6 and docutils > 0.14 and < 0.19
+
+.. _release-1.3.0:
+
+1.3.0
+=====
+
+Added
+-----
+
+* Relaxed requirements to include Sphinx release ``7.0``
+
+.. _release-1.2.2:
+
+1.2.2
+=====
+
+Fixes
+-----
+
+* Require `sphinxcontrib-jquery>=4,<5` (#1446)
+
+Added
+-----
+
+* Styling for `:menuselection:` (#1426)
+
+
 .. _release-1.2.1:
 
-|theme_version|
-===============
-
-.. |theme_version| replace:: 1.2.1
+1.2.1
+=====
 
 Fixes
 -----
