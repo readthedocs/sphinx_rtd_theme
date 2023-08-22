@@ -27,7 +27,6 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinxcontrib.httpdomain',
     'sphinx_rtd_theme',
 ]
 
@@ -71,6 +70,7 @@ if not 'READTHEDOCS' in os.environ:
 
 html_logo = "demo/static/logo-wordmark-light.svg"
 html_show_sourcelink = True
+html_favicon = "demo/static/favicon.ico"
 
 htmlhelp_basename = slug
 

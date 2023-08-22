@@ -13,14 +13,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-11-04 12:02-0700\n"
+"POT-Creation-Date: 2023-02-06 15:36+0100\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
 "Last-Translator: JY3, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/readthedocs/teams/101354/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.1\n"
+"Generated-By: Babel 2.11.0\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
@@ -132,18 +132,18 @@ msgstr "搜索"
 msgid "Copyright"
 msgstr "版权所有"
 
-#: sphinx_rtd_theme/layout.html:147 sphinx_rtd_theme/layout.html:149
+#: sphinx_rtd_theme/layout.html:143
 msgid "Logo"
 msgstr "Logo"
 
 #. This is an ARIA section label for the main navigation menu
-#: sphinx_rtd_theme/layout.html:173
+#: sphinx_rtd_theme/layout.html:166
 msgid "Navigation menu"
 msgstr "导航菜单"
 
 #. This is an ARIA section label for the navigation menu that is visible when
 #. viewing the page on mobile devices
-#: sphinx_rtd_theme/layout.html:195
+#: sphinx_rtd_theme/layout.html:188
 msgid "Mobile navigation menu"
 msgstr "移动版导航菜单"
 
@@ -186,6 +186,3 @@ msgstr "项目主页"
 #: sphinx_rtd_theme/versions.html:29
 msgid "Builds"
 msgstr "构建"
-
-#~ msgid "Docs"
-#~ msgstr "文档"
