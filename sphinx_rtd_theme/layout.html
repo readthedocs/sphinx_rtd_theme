@@ -8,6 +8,10 @@
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
+{# Build sphinx_version_info tuple from sphinx_version string in pure Jinja #}
+{%- set (_ver_major, _ver_minor) = (sphinx_version.split('.') | list)[:2] | map('int') -%}
+{%- set sphinx_version_info = (_ver_major, _ver_minor, -1) -%}
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="{{ lang_attr }}" >
 <head>
