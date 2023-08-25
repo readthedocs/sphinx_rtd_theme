@@ -103,20 +103,18 @@ compatibility.
 
 The following cases need to be tested with changes to CSS or JavaScript:
 
-* Multiple, modern browsers should be tested. We officially support back
-  to IE11 at the moment
-* Multiple viewport sizes should be tested for changes. We support large,
-  tablet, and mobile viewport sizes
-* We currently support both the Sphinx HTML4 writer and HTML5 writer. This makes
-  for some complex CSS selectors
-* Multiple major versions of Sphinx should be tested. We currently support back
-  to Sphinx version ``1.6``
+* Multiple, modern browsers should be tested.
+* Multiple viewport sizes should be tested for changes.
+  We support large, tablet, and mobile viewport sizes
+* We currently support only HTML5 writer.
+* Multiple major versions of Sphinx should be tested.
+  We currently support Sphinx ``>=5.0``
 
 It's easiest to test combinations of dependency versions using ``tox``:
 
 .. code:: console
 
-    % tox -e py3-sphinx34-html4
+    % tox -e py310-sphinx62
 
 If the tests and build are successful, you can view the built documentation at
 the directory noted by Sphinx:
@@ -125,9 +123,9 @@ the directory noted by Sphinx:
 
     build succeeded, 10 warnings.
 
-    The HTML pages are in .tox/py3-sphinx34-html4/tmp/html.
+    The HTML pages are in .tox/py310-sphinx62/tmp/html.
     ___________________________ summary ___________________________
-      py3-sphinx34-html4: commands succeeded
+      py310-sphinx62: commands succeeded
       congratulations :)
 
 You can then open up this path with a series of browsers to test.
@@ -137,12 +135,12 @@ multiple ``tox`` environments, and open both up for comparison:
 
 .. code:: console
 
-    % tox -e py3-sphinx34-html4
+    % tox -e py310-sphinx62
     ...
-    % tox -e py3-sphinx34-html5
+    % tox -e py310-sphinx53
     ...
-    % firefox .tox/py3-sphinx34-html4/tmp/html/index.html
-    % firefox .tox/py3-sphinx34-html5/tmp/html/index.html
+    % firefox .tox/py310-sphinx62/tmp/html/index.html
+    % firefox .tox/py310-sphinx53/tmp/html/index.html
 
 You can also use a separate ``tox`` environment for building output to compare
 against. All of the ``tox`` environments have an additional postfix, ``-qa``, to
@@ -155,28 +153,25 @@ For example, to test against the tag ``0.5.2``:
 .. code:: console
 
     % git checkout 0.5.2
-    % tox -e py3-sphinx34-html4-qa
+    % tox -e py310-sphinx53-qa
     ...
     % git checkout feature/example-pull-request
-    % tox -e py3-sphinx34-html4
+    % tox -e py310-sphinx53
     ...
-    % firefox .tox/py3-sphinx34-html4-qa/tmp/html/index.html
-    % firefox .tox/py3-sphinx34-html4/tmp/html/index.html
+    % firefox .tox/py310-sphinx53-qa/tmp/html/index.html
+    % firefox .tox/py310-sphinx53/tmp/html/index.html
 
 Currently, the most important environments to QA are:
 
 .. This list is purposely shorter than what we describe above. If we test all of
-   the cases above, we'll be here all day. Python 3, HTML4/5 writer, and latest
+   the cases above, we'll be here all day. Python 3, and latest
    minor of each major Sphinx release should give us enough work.
 
-* ``py3-sphinx18-html4``
-* ``py3-sphinx18-html5``
-* ``py3-sphinx24-html4``
-* ``py3-sphinx24-html5``
-* ``py3-sphinx35-html4``
-* ``py3-sphinx35-html5``
-* ``py3-sphinx41-html4``
-* ``py3-sphinx41-html5``
+* ``py310-sphinx53``
+* ``py310-sphinx62``
+* ``py310-sphinx72``
+* ``py310-sphinxlatest``
+* ``py310-sphinxdev``
 
 Translations
 ============
@@ -251,8 +246,8 @@ To release a new version of the theme, core team will take the following steps:
    need to commit it to git and tag it together with your release.
 #. Commit these changes to a pull request.
 #. Merge the pull request after review.
-#. Check out ``master`` branch locally for tagging
-#. Tag the release in git: ``git tag $NEW_VERSION``.
+#. Check out ``master`` branch locally for tagging. **Remember to pull from remote**.
+#. Tag the release in git: ``git tag -s $NEW_VERSION``.
 #. Push the tag to GitHub: ``git push --tags origin``.
 #. Upload the package to PyPI:
 

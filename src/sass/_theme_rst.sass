@@ -583,14 +583,19 @@
       @extend .fa-download
       &:before
         margin-right: 4px
-  .guilabel
-    border: 1px solid lighten($guilabel-color, 25%)
-    background: lighten($guilabel-color, 50%)
+  .guilabel,
+  .menuselection
     font-size: 80%
     font-weight: 700
     border-radius: $base-line-height / 6
     padding: ($base-line-height / 10) ($base-line-height / 4)
     margin: auto ($base-line-height / 12)
+  .guilabel,
+    border: 1px solid lighten($guilabel-color, 25%)
+    background: lighten($guilabel-color, 50%)
+  .menuselection
+    border: 1px solid lighten($menuselection-color, 25%)
+    background: lighten($menuselection-color, 50%)
   *:not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > kbd,
   *:not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > .kbd
     color: inherit

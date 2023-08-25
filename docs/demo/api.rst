@@ -107,7 +107,7 @@ JavaScript API
 Generated Index
 ===============
 
-Part of the sphinx build process in generate and index file: :ref:`genindex`.
+Part of the sphinx build process is to generate an index file: :ref:`genindex`.
 
 
 Optional parameter args

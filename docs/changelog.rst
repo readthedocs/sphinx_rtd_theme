@@ -4,23 +4,98 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-Development version (|development_version|)
-===========================================
+.. |theme_version| replace:: 2.0.0rc2
 
-.. |development_version| replace:: 1.2.0rc1
+.. _release-2.0.0:
 
-Dependency Changes
+2.0.0rc1
+========
+
+Deprecations
+------------
+
+* The HTML4 writer is now officially deprecated. An error will be thrown if your
+  project configuration still uses the HTML4 writer.
+* Support for Sphinx versions < 5.0 was removed.
+* In addition, our supported dependencies will match the dependencies from our
+  lowest supported Sphinx release, version 5.0: Python >= 3.6 and docutils > 0.14 and < 0.19
+
+.. _release-1.3.0:
+
+1.3.0
+=====
+
+Added
+-----
+
+* Relaxed requirements to include Sphinx release ``7.0``
+
+.. _release-1.2.2:
+
+1.2.2
+=====
+
+Fixes
+-----
+
+* Require `sphinxcontrib-jquery>=4,<5` (#1446)
+
+Added
+-----
+
+* Styling for `:menuselection:` (#1426)
+
+
+.. _release-1.2.1:
+
+1.2.1
+=====
+
+Fixes
+-----
+
+* Load jQuery correctly when using latest sphinxcontrib-jquery release (#1448)
+
+
+.. _release-1.2.0:
+
+1.2.0
+=====
+
+Dependency changes
 ------------------
 
 * docutils 0.18 is supported. (#1381)
+* Sphinx 6 support added
+* Added ``sphinxcontrib-jquery`` as a dependency (#1385 #1421)
+* Python 3.11 is officially supported and tested. (#1395)
+* Python 3.4 and 3.5 are officially not supported (#1395)
 
-Note for users of Sphinx<3
+Changes
+-------
+
+* Automatically use ``sphinxcontrib-jquery`` in Sphinx 6+ (#1399)
+* Use new context vars ``logo_url``, ``favicon_url`` and ``root_doc`` when available (#1405)
+* Translations updated: French, Hungarian, Croatian
+* Translations added: Danish, Chinese (Taiwan)
+
+Note for users of Sphinx<4
 --------------------------
 
 If you cannot use a more recent Sphinx release,
 you should at least ensure you are using the most recent release for your major version.
 Currently, these are Sphinx `1.8.6` and `2.4.5`.
 Older releases may install unsupported versions of several dependencies, including Jinja2 and docutils.
+
+Known issues
+------------
+
+In some cases, jQuery is not loaded with Sphinx 6 on Read the Docs.
+Workaround: You need to add ``sphinx_rtd_theme`` to ``extensions`` in your ``conf.py``.
+See `readthedocs.org issue #9654`_ for updates.
+
+.. _readthedocs.org issue #9654: https://github.com/readthedocs/readthedocs.org/pull/9654
+
 
 .. _release-1.1.1:
 

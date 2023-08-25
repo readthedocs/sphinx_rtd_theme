@@ -42,7 +42,7 @@ Internet Explorer (any OS, versions <=10)
 
 Internet Explorer (any OS, version 11)
     We currently only partially support IE11, and only test for major bugs.
-    Support will be removed in the :ref:`roadmap-release-2.0.0` release.
+    Support will be removed in the :ref:`roadmap-release-3.0.0` release.
 
 Opera (any OS, any version)
     **Community support only.** We do not receive enough traffic with this
@@ -62,11 +62,20 @@ The theme officially supports the following dependencies in your Sphinx project:
     * - Dependency
       - Versions
     * - Python
-      - 2.7 or 3.6 or greater
+      - 3.6 or greater
     * - Sphinx
-      - 1.7 up to at least 4.1
+      - 5 or greater
     * - docutils
-      - Up to 0.17
+      - >= 0.14, < 0.19
+
+.. deprecated:: 2.0
+    Sphinx < 5 support removed
+
+.. deprecated:: 2.0
+    Python < 3.6 support removed
+
+.. deprecated:: 2.0
+    docutils < 0.14 support removed
 
 .. versionadded:: 1.0
     Sphinx 4.0 support added
@@ -90,7 +99,7 @@ version:
 
 .. code:: console
 
-    $ pip install "sphinx_rtd_theme<=2.0.0"
+    $ pip install "sphinx_rtd_theme<2.0.0"
 
 .. _semantic versioning: http://semver.org/
 
@@ -143,15 +152,14 @@ like Sphinx 1.8, HTML4, or required support for IE11.
 2.0.0
 ~~~~~
 
-:Planned release date: 2022 Q1
+:Planned release date: 2023 Q3
 
-This release will mark the beginning of a new round of feature development, as
-well as a number of backward incompatible changes and deprecations.
+This release will drop support for old Python and Sphinx versions.
 
-Of note, the following backwards incompatible changes are planned for this
+Note the following backwards incompatible changes are planned for this
 release:
 
-Sphinx 1.x, Sphinx 2.x, and Docutils 0.16 will not be tested
+Python < 3.6, Sphinx < 5 and Docutils < 0.14 will not be tested
     Official support will drop for these version, though they may still continue
     to work. Theme developers will not be testing these versions any longer.
 
@@ -160,7 +168,7 @@ HTML4 support will be removed
     and builds attempting to use the HTML4 writer will fail. If you are still
     using the HTML4 writer, or have the ``html4_writer = True`` option in your
     Sphinx configuration file, you will need to either remove this option or pin
-    your dependency to ``sphinx_rtd_theme<=2.0.0`` until you can.
+    your dependency to ``sphinx_rtd_theme<=3`` until you can.
 
     This option was suggested in the past to work around issues with HTML5
     support and should no longer be required to use a modern combination of this
@@ -171,10 +179,31 @@ HTML4 support will be removed
 3.0.0
 ~~~~~
 
-This release is not yet planned, however there are plans to potentially replace
-Wyrm with Bootstrap in a release after 2.0.
+:Planned release date: 2024 Q1
+
+This release is not yet fully planned.
+However, we already know that we will be dropping support for older version of different dependencies and browsers.
+
+Sphinx 5, Python < 3.8 and docutils < 0.18 support will be removed
+    Sphinx 5 is the latest version that supports Python 3.6 and 3.7,
+    and docutils < 0.18.
+
+Internet Explorer 11 support will be dropped
+    `IE11 reached end of life on 14 June 20222 <https://endoflife.date/internet-explorer>`_,
+    so we are not supporting it on newer versions,
+    starting on 3.0.0.
+
+.. _roadmap-release-4.0.0:
+
+4.0.0
+~~~~~
+
+:Planned release date: 2024 Q2
+
+This release is not yet planned.
+There are plans to potentially replace Wyrm with Bootstrap in a release after 3.0.
 
 Also tentatively planned for this release is finally removing built CSS and
 JavaScript assets from our repository. This will remove the ability to install
 the package directly from GitHub, and instead users will be advised to install
-development releases from PyPI
+development releases from PyPI.
