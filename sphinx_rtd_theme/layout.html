@@ -14,7 +14,7 @@
 {%- set sphinx_version_info = (_ver_major, _ver_minor, -1) -%}
 
 <!DOCTYPE html>
-<html class="{{ sphinx_writer }}" lang="{{ lang_attr }}" >
+<html class="{{ sphinx_writer }}" lang="{{ lang_attr }}"{% if sphinx_version_info >= (7, 2) %} data-content_root="{{ content_root }}"{% endif %}>
 <head>
   <meta charset="utf-8" />
   {{- metatags }}
