@@ -8,8 +8,13 @@ Changelog
 
 .. _release-2.0.0:
 
-2.0.0rc1
+2.0.0rc2
 ========
+
+Added
+-----
+
+* Support for docutils ``<=0.20``
 
 Deprecations
 ------------
