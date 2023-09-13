@@ -1,34 +1,47 @@
-{% if READTHEDOCS %}
-{# Add rst-badge after rst-versions for small badge style. #}
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
+<script language="javascript" src="http://localhost:8000/readthedocs-addons.js"></script>
+<script language="javascript">
+ document.addEventListener("readthedocsdataready", function(event) {
+     const config = event.detail;
+
+     const flyout = `
+  <div class="rst-versions" data-toggle="rst-versions" role="note">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Read the Docs</span>
-      v: {{ current_version }}
+      v: ${ config.versions.current.slug }
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
       <dl>
-        <dt>{{ _('Versions') }}</dt>
-        {% for slug, url in versions %}
-          <dd><a href="{{ url }}">{{ slug }}</a></dd>
-        {% endfor %}
+        <dt>Languages</dt>
+        ${ config.addons.flyout.translations.map(
+          (language) => `<dd><a href="${ language.url }">${ language.slug }</a></dd>`)}
       </dl>
       <dl>
-        <dt>{{ _('Downloads') }}</dt>
-        {% for type, url in downloads %}
-          <dd><a href="{{ url }}">{{ type }}</a></dd>
-        {% endfor %}
+        <dt>Versions</dt>
+        ${ config.addons.flyout.versions.map(
+          (version) => `<dd><a href="${ version.url }">${ version.slug }</a></dd>`)}
       </dl>
       <dl>
-        {# Translators: The phrase "Read the Docs" is not translated #}
-        <dt>{{ _('On Read the Docs') }}</dt>
+        <dt>Downloads</dt>
+        ${ config.addons.flyout.downloads.map(
+          (download) => `<dd><a href="${ download.url }">${ download.name }</a></dd>`)}
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
           <dd>
-            <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/?fromdocs={{ slug }}">{{ _('Project Home') }}</a>
+            <a href="//${ config.domains.dashboard }/projects/${ config.projects.current.slug }/">Project Home</a>
           </dd>
           <dd>
-            <a href="//{{ PRODUCTION_DOMAIN }}/builds/{{ slug }}/?fromdocs={{ slug }}">{{ _('Builds') }}</a>
+            <a href="//${ config.domains.dashboard }/projects/${ config.projects.current.slug }/builds/">Builds</a>
           </dd>
       </dl>
     </div>
   </div>
-{% endif %}
+          `;
+
+     document.body.insertAdjacentHTML("beforeend", flyout);
+
+     {# TODO: disable the flyout auto-injected by `readthedocs-addons.js` somehow #}
+     document.querySelector("readthedocs-flyout").remove();
+ });
+</script>
