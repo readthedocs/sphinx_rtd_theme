@@ -14,17 +14,17 @@
       <dl>
         <dt>Languages</dt>
         ${ config.addons.flyout.translations.map(
-          (language) => `<dd><a href="${ language.url }">${ language.slug }</a></dd>`)}
+          (language) => `<dd><a href="${ language.url }">${ language.slug }</a></dd>`).join("\n")}
       </dl>
       <dl>
         <dt>Versions</dt>
         ${ config.addons.flyout.versions.map(
-          (version) => `<dd><a href="${ version.url }">${ version.slug }</a></dd>`)}
+          (version) => `<dd><a href="${ version.url }">${ version.slug }</a></dd>`).join("\n")}
       </dl>
       <dl>
         <dt>Downloads</dt>
         ${ config.addons.flyout.downloads.map(
-          (download) => `<dd><a href="${ download.url }">${ download.name }</a></dd>`)}
+          (download) => `<dd><a href="${ download.url }">${ download.name }</a></dd>`).join("\n")}
       </dl>
       <dl>
         <dt>On Read the Docs</dt>
