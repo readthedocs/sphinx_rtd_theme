@@ -84,6 +84,17 @@ function ThemeNav () {
                 $("[data-toggle='wy-nav-shift']").toggleClass("shift");
                 $("[data-toggle='rst-versions']").toggleClass("shift");
             })
+            
+            // Shift nav in mobile when pressing ENTER if menu has focus 
+            .on('keypress', function(evt) {
+              var menuIcon = $("[data-toggle='wy-nav-top']");
+              if (menuIcon.is(":focus")) {
+                var keyCode = evt.keyCode || evt.which;
+                if (keyCode === 13) {
+                  menuIcon.click();
+                }
+              }
+            })
 
             // Nav menu link click operations
             .on('click', ".wy-menu-vertical .current ul li a", function() {
