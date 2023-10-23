@@ -32,8 +32,9 @@
     {{ css_tag(css) }}
   {%- endfor %}
 
+  {# "extra_css_files" is a theme option and it's always a string #}
   {%- for cssfile in extra_css_files %}
-    {{ css_tag(cssfile) }}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1)|escape }}" type="text/css" />
   {%- endfor -%}
 
   {#- FAVICON
