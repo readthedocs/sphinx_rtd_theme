@@ -103,7 +103,8 @@
   div.highlight
     span.linenos, .gp
       user-select: none
-      -webkit-user-select: none  // Safari fallback
+      // Safari 3+ requires vendor prefix still
+      -webkit-user-select: none
       pointer-events: none
 
     span.linenos
