@@ -8,7 +8,7 @@ Changelog
 
 .. _release-2.0.0:
 
-2.0.0rc2
+2.0.0rc3
 ========
 
 Added
