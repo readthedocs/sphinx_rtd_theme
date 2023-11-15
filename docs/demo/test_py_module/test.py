@@ -12,6 +12,20 @@ class Foo:
     and etc, but those will *always* have the ``.descname`` or
     ``.descclassname`` class.
 
+    Term
+        It is also possible to include definitions inside docstrings.
+        They should be styled as a normal definition list.
+
+    :Field List:
+        It is also possible to include definitions inside docstrings.
+        They should be styled as a normal definition list.
+
+    .. [1] A footnote contains body elements, consistently indented by at
+       least 3 spaces.
+
+    .. [Citation] A citation contains body elements, consistently indented by at
+       least 3 spaces.
+
     Normal ``<tt>`` (like the <tt> I just wrote here) needs to be shown with
     the same style as anything else with ````this type of markup````.
 
@@ -65,6 +79,7 @@ class Foo:
         :type val2: int
         :rtype: int
 
+        The parameters of this method are described in the parameter list.
         """
 
         return val1 + val2
@@ -111,3 +126,23 @@ class Foo:
             This is deprecated since 3.0
         """
         return sum(kwargs.values()) / len(kwargs), a + b
+
+
+def add_numbers(a: int, b: int = 0) -> int:
+    """Add two numbers together
+
+    :param a: The first number
+    :param b: The second number
+
+    Here is some more text.
+    """
+    return a + b
+
+
+def subtract_numbers(a: int, b: int = 0) -> int:
+    """Subtract two numbers
+
+    :param a: The first number
+    :param b: The second number
+    """
+    return a - b
