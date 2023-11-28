@@ -4,16 +4,17 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 2.0.0rc5
+.. |theme_version| replace:: 2.0.0
 
 .. _release-2.0.0:
 
-2.0.0rc4
-========
+2.0.0
+=====
 
 Added
 -----
 
+* Support for Sphinx versions ``6.x`` and ``7.x``
 * Support for docutils ``<=0.20``
 
 Deprecations
