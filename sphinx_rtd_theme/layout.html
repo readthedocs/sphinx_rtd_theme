@@ -14,7 +14,7 @@
 {%- set sphinx_version_info = (_ver_major, _ver_minor, -1) -%}
 
 <!DOCTYPE html>
-<html class="{{ sphinx_writer }}" lang="{{ lang_attr }}" >
+<html class="{{ sphinx_writer }}" lang="{{ lang_attr }}"{% if sphinx_version_info >= (7, 2) %} data-content_root="{{ content_root }}"{% endif %}>
 <head>
   <meta charset="utf-8" />
   {{- metatags }}
@@ -28,16 +28,17 @@
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
   {%- endif %}
-  {%- for css in css_files %}
-    {%- if css|attr("rel") %}
-      <link rel="{{ css.rel }}" href="{{ pathto(css.filename, 1) }}" type="text/css"{% if css.title is not none %} title="{{ css.title }}"{% endif %} />
+  {%- for css_file in css_files %}
+    {%- if css_file|attr("filename") %}
+      {{ css_tag(css_file) }}
     {%- else %}
-      <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
+      <link rel="stylesheet" href="{{ pathto(css_file, 1)|escape }}" type="text/css" />
     {%- endif %}
   {%- endfor %}
 
-  {%- for cssfile in extra_css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+  {# "extra_css_files" is a theme option and it's always a string #}
+  {%- for css_file in extra_css_files %}
+    <link rel="stylesheet" href="{{ pathto(css_file, 1)|escape }}" type="text/css" />
   {%- endfor -%}
 
   {#- FAVICON
