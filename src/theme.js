@@ -96,7 +96,13 @@ function ThemeNav () {
                 self.hashChange();
             })
             .on('click', "[data-toggle='rst-current-version']", function() {
+                var target = $(this);
                 $("[data-toggle='rst-versions']").toggleClass("shift-up");
+                target.attr(
+                    'aria-expanded',
+                    $("[data-toggle='rst-versions']").hasClass("shift-up") ?
+                        "true" : "false"
+                );
             })
 
         // Make tables responsive
