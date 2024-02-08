@@ -57,6 +57,7 @@ Development
    configuring
    development
    contributing
+   githubpages
 
 .. toctree::
    :maxdepth: 1
