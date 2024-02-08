@@ -23,7 +23,7 @@ def test_basic():
 
         if isinstance(app.builder, DirectoryHTMLBuilder):
             search = (
-                '<div class="toctree-wrapper compound">\n'
+                '<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Main">'
                 '<ul>\n'
                 '<li class="toctree-l1">'
                 '<a class="reference internal" href="foo/">foo</a>'
@@ -33,21 +33,25 @@ def test_basic():
                 '</ul>\n'
                 '</li>\n'
                 '</ul>\n'
-                '</div>'
             )
             assert search in content
         elif isinstance(app.builder, SingleFileHTMLBuilder):
             search = (
+                '<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Main">'
                 '<ul>\n'
                 '<li class="toctree-l1">'
                 '<a class="reference internal" href="index.html#document-foo">foo</a>'
+                '<ul>\n'
+                '<li class="toctree-l2">'
+                '<a class="reference internal" href="index.html#document-bar">bar</a></li>\n'
+                '</ul>\n'
                 '</li>\n'
-                '</ul>'
+                '</ul>\n'
             )
             assert search in content
         else:
             search = (
-                '<div class="toctree-wrapper compound">\n'
+                '<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Main">'
                 '<ul>\n'
                 '<li class="toctree-l1">'
                 '<a class="reference internal" href="foo.html">foo</a>'
@@ -57,7 +61,6 @@ def test_basic():
                 '</ul>\n'
                 '</li>\n'
                 '</ul>\n'
-                '</div>'
             )
             assert search in content, ('Missing search with builder {0}'
                                        .format(app.builder.name))
