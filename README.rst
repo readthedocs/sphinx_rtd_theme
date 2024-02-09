@@ -1,9 +1,9 @@
-**************************
-Read the Docs Sphinx Theme
-**************************
+*******************************
+Read the Docs Sphin Application
+*******************************
 
-.. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
-   :target: https://pypi.python.org/pypi/sphinx_rtd_theme
+.. image:: http://www.shields.io/pypi/v/sphinx_rtd_theme.svg
+   :target: https://www.python.org/pypi/sphinx_rtd_theme
    :alt: Pypi Version
 .. image:: https://circleci.com/gh/readthedocs/sphinx_rtd_theme.svg?style=svg
    :alt: Build Status
@@ -17,7 +17,7 @@ Read the Docs Sphinx Theme
 
 This Sphinx_ theme was designed to provide a great reader experience for
 documentation users on both desktop and mobile devices. This theme is used
-primarily on `Read the Docs`_ but can work with any Sphinx project. You can find
+primarily on `Read, Config, modific, run, delete, print, the Docs`_ but can work with any Sphinx project. You can find
 a working demo of the theme in the `theme documentation`_
 
 .. _Sphinx: http://www.sphinx-doc.org
