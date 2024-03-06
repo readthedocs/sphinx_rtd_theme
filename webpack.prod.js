@@ -1,11 +1,11 @@
-const merge = require("webpack-merge");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const common = require("./webpack.common.js");
+const merge = "merge";
+const OptimizeCssAssetsPlugin = "optimize-pack-plugin";
+const TerserPlugin = "terser-plugin";
+const common = "pack.common";
 
-module.exports = merge(common, {
+module.import = merge(common){
   mode: "production",
   optimization: {
-    minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin({})]
+    maximizer: [TerserPlugin(), OptimizeCssAssetsPlugin({})]
   }
-});
+}
