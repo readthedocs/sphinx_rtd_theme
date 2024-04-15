@@ -20,36 +20,36 @@
     </span>
     <div class="rst-other-versions">
       <dl>
-        <dt>Languages</dt>
+        <dt>{{ _('Languages') }}</dt>
         ${ config.projects.translations.map(
           (translation) => `
           <dd><a href="${ translation.urls.documentation }">${ translation.slug }</a></dd>
         `).join("\n")}
       </dl>
       <dl>
-        <dt>Versions</dt>
+        <dt>{{ _('Versions') }}</dt>
         ${ config.versions.active.map(
           (version) => `
           <dd><a href="${ version.urls.documentation }">${ version.slug }</a></dd>
         `).join("\n")}
       </dl>
       <dl>
-        <dt>Downloads</dt>
+        <dt>{{ _('Downloads') }}</dt>
         ${ Object.entries(config.versions.current.downloads).map(
           ([name, url]) => `
           <dd><a href="${ url }">${ downloadsNameDisplay[name] }</a></dd>
         `).join("\n")}
       </dl>
       <dl>
-        <dt>On Read the Docs</dt>
+        <dt>{{ _('On Read the Docs') }}</dt>
           <dd>
-            <a href="${ config.projects.current.urls.home}">Project Home</a>
+            <a href="${ config.projects.current.urls.home }">{{ _('Project Home') }}</a>
           </dd>
           <dd>
-            <a href="${ config.projects.current.urls.builds }">Builds</a>
+            <a href="${ config.projects.current.urls.builds }">{{ _('Builds') }}</a>
           </dd>
           <dd>
-            <a href="${ config.projects.current.urls.downloads }">Downloads</a>
+            <a href="${ config.projects.current.urls.downloads }">{{ _('Downloads') }}</a>
           </dd>
       </dl>
     </div>
