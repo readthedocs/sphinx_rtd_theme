@@ -24,21 +24,21 @@
         ${ config.projects.translations.map(
           (translation) => `
           <dd><a href="${ translation.urls.documentation }">${ translation.slug }</a></dd>
-        `)}
+        `).join("\n")}
       </dl>
       <dl>
         <dt>Versions</dt>
         ${ config.versions.active.map(
           (version) => `
           <dd><a href="${ version.urls.documentation }">${ version.slug }</a></dd>
-        `)}
+        `).join("\n")}
       </dl>
       <dl>
         <dt>Downloads</dt>
         ${ Object.entries(config.versions.current.downloads).map(
           ([name, url]) => `
           <dd><a href="${ url }">${ downloadsNameDisplay[name] }</a></dd>
-        `)}
+        `).join("\n")}
       </dl>
       <dl>
         <dt>On Read the Docs</dt>
