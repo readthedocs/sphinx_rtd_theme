@@ -1,7 +1,15 @@
+<meta name="readthedocs-addons-api-version" content="1">
+
 <script async type="text/javascript" src="http://localhost:8000/readthedocs-addons.js"></script>
 <script type="text/javascript">
  document.addEventListener("readthedocs-addons-data-ready", function(event) {
-     const config = event.detail;
+     const config = event.detail.data();
+
+     const downloadsNameDisplay = {
+      pdf: "PDF",
+      epub: "EPUB",
+      htmlzip: "HTML",
+    };
 
      const flyout = `
   <div class="rst-versions" data-toggle="rst-versions" role="note">
@@ -13,26 +21,35 @@
     <div class="rst-other-versions">
       <dl>
         <dt>Languages</dt>
-        ${ config.addons.flyout.translations.map(
-          (language) => `<dd><a href="${ language.url }">${ language.slug }</a></dd>`).join("\n")}
+        ${ config.projects.translations.map(
+          (translation) => `
+          <dd><a href="${ translation.urls.documentation }">${ translation.slug }</a></dd>
+        `)}
       </dl>
       <dl>
         <dt>Versions</dt>
-        ${ config.addons.flyout.versions.map(
-          (version) => `<dd><a href="${ version.url }">${ version.slug }</a></dd>`).join("\n")}
+        ${ config.versions.active.map(
+          (version) => `
+          <dd><a href="${ version.urls.documentation }">${ version.slug }</a></dd>
+        `)}
       </dl>
       <dl>
         <dt>Downloads</dt>
-        ${ config.addons.flyout.downloads.map(
-          (download) => `<dd><a href="${ download.url }">${ download.name }</a></dd>`).join("\n")}
+        ${ Object.entries(config.versions.current.downloads).map(
+          ([name, url]) => `
+          <dd><a href="${ url }">${ downloadsNameDisplay[name] }</a></dd>
+        `)}
       </dl>
       <dl>
         <dt>On Read the Docs</dt>
           <dd>
-            <a href="//${ config.domains.dashboard }/projects/${ config.projects.current.slug }/">Project Home</a>
+            <a href="${ config.projects.current.urls.home}">Project Home</a>
           </dd>
           <dd>
-            <a href="//${ config.domains.dashboard }/projects/${ config.projects.current.slug }/builds/">Builds</a>
+            <a href="${ config.projects.current.urls.builds }">Builds</a>
+          </dd>
+          <dd>
+            <a href="${ config.projects.current.urls.downloads }">Downloads</a>
           </dd>
       </dl>
     </div>
