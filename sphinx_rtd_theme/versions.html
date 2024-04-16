@@ -49,10 +49,27 @@
             <a href="${ config.projects.current.urls.downloads }">{{ _('Downloads') }}</a>
           </dd>
       </dl>
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <form id="flyout-search-form">
+            <input
+              type="text"
+              name="q"
+              aria-label="Search docs"
+              placeholder="Search docs"
+            />
+          </form>
+        </dd>
+      </dl>
     </div>
   </div>
           `;
 
      document.body.insertAdjacentHTML("beforeend", flyout);
+     document.querySelector("#flyout-search-form").addEventListener("focusin", () => {
+         const event = new CustomEvent("readthedocs-search-show");
+         document.dispatchEvent(event);
+     });
  });
 </script>
