@@ -1,4 +1,10 @@
-<script type="text/javascript">
+<!-- This style is injected ONLY on Read the Docs and it's missing. -->
+<style>
+ .rtd-current-item {
+   font-weight: bold;
+ }
+</style>
+ <script type="text/javascript">
  document.addEventListener("readthedocs-addons-data-ready", function(event) {
      const config = event.detail.data();
 
@@ -9,7 +15,6 @@
     };
 
      // TODO: remove section if there is no content.
-     // TODO: add `rtd-current-item` to the selected one.
      const flyout = `
   <div class="rst-versions" data-toggle="rst-versions" role="note">
     <span class="rst-current-version" data-toggle="rst-current-version">
@@ -23,14 +28,14 @@
           <dt>{{ _('Languages') }}</dt>
           ${ config.projects.translations.map(
             (translation) => `
-            <dd><a href="${ translation.urls.documentation }">${ translation.slug }</a></dd>
+            <dd ${ translation.slug == config.projects.current.slug ? 'class="rtd-current-item"' : '' }><a href="${ translation.urls.documentation }">${ translation.language.code }</a></dd>
           `).join("\n")}
         </dl>
         <dl>
           <dt>{{ _('Versions') }}</dt>
           ${ config.versions.active.map(
             (version) => `
-            <dd><a href="${ version.urls.documentation }">${ version.slug }</a></dd>
+            <dd ${ version.slug === config.versions.current.slug ? 'class="rtd-current-item"' : '' }><a href="${ version.urls.documentation }">${ version.slug }</a></dd>
           `).join("\n")}
         </dl>
         <dl>
