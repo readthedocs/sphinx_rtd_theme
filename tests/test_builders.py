@@ -1,5 +1,6 @@
 import os
 
+import docutils
 import pytest
 import sphinx
 from sphinx import addnodes
@@ -37,10 +38,14 @@ def test_basic():
             )
             assert search in content
         elif isinstance(app.builder, SingleFileHTMLBuilder):
+            if docutils.__version_info__ >= (0, 21):
+                path = ""
+            else:
+                path = "index.html"
             search = (
                 '<ul>\n'
                 '<li class="toctree-l1">'
-                '<a class="reference internal" href="index.html#document-foo">foo</a>'
+                f'<a class="reference internal" href="{path}#document-foo">foo</a>'
                 '</li>\n'
                 '</ul>'
             )
