@@ -70,6 +70,7 @@ if not 'READTHEDOCS' in os.environ:
 
 if 'READTHEDOCS' in os.environ:
     html_context['READTHEDOCS'] = True
+    html_context['READTHEDOCS_PROJECT'] = os.environ.get("READTHEDOCS_PROJECT")
 
 html_logo = "demo/static/logo-wordmark-light.svg"
 html_show_sourcelink = True
