@@ -89,17 +89,15 @@ function renderLanguages(config) {
             <dl>
               <dt>{{ _('Search') }}</dt>
               <dd>
-                <div style="padding: 6px;">
-                  <form id="flyout-search-form">
-                    <input
-                      class="wy-form"
-                      type="text"
-                      name="q"
-                      aria-label="{{ _('Search docs') }}"
-                      placeholder="{{ _('Search docs') }}"
-                      />
-                  </form>
-                </div>
+                <form id="flyout-search-form">
+                  <input
+                    class="wy-form"
+                    type="text"
+                    name="q"
+                    aria-label="{{ _('Search docs') }}"
+                    placeholder="{{ _('Search docs') }}"
+                    />
+                </form>
               </dd>
             </dl>
             <hr />
