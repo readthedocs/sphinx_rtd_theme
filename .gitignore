@@ -23,8 +23,6 @@ sphinx_rtd_theme/static/fonts/RobotoSlab/
 .node-version
 .tool-versions
 .nvmrc
-sphinx_rtd_theme/static/js/html5shiv.min.js
-sphinx_rtd_theme/static/js/html5shiv-printshiv.min.js
 .direnv/
 .envrc
 # Used for dockerized builds
