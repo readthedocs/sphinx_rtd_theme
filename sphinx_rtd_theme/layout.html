@@ -58,9 +58,6 @@
 
   {#- JAVASCRIPTS #}
   {%- block scripts %}
-  <!--[if lt IE 9]>
-    <script src="{{ pathto('_static/js/html5shiv.min.js', 1) }}"></script>
-  <![endif]-->
   {%- if not embedded %}
     {%- for scriptfile in script_files %}
       {{ js_tag(scriptfile) }}
