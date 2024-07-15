@@ -37,10 +37,13 @@ def test_basic():
             )
             assert search in content
         elif isinstance(app.builder, SingleFileHTMLBuilder):
+            internal_ref = '#document-foo'
+            if sphinx.version_info[:3] < (7, 3, 0):
+                internal_ref = 'index.html' + internal_ref
             search = (
                 '<ul>\n'
                 '<li class="toctree-l1">'
-                '<a class="reference internal" href="index.html#document-foo">foo</a>'
+                f'<a class="reference internal" href="{internal_ref}">foo</a>'
                 '</li>\n'
                 '</ul>'
             )
