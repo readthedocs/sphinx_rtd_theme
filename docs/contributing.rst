@@ -227,6 +227,7 @@ Releasing the theme
 
 To release a new version of the theme, core team will take the following steps:
 
+#. Install the required depedencies with ``pip install bump2version wheel twine``.
 #. Bump the version by running ``bump2version [major|minor|patch|dev]``.
    This will automatically increase the correct part(s) of the version number,
    you do not need to specify the exact version number.
