@@ -86,6 +86,9 @@ workflows:
   tests:
     jobs:
       - build
+      - py312:
+          requires:
+            - build
       - py311:
           requires:
             - build
@@ -96,11 +99,5 @@ workflows:
           requires:
             - build
       - py38:
-          requires:
-            - build
-      - py37:
-          requires:
-            - build
-      - py36:
           requires:
             - build
