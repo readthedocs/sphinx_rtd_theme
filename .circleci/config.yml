@@ -64,14 +64,14 @@ jobs:
     steps:
       - run-tox:
           version: py310
-          sphinx-version: "60,61,62,70,71,72,73,74,latest,dev"
+          sphinx-version: "60,61,62,70,71,72,73,74,80,latest,dev"
   py311:
     docker:
       - image: 'cimg/python:3.11'
     steps:
       - run-tox:
           version: py311
-          sphinx-version: "72,73,74,latest,dev"
+          sphinx-version: "72,73,74,80,latest,dev"
 
   py312:
     docker:
@@ -79,7 +79,7 @@ jobs:
     steps:
       - run-tox:
           version: py312
-          sphinx-version: "72,73,74,latest,dev"
+          sphinx-version: "72,73,74,80,latest,dev"
 
 workflows:
   version: 2
