@@ -16,6 +16,9 @@
 <html class="writer-html5" lang="{{ lang_attr }}"{% if sphinx_version_info >= (7, 2) %} data-content_root="{{ content_root }}"{% endif %}>
 <head>
   <meta charset="utf-8" />
+  {%- if READTHEDOCS and not embedded %}
+  <meta name="readthedocs-addons-api-version" content="1">
+  {%- endif %}
   {{- metatags }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {%- block htmltitle %}
@@ -63,6 +66,10 @@
       {{ js_tag(scriptfile) }}
     {%- endfor %}
     <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+
+    {%- if READTHEDOCS %}
+    <script src="{{ pathto('_static/js/versions.js', 1) }}"></script>
+    {%- endif %}
 
     {#- OPENSEARCH #}
     {%- if use_opensearch %}

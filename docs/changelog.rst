@@ -4,7 +4,23 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 2.0.1alpha1
+.. |theme_version| replace:: 2.1.0rc1
+
+.. _release-2.1.0rc1:
+
+2.1.0rc1
+========
+
+Added
+-----
+
+* Render the menu versions/languages selector (flyout)
+  using the new ``readthedocs-addons-data-ready`` Read the Docs Addons ``CustomEvent``.
+
+Deprecations
+------------
+
+* Remove ``html5shiv``.
 
 .. _release-2.0.0:
 
