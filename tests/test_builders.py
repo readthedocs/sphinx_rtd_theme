@@ -1,6 +1,5 @@
 import os
 
-import docutils
 import pytest
 import sphinx
 from sphinx import addnodes
