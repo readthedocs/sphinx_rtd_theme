@@ -4,6 +4,7 @@ Sphinx Read the Docs theme.
 From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
 """
 
+import os
 from os import path
 from sys import version_info as python_version
 
@@ -35,6 +36,15 @@ def config_initiated(app, config):
 def extend_html_context(app, pagename, templatename, context, doctree):
      # Add ``sphinx_version_info`` tuple for use in Jinja templates
      context['sphinx_version_info'] = sphinx_version
+
+     # Inject all the Read the Docs environment variables in the context:
+     # https://docs.readthedocs.io/en/stable/reference/environment-variables.html
+     context['READTHEDOCS'] = os.environ.get("READTHEDOCS", False) == "True"
+     if context['READTHEDOCS']:
+         for key, value in os.environ:
+             if key.startswith("READTHEDOCS_"):
+                 context[key] = value
+
 
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
