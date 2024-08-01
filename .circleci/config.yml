@@ -44,54 +44,51 @@ jobs:
       - image: 'cimg/python:3.9-node'
     steps:
       - run-build: {}
-  py36:
-    docker:
-      - image: 'cimg/python:3.6'
-    steps:
-      - run-tox:
-          version: py36
-          sphinx-version: "50,51,52,53"
-  py37:
-    docker:
-      - image: 'cimg/python:3.7'
-    steps:
-      - run-tox:
-          version: py37
-          sphinx-version: "50,51,52,53"
   py38:
     docker:
       - image: 'cimg/python:3.8'
     steps:
       - run-tox:
           version: py38
-          sphinx-version: "50,51,52,53,60,61,62,70,71,latest"
+          sphinx-version: "60,61,62,70,71"
   py39:
     docker:
       - image: 'cimg/python:3.9'
     steps:
       - run-tox:
           version: py39
-          sphinx-version: "50,51,52,53,60,61,62,70,71,72,latest"
+          sphinx-version: "60,61,62,70,71,72,73,74"
   py310:
     docker:
       - image: 'cimg/python:3.10'
     steps:
       - run-tox:
           version: py310
-          sphinx-version: "50,51,52,53,60,61,62,70,71,72,latest"
+          sphinx-version: "60,61,62,70,71,72,73,74,80,latest,dev"
   py311:
     docker:
       - image: 'cimg/python:3.11'
     steps:
       - run-tox:
           version: py311
-          sphinx-version: "53,60,61,62,70,71,72,latest,dev"
+          sphinx-version: "72,73,74,80,latest,dev"
+
+  py312:
+    docker:
+      - image: 'cimg/python:3.12'
+    steps:
+      - run-tox:
+          version: py312
+          sphinx-version: "72,73,74,80,latest,dev"
 
 workflows:
   version: 2
   tests:
     jobs:
       - build
+      - py312:
+          requires:
+            - build
       - py311:
           requires:
             - build
@@ -102,11 +99,5 @@ workflows:
           requires:
             - build
       - py38:
-          requires:
-            - build
-      - py37:
-          requires:
-            - build
-      - py36:
           requires:
             - build
