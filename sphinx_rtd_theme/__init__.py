@@ -41,7 +41,7 @@ def extend_html_context(app, pagename, templatename, context, doctree):
      # https://docs.readthedocs.io/en/stable/reference/environment-variables.html
      context['READTHEDOCS'] = os.environ.get("READTHEDOCS", False) == "True"
      if context['READTHEDOCS']:
-         for key, value in os.environ:
+         for key, value in os.environ.items():
              if key.startswith("READTHEDOCS_"):
                  context[key] = value
 
