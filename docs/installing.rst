@@ -1,18 +1,18 @@
-************
 Installation
-************
+============
 
-Install the package (or add it to your ``requirements.txt`` file):
+How to install and use the theme
+--------------------------------
+
+Install the ``sphinx_rtd_theme`` package (or add it to your ``requirements.txt`` file):
 
 .. code:: console
 
     $ pip install sphinx_rtd_theme
 
-In your ``conf.py`` file:
+In your Sphinx project's ``conf.py`` file, add ``sphinx_rtd_theme`` to the list of enabled extensions and as the active theme:
 
 .. code:: python
-
-    import sphinx_rtd_theme
 
     extensions = [
         ...
@@ -20,6 +20,13 @@ In your ``conf.py`` file:
     ]
 
     html_theme = "sphinx_rtd_theme"
+
+.. seealso::
+    :ref:`supported-browsers`
+        Officially supported and tested browser/operating system combinations
+
+    :ref:`supported-dependencies`
+        Officially Supported versions of Python, Sphinx, and other dependencies.
 
 
 .. note::
@@ -29,27 +36,25 @@ In your ``conf.py`` file:
    your output, either we lack the localized strings for your locale, or you
    are using an old version of the theme.
 
-Via Git or Download
-===================
+   ..
+      comment about this note: it's possibly not necessary to add the theme as an extension.
+      Rather, this is an issue caused by setting html_theme_path.
+      See: https://github.com/readthedocs/readthedocs.org/pull/9654
 
-.. warning::
 
-   Installing directly from the repo is deprecated.
-   Static assets won't be included in the repo in a future release.
+.. _howto_upgrade:
 
-Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
-``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
-``conf.py`` file:
+How to upgrade
+--------------
 
-.. code:: python
+Adding ``sphinx-rtd-theme`` to your project's dependencies will make pip install the latest compatible version of the theme.
 
-    html_theme = "sphinx_rtd_theme"
-    html_theme_path = ["_themes", ]
+If you want to test a **pre-release**, you need to be explicit about the version you specify.
+Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.1.0b3`` to test a pre-release.
 
-Compatibility
-=============
+.. tip::
+    We recommend that you pin the version of Sphinx that your project is built with.
+    We won't release sphinx-rtd-theme without marking its compatibility with Sphinx. So if you do not pin ``sphinx-rtd-theme`` itself, you will always get the *latest compatible* release.
+    
+    More information is available in Read the Docs' documentation on :doc:`rtd:guides/reproducible-builds`.
 
-``sphinx_rtd_theme`` depends on at least Sphinx 1.6 although,
-we recommend at least Sphinx 2 to take advantage of the html5 writer.
-The html4 writer is still supported however,
-it is deprecated and support will be removed in the near future.

@@ -1,0 +1,26 @@
+version: "3.2"
+services:
+
+  sphinx_rtd_theme:
+    build: .
+    volumes:
+      - type: "bind"
+        source: "./"
+        target: "/project-readonly"
+        read_only: true
+      - type: "volume"
+        target: "/project-readonly/sphinx_rtd_theme.egg-info"
+      - type: "bind"
+        source: "./src"
+        target: "/project/src"
+        read_only: true
+      - type: "bind"
+        source: "./docs"
+        target: "/project/docs"
+        read_only: false #todo: fix this
+      - type: "volume"
+        target: "/project/docs/_build"
+
+    network_mode: host
+    ports:
+      - "1919:1919"

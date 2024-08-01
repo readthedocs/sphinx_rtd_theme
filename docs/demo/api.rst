@@ -99,7 +99,7 @@ JavaScript API
 Generated Index
 ===============
 
-Part of the sphinx build process in generate and index file: :ref:`genindex`.
+Part of the sphinx build process is to generate an index file: :ref:`genindex`.
 
 
 Optional parameter args
@@ -137,3 +137,16 @@ Data
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue elit eu hendrerit mattis.
 
 Some data link :data:`Data_item_1`.
+
+
+Sphinx Extensions
+=================
+
+sphinx.ext.autosummary
+----------------------
+
+.. autosummary::
+
+    test_py_module.test.add_numbers
+    test_py_module.test.subtract_numbers
+    test_py_module.test.Foo

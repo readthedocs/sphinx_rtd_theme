@@ -9,13 +9,14 @@ import re
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('./demo/'))
 
-import sphinx_rtd_theme
+from sphinx_rtd_theme import __version__ as theme_version
+from sphinx_rtd_theme import __version_full__ as theme_version_full
 from sphinx.locale import _
 
 project = u'Read the Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
-version = '0.5.1'
-release = '0.5.1'
+version = theme_version
+release = theme_version_full
 author = u'Dave Snider, Read the Docs, Inc. & contributors'
 copyright = author
 language = 'en'
@@ -23,9 +24,9 @@ language = 'en'
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinxcontrib.httpdomain',
     'sphinx_rtd_theme',
 ]
 
@@ -39,9 +40,15 @@ master_doc = 'index'
 suppress_warnings = ['image.nonlocal_uri']
 pygments_style = 'default'
 
+if sys.version_info < (3, 0):
+    tags.add("python2")
+else:
+    tags.add("python3")
+
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/stable/', None),
+    'rtd-dev': ('https://dev.readthedocs.io/en/stable/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 
 html_theme = 'sphinx_rtd_theme'
@@ -61,8 +68,13 @@ if not 'READTHEDOCS' in os.environ:
         range(1, 100)
     ))
 
+if 'READTHEDOCS' in os.environ:
+    html_context['READTHEDOCS'] = True
+    html_context['READTHEDOCS_PROJECT'] = os.environ.get("READTHEDOCS_PROJECT")
+
 html_logo = "demo/static/logo-wordmark-light.svg"
 html_show_sourcelink = True
+html_favicon = "demo/static/favicon.ico"
 
 htmlhelp_basename = slug
 

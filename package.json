@@ -1,7 +1,7 @@
 {
   "name": "sphinx_rtd_theme",
   "main": "js/theme.js",
-  "version": "0.5.1",
+  "version": "2.1.0rc1",
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
@@ -17,20 +17,17 @@
     "url": "https://github.com/readthedocs/sphinx_rtd_theme/issues"
   },
   "homepage": "https://github.com/readthedocs/sphinx_rtd_theme",
-  "dependencies": {},
   "devDependencies": {
     "bourbon": "~4.3",
     "bourbon-neat": "~1.9",
-    "copy-webpack-plugin": "^5.1.2",
     "css-loader": "^3.6.0",
     "file-loader": "^3.0.1",
     "font-awesome": "^4.7.0",
-    "html5shiv": "^3.7.3",
     "imports-loader": "^0.8.0",
     "jquery": "^3.6.0",
     "lato-font": "^3.0.0",
     "mini-css-extract-plugin": "^0.6.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "roboto-fontface": "^0.10.0",
     "sass-loader": "^7.3.0",
