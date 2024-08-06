@@ -67,7 +67,7 @@
     {%- endfor %}
     <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
-    {%- if READTHEDOCS and theme_flyout %}
+    {%- if READTHEDOCS and theme_flyout_display != "hidden" %}
     <script src="{{ pathto('_static/js/versions.js', 1) }}"></script>
     {%- endif %}
 
