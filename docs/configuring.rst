@@ -21,6 +21,7 @@ For example:
         'style_external_links': False,
         'vcs_pageview_mode': '',
         'style_nav_header_background': 'white',
+        'flyout_display': 'hidden',
         # Toc options
         'collapse_navigation': True,
         'sticky_navigation': True,
@@ -173,6 +174,14 @@ Miscellaneous options
 
     :type: string
     :default: ``#2980B9``
+
+.. confval:: flyout_display
+
+    Specify how to display the flyout (language and version selector).
+    This can be either ``attached`` or ``hidden``.
+
+    :type: str
+    :default: ``hidden``
 
 
 File-wide metadata
