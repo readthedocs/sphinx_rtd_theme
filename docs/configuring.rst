@@ -21,7 +21,7 @@ For example:
         'style_external_links': False,
         'vcs_pageview_mode': '',
         'style_nav_header_background': 'white',
-        'flyout_display': 'attached',
+        'flyout_display': 'hidden',
         # Toc options
         'collapse_navigation': True,
         'sticky_navigation': True,
@@ -181,7 +181,7 @@ Miscellaneous options
     This can be either ``attached`` or ``hidden``.
 
     :type: str
-    :default: ``attached``
+    :default: ``hidden``
 
 
 File-wide metadata
