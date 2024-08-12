@@ -32,6 +32,11 @@ def config_initiated(app, config):
             _('The canonical_url option is deprecated, use the html_baseurl option from Sphinx instead.')
         )
 
+    if "extra_css_files" in config.html_context:
+        logger.warning(
+            _('The extra_css_file option is deprecated, use the html_css_files option from Sphinx instead.')
+        )
+
 
 def extend_html_context(app, pagename, templatename, context, doctree):
      # Add ``sphinx_version_info`` tuple for use in Jinja templates
