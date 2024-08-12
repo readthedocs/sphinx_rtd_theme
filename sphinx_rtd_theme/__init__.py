@@ -32,6 +32,16 @@ def config_initiated(app, config):
             _('The canonical_url option is deprecated, use the html_baseurl option from Sphinx instead.')
         )
 
+    if theme_options.get("analytics_id"):
+        logger.warning(
+            _('The analytics_id option is deprecated, use the sphinxcontrib-googleanalytics extension instead.')
+        )
+
+    if theme_options.get("analytics_anonymize_ip"):
+        logger.warning(
+            _('The analytics_anonymize_ip option is deprecated, use the sphinxcontrib-googleanalytics extension instead.')
+        )
+
     if "extra_css_files" in config.html_context:
         logger.warning(
             _('The extra_css_file option is deprecated, use the html_css_files option from Sphinx instead.')
