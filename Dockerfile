@@ -1,4 +1,4 @@
-# This implicitely includes Python 3.10
+# This implicitly includes Python 3.10
 FROM node:14-alpine
 
 # Do not use --update since that will also fetch the

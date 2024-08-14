@@ -58,21 +58,3 @@ Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.
     
     More information is available in Read the Docs' documentation on :doc:`rtd:guides/reproducible-builds`.
 
-
-Via Git or Download
--------------------
-
-.. warning::
-
-   Installing directly from the repository source is deprecated and is not
-   recommended. Static assets won't be included in the repository starting in
-   release :ref:`roadmap-release-3.0.0`.
-
-Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
-``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
-``conf.py`` file:
-
-.. code:: python
-
-    html_theme = "sphinx_rtd_theme"
-    html_theme_path = ["_themes", ]

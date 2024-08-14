@@ -4,12 +4,45 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 2.0.0rc2
+.. |theme_version| replace:: 2.1.0rc2
+
+.. _release-2.1.0rc2:
+
+2.1.0rc2
+========
+
+Added
+-----
+
+* Added ``flyout_display`` option to display the flyout
+  ``attached`` (bottom of the sidebard) or ``hidden`` (default).
+
+.. _release-2.1.0rc1:
+
+2.1.0rc1
+========
+
+Added
+-----
+
+* Render the menu versions/languages selector (flyout)
+  using the new ``readthedocs-addons-data-ready`` Read the Docs Addons ``CustomEvent``.
+
+Deprecations
+------------
+
+* Remove ``html5shiv``.
 
 .. _release-2.0.0:
 
-2.0.0rc1
-========
+2.0.0
+=====
+
+Added
+-----
+
+* Support for Sphinx versions ``6.x`` and ``7.x``
+* Support for docutils ``<=0.20``
 
 Deprecations
 ------------

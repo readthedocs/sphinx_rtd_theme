@@ -18,7 +18,7 @@ from .util import build_all
 
 def test_basic():
     for (app, status, warning) in build_all('test-basic'):
-        assert app.env.get_doctree('index').traverse(addnodes.toctree)
+        assert app.env.get_doctree('index').findall(addnodes.toctree)
         content = open(os.path.join(app.outdir, 'index.html')).read()
 
         if isinstance(app.builder, DirectoryHTMLBuilder):
@@ -37,10 +37,13 @@ def test_basic():
             )
             assert search in content
         elif isinstance(app.builder, SingleFileHTMLBuilder):
+            internal_ref = '#document-foo'
+            if sphinx.version_info[:3] < (7, 3, 0):
+                internal_ref = 'index.html' + internal_ref
             search = (
                 '<ul>\n'
                 '<li class="toctree-l1">'
-                '<a class="reference internal" href="index.html#document-foo">foo</a>'
+                f'<a class="reference internal" href="{internal_ref}">foo</a>'
                 '</li>\n'
                 '</ul>'
             )
@@ -66,7 +69,7 @@ def test_basic():
 def test_empty():
     """Local TOC is showing, as toctree was empty"""
     for (app, status, warning) in build_all('test-empty'):
-        assert app.env.get_doctree('index').traverse(addnodes.toctree)
+        assert app.env.get_doctree('index').findall(addnodes.toctree)
         content = open(os.path.join(app.outdir, 'index.html')).read()
         global_toc = '<div class="toctree-wrapper compound">\n</div>'
         local_toc = (
@@ -81,7 +84,7 @@ def test_empty():
 def test_missing_toctree():
     """Local TOC is showing, as toctree was missing"""
     for (app, status, warning) in build_all('test-missing-toctree'):
-        assert app.env.get_doctree('index').traverse(addnodes.toctree) == []
+        assert list(app.env.get_doctree('index').findall(addnodes.toctree)) == []
         content = open(os.path.join(app.outdir, 'index.html')).read()
         assert '<div class="toctree' not in content
         assert '<div class="local-toc">' in content
