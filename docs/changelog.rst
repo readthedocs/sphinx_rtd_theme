@@ -4,7 +4,18 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 2.1.0rc1
+.. |theme_version| replace:: 2.1.0rc2
+
+.. _release-2.1.0rc2:
+
+2.1.0rc2
+========
+
+Added
+-----
+
+* Added ``flyout_display`` option to display the flyout
+  ``attached`` (bottom of the sidebard) or ``hidden`` (default).
 
 .. _release-2.1.0rc1:
 
