@@ -21,6 +21,10 @@ logger = getLogger(__name__)
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
+    logger.warning(
+        _('Calling get_html_theme_path is deprecated. If you are calling it to define html_theme_path, you are safe to remove that code.')
+    )
+
     cur_dir = path.abspath(path.dirname(path.dirname(__file__)))
     return cur_dir
 
