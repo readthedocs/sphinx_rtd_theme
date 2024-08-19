@@ -67,7 +67,7 @@ def setup(app):
     if python_version[0] < 3:
         logger.error("Python 2 is not supported with sphinx_rtd_theme, update to Python 3.")
 
-    app.require_sphinx('5.0')
+    app.require_sphinx('6.0')
     if app.config.html4_writer:
         logger.error("'html4_writer' is not supported with sphinx_rtd_theme.")
 
