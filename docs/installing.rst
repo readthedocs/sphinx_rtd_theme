@@ -31,9 +31,9 @@ In your Sphinx project's ``conf.py`` file, add ``sphinx_rtd_theme`` to the list 
 
 .. note::
 
-   Adding this theme as an extension is what enables ``sphinxcontrib-jquery`` extension
-   to get properly configured which is required for search, smooth scroll and open/close the flyout.
-   If any of these feature doesn't work, make sure you have the theme declared in your ``extensions``.
+   Adding this theme as an extension activates the ``sphinxcontrib-jquery`` extension,
+   which is required for search, smooth scrolling, and the flyout menu.
+   If any of these features don't work, make sure you have the theme declared in your ``extensions``.
 
    .. More context for this note:
         * https://github.com/readthedocs/sphinx_rtd_theme/issues/1434#issuecomment-2288359582
