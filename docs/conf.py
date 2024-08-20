@@ -68,10 +68,6 @@ if not 'READTHEDOCS' in os.environ:
         range(1, 100)
     ))
 
-if 'READTHEDOCS' in os.environ:
-    html_context['READTHEDOCS'] = True
-    html_context['READTHEDOCS_PROJECT'] = os.environ.get("READTHEDOCS_PROJECT")
-
 html_logo = "demo/static/logo-wordmark-light.svg"
 html_show_sourcelink = True
 html_favicon = "demo/static/favicon.ico"

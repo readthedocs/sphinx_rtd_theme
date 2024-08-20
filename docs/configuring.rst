@@ -102,7 +102,11 @@ Miscellaneous options
 
     :type: string
 
+    .. deprecated:: 3.0.0
+       The ``analytics_id`` option is deprecated, use the sphinxcontrib-googleanalytics_ extension instead.
+
     .. _gtag.js: https://developers.google.com/gtagjs
+    .. _sphinxcontrib-googleanalytics: https://pypi.org/project/sphinxcontrib-googleanalytics/
 
 .. confval:: analytics_anonymize_ip
 
@@ -110,6 +114,9 @@ Miscellaneous options
 
    :type: boolean
    :default: ``False``
+
+   .. deprecated:: 3.0.0
+       The ``analytics_anonymize_ip`` option is deprecated, use the sphinxcontrib-googleanalytics_ extension instead.
 
 .. confval:: canonical_url
 

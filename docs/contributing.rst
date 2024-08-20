@@ -86,7 +86,7 @@ Use the following steps:
 
     # Runs the development webserver
     $ docker-compose run sphinx_rtd_theme dev
-    
+
     # If you want to copy stuff out of the Docker environment, run this make
     # target or read the actual Makefile to see what is going on.
     # We suggest running this command every time that you want to quickly build
@@ -108,13 +108,13 @@ The following cases need to be tested with changes to CSS or JavaScript:
   We support large, tablet, and mobile viewport sizes
 * We currently support only HTML5 writer.
 * Multiple major versions of Sphinx should be tested.
-  We currently support Sphinx ``>=5.0``
+  We currently support Sphinx ``>=6.0``
 
 It's easiest to test combinations of dependency versions using ``tox``:
 
 .. code:: console
 
-    % tox -e py310-sphinx62
+    % tox -e py312-sphinx74
 
 If the tests and build are successful, you can view the built documentation at
 the directory noted by Sphinx:
@@ -123,9 +123,9 @@ the directory noted by Sphinx:
 
     build succeeded, 10 warnings.
 
-    The HTML pages are in .tox/py310-sphinx62/tmp/html.
+    The HTML pages are in .tox/py312-sphinx74/tmp/html.
     ___________________________ summary ___________________________
-      py310-sphinx62: commands succeeded
+      py312-sphinx74: commands succeeded
       congratulations :)
 
 You can then open up this path with a series of browsers to test.
@@ -135,12 +135,12 @@ multiple ``tox`` environments, and open both up for comparison:
 
 .. code:: console
 
-    % tox -e py310-sphinx62
+    % tox -e py312-sphinx62
     ...
-    % tox -e py310-sphinx53
+    % tox -e py312-sphinx74
     ...
-    % firefox .tox/py310-sphinx62/tmp/html/index.html
-    % firefox .tox/py310-sphinx53/tmp/html/index.html
+    % firefox .tox/py312-sphinx62/tmp/html/index.html
+    % firefox .tox/py312-sphinx74/tmp/html/index.html
 
 You can also use a separate ``tox`` environment for building output to compare
 against. All of the ``tox`` environments have an additional postfix, ``-qa``, to
@@ -167,11 +167,11 @@ Currently, the most important environments to QA are:
    the cases above, we'll be here all day. Python 3, and latest
    minor of each major Sphinx release should give us enough work.
 
-* ``py310-sphinx53``
-* ``py310-sphinx62``
-* ``py310-sphinx72``
-* ``py310-sphinxlatest``
-* ``py310-sphinxdev``
+* ``py312-sphinx62``
+* ``py312-sphinx74``
+* ``py312-sphinx80``
+* ``py312-sphinxlatest``
+* ``py312-sphinxdev``
 
 Translations
 ============

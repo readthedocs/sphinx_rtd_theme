@@ -21,6 +21,10 @@ logger = getLogger(__name__)
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
+    logger.warning(
+        _('Calling get_html_theme_path is deprecated. If you are calling it to define html_theme_path, you are safe to remove that code.')
+    )
+
     cur_dir = path.abspath(path.dirname(path.dirname(__file__)))
     return cur_dir
 
@@ -30,6 +34,21 @@ def config_initiated(app, config):
     if theme_options.get('canonical_url'):
         logger.warning(
             _('The canonical_url option is deprecated, use the html_baseurl option from Sphinx instead.')
+        )
+
+    if theme_options.get("analytics_id"):
+        logger.warning(
+            _('The analytics_id option is deprecated, use the sphinxcontrib-googleanalytics extension instead.')
+        )
+
+    if theme_options.get("analytics_anonymize_ip"):
+        logger.warning(
+            _('The analytics_anonymize_ip option is deprecated, use the sphinxcontrib-googleanalytics extension instead.')
+        )
+
+    if "extra_css_files" in config.html_context:
+        logger.warning(
+            _('The extra_css_file option is deprecated, use the html_css_files option from Sphinx instead.')
         )
 
 
@@ -52,7 +71,7 @@ def setup(app):
     if python_version[0] < 3:
         logger.error("Python 2 is not supported with sphinx_rtd_theme, update to Python 3.")
 
-    app.require_sphinx('5.0')
+    app.require_sphinx('6.0')
     if app.config.html4_writer:
         logger.error("'html4_writer' is not supported with sphinx_rtd_theme.")
 

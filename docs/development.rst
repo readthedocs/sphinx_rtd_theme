@@ -36,13 +36,8 @@ combinations.
 
 Unsupported browser/operating system combinations include:
 
-Internet Explorer (any OS, versions <=10)
-    **Unsupported.** IE11 is the last partially supported version. We do no
-    testing on prior versions.
-
-Internet Explorer (any OS, version 11)
-    We currently only partially support IE11, and only test for major bugs.
-    Support will be removed in the :ref:`roadmap-release-3.0.0` release.
+Internet Explorer (any OS, any version)
+    Support was removed in the :ref:`roadmap-release-3.0.0` release.
 
 Opera (any OS, any version)
     **Community support only.** We do not receive enough traffic with this
@@ -62,11 +57,14 @@ The theme officially supports the following dependencies in your Sphinx project:
     * - Dependency
       - Versions
     * - Python
-      - 3.6 or greater
+      - 3.8 or greater
     * - Sphinx
-      - 5 or greater
+      - 6 or greater
     * - docutils
-      - >= 0.14, < 0.19
+      - > 0.18, < 0.22
+
+.. deprecated:: 3.0
+    Sphinx < 6 support removed
 
 .. deprecated:: 2.0
     Sphinx < 5 support removed
@@ -179,10 +177,10 @@ HTML4 support will be removed
 3.0.0
 ~~~~~
 
-:Planned release date: 2024 Q1
+:Planned release date: 2024 Q3
 
-This release is not yet fully planned.
-However, we already know that we will be dropping support for older version of different dependencies and browsers.
+This release will drop support for old Python and Sphinx versions,
+and will add support for new ones.
 
 Sphinx 5, Python < 3.8 and docutils < 0.18 support will be removed
     Sphinx 5 is the latest version that supports Python 3.6 and 3.7,
