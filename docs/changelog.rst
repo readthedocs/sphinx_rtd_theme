@@ -4,7 +4,32 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 2.1.0rc2
+.. |theme_version| replace:: 3.0.0rc1
+
+.. _release-3.0.0rc1:
+
+3.0.0rc1
+========
+
+Added
+-----
+
+* Added support for Sphinx 8.
+* Added support for Python 3.12.
+* Added support for docutils ``>0.18, <0.22``.
+* Populate ``html_context`` with all the environment variables starting with ``READTHEDOCS_``.
+
+Deprecations
+------------
+
+* Drop support for Sphinx ``<6.0``.
+* Drop support for Python ``<3.8``.
+* ``analytics_id`` and ``analytics_anonymize_ip`` are deprecated, use sphinxcontrib-googleanalytics_ instead.
+* Drop support for all versions of Internet Explorer.
+* Raise a warning when defining ``html_theme_path``. This was an old config that's not required anymore.
+* ``extra_css_files`` is deprecated and support will be removed in a future version.
+
+.. _sphinxcontrib-googleanalytics: https://pypi.org/project/sphinxcontrib-googleanalytics/
 
 .. _release-2.1.0rc2:
 
