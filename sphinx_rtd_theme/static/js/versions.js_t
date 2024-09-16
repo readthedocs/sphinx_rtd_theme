@@ -1,3 +1,4 @@
+{%- if theme_flyout_display == "attached" %}
 function renderLanguages(config) {
    if (!config.projects.translations.length) {
      return "";
@@ -123,3 +124,54 @@ function renderLanguages(config) {
       document.dispatchEvent(event);
     });
  });
+{%- endif %}
+
+
+{%- if theme_flyout_display == "selectors" %}
+function onSelectorSwitch(event) {
+     const option = event.target.selectedIndex;
+     const item = event.target.options[option];
+     window.location.href = item.dataset.url;
+ }
+
+document.addEventListener("readthedocs-addons-data-ready", function(event) {
+  const config = event.detail.data();
+
+  const versionOptions = `
+   ${ config.versions.active.map(
+       (version) => `
+       <option
+           value="${ version.slug }"
+           ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
+           data-url="${ version.urls.documentation }">
+           ${ version.slug }
+       </option>`
+   ).join("\n") }
+   `;
+
+   // Prepend the current language to the options on the selector
+   let languages = config.projects.translations.concat(config.projects.current);
+   languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
+
+  const languageOptions = `
+   ${ languages.map(
+       (language) => `
+        <option
+            value="${ language.slug }"
+            ${ config.projects.current.slug === language.slug ? 'selected="selected"' : '' }
+            data-url="${ language.urls.documentation }">
+            ${ language.language.name }
+        </option>`
+   ).join("\n") }
+   `;
+
+
+  const versionSelect = document.querySelector("#readthedocs-version-selector");
+  versionSelect.addEventListener("change", onSelectorSwitch);
+  versionSelect.innerHTML = versionOptions;
+
+  const languageSelect = document.querySelector("#readthedocs-language-selector");
+  languageSelect.addEventListener("change", onSelectorSwitch);
+  languageSelect.innerHTML = languageOptions;
+});
+{%- endif %}

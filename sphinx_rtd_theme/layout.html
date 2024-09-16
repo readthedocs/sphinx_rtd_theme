@@ -124,7 +124,7 @@
             {%- endif %}
           </a>
 
-          {%- if theme_display_version %}
+          {%- if theme_display_version and theme_flyout_display != "selectors" %}
             {%- set nav_version = version %}
             {%- if READTHEDOCS and current_version %}
               {%- set nav_version = current_version %}
@@ -134,6 +134,11 @@
                 {{ nav_version }}
               </div>
             {%- endif %}
+          {%- endif %}
+
+          {%- if READTHEDOCS and theme_flyout_display == "selectors" %}
+            <select id="readthedocs-version-selector"></select>
+            <select id="readthedocs-language-selector"></select>
           {%- endif %}
 
           {%- include "searchbox.html" %}
