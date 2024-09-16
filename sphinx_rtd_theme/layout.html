@@ -137,8 +137,12 @@
           {%- endif %}
 
           {%- if READTHEDOCS and theme_flyout_display == "selectors" %}
-            <select id="readthedocs-version-selector"></select>
-            <select id="readthedocs-language-selector"></select>
+            <div class="version">
+              <div class="version-dropdown">
+                <select id="readthedocs-version-selector" class="version-list"></select>
+                <select id="readthedocs-language-selector" class="version-list"></select>
+              </div>
+            </div>
           {%- endif %}
 
           {%- include "searchbox.html" %}
