@@ -136,12 +136,14 @@
             {%- endif %}
           {%- endif %}
 
-          {%- if READTHEDOCS and theme_flyout_display == "selectors" %}
-            <div class="version">
-              <div class="version-dropdown">
-                <select id="readthedocs-version-selector" class="version-list"></select>
-                <select id="readthedocs-language-selector" class="version-list"></select>
-              </div>
+          {%- if READTHEDOCS %}
+            <div class="dropdown-selectors">
+              {%- if theme_version_selector %}
+                <select id="readthedocs-version-selector"></select>
+              {%- endif %}
+              {%- if theme_language_selector %}
+                <select id="readthedocs-language-selector"></select>
+              {%- endif %}
             </div>
           {%- endif %}
 

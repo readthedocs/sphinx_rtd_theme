@@ -22,6 +22,8 @@ For example:
         'vcs_pageview_mode': '',
         'style_nav_header_background': 'white',
         'flyout_display': 'hidden',
+        'version_selector': True,
+        'language_selector': True,
         # Toc options
         'collapse_navigation': True,
         'sticky_navigation': True,
@@ -191,6 +193,24 @@ Miscellaneous options
 
     :type: str
     :default: ``hidden``
+
+.. confval:: version_selector
+
+    Display a version selector below the title.
+    This feature makes usage of `Read the Docs Addons <https://docs.readthedocs.io/page/addons.html>`_ for this,
+    so it's required the documentation to be serverd on Read the Docs.
+
+    :type: boolean
+    :default: ``True``
+
+.. confval:: language_selector
+
+    Display a language selector below the title.
+    This feature makes usage of `Read the Docs Addons <https://docs.readthedocs.io/page/addons.html>`_ for this,
+    so it's required the documentation to be serverd on Read the Docs.
+
+    :type: boolean
+    :default: ``True``
 
 
 File-wide metadata

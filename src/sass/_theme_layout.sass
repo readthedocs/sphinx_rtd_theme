@@ -234,29 +234,33 @@ html
     margin-top: -1 * $gutter / 4
     margin-bottom: $gutter / 2
     font-weight: normal
+    color: rgba(255, 255,255, 0.3)
+  > div.dropdown-selectors
+    margin-top: -1 * $gutter / 4
+    margin-bottom: $gutter / 2
+    font-weight: normal
     color: rgba(255, 255, 255, 0.3)
-    > div.version-dropdown
-      position: relative
-      display: inline-block
-      select
-        max-width: 8em
-        padding: .1em 1.5em .1em .5em
-        text-align-last: center
-        background: none
-        border: none
-        border-radius: 0em
-        box-shadow: none
-        font-family: $base-font-family
-        font-size: 1em
-        font-weight: normal
-        color: rgba(255, 255, 255, .3)
-        // Allow for padding
-        appearance: none
-        -webkit-appearance: none
-        -moz-appearance: none
-        &:hover, &:active, &:focus
-          background: rgba(255, 255, 255, .1)
-          color: rgba(255, 255, 255, .5)
+    position: relative
+    display: inline-block
+    select
+      max-width: 8em
+      padding: .1em 1.5em .1em .5em
+      text-align-last: center
+      background: none
+      border: none
+      border-radius: 0em
+      box-shadow: none
+      font-family: $base-font-family
+      font-size: 1em
+      font-weight: normal
+      color: rgba(255, 255, 255, .3)
+      // Allow for padding
+      appearance: none
+      -webkit-appearance: none
+      -moz-appearance: none
+      &:hover, &:active, &:focus
+        background: rgba(255, 255, 255, .1)
+        color: rgba(255, 255, 255, .5)
       &:after
         content: "\f0d7"
         font-size: 1em
