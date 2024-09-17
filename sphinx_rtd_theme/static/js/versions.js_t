@@ -171,25 +171,27 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
 
 
   {%- if theme_language_selector %}
-  // Add the current language to the options on the selector
-  let languages = config.projects.translations.concat(config.projects.current);
-  languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
+  if (config.projects.translations.length) {
+    // Add the current language to the options on the selector
+    let languages = config.projects.translations.concat(config.projects.current);
+    languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
 
-  const languageOptions = `
-   ${ languages.map(
-       (language) => `
-        <option
-  value="${ language.language.code }"
-  ${ config.projects.current.slug === language.slug ? 'selected="selected"' : '' }
-  data-url="${ language.urls.documentation }">
-    ${ language.language.name }
-  </option>`
-   ).join("\n") }
-   `;
+    const languageOptions = `
+    ${ languages.map(
+        (language) => `
+          <option
+    value="${ language.language.code }"
+    ${ config.projects.current.slug === language.slug ? 'selected="selected"' : '' }
+    data-url="${ language.urls.documentation }">
+      ${ language.language.name }
+    </option>`
+    ).join("\n") }
+    `;
 
-  const languageSelect = document.querySelector("#readthedocs-language-selector");
-  languageSelect.addEventListener("change", onSelectorSwitch);
-  languageSelect.innerHTML = languageOptions;
+    const languageSelect = document.querySelector("#readthedocs-language-selector");
+    languageSelect.addEventListener("change", onSelectorSwitch);
+    languageSelect.innerHTML = languageOptions;
+  }
   {%- endif %}
 });
 {%- endif %}
