@@ -149,9 +149,23 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
    ).join("\n") }
    `;
 
-   // Prepend the current language to the options on the selector
-   let languages = config.projects.translations.concat(config.projects.current);
-   languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
+  // Prepend the current version to the options if it's hidden since it won't
+  // appear in the "config.versions.active" list
+  let currentHiddenVersion = "";
+  if (config.versions.current.hidden) {
+    currentHiddenVersion = `
+      <option
+           value="${ config.versions.current.slug }"
+           selected="selected"
+           data-url="${ config.versions.current.urls.documentation }">
+           ${ config.versions.current.slug }
+      </option>
+    `;
+  }
+
+  // Prepend the current language to the options on the selector
+  let languages = config.projects.translations.concat(config.projects.current);
+  languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
 
   const languageOptions = `
    ${ languages.map(
@@ -168,7 +182,7 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
 
   const versionSelect = document.querySelector("#readthedocs-version-selector");
   versionSelect.addEventListener("change", onSelectorSwitch);
-  versionSelect.innerHTML = versionOptions;
+  versionSelect.innerHTML = currentHiddenVersion + versionOptions;
 
   const languageSelect = document.querySelector("#readthedocs-language-selector");
   languageSelect.addEventListener("change", onSelectorSwitch);
