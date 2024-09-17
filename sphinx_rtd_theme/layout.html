@@ -124,7 +124,7 @@
             {%- endif %}
           </a>
 
-          {%- if theme_display_version and theme_flyout_display != "selectors" %}
+          {%- if theme_display_version %}
             {%- set nav_version = version %}
             {%- if READTHEDOCS and current_version %}
               {%- set nav_version = current_version %}

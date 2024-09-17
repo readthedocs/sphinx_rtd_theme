@@ -16,7 +16,7 @@ For example:
         'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
         'analytics_anonymize_ip': False,
         'logo_only': False,
-        'display_version': True,
+        'display_version': False,
         'prev_next_buttons_location': 'bottom',
         'style_external_links': False,
         'vcs_pageview_mode': '',
@@ -141,7 +141,11 @@ Miscellaneous options
     If ``True``, the version number is shown at the top of the sidebar.
 
     :type: boolean
-    :default: ``True``
+    :default: ``False``
+
+    .. note::
+
+       Changed to default ``False`` on version 3.0.0 in favor to ``version_selector`` and ``language_selector``.
 
 .. confval:: logo_only
 
