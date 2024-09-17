@@ -137,10 +137,9 @@
           {%- endif %}
 
           {%- if READTHEDOCS %}
-              {%- if theme_version_selector or theme_language_selector %}
-              <div class="dropdown-selectors"></div>
-              {%- endif %}
-            </div>
+            {%- if theme_version_selector or theme_language_selector %}
+            <div class="dropdown-selectors"></div>
+            {%- endif %}
           {%- endif %}
 
           {%- include "searchbox.html" %}
