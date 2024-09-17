@@ -171,7 +171,7 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
    ${ languages.map(
        (language) => `
         <option
-            value="${ language.slug }"
+            value="${ language.language.code }"
             ${ config.projects.current.slug === language.slug ? 'selected="selected"' : '' }
             data-url="${ language.urls.documentation }">
             ${ language.language.name }
