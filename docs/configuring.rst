@@ -143,9 +143,9 @@ Miscellaneous options
     :type: boolean
     :default: ``False``
 
-    .. note::
+    .. versionchanged:: 3.0.0
 
-       Changed to default ``False`` on version 3.0.0 in favor to ``version_selector`` and ``language_selector``.
+       Changed to default ``False`` in favor of ``version_selector`` and ``language_selector``.
 
 .. confval:: logo_only
 
