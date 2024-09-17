@@ -137,12 +137,8 @@
           {%- endif %}
 
           {%- if READTHEDOCS %}
-            <div class="dropdown-selectors">
-              {%- if theme_version_selector %}
-                <select id="readthedocs-version-selector"></select>
-              {%- endif %}
-              {%- if theme_language_selector %}
-                <select id="readthedocs-language-selector"></select>
+              {%- if theme_version_selector or theme_language_selector %}
+              <div class="dropdown-selectors"></div>
               {%- endif %}
             </div>
           {%- endif %}

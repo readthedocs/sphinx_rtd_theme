@@ -137,36 +137,27 @@ function onSelectorSwitch(event) {
 document.addEventListener("readthedocs-addons-data-ready", function(event) {
   const config = event.detail.data();
 
+  const dropdownSelectors = document.querySelector("div.dropdown-selectors");
+
   {%- if theme_version_selector %}
-  const versionOptions = `
-   ${ config.versions.active.map(
-       (version) => `
-       <option
-           value="${ version.slug }"
-           ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
-           data-url="${ version.urls.documentation }">
-           ${ version.slug }
-       </option>`
-   ).join("\n") }
-   `;
+  const versionSelect = `
+    <select id="readthedocs-version-selector">
+      ${ config.versions.active.map(
+          (version) => `
+          <option
+              value="${ version.slug }"
+              ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
+              data-url="${ version.urls.documentation }">
+              ${ version.slug }
+          </option>`
+      ).join("\n") }
+    </select>
+  `;
 
-  // Prepend the current version to the options if it's hidden since it won't
-  // appear in the "config.versions.active" list
-  let currentHiddenVersion = "";
-  if (config.versions.current.hidden) {
-    currentHiddenVersion = `
-      <option
-           value="${ config.versions.current.slug }"
-           selected="selected"
-           data-url="${ config.versions.current.urls.documentation }">
-           ${ config.versions.current.slug }
-      </option>
-    `;
-  }
-
-  const versionSelect = document.querySelector("#readthedocs-version-selector");
-  versionSelect.addEventListener("change", onSelectorSwitch);
-  versionSelect.innerHTML = currentHiddenVersion + versionOptions;
+  dropdownSelectors.insertAdjacentHTML("beforeend", versionSelect);
+  const versionSelector = document.querySelector("#readthedocs-version-selector");
+  versionSelector.addEventListener("change", onSelectorSwitch);
+  versionSelector.innerHTML = versionSelect;
   {%- endif %}
 
 
@@ -176,21 +167,24 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
     let languages = config.projects.translations.concat(config.projects.current);
     languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
 
-    const languageOptions = `
-    ${ languages.map(
-        (language) => `
-          <option
-    value="${ language.language.code }"
-    ${ config.projects.current.slug === language.slug ? 'selected="selected"' : '' }
-    data-url="${ language.urls.documentation }">
-      ${ language.language.name }
-    </option>`
-    ).join("\n") }
+    const languageSelect= `
+      <select id="readthedocs-version-selector">
+        ${ languages.map(
+          (language) => `
+              <option
+                  value="${ language.language.code }"
+                  ${ config.projects.current.slug === language.slug ? 'selected="selected"' : '' }
+                  data-url="${ language.urls.documentation }">
+                  ${ language.language.name }
+              </option>`
+        ).join("\n") }
+       </select>
     `;
 
-    const languageSelect = document.querySelector("#readthedocs-language-selector");
-    languageSelect.addEventListener("change", onSelectorSwitch);
-    languageSelect.innerHTML = languageOptions;
+    dropdownSelectors.insertAdjacentHTML("beforeend", languageSelect);
+    const languageSelector = document.querySelector("#readthedocs-language-selector");
+    languageSelector.addEventListener("change", onSelectorSwitch);
+    languageSelector.innerHTML = languageSelect;
   }
   {%- endif %}
 });
