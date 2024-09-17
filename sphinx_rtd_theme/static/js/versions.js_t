@@ -127,7 +127,7 @@ function renderLanguages(config) {
 {%- endif %}
 
 
-{%- if theme_flyout_display == "selectors" %}
+{%- if theme_version_selector or theme_language_selector %}
 function onSelectorSwitch(event) {
      const option = event.target.selectedIndex;
      const item = event.target.options[option];
@@ -137,6 +137,7 @@ function onSelectorSwitch(event) {
 document.addEventListener("readthedocs-addons-data-ready", function(event) {
   const config = event.detail.data();
 
+  {%- if theme_version_selector %}
   const versionOptions = `
    ${ config.versions.active.map(
        (version) => `
@@ -163,6 +164,13 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
     `;
   }
 
+  const versionSelect = document.querySelector("#readthedocs-version-selector");
+  versionSelect.addEventListener("change", onSelectorSwitch);
+  versionSelect.innerHTML = currentHiddenVersion + versionOptions;
+  {%- endif %}
+
+
+  {%- if theme_language_selector %}
   // Add the current language to the options on the selector
   let languages = config.projects.translations.concat(config.projects.current);
   languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
@@ -171,21 +179,17 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
    ${ languages.map(
        (language) => `
         <option
-            value="${ language.language.code }"
-            ${ config.projects.current.slug === language.slug ? 'selected="selected"' : '' }
-            data-url="${ language.urls.documentation }">
-            ${ language.language.name }
-        </option>`
+  value="${ language.language.code }"
+  ${ config.projects.current.slug === language.slug ? 'selected="selected"' : '' }
+  data-url="${ language.urls.documentation }">
+    ${ language.language.name }
+  </option>`
    ).join("\n") }
    `;
-
-
-  const versionSelect = document.querySelector("#readthedocs-version-selector");
-  versionSelect.addEventListener("change", onSelectorSwitch);
-  versionSelect.innerHTML = currentHiddenVersion + versionOptions;
 
   const languageSelect = document.querySelector("#readthedocs-language-selector");
   languageSelect.addEventListener("change", onSelectorSwitch);
   languageSelect.innerHTML = languageOptions;
+  {%- endif %}
 });
 {%- endif %}
