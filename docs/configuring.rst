@@ -202,7 +202,7 @@ Miscellaneous options
 
     Display a version selector below the title.
     This feature makes usage of `Read the Docs Addons <https://docs.readthedocs.io/page/addons.html>`_ for this,
-    so it's required the documentation to be serverd on Read the Docs.
+    so it's required the documentation to be hosted on Read the Docs.
 
     :type: boolean
     :default: ``True``
