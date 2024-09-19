@@ -160,8 +160,6 @@ if (themeLanguageSelector || themeVersionSelector) {
       "div.switch-menus > div.language-switch",
     );
 
-    const dropdownSelectors = document.querySelector("div.dropdown-selectors");
-
     if (themeVersionSelector) {
       let versions = config.versions.active;
       if (config.versions.current.type === "external") {
@@ -184,7 +182,7 @@ if (themeLanguageSelector || themeVersionSelector) {
   `;
 
       versionSwitch.innerHTML = versionSelect;
-      versionSwitch.firstChild.addEventListener("change", onSelectorSwitch);
+      versionSwitch.firstElementChild.addEventListener("change", onSelectorSwitch);
     }
 
     if (themeLanguageSelector) {
@@ -214,7 +212,7 @@ if (themeLanguageSelector || themeVersionSelector) {
     `;
 
         languageSwitch.innerHTML = languageSelect;
-        languageSwitch.firstChild.addEventListener("change", onSelectorSwitch);
+        languageSwitch.firstElementChild.addEventListener("change", onSelectorSwitch);
       }
     }
   });
