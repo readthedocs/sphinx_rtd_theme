@@ -156,10 +156,6 @@ if (themeLanguageSelector || themeVersionSelector) {
     const versionSwitch = document.querySelector(
       "div.switch-menus > div.version-switch",
     );
-    const languageSwitch = document.querySelector(
-      "div.switch-menus > div.language-switch",
-    );
-
     if (themeVersionSelector) {
       let versions = config.versions.active;
       if (config.versions.current.type === "external") {
@@ -184,6 +180,10 @@ if (themeLanguageSelector || themeVersionSelector) {
       versionSwitch.innerHTML = versionSelect;
       versionSwitch.firstElementChild.addEventListener("change", onSelectorSwitch);
     }
+
+    const languageSwitch = document.querySelector(
+      "div.switch-menus > div.language-switch",
+    );
 
     if (themeLanguageSelector) {
       if (config.projects.translations.length) {
@@ -213,6 +213,9 @@ if (themeLanguageSelector || themeVersionSelector) {
 
         languageSwitch.innerHTML = languageSelect;
         languageSwitch.firstElementChild.addEventListener("change", onSelectorSwitch);
+      }
+      else {
+        languageSwitch.remove();
       }
     }
   });
