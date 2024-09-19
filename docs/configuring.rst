@@ -202,7 +202,7 @@ Miscellaneous options
     Display a version selector below the title.
     This feature makes usage of `Read the Docs Addons <https://docs.readthedocs.io/page/addons.html>`_ for this,
     so it's required the documentation to be hosted on Read the Docs.
-    It only appears when there are more than 1 active version. 
+    It only appears when there are more than 1 active version.
 
     :type: boolean
     :default: ``True``
@@ -212,7 +212,7 @@ Miscellaneous options
     Display a language selector below the title.
     This feature makes usage of `Read the Docs Addons <https://docs.readthedocs.io/page/addons.html>`_ for this,
     so it's required the documentation to be served on Read the Docs.
-    It only appears when there is more than 1 active language. 
+    It only appears when there is more than 1 active language.
 
     :type: boolean
     :default: ``True``
