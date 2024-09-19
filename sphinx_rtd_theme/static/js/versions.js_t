@@ -137,16 +137,23 @@ function onSelectorSwitch(event) {
 document.addEventListener("readthedocs-addons-data-ready", function(event) {
   const config = event.detail.data();
 
+  const versionSwitch = document.querySelector("div.switch-menus > div.version-switch");
+  const languageSwitch = document.querySelector("div.switch-menus > div.language-switch");
+
   const dropdownSelectors = document.querySelector("div.dropdown-selectors");
 
   {%- if theme_version_selector %}
+  let versions = config.versions.active;
+  if (config.versions.current.type === "external") {
+    versions.unshift(config.versions.current);
+  }
   const versionSelect = `
-    <select id="readthedocs-version-selector">
-      ${ config.versions.active.map(
+    <select>
+      ${ versions.map(
           (version) => `
-          <option
-              value="${ version.slug }"
-              ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
+        <option
+  value="${ version.slug }"
+  ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
               data-url="${ version.urls.documentation }">
               ${ version.slug }
           </option>`
@@ -154,10 +161,8 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
     </select>
   `;
 
-  dropdownSelectors.insertAdjacentHTML("beforeend", versionSelect);
-  const versionSelector = document.querySelector("#readthedocs-version-selector");
-  versionSelector.addEventListener("change", onSelectorSwitch);
-  versionSelector.innerHTML = versionSelect;
+  versionSwitch.innerHTML = versionSelect;
+  versionSwitch.firstChild.addEventListener("change", onSelectorSwitch);
   {%- endif %}
 
 
@@ -168,7 +173,7 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
     languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
 
     const languageSelect= `
-      <select id="readthedocs-version-selector">
+      <select>
         ${ languages.map(
           (language) => `
               <option
@@ -181,10 +186,8 @@ document.addEventListener("readthedocs-addons-data-ready", function(event) {
        </select>
     `;
 
-    dropdownSelectors.insertAdjacentHTML("beforeend", languageSelect);
-    const languageSelector = document.querySelector("#readthedocs-language-selector");
-    languageSelector.addEventListener("change", onSelectorSwitch);
-    languageSelector.innerHTML = languageSelect;
+    languageSwitch.innerHTML = languageSelect;
+    languageSwitch.firstChild.addEventListener("change", onSelectorSwitch);
   }
   {%- endif %}
 });
