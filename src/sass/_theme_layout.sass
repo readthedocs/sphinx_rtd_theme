@@ -230,19 +230,17 @@ html
     &.icon
       img.logo
         margin-top: 0.85em  // space it away from the title text
-  > div.version
+  > div.switch-menus
+    position: relative
+    display: inline-block
     margin-top: -1 * $gutter / 4
     margin-bottom: $gutter / 2
     font-weight: normal
     color: rgba(255, 255,255, 0.3)
-  > div.switch-menus
-    margin-top: -1 * $gutter / 4
-    margin-bottom: $gutter / 2
-    font-weight: normal
-    color: rgba(255, 255, 255, 0.3)
     > div.version-switch, > div.language-switch
       select
         max-width: 10em
+        padding: .1em 1.5em .1em .5em
         text-align-last: center
         background: none
         border: none
