@@ -239,12 +239,15 @@ html
     font-weight: normal
     color: rgba(255, 255,255, 0.3)
     > div.version-switch, > div.language-switch
+      display: inline-block
       padding: .2em
       select
+        // Provide room for dropdown icon
         display: inline-block
-        min-width: 10em
-        max-width: 10em
-        padding: .1em 1.5em .1em .5em
+        margin-right: -2rem
+        padding-right: 2rem
+        max-width: $nav-desktop-width * .8
+        // Alter base select styles
         text-align-last: center
         background: none
         border: none
@@ -254,6 +257,7 @@ html
         font-size: 1em
         font-weight: normal
         color: rgba(255, 255, 255, .3)
+        cursor: pointer
         // Allow for padding
         appearance: none
         -webkit-appearance: none
@@ -261,17 +265,16 @@ html
         &:hover, &:active, &:focus
           background: rgba(255, 255, 255, .1)
           color: rgba(255, 255, 255, .5)
-      &:after
+      &:has(> select):after
+        display: inline-block
+        width: 1.5em
+        height: 100%
+        padding: .1em
         content: "\f0d7"
         font-size: 1em
         line-height: 1.2em
         font-family: FontAwesome
         text-align: center
-        width: 1.5em
-        height: 100%
-        padding: .1em
-        position: absolute
-        right: 3.5em
         pointer-events: none
         box-sizing: border-box
 
