@@ -16,12 +16,13 @@ For example:
         'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
         'analytics_anonymize_ip': False,
         'logo_only': False,
-        'display_version': True,
         'prev_next_buttons_location': 'bottom',
         'style_external_links': False,
         'vcs_pageview_mode': '',
         'style_nav_header_background': 'white',
         'flyout_display': 'hidden',
+        'version_selector': True,
+        'language_selector': True,
         # Toc options
         'collapse_navigation': True,
         'sticky_navigation': True,
@@ -139,7 +140,11 @@ Miscellaneous options
     If ``True``, the version number is shown at the top of the sidebar.
 
     :type: boolean
-    :default: ``True``
+    :default: ``False``
+
+    .. deprecated:: 3.0.0
+
+       Removed in favor of ``version_selector`` and ``language_selector``.
 
 .. confval:: logo_only
 
@@ -191,6 +196,26 @@ Miscellaneous options
 
     :type: str
     :default: ``hidden``
+
+.. confval:: version_selector
+
+    Display a version selector below the title.
+    This feature makes usage of `Read the Docs Addons <https://docs.readthedocs.io/page/addons.html>`_ for this,
+    so it's required the documentation to be hosted on Read the Docs.
+    It only appears when there are more than 1 active version.
+
+    :type: boolean
+    :default: ``True``
+
+.. confval:: language_selector
+
+    Display a language selector below the title.
+    This feature makes usage of `Read the Docs Addons <https://docs.readthedocs.io/page/addons.html>`_ for this,
+    so it's required the documentation to be served on Read the Docs.
+    It only appears when there is more than 1 active language.
+
+    :type: boolean
+    :default: ``True``
 
 
 File-wide metadata

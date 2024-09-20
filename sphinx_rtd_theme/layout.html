@@ -67,7 +67,7 @@
     {%- endfor %}
     <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
-    {%- if READTHEDOCS and theme_flyout_display != "hidden" %}
+    {%- if READTHEDOCS or DEBUG %}
     <script src="{{ pathto('_static/js/versions.js', 1) }}"></script>
     {%- endif %}
 
@@ -124,14 +124,11 @@
             {%- endif %}
           </a>
 
-          {%- if theme_display_version %}
-            {%- set nav_version = version %}
-            {%- if READTHEDOCS and current_version %}
-              {%- set nav_version = current_version %}
-            {%- endif %}
-            {%- if nav_version %}
-              <div class="version">
-                {{ nav_version }}
+          {%- if READTHEDOCS or DEBUG %}
+            {%- if theme_version_selector or theme_language_selector %}
+              <div class="switch-menus">
+                <div class="version-switch"></div>
+                <div class="language-switch"></div>
               </div>
             {%- endif %}
           {%- endif %}
