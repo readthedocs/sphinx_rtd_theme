@@ -67,7 +67,7 @@
     {%- endfor %}
     <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
-    {%- if READTHEDOCS %}
+    {%- if READTHEDOCS or DEBUG %}
     <script src="{{ pathto('_static/js/versions.js', 1) }}"></script>
     {%- endif %}
 
@@ -124,7 +124,7 @@
             {%- endif %}
           </a>
 
-          {%- if READTHEDOCS %}
+          {%- if READTHEDOCS or DEBUG %}
             {%- if theme_version_selector or theme_language_selector %}
             <div class="switch-menus">
               <div class="version-switch"></div>
