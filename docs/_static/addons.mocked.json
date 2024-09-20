@@ -1,0 +1,369 @@
+{
+    "addons": {
+        "analytics": {
+            "code": null,
+            "enabled": true
+        },
+        "ethicalads": {
+            "ad_free": false,
+            "campaign_types": [
+                "community",
+                "house",
+                "paid"
+            ],
+            "enabled": true,
+            "keywords": [
+                "only words"
+            ],
+            "publisher": "readthedocs"
+        },
+        "external_version_warning": {
+            "enabled": true
+        },
+        "flyout": {
+            "enabled": true
+        },
+        "hotkeys": {
+            "doc_diff": {
+                "enabled": true,
+                "trigger": "KeyD"
+            },
+            "enabled": true,
+            "search": {
+                "enabled": true,
+                "trigger": "Slash"
+            }
+        },
+        "non_latest_version_warning": {
+            "enabled": true
+        },
+        "search": {
+            "default_filter": "project:sphinx-rtd-theme/stable",
+            "enabled": true,
+            "filters": [
+                [
+                    "Include subprojects",
+                    "subprojects:sphinx-rtd-theme/stable"
+                ]
+            ]
+        }
+    },
+    "api_version": "1",
+    "builds": {
+        "current": {
+            "commit": "7c9b1b5d391f6d7fae72274393eb25d1df96e546",
+            "created": "2023-11-28T04:14:06.510677Z",
+            "duration": 42,
+            "error": "",
+            "finished": "2023-11-28T04:14:48.510Z",
+            "id": 22677856,
+            "project": "sphinx-rtd-theme",
+            "state": {
+                "code": "finished",
+                "name": "Finished"
+            },
+            "success": true,
+            "urls": {
+                "build": "https://readthedocs.org/projects/sphinx-rtd-theme/builds/22677856/",
+                "project": "https://readthedocs.org/projects/sphinx-rtd-theme/",
+                "version": "https://readthedocs.org/projects/sphinx-rtd-theme/version/stable/edit/"
+            },
+            "version": "stable"
+        }
+    },
+    "domains": {
+        "dashboard": "readthedocs.org"
+    },
+    "projects": {
+        "current": {
+            "created": "2017-12-21T04:04:42.561793Z",
+            "default_branch": "master",
+            "default_version": "stable",
+            "external_builds_privacy_level": "public",
+            "homepage": null,
+            "id": 170010,
+            "language": {
+                "code": "en",
+                "name": "English"
+            },
+            "modified": "2021-03-16T17:13:52.465051Z",
+            "name": "sphinx_rtd_theme",
+            "privacy_level": "public",
+            "programming_language": {
+                "code": "words",
+                "name": "Only Words"
+            },
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/readthedocs/sphinx_rtd_theme"
+            },
+            "single_version": false,
+            "slug": "sphinx-rtd-theme",
+            "subproject_of": null,
+            "tags": [],
+            "translation_of": null,
+            "urls": {
+                "builds": "https://readthedocs.org/projects/sphinx-rtd-theme/builds/",
+                "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/stable/",
+                "downloads": "https://readthedocs.org/projects/sphinx-rtd-theme/downloads/",
+                "home": "https://readthedocs.org/projects/sphinx-rtd-theme/",
+                "versions": "https://readthedocs.org/projects/sphinx-rtd-theme/versions/"
+            },
+            "users": [
+                {
+                    "username": "eric"
+                },
+                {
+                    "username": "humitos"
+                },
+                {
+                    "username": "agj"
+                }
+            ],
+            "versioning_scheme": "multiple_versions_with_translations"
+        },
+        "translations": []
+    },
+    "readthedocs": {
+        "analytics": {
+            "code": null
+        }
+    },
+    "versions": {
+        "active": [
+            {
+                "active": true,
+                "aliases": [],
+                "built": true,
+                "downloads": {},
+                "hidden": false,
+                "id": 6692534,
+                "identifier": "b07560bf97dad3a4266f6145bd4b662ac708ab00",
+                "privacy_level": "public",
+                "ref": null,
+                "slug": "0.5.2",
+                "type": "tag",
+                "urls": {
+                    "dashboard": {
+                        "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/0.5.2/edit/"
+                    },
+                    "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/0.5.2/",
+                    "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/0.5.2/"
+                },
+                "verbose_name": "0.5.2"
+            },
+            {
+                "active": true,
+                "aliases": [],
+                "built": true,
+                "downloads": {},
+                "hidden": false,
+                "id": 7273098,
+                "identifier": "c9b1bde560d8ee31400e4e4f92f2e8d7a42265ce",
+                "privacy_level": "public",
+                "ref": null,
+                "slug": "1.0.0",
+                "type": "tag",
+                "urls": {
+                    "dashboard": {
+                        "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/1.0.0/edit/"
+                    },
+                    "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/1.0.0/",
+                    "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/1.0.0/"
+                },
+                "verbose_name": "1.0.0"
+            },
+            {
+                "active": true,
+                "aliases": [],
+                "built": true,
+                "downloads": {},
+                "hidden": false,
+                "id": 10496721,
+                "identifier": "f854c890e1445b99a43ac5f10463a5df83739a2e",
+                "privacy_level": "public",
+                "ref": null,
+                "slug": "1.1.1",
+                "type": "tag",
+                "urls": {
+                    "dashboard": {
+                        "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/1.1.1/edit/"
+                    },
+                    "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/1.1.1/",
+                    "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/1.1.1/"
+                },
+                "verbose_name": "1.1.1"
+            },
+            {
+                "active": true,
+                "aliases": [],
+                "built": true,
+                "downloads": {},
+                "hidden": false,
+                "id": 16340532,
+                "identifier": "9899ee4ee2f547f81e51297dc12317f018e62fdd",
+                "privacy_level": "public",
+                "ref": null,
+                "slug": "1.2.2",
+                "type": "tag",
+                "urls": {
+                    "dashboard": {
+                        "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/1.2.2/edit/"
+                    },
+                    "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/1.2.2/",
+                    "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/1.2.2/"
+                },
+                "verbose_name": "1.2.2"
+            },
+            {
+                "active": true,
+                "aliases": [],
+                "built": true,
+                "downloads": {},
+                "hidden": false,
+                "id": 17681643,
+                "identifier": "15ed4de08de55f7066ff4f2ac39883a397db30d3",
+                "privacy_level": "public",
+                "ref": null,
+                "slug": "1.3.0",
+                "type": "tag",
+                "urls": {
+                    "dashboard": {
+                        "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/1.3.0/edit/"
+                    },
+                    "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/1.3.0/",
+                    "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/1.3.0/"
+                },
+                "verbose_name": "1.3.0"
+            },
+            {
+                "active": true,
+                "aliases": [],
+                "built": true,
+                "downloads": {},
+                "hidden": false,
+                "id": 18862205,
+                "identifier": "7c9b1b5d391f6d7fae72274393eb25d1df96e546",
+                "privacy_level": "public",
+                "ref": null,
+                "slug": "2.0.0",
+                "type": "tag",
+                "urls": {
+                    "dashboard": {
+                        "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/2.0.0/edit/"
+                    },
+                    "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/2.0.0/",
+                    "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/2.0.0/"
+                },
+                "verbose_name": "2.0.0"
+            },
+            {
+                "active": true,
+                "aliases": [
+                    {
+                        "active": true,
+                        "aliases": [],
+                        "built": true,
+                        "downloads": {},
+                        "hidden": false,
+                        "id": 18862205,
+                        "identifier": "7c9b1b5d391f6d7fae72274393eb25d1df96e546",
+                        "privacy_level": "public",
+                        "ref": null,
+                        "slug": "2.0.0",
+                        "type": "tag",
+                        "urls": {
+                            "dashboard": {
+                                "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/2.0.0/edit/"
+                            },
+                            "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/2.0.0/",
+                            "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/2.0.0/"
+                        },
+                        "verbose_name": "2.0.0"
+                    }
+                ],
+                "built": true,
+                "downloads": {},
+                "hidden": false,
+                "id": 3271725,
+                "identifier": "7c9b1b5d391f6d7fae72274393eb25d1df96e546",
+                "privacy_level": "public",
+                "ref": "2.0.0",
+                "slug": "stable",
+                "type": "tag",
+                "urls": {
+                    "dashboard": {
+                        "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/stable/edit/"
+                    },
+                    "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/stable/",
+                    "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/2.0.0/"
+                },
+                "verbose_name": "stable"
+            },
+            {
+                "active": true,
+                "aliases": [],
+                "built": true,
+                "downloads": {},
+                "hidden": false,
+                "id": 3271688,
+                "identifier": "master",
+                "privacy_level": "public",
+                "ref": null,
+                "slug": "latest",
+                "type": "branch",
+                "urls": {
+                    "dashboard": {
+                        "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/latest/edit/"
+                    },
+                    "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/latest/",
+                    "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/master/"
+                },
+                "verbose_name": "latest"
+            }
+        ],
+        "current": {
+            "active": true,
+            "aliases": [
+                {
+                    "active": true,
+                    "aliases": [],
+                    "built": true,
+                    "downloads": {},
+                    "hidden": false,
+                    "id": 18862205,
+                    "identifier": "7c9b1b5d391f6d7fae72274393eb25d1df96e546",
+                    "privacy_level": "public",
+                    "ref": null,
+                    "slug": "2.0.0",
+                    "type": "tag",
+                    "urls": {
+                        "dashboard": {
+                            "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/2.0.0/edit/"
+                        },
+                        "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/2.0.0/",
+                        "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/2.0.0/"
+                    },
+                    "verbose_name": "2.0.0"
+                }
+            ],
+            "built": true,
+            "downloads": {},
+            "hidden": false,
+            "id": 3271725,
+            "identifier": "7c9b1b5d391f6d7fae72274393eb25d1df96e546",
+            "privacy_level": "public",
+            "ref": "2.0.0",
+            "slug": "stable",
+            "type": "tag",
+            "urls": {
+                "dashboard": {
+                    "edit": "https://readthedocs.org/projects/sphinx-rtd-theme/version/stable/edit/"
+                },
+                "documentation": "https://sphinx-rtd-theme.readthedocs.io/en/stable/",
+                "vcs": "https://github.com/readthedocs/sphinx_rtd_theme/tree/2.0.0/"
+            },
+            "verbose_name": "stable"
+        }
+    }
+}
