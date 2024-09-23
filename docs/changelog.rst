@@ -4,9 +4,19 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 3.0.0rc1
+.. |theme_version| replace:: 3.0.0rc2
 
 .. _release-3.0.0rc1:
+
+3.0.0rc2
+========
+
+Added
+-----
+
+* Render version and language selectors below the documentation's title (top left).
+  This can be controlled via the new theme options ``version_selector`` and ``language_selector``.
+
 
 3.0.0rc1
 ========
