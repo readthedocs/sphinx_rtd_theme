@@ -158,7 +158,7 @@ if (themeLanguageSelector || themeVersionSelector) {
     );
     if (themeVersionSelector) {
       let versions = config.versions.active;
-      if (config.versions.current.type === "external") {
+      if (config.versions.current.hidden || config.versions.current.type === "external") {
         versions.unshift(config.versions.current);
       }
       const versionSelect = `
