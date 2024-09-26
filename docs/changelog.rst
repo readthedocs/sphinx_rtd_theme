@@ -4,9 +4,18 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 3.0.0rc2
+.. |theme_version| replace:: 3.0.0rc3
 
 .. _release-3.0.0rc1:
+
+3.0.0rc3
+========
+
+Fixes
+-----
+
+* Show hidden version in selector if it's the current active version
+
 
 3.0.0rc2
 ========
