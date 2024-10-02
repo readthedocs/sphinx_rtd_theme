@@ -4,9 +4,18 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 3.0.0rc3
+.. |theme_version| replace:: 3.0.0rc4
 
 .. _release-3.0.0rc1:
+
+3.0.0rc4
+========
+
+Fixes
+-----
+
+* Trigger "Read the Docs Search addon" when focusing the "Search docs" input in the navbar.
+
 
 3.0.0rc3
 ========
