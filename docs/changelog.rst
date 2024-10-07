@@ -4,9 +4,16 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 3.0.0rc4
+.. |theme_version| replace:: 3.0.0
 
-.. _release-3.0.0rc1:
+.. _release-3.0.0:
+
+3.0.0
+=====
+
+Final version.
+
+.. _release-3.0.0rc4:
 
 3.0.0rc4
 ========
@@ -16,6 +23,7 @@ Fixes
 
 * Trigger "Read the Docs Search addon" when focusing the "Search docs" input in the navbar.
 
+.. _release-3.0.0rc3:
 
 3.0.0rc3
 ========
@@ -25,6 +33,7 @@ Fixes
 
 * Show hidden version in selector if it's the current active version
 
+.. _release-3.0.0rc2:
 
 3.0.0rc2
 ========
@@ -35,6 +44,7 @@ Added
 * Render version and language selectors below the documentation's title (top left).
   This can be controlled via the new theme options ``version_selector`` and ``language_selector``.
 
+.. _release-3.0.0rc1:
 
 3.0.0rc1
 ========
