@@ -57,6 +57,10 @@
     {% trans %}provided by {{ readthedocs_web }}{% endtrans %}.
   {% endif %}
 
+  {% if READTHEDOCS %}
+    Hosted on <a href="https://about.readthedocs.com/">Read the Docs</a>.
+  {% endif %}
+
   {%- block extrafooter %} {% endblock %}
 
 </footer>
