@@ -4,7 +4,14 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 3.0.0
+.. |theme_version| replace:: 3.0.1
+
+.. _release-3.0.1:
+
+3.0.1
+=====
+
+* Use black color for text in selectors.
 
 .. _release-3.0.0:
 
