@@ -1,6 +1,6 @@
 const themeFlyoutDisplay = "{{ theme_flyout_display }}";
-const themeVersionSelector = "{{ theme_version_selector }}";
-const themeLanguageSelector = "{{ theme_language_selector }}";
+const themeVersionSelector = {{ 'true' if theme_version_selector|tobool else 'false' }};
+const themeLanguageSelector = {{ 'true' if theme_language_selector|tobool else 'false' }};
 
 if (themeFlyoutDisplay === "attached") {
   function renderLanguages(config) {
