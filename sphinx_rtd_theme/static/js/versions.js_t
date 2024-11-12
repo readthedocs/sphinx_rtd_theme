@@ -8,7 +8,7 @@ if (themeFlyoutDisplay === "attached") {
       return "";
     }
 
-    // Prepend the current language to the options on the selector
+    // Insert the current language to the options on the selector
     let languages = config.projects.translations.concat(config.projects.current);
     languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
 
