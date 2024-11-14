@@ -396,9 +396,12 @@ footer
     color: $footer-color
 
 .rst-footer-buttons
-  &:before, &:after
-    width: 100%
-  +clearfix
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-direction: row
+  flex-direction: row
+  -ms-flex-pack: space-between
+  justify-content: space-between
 
 .rst-breadcrumbs-buttons
   margin-top: 12px
