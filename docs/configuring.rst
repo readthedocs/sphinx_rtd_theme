@@ -263,7 +263,7 @@ To generate dynamic URLs, there exists a set of other options.
         # 'github_host': 'github.com',
         'github_user': 'readthedocs',
         'github_repo': 'sphinx_rtd_theme',
-        'github_version': 'master/'
+        'github_version': 'master/docs/'
     }
 
 
