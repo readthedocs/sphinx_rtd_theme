@@ -4,7 +4,15 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 3.0.1
+.. |theme_version| replace:: 3.0.2
+
+.. _release-3.0.2:
+
+3.0.2
+=====
+
+* Show current translation when the flyout is attached
+* Fix JavaScript issue that didn't allow users to disable selectors
 
 .. _release-3.0.1:
 
