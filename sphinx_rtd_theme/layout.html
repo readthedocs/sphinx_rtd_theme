@@ -156,8 +156,10 @@
         </div>
         {%- endblock %}
       </div>
-    {%- block extranavigation %}
-    {%- endblock %}
+
+      {%- if READTHEDOCS and theme_flyout_display == "attached" %}
+      <readthedocs-flyout position="inline"></readthedocs-flyout>
+      {%- endif %}
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
