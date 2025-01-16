@@ -156,6 +156,8 @@
         </div>
         {%- endblock %}
       </div>
+    {%- block extranavigation %}
+    {%- enblock %}
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -168,8 +170,6 @@
           <a href="{{ pathto(master_doc) }}">{{ project }}</a>
         {%- endblock %}
 
-        {%- block extra_nav %}
-        {%- endblock %}
       </nav>
 
       <div class="wy-nav-content">
