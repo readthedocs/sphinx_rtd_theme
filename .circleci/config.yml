@@ -94,6 +94,9 @@ workflows:
   tests:
     jobs:
       - build
+      - py313:
+          requires:
+            - build
       - py312:
           requires:
             - build
