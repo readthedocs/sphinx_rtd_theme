@@ -64,7 +64,7 @@ jobs:
     steps:
       - run-tox:
           version: py310
-          sphinx-version: "60,61,62,70,71,72,73,74,80,81,82,latest,dev"
+          sphinx-version: "60,61,62,70,71,72,73,74,80"
   py311:
     docker:
       - image: 'cimg/python:3.11'
