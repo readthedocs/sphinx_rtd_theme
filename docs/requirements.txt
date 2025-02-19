@@ -1,1 +1,1 @@
-sphinx==8.2.0rc1
+sphinx~=8.0
