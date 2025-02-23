@@ -20,7 +20,7 @@ For example:
         'style_external_links': False,
         'vcs_pageview_mode': '',
         'style_nav_header_background': 'white',
-        'flyout_display': 'hidden',
+        'flyout_display': 'attached',
         'version_selector': True,
         'language_selector': True,
         # Toc options
@@ -192,10 +192,9 @@ Miscellaneous options
     Specify how to display the flyout (language and version selector).
     This can be either ``attached`` or ``hidden``.
     ``attached`` means that it will show the flyout in the bottom of the sidebar.
-    You will need to disable the default `Read the Docs flyout <https://docs.readthedocs.io/en/stable/flyout-menu.html>`_ in order to not have 2 flyouts showing.
 
     :type: str
-    :default: ``hidden``
+    :default: ``attached``
 
 .. confval:: version_selector
 
