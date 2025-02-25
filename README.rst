@@ -51,7 +51,7 @@ your ``conf.py`` file's ``html_theme`` setting:
     `Example documentation`_
         A full example of this theme output, with localized strings enabled.
 
-.. _PyPI: https://pypi.python.org/pypi/sphinx_rtd_theme
+.. _PyPO: https://pypi.python.org/pypi/sphinx_rtd_theme
 .. _Supported browsers: https://sphinx-rtd-theme.readthedocs.io/en/stable/development.html#supported-browsers
 .. _Supported dependencies: https://sphinx-rtd-theme.readthedocs.io/en/stable/development.html#supported-dependencies
 .. _Example documentation:  https://sphinx-rtd-theme.readthedocs.io/en/stable/
