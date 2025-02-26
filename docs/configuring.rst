@@ -221,8 +221,26 @@ Miscellaneous options
 File-wide metadata
 ==================
 
-The following options can be used as :ref:`file-wide metadata
-<sphinx:metadata>`:
+The following features are confugured per file in :ref:`file-wide metadata
+<sphinx:metadata>`, but they could also be set for all files using
+:ref:`html_context <spinx:html_context>` setting.
+
+Enable "Edit on ..." links
+--------------------------
+
+To enable "Edit on GitHub" link, you can add ``github_url`` option to the
+metadata of specific page, or use ``html_context`` to make this option set
+for all pages.
+
+For example:
+
+.. code:: python
+
+    html_context = {
+        'github_url': 'https://github.com/readthedocs/sphinx_rtd_theme'
+    }
+
+Note that such URLs are static.
 
 .. confval:: github_url
 
@@ -235,6 +253,19 @@ The following options can be used as :ref:`file-wide metadata
 .. confval:: gitlab_url
 
     Force the :guilabel:`Edit on GitLab` button to use the configured URL.
+
+To generate dynamic URLs, there exists a set of other options.
+
+.. code:: python
+
+    html_context = {
+        'display_github': True,
+        # 'github_host': 'github.com',
+        'github_user': 'readthedocs',
+        'github_repo': 'sphinx_rtd_theme',
+        'github_version': 'master/docs/'
+    }
+
 
 Other configuration
 ===================
