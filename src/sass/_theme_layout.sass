@@ -217,7 +217,7 @@ html
     padding: ($base-line-height / 6) ($base-line-height / 4)
     margin-bottom: $gutter / 2
     max-width: 100%
-    &:hover
+    &:hover, &active, &focus
       background: rgba(255, 255, 255, 0.1)
     img.logo
       display: block  // display on its own line all the time
@@ -228,13 +228,57 @@ html
       max-width: 100%  // shrink on mobile, if appropriate
       background: rgba(0, 0, 0, 0)  // make hover background of parent show up properly
     &.icon
+      display: block
       img.logo
         margin-top: 0.85em  // space it away from the title text
-  > div.version
+  > div.switch-menus
+    position: relative
+    display: block
     margin-top: -1 * $gutter / 4
     margin-bottom: $gutter / 2
     font-weight: normal
-    color: rgba(255, 255, 255, 0.3)
+    color: rgba(255, 255,255, 0.3)
+    > div.version-switch, > div.language-switch
+      display: inline-block
+      padding: .2em
+      select
+        // Provide room for dropdown icon
+        display: inline-block
+        margin-right: -2rem
+        padding-right: 2rem
+        max-width: $nav-desktop-width * .8
+        // Alter base select styles
+        text-align-last: center
+        background: none
+        border: none
+        border-radius: 0em
+        box-shadow: none
+        font-family: $base-font-family
+        font-size: 1em
+        font-weight: normal
+        color: rgba(255, 255, 255, .3)
+        cursor: pointer
+        // Allow for padding
+        appearance: none
+        -webkit-appearance: none
+        -moz-appearance: none
+        &:hover, &:active, &:focus
+          background: rgba(255, 255, 255, .1)
+          color: rgba(255, 255, 255, .5)
+        option
+          color: black
+      &:has(> select):after
+        display: inline-block
+        width: 1.5em
+        height: 100%
+        padding: .1em
+        content: "\f0d7"
+        font-size: 1em
+        line-height: 1.2em
+        font-family: FontAwesome
+        text-align: center
+        pointer-events: none
+        box-sizing: border-box
 
 .wy-nav .wy-menu-vertical
   header

@@ -86,7 +86,8 @@ class TransifexCommand(distutils.cmd.Command):
 
 
 setup(
-    version='1.0.1alpha1',
+    version='3.0.2',
+
     cmdclass={
         'update_translations': UpdateTranslationsCommand,
         'transifex': TransifexCommand,

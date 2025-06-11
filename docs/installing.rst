@@ -31,15 +31,13 @@ In your Sphinx project's ``conf.py`` file, add ``sphinx_rtd_theme`` to the list 
 
 .. note::
 
-   Adding this theme as an extension is what enables localization of theme
-   strings in your translated output. If these strings are not translated in
-   your output, either we lack the localized strings for your locale, or you
-   are using an old version of the theme.
+   Adding this theme as an extension activates the ``sphinxcontrib-jquery`` extension,
+   which is required for search, smooth scrolling, and the flyout menu.
+   If any of these features don't work, make sure you have the theme declared in your ``extensions``.
 
-   ..
-      comment about this note: it's possibly not necessary to add the theme as an extension.
-      Rather, this is an issue caused by setting html_theme_path.
-      See: https://github.com/readthedocs/readthedocs.org/pull/9654
+   .. More context for this note:
+        * https://github.com/readthedocs/sphinx_rtd_theme/issues/1434#issuecomment-2288359582
+        * https://github.com/readthedocs/sphinx_rtd_theme/issues/1222#issuecomment-2296703160
 
 
 .. _howto_upgrade:
@@ -58,21 +56,3 @@ Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-rtd-theme==1.
     
     More information is available in Read the Docs' documentation on :doc:`rtd:guides/reproducible-builds`.
 
-
-Via Git or Download
--------------------
-
-.. warning::
-
-   Installing directly from the repository source is deprecated and is not
-   recommended. Static assets won't be included in the repository starting in
-   release :ref:`roadmap-release-3.0.0`.
-
-Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
-``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
-``conf.py`` file:
-
-.. code:: python
-
-    html_theme = "sphinx_rtd_theme"
-    html_theme_path = ["_themes", ]
