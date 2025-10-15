@@ -91,7 +91,7 @@ jobs:
 
   py314:
     docker:
-      - image: 'cimg/python:3.14'
+      - image: 'cimg/python:3.14' 
     steps:
       - run-tox:
           version: py314
