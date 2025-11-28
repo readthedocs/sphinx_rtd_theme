@@ -165,7 +165,7 @@ if (themeLanguageSelector || themeVersionSelector) {
         <option
   value="${version.slug}"
   ${config.versions.current.slug === version.slug ? 'selected="selected"' : ""}
-              data-url="${version.urls.documentation}">
+              data-url="${window.location.pathname.replace(config.versions.current.slug, version.slug)}">
               ${version.slug}
           </option>`,
         )
