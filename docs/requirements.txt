@@ -1,1 +1,1 @@
-sphinx~=8.0
+sphinx~=9.0
