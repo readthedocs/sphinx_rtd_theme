@@ -156,6 +156,12 @@
         </div>
         {%- endblock %}
       </div>
+
+      {%- if READTHEDOCS and theme_flyout_display == "attached" %}
+      <div class="readthedocs-flyout-container">
+        <readthedocs-flyout position="up inline"></readthedocs-flyout>
+      </div>
+      {%- endif %}
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -167,6 +173,7 @@
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="{{ pathto(master_doc) }}">{{ project }}</a>
         {%- endblock %}
+
       </nav>
 
       <div class="wy-nav-content">
