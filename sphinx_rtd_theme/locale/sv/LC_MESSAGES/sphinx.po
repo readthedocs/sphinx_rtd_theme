@@ -3,36 +3,38 @@
 # This file is distributed under the same license as the sphinx_rtd_theme
 # project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-# 
+#
 # Translators:
 # Daniel Holmberg <daniel.holmberg97@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: sphinx_rtd_theme 0.4.3.dev0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2023-02-06 15:36+0100\n"
-"PO-Revision-Date: 2019-07-16 21:44+0000\n"
-"Last-Translator: Daniel Holmberg <daniel.holmberg97@gmail.com>, 2020\n"
-"Language-Team: Swedish (https://www.transifex.com/readthedocs/teams/101354/sv/)\n"
+"PO-Revision-Date: 2025-08-26 14:01+0200\n"
+"Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
+"Language-Team: Swedish (https://www.transifex.com/readthedocs/teams/101354/"
+"sv/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.11.0\n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.11.0\n"
+"X-Generator: Poedit 3.7\n"
 
 #: sphinx_rtd_theme/breadcrumbs.html:37 sphinx_rtd_theme/breadcrumbs.html:39
 msgid "Edit on GitHub"
-msgstr "Editera på GitHub"
+msgstr "Redigera på GitHub"
 
 #: sphinx_rtd_theme/breadcrumbs.html:44 sphinx_rtd_theme/breadcrumbs.html:46
 msgid "Edit on Bitbucket"
-msgstr "Editera på Bitbucket"
+msgstr "Redigera på Bitbucket"
 
 #: sphinx_rtd_theme/breadcrumbs.html:51 sphinx_rtd_theme/breadcrumbs.html:53
 msgid "Edit on GitLab"
-msgstr "Editera på GitLab"
+msgstr "Redigera på GitLab"
 
 #: sphinx_rtd_theme/breadcrumbs.html:56 sphinx_rtd_theme/breadcrumbs.html:58
 msgid "View page source"
@@ -40,7 +42,7 @@ msgstr "Visa sidkälla"
 
 #: sphinx_rtd_theme/breadcrumbs.html:69 sphinx_rtd_theme/footer.html:6
 msgid "Previous"
-msgstr "Tillbaka"
+msgstr "Föregående"
 
 #: sphinx_rtd_theme/breadcrumbs.html:72 sphinx_rtd_theme/footer.html:9
 msgid "Next"
@@ -49,12 +51,12 @@ msgstr "Nästa"
 #. Build is a noun, not a verb
 #: sphinx_rtd_theme/footer.html:30
 msgid "Build"
-msgstr "Bygg"
+msgstr "Version"
 
 #. the phrase "revision" comes from Git, referring to a commit
 #: sphinx_rtd_theme/footer.html:36
 msgid "Revision"
-msgstr "Ändra"
+msgstr "Revision"
 
 #: sphinx_rtd_theme/footer.html:41
 #, python-format
@@ -67,7 +69,7 @@ msgstr "Senast uppdaterad %(last_updated)s."
 #: sphinx_rtd_theme/footer.html:53
 #, python-format
 msgid "Built with %(sphinx_web)s using a"
-msgstr "Gjord med %(sphinx_web)s med hjälp av"
+msgstr "Byggd med %(sphinx_web)s med hjälp av"
 
 #. "theme" refers to a theme for Sphinx, which alters the appearance of the
 #. generated documentation
@@ -80,7 +82,7 @@ msgstr "tema"
 #: sphinx_rtd_theme/footer.html:57
 #, python-format
 msgid "provided by %(readthedocs_web)s"
-msgstr "erhållet av %(readthedocs_web)s"
+msgstr "tillhandahålls av %(readthedocs_web)s"
 
 #: sphinx_rtd_theme/layout.html:97
 #, python-format
@@ -105,12 +107,11 @@ msgstr "Upphovsrätt"
 
 #: sphinx_rtd_theme/layout.html:143
 msgid "Logo"
-msgstr "Logo"
+msgstr "Logotyp"
 
 #: sphinx_rtd_theme/search.html:31
 msgid "Please activate JavaScript to enable the search functionality."
-msgstr ""
-"Var vänlig och aktivera JavaScript för att möjliggöra sökfunktionaliteten."
+msgstr "Aktivera JavaScript för att aktivera sökfunktionen."
 
 #. Search is a noun, not a verb
 #: sphinx_rtd_theme/search.html:39
@@ -119,10 +120,10 @@ msgstr "Sökresultat"
 
 #: sphinx_rtd_theme/search.html:41
 msgid ""
-"Your search did not match any documents. Please make sure that all words are"
-" spelled correctly and that you've selected enough categories."
+"Your search did not match any documents. Please make sure that all words "
+"are spelled correctly and that you've selected enough categories."
 msgstr ""
-"Din sökning gav inga träffar. Var vänlig och se till att alla ord är rätt "
+"Din sökning gav inga träffar. Försäkra dig om att alla ord är korrekt "
 "stavade och att du har valt tillräckligt många kategorier."
 
 #: sphinx_rtd_theme/searchbox.html:4
@@ -144,7 +145,7 @@ msgstr "På Read the Docs"
 
 #: sphinx_rtd_theme/versions.html:26
 msgid "Project Home"
-msgstr "Projekt Hem"
+msgstr "Projektets hem"
 
 #: sphinx_rtd_theme/versions.html:29
 msgid "Builds"
