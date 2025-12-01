@@ -89,11 +89,22 @@ jobs:
           version: py313
           sphinx-version: "72,73,74,80,81,82,latest,dev"
 
+  py314:
+    docker:
+      - image: 'cimg/python:3.14'
+    steps:
+      - run-tox:
+          version: py314
+          sphinx-version: "81,82,latest,dev"
+
 workflows:
   version: 2
   tests:
     jobs:
       - build
+      - py314:
+          requires:
+            - build
       - py313:
           requires:
             - build
