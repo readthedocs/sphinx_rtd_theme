@@ -71,7 +71,7 @@ jobs:
     steps:
       - run-tox:
           version: py311
-          sphinx-version: "72,73,74,80,81,82,90,latest,dev"
+          sphinx-version: "72,73,74,80,81,82,90,latest"
 
   py312:
     docker:
