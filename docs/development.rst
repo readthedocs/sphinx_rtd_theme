@@ -191,6 +191,8 @@ Internet Explorer 11 support will be dropped
     so we are not supporting it on newer versions,
     starting on 3.0.0.
 
+.. _roadmap-release-4.0.0:
+
 4.0.0
 ~~~~~
 
