@@ -63,9 +63,6 @@ The theme officially supports the following dependencies in your Sphinx project:
     * - docutils
       - > 0.18, < 0.22
 
-.. versionadded:: 3.1
-    Sphinx 9.0 support added
-
 .. deprecated:: 3.0
     Sphinx < 6 support removed
 
@@ -193,15 +190,6 @@ Internet Explorer 11 support will be dropped
     `IE11 reached end of life on 14 June 20222 <https://endoflife.date/internet-explorer>`_,
     so we are not supporting it on newer versions,
     starting on 3.0.0.
-
-3.1.0
-~~~~~
-
-:Planned release date: 2025 Q4
-
-This release adds support for Sphinx 9.0.
-
-.. _roadmap-release-4.0.0:
 
 4.0.0
 ~~~~~
