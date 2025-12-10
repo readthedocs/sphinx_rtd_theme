@@ -71,7 +71,7 @@ jobs:
     steps:
       - run-tox:
           version: py311
-          sphinx-version: "72,73,74,80,81,82,latest,dev"
+          sphinx-version: "72,73,74,80,81,82,90,latest"
 
   py312:
     docker:
@@ -79,7 +79,7 @@ jobs:
     steps:
       - run-tox:
           version: py312
-          sphinx-version: "72,73,74,80,81,82,latest,dev"
+          sphinx-version: "72,73,74,80,81,82,90,latest,dev"
 
   py313:
     docker:
@@ -87,7 +87,7 @@ jobs:
     steps:
       - run-tox:
           version: py313
-          sphinx-version: "72,73,74,80,81,82,latest,dev"
+          sphinx-version: "72,73,74,80,81,82,90,latest,dev"
 
 workflows:
   version: 2

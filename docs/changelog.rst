@@ -4,7 +4,14 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 3.0.2
+.. |theme_version| replace:: 3.1.0rc1
+
+.. _release-3.1.0rc1:
+
+3.1.0rc1
+========
+
+* Added support for Sphinx 9.x
 
 .. _release-3.0.2:
 
