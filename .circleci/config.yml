@@ -95,7 +95,7 @@ jobs:
     steps:
       - run-tox:
           version: py314
-          sphinx-version: "81,82,latest,dev"
+          sphinx-version: "81,82,90,latest,dev"
 
 workflows:
   version: 2
