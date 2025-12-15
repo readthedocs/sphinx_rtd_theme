@@ -114,7 +114,7 @@ function ThemeNav () {
         $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {
             var link = $(this);
                 expand =
-                    $('<button class="toctree-expand" title="Open/close menu"></button>');
+                    $('<button class="toctree-expand" title="Open/close menu" role="presentation"></button>');
             expand.on('click', function (ev) {
                 self.toggleCurrent(link);
                 ev.stopPropagation();
