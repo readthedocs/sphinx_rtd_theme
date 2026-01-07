@@ -6,6 +6,13 @@ Changelog
 
 .. |theme_version| replace:: 3.1.0rc1
 
+.. _release-3.1.0rc2:
+
+3.1.0rc2
+========
+
+* Added support for docutils 0.22
+
 .. _release-3.1.0rc1:
 
 3.1.0rc1
