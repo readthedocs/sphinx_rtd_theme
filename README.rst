@@ -34,9 +34,14 @@ This theme is distributed on PyPI_ and can be installed with ``pip``:
    $ pip install sphinx-rtd-theme
 
 To use the theme in your Sphinx project, you will need to edit
-your ``conf.py`` file's ``html_theme`` setting:
+your ``conf.py`` file's ``extensions`` and ``html_theme`` settings:
 
 .. code:: python
+
+    extensions = [
+        ...
+        "sphinx_rtd_theme",
+    ]
 
     html_theme = "sphinx_rtd_theme"
 
