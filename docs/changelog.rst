@@ -4,7 +4,15 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 3.1.0rc1
+.. |theme_version| replace:: 3.1.0
+
+.. _release-3.1.0:
+
+3.1.0
+=====
+
+* Added support for docutils 0.22
+* Added support for Sphinx 9.x
 
 .. _release-3.1.0rc2:
 
