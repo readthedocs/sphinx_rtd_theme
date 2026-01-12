@@ -341,6 +341,7 @@ Fixes
 * Fix ``<pre>`` overflow (#1220)
 * Fix literal/ref style inside ``<dl>`` (#1088)
 
+
 Other Changes
 -------------
 
