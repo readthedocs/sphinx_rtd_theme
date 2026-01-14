@@ -56,7 +56,12 @@ html_theme_options = {
     'logo_only': True,
     'navigation_depth': 5,
 }
-html_context = {}
+html_context = {
+  'display_github': True,
+  'github_user': 'readthedocs',
+  'github_repo': 'sphinx_rtd_theme',
+  'github_version': 'master/docs/'
+}
 
 if not 'READTHEDOCS' in os.environ:
     html_static_path = ['_static/']
