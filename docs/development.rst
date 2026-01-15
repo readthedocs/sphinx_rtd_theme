@@ -61,7 +61,7 @@ The theme officially supports the following dependencies in your Sphinx project:
     * - Sphinx
       - 6 or greater
     * - docutils
-      - > 0.18, < 0.22
+      - > 0.18, < 0.23
 
 .. deprecated:: 3.0
     Sphinx < 6 support removed
