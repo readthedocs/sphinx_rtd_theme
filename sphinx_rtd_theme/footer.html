@@ -1,3 +1,23 @@
+{%- macro copyright_block() %}
+  {%- if hasdoc('copyright') %}
+    {%- set copyright_prefix = '<a href="' + pathto('copyright') + '">' + _('Copyright') + '</a>' -%}
+  {%- else %}
+    {%- set copyright_prefix = _('Copyright') %}
+  {%- endif %}
+  {%- if copyright is iterable and copyright is not string %}
+    {% for copyright_line in copyright %}
+      {% trans trimmed copyright_prefix=copyright_prefix, copyright=copyright_line|e %}
+        &#169; {{ copyright_prefix }} {{ copyright }}.
+      {% endtrans %}
+      {%- if not loop.last %}<br/>{%- endif %}
+    {% endfor %}
+  {%- else %}
+    {% trans trimmed copyright_prefix=copyright_prefix, copyright=copyright|e %}
+      &#169; {{ copyright_prefix }} {{ copyright }}.
+    {% endtrans %}
+  {%- endif %}
+{%- endmacro %}
+
 <footer>
   {%- if (theme_prev_next_buttons_location == 'bottom' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
     {#- Translators: This is an ARIA section label for the footer section of the page. -#}
@@ -17,11 +37,7 @@
   {%- block contentinfo %}
     <p>
     {%- if show_copyright %}
-      {%- if hasdoc('copyright') %}
-        {%- trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-      {%- else %}
-        {%- trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
-      {%- endif %}
+      {{- copyright_block() -}}  
     {%- endif %}
 
     {%- if build_id and build_url %}
