@@ -55,6 +55,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'logo_only': True,
     'navigation_depth': 5,
+    'navigation_with_keys': True  # inherited from the basic theme
 }
 html_context = {}
 
