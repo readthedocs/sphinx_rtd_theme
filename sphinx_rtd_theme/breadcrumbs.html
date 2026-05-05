@@ -66,10 +66,10 @@
   {#- Translators: This is an ARIA section label for sequential page links, such as previous and next page links. -#}
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="{{ _('Sequential page navigation') }}">
       {%- if prev %}
-        <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> {{ _('Previous') }}</a>
+        <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}"{% if theme_prev_next_buttons_location == 'top' %} accesskey="p"{% endif %}><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> {{ _('Previous') }}</a>
       {%- endif %}
       {%- if next %}
-        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">{{ _('Next') }} <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}"{% if theme_prev_next_buttons_location == 'top' %} accesskey="n"{% endif %}>{{ _('Next') }} <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       {%- endif %}
   </div>
   {%- endif %}

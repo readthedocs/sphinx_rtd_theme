@@ -13,7 +13,7 @@ except ImportError:
         SingleFileHTMLBuilder,
     )
 
-from .util import build_all
+from .util import build, build_all
 
 
 def test_basic():
@@ -88,3 +88,17 @@ def test_missing_toctree():
         content = open(os.path.join(app.outdir, 'index.html')).read()
         assert '<div class="toctree' not in content
         assert '<div class="local-toc">' in content
+
+
+def test_prev_next_accesskeys_are_unique_when_buttons_location_is_both():
+    confoverrides = {
+        'html_theme_options': {
+            'prev_next_buttons_location': 'both',
+        },
+    }
+
+    with build('test-basic', confoverrides=confoverrides) as (app, status, warning):
+        content = open(os.path.join(app.outdir, 'foo.html'), encoding='utf-8').read()
+
+    assert content.count('accesskey="p"') == 1
+    assert content.count('accesskey="n"') == 1
