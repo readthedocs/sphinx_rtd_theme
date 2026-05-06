@@ -17,6 +17,7 @@
 {%- endif %}
 
 {%- set display_vcs_links = display_vcs_links if display_vcs_links is defined else True %}
+{%- set has_source_page = pagename not in ['genindex', 'search'] %}
 
 {#- Translators: This is an ARIA section label for page links, including previous/next page link and links to GitHub/GitLab/etc. -#}
 <div role="navigation" aria-label="{{ _('Page navigation') }}">
@@ -30,7 +31,7 @@
     {%- endblock %}
     {%- block breadcrumbs_aside %}
       <li class="wy-breadcrumbs-aside">
-        {%- if hasdoc(pagename) and display_vcs_links %}
+        {%- if hasdoc(pagename) and has_source_page and display_vcs_links %}
           {%- if display_github %}
             {%- if check_meta and 'github_url' in meta %}
               <!-- User defined GitHub URL -->

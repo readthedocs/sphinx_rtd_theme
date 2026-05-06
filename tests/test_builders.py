@@ -13,7 +13,7 @@ except ImportError:
         SingleFileHTMLBuilder,
     )
 
-from .util import build_all
+from .util import build, build_all
 
 
 def test_basic():
@@ -64,6 +64,34 @@ def test_basic():
             )
             assert search in content, ('Missing search with builder {0}'
                                        .format(app.builder.name))
+
+
+def test_edit_links_are_skipped_for_generated_pages():
+    html_context = {
+        'display_github': True,
+        'github_user': 'readthedocs',
+        'github_repo': 'sphinx_rtd_theme',
+        'github_version': 'master/',
+        'conf_py_path': 'tests/roots/test-basic/',
+    }
+
+    with build('test-basic', confoverrides={'html_context': html_context}) as (
+        app,
+        _status,
+        _warning,
+    ):
+        content = open(
+            os.path.join(app.outdir, 'index.html'),
+            encoding='utf-8',
+        ).read()
+        assert 'Edit on GitHub' in content
+
+        for filename in ['genindex.html', 'search.html']:
+            content = open(
+                os.path.join(app.outdir, filename),
+                encoding='utf-8',
+            ).read()
+            assert 'Edit on GitHub' not in content
 
 
 def test_empty():
