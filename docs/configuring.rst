@@ -239,6 +239,12 @@ The following options can be used as :ref:`file-wide metadata
 Other configuration
 ===================
 
+Hiding source and edit links
+----------------------------
+
+Set :py:confval:`html_show_sourcelink <sphinx:html_show_sourcelink>` to
+``False`` to hide the source link and VCS edit links.
+
 Adding a logo
 -------------
 
