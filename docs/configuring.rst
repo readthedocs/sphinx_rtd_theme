@@ -257,6 +257,11 @@ In order to add custom CSS or Javascript without disrupting the existing theme
 files, you can :doc:`add files to be included in your documentation output
 <rtd:guides/adding-custom-css>`.
 
+For more extensive customization, see Sphinx's guides to
+`using HTML themes <https://www.sphinx-doc.org/en/master/usage/theming.html>`_
+and `developing HTML themes
+<https://www.sphinx-doc.org/en/master/development/html_themes/index.html>`_.
+
 How the table of contents displays
 ==================================
 
