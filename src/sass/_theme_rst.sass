@@ -442,6 +442,8 @@
     // Remove bottom margin for the last element (and it's last child)
     td .last, td .last > *:last-child
       margin-bottom: 0
+    th > .line-block:last-child, td > .line-block:last-child
+      margin-bottom: 0
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
     @extend .wy-table

@@ -369,3 +369,34 @@ Test to see that tables behave well with nested paragraphs.
 |            | .{ }     | Bit-field concatenation |
 +------------+----------+-------------------------+
 
+Tables with line blocks
+-----------------------
+
+.. regression test for https://github.com/readthedocs/sphinx_rtd_theme/issues/1701
+
+.. list-table:: Line blocks should not add trailing space to table cells.
+   :header-rows: 1
+   :stub-columns: 1
+
+   * - | Stub
+       | heading
+     - | Column
+       | heading
+   * - | Stub
+       | lines
+     - | First line
+       | Second line
+   * - Paragraph
+     - | First block
+
+       | Second block
+       |   Indented line
+   * - Followed by a paragraph
+     - | This block keeps its bottom margin.
+
+       This paragraph follows the line block.
+
+| Outside a table, line blocks keep their bottom margin.
+| A second line.
+
+This paragraph follows the outside line block.
