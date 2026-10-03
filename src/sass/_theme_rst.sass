@@ -138,13 +138,13 @@
     &:before
       margin-right: 4px
   .note, .seealso
-    @extend .wy-alert.wy-alert-info
+    @extend .wy-alert, .wy-alert-info
   .hint, .tip, .important
-    @extend .wy-alert.wy-alert-success
+    @extend .wy-alert, .wy-alert-success
   .error, .danger
-    @extend .wy-alert.wy-alert-danger
+    @extend .wy-alert, .wy-alert-danger
   .warning, .caution, .attention, .admonition-todo
-    @extend .wy-alert.wy-alert-warning
+    @extend .wy-alert, .wy-alert-warning
   // Some people put tables in notes. Let's give them very basic support.
   .admonition table
     border-color: rgba(0, 0, 0, 0.1)
@@ -357,7 +357,7 @@
         word-break: keep-all
 
     // docutils < 0.18 html5 writer styling
-    dl.footnote, dl.citation, dl.field-list,
+    dl.footnote, dl.citation, dl.field-list
       margin-bottom: $base-line-height
       > dt
         padding-left: 1rem
@@ -590,7 +590,7 @@
     border-radius: $base-line-height / 6
     padding: ($base-line-height / 10) ($base-line-height / 4)
     margin: auto ($base-line-height / 12)
-  .guilabel,
+  .guilabel
     border: 1px solid lighten($guilabel-color, 25%)
     background: lighten($guilabel-color, 50%)
   .menuselection
