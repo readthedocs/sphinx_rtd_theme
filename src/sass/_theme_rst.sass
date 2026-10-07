@@ -205,7 +205,9 @@
     float: left
     margin: 0px $base-line-height $base-line-height 0px
   .align-center
-    margin: auto
+    // Do not override vertical margin
+    margin-left: auto
+    margin-right: auto
     // Do not override display:table for tables
     &:not(table)
       display: block
