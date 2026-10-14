@@ -34,6 +34,9 @@ and explicit roles for :emphasis:`standard` :strong:`inline` :literal:`markup`.
 GUI labels are a useful way to indicate that :guilabel:`Some action` is to be taken by the user.
 The GUI label should not run over ``line-height`` so as not to :guilabel:`interfere` with text from adjacent lines.
 
+Accelerator keys are underlined in :guilabel:`&File` and
+:menuselection:`&File --> &New`.
+
 Key-bindings indicate that [1]_ the read is to press a button on the keyboard or mouse,
 for example :kbd:`MMB` and :kbd:`Shift-MMB`. Another useful markup to indicate a user action
 is to use ``menuselection`` this [1]_ can [1]_ be [1]_ used [1]_ to [1]_ show [1]_ short [1]_ and long menus in software.
