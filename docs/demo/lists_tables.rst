@@ -93,6 +93,8 @@ Field list
 
 .. bibliographic fields (which also require a transform):
 
+:``<obstacle layer>``.enabled: Whether the layer is enabled.
+
 :Author: David Goodger
 :Address: 123 Example Street
           Example, EX  Canada
